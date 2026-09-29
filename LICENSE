@@ -1,0 +1,45 @@
+EMX Controls Documentation — License
+
+Copyright (c) EREMEX JSC. All rights reserved.
+
+1. Grant. Eremex JSC ("Eremex") grants you a non-exclusive, non-transferable,
+   royalty-free license to:
+   a) use, read, and build this documentation ("Documentation") for the purpose of
+      evaluating, developing, and supporting software that uses Eremex Avalonia UI
+      Controls (EMX Controls);
+   b) copy the Documentation and host it on servers within your organization's
+      private, closed, or internal network (for example an intranet or an air-gapped
+      network), for use by your employees and contractors;
+   c) build the Documentation from source for the purposes above.
+
+2. Restrictions. Without prior written permission from Eremex you may NOT:
+   a) publish, host, or otherwise make the Documentation, or any substantial part of
+      it, available on the public internet or to third parties outside your
+      organization (including public websites, repositories, package registries,
+      and file-sharing services);
+   b) sell, sublicense, or distribute the Documentation, or use it in a competing
+      product or service;
+   c) remove or alter copyright notices or this license.
+
+3. Modifications. You may make internal modifications (for example translations or
+   annotations) for your own use under section 1. Modified copies remain subject to
+   this license.
+
+4. Relationship to the software. This license covers the Documentation only. Use of
+   EMX Controls software is governed by the separate EMX Controls license agreement.
+   Nothing here grants any right to the software.
+
+5. Third-party components. Bundled third-party files (for example fonts in
+   docs/fonts, and glightbox in docs/vendor/glightbox) are licensed under their own
+   terms, included next to those files.
+
+6. Termination. This license terminates automatically if you breach it. On
+   termination you must delete all copies of the Documentation.
+
+7. No warranty. The Documentation is provided "as is" without warranty of any kind.
+   Eremex is not liable for any damages arising from its use.
+
+8. Translations. A Russian translation is provided in LICENSE.ru.md for convenience.
+   If it differs from this text, this English text prevails.
+
+Permission requests: controls@eremex.com

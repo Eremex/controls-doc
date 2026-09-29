@@ -1,0 +1,17 @@
+Fonts bundled with this documentation site
+==========================================
+
+Inter                (inter-*.woff2)
+  (c) The Inter Project Authors - https://github.com/rsms/inter
+  SIL Open Font License 1.1 - https://openfontlicense.org
+
+JetBrains Mono       (jetbrains-mono-*.woff2)
+  (c) JetBrains s.r.o. - https://github.com/JetBrains/JetBrainsMono
+  SIL Open Font License 1.1 - https://openfontlicense.org
+
+Both are variable fonts, served as the latin / latin-ext / cyrillic /
+cyrillic-ext subsets produced by Google Fonts. The matching @font-face rules
+live in ../stylesheets/extra.css.
+
+Segoe UI is deliberately NOT bundled: its Microsoft licence forbids
+redistribution.

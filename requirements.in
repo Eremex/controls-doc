@@ -1,0 +1,3 @@
+# The site is built with plain Zensical (no extra plugins or hooks).
+# Pinned: Zensical is pre-1.0 and changes quickly; bump deliberately and rebuild.
+zensical==0.0.42

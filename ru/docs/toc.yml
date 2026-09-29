@@ -1,0 +1,456 @@
+name: 
+href: 
+items:
+- name: Eremex Avalonia UI Controls
+  href: ..\index.md
+  items: 
+- name: Get Started
+  href: get-started.md
+  items:
+  - name: Get Started with EMX Controls
+    href: get-started/get-started-with-emx-controls.md
+    items: 
+  - name: Use Standard Avalonia UI Templates to Create a New Project with Eremex Controls
+    href: get-started/create-new-avalonia-project-using-avalonia-templates.md
+    items: 
+  - name: Get Started with EMX Controls on ALT Linux
+    href: get-started/get-started-with-emx-controls-on-alt-linux.md
+    items: 
+- name: Controls
+  href: controls.md
+  items:
+  - name: DataGrid
+    href: controls/datagrid.md
+    items:
+    - name: Data Binding
+      href: controls/datagrid/data-binding.md
+      items:
+      - name: Unbound Columns
+        href: controls/datagrid/data-binding/unbound-columns.md
+        items: 
+    - name: Columns
+      href: controls/datagrid/columns.md
+      items: 
+    - name: Rows
+      href: controls/datagrid/rows.md
+      items: 
+    - name: Row Drag-and-Drop
+      href: controls/datagrid/row-drag-and-drop.md
+      items: 
+    - name: Сортировка
+      href: controls/datagrid/sorting.md
+      items: 
+    - name: Grouping
+      href: controls/datagrid/grouping.md
+      items: 
+    - name: Data Editing
+      href: controls/datagrid/data-editing.md
+      items:
+      - name: Custom Editors
+        href: controls/datagrid/data-editing/custom-editors.md
+        items: 
+    - name: Filter and Search
+      href: controls/datagrid/filter-and-search.md
+      items: 
+    - name: Bands
+      href: controls/datagrid/bands.md
+      items: 
+    - name: Context Menus
+      href: controls/datagrid/context-menus.md
+      items: 
+    - name: Save and Restore the Layout
+      href: controls/datagrid/save-and-restore-layout.md
+      items: 
+    - name: Styles
+      href: controls/datagrid/styles.md
+      items: 
+    - name: Performance and Data Virtualization
+      href: controls/datagrid/performance-and-data-virtualization.md
+      items: 
+    - name: Examples
+      href: controls/datagrid/examples.md
+      items:
+      - name: How to Prevent Opening Popups for Read-only Popup Editors
+        href: controls/datagrid/examples/how-to-prevent-opening-popups-for-read-only-popup-editors.md
+        items: 
+  - name: TreeList and TreeView
+    href: controls/treelist.md
+    items:
+    - name: TreeList and TreeView Controls Overview
+      href: controls/treelist/treelist-and-treeview-overview.md
+      items: 
+    - name: Data Binding
+      href: controls/treelist/data-binding.md
+      items:
+      - name: Binding to Hierarchical Data
+        href: controls/treelist/data-binding/binding-to-hierarchical-data.md
+        items: 
+      - name: Binding to Self-Referential Data Source
+        href: controls/treelist/data-binding/binding-to-self-referential-data-source.md
+        items: 
+      - name: Unbound Mode
+        href: controls/treelist/data-binding/unbound-mode.md
+        items: 
+      - name: Unbound Columns
+        href: controls/treelist/data-binding/unbound-columns.md
+        items: 
+    - name: Узлы
+      href: controls/treelist/nodes.md
+      items: 
+    - name: Node Drag-and-Drop
+      href: controls/treelist/node-drag-and-drop.md
+      items: 
+    - name: Columns
+      href: controls/treelist/columns.md
+      items: 
+    - name: Data Editing
+      href: controls/treelist/data-editing.md
+      items:
+      - name: Custom Editors in TreeList and TreeView Cells
+        href: controls/treelist/data-editing/custom-editors.md
+        items: 
+    - name: Сортировка данных
+      href: controls/treelist/sorting.md
+      items: 
+    - name: Filter and Search
+      href: controls/treelist/filter-and-search.md
+      items: 
+    - name: Data Validation
+      href: controls/treelist/data-validation.md
+      items: 
+    - name: Context Menus
+      href: controls/treelist/context-menus.md
+      items: 
+    - name: Save and Restore the Layout
+      href: controls/treelist/save-and-restore-layout.md
+      items: 
+    - name: Styles
+      href: controls/treelist/styles.md
+      items: 
+    - name: Performance and Data Virtualization
+      href: controls/treelist/performance-and-data-virtualization.md
+      items: 
+    - name: Examples
+      href: controls/treelist/examples.md
+      items:
+      - name: How to Create a TreeView Control and Bind It to a Self Referential Data Source
+        href: controls/treelist/examples/how-to-create-a-treeview-control-and-bind-it-to-a-self-referential-data-source.md
+        items: 
+      - name: How to Create a TreeList Control and Bind It to a Hierarchical Data Source
+        href: controls/treelist/examples/how-to-create-a-treelist-control-and-bind-it-to-a-hierarchical-data-source.md
+        items: 
+  - name: Charts
+    href: controls/charts.md
+    items:
+    - name: Get Started with Charts
+      href: controls/charts/get-started-with-charts.md
+      items: 
+    - name: Get Started with Charts - MVVM Pattern
+      href: controls/charts/get-started-with-charts-mvvm.md
+      items: 
+    - name: Cartesian Chart
+      href: controls/charts/cartesian-chart.md
+      items: 
+    - name: Cartersian Series Views
+      href: controls/charts/cartesian-series-views.md
+      items:
+      - name: Line Series View
+        href: controls/charts/cartesian-series-views/line-series-vew.md
+        items: 
+      - name: Scatter Line Series View
+        href: controls/charts/cartesian-series-views/scatter-line-series-view.md
+        items: 
+      - name: Point Series View
+        href: controls/charts/cartesian-series-views/point-series-view.md
+        items: 
+      - name: Area Series View
+        href: controls/charts/cartesian-series-views/area-series-view.md
+        items: 
+      - name: Range Area Series View
+        href: controls/charts/cartesian-series-views/range-area-series-view.md
+        items: 
+      - name: Side-by-side Bar Series View
+        href: controls/charts/cartesian-series-views/side-by-side-bar-series-view.md
+        items: 
+      - name: Side-by-side Range Bar Series View
+        href: controls/charts/cartesian-series-views/side-by-side-range-bar-series-view.md
+        items: 
+      - name: Step Line Series View
+        href: controls/charts/cartesian-series-views/step-line-series-view.md
+        items: 
+      - name: Step Area Series View
+        href: controls/charts/cartesian-series-views/step-area-series-view.md
+        items: 
+      - name: Candlestick Series View
+        href: controls/charts/cartesian-series-views/candlestick-series-view.md
+        items: 
+      - name: Lollipop Series View
+        href: controls/charts/cartesian-series-views/lollipop-series-view.md
+        items: 
+    - name: Scroll and Zoom in a Chart Control
+      href: controls/charts/scroll-and-zoom-in-a-chart-control.md
+      items: 
+    - name: Heatmap
+      href: controls/charts/heatmap.md
+      items: 
+  - name: Docking UI
+    href: controls/docking.md
+    items:
+    - name: Get Started with Docking
+      href: controls/docking/get-started-with-docking.md
+      items: 
+    - name: Dock Manager and Dock Items
+      href: controls/docking/dock-manager.md
+      items: 
+    - name: Dock Panes and Containers
+      href: controls/docking/dock-panes-and-containers.md
+      items: 
+    - name: Document Panes
+      href: controls/docking/document-panes.md
+      items: 
+    - name: Perform Dock Operations in Code
+      href: controls/docking/perform-dock-operations-in-code.md
+      items: 
+    - name: Use MVVM to Populate Dock Items
+      href: controls/docking/use-mvvm-to-populate-dock-items.md
+      items: 
+    - name: Save and Restore the Layout of Panels
+      href: controls/docking/save-and-restore-layout.md
+      items: 
+    - name: Examples
+      href: controls/docking/examples.md
+      items:
+      - name: How to Create a Complex Docking Layout in Code Behind
+        href: controls/docking/examples/how-to-create-a-complex-docking-layout-in-code-behind.md
+        items: 
+  - name: Ribbon
+    href: controls/ribbon.md
+    items:
+    - name: Ribbon Overview
+      href: controls/ribbon/ribbon-overview.md
+      items: 
+    - name: Pages
+      href: controls/ribbon/pages.md
+      items: 
+    - name: Page Groups
+      href: controls/ribbon/page-groups.md
+      items: 
+    - name: Ribbon Items
+      href: controls/ribbon/ribbon-items.md
+      items: 
+    - name: Galleries
+      href: controls/ribbon/galleries.md
+      items: 
+    - name: Application Button and Main Menu
+      href: controls/ribbon/application-button-and-main-menu.md
+      items: 
+    - name: Quick Access Toolbar
+      href: controls/ribbon/quick-access-toolbar.md
+      items: 
+    - name: Page Header Items
+      href: controls/ribbon/page-header-items.md
+      items: 
+    - name: Key Tips
+      href: controls/ribbon/key-tips.md
+      items: 
+    - name: Ribbon Command Layouts
+      href: controls/ribbon/ribbon-command-layouts.md
+      items: 
+    - name: Ribbon Serialization and Deserialization
+      href: controls/ribbon/ribbon-serialization-and-deserialization.md
+      items: 
+  - name: Toolbars and Menus
+    href: controls/toolbars-and-menus.md
+    items:
+    - name: Get Started With Toolbars
+      href: controls/toolbars-and-menus/get-started-with-toolbars.md
+      items: 
+    - name: Toolbars
+      href: controls/toolbars-and-menus/toolbars.md
+      items: 
+    - name: Toolbar Items
+      href: controls/toolbars-and-menus/toolbar-items.md
+      items: 
+    - name: Popup and Context Menus
+      href: controls/toolbars-and-menus/popup-and-context-menus.md
+      items: 
+    - name: Toolbar Serialization and Deserialization
+      href: controls/toolbars-and-menus/toolbar-serialization-and-deserialization.md
+      items: 
+  - name: ListView
+    href: controls/listview.md
+    items:
+    - name: Get Started with ListView Control
+      href: controls/listview/get-started-with-listview.md
+      items: 
+    - name: ListView Control Overview
+      href: controls/listview/listview-overview.md
+      items: 
+  - name: PropertyGrid
+    href: controls/propertygrid.md
+    items:
+    - name: PropertyGrid Overview
+      href: controls/propertygrid/propertygrid-overview.md
+      items: 
+    - name: Data Binding and Row Creation
+      href: controls/propertygrid/data-binding.md
+      items: 
+    - name: PropertyGrid Rows
+      href: controls/propertygrid/rows.md
+      items: 
+    - name: Data Search
+      href: controls/propertygrid/data-search.md
+      items: 
+    - name: Data Editing
+      href: controls/propertygrid/data-editing.md
+      items: 
+    - name: Custom Editors
+      href: controls/propertygrid/custom-editors.md
+      items: 
+    - name: Frequently Used API
+      href: controls/propertygrid/frequently-used-api.md
+      items: 
+  - name: Graphics 3D Control
+    href: controls/graphics3dcontrol.md
+    items:
+    - name: Get Started with Graphics3DControl
+      href: controls/graphics3dcontrol/get-started-with-graphics3dcontrol.md
+      items: 
+    - name: Graphics3DControl Overview
+      href: controls/graphics3dcontrol/graphics3dcontrol-overview.md
+      items: 
+    - name: Camera
+      href: controls/graphics3dcontrol/camera.md
+      items: 
+    - name: Light
+      href: controls/graphics3dcontrol/light.md
+      items: 
+    - name: Skybox
+      href: controls/graphics3dcontrol/skybox.md
+      items: 
+    - name: Export
+      href: controls/graphics3dcontrol/export.md
+      items: 
+    - name: User Interactions with 3D Models
+      href: controls/graphics3dcontrol/user-interactions-with-3d-models.md
+      items: 
+    - name: System Requirements
+      href: controls/graphics3dcontrol/system-requirements.md
+      items: 
+  - name: Editors
+    href: controls/editors.md
+    items:
+    - name: TextEditor
+      href: controls/editors/texteditor.md
+      items: 
+    - name: ButtonEditor
+      href: controls/editors/buttoneditor.md
+      items: 
+    - name: CheckEditor
+      href: controls/editors/checkeditor.md
+      items: 
+    - name: ComboBoxEditor
+      href: controls/editors/comboboxeditor.md
+      items: 
+    - name: DateEditor
+      href: controls/editors/dateeditor.md
+      items: 
+    - name: HyperlinkEditor
+      href: controls/editors/hyperlinkeditor.md
+      items: 
+    - name: MemoEditor
+      href: controls/editors/memoeditor.md
+      items: 
+    - name: PopupColorEditor
+      href: controls/editors/popupcoloreditor.md
+      items: 
+    - name: SegmentedEditor
+      href: controls/editors/segmentededitor.md
+      items: 
+    - name: SpinEditor
+      href: controls/editors/spineditor.md
+      items: 
+    - name: Masks
+      href: controls/editors/masks.md
+      items:
+      - name: Numeric Masks
+        href: controls/editors/masks/numeric-masks.md
+        items: 
+      - name: Date-Time Masks
+        href: controls/editors/masks/date-time-masks.md
+        items: 
+    - name: Data Validation
+      href: controls/editors/data-validation.md
+      items: 
+    - name: Custom Editors
+      href: controls/editors/custom-editors.md
+      items: 
+    - name: Examples
+      href: controls/editors/examples.md
+      items:
+      - name: How to create a password text box
+        href: controls/editors/examples/How-to-create-a-password-text-box.md
+        items: 
+  - name: Windows and Dialogs
+    href: controls/windows-and-dialogs.md
+    items:
+    - name: MxWindow
+      href: controls/windows-and-dialogs/mxwindow.md
+      items: 
+    - name: MxMessageBox
+      href: controls/windows-and-dialogs/messagebox.md
+      items: 
+  - name: Utility Controls
+    href: controls/utility-controls.md
+    items:
+    - name: TabControl
+      href: controls/utility-controls/tabcontrol.md
+      items: 
+    - name: SplitContainerControl
+      href: controls/utility-controls/splitcontainercontrol.md
+      items: 
+    - name: GroupBox
+      href: controls/utility-controls/groupbox.md
+      items: 
+    - name: CalendarControl
+      href: controls/utility-controls/calendarcontrol.md
+      items: 
+  - name: Themes
+    href: controls/themes.md
+    items:
+    - name: Register an Eremex Paint Theme
+      href: controls/themes/register-an-eremex-paint-theme.md
+      items: 
+    - name: Modify Control Themes
+      href: controls/themes/modify-control-themes.md
+      items: 
+- name: What's Included
+  href: whats-included.md
+  items:
+  - name: Assemblies
+    href: whats-included/assemblies.md
+    items: 
+  - name: Project Templates
+    href: whats-included/project-templates.md
+    items: 
+  - name: System Requirements
+    href: whats-included/system-requirements.md
+    items: 
+- name: Version History
+  href: version-history.md
+  items:
+  - name: Version 1.2
+    href: version-history/version-1.2.md
+    items: 
+  - name: Version 1.1
+    href: version-history/version-1.1.md
+    items: 
+  - name: Version 1.0
+    href: version-history/version-1.0.md
+    items: 
+- name: Licensing
+  href: licensing.md
+  items:
+  - name: END-USER LICENSE AGREEMENT
+    href: licensing/eula.md
+    items: 

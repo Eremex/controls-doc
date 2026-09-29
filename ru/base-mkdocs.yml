@@ -1,0 +1,112 @@
+# Plain Zensical configuration for the offline edition:
+# no custom hooks, plugins or template overrides. Build with `zensical build`
+# (the build scripts set OFFLINE=true so the site works from any folder / file://).
+site_name: EMX Controls Documentation
+site_dir: site   # copied to ../site/ru by build.py
+docs_dir: docs
+use_directory_urls: false
+
+theme:
+  variant: classic
+  language: ru
+  # Fonts are self-hosted in docs/fonts (see docs/stylesheets/extra.css).
+  font: false
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+  logo: assets/EMXControls.svg
+  favicon: assets/EMXControls.svg
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - content.code.copy
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - toc.autohide
+    - toc.follow
+
+edit_uri: ""
+
+extra_css:
+  - vendor/glightbox/glightbox.min.css   # image lightbox, bundled locally (the theme would fetch it from unpkg.com)
+  - stylesheets/extra.css
+extra_javascript:
+  - vendor/glightbox/glightbox.min.js
+  - javascripts/extra.js
+
+plugins:
+  - search
+
+markdown_extensions:
+  - zensical.extensions.glightbox:
+      auto: true
+      auto_themed: true
+      width: "90vw"
+      height: "80vh"
+      auto_caption: true
+      caption_position: bottom
+      skip_classes: []
+  - admonition
+  - sane_lists
+  - attr_list
+  - meta
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+extra:
+  alternate:
+    - name: English
+      link: ../index.html
+      lang: en
+    - name: Russian
+      link: ../ru/index.html
+      lang: ru
+    - name: Chinese
+      link: ../zh/index.html
+      lang: zh
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Eremex/controls-demo
+      name: Eremex Avalonia UI Controls Demo Application
+    - icon: fontawesome/brands/telegram
+      name: Eremex Avalonia UI Controls on Telegram
+      link: https://t.me/emxControls
+    - icon: fontawesome/solid/cart-shopping
+      name: Buy a license
+      link: https://www.eremexcontrols.ru/
+
+validation: false
+
+copyright: >
+  Copyright &copy; 2008 - 2026 EREMEX JSC &nbsp; &nbsp; &nbsp;

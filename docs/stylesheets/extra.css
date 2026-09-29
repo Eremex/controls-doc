@@ -1,0 +1,170 @@
+.md-grid {
+  max-width: 1540px; /* Default is usually around 1220px */
+}
+
+/* Make the left navigation sidebar wider */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 18rem; /* Default is 12.1rem */
+  }
+  
+  .md-nav--primary .md-nav__list {
+    width: 17rem; /* Keep this slightly smaller than the sidebar width */
+  }
+}
+
+
+/* ---------------------------------------------------------------------------
+ * Fonts
+ *
+ * Self-hosted on purpose. Previously the text stack was
+ *   "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Helvetica Neue", ...
+ * which left rendering up to whatever each OS/browser picked for each
+ * character. Firefox resolved spaces through the emoji/symbol faces and drew
+ * huge gaps between words; Chrome did not. Shipping the faces ourselves makes
+ * the result identical everywhere and removes the Google Fonts request
+ * (theme.font is disabled in base-mkdocs.yml).
+ *
+ * Inter and JetBrains Mono are SIL OFL 1.1 - see fonts/NOTICE.txt.
+ * Segoe UI cannot be self-hosted: its licence forbids redistribution.
+ * ------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "EMX Mono";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("../fonts/jetbrains-mono-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "EMX Mono";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("../fonts/jetbrains-mono-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "EMX Mono";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("../fonts/jetbrains-mono-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "EMX Mono";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("../fonts/jetbrains-mono-cyrillic-ext.woff2") format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "EMX Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "EMX Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "EMX Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "EMX Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-cyrillic-ext.woff2") format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+:root {
+  --md-text-font: "EMX Sans", system-ui, sans-serif;
+  --md-code-font: "EMX Mono", ui-monospace, Consolas, monospace;
+}
+
+/* The theme threads --md-text-font through every component via
+ * --md-text-font-family, so no per-component font-family rules are needed.
+ *
+ * Code needs an explicit rule: pymdownx.highlight wraps every line in
+ * <span id="__span-..">, and those spans inherit from whatever matched the
+ * surrounding text, so the span selector has to be named here too. */
+code, pre, kbd, samp,
+.md-typeset code, .md-typeset pre,
+.md-typeset pre code, .md-typeset pre code span {
+  font-family: var(--md-code-font);
+}
+
+/* Form controls do not inherit font-family on their own. */
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* Headings: the theme ships 300, we have always used a heavier cut. */
+.md-typeset h1, .md-typeset h2, .md-typeset h3,
+.md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  font-weight: 600;
+}
+
+
+
+/* Area around the search button should have #111111 color */
+.md-header,
+.md-search__form {
+  background-color: #111111 !important;
+}
+
+/* Area around tabs should have #111111 color background */
+.md-tabs {
+  background-color: #111111 !important;
+}
+
+.md-tabs__list {
+  background-color: #111111 !important;
+}
+
+.md-tabs__item {
+  background-color: #111111 !important;
+}
+
+.md-copyright-container {
+  width: 100%;
+}
+
+/* Complete search input styling for dark background */
+.md-search__input {
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.md-search__input::placeholder {
+  color: #CCCCCC !important;
+  opacity: 1 !important;
+}
+
+.md-search__input:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.md-search__input:focus {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;
+}
