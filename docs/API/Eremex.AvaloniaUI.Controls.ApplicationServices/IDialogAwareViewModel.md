@@ -2,6 +2,12 @@
 
 Implemented by view models shown as modal dialogs through [`IDialogService`](./IDialogService.md). It adds the dialog buttons to what [`IWindowAwareViewModel`](./IWindowAwareViewModel.md) already describes.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public interface IDialogAwareViewModel : IWindowAwareViewModel
 ```

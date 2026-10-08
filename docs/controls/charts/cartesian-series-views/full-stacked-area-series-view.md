@@ -17,18 +17,18 @@ If all Full-Stacked Area Series in the chart control only have negative values, 
 - Use Full-Stacked Area Series Views to show only positive or only negative data in the same chart control.
 - If any Full-Stacked Area Series contains a mix of positive and negative values, all negative values are treated as zeroes.
 
-The Full-Stacked Area Series View is encapsulated by the `CartesianFullStackedAreaSeriesView` class.
+The Full-Stacked Area Series View is encapsulated by the [`CartesianFullStackedAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianFullStackedAreaSeriesView.md) class.
 
 ## Create Full-Stacked Area Series Views
 
 You typically use the Full-Stacked Area Series presentation to show proportional relationships between two or more data series. Steps to create a Full-Stacked Area chart include:
 
-1. Create a `CartesianSeries` object for each data series and add it to the `CartesianChart.Series` collection.
-2. Set the `CartesianSeries.View` property to a `CartesianFullStackedAreaSeriesView` object.
-3. Use the `CartesianSeries.DataAdapter` property to supply data for the series.
+1. Create a [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) object for each data series and add it to the [`CartesianChart.Series`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) collection.
+2. Set the [`CartesianSeries.View`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md) property to a [`CartesianFullStackedAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianFullStackedAreaSeriesView.md) object.
+3. Use the [`CartesianSeries.DataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/Series/DataAdapter.md) property to supply data for the series.
 4. Format Y-axis values as a percentage by customizing the scale options of the Y axis.
 
-    In the Full-Stacked Area Series View, the calculated Y-axis values (and so labels) are in the range between 0 and 1. To display these values as percentages (0%-100%) along the Y axis and in Crosshair labels, set the `ScaleOptions.LabelFormatter` and `ScaleOptions.CrosshairLabelFormatter` properties to a `PercentLabelFormatter` object (or a custom `IAxisLabelFormatter` object). See the example below.
+    In the Full-Stacked Area Series View, the calculated Y-axis values (and so labels) are in the range between 0 and 1. To display these values as percentages (0%-100%) along the Y axis and in Crosshair labels, set the [`ScaleOptions.LabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) and [`ScaleOptions.CrosshairLabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/CrosshairLabelFormatter.md) properties to a [`PercentLabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/PercentLabelFormatter.md) object (or a custom [`IAxisLabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/IAxisLabelFormatter.md) object). See the example below.
 
     ![chart-views-full-stacked-area-labels-percents](../../../images/chart-views-full-stacked-area-labels-percents.png)
 
@@ -131,11 +131,11 @@ The result is shown below:
 
 The following example creates three series of the Full-Stacked Area type from a View Model. 
 
-- The `CartesianChart.SeriesSource` property is bound to the _SeriesCollection_ property in the View Model. This collection is a source of _SeriesViewModel_ objects used to initialize individual series in the Chart control. 
+- The [`CartesianChart.SeriesSource`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/SeriesSource.md) property is bound to the _SeriesCollection_ property in the View Model. This collection is a source of _SeriesViewModel_ objects used to initialize individual series in the Chart control. 
 
-- The `CartesianChart.SeriesTemplate` property is set to a template that creates a series (a `CartesianSeries` object) of the Full-Stacked Area type from each _SeriesViewModel_ object. The series data, title and color are determined by the _SeriesViewModel.DataAdapter_, _SeriesViewModel.Title_, and _SeriesViewModel.Color_ properties, respectively.
+- The [`CartesianChart.SeriesTemplate`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/SeriesTemplate.md) property is set to a template that creates a series (a [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) object) of the Full-Stacked Area type from each _SeriesViewModel_ object. The series data, title and color are determined by the _SeriesViewModel.DataAdapter_, _SeriesViewModel.Title_, and _SeriesViewModel.Color_ properties, respectively.
 
-- The `ScaleOptions.LabelFormatter` and `ScaleOptions.CrosshairLabelFormatter` properties are set to a `PercentLabelFormatter` object to format Y-axis values as percentages.
+- The [`ScaleOptions.LabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) and [`ScaleOptions.CrosshairLabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/CrosshairLabelFormatter.md) properties are set to a [`PercentLabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/PercentLabelFormatter.md) object to format Y-axis values as percentages.
 
 ![chart-views-full-stacked-area-series-view-vm-example](../../../images/chart-views-full-stacked-area-series-view-vm-example.png)
 
@@ -260,28 +260,28 @@ You can use the following data adapters to provide data for Full-Stacked Area Se
 
 Numeric _X_ Values:
 
-- `SortedNumericDataAdapter`
-- `FormulaDataAdapter`
+- [`SortedNumericDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md)
+- [`FormulaDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/FormulaDataAdapter.md)
 
 
 Date and Time _X_ Values:
 
-- `SortedDateTimeDataAdapter`
-- `SortedTimeSpanDataAdapter`
+- [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md)
+- [`SortedTimeSpanDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedTimeSpanDataAdapter.md)
 
 Qualitative _X_ Values:
 
-- `QualitativeDataAdapter`
+- [`QualitativeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeDataAdapter.md)
 
 
 ## Full-Stacked Area Series View Settings
 
 
-- `Color` — Specifies the color used to paint the series.
-- `CrosshairMode` — Specifies whether the crosshair's chart label snaps to the nearest data point, or displays an interpolated value. See [Show an Exact or Interpolated Value in Crosshair Chart Labels](../crosshair.md#show-an-exact-or-interpolated-value-in-crosshair-series-labels).
-- `MarkerImage` — Gets or sets an image to use as custom point markers. If no image is specified, default square-shaped markers are displayed. You can use an `SvgImage` class instance to specify an SVG image.
+- [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) — Specifies the color used to paint the series.
+- [`CrosshairMode`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSortedLineSeriesView/CrosshairMode.md) — Specifies whether the crosshair's chart label snaps to the nearest data point, or displays an interpolated value. See [Show an Exact or Interpolated Value in Crosshair Chart Labels](../crosshair.md#show-an-exact-or-interpolated-value-in-crosshair-series-labels).
+- [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) — Gets or sets an image to use as custom point markers. If no image is specified, default square-shaped markers are displayed. You can use an `SvgImage` class instance to specify an SVG image.
 
-    The `MarkerImage` property is declared with the `[Content]` attribute, which allows you to define an image directly between the &lt;CartesianFullStackedAreaSeriesView&gt; tags.
+    The [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) property is declared with the `[Content]` attribute, which allows you to define an image directly between the &lt;CartesianFullStackedAreaSeriesView&gt; tags.
 
     ``` xml
     <mxc:CartesianFullStackedAreaSeriesView>
@@ -292,14 +292,14 @@ Qualitative _X_ Values:
     SVG files contain predefined colors for SVG elements. To make these colors match your data series color, you can either:
     
     - Manually edit the source SVG image file beforehand
-    - Use the `MarkerImageCss` property to dynamically customize [styles](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) for SVG elements. The styles are applied when point markers are rendered.
+    - Use the [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) property to dynamically customize [styles](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) for SVG elements. The styles are applied when point markers are rendered.
 
 
 
 
-- `MarkerImageCss` — Specifies [CSS styles](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) for runtime customization of an SVG image defined by the `MarkerImage` property. The primary use case is replacing SVG element colors with the series color (`Color`). Include the `{0}` placeholder to insert the value of the `Color` property in the CSS code. 
+- [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) — Specifies [CSS styles](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) for runtime customization of an SVG image defined by the [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) property. The primary use case is replacing SVG element colors with the series color ([`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md)). Include the `{0}` placeholder to insert the value of the [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) property in the CSS code. 
 
-    For example, when the `MarkerImage` property contains an SVG image with a circle element, the following CSS code styles the `circle` with an Orange fill (using the series color) and Dark Red border:
+    For example, when the [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) property contains an SVG image with a circle element, the following CSS code styles the `circle` with an Orange fill (using the series color) and Dark Red border:
 
     ``` xml
     <mxc:CartesianFullStackedAreaSeriesView Color="orange" MarkerImageCss="circle {{fill:{0};stroke:darkred;}}">
@@ -310,10 +310,10 @@ Qualitative _X_ Values:
     See also: [Example - Create a Lollipop Series View and Use Custom SVG Markers](lollipop-series-view.md#example-create-a-lollipop-series-view-and-use-custom-svg-data-point-markers).
 
 
-- `MarkerSize` — Specifies the size of point markers.
-- `ShowInCrosshair` — Specifies the visibility of the crosshair chart label for the current series. See [Customize Chart Labels of the Crosshair](../crosshair.md#hide-a-series-in-the-crosshair).
-- `ShowMarkers` — Enables or disables point markers.
+- [`MarkerSize`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerSize.md) — Specifies the size of point markers.
+- [`ShowInCrosshair`](../../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) — Specifies the visibility of the crosshair chart label for the current series. See [Customize Chart Labels of the Crosshair](../crosshair.md#hide-a-series-in-the-crosshair).
+- [`ShowMarkers`](../../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesViewBase/ShowMarkers.md) — Enables or disables point markers.
 - `Thickness` — Specifies the line thickness.
-- `Transparency` — A value between `0` and `1` which specifies the transparency level of filled areas:
+- [`Transparency`](../../../API/Eremex.AvaloniaUI.Charts/CartesianAreaSeriesView/Transparency.md) — A value between `0` and `1` which specifies the transparency level of filled areas:
     - `0` means fully opaque
     - `1` means fully transparent

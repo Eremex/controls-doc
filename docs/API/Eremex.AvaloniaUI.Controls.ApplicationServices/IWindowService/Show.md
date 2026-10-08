@@ -2,16 +2,29 @@
 
 Shows the view model in a non-modal window and returns immediately, without waiting for the window to close.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public void Show<T>(T viewModel, string caption = null)
     where T : IWindowAwareViewModel
 ```
 
-| parameter | description |
+## Type Parameters
+
+| name | description |
 | --- | --- |
 | T | The type of the view model that drives the window. |
-| viewModel | The view model to display. It is attached to the window until the window closes. |
-| caption | The window caption. When `null`, the caption is taken from [`Title`](../IWindowAwareViewModel/Title.md). |
+
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| viewModel | `T` | The view model to display. It is attached to the window until the window closes. |
+| caption | `string` | The window caption. When `null`, the caption is taken from [`Title`](../IWindowAwareViewModel/Title.md). |
 
 ## See Also
 

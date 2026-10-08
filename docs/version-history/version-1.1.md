@@ -10,7 +10,7 @@ seealso: []
 
 ### Docking
 
-- The new `DockPane.AllowAutoHide` option allows you to prevent a user from enabling auto-hide mode for a specific panel. This option hides the 'Pin' button and 'Auto Hide' context menu item for the panel. 
+- The new [`DockPane.AllowAutoHide`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/AllowAutoHide.md) option allows you to prevent a user from enabling auto-hide mode for a specific panel. This option hides the 'Pin' button and 'Auto Hide' context menu item for the panel. 
 
 ### Ribbon and Toolbars
 
@@ -19,7 +19,7 @@ seealso: []
 
 ### Charts
 
-- Fixed issue: Cannot change the visible range in code, using the `AxisRange.VisualMin` and `AxisRange.VisualMax` properties.
+- Fixed issue: Cannot change the visible range in code, using the [`AxisRange.VisualMin`](../API/Eremex.AvaloniaUI.Charts/AxisRange/VisualMin.md) and [`AxisRange.VisualMax`](../API/Eremex.AvaloniaUI.Charts/AxisRange/VisualMax.md) properties.
 - Fixed issue: The CartesianChart control's `PointerPressed` event is not raised when scroll and zoom operations are disabled.
 
 
@@ -36,15 +36,15 @@ The new `HeaderToolTip` property allows you to specify custom tooltips for colum
 - Incorrect sorting and filtering for columns that use in-place editors whose display text is formatted in a custom manner. Specific cases include:
 
     * Masked Editors — When an editor uses a mask and the `UseMaskAsDisplayText` property is set to `true`.
-    * `PopupColorEditor` —  When the editor displays the selected color's value.
-    * `ComboBoxEditor` — When item display text does not match the value returned by an item's `ToString` method (for instance, when using an `EnumItemsSource` object as a source of items).
+    * [`PopupColorEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) —  When the editor displays the selected color's value.
+    * [`ComboBoxEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) — When item display text does not match the value returned by an item's `ToString` method (for instance, when using an `EnumItemsSource` object as a source of items).
 
 
 - DataGrid/TreeList raises an exception on window resizing if a `CellTemplate` property is used to assign an in-place editor to a column, and a binding is specified for the editor's `IsVisible` property.
 
 ### Editors
 
-Fixed issue: Incorrect value selection in `SpinEditor` on a double-click and triple-click.
+Fixed issue: Incorrect value selection in [`SpinEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md) on a double-click and triple-click.
 
 ### PropertyGrid
 
@@ -56,16 +56,16 @@ The `FloatWindow.StyleKeyOverride` property's value has been changed from `typeo
 
 ### Ribbon
 
-Fixed issue: NullReferenceException is thrown on Ribbon resizing if the `RibbonPageGroup.IsVisible` property is set to `false`
+Fixed issue: NullReferenceException is thrown on Ribbon resizing if the [`RibbonPageGroup.IsVisible`](../API/Eremex.AvaloniaUI.Controls.Bars/IToolbarItemsHolder/IsVisible.md) property is set to `false`
 
 ## 1.1.130
 
 ### Graphics3DControl
 
-- The default exposure value (`Graphics3DControl.Exposure`) has been changed to 4.5
-- The `Graphics3DControl.EnableMultisampling` property has been replaced with `Graphics3DControl.MultisamplingMode`. The `MultisamplingMode` setting allows you to choose an anti-aliasing (MSAA) quality level.
-- Graphics3DControl now allows you to specify custom light sources. Use the `Lights` or `LightsSource` property to create lights. Supported light types: Point, Directional, CameraPoint and CameraDirectional.
-- You can use the `AllowDefaultLight` property to disable the default light.
+- The default exposure value ([`Graphics3DControl.Exposure`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Exposure.md)) has been changed to 4.5
+- The `Graphics3DControl.EnableMultisampling` property has been replaced with [`Graphics3DControl.MultisamplingMode`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/MultisamplingMode.md). The [`MultisamplingMode`](../API/Eremex.AvaloniaUI.Controls3D/MultisamplingMode.md) setting allows you to choose an anti-aliasing (MSAA) quality level.
+- Graphics3DControl now allows you to specify custom light sources. Use the [`Lights`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Lights.md) or [`LightsSource`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/LightsSource.md) property to create lights. Supported light types: Point, Directional, CameraPoint and CameraDirectional.
+- You can use the [`AllowDefaultLight`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/AllowDefaultLight.md) property to disable the default light.
 - Added support for custom [skyboxes](../controls/graphics3dcontrol/skybox.md).
 - The default skybox has been updated to improve visual rendering.
 - Optimized the default distances to near and far clip planes.
@@ -88,18 +88,18 @@ Fixed issue: NullReferenceException is thrown on Ribbon resizing if the `RibbonP
 
 The following properties have been added:
 
-- `DockManager.OwnsFloatingDockPanes` 
-- `DockManager.OwnsFloatingDocuments`
+- [`DockManager.OwnsFloatingDockPanes`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/OwnsFloatingDockPanes.md) 
+- [`DockManager.OwnsFloatingDocuments`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/OwnsFloatingDocuments.md)
 
-These properties specify whether the `DockManager` automatically sets itself as the owner of floating dock panes and documents.
-If the `OwnsFloatingDockPanes`/`OwnsFloatingDocuments` property is `false`, floating dock panes/documents appear behind the main window when the main window gets focus.
+These properties specify whether the [`DockManager`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) automatically sets itself as the owner of floating dock panes and documents.
+If the [`OwnsFloatingDockPanes`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/OwnsFloatingDockPanes.md)/[`OwnsFloatingDocuments`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/OwnsFloatingDocuments.md) property is `false`, floating dock panes/documents appear behind the main window when the main window gets focus.
 
 ### Graphics3DControl
 
 - Fixed an issue when a drag operation is not stopped when the context menu is invoked.
-- The `Graphics3DControl.Gamma` and `Graphics3DControl.Exposure` properties now accept a value of 0.
-- The `Graphics3DControl.CoordinateSystem` now correctly returns `RightHanded`, which corresponds to the default coordinate system used in the `Graphics3DControl`.
-- The `Graphics3DControl.ZoomFactor` property has been renamed to `Graphics3DControl.ZoomRate`.
+- The [`Graphics3DControl.Gamma`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Gamma.md) and [`Graphics3DControl.Exposure`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Exposure.md) properties now accept a value of 0.
+- The [`Graphics3DControl.CoordinateSystem`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/CoordinateSystem.md) now correctly returns `RightHanded`, which corresponds to the default coordinate system used in the [`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md).
+- The `Graphics3DControl.ZoomFactor` property has been renamed to [`Graphics3DControl.ZoomRate`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/ZoomRate.md).
 - Enhanced the algorithm that calculates the default positions of the Near and Far clipping planes.
 - Added a Skybox feature.
 - Added the object selection and highlighting features.
@@ -119,11 +119,11 @@ If the `OwnsFloatingDockPanes`/`OwnsFloatingDocuments` property is `false`, floa
 
 ### Ribbon and Toolbars
 
-New properties have been added to a `ToolbarCheckItem` object (check button). These properties specify how check buttons are rendered in the Ribbon control and toolbars:
+New properties have been added to a [`ToolbarCheckItem`](../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem.md) object (check button). These properties specify how check buttons are rendered in the Ribbon control and toolbars:
 
 - [`ToolbarCheckItem.CheckBoxStyle`](../controls/ribbon/ribbon-items.md#check-buttons-toolbarcheckitem) — Specifies whether to render the check box as a regular check button, toggle button or radio button.
 
-- `ToolbarCheckItem.CheckBoxAlignment` — Specifies whether to display the check box before or after the text and glyph.
+- [`ToolbarCheckItem.CheckBoxAlignment`](../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem/CheckBoxAlignment.md) — Specifies whether to display the check box before or after the text and glyph.
 
 
 <!-- The new `RibbonPageGroup.ItemLayoutDirectionInParent` attached property allows you to override the default layout mechanism for items in a Ribbon page group. -->
@@ -233,4 +233,4 @@ The dialog supports the Eremex paint themes, and it looks consistent with other 
 
 #### Editors
 
-- ComboBoxEditor — The new `FilterItem` event can be handled to custom filter items. The item filtering mechanisms is invoked when a user types text in the editor provided that the automatic completion feature is disabled. See [ComboBoxEditor - Auto-Filter](../controls/editors/comboboxeditor.md#auto-filter).
+- ComboBoxEditor — The new [`FilterItem`](../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/FilterItem.md) event can be handled to custom filter items. The item filtering mechanisms is invoked when a user types text in the editor provided that the automatic completion feature is disabled. See [ComboBoxEditor - Auto-Filter](../controls/editors/comboboxeditor.md#auto-filter).

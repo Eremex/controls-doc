@@ -2,6 +2,12 @@
 
 Shows standard message boxes — a short piece of text, an icon and a fixed set of buttons — from view model code that must not reference any window type.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public interface IMessageBoxService
 ```

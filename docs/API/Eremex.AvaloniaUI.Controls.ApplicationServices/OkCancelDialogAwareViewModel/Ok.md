@@ -2,13 +2,21 @@
 
 Handles the OK button. The base implementation closes the dialog with Ok; override it to commit the entered data first, and skip the base call to keep the dialog open.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public virtual void Ok(object parameter)
 ```
 
-| parameter | description |
-| --- | --- |
-| parameter | The command parameter supplied by the button. Unused by the base implementation. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| parameter | `object` | The command parameter supplied by the button. Unused by the base implementation. |
 
 ## See Also
 

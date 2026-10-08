@@ -36,7 +36,7 @@ seealso: []
 
 ### Graphics3DControl
 
-- Fixed issue: If a model contains two or more meshes of the `Lines` or `Points` type, Graphics3DControl is not immediately updated when the `MeshGeometry3D.PrimitiveSize` setting is changed.
+- Fixed issue: If a model contains two or more meshes of the `Lines` or `Points` type, Graphics3DControl is not immediately updated when the [`MeshGeometry3D.PrimitiveSize`](../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/PrimitiveSize.md) setting is changed.
 
 ## 1.2.95
 
@@ -48,7 +48,7 @@ The Eremex Controls Library now requires Avalonia framework version 11.3.8 or hi
 
 - Breaking Change - Drag-and-Drop Event Arguments Updated
 
-    The event arguments for the `StartDrag`, `DragOver`, and `Drop` events have been changed. The reason for this breaking change is deprecation of the system `Avalonia.Input.IDataObject` interface. The `Data` argument of these events is now of the `DragDropData` class (it was of the `IDataObject` interface in previous versions). The `DragDropData` class exposes the same members as the deprecated interface.
+    The event arguments for the `StartDrag`, `DragOver`, and `Drop` events have been changed. The reason for this breaking change is deprecation of the system `Avalonia.Input.IDataObject` interface. The `Data` argument of these events is now of the [`DragDropData`](../API/Eremex.AvaloniaUI.Controls.DataControl/DragDropData.md) class (it was of the `IDataObject` interface in previous versions). The [`DragDropData`](../API/Eremex.AvaloniaUI.Controls.DataControl/DragDropData.md) class exposes the same members as the deprecated interface.
 
 - Fixed issue: Cannot change the background of grid rows by applying a style to `DataGridRowControl` objects
 
@@ -107,7 +107,7 @@ See the following topic for more information:
 
 In multiple selection mode, the ComboBoxEditor contains the OK and Cancel buttons in the dropdown window used to confirm the user selection. If these buttons are hidden, the ComboBoxEditor immediately updates its value as a user checks or unchecks items in the dropdown. If these buttons are visible, the editor's value is updated after the OK button is clicked.
 
-Set the editor's `PopupFooterButtons` property to `None` to hide the OK and Cancel buttons.
+Set the editor's [`PopupFooterButtons`](../API/Eremex.AvaloniaUI.Controls.Editors/PopupFooterButtons.md) property to `None` to hide the OK and Cancel buttons.
 
 ## 1.2.77
 
@@ -123,7 +123,7 @@ Hover over any column header to reveal a filter button. Clicking this button ope
 
 - Multi-Column Filtering — You can apply filters to multiple columns simultaneously.
 - Filter Panel — When a filter is applied, a dedicated filter panel appears at the bottom of the control. It displays the current filter criteria and provides options to temporarily disable or clear the filter.
-- Filtering in Code — Use the new `DataControlBase.FilterString` property to [create custom filtration criteria in code](../controls/datagrid/filter-and-search.md#filter-in-code). This property is supported for the Data Grid, Tree List and Tree View controls.
+- Filtering in Code — Use the new [`DataControlBase.FilterString`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) property to [create custom filtration criteria in code](../controls/datagrid/filter-and-search.md#filter-in-code). This property is supported for the Data Grid, Tree List and Tree View controls.
 
 Related topics:
 
@@ -154,9 +154,9 @@ For greater control over serialization settings and to use JSON format, use the 
 
 ### Docking UI
 
-- The new `DockManager.DockItemContextMenuOpening` event allows you to customize built-in context menus for Dock Panes and Document Panes, and to prevent the context menus from being displayed.
+- The new [`DockManager.DockItemContextMenuOpening`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockItemContextMenuOpening.md) event allows you to customize built-in context menus for Dock Panes and Document Panes, and to prevent the context menus from being displayed.
 
-- The `DockManager.Commands` property provides access to all built-in commands (`ICommand` objects) for Dock Panes and Document Panes (for instance, `AutoHide`, `ToggleAutoHide`, `Maximize`, `Minimize`, `NewHorizontalDocumentGroup`, and so on). These commands are invoked from the built-in context menus.
+- The [`DockManager.Commands`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Commands.md) property provides access to all built-in commands (`ICommand` objects) for Dock Panes and Document Panes (for instance, [`AutoHide`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHide.md), `ToggleAutoHide`, `Maximize`, `Minimize`, `NewHorizontalDocumentGroup`, and so on). These commands are invoked from the built-in context menus.
 
 ### Ribbon
 
@@ -228,14 +228,14 @@ Key changes include:
 
 ### TreeView
 
-The new `TreeViewControl.CellWidth` property allows you to control the width of cells in the TreeView control. The default value of the `CellWidth` property is `"*"`, which stretches cells to fill the control's width. 
+The new [`TreeViewControl.CellWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) property allows you to control the width of cells in the TreeView control. The default value of the [`CellWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) property is `"*"`, which stretches cells to fill the control's width. 
 If cell text is too long, it is trimmed at the right edge, and no horizontal scrollbar appears.
 
-Set the `CellWidth` property to `"Auto"` to automatically adjust the data column width based on cell contents. The horizontal scrollbar appears if the maximum cell content width exceeds the control's width.
+Set the [`CellWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) property to `"Auto"` to automatically adjust the data column width based on cell contents. The horizontal scrollbar appears if the maximum cell content width exceeds the control's width.
 
 ### Cartesian Chart
 
-The new Lollipop Series View (`CartesianLollipopSeriesView`) allows you to visualize data using thin lines with markers at the end. The markers indicate individual data points, while the lines connect the markers to a baseline.
+The new Lollipop Series View ([`CartesianLollipopSeriesView`](../API/Eremex.AvaloniaUI.Charts/CartesianLollipopSeriesView.md)) allows you to visualize data using thin lines with markers at the end. The markers indicate individual data points, while the lines connect the markers to a baseline.
 
 ![chart-views-lollipop-series-view](../images/chart-views-lollipop-series-view.png)
 
@@ -246,9 +246,9 @@ The main features include:
 
 #### Breaking Changes
 
-- Point Series Views and descendants — You now need to use the `{0}` syntax instead of `#{0}` syntax when setting the `MarkerImageCss` property. This change aims to enhance the control's usability.
+- Point Series Views and descendants — You now need to use the `{0}` syntax instead of `#{0}` syntax when setting the [`MarkerImageCss`](../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) property. This change aims to enhance the control's usability.
 
-    The `MarkerImageCss` property in Point Series Views (and descendats) supports [CSS-based styling of SVG elements](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style). The `{0}` placeholder allows you to insert the value of the `CartesianLollipopSeriesView.Color` property in the CSS code.
+    The [`MarkerImageCss`](../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) property in Point Series Views (and descendats) supports [CSS-based styling of SVG elements](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style). The `{0}` placeholder allows you to insert the value of the [`CartesianLollipopSeriesView.Color`](../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) property in the CSS code.
 
     In previous versions, you needed to prepend the `{0}` placeholder with `#`:
 
@@ -294,7 +294,7 @@ See [Document Switcher](../controls/docking/document-switcher.md) for more detai
 
 #### Miхed Document Layout
 
-The new `DockManager.AllowFreeDocumentLayout` property allows DocumentGroups to be docked side-by-side horizontally and vertically simultaneously. 
+The new [`DockManager.AllowFreeDocumentLayout`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AllowFreeDocumentLayout.md) property allows DocumentGroups to be docked side-by-side horizontally and vertically simultaneously. 
 
 ![dockmanager-allowfreedocumentlayout](../images/dockmanager-allowfreedocumentlayout.png)
 
@@ -305,7 +305,7 @@ If this option is set to `false` (default), DocumentGroups can be docked side-by
 
 #### Specify Contents for FloatGroup Titles
 
-The new `FloatGroup.WindowTitle` and `FloatGroup.WindowIcon` properties allow you to specify a title and icon for floating groups (floating windows). 
+The new [`FloatGroup.WindowTitle`](../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/WindowTitle.md) and [`FloatGroup.WindowIcon`](../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/WindowIcon.md) properties allow you to specify a title and icon for floating groups (floating windows). 
 See the following topic for more details: [Set a Floating Window's Header and Image](../controls/docking/dock-panes-and-containers.md#set-a-floating-windows-header-and-image).
 
 
@@ -333,7 +333,7 @@ Describe in the main topic + change? the example
 articles\controls\datagrid\examples\how-to-prevent-opening-popups-for-read-only-popup-editors.md
  -->
 
-- Color boxes in the `ColorEditor` and `PopupColorEditor` controls now display additional sections with gray squares to indicate the presence of the alpha channel (transparency) in the color.
+- Color boxes in the [`ColorEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/ColorEditor.md) and [`PopupColorEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) controls now display additional sections with gray squares to indicate the presence of the alpha channel (transparency) in the color.
 
     ![Popupcoloreditor-transparent-value-chessboard](../images/Popupcoloreditor-transparent-value-chessboard.png)
 

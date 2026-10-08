@@ -2,6 +2,12 @@
 
 One choice offered by [`IAppearanceService`](./IAppearanceService.md): a light/dark variant, a colour palette or a layout density.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public interface IAppearanceOption
 ```

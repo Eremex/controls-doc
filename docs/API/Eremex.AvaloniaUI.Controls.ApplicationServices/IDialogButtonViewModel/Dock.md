@@ -2,6 +2,12 @@
 
 The side of the dialog footer the button is docked to.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public DockType Dock { get; }
 ```

@@ -8,25 +8,25 @@ seealso: []
 
 This example creates the following controls:
 
-- A `TreeListControl` control that displays a hierarchical list of _Employee_ objects. Multiple node selection is enabled, which allows you to select (highlight) multiple nodes at one time.
+- A [`TreeListControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md) control that displays a hierarchical list of _Employee_ objects. Multiple node selection is enabled, which allows you to select (highlight) multiple nodes at one time.
 - A text editor that displays the name of the employee currently focused in the TreeList.
 - A list box control that displays names of employees that are selected (highlighted) in the TreeList.
 
 The TreeList is bound to an _Employee_ business object, which represents a [hierarchical data source](../data-binding/binding-to-hierarchical-data.md). It contains the _Subordinates_ collection, whose contents should be displayed as child nodes.
 
-In the example the following main properties are used to set up the `TreeListControl`:
+In the example the following main properties are used to set up the [`TreeListControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md):
 
-- `DataControlBase.ItemsSource` — Specifies the control's data source.
-- `TreeListControl.Columns` — Specifies the collection of TreeList columns bound to the data source's properties.
-- `TreeListControlBase.ChildrenFieldName` — Specifies the name of the field (property) that stores child data in the underlying business object.
-- `TreeListControlBase.HasChildrenFieldName` — Specifies the name of the field (property) that returns `true` if a business object has child data, and `false`, otherwise.
-- `TreeListControlBase.SelectionMode` — Enables multiple node selection.
+- [`DataControlBase.ItemsSource`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ItemsSource.md) — Specifies the control's data source.
+- [`TreeListControl.Columns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Columns.md) — Specifies the collection of TreeList columns bound to the data source's properties.
+- [`TreeListControlBase.ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) — Specifies the name of the field (property) that stores child data in the underlying business object.
+- [`TreeListControlBase.HasChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/HasChildrenFieldName.md) — Specifies the name of the field (property) that returns `true` if a business object has child data, and `false`, otherwise.
+- [`TreeListControlBase.SelectionMode`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectionMode.md) — Enables multiple node selection.
 
-In multiple node selection mode, a user can select (highlight) multiple nodes using the mouse and keyboard. For instance, a user can hold the CTRL key down and click individual nodes to select them. TreeList allows you to access currently selected nodes from the `DataControlBase.SelectedItems` collection. 
+In multiple node selection mode, a user can select (highlight) multiple nodes using the mouse and keyboard. For instance, a user can hold the CTRL key down and click individual nodes to select them. TreeList allows you to access currently selected nodes from the [`DataControlBase.SelectedItems`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectedItems.md) collection. 
 
 The following two controls are used to display information on the currently focused and selected TreeList nodes:
 
-- The text editor displays the name of the focused node's _Employee_ object. The control is bound to the TreeList's `FocusedItem` property.
+- The text editor displays the name of the focused node's _Employee_ object. The control is bound to the TreeList's [`FocusedItem`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) property.
 - The list box displays the names of _Employee_ objects that correspond to the TreeList's selected nodes.
 
 The example locates two TreeList nodes by names, and selects them at application startup.

@@ -6,7 +6,7 @@ seealso: []
 
 # ButtonEditor
 
-The `ButtonEditor` is a text editor that can display multiple built-in regular and toggle buttons. 
+The [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) is a text editor that can display multiple built-in regular and toggle buttons. 
 
 ![buttoneditor](../../images/buttoneditor.png)
 
@@ -21,27 +21,27 @@ The control's main features include:
 
 ## Built-in Buttons
 
-To add a built-in button, add a `ButtonSettings` object to the `ButtonEditor.Buttons` collection. A `ButtonSettings` object contains button display and behavior options.
+To add a built-in button, add a [`ButtonSettings`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonSettings.md) object to the [`ButtonEditor.Buttons`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/Buttons.md) collection. A [`ButtonSettings`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonSettings.md) object contains button display and behavior options.
 
 ### Main Properties and Events
 
-- `ButtonKind` — Specifies whether the button is a regular or toggle button.
-- `Content` — The button's text or custom data. Use the `ContentTemplate` property to specify the template to render the custom data.
-- `Glyph` — The button's image.
-- `GlyphSize` — The button's image size.
-- `IsLeft` — Specifies whether the button is aligned to the left or right (default) edge of the edit box.
-- `Click` — The event that allows you to respond to button clicks.
-- `Command` — Specifies a command raised when the button is clicked.
-- `CommandParameter` — Specifies the command's parameter.
-- `IsChecked` — Gets or sets whether the toggle button is checked.
+- [`ButtonKind`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonKind.md) — Specifies whether the button is a regular or toggle button.
+- [`Content`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonSettings/Content.md) — The button's text or custom data. Use the [`ContentTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonSettings/ContentTemplate.md) property to specify the template to render the custom data.
+- [`Glyph`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonSettings/Glyph.md) — The button's image.
+- [`GlyphSize`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonSettings/GlyphSize.md) — The button's image size.
+- [`IsLeft`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonSettings/IsLeft.md) — Specifies whether the button is aligned to the left or right (default) edge of the edit box.
+- [`Click`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonSettings/Click.md) — The event that allows you to respond to button clicks.
+- [`Command`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonSettings/Command.md) — Specifies a command raised when the button is clicked.
+- [`CommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonSettings/CommandParameter.md) — Specifies the command's parameter.
+- [`IsChecked`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonSettings/IsChecked.md) — Gets or sets whether the toggle button is checked.
 
 
 ### Example - How to add regular and toggle buttons
 
-The following example defines a `ButtonEditor` control with two buttons:
+The following example defines a [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) control with two buttons:
 
 - A regular button associated with the _ResetValue_ command that sets the editor's value to '0'.
-- A check button that toggles the parent editor's `IsTextEditable` setting. Text editing is disabled when the button is checked.
+- A check button that toggles the parent editor's [`IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md) setting. Text editing is disabled when the button is checked.
 
 It is assumed that the project contains the '_dot.svg_', '_locked.svg_' and '_unlocked.svg_' images in the '_Images_' folder. The regular button displays the '_dot.svg_' image. The check button displays either '_locked.svg_' or '_unlocked.svg_' image depending on the check state.
 
@@ -129,17 +129,17 @@ public class LockedStateToSvgNameConverter : MarkupExtension, IValueConverter
 
 ## Clear Value ('x') Button
 
-Set the `ButtonEditor.NullValueButtonPosition` property to `ComponentPlacement.EditorBox` to enable the built-in 'x' button which allows a user to set the current value to null. 
+Set the [`ButtonEditor.NullValueButtonPosition`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/NullValueButtonPosition.md) property to [`ComponentPlacement.EditorBox`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComponentPlacement.md) to enable the built-in 'x' button which allows a user to set the current value to null. 
 
 ![buttoneditor-clearbutton](../../images/buttoneditor-clearbutton.png)
 
 ## Watermark
 
-As all `TextEditor` descendants, the `ButtonEditor` control supports a watermark (a grayed out hint displayed when the editor's value is empty or null). 
+As all [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) descendants, the [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) control supports a watermark (a grayed out hint displayed when the editor's value is empty or null). 
 
 ![buttoneditor-watermark](../../images/buttoneditor-watermark.png)
 
-Use the inherited `TextEditor.Watermark` property to specify a watermark.
+Use the inherited [`TextEditor.Watermark`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Watermark.md) property to specify a watermark.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"

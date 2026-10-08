@@ -2,6 +2,12 @@
 
 The default IWindowsManager implementation. It follows window activation to know which window is active, and disables the windows behind a modal dialog so that only the dialog can be interacted with — using the platform mechanism on Windows and X11 where one is available.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public class WindowManager : IDisposable, IWindowsManager
 ```

@@ -2,6 +2,12 @@
 
 Closes the dialog with Cancel, as if the user had cancelled it. The generated `CloseDialogCommand` property makes this available to bindings.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public void CloseDialog()
 ```

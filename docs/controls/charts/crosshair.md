@@ -2,9 +2,12 @@
 title: Crosshair
 order: 985
 seealso: []
+image: /images/chart-crosshair-one-series.png
 ---
 
 # Crosshair
+
+## What Is a Crosshair?
 
 
 The Cartesian Chart control includes a crosshair that allows you to see exact series values at the current cursor position. Rendered as a pair of horizontal and vertical lines, the crosshair follows the mouse pointer as it hovers over the diagram area. It displays a series label (or multiple labels for multiple series) that shows the series value, and highlights the current _X_ and _Y_ coordinates on the axes.
@@ -12,12 +15,12 @@ The Cartesian Chart control includes a crosshair that allows you to see exact se
 
 ![chart-crosshair-one-series](../../images/chart-crosshair-one-series.png)
 
-To customize display settings of the crosshair, or disable this feature, initialize the `CartesianChart.CrosshairOptions` property with an instance of the `Eremex.AvaloniaUI.Charts.CrosshairOptions` class. Then use the properties exposed by the `CrosshairOptions` class to adjust the crosshair settings as needed.
+To customize display settings of the crosshair, or disable this feature, initialize the [`CartesianChart.CrosshairOptions`](../../API/Eremex.AvaloniaUI.Charts/ChartControl/CrosshairOptions.md) property with an instance of the [`Eremex.AvaloniaUI.Charts.CrosshairOptions`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions.md) class. Then use the properties exposed by the [`CrosshairOptions`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions.md) class to adjust the crosshair settings as needed.
 
 
 ## Disable the Crosshair
 
-The `CrosshairOptions.ShowCrosshair` property allows you to disable the crosshair.
+The [`CrosshairOptions.ShowCrosshair`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ShowCrosshair.md) property allows you to disable the crosshair.
 
 ``` xml
 <mxc:CartesianChart x:Name="chartControl1" >
@@ -30,7 +33,7 @@ The `CrosshairOptions.ShowCrosshair` property allows you to disable the crosshai
 
 ## Disable Individual Lines and Axis Labels of the Crosshair
 
-The `CrosshairOptions.ShowArgumentLine` and `CrosshairOptions.ShowValueLine` properties can be used to hide the vertical and horizontal line of the crosshair, respectively. To prevent crosshair labels from being displayed for the _X_ and _Y_ axes, use the `CrosshairOptions.ShowArgumentLabel` and `CrosshairOptions.ShowValueLabel` properties.
+The [`CrosshairOptions.ShowArgumentLine`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ShowArgumentLine.md) and [`CrosshairOptions.ShowValueLine`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ShowValueLine.md) properties can be used to hide the vertical and horizontal line of the crosshair, respectively. To prevent crosshair labels from being displayed for the _X_ and _Y_ axes, use the [`CrosshairOptions.ShowArgumentLabel`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ShowArgumentLabel.md) and [`CrosshairOptions.ShowValueLabel`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ShowValueLabel.md) properties.
 
 The following example hides the crosshair's vertical line and label for the _X_ axis:
 
@@ -59,7 +62,7 @@ The values displayed in the crosshair labels use default formats initially:
 
 To format these values in a custom manner, create a formatter object and assign it to the `Axis.ScaleOptions.CrosshairLabelFormatter` property. Axis values can be [formatted](cartesian-chart.md#format-axis-labels) similarly (see the `Axis.ScaleOptions.LabelFormatter` property). 
 
-You can implement a custom label formatter based on a function/expression using the `Eremex.AvaloniaUI.Charts.FuncLabelFormatter` object.
+You can implement a custom label formatter based on a function/expression using the [`Eremex.AvaloniaUI.Charts.FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md) object.
 
 The following example creates a formatter object that formats numeric values as currency. This formatter is used to format _Y_ axis values and values in the crosshair series label.
 
@@ -95,13 +98,13 @@ TODO
 
 ### Hide a Series in the Crosshair
 
-A series view's `CrosshairSeriesViewBase.ShowInCrosshair` property specifies the visibility of this series in the crosshair label.
+A series view's [`CrosshairSeriesViewBase.ShowInCrosshair`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) property specifies the visibility of this series in the crosshair label.
 
 <!-- TODO
 Add an image of the crosshair chart label, as many other topics refer to this section
  -->
 
-The following code defines two series (_Interest_ and _Principal_). The `ShowInCrosshair` property is set to `false` for the first series to hide it in the crosshair:
+The following code defines two series (_Interest_ and _Principal_). The [`ShowInCrosshair`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) property is set to `false` for the first series to hide it in the crosshair:
 
 
 ``` xml
@@ -122,7 +125,7 @@ The following code defines two series (_Interest_ and _Principal_). The `ShowInC
 
 ### Horizontal Indent of the Crosshair Series Label
 
-The `CrosshairOptions.SeriesLabelIndent` property allows you to adjust the horizontal distance between the crosshair series label and the crosshair vertical line. The property's default value is 2.
+The [`CrosshairOptions.SeriesLabelIndent`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelIndent.md) property allows you to adjust the horizontal distance between the crosshair series label and the crosshair vertical line. The property's default value is 2.
 
 ![chart-crosshair-serieslabelindent](../../images/chart-crosshair-serieslabelindent.png)
 
@@ -136,17 +139,17 @@ The `CrosshairOptions.SeriesLabelIndent` property allows you to adjust the horiz
 ### Show an Exact or Interpolated Value in Crosshair Series Labels
 
 Cartesian Chart supports series that consist of sorted discrete data points. For these series, the crosshair lines do not always intersect data points, but are most often displayed between them. 
-You can use the `CartesianSortedLineSeriesView.CrosshairMode` property to specify whether the crosshair label snaps to the nearest data point, or displays an interpolated value. The following options are available:
+You can use the [`CartesianSortedLineSeriesView.CrosshairMode`](../../API/Eremex.AvaloniaUI.Charts/CartesianSortedLineSeriesView/CrosshairMode.md) property to specify whether the crosshair label snaps to the nearest data point, or displays an interpolated value. The following options are available:
 
-- `CrosshairSeriesMode.Point` — The crosshair label snaps to the nearest data point and displays its value.
+- [`CrosshairSeriesMode.Point`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesMode.md) — The crosshair label snaps to the nearest data point and displays its value.
   
   ![chart-CrosshairSeriesMode-Point](../../images/chart-CrosshairSeriesMode-Point.png)
 
-- `CrosshairSeriesMode.Interpolate` — The crosshair series label displays an interpolated value of the point at the intersection of the vertical crosshair line with the chart.
+- [`CrosshairSeriesMode.Interpolate`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesMode.md) — The crosshair series label displays an interpolated value of the point at the intersection of the vertical crosshair line with the chart.
 
   ![chart-CrosshairSeriesMode-Interpolate](../../images/chart-CrosshairSeriesMode-Interpolate.png)
 
-The following code shows how to customize the `CrosshairMode` option:
+The following code shows how to customize the [`CrosshairMode`](../../API/Eremex.AvaloniaUI.Charts/CartesianSortedLineSeriesView/CrosshairMode.md) option:
 
 ``` xml
 <mxc:CartesianChart.Series>
@@ -165,22 +168,22 @@ When the Cartesian Chart contains multiple series, the crosshair displays a labe
 
 ![chart-crosshair-two-series ](../../images/chart-crosshair-two-series.png)
 
-The `CrosshairOptions.SeriesLabelMode` property specifies whether and how multiple series labels are combined. The following options are available:
+The [`CrosshairOptions.SeriesLabelMode`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelMode.md) property specifies whether and how multiple series labels are combined. The following options are available:
 
-- `CrosshairSeriesLabelMode.Smart` (default) — Each series displays its own crosshair label. When labels overlap, they are combined in a single label.
+- [`CrosshairSeriesLabelMode.Smart`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md) (default) — Each series displays its own crosshair label. When labels overlap, they are combined in a single label.
   
   ![chart-CrosshairSeriesLabelMode-smart](../../images/chart-CrosshairSeriesLabelMode-smart.png)
 
 
-- `CrosshairSeriesLabelMode.ForEachSeries` — Each series displays its own crosshair label. Labels may overlap in this mode.
+- [`CrosshairSeriesLabelMode.ForEachSeries`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md) — Each series displays its own crosshair label. Labels may overlap in this mode.
   
   ![chart-CrosshairSeriesLabelMode-ForEachSeries](../../images/chart-CrosshairSeriesLabelMode-ForEachSeries.png)
 
-- `CrosshairSeriesLabelMode.ForNearestSeries` — A crosshair label is displayed only for the series nearest the cursor.
+- [`CrosshairSeriesLabelMode.ForNearestSeries`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md) — A crosshair label is displayed only for the series nearest the cursor.
   
   ![chart-CrosshairSeriesLabelMode-ForNearestSeries](../../images/chart-CrosshairSeriesLabelMode-ForNearestSeries.png)
 
-- `CrosshairSeriesLabelMode.OneForAllSeries` — The crosshair displays a single label that combines information from all series.
+- [`CrosshairSeriesLabelMode.OneForAllSeries`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md) — The crosshair displays a single label that combines information from all series.
 
   ![chart-CrosshairSeriesLabelMode-OneForAllSeries](../../images/chart-CrosshairSeriesLabelMode-OneForAllSeries.png)
 
@@ -194,19 +197,19 @@ The following example enables a single crosshair label when multiple series are 
 
 #### Series Sorting
 
-When multiple series are combined in a single crosshair label, you can use the `CrosshairOptions.SeriesLabelItemSortMode` property to specify the display order of the series in the label. This property can be set to the following values:
+When multiple series are combined in a single crosshair label, you can use the [`CrosshairOptions.SeriesLabelItemSortMode`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelItemSortMode.md) property to specify the display order of the series in the label. This property can be set to the following values:
 
-- `CrosshairSeriesLabelItemSortMode.BySeries` (default) — Sorts series by the order in which these series are added to the `CartesianChart.Series` collection.
+- [`CrosshairSeriesLabelItemSortMode.BySeries`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelItemSortMode.md) (default) — Sorts series by the order in which these series are added to the [`CartesianChart.Series`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) collection.
 
     ![chart-CrosshairSeriesLabelItemSortMode-BySeries](../../images/chart-CrosshairSeriesLabelItemSortMode-BySeries.png)
 
-- `CrosshairSeriesLabelItemSortMode.ByValue` — Sorts series by their _Y_ values.
+- [`CrosshairSeriesLabelItemSortMode.ByValue`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelItemSortMode.md) — Sorts series by their _Y_ values.
 
     ![chart-CrosshairSeriesLabelItemSortMode-ByValue](../../images/chart-CrosshairSeriesLabelItemSortMode-ByValue.png)
 
 ## Show Delay
 
-Use the `CrosshairOptions.SeriesLabelShowDelay` property to specify the delay (in milliseconds) before a crosshair series label is displayed.
+Use the [`CrosshairOptions.SeriesLabelShowDelay`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelShowDelay.md) property to specify the delay (in milliseconds) before a crosshair series label is displayed.
 
 ## Include Only Series Near the Cursor
 
@@ -214,32 +217,32 @@ By default, linear charts display crosshair labels for all series that have data
 
 ![chart-Crosshair-MaxPickDistance-Disabled](../../images/chart-Crosshair-MaxPickDistance-Disabled.png)
 
-The chart control allows you to limit crosshair labels to series near the cursor. Use the `CrosshairOptions.MaxPickDistance` property to specify the range within which to search for data points to include in crosshair labels. For regular linear charts, the `MaxPickDistance` property specifies the maximum vertical distance (in pixels) upward or downward.
+The chart control allows you to limit crosshair labels to series near the cursor. Use the [`CrosshairOptions.MaxPickDistance`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/MaxPickDistance.md) property to specify the range within which to search for data points to include in crosshair labels. For regular linear charts, the [`MaxPickDistance`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/MaxPickDistance.md) property specifies the maximum vertical distance (in pixels) upward or downward.
 
 ![chart-Crosshair-MaxPickDistance](../../images/chart-Crosshair-MaxPickDistance.png)
 
-In the image above, only data points from the _Series 1_ and _Series 3_ lie within the range limited by a custom `MaxPickDistance` value. The data point from the _Series 2_ (red line) is beyond this range and is not shown.
+In the image above, only data points from the _Series 1_ and _Series 3_ lie within the range limited by a custom [`MaxPickDistance`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/MaxPickDistance.md) value. The data point from the _Series 2_ (red line) is beyond this range and is not shown.
 
 
 
-For [Scatter Line views](cartesian-series-views/scatter-line-series-view.md), the `MaxPickDistance` property specifies the radius of a circular area around the cursor within which to search for data points.
+For [Scatter Line views](cartesian-series-views/scatter-line-series-view.md), the [`MaxPickDistance`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/MaxPickDistance.md) property specifies the radius of a circular area around the cursor within which to search for data points.
 
 !!! Tip
 
-    To display a crosshair label for a single series nearest the cursor, set the `CrosshairOptions.SeriesLabelMode` property to `ForNearestSeries`. See [Label Display Mode](#label-display-mode).
+    To display a crosshair label for a single series nearest the cursor, set the [`CrosshairOptions.SeriesLabelMode`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelMode.md) property to `ForNearestSeries`. See [Label Display Mode](#label-display-mode).
 
 
 
 ## Customize Crosshair Lines and Labels on the _X_ and _Y_ Axes
 
-A chart control's `CrosshairOptions` object contains a set of properties that allow you to change the visual settings of crosshair lines, _X_ axis label, and _Y_ axis label.
+A chart control's [`CrosshairOptions`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions.md) object contains a set of properties that allow you to change the visual settings of crosshair lines, _X_ axis label, and _Y_ axis label.
 
-- `ArgumentColor` — The background color of the crosshair _X_ axis labels.
-- `ArgumentLineThickness` — The thickness of the crosshair argument line.
-- `ArgumentTextColor` — The foreground (text) color of the crosshair _X_ axis labels.
-- `ValueColor` — The background color of the crosshair _Y_ axis labels.
-- `ValueLineThickness` — The thickness of the crosshair value line.
-- `ValueTextColor` — The foreground (text) color of the crosshair _Y_ axis labels.
+- [`ArgumentColor`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ArgumentColor.md) — The background color of the crosshair _X_ axis labels.
+- [`ArgumentLineThickness`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ArgumentLineThickness.md) — The thickness of the crosshair argument line.
+- [`ArgumentTextColor`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ArgumentTextColor.md) — The foreground (text) color of the crosshair _X_ axis labels.
+- [`ValueColor`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ValueColor.md) — The background color of the crosshair _Y_ axis labels.
+- [`ValueLineThickness`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ValueLineThickness.md) — The thickness of the crosshair value line.
+- [`ValueTextColor`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ValueTextColor.md) — The foreground (text) color of the crosshair _Y_ axis labels.
 
 The following XAML code demonstrates how to customize these settings for a sample chart control. The crosshair line thickness is set to 3. The crosshair labels have a gray background, but different text colors: yellow for the _X_-axis labels and cyan for the _Y_-axis labels.
 

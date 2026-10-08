@@ -16,7 +16,7 @@ The ribbon command layout determines the arrangement of commands in the Ribbon b
 - Page group headers are visible
 - Groups cannot be partially collapsed when the Ribbon is resized
 - Support for inline galleries
-- The default size of small icons is `16x16`. You can use the `RibbonControl.SmallGlyphSize` property to change the size of small icons. Large icons are twice the size of small icons.
+- The default size of small icons is `16x16`. You can use the [`RibbonControl.SmallGlyphSize`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/SmallGlyphSize.md) property to change the size of small icons. Large icons are twice the size of small icons.
 - When the Ribbon is resized, the [adaptive layout feature](ribbon-items.md#adaptive-glyph-size-in-the-classic-command-layout) adjusts the size of icons — from large to small with text to small glyphs, and backwards.
 
   ![ribbon-adaptive-layout-change-size-of-icons](../../images/ribbon-adaptive-layout-change-size-of-icons.png)
@@ -29,7 +29,7 @@ The ribbon command layout determines the arrangement of commands in the Ribbon b
 - Page group headers are hidden
 - Groups can be partially collapsed when the Ribbon is resized. Collapsed buttons are accessible from the group's dropdown menu.
 - Galleries are displayed in dropdown menus
-- The default size of icons in the Simplified Command Layout is `22x22`. Use the `RibbonControl.GlyphSizeInSimplifiedLayout` property to specify a custom icon size.
+- The default size of icons in the Simplified Command Layout is `22x22`. Use the [`RibbonControl.GlyphSizeInSimplifiedLayout`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/GlyphSizeInSimplifiedLayout.md) property to specify a custom icon size.
 
     ``` xml
     <mxr:RibbonControl GlyphSizeInSimplifiedLayout="32">
@@ -43,9 +43,9 @@ A user can switch between the Classic and Simplified views at runtime by clickin
 
 ![ribbon-view-selection-button-command](../../images/ribbon-view-selection-button-command.png)
 
-Set the `RibbonControl.IsCommandLayoutSelectionButtonVisible` option to `false` to hide this button.
+Set the [`RibbonControl.IsCommandLayoutSelectionButtonVisible`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/IsCommandLayoutSelectionButtonVisible.md) option to `false` to hide this button.
 
-The `RibbonControl.CommandLayout` property allows you to specify the command layout in code.
+The [`RibbonControl.CommandLayout`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/CommandLayout.md) property allows you to specify the command layout in code.
 
 ``` xml
 <mxr:RibbonControl Name="ribbon" CommandLayout="Simplified">

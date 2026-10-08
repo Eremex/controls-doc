@@ -20,8 +20,8 @@ A user can also change a column's sort settings from a column header's context m
 
 Use the following properties to prevent a user from sorting data:
 
-- Set `TreeListControl.AllowSorting` to `false` to prevent a user from sorting against any column.
-- Set `ColumnBase.AllowSorting` to `false` to prevent a user from sorting against a specific column.
+- Set [`TreeListControl.AllowSorting`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowSorting.md) to `false` to prevent a user from sorting against any column.
+- Set [`ColumnBase.AllowSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowSorting.md) to `false` to prevent a user from sorting against a specific column.
 
 These properties do not prevent you from sorting data in code.
 
@@ -29,7 +29,7 @@ The TreeView control does not have features to sort data from the UI. You can so
 
 ## Alphanumeric Sorting
 
-For columns that display text in a TreeListControl and TreeViewControl, you can use the inherited `DataControlBase.TextSortMode` property to choose between alphabetical and alphanumeric sorting.
+For columns that display text in a TreeListControl and TreeViewControl, you can use the inherited [`DataControlBase.TextSortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/TextSortMode.md) property to choose between alphabetical and alphanumeric sorting.
 
 - `Alphabetical` Sort (default): This mode compares strings character by character. If the text contains numbers, the sorting algorithm treats them as individual characters, but not as numbers. For example:
 
@@ -49,7 +49,7 @@ For columns that display text in a TreeListControl and TreeViewControl, you can 
                         />
     ```
 
-The `DataControlBase.TextSortMode` property affects sorting for all columns that display text values.
+The [`DataControlBase.TextSortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/TextSortMode.md) property affects sorting for all columns that display text values.
 
 The following image demonstrates more examples that compare alphabetical and alphanumeric sort modes:
 
@@ -63,14 +63,14 @@ You can sort TreeList's data against one or multiple columns. When you sort data
 
 Use the following properties to sort data by a column:
 
-- Set the `ColumnBase.SortDirection` property to `Ascending` or `Descending`. This property specifies the sort order of the column's data. 
+- Set the [`ColumnBase.SortDirection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortDirection.md) property to `Ascending` or `Descending`. This property specifies the sort order of the column's data. 
 
-- Set the `ColumnBase.SortIndex` property to a non-negative value to sort data against the column in ascending order. The `ColumnBase.SortIndex` property specifies the column's position among sorted columns. 
+- Set the [`ColumnBase.SortIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortIndex.md) property to a non-negative value to sort data against the column in ascending order. The [`ColumnBase.SortIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortIndex.md) property specifies the column's position among sorted columns. 
 
 Do one of the following to clear sorting:
 
-- Set a column's `SortDirection` property to `null` to clear sorting for this column. 
-- Call the control's inherited `DataControlBase.ClearSorting` method to remove sorting applied to all columns.
+- Set a column's [`SortDirection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortDirection.md) property to `null` to clear sorting for this column. 
+- Call the control's inherited [`DataControlBase.ClearSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ClearSorting.md) method to remove sorting applied to all columns.
 
 The following code clears sorting and then sorts data against two columns:
 
@@ -83,7 +83,7 @@ treeListColumn1.SortDirection = ListSortDirection.Ascending;
 treeListColumn3.SortDirection = ListSortDirection.Descending;
 ```
 
-You can wrap your code with the `BeginDataUpdate` and `EndDataUpdate` methods to prevent superfluous updates when changing the control's multiple settings (including sort settings).
+You can wrap your code with the [`BeginDataUpdate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/BeginDataUpdate.md) and [`EndDataUpdate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/EndDataUpdate.md) methods to prevent superfluous updates when changing the control's multiple settings (including sort settings).
 
 ``` csharp
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -99,7 +99,7 @@ treeList.EndDataUpdate();
 
 ## Sort in Code (TreeView)
 
-To sort data in the TreeView, use the `SortDirection` property of your `TreeViewControl` object. Set this property to `Ascending` or `Descending` to sort data in required order. 
+To sort data in the TreeView, use the [`SortDirection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortDirection.md) property of your [`TreeViewControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md) object. Set this property to `Ascending` or `Descending` to sort data in required order. 
 
 ``` csharp
 treeViewControl1.SortDirection = ListSortDirection.Ascending;
@@ -107,8 +107,8 @@ treeViewControl1.SortDirection = ListSortDirection.Ascending;
 
 Do one of the following to clear sorting:
 
-- Set the `SortDirection` property to `null`. 
-- Call the control's inherited `DataControlBase.ClearSorting` method.
+- Set the [`SortDirection`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/SortDirection.md) property to `null`. 
+- Call the control's inherited [`DataControlBase.ClearSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ClearSorting.md) method.
 
 
 ## Sortable Columns and Sort Mode (TreeList and TreeView)
@@ -119,32 +119,32 @@ The TreeList and TreeView controls can sort columns by edit values, display valu
 - Sorting by display text — Columns with an embedded ComboBoxEditor.
 - No sorting — Columns bound to objects that do not implement the `IComparable` interface. For instance, image data types do not implement this interface, thus no sorting is available for corresponding columns, by default. See the [Custom Sorting](#custom-sorting) section below for information, on how to forcibly sort these columns.
 
-The `ColumnBase.SortMode` property (in the TreeList) and `TreeViewControl.SortMode` property (in the TreeView) allows you to change default sort mode. The following options are available:
+The [`ColumnBase.SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortMode.md) property (in the TreeList) and [`TreeViewControl.SortMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/SortMode.md) property (in the TreeView) allows you to change default sort mode. The following options are available:
 
-- `SortMode.Value` — Sort by cell edit values.
-- `SortMode.DisplayText` — Sort by cell display text.
-- `SortMode.Custom` — Custom sorting. Set the `SortMode` property to `Custom`, and then handle the `TreeListControl.CustomColumnSort`/`TreeViewControl.CustomSort` event to implement a custom sorting routine. See [Custom Sorting](#custom-sorting).
+- [`SortMode.Value`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) — Sort by cell edit values.
+- [`SortMode.DisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) — Sort by cell display text.
+- [`SortMode.Custom`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) — Custom sorting. Set the [`SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) property to `Custom`, and then handle the [`TreeListControl.CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnSort.md)/[`TreeViewControl.CustomSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CustomSort.md) event to implement a custom sorting routine. See [Custom Sorting](#custom-sorting).
 
 ### Custom Sorting
 
-The `CustomColumnSort`/`CustomSort` event allows you to implement custom sorting logic. Set the `ColumnBase.SortMode` property (in the TreeList) and `TreeViewControl.SortMode` property (in the TreeView) to `Custom` to enable this event.
+The [`CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnSort.md)/[`CustomSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CustomSort.md) event allows you to implement custom sorting logic. Set the [`ColumnBase.SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortMode.md) property (in the TreeList) and [`TreeViewControl.SortMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/SortMode.md) property (in the TreeView) to `Custom` to enable this event.
 
 If a column's bound data type does not implement the `IComparable` interface (for instance, an image data type), the TreeList/TreeView control defaults to preventing sorting for this column. You can, however, enable sorting for this column, as follows:
 
-- TreeList: Set the column's `AllowSorting` property to `true` (this property's default value is `null`).
-- TreeList and TreeView: Set the `SortMode` property to `Custom`.
-- TreeList and TreeView: Handle the `CustomColumnSort`/`CustomSort` event to implement custom sorting.
+- TreeList: Set the column's [`AllowSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowSorting.md) property to `true` (this property's default value is `null`).
+- TreeList and TreeView: Set the [`SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) property to `Custom`.
+- TreeList and TreeView: Handle the [`CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnSort.md)/[`CustomSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CustomSort.md) event to implement custom sorting.
 
-When you handle the `CustomColumnSort`/`CustomSort` event, you should compare two nodes specified in the event arguments. Assign the result of the comparison to the `Result` event parameter as follows:
+When you handle the [`CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnSort.md)/[`CustomSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CustomSort.md) event, you should compare two nodes specified in the event arguments. Assign the result of the comparison to the [`Result`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomSortEventArgs/Result.md) event parameter as follows:
 
-- Set `Result` to `-1` if the first node should be displayed above the second node when data is sorted in ascending order. 
+- Set [`Result`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomSortEventArgs/Result.md) to `-1` if the first node should be displayed above the second node when data is sorted in ascending order. 
 
-- Set `Result` to `1` if the first node should be displayed below the second node when data is sorted in ascending order. 
+- Set [`Result`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomSortEventArgs/Result.md) to `1` if the first node should be displayed below the second node when data is sorted in ascending order. 
 
- - Set `Result` to `0` if the two nodes are equal. 
+ - Set [`Result`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomSortEventArgs/Result.md) to `0` if the two nodes are equal. 
  
 
-The following example handles the `TreeListControl.CustomColumnSort` event to sort data in the "_FileName_" column in a custom manner. The "_FileName_" column stores file names in the standard "_filename.ext_" format. The custom sorting routine sorts file names by their extensions.
+The following example handles the [`TreeListControl.CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnSort.md) event to sort data in the "_FileName_" column in a custom manner. The "_FileName_" column stores file names in the standard "_filename.ext_" format. The custom sorting routine sorts file names by their extensions.
 
 ``` csharp
 <mxtl:TreeListControl Name="treeList" CustomColumnSort="TreeList_CustomColumnSort">
@@ -180,10 +180,10 @@ string extractFileExtension(string fileName)
 
 Handle the following events to perform custom actions when data is sorted:
 
-- `DataControlBase.StartSorting` — Fires when data is about to be sorted.
-- `DataControlBase.EndSorting` — Fires when data sorting is complete.
+- [`DataControlBase.StartSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/StartSorting.md) — Fires when data is about to be sorted.
+- [`DataControlBase.EndSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/EndSorting.md) — Fires when data sorting is complete.
 
 ## Additional API
 
-- `TreeListControlBase.AutoScrollOnSorting` — Specifies whether the control automatically scrolls the view port to make the focused node visible when data is sorted.
+- [`TreeListControlBase.AutoScrollOnSorting`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/AutoScrollOnSorting.md) — Specifies whether the control automatically scrolls the view port to make the focused node visible when data is sorted.
 

@@ -2,18 +2,28 @@
 
 Creates the default OK button, captioned in the current UI language and activated by Enter.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public static IDialogButtonViewModel CreateOk(ICommand command, object? commandParameter = null)
 ```
 
-| parameter | description |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| command | `ICommand` | The command invoked when the button is pressed. |
+| commandParameter | `object?` | The value passed to *command*. |
+
+## Returns
+
+| type | description |
 | --- | --- |
-| command | The command invoked when the button is pressed. |
-| commandParameter | The value passed to *command*. |
-
-## Return Value
-
-The button view model.
+| `IDialogButtonViewModel` | The button view model. |
 
 ## See Also
 
@@ -26,20 +36,30 @@ The button view model.
 
 Creates the default button with a caption of your own, styled like OK and activated by Enter. Use it when the confirming action deserves a more specific name, such as "Save" or "Install".
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public static IDialogButtonViewModel CreateOk(ICommand command, string content, 
     object? commandParameter = null)
 ```
 
-| parameter | description |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| command | `ICommand` | The command invoked when the button is pressed. |
+| content | `string` | The button caption. It is used as given, not localized. |
+| commandParameter | `object?` | The value passed to *command*. |
+
+## Returns
+
+| type | description |
 | --- | --- |
-| command | The command invoked when the button is pressed. |
-| content | The button caption. It is used as given, not localized. |
-| commandParameter | The value passed to *command*. |
-
-## Return Value
-
-The button view model.
+| `IDialogButtonViewModel` | The button view model. |
 
 ## See Also
 

@@ -13,9 +13,9 @@ First, we'll create a layout of docked panels, and then show how to define auto-
 
 This example demonstrates dock items that constitute a Docking UI:
 
-- Dock Pane (`DockPane`) - A panel that can be docked, made floating, auto-hidden, and combined in a tabbed group (container).
+- Dock Pane ([`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md)) - A panel that can be docked, made floating, auto-hidden, and combined in a tabbed group (container).
 
-- Document Pane (`DocumentPane`) - A container for the main content of your window. You can use Document Panes to implement a tabbed MDI (Multiple Document Interface).
+- Document Pane ([`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md)) - A container for the main content of your window. You can use Document Panes to implement a tabbed MDI (Multiple Document Interface).
 
 
 
@@ -23,11 +23,11 @@ To build a layout of docked panels shown above, individual panels need to be com
 
 The following containers are supported by the Docking Library:
 
-- `DockGroup` (split container) — Displays dock items (Dock Panes and containers) side by side, either horizontally or vertically. Child dock items are delimited by splitters that enable panel resizing.
-- `TabbedGroup` (tab container) — Displays Dock Panes as tabs.
-- `DocumentGroup` (tab container) — Displays Document Panes as tabs.
-- `AutoHideGroup` — Child Dock Panes of this container feature the automatic hiding functionality. An auto-hidden panel appears when a user clicks the panel's header. 
-- `FloatGroup` — Displays dock items in a floating window.
+- [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) (split container) — Displays dock items (Dock Panes and containers) side by side, either horizontally or vertically. Child dock items are delimited by splitters that enable panel resizing.
+- [`TabbedGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup.md) (tab container) — Displays Dock Panes as tabs.
+- [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) (tab container) — Displays Document Panes as tabs.
+- [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md) — Child Dock Panes of this container feature the automatic hiding functionality. An auto-hidden panel appears when a user clicks the panel's header. 
+- [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md) — Displays dock items in a floating window.
 
 ![docking-ui-dockpanes-and-documentpanes-get-started](../../images/docking-ui-dockpanes-and-documentpanes-get-started.png)
 
@@ -35,7 +35,7 @@ The following containers are supported by the Docking Library:
 ## 1. Create a DockManager Component
 
 Create a [new Avalonia UI application with Eremex controls](../../get-started/index.md).
-Open the MainWindow.axaml file, and define a `DockManager` component in XAML. 
+Open the MainWindow.axaml file, and define a [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) component in XAML. 
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -44,12 +44,12 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 </mxd:DockManager>
 ```
 
-`DockManager` is a control that manages the creation of dock items (Dock Panes and Document Panes), maintains runtime operations on dock items, provides context menus, and performs Docking UI serialization and deserialization.
+[`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) is a control that manages the creation of dock items (Dock Panes and Document Panes), maintains runtime operations on dock items, provides context menus, and performs Docking UI serialization and deserialization.
 
 
 ## 2. Define a Root Group
 
-Add a `DockGroup` object as a child of the `DockManager` control. This object is used to initialize the root dock group (the `DockManager.Root` property, which is marked with the `ContentAttribute` attribute).
+Add a [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) object as a child of the [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) control. This object is used to initialize the root dock group (the [`DockManager.Root`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Root.md) property, which is marked with the `ContentAttribute` attribute).
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -65,7 +65,7 @@ A root dock group is a container for all panels and documents in the docked stat
 
 ## 3. Add the 'Properties' and 'Debug' Panels
 
-Add the 'Properties' and 'Debug' `DockPane` objects to the root group.
+Add the 'Properties' and 'Debug' [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) objects to the root group.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -78,14 +78,14 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 </mxd:DockManager>
 ```
 
-The `DockGroup` container arranges the panels horizontally, by default. You can change the direction to vertical with the `DockGroup.Orientation` property.
+The [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) container arranges the panels horizontally, by default. You can change the direction to vertical with the [`DockGroup.Orientation`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Orientation.md) property.
 
 ![docking-get-started-30-properties-debug-in-split-container](../../images/docking-get-started-30-properties-debug-in-split-container.png)
 
 
 ## 4. Combine Panels in a Tab Container.
 
-Wrap the 'Properties' and 'Debug' panels in a `TabbedGroup` container. This container presents its children as tabs.
+Wrap the 'Properties' and 'Debug' panels in a [`TabbedGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup.md) container. This container presents its children as tabs.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -105,7 +105,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 ## 5. Add the 'Error List' Panel
 
-Define the 'Error List' panel before the `TabbedGroup` object. 
+Define the 'Error List' panel before the [`TabbedGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup.md) object. 
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -121,13 +121,13 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 </mxd:DockManager>
 ```
 
-The `DockGroup` container arranges the 'Error List' pane and the `TabbedGroup` in a horizontal direction.
+The [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) container arranges the 'Error List' pane and the [`TabbedGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup.md) in a horizontal direction.
 
 ![docking-get-started-50-errors-in-split-container](../../images/docking-get-started-50-errors-in-split-container.png)
 
 ## 6. Add a Document Group above the 'Error List' Panel
 
-To display a `DocumentGroup` at the top of the 'Error List' panel, first create a new `DockGroup` container with the vertical orientation. Then place the 'Error List' panel and a new `DocumentGroup` object to this container.
+To display a [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) at the top of the 'Error List' panel, first create a new [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) container with the vertical orientation. Then place the 'Error List' panel and a new [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) object to this container.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -150,7 +150,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 ## 7. Add the 'Output' Panel
 
-The 'Output' panel has to be displayed to the right of the 'Error List' panel. Currently, the 'Error List' panel belongs to a container that arranges its children vertically. Thus, we need to aggregate the 'Error List' and 'Output' panels into a new container (`DockGroup`) with the horizontal orientation.
+The 'Output' panel has to be displayed to the right of the 'Error List' panel. Currently, the 'Error List' panel belongs to a container that arranges its children vertically. Thus, we need to aggregate the 'Error List' and 'Output' panels into a new container ([`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md)) with the horizontal orientation.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -177,7 +177,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 ## 8. Populate a Document Group with Tabs
 
-Add two `DocumentPane` objects to the `DocumentGroup` container. `DocumentGroup` displays its children as tabs thus implementing a tabbed MDI.
+Add two [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) objects to the [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) container. [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) displays its children as tabs thus implementing a tabbed MDI.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -209,13 +209,13 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 ## 9. Set Size for Docked Panels
 
-The space of any split container (`DockGroup`) is divided equally between its children, by default. You can use the `DockWidth` and `DockHeight` properties to set custom size for the container's child dock items. These properties are of the `Avalonia.Controls.GridLength` type, so you can set these properties to the following values:
+The space of any split container ([`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md)) is divided equally between its children, by default. You can use the [`DockWidth`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockWidth.md) and [`DockHeight`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockHeight.md) properties to set custom size for the container's child dock items. These properties are of the `Avalonia.Controls.GridLength` type, so you can set these properties to the following values:
 
 - A number of pixels (absolute values).
 - A weighted proportion of available space, using the 'star (`*`) sizing' notation. For instance, `3*`.
 - 'Auto' value — The item is automatically resized to fit its content.
 
-The code below uses the `DockWidth` and `DockHeight` properties to set proportional size for the panels and containers.
+The code below uses the [`DockWidth`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockWidth.md) and [`DockHeight`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockHeight.md) properties to set proportional size for the panels and containers.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -247,7 +247,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 An auto-hidden panel is automatically collapsed when it loses focus. Only headers are displayed for collapsed auto-hidden panels. 
 
-To create an auto-hidden panel in XAML, add an `AutoHideGroup` container to the `DockManager.AutoHideGroups` collection, and then define a `DockPane` panel in the `AutoHideGroup` container.
+To create an auto-hidden panel in XAML, add an [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md) container to the [`DockManager.AutoHideGroups`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHideGroups.md) collection, and then define a [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) panel in the [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md) container.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -262,7 +262,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 </mxd:DockManager>
 ```
 
-The `AutoHideGroup.Dock` property allows you to specify the edge at which the auto-hide container is displayed.
+The [`AutoHideGroup.Dock`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup/Dock.md) property allows you to specify the edge at which the auto-hide container is displayed.
 
 ![docking-get-started-auto-hide-container](../../images/docking-get-started-auto-hide-container.gif)
 
@@ -271,7 +271,7 @@ The `AutoHideGroup.Dock` property allows you to specify the edge at which the au
 
 A user can drag a panel with the mouse from its docked state to make the panel floating. 
 
-You can also define a floating panel in XAML. For this purpose, add a `FloatGroup` container to the `DockManager.FloatGroups` collection, and then add a `DockPane` panel to the `FloatGroup` container.
+You can also define a floating panel in XAML. For this purpose, add a [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md) container to the [`DockManager.FloatGroups`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/FloatGroups.md) collection, and then add a [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) panel to the [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md) container.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -288,8 +288,8 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 ![docking-get-started-floating-panel](../../images/docking-get-started-floating-panel.png)
 
-Use the `FloatWidth` and `FloatHeight` properties to specify the floating window's size. 
-You can also apply the `FloatGroup.FloatWidth` and `FloatGroup.FloatHeight` attached properties to any panel, even in the docked state. These settings will specify the initial floating size when the panel is made floating.
+Use the [`FloatWidth`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatWidth.md) and [`FloatHeight`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatHeight.md) properties to specify the floating window's size. 
+You can also apply the [`FloatGroup.FloatWidth`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatWidth.md) and [`FloatGroup.FloatHeight`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatHeight.md) attached properties to any panel, even in the docked state. These settings will specify the initial floating size when the panel is made floating.
 
 
 
@@ -316,7 +316,7 @@ The following XAML initializes captions for the 'Properties' and 'Debug' panels,
 
 ## 13. Specify Panel Contents
 
-Use the `DockPane.Content` property to define the content for Dock Panes and Document Panes. In XAML, you can define a panel's content between the start and end __&lt;DockPane&gt;__ and __&lt;DocumentPane&gt;__ tags.
+Use the [`DockPane.Content`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/Content.md) property to define the content for Dock Panes and Document Panes. In XAML, you can define a panel's content between the start and end __&lt;DockPane&gt;__ and __&lt;DocumentPane&gt;__ tags.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"

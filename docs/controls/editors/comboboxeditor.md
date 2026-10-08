@@ -6,7 +6,7 @@ seealso: []
 
 # ComboBoxEditor
 
-The `ComboBoxEditor` control is a control that displays a list of items in its dropdown window. A user can select one or multiple items at a time according to the control's selection mode.
+The [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) control is a control that displays a list of items in its dropdown window. A user can select one or multiple items at a time according to the control's selection mode.
 
 ![comboboxeditor-various](../../images/comboboxeditor-various.png)
 
@@ -21,17 +21,17 @@ The control's main features include:
 
 ## Specify the Items Source
 
-Use the `ComboBoxEditor.ItemsSource` property to specify a list of items to be displayed in the dropdown. You can bind the editor to a list of strings, list of business objects, or an enumeration type.
+Use the [`ComboBoxEditor.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ItemsSource.md) property to specify a list of items to be displayed in the dropdown. You can bind the editor to a list of strings, list of business objects, or an enumeration type.
 
 ## Bind to a List of Strings
 
 The simplest items source is a list of strings.
 
 A user can select one or multiple values according to the current selection mode (see below).
-If text editing is enabled in the edit box (see `IsTextEditable`), a user can enter text that does not match any item in the dropdown list.
+If text editing is enabled in the edit box (see [`IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md)), a user can enter text that does not match any item in the dropdown list.
 
 ### Example - How to bind to a String list
-The following example populates `ComboBoxEditor` with a list of strings.
+The following example populates [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) with a list of strings.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -56,19 +56,19 @@ public class MyItemList : List<string>
 
 ## Bind to a List of Business Objects
 
-You can bind a `ComboBoxEditor` to a list of business objects. In this case, the control's default behavior is as follows:
+You can bind a [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) to a list of business objects. In this case, the control's default behavior is as follows:
 
 - A business object's `ToString` method specifies the default text representation of items.
-- When you select an item, the editor's value (`ComboBoxEditor.EditorValue`) is set to the corresponding business object.
+- When you select an item, the editor's value ([`ComboBoxEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)) is set to the corresponding business object.
 
 A typical business object has multiple properties. You can specify which business object properties supply item display text and edit values. Use the following API members for this purpose:
 
-- `ComboBoxEditor.DisplayMember` - Gets or sets the name of the business object's property that specifies item display text. 
-- `ComboBoxEditor.ValueMember` - Gets or sets the name of the business object's property that specifies item values. When you select an item, the editor's value (`ComboBoxEditor.EditorValue`) is set to the item's `ValueMember` property value. 
+- [`ComboBoxEditor.DisplayMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/DisplayMember.md) - Gets or sets the name of the business object's property that specifies item display text. 
+- [`ComboBoxEditor.ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ValueMember.md) - Gets or sets the name of the business object's property that specifies item values. When you select an item, the editor's value ([`ComboBoxEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)) is set to the item's [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ValueMember.md) property value. 
 
 ### Example - How to bind to a Business Object list
 
-The following example binds a `ComboBoxEditor` to a list of _Product_ business objects. The _Product.ProductName_ property specifies item display text. The _Product.ProductID_ property specifies item values.
+The following example binds a [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) to a list of _Product_ business objects. The _Product.ProductName_ property specifies item display text. The _Product.ProductID_ property specifies item values.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -135,6 +135,7 @@ Use the following `EnumItemsSource` properties to set up binding to an enumerati
 - `EnumItemsSource.ImageSize` — Specifies the display size of images assigned to enumeration members.
 - `EnumItemsSource.NameToDisplayTextConverter` — Allows you to assign a converter that retrieves custom display text for enumeration members.
 - `EnumItemsSource.NameToDescriptionConverter` — Allows you to assign a converter that retrieves enumeration member descriptions, which are displayed as tooltips when a user hovers the mouse over dropdown items.
+- `EnumItemsSource.NameToImageConverter` — Allows you to assign a converter that retrieves images associated with enumeration members. See an example of using `NameToImageConverter` in the [Controls Demo](../../index.md#demo-application) application.
 
 ### Example - How to display enumeration values, and use attributes to supply display text and images for enumeration members.
 
@@ -281,26 +282,26 @@ public abstract class BaseEnumConverter : MarkupExtension, IValueConverter
 
 ## Specify Item Selection Mode
 
-The `SelectionMode` property allows you to choose between single- and multiple item selection modes. 
+The [`SelectionMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectionMode.md) property allows you to choose between single- and multiple item selection modes. 
 
-Single item selection mode is default. If text editing is enabled (see `IsTextEditable`), it is possible to specify the edit value (or text in the edit box) that does not match any item in the dropdown list.
+Single item selection mode is default. If text editing is enabled (see [`IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md)), it is possible to specify the edit value (or text in the edit box) that does not match any item in the dropdown list.
 
-Set the `SelectionMode` property to `ItemSelectionMode.Multiple` to enable item multi-selection. In multi-select mode, the editor displays check boxes before each item in the dropdown list. A user can toggle these check boxes to add and remove items to/from the selection.
+Set the [`SelectionMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectionMode.md) property to [`ItemSelectionMode.Multiple`](../../API/Eremex.AvaloniaUI.Controls.Editors/ItemSelectionMode.md) to enable item multi-selection. In multi-select mode, the editor displays check boxes before each item in the dropdown list. A user can toggle these check boxes to add and remove items to/from the selection.
 Text editing is disabled in the edit box in multi-select mode.
 
 ### Get and Set Selected Item (Items)
 
-The `SelectedItem` property allows you to select and retrieve the selected item in single selection mode. The property returns a `null` value if no item is selected.
+The [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItem.md) property allows you to select and retrieve the selected item in single selection mode. The property returns a `null` value if no item is selected.
 
-The `SelectedItems` property specifies a list (an `IList` object) that contains selected items in multiple selection mode. The property returns an empty list if no item is selected.
+The [`SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItems.md) property specifies a list (an `IList` object) that contains selected items in multiple selection mode. The property returns an empty list if no item is selected.
 
 !!! note
 
-    The  `SelectedItem` and `SelectedItems` properties are in sync in the way described below.
+    The  [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItem.md) and [`SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItems.md) properties are in sync in the way described below.
 
-    In single selection mode, the `SelectedItems` property specifies a list that contains one item – the selected item (the value of the `SelectedItem` property). The property returns an empty list if no item is selected.
+    In single selection mode, the [`SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItems.md) property specifies a list that contains one item – the selected item (the value of the [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItem.md) property). The property returns an empty list if no item is selected.
 
-    In multiple selection mode, the `SelectedItem` property specifies the first selected item (the first item of the `SelectedItems` list). The property returns a `null` value if no item is selected.
+    In multiple selection mode, the [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItem.md) property specifies the first selected item (the first item of the [`SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItems.md) list). The property returns a `null` value if no item is selected.
 
 ### Example - How to select items
 
@@ -321,37 +322,37 @@ if (itemSource2 != null)
 ```
 
 ### '(Select All)' Item in Multiple Selection Mode
-In multiple selection mode, the editor displays the predefined _(Select All)_ check box at the top of the dropdown. This checkbox allows a user to select/deselect all items. To hide the _(Select All)_ check box, set the `ComboBoxEditor.ShowPredefinedSelectItem` property to `false`.
+In multiple selection mode, the editor displays the predefined _(Select All)_ check box at the top of the dropdown. This checkbox allows a user to select/deselect all items. To hide the _(Select All)_ check box, set the [`ComboBoxEditor.ShowPredefinedSelectItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ShowPredefinedSelectItem.md) property to `false`.
 
 ![ComboBox - Select All item](../../images/combobox-selectallitem.png)
 
 **Related API**
-- `SelectAllItemText` — Allows you to specify custom display text for the '(Select All)' Item.
+- [`SelectAllItemText`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectAllItemText.md) — Allows you to specify custom display text for the '(Select All)' Item.
 
 ### '_(None)_' Item in Single Selection Mode
 
-In single selection mode, you can set the `ComboBoxEditor.ShowPredefinedSelectItem` property to `true` to display the predefined _(None)_ item in the dropdown. The _(None)_ item sets the editor's value to `null` and thus clears the selection.
+In single selection mode, you can set the [`ComboBoxEditor.ShowPredefinedSelectItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ShowPredefinedSelectItem.md) property to `true` to display the predefined _(None)_ item in the dropdown. The _(None)_ item sets the editor's value to `null` and thus clears the selection.
 
 ![ComboBox - None item](../../images/combobox-none-selectitem.png)
 
 **Related API**
-- `ClearValueItemText` — Allows you to specify custom display text for the '(None)' Item.
+- [`ClearValueItemText`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ClearValueItemText.md) — Allows you to specify custom display text for the '(None)' Item.
 
 ## Specify the Editor Value
 
-When a user types text, selects an item in the edit box using the auto-complete feature, or picks an item in the dropdown, the editor changes its edit value (the `EditorValue` property value). 
+When a user types text, selects an item in the edit box using the auto-complete feature, or picks an item in the dropdown, the editor changes its edit value (the [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property value). 
 
-Typically, the edit value matches the value of the `SelectedItem` property (in single selection mode) or the `SelectedItems` property (in multiple selection mode), with the exceptions described in this section.
+Typically, the edit value matches the value of the [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItem.md) property (in single selection mode) or the [`SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItems.md) property (in multiple selection mode), with the exceptions described in this section.
 
 The edit value is dependent on item selection mode. In single item selection mode, the edit value is a single value, while in multiple item selection mode, the edit value is an `IList` object that specifies a value list.
 
-The `EditorValue` and `SelectedItem/SelectedItems` properties are not in sync in the following cases: 
+The [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) and `SelectedItem/SelectedItems` properties are not in sync in the following cases: 
 
-- A ComboBoxEditor is bound to a list of strings, and the text specified in the edit box does not match any item in the dropdown. In this case, the `SelectedItem` property returns `null`, while the `EditorValue` property specifies the text displayed in the edit box.
+- A ComboBoxEditor is bound to a list of strings, and the text specified in the edit box does not match any item in the dropdown. In this case, the [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItem.md) property returns `null`, while the [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property specifies the text displayed in the edit box.
 
     !!! tip
     
-        Enable the `ComboBoxEditor.IsTextEditable` option to allow a user to edit text in the edit box.
+        Enable the [`ComboBoxEditor.IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md) option to allow a user to edit text in the edit box.
   
     ### Example - How to set the editor value when ComboBox is bound to a string list
 
@@ -387,12 +388,12 @@ The `EditorValue` and `SelectedItem/SelectedItems` properties are not in sync in
     }
     ```
 
-- A ComboBoxEditor is bound to a list of business objects, and the `ValueMember` property is set. The `ValueMember` property specifies the name of the business object's property that supplies item values. When you select an item(s), the `SelectedItem/SelectedItems` property contains the selected object(s), while the `EditorValue` property specifies the selected objects' value (values).
+- A ComboBoxEditor is bound to a list of business objects, and the [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ValueMember.md) property is set. The [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ValueMember.md) property specifies the name of the business object's property that supplies item values. When you select an item(s), the `SelectedItem/SelectedItems` property contains the selected object(s), while the [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property specifies the selected objects' value (values).
 
     ### Example - How to select an item when ComboBoxEditor is bound to a business object list
 
-    In the following example, a ComboBoxEditor is bound to a list of _Product_ objects in multi-select mode. The `ValueMember` property refers to the _Product.ProductID_ member.
-    Thus, product IDs serve as item values. When a user selects items, the `EditorValue` property is set to a list that contains correponding product IDs. The example uses the `EditorValue` property to select items in code.
+    In the following example, a ComboBoxEditor is bound to a list of _Product_ objects in multi-select mode. The [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ValueMember.md) property refers to the _Product.ProductID_ member.
+    Thus, product IDs serve as item values. When a user selects items, the [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property is set to a list that contains correponding product IDs. The example uses the [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property to select items in code.
 
     ``` xml
     xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -448,7 +449,7 @@ In this mode, the editor's value is only updated after the user presses the OK b
 
 ![combobox-non-immediate-update-of-editor-value](../../images/combobox-non-immediate-update-of-editor-value.gif)
 
-The ComboBoxEditor can update its value immediately as a user checks or unchecks items in the dropdown. To activate this mode, hide the OK and Cancel buttons by setting the `PopupFooterButtons` property to `None`.
+The ComboBoxEditor can update its value immediately as a user checks or unchecks items in the dropdown. To activate this mode, hide the OK and Cancel buttons by setting the [`PopupFooterButtons`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupFooterButtons.md) property to `None`.
 
 ``` xml
 <mxe:ComboBoxEditor x:Name="MultiSelectComboBox" 
@@ -461,15 +462,15 @@ The ComboBoxEditor can update its value immediately as a user checks or unchecks
 
 ## Specify Item Templates
 
-A ComboBoxEditor renders each item in the dropdown list using item display text, by default. The default item display text is specified by items' `ToString` method. When the editor is bound to a business object list, you can use the `DisplayMember` property to specify the property that supplies item display text.
+A ComboBoxEditor renders each item in the dropdown list using item display text, by default. The default item display text is specified by items' `ToString` method. When the editor is bound to a business object list, you can use the [`DisplayMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/DisplayMember.md) property to specify the property that supplies item display text.
 
-You can use the `ItemTemplate` property to assign a data template that presents items in the dropdown in a custom manner. For instance, a data template helps you to display images for items, as demonstrated in the example below.
+You can use the [`ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ItemTemplate.md) property to assign a data template that presents items in the dropdown in a custom manner. For instance, a data template helps you to display images for items, as demonstrated in the example below.
 
-Enable the `ComboBoxEditor.ApplyItemTemplateToEditBox` option to apply the specified item template (`ItemTemplate` property) to the edit box. This property is not in effect if text editing is enabled (the `IsTextEditable` option is set to `true`).
+Enable the [`ComboBoxEditor.ApplyItemTemplateToEditBox`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ApplyItemTemplateToEditBox.md) option to apply the specified item template ([`ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ItemTemplate.md) property) to the edit box. This property is not in effect if text editing is enabled (the [`IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md) option is set to `true`).
 
 ### Example - How to display images for ComboBox items using a DataTemplate
 
-The following example uses the `ItemTemplate` property to specify a data template that displays images for ComboBox items in the dropdown list.
+The following example uses the [`ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ItemTemplate.md) property to specify a data template that displays images for ComboBox items in the dropdown list.
 
 A ComboBoxEditor is bound to a list that stores _Product_ objects. The _Product_ object contains the _Category_ property that specifies a product category (Beverages, Condiments, Seafood, or Produce).
 
@@ -582,15 +583,15 @@ public class NameToSvgConverter : MarkupExtension, IValueConverter
 
 ## Add Custom Buttons
 
-The ComboBoxEditor is a ButtonEditor control descendant. Thus, you can add custom buttons to the edit box next to the default dropdown button. Use the `ComboBoxEditor.Buttons` collection to add custom buttons.
+The ComboBoxEditor is a ButtonEditor control descendant. Thus, you can add custom buttons to the edit box next to the default dropdown button. Use the [`ComboBoxEditor.Buttons`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/Buttons.md) collection to add custom buttons.
 
 ### Example - How to add custom buttons
 
 The following example adds a regular button and check button to a ComboBoxEditor. The editor is bound to a _ProductCategoryEnum_ enumeration using the `EnumItemsSource` helper class.
 
-The first button is regular (its `ButtonKind` property is set to `Simple`). A click on this button invokes the _ResetValue_ command that sets the editor's value to a default value (the first element of the bound enumeration type).
+The first button is regular (its [`ButtonKind`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonKind.md) property is set to `Simple`). A click on this button invokes the _ResetValue_ command that sets the editor's value to a default value (the first element of the bound enumeration type).
 
-The second button is a check button (its `ButtonKind` property is set to `Toggle`). A click on this button toggles the editor's `IsTextEditable` property value. The _LockedStateToSvgNameConverter_ converter assigns the "_locked.svg_" or "_unlocked.svg_" image to the button's glyph according to the button's check state. These images are stored in the _ComboBoxTestSample/Images_ folder and are marked with the "_AvaloniaResource_" flag.
+The second button is a check button (its [`ButtonKind`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonKind.md) property is set to `Toggle`). A click on this button toggles the editor's [`IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md) property value. The _LockedStateToSvgNameConverter_ converter assigns the "_locked.svg_" or "_unlocked.svg_" image to the button's glyph according to the button's check state. These images are stored in the _ComboBoxTestSample/Images_ folder and are marked with the "_AvaloniaResource_" flag.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -692,12 +693,12 @@ public enum ProductCategoryEnum
 
 ## Text Auto-Completion 
 
-Set the `AutoComplete` option to `true` to enable text automatic completion. This feature automatically completes text typed by users if it matches any item in the dropdown list.
+Set the [`AutoComplete`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/AutoComplete.md) option to `true` to enable text automatic completion. This feature automatically completes text typed by users if it matches any item in the dropdown list.
 
 The ComboBoxEditor does not support text auto-completion in the following cases:
 
-- Text editing is disabled (the `IsTextEditable` property is set to `false`).
-- Multiple item selection mode is used (the `SelectionMode` property is set to `Multiple`).
+- Text editing is disabled (the [`IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md) property is set to `false`).
+- Multiple item selection mode is used (the [`SelectionMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectionMode.md) property is set to `Multiple`).
 
 ## Auto-Filter
 
@@ -705,7 +706,7 @@ If the [auto-completion feature](#text-auto-completion) is disabled, the ComboBo
 
 ![combobox-autofilter](../../images/combobox-autofilter.png)
 
-The `FilterCondition` property specifies the filter operator (`StartsWith` or `Contains`) used to filter items.
+The [`FilterCondition`](../../API/Eremex.AvaloniaUI.Controls.Editors/FilterCondition.md) property specifies the filter operator (`StartsWith` or `Contains`) used to filter items.
 
 The following example applies the `Contains` filter to the editor.
 
@@ -715,13 +716,13 @@ The following example applies the `Contains` filter to the editor.
 <mxe:ComboBoxEditor x:Name="comboBox1" FilterCondition="Contains" .../>
 ```
 
-You can handle the `FilterItem` event to custom filter items during automatic filtering. This event fires repeatedly, for each item in the dropdown list. The event's arguments allow you to identify combobox items and specify their visibility.
+You can handle the [`FilterItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/FilterItem.md) event to custom filter items during automatic filtering. This event fires repeatedly, for each item in the dropdown list. The event's arguments allow you to identify combobox items and specify their visibility.
 
 - `e.Item` — The object that represents the currently processed item.
 - `e.SearchText` — The text typed by a user in the edit box used for automatic item filtering.
 - `e.IsVisible` — The visibility of the item in the dropdown list.
 
-The following `FilterItem` event handler custom filters items in the `ComboBoxEditor` control by searching in the _MyBusinessObject.InvoiceID_ field of combobox items.
+The following [`FilterItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/FilterItem.md) event handler custom filters items in the [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) control by searching in the _MyBusinessObject.InvoiceID_ field of combobox items.
 
 ``` cs
 void ComboBox1_FilterItem(object sender, Eremex.AvaloniaUI.Controls.Editors.ComboBoxFilterEventArgs e)
@@ -734,14 +735,14 @@ void ComboBox1_FilterItem(object sender, Eremex.AvaloniaUI.Controls.Editors.Comb
 
 ## Prevent Popups in Read-only Editors
 
-In read-only mode, the default behavior of any popup editor is to allow users to open the editor's dropdown. However, they cannot modify values through either the edit box or dropdown. To disable popups for read-only editors, set the `ShowPopupIfReadOnly` property to `false`.
+In read-only mode, the default behavior of any popup editor is to allow users to open the editor's dropdown. However, they cannot modify values through either the edit box or dropdown. To disable popups for read-only editors, set the [`ShowPopupIfReadOnly`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/ShowPopupIfReadOnly.md) property to `false`.
 
 ## Prevent Popups From Opening and Closing
 
 You can handle the following inherited events to cancel popup opening and closing operations:
 
-- `PopupEditor.PopupOpening` — Fires when a popup is about to be created. 
-- `PopupEditor.PopupClosing` — Fires when the popup is about to be closed. 
+- [`PopupEditor.PopupOpening`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) — Fires when a popup is about to be created. 
+- [`PopupEditor.PopupClosing`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupClosing.md) — Fires when the popup is about to be closed. 
 
 These events provide the `e.Cancel` parameter. Set it to `true` to cancel the current operation.
 
@@ -749,12 +750,12 @@ These events provide the `e.Cancel` parameter. Set it to `true` to cancel the cu
 
 Handle the following inherited event to modify the popup or its nested controls:
 
-- `PopupEditor.PopupOpened` — Fires after the popup has been created and immediately before it is displayed. This is a notification event. It does not allow you to cancel popup opening. Handle the `PopupOpened` event to customize the popup or its child controls.
+- [`PopupEditor.PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) — Fires after the popup has been created and immediately before it is displayed. This is a notification event. It does not allow you to cancel popup opening. Handle the [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) event to customize the popup or its child controls.
 
-When handling the `PopupEditor.PopupOpened` event, use the editor's `PopupContent` property to safely access the control inside the editor's popup. The `PopupOpened` event ensures that the popup control exists when you access it. For the ComboBoxEditor control, the `PopupContent` property returns an instance of the `ComboBoxPopupControl` class. 
+When handling the [`PopupEditor.PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) event, use the editor's [`PopupContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupContent.md) property to safely access the control inside the editor's popup. The [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) event ensures that the popup control exists when you access it. For the ComboBoxEditor control, the [`PopupContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupContent.md) property returns an instance of the `ComboBoxPopupControl` class. 
 
 ## Respond to Popup Closing
 
 Use the following inherited event to perform actions after the popup has been closed:
 
-- `PopupEditor.PopupClosed` — Fires immediately after the popup has been closed. This is a notification event. It does not allow you to cancel popup closing.
+- [`PopupEditor.PopupClosed`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupClosed.md) — Fires immediately after the popup has been closed. This is a notification event. It does not allow you to cancel popup closing.

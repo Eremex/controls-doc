@@ -2,6 +2,12 @@
 
 The file type filters, written as display name and patterns alternating and separated by `|`, where several patterns for one type are separated by `;` and each pattern is a glob such as `*.png` — for example `"Images|*.png;*.jpg|All files|*.*"`. Ignored when [`FilterFileTypes`](./FilterFileTypes.md) is set.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public string? Filter { get; set; }
 ```

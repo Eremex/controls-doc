@@ -2,24 +2,34 @@
 
 Creates a button with a caption, position and appearance of your own, for actions that are specific to one dialog.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public static IDialogButtonViewModel CreateCustom(ICommand command, string content, 
     object? commandParameter = null, DockType dockType = DockType.Right, int? index = null, 
     string? classes = null)
 ```
 
-| parameter | description |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| command | `ICommand` | The command invoked when the button is pressed. |
+| content | `string` | The button caption. It is used as given, not localized. |
+| commandParameter | `object?` | The value passed to *command*. |
+| dockType | `DockType` | The side of the dialog footer the button is docked to. |
+| index | `int?` | The position among the buttons docked to the same side, in ascending order. `null` keeps the declaration order. |
+| classes | `string?` | Extra space-separated style classes for the button, added to the standard dialog button styling. |
+
+## Returns
+
+| type | description |
 | --- | --- |
-| command | The command invoked when the button is pressed. |
-| content | The button caption. It is used as given, not localized. |
-| commandParameter | The value passed to *command*. |
-| dockType | The side of the dialog footer the button is docked to. |
-| index | The position among the buttons docked to the same side, in ascending order. `null` keeps the declaration order. |
-| classes | Extra space-separated style classes for the button, added to the standard dialog button styling. |
-
-## Return Value
-
-The button view model.
+| `IDialogButtonViewModel` | The button view model. |
 
 ## See Also
 

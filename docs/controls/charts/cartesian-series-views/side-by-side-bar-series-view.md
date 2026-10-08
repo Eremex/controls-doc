@@ -6,15 +6,15 @@ seealso: []
 
 # Side-by-side Bar Series View
 
-The Side-by-side Bar Series View (`CartesianSideBySideBarSeriesView`) allows you to visualize data as a set of rectangular bars. If you provide multiple series, data is visualized as side-by-side bars along the horizontal axis.
+The Side-by-side Bar Series View ([`CartesianSideBySideBarSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md)) allows you to visualize data as a set of rectangular bars. If you provide multiple series, data is visualized as side-by-side bars along the horizontal axis.
 
 ![chart-views-barseriesview](../../../images/chart-views-barseriesview.png)
 
 ## Create a Side-by-side Bar Series View
 
-To create a Side-by-side Bar Series View, add a `CartesianSeries` object to the `CartesianChart.Series` collection, and initialize the `CartesianSeries.View` property with a `CartesianSideBySideBarSeriesView` object.
+To create a Side-by-side Bar Series View, add a [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) object to the [`CartesianChart.Series`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) collection, and initialize the [`CartesianSeries.View`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md) property with a [`CartesianSideBySideBarSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md) object.
 
-Use the `CartesianSeries.DataAdapter` property to supply data for the series.
+Use the [`CartesianSeries.DataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/Series/DataAdapter.md) property to supply data for the series.
 
 The following code shows how to create a Bar Series View in XAML and code-behind.
 
@@ -53,13 +53,13 @@ No bars are displayed without axis X
 
 ### Example - Create Two Side-by-side Bar Series Views
 
-The following example creates a `CartesianChart` control with two Side-by-side Bar Series Views. Data for the Bar Series Views is provided by `SortedDateTimeDataAdapter` objects initialized in the main View Model. It is implied that a _MainWindowViewModel_ object is set as a data context for the window.
+The following example creates a [`CartesianChart`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) control with two Side-by-side Bar Series Views. Data for the Bar Series Views is provided by [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) objects initialized in the main View Model. It is implied that a _MainWindowViewModel_ object is set as a data context for the window.
 
-The example shows how to initialize the color, bar width, and distance between bars for `CartesianSideBySideBarSeriesView` objects.
+The example shows how to initialize the color, bar width, and distance between bars for [`CartesianSideBySideBarSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md) objects.
 
 The _X_ and _Y_ axes are created in XAML to perform customization of their settings (including the title and scale options). 
 
-When you use a `SortedDateTimeDataAdapter` object, you need to specify the `MeasureUnit` property to define axis scaling. In the example, the data uses monthly intervals, so the `MeasureUnit` property is set to `Month`.
+When you use a [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) object, you need to specify the `MeasureUnit` property to define axis scaling. In the example, the data uses monthly intervals, so the `MeasureUnit` property is set to `Month`.
 
 ![chart-views-barseriesview-example](../../../images/chart-views-barseriesview-example.png)
 
@@ -155,24 +155,24 @@ You can use the following data adapters to provide data for Side-by-side Bar Ser
 
 Numeric _X_ Values:
 
-- `SortedNumericDataAdapter`
-- `FormulaDataAdapter`
+- [`SortedNumericDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md)
+- [`FormulaDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/FormulaDataAdapter.md)
 
 Date and Time _X_ Values:
 
-- `SortedDateTimeDataAdapter`
-- `SortedTimeSpanDataAdapter`
+- [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md)
+- [`SortedTimeSpanDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedTimeSpanDataAdapter.md)
 
 Qualitative _X_ Values:
 
-- `QualitativeDataAdapter`
+- [`QualitativeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeDataAdapter.md)
 
 
 
 ## Bar Series View Settings
 
-- `CartesianSideBySideBarSeriesView.BarDistanceFixed` — The width of the empty space to the right of the bars that belong to the current Bar Series View. The `BarDistanceFixed` property allows you to adjust the distance between bars of different series.
-- `CartesianSideBySideBarSeriesView.BarWidth` — The width of the bars of the current Bar Series View.
-- `CartesianSideBySideBarSeriesView.BorderColor` — The border color for the bars.
-- `CartesianSideBySideBarSeriesView.BorderThickness` — The thickness of the bar borders.
-- `CartesianSideBySideBarSeriesView.Color` — The fill color for the bars.
+- [`CartesianSideBySideBarSeriesView.BarDistanceFixed`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BarDistanceFixed.md) — The width of the empty space to the right of the bars that belong to the current Bar Series View. The [`BarDistanceFixed`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BarDistanceFixed.md) property allows you to adjust the distance between bars of different series.
+- [`CartesianSideBySideBarSeriesView.BarWidth`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BarWidth.md) — The width of the bars of the current Bar Series View.
+- [`CartesianSideBySideBarSeriesView.BorderColor`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BorderColor.md) — The border color for the bars.
+- [`CartesianSideBySideBarSeriesView.BorderThickness`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BorderThickness.md) — The thickness of the bar borders.
+- [`CartesianSideBySideBarSeriesView.Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/Color.md) — The fill color for the bars.

@@ -2,18 +2,28 @@
 
 Creates the Apply button, captioned in the current UI language. It applies the changes without closing the dialog, so it is neither the default nor the cancel button.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public static IDialogButtonViewModel CreateApply(ICommand command, object? commandParameter = null)
 ```
 
-| parameter | description |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| command | `ICommand` | The command invoked when the button is pressed. |
+| commandParameter | `object?` | The value passed to *command*. |
+
+## Returns
+
+| type | description |
 | --- | --- |
-| command | The command invoked when the button is pressed. |
-| commandParameter | The value passed to *command*. |
-
-## Return Value
-
-The button view model.
+| `IDialogButtonViewModel` | The button view model. |
 
 ## See Also
 

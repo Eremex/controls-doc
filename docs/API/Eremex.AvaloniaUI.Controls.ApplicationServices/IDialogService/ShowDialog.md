@@ -2,20 +2,35 @@
 
 Shows the view model in a modal dialog and returns once the user closes it.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public DialogResult ShowDialog<T>(T viewModel, string? caption = null)
     where T : IDialogAwareViewModel
 ```
 
-| parameter | description |
+## Type Parameters
+
+| name | description |
 | --- | --- |
 | T | The type of the view model that drives the dialog. |
-| viewModel | The view model to display. It supplies the dialog content and buttons, and is attached to the window for as long as the dialog is open. |
-| caption | The window caption. When `null`, the caption is taken from [`Title`](../IWindowAwareViewModel/Title.md). |
 
-## Return Value
+## Parameters
 
-The button the dialog was closed with, or None if the user dismissed it through the window caption button.
+| name | type | description |
+| --- | --- | --- |
+| viewModel | `T` | The view model to display. It supplies the dialog content and buttons, and is attached to the window for as long as the dialog is open. |
+| caption | `string?` | The window caption. When `null`, the caption is taken from [`Title`](../IWindowAwareViewModel/Title.md). |
+
+## Returns
+
+| type | description |
+| --- | --- |
+| [`DialogResult`](../DialogResult.md) | The button the dialog was closed with, or None if the user dismissed it through the window caption button. |
 
 ## See Also
 

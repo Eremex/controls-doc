@@ -6,23 +6,23 @@ seealso: []
 
 # PropertyGrid Rows
 
-PropertyGrid can automatically create rows for properties exposed by the bound object(s) (see `PropertyGridControl.SelectedObject` and `PropertyGridControl.SelectedObjects`). 
+PropertyGrid can automatically create rows for properties exposed by the bound object(s) (see [`PropertyGridControl.SelectedObject`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/SelectedObject.md) and [`PropertyGridControl.SelectedObjects`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/SelectedObjects.md)). 
 Automatic row generation is enabled by default. 
-You can disable automatic row generation with the `PropertyGridControl.AutoGenerateRows` option, and then create rows manually.
+You can disable automatic row generation with the [`PropertyGridControl.AutoGenerateRows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/AutoGenerateRows.md) option, and then create rows manually.
 
 ![propertygrid-sample](../../images/propertygrid-sample.png)
 
 PropertyGrid supports three row types:
 
-- Regular (data) rows (`PropertyGridRow`) — Display the names and values of bound properties.
+- Regular (data) rows ([`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md)) — Display the names and values of bound properties.
   
   ![data-rows](../../images/data-rows.png)
 
-- Category rows (`PropertyGridCategoryRow`) — Used to group other rows into categories. Users can collapse and expand category rows to hide/show their children.
+- Category rows ([`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md)) — Used to group other rows into categories. Users can collapse and expand category rows to hide/show their children.
   
   ![category-rows](../../images/category-rows.png)
 
-- Tab rows (`PropertyGridTabRow`) — Used to organize rows into a tabbed UI. Tab rows do not support the collapse/expand feature.
+- Tab rows ([`PropertyGridTabRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridTabRow.md)) — Used to organize rows into a tabbed UI. Tab rows do not support the collapse/expand feature.
   
   ![property-grid-tab-rows](../../images/property-grid-tab-rows.png)
 
@@ -33,28 +33,28 @@ With the automatic row generation feature enabled, an empty PropertyGrid control
 - Regular rows are created for all public properties.
 - Category rows are generated from `System.ComponentModel.CategoryAttribute` attributes applied to underlying public properties. Corresponding data rows are grouped within these categories.
 
-If any row has been manually added to the control (for instance, in XAML), automatic row generation is not in effect. Set the `PropertyGridControl.AutoGenerateRows` property to `false` to forcibly disable automatic row generation.
+If any row has been manually added to the control (for instance, in XAML), automatic row generation is not in effect. Set the [`PropertyGridControl.AutoGenerateRows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/AutoGenerateRows.md) property to `false` to forcibly disable automatic row generation.
 
 Use the `PopulateRows` method to generate data and category rows from the bound object(s) in code-behind. This method clears the existing row collection before new rows are added.
 
 You can apply specific Data Annotation attributes to a bound object's properties to control the presence, display name, and read-only status of generated PropertyGrid rows. See the following section for more details: [Use Attributes to Customize Row Settings](#use-attributes-to-customize-row-settings).
 
-The `PropertyGridControl.Rows` collection allows you to access the control's rows, add and delete individual items.
+The [`PropertyGridControl.Rows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/Rows.md) collection allows you to access the control's rows, add and delete individual items.
 
 ### Create Data Rows
 
-Use `PropertyGridRow` objects to create data rows. To add data rows at the root level, add `PropertyGridRow` objects to the `PropertyGridControl.Rows` collection.
+Use [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) objects to create data rows. To add data rows at the root level, add [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) objects to the [`PropertyGridControl.Rows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/Rows.md) collection.
 
-The main settings of the `PropertyGridRow` class include:
+The main settings of the [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) class include:
 
-- `PropertyGridRow.FieldName` — Gets or sets the name of the public property to which the row is bound.
-- `PropertyGridRow.Caption` — Gets or sets the row's header. For auto-generated rows, the `Caption` property contains the property's display name.
-- `PropertyGridRow.AllowEditing` — Gets or sets whether value edit operations are enabled.
-- `PropertyGridRow.EditorProperties` — Allows you to assign a custom in-place editor to the row's value. See [Data Editing](data-editing.md).
+- [`PropertyGridRow.FieldName`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/FieldName.md) — Gets or sets the name of the public property to which the row is bound.
+- [`PropertyGridRow.Caption`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRowBase/Caption.md) — Gets or sets the row's header. For auto-generated rows, the [`Caption`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRowBase/Caption.md) property contains the property's display name.
+- [`PropertyGridRow.AllowEditing`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/AllowEditing.md) — Gets or sets whether value edit operations are enabled.
+- [`PropertyGridRow.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/EditorProperties.md) — Allows you to assign a custom in-place editor to the row's value. See [Data Editing](data-editing.md).
 
 #### Example
 
-The following XAML code creates three data rows (`PropertyGridRow` objects), and binds them to fields of the object assigned to the control's data context.
+The following XAML code creates three data rows ([`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) objects), and binds them to fields of the object assigned to the control's data context.
 
 ``` xml
 xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
@@ -92,12 +92,12 @@ pGrid1.Rows.Add(new PropertyGridRow() { FieldName = "InvoiceNo" });
 
 PropertyGrid can generate category rows from `System.ComponentModel.CategoryAttribute` attributes applied to underlying public properties. Corresponding data rows are grouped in these category rows.
 
-You can disable automatic row generation and create a custom set of data rows and category rows. Use `PropertyGridCategoryRow` objects to define category rows. Add `PropertyGridCategoryRow` objects to the `PropertyGridControl.Rows` collection to display them at the root level.
+You can disable automatic row generation and create a custom set of data rows and category rows. Use [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md) objects to define category rows. Add [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md) objects to the [`PropertyGridControl.Rows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/Rows.md) collection to display them at the root level.
 
-The main settings of the `PropertyGridCategoryRow` class include:
+The main settings of the [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md) class include:
 
-- `PropertyGridCategoryRow.Rows` — The collection of rows displayed as a category row's children. Typically, you add data rows (`PropertyGridRow` objects) to this collection.
-- `PropertyGridCategoryRow.Caption` — Gets or sets the category row's display name. For auto-generated category rows, this property returns the `CategoryAttribute`'s value.
+- [`PropertyGridCategoryRow.Rows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow/Rows.md) — The collection of rows displayed as a category row's children. Typically, you add data rows ([`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) objects) to this collection.
+- [`PropertyGridCategoryRow.Caption`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRowBase/Caption.md) — Gets or sets the category row's display name. For auto-generated category rows, this property returns the `CategoryAttribute`'s value.
 
 #### Example
 
@@ -153,11 +153,11 @@ categoryRowDetails.Rows.Add(new PropertyGridRow() { FieldName = "InvoiceNo" });
 
 ## Create Tab Rows
 
-A tab row (`PropertyGridTabRow`) allows you to group rows into a tabbed UI. It consists of a header, tab switcher and client area. When a user selects a tab, the client area displays a set of properties that corresponds to the selected tab. The following image demonstrates a PropertyGrid control with two tab rows (_Appearance_ and _Layout_):
+A tab row ([`PropertyGridTabRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridTabRow.md)) allows you to group rows into a tabbed UI. It consists of a header, tab switcher and client area. When a user selects a tab, the client area displays a set of properties that corresponds to the selected tab. The following image demonstrates a PropertyGrid control with two tab rows (_Appearance_ and _Layout_):
 
 ![propertygrid-tabrows](../../images/propertygrid-tabrows.png)
 
-The control populates the tab collection from the tab row's children (`PropertyGridTabRowItem` objects). Each `PropertyGridTabRowItem` object defines a collection of rows associated with this tab.
+The control populates the tab collection from the tab row's children ([`PropertyGridTabRowItem`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridTabRowItem.md) objects). Each [`PropertyGridTabRowItem`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridTabRowItem.md) object defines a collection of rows associated with this tab.
 
 ### Example
 
@@ -280,17 +280,17 @@ A data row's default rendering consists of the header and value regions.
 
 You can use the `CellTemplate` property to specify a template used to render row value regions. See the following topics for more information: [Data Editing](data-editing.md) and [Custom Editors](custom-editors.md)
 
-Use the `PropertyGridRow.RowTemplate` property to render entire rows (the header and value regions) in a custom manner. This property specifies a custom row template.
+Use the [`PropertyGridRow.RowTemplate`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/RowTemplate.md) property to render entire rows (the header and value regions) in a custom manner. This property specifies a custom row template.
 
 ### Example - Custom Row Template
 
-The following code binds a PropertyGrid to a _MyBusinessObject_ object that has the _BorderSize_ and _Location_ properties of the `Integer` and `Point` types respectively. The code defines three `PropertyGridRow` objects, two of which use custom templates. The templates contain custom controls to present and edit the _BorderSize_ and _Location_ properties.
+The following code binds a PropertyGrid to a _MyBusinessObject_ object that has the _BorderSize_ and _Location_ properties of the `Integer` and `Point` types respectively. The code defines three [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) objects, two of which use custom templates. The templates contain custom controls to present and edit the _BorderSize_ and _Location_ properties.
 
 ![propertygrid-rowtemplate-example](../../images/propertygrid-rowtemplate-example.png)
 
-The row template for the _BorderSize_ property displays a label, slider and `SpinEditor`. The slider and editor are bound to the target _BorderSize_ property.
+The row template for the _BorderSize_ property displays a label, slider and [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md). The slider and editor are bound to the target _BorderSize_ property.
 
-The row template to edit the _Location_ property contains two labels and two `SpinEditor`s. The corresponding `PropertyGridRow` object is bound to the _Location_ property, while the `SpinEditor`s are bound to the _X_ and _Y_ nested fields. An alternative option is to use the _Location.X_ and _Location.Y_ binding paths for the editors.
+The row template to edit the _Location_ property contains two labels and two [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md)s. The corresponding [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) object is bound to the _Location_ property, while the [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md)s are bound to the _X_ and _Y_ nested fields. An alternative option is to use the _Location.X_ and _Location.Y_ binding paths for the editors.
 
 ``` xml
 xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
@@ -392,9 +392,9 @@ PropertyGrid allows you to use the MVVM design pattern to populate the control w
 
 The following PropertyGrid properties support the MVVM design pattern:
  
-- `PropertyGridControl.RowsSource` — The source of row View Models that will be rendered as root rows.  
-- `PropertyGridCategoryRow.RowsSource` — The source of row View Models that will be rendered as a category row's children.
-- `PropertyGridControl.RowsDataTemplates` — The collection of Data Templates that define `PropertyGridRow` and `PropertyGridCategoryRow` objects used to render corresponding row View Models from the `RowsSource` collections.
+- [`PropertyGridControl.RowsSource`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/RowsSource.md) — The source of row View Models that will be rendered as root rows.  
+- [`PropertyGridCategoryRow.RowsSource`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridExpandableRowBase/RowsSource.md) — The source of row View Models that will be rendered as a category row's children.
+- [`PropertyGridControl.RowsDataTemplates`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/RowsDataTemplates.md) — The collection of Data Templates that define [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) and [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md) objects used to render corresponding row View Models from the `RowsSource` collections.
 
 ### Example 
 
@@ -402,11 +402,11 @@ The following tutorial demonstrates the MVVM approach to populating rows. This e
 
 ![PropertyGrid-RowsDataTemplates-example](../../images/PropertyGrid-RowsDataTemplates-example.png)
 
-The example creates the _Common_, _Coordinates_ and _Alignment_ category rows (`PropertyGridCategoryRow` objects) from _CategoryRowViewModel_ objects. 
+The example creates the _Common_, _Coordinates_ and _Alignment_ category rows ([`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md) objects) from _CategoryRowViewModel_ objects. 
 
 The View Models below are used to create regular rows within category rows:
 
-- _DefaultRowViewModel_ — A ViewModel that corresponds to the default row (a `PropertyGridRow` object with default settings). The default row's value data type determines the type of the in-place editor. The _DefaultRowViewModel_ object is used to create the _Display Text_, _Horz Alignment_ and _Vert Alignment_ rows.
+- _DefaultRowViewModel_ — A ViewModel that corresponds to the default row (a [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) object with default settings). The default row's value data type determines the type of the in-place editor. The _DefaultRowViewModel_ object is used to create the _Display Text_, _Horz Alignment_ and _Vert Alignment_ rows.
 
 - _NumericSpinEditorRowViewModel_ — A ViewModel that corresponds to a PropertyGrid row with an embedded SpinEditor. This View Model is used to create the _Value_ row.
 
@@ -414,7 +414,7 @@ The View Models below are used to create regular rows within category rows:
 
 Steps:
 
-1. Define a target business object whose data needs to be displayed/edited in the PropertyGrid. Bind this object to the control with the `PropertyGridControl.SelectedObject` member.
+1. Define a target business object whose data needs to be displayed/edited in the PropertyGrid. Bind this object to the control with the [`PropertyGridControl.SelectedObject`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/SelectedObject.md) member.
 
     ``` csharp
     public partial class MyBusinessObject : ViewModelBase
@@ -469,7 +469,7 @@ Steps:
     </mxpg:PropertyGridControl>
     ```
 
-2. Create row View Model classes that contain settings used to initialize PropertyGrid rows (for instance, settings used to initialize a row's `PropertyGridRow.FieldName` and `PropertyGridRow.Caption` properties). Each row View Model typically exposes a unique set of properties and features. A View Model for category rows should expose an `IEnumerable` object that contains child row View Models.
+2. Create row View Model classes that contain settings used to initialize PropertyGrid rows (for instance, settings used to initialize a row's [`PropertyGridRow.FieldName`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/FieldName.md) and [`PropertyGridRow.Caption`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRowBase/Caption.md) properties). Each row View Model typically exposes a unique set of properties and features. A View Model for category rows should expose an `IEnumerable` object that contains child row View Models.
 
     ``` csharp
     // A View Model that corresponds to regular data rows.
@@ -578,7 +578,7 @@ Steps:
     }
     ```
 
-4. Set the `PropertyGridControl.RowsSource` property to the created `IEnumerable` object.
+4. Set the [`PropertyGridControl.RowsSource`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/RowsSource.md) property to the created `IEnumerable` object.
 
     ``` xml
     xmlns:local="using:PropertyGridSample"
@@ -597,9 +597,9 @@ Steps:
     </mxpg:PropertyGridControl>
     ```
 
-5. Use the `PropertyGridControl.RowsDataTemplates` collection to create Data Templates that map row View Models to PropertyGrid rows. Each Data Template should define `PropertyGridRow` or `PropertyGridCategoryRow` object, and initialize the row's settings using the information contained in a corresponding row View Model.  
+5. Use the [`PropertyGridControl.RowsDataTemplates`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/RowsDataTemplates.md) collection to create Data Templates that map row View Models to PropertyGrid rows. Each Data Template should define [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) or [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md) object, and initialize the row's settings using the information contained in a corresponding row View Model.  
 
-    When you define a `PropertyGridCategoryRow` object, set the `PropertyGridCategoryRow.RowsSource` property to a source of child row View Models.
+    When you define a [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md) object, set the [`PropertyGridCategoryRow.RowsSource`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridExpandableRowBase/RowsSource.md) property to a source of child row View Models.
 
     ``` xml
     <mxpg:PropertyGridControl
@@ -638,9 +638,9 @@ Steps:
 
     !!! tip
     
-        Avalonia UI supports a hierarchical search for target `DataTemplate`s against the logical tree. Besides using the `RowsDataTemplates` property, you can define templates in the `DataTemplates` collection of the control's parent (parents), `Window` or `Application` object.
+        Avalonia UI supports a hierarchical search for target `DataTemplate`s against the logical tree. Besides using the [`RowsDataTemplates`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/RowsDataTemplates.md) property, you can define templates in the `DataTemplates` collection of the control's parent (parents), `Window` or `Application` object.
 
-6. Define the custom _pointEditorTemplate_ template to render the `PropertyGridRow` that corresponds to the _PointEditorViewModel_ object.  
+6. Define the custom _pointEditorTemplate_ template to render the [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) that corresponds to the _PointEditorViewModel_ object.  
 
     ``` xml
     <Window.Resources>

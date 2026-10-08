@@ -2,6 +2,12 @@
 
 The buttons shown in the dialog footer, in the order they are declared. `null` or an empty sequence produces a dialog with no buttons of its own.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public IEnumerable<IDialogButtonViewModel>? ButtonsSource { get; }
 ```

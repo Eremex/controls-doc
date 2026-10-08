@@ -10,8 +10,8 @@ In Avalonia UI, paint themes define appearance settings, resources and templates
 
 | Paint&nbsp;Theme | Description | Package |
 | --- | --- | --- |
-| `DeltaDesign` | Contains visual settings for the Eremex Controls (except `Graphics3DControl`) and a set of standard Avalonia UI controls. | `Eremex.Avalonia.Themes.DeltaDesign` package |
-| `Controls3D` | Contains visual settings for the `Graphics3DControl`. | `Eremex.Avalonia.Controls3D` package |
+| `DeltaDesign` | Contains visual settings for the Eremex Controls (except [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md)) and a set of standard Avalonia UI controls. | `Eremex.Avalonia.Themes.DeltaDesign` package |
+| `Controls3D` | Contains visual settings for the [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md). | `Eremex.Avalonia.Controls3D` package |
 
 You must [add and register](register-an-eremex-paint-theme.md) an appropriate theme(s) for the Eremex controls to render correctly. Without a corresponding theme, controls will appear blank.
 

@@ -6,7 +6,7 @@ seealso: []
 
 # PropertyGrid Overview
 
-The `PropertyGridControl` displays public properties and their values of a bound object(s) as a vertical list. Each list item is rendered as a row that contains two cells: "property name" and "property value".
+The [`PropertyGridControl`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl.md) displays public properties and their values of a bound object(s) as a vertical list. Each list item is rendered as a row that contains two cells: "property name" and "property value".
 
 ![propertygrid1](../../images/propertygrid1.png)
 

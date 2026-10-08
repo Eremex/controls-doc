@@ -2,6 +2,12 @@
 
 The window a new dialog should be shown on top of: the currently active window, falling back to the application main window. `null` when the application has no window yet.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public IWindow? ActiveWindow { get; }
 ```

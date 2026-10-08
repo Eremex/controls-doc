@@ -4,7 +4,7 @@ Builds the EMX Controls documentation (English + Russian + Chinese) into ./site
 with plain Zensical in offline mode. Cross-platform: Windows, Linux, macOS.
 
     python build.py                    # create .venv, install Zensical, build
-    python build.py --wheels wheels    # install Zensical offline from a local wheel folder
+    python build.py --packages offline-packages    # install Zensical offline from a folder of downloaded packages
     python build.py --no-install       # use the Zensical from the current environment
     python build.py --package          # also create dist/emx-docs-offline.zip
     python build.py --serve            # build, then serve on http://127.0.0.1:8080
@@ -42,7 +42,7 @@ def venv_python() -> Path:
     return VENV / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
 
 
-def install(wheels):
+def install(packages):
     if sys.version_info < (3, 10):
         sys.exit("Python 3.10 or newer is required (found %s)." % sys.version.split()[0])
     if not venv_python().exists():
@@ -50,8 +50,8 @@ def install(wheels):
         venv.EnvBuilder(with_pip=True).create(VENV)
     py = venv_python()
     pip = [py, "-m", "pip", "install", "-r", "requirements.in"]
-    if wheels:
-        pip += ["--no-index", "--find-links", wheels]
+    if packages:
+        pip += ["--no-index", "--find-links", packages]
     run(pip)
     return py
 
@@ -104,13 +104,13 @@ def package():
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--wheels", help="folder with pre-downloaded wheels (fully offline install)")
+    ap.add_argument("--packages", "--wheels", dest="packages", metavar="DIR", help="folder with pre-downloaded Python packages (fully offline install)")
     ap.add_argument("--no-install", action="store_true", help="skip venv creation and pip install")
     ap.add_argument("--package", action="store_true", help="create dist/emx-docs-offline.zip")
     ap.add_argument("--serve", action="store_true", help="serve the site after the build")
     args = ap.parse_args()
 
-    py = sys.executable if args.no_install else install(args.wheels)
+    py = sys.executable if args.no_install else install(args.packages)
     build(py)
     if args.package:
         package()

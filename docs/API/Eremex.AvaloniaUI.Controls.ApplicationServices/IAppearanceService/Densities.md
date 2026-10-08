@@ -2,6 +2,12 @@
 
 The layout densities on offer, from the most compact to the most spacious. Empty when the current theme has no densities.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public IReadOnlyList<IAppearanceOption> Densities { get; }
 ```

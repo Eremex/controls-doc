@@ -2,6 +2,12 @@
 
 The default IAppearanceService implementation, driving the appearance of the running Application.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public class AppearanceService : IAppearanceService
 ```
@@ -15,8 +21,8 @@ public class AppearanceService : IAppearanceService
 | [Palettes](AppearanceService/Palettes.md) { get; } |  |
 | [SelectedDensity](AppearanceService/SelectedDensity.md) { get; set; } |  |
 | [SelectedPalette](AppearanceService/SelectedPalette.md) { get; set; } |  |
-| [SelectedTheme](AppearanceService/SelectedTheme.md) { get; set; } |  |
-| [Themes](AppearanceService/Themes.md) { get; } |  |
+| [SelectedThemeVariant](AppearanceService/SelectedThemeVariant.md) { get; set; } |  |
+| [ThemeVariants](AppearanceService/ThemeVariants.md) { get; } |  |
 | event [PropertyChanged](AppearanceService/PropertyChanged.md) |  |
 
 ## Remarks

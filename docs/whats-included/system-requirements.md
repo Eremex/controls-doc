@@ -46,7 +46,7 @@ IDE with Avalonia UI support:
 
 ## Using Graphics3DControl on MacOS
 
-[Graphics3DControl](../controls/graphics3dcontrol/index.md) uses the Vulkan API to render 3D graphics. Currently, standard MacOS graphics drivers do not support the Vulkan API. You can install the MoltenVK runtime package to run Vulkan-based applications (including applications with `Graphics3DControl`) on MacOS. 
+[Graphics3DControl](../controls/graphics3dcontrol/index.md) uses the Vulkan API to render 3D graphics. Currently, standard MacOS graphics drivers do not support the Vulkan API. You can install the MoltenVK runtime package to run Vulkan-based applications (including applications with [`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md)) on MacOS. 
 
 You can also install the Vulkan SDK, which includes the MoltenVK package, to develop Vulkan applications on MacOS. See the following link for more information:
 [https://github.com/KhronosGroup/MoltenVK](https://github.com/KhronosGroup/MoltenVK).

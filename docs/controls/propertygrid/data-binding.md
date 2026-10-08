@@ -10,7 +10,7 @@ This topic shows how to bind a PropertyGrid to a single and multiple objects. Th
 
 ## Bind to One Object
 
-Use the `PropertyGridControl.SelectedObject` property to bind the control to a single object. When bound, the control automatically displays the object's properties.
+Use the [`PropertyGridControl.SelectedObject`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/SelectedObject.md) property to bind the control to a single object. When bound, the control automatically displays the object's properties.
 
 ### Example
 
@@ -86,7 +86,7 @@ public class ViewModelBase : ObservableObject
 
 ## Bind to Multiple Objects
 
-The `PropertyGridControl` can display and edit properties that two or more objects have in common. Assign a list of these objects to the `PropertyGridControl.SelectedObjects` property. This causes the control to only display matching properties (those that have the same name and data type).
+The [`PropertyGridControl`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl.md) can display and edit properties that two or more objects have in common. Assign a list of these objects to the [`PropertyGridControl.SelectedObjects`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/SelectedObjects.md) property. This causes the control to only display matching properties (those that have the same name and data type).
 
 ``` xml
 xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
@@ -110,17 +110,17 @@ public class MyList : List<object>
 
 After you bind PropertyGrid to an object(s), the control's default behavior is to automatically generate rows to display and edit properties of the bound object(s). The control automatically generates the following row types during the control's initialization:
 
-- Data rows (`PropertyGridRow` objects) are generated for all public properties. These rows display the names and values of bound properties.
+- Data rows ([`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) objects) are generated for all public properties. These rows display the names and values of bound properties.
   
   ![data-rows](../../images/data-rows.png)
 
-- Category rows (`PropertyGridCategoryRow` objects) are generated from `System.ComponentModel.CategoryAttribute` attributes applied to underlying public properties. Corresponding data rows are grouped within these category rows.
+- Category rows ([`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md) objects) are generated from `System.ComponentModel.CategoryAttribute` attributes applied to underlying public properties. Corresponding data rows are grouped within these category rows.
 
   ![category-rows](../../images/category-rows.png)
 
 PropertyGrid provides the following row customizaton features:
 
-- Disabling automatic row generation with the `PropertyGridControl.AutoGenerateRows` property.
+- Disabling automatic row generation with the [`PropertyGridControl.AutoGenerateRows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/AutoGenerateRows.md) property.
 - Manual row creation.
 - Using Annotation attributes to customize row options.
 - Specifying data templates to render individual rows.

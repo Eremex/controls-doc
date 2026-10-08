@@ -409,7 +409,7 @@ You can override these style selectors in your application using the following p
 
 ### Example - Modify a style for a color toggle button in a ColorEditor control at the application level
 
-This example shows how to change the appearance and template of color toggle buttons in the `ColorEditor` and  [PopupColorEditor](../editors/popupcoloreditor.md) controls. New styles are applied to all `ColorEditor` and `PopupColorEditor` controls within the application.
+This example shows how to change the appearance and template of color toggle buttons in the [`ColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorEditor.md) and  [PopupColorEditor](../editors/popupcoloreditor.md) controls. New styles are applied to all [`ColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorEditor.md) and [`PopupColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) controls within the application.
 
 ![theme-coloreditor-colorcheckbutton](../../images/theme-coloreditor-colorcheckbutton.png)
 

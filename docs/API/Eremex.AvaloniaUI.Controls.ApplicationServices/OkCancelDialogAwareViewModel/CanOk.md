@@ -2,17 +2,27 @@
 
 Decides whether the OK button is enabled. Override it to require valid input before the dialog can be confirmed.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public virtual bool CanOk(object parameter)
 ```
 
-| parameter | description |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| parameter | `object` | The command parameter supplied by the button. Unused by the base implementation. |
+
+## Returns
+
+| type | description |
 | --- | --- |
-| parameter | The command parameter supplied by the button. Unused by the base implementation. |
-
-## Return Value
-
-`true` when OK may be pressed. The base implementation always returns `true`.
+| `bool` | `true` when OK may be pressed. The base implementation always returns `true`. |
 
 ## See Also
 

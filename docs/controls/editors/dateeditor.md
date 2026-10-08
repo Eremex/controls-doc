@@ -6,7 +6,7 @@ seealso: []
 
 # DateEditor
 
-The `DateEditor` control contains a dropdown calendar that allows users to select a date. The editor supports multiple display formats for the date value displayed in the edit box.
+The [`DateEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md) control contains a dropdown calendar that allows users to select a date. The editor supports multiple display formats for the date value displayed in the edit box.
 
 ![dateeditor](../../images/dateeditor.png)
 
@@ -30,23 +30,23 @@ The dropdown calendar's navigation header allows a user to browse through months
 
 ![DateEditor - select date](../../images/dateeditor-selectdate-animation.gif)
 
-In code, you can specify a date or read the currently selected date with the `DateEditor.DateTime` or `DateEditor.EditorValue` property. These properties are in sync. They differ in the value type: the `DateTime` property is of the nullable `System.DateTime` type, while the `EditorValue` property is of the `object` type as in all Eremex editors.
+In code, you can specify a date or read the currently selected date with the [`DateEditor.DateTime`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor/DateTime.md) or [`DateEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property. These properties are in sync. They differ in the value type: the [`DateTime`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor/DateTime.md) property is of the nullable `System.DateTime` type, while the [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property is of the `object` type as in all Eremex editors.
 
 ## Customize the Dropdown Calendar
 
-The following properties allow you to set up a `DateEditor`'s calendar:
+The following properties allow you to set up a [`DateEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md)'s calendar:
 
-- `ShowToday` — Gets or sets whether to highlight the Today's date in the calendar. 
-- `NullValueButtonPosition` — Gets or sets whether the (_'x'_) (clear value) button is visible. 
-- `MinValue` — Specifies the minimum allowed date. The `MinValue` and `MaxValue` properties allow you to specify the range of values displayed in the calendar.
-- `MaxValue` — Specifies the maximum allowed date.
+- [`ShowToday`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor/ShowToday.md) — Gets or sets whether to highlight the Today's date in the calendar. 
+- [`NullValueButtonPosition`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/NullValueButtonPosition.md) — Gets or sets whether the (_'x'_) (clear value) button is visible. 
+- [`MinValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor/MinValue.md) — Specifies the minimum allowed date. The [`MinValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor/MinValue.md) and [`MaxValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor/MaxValue.md) properties allow you to specify the range of values displayed in the calendar.
+- [`MaxValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor/MaxValue.md) — Specifies the maximum allowed date.
 
 <!--TODO
-`ShowToday` — `HighlightTodayDate`?
-`NullValueButtonPosition` — `ShowClearButton`? 
+[`ShowToday`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor/ShowToday.md) — `HighlightTodayDate`?
+[`NullValueButtonPosition`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/NullValueButtonPosition.md) — `ShowClearButton`? 
 -->
 
-You can also handle the `PopupOpened` event to perform additional customizations of the dropdown calendar. In a `PopupOpened` event handler, the calendar object can be accessed using the `DateEditor.PopupContent` property. Typecast this property to a `CalendarControl` class object to modify its properties. See the following example: [Example - Enable the Year View When the Calendar is Opened](#example-enable-the-year-view-when-the-calendar-is-opened)
+You can also handle the [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) event to perform additional customizations of the dropdown calendar. In a [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) event handler, the calendar object can be accessed using the [`DateEditor.PopupContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupContent.md) property. Typecast this property to a [`CalendarControl`](../../API/Eremex.AvaloniaUI.Controls.Editors/CalendarControl.md) class object to modify its properties. See the following example: [Example - Enable the Year View When the Calendar is Opened](#example-enable-the-year-view-when-the-calendar-is-opened)
 
 
 
@@ -85,18 +85,18 @@ public partial class MainViewModel
 
 ## Specify the Value's Display Format
 
-Use the `DisplayFormatString` property to set the display format for the date/time value displayed in the edit box.
+Use the [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/DisplayFormatString.md) property to set the display format for the date/time value displayed in the edit box.
 
 ## Prevent Popups in Read-only Editors
 
-In read-only mode, the default behavior of any popup editor is to allow users to open the editor's dropdown. However, they cannot modify values through either the edit box or dropdown. To disable popups for read-only editors, set the `ShowPopupIfReadOnly` property to `false`.
+In read-only mode, the default behavior of any popup editor is to allow users to open the editor's dropdown. However, they cannot modify values through either the edit box or dropdown. To disable popups for read-only editors, set the [`ShowPopupIfReadOnly`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/ShowPopupIfReadOnly.md) property to `false`.
 
 ## Prevent Popups From Opening and Closing
 
 You can handle the following inherited events to cancel popup opening and closing operations:
 
-- `PopupEditor.PopupOpening` — Fires when a popup is about to be created. 
-- `PopupEditor.PopupClosing` — Fires when the popup is about to be closed. 
+- [`PopupEditor.PopupOpening`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) — Fires when a popup is about to be created. 
+- [`PopupEditor.PopupClosing`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupClosing.md) — Fires when the popup is about to be closed. 
 
 These events provide the `e.Cancel` parameter. Set it to `true` to cancel the current operation.
 
@@ -104,9 +104,9 @@ These events provide the `e.Cancel` parameter. Set it to `true` to cancel the cu
 
 Handle the following inherited event to modify the popup or its nested controls:
 
-- `PopupEditor.PopupOpened` — Fires after the popup has been created and immediately before it is displayed. This is a notification event. It does not allow you to cancel popup opening. Handle the `PopupOpened` event to customize the popup or its child controls.
+- [`PopupEditor.PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) — Fires after the popup has been created and immediately before it is displayed. This is a notification event. It does not allow you to cancel popup opening. Handle the [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) event to customize the popup or its child controls.
 
-When handling the `PopupEditor.PopupOpened` event, use the editor's `PopupContent` property to safely access the control inside the editor's popup. The `PopupOpened` event ensures that the popup control exists when you access it. For the DateEditor control, the `PopupContent` property returns an instance of the `CalendarControl` class. 
+When handling the [`PopupEditor.PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) event, use the editor's [`PopupContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupContent.md) property to safely access the control inside the editor's popup. The [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) event ensures that the popup control exists when you access it. For the DateEditor control, the [`PopupContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupContent.md) property returns an instance of the [`CalendarControl`](../../API/Eremex.AvaloniaUI.Controls.Editors/CalendarControl.md) class. 
 
 ### Example - Enable the Year View When the Calendar is Opened
 
@@ -114,9 +114,9 @@ This example shows how to set a DateEditor's dropdown calendar to the Year view 
 
 ![dateeditor-popupopened-example](../../images/dateeditor-popupopened-example.png)
 
-The `DateEditor` class does not provide a public property to change the current view of its calendar. However, the embedded calendar (a `CalendarControl` object) exposes a public property called `DisplayMode`. This property specifies the calendar's view mode (`Month`, `Year`, or `Decade`).
+The [`DateEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md) class does not provide a public property to change the current view of its calendar. However, the embedded calendar (a [`CalendarControl`](../../API/Eremex.AvaloniaUI.Controls.Editors/CalendarControl.md) object) exposes a public property called `DisplayMode`. This property specifies the calendar's view mode (`Month`, `Year`, or `Decade`).
 
-This example handles the `PopupOpened` event to access the embedded calendar when it is created. The handler typecasts the `DateEditor.PopupContent` property to a `CalendarControl` object, and then sets the `CalendarControl.DisplayMode` property  to `Year`.
+This example handles the [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) event to access the embedded calendar when it is created. The handler typecasts the [`DateEditor.PopupContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupContent.md) property to a [`CalendarControl`](../../API/Eremex.AvaloniaUI.Controls.Editors/CalendarControl.md) object, and then sets the `CalendarControl.DisplayMode` property  to `Year`.
 
 ``` cs
 using Eremex.AvaloniaUI.Controls.Editors;
@@ -134,4 +134,4 @@ private void DateEditor_PopupOpened(object sender, Avalonia.Interactivity.Routed
 
 Use the following inherited event to perform actions after the popup has been closed:
 
-- `PopupEditor.PopupClosed` — Fires immediately after the popup has been closed. This is a notification event. It does not allow you to cancel popup closing.
+- [`PopupEditor.PopupClosed`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupClosed.md) — Fires immediately after the popup has been closed. This is a notification event. It does not allow you to cancel popup closing.

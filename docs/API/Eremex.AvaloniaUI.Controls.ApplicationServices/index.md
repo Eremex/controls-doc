@@ -10,7 +10,7 @@
 | abstract class [DialogAwareViewModel](./DialogAwareViewModel.md) | Base class for view models shown as modal dialogs by IDialogService. On top of [`WindowAwareViewModel`](./WindowAwareViewModel.md) it builds the dialog buttons when the window opens. |
 | enum [DialogButtonType](./DialogButtonType.md) | Type of dialog button |
 | class [DialogButtonViewModel](./DialogButtonViewModel.md) | The standard IDialogButtonViewModel implementation. Use the `Create*` factory methods for the common buttons — they apply the right caption, style classes and default/cancel behaviour — and return the results from CreateButtons. |
-| class [DialogChoice&lt;T&gt;](./DialogChoice-1.md) | A single choice in a dialog: the button caption and the result returned when it is pressed. |
+| class [DialogChoice&lt;T&gt;](./DialogChoice-T.md) | A single choice in a dialog: the button caption and the result returned when it is pressed. |
 | enum [DialogResult](./DialogResult.md) | Identifies the button a modal dialog or message box was closed with. |
 | class [DialogService](./DialogService.md) | The default IDialogService implementation. It hosts the view model in a [`DialogWindow`](./DialogWindow.md), attaches the view model for as long as the dialog is open, and picks the owner window through IWindowsManager. |
 | class [DialogWindow](./DialogWindow.md) | The window that hosts a view model shown through IDialogService or IWindowService. It renders Content in the body and the buttons of ButtonsSource in the footer, sizing itself to its content. The services create it for you; there is normally no reason to instantiate it directly. |

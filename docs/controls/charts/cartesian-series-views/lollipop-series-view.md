@@ -6,15 +6,15 @@ seealso: []
 
 # Lollipop Series View
 
-The Lollipop Series View (`CartesianLollipopSeriesView`) visualizes data using thin lines with markers at the end. The markers indicate individual data points, while the lines connect the markers to a baseline (a horizontal or vertical axis). The Lollipop chart uses square markers by default, but also supports custom markers in SVG format. The following image demonstrates a Lollipop Series View with circular markers loaded from an SVG file.
+The Lollipop Series View ([`CartesianLollipopSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianLollipopSeriesView.md)) visualizes data using thin lines with markers at the end. The markers indicate individual data points, while the lines connect the markers to a baseline (a horizontal or vertical axis). The Lollipop chart uses square markers by default, but also supports custom markers in SVG format. The following image demonstrates a Lollipop Series View with circular markers loaded from an SVG file.
 
 ![chart-views-lollipop-series-view](../../../images/chart-views-lollipop-series-view.png)
 
 ## Create a Lollipop Series View
 
-To create a Lollipop Series View, add a `CartesianSeries` object to the `CartesianChart.Series` collection and initialize the `CartesianSeries.View` property with a `CartesianLollipopSeriesView` instance.
+To create a Lollipop Series View, add a [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) object to the [`CartesianChart.Series`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) collection and initialize the [`CartesianSeries.View`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md) property with a [`CartesianLollipopSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianLollipopSeriesView.md) instance.
 
-Use the `CartesianSeries.DataAdapter` property to supply data for the series.
+Use the [`CartesianSeries.DataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/Series/DataAdapter.md) property to supply data for the series.
 
 The following code shows how to create a Lollipop Series View in XAML and code-behind.
 
@@ -54,7 +54,7 @@ series.View = new CartesianLollipopSeriesView()
 
 ## Example - Create a Lollipop Series View and Use Custom SVG Data Point Markers
 
-The following example creates a Lollipop Series View to visualize sample data supplied by a `FormulaDataAdapter` object. The example shows how to use an SVG image as custom data point markers and dynamically adjust the colors of SVG elements so they match the data series color.
+The following example creates a Lollipop Series View to visualize sample data supplied by a [`FormulaDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/FormulaDataAdapter.md) object. The example shows how to use an SVG image as custom data point markers and dynamically adjust the colors of SVG elements so they match the data series color.
 
 ![create-a-lollipop-series-view-and-use-custom-svg-markers-example-result](../../../images/create-a-lollipop-series-view-and-use-custom-svg-markers-example-result.png)
 
@@ -96,7 +96,7 @@ The following example creates a Lollipop Series View to visualize sample data su
 
     The CSS code above customizes the style of the `circle` SVG object. The new style paints the border with Dark Red, and fills the circle using the data series color. 
      
-     - `{0}` placeholder — Inserts the value of the `CartesianLollipopSeriesView.Color` property.
+     - `{0}` placeholder — Inserts the value of the [`CartesianLollipopSeriesView.Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) property.
 
     The result is demonstrated below:
 
@@ -105,7 +105,7 @@ The following example creates a Lollipop Series View to visualize sample data su
     
 3. Set the Size of Point Markers
 
-    Use the `MarkerSize` property to adjust the size of the point markers.
+    Use the [`MarkerSize`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerSize.md) property to adjust the size of the point markers.
 
 Complete code:
 
@@ -209,27 +209,27 @@ You can use the following data adapters to provide data for Lollipop Series View
 
 Numeric _X_ Values:
 
-- `FormulaDataAdapter`
-- `ScatterDataAdapter`
-- `SortedNumericDataAdapter`
+- [`FormulaDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/FormulaDataAdapter.md)
+- [`ScatterDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/ScatterDataAdapter.md)
+- [`SortedNumericDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md)
 
 Date and Time _X_ Values:
 
-- `SortedDateTimeDataAdapter`
-- `SortedTimeSpanDataAdapter`
+- [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md)
+- [`SortedTimeSpanDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedTimeSpanDataAdapter.md)
 
 
 Qualitative _X_ Values:
 
-- `QualitativeDataAdapter`
+- [`QualitativeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeDataAdapter.md)
 
 ## Lollipop Series View Settings
 
 
-- `Color` — Specifies the color used to paint the point markers.
-- `LineColor` — Specifies the color used to paint the lines.
+- [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) — Specifies the color used to paint the point markers.
+- [`LineColor`](../../../API/Eremex.AvaloniaUI.Charts/CartesianLollipopSeriesView/LineColor.md) — Specifies the color used to paint the lines.
 - `LineThickness` — Specifies the line thickness.
-- `LineOrientation` — Specifies the direction of the lines.
+- [`LineOrientation`](../../../API/Eremex.AvaloniaUI.Charts/CartesianLollipopSeriesView/LineOrientation.md) — Specifies the direction of the lines.
 
     - `Vertical` — The lines extend vertically from the point markers to the _X_ axis.
 
@@ -241,9 +241,9 @@ Qualitative _X_ Values:
         ![chart-lollipop-horz-orientation](../../../images/chart-lollipop-horz-orientation.png)
 
 
-- `MarkerImage` — Gets or sets an image to use as custom point markers. If no image is specified, default square-shaped markers are displayed. You can use an `SvgImage` class instance to specify an SVG image.
+- [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) — Gets or sets an image to use as custom point markers. If no image is specified, default square-shaped markers are displayed. You can use an `SvgImage` class instance to specify an SVG image.
 
-    The `MarkerImage` property is declared with the `[Content]` attribute, which allows you to define an image directly between the &lt;CartesianLollipopSeriesView&gt; tags.
+    The [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) property is declared with the `[Content]` attribute, which allows you to define an image directly between the &lt;CartesianLollipopSeriesView&gt; tags.
 
     ``` xml
     <mxc:CartesianLollipopSeriesView>
@@ -254,11 +254,11 @@ Qualitative _X_ Values:
     SVG files contain predefined colors for SVG elements. To make these colors match your data series color, you can either:
     
     - Manually edit the source SVG image file beforehand
-    - Use the `MarkerImageCss` property to dynamically customize [styles](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) for SVG elements. The styles are applied when point markers are rendered.
+    - Use the [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) property to dynamically customize [styles](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) for SVG elements. The styles are applied when point markers are rendered.
 
-- `MarkerImageCss` — Specifies [CSS styles](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) for runtime customization of an SVG image defined by the `CartesianLollipopSeriesView.MarkerImage` property. The primary use case is replacing SVG element colors with the series color (`CartesianLollipopSeriesView.Color`). Include the `{0}` placeholder to insert the value of the `CartesianLollipopSeriesView.Color` property in the CSS code. 
+- [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) — Specifies [CSS styles](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) for runtime customization of an SVG image defined by the [`CartesianLollipopSeriesView.MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) property. The primary use case is replacing SVG element colors with the series color ([`CartesianLollipopSeriesView.Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md)). Include the `{0}` placeholder to insert the value of the [`CartesianLollipopSeriesView.Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) property in the CSS code. 
 
-    For example, when the `MarkerImage` property contains an SVG image with a circle element, the following CSS code styles the `circle` with an Orange fill (using the series color) and Dark Red border:
+    For example, when the [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) property contains an SVG image with a circle element, the following CSS code styles the `circle` with an Orange fill (using the series color) and Dark Red border:
 
     ``` xml
     <mxc:CartesianLollipopSeriesView Color="orange" MarkerImageCss="circle {{fill:{0};stroke:darkred;}}">
@@ -270,5 +270,5 @@ Qualitative _X_ Values:
 
     **Complete code**: [Example - Create a Lollipop Series View and Use Custom SVG Markers](#example-create-a-lollipop-series-view-and-use-custom-svg-data-point-markers).
 
-- `MarkerSize` — Specifies the size of the point markers, in pixels.
-- `ShowInCrosshair` — Specifies the visibility of the crosshair chart label for the current series. See [Customize Chart Labels of the Crosshair](../crosshair.md#hide-a-series-in-the-crosshair).
+- [`MarkerSize`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerSize.md) — Specifies the size of the point markers, in pixels.
+- [`ShowInCrosshair`](../../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) — Specifies the visibility of the crosshair chart label for the current series. See [Customize Chart Labels of the Crosshair](../crosshair.md#hide-a-series-in-the-crosshair).

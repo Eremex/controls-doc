@@ -2,18 +2,28 @@
 
 Returns the service, or `null` if it is not registered or the context has not been initialized yet.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public static T? GetService<T>()
     where T : class
 ```
 
-| parameter | description |
+## Type Parameters
+
+| name | description |
 | --- | --- |
 | T | The service type to resolve, normally an interface. |
 
-## Return Value
+## Returns
 
-The registered service instance, or `null` when the service is not registered or [`Current`](./Current.md) has not been set.
+| type | description |
+| --- | --- |
+| `T?` | The registered service instance, or `null` when the service is not registered or [`Current`](./Current.md) has not been set. |
 
 ## See Also
 

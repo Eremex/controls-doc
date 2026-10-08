@@ -12,23 +12,23 @@ The Eremex Controls library includes the following paint themes:
 
 | Paint&nbsp;Theme | Description | Package |
 | --- | --- | --- |
-| `DeltaDesign` | Contains visual settings for the Eremex Controls (except `Graphics3DControl`) and a set of standard Avalonia UI controls. | `Eremex.Avalonia.Themes.DeltaDesign` package |
-| `Controls3D` | Contains visual settings for the `Graphics3DControl`. | `Eremex.Avalonia.Controls3D` package |
+| `DeltaDesign` | Contains visual settings for the Eremex Controls (except [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md)) and a set of standard Avalonia UI controls. | `Eremex.Avalonia.Themes.DeltaDesign` package |
+| `Controls3D` | Contains visual settings for the [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md). | `Eremex.Avalonia.Controls3D` package |
 
 
 ## Add a NuGet Package with a Theme to Your Project
 
-- If you use any Eremex control (except `Graphics3DControl`), add the `Eremex.Avalonia.Themes.DeltaDesign` package to your project. 
+- If you use any Eremex control (except [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md)), add the `Eremex.Avalonia.Themes.DeltaDesign` package to your project. 
 
-- If you use `Graphics3DControl`, no additional package with a theme is required. The `Controls3D` theme is implemented in the `Eremex.Avalonia.Controls3D` package, which contains the control itself.
+- If you use [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md), no additional package with a theme is required. The `Controls3D` theme is implemented in the `Eremex.Avalonia.Controls3D` package, which contains the control itself.
 
 ## Which Theme to Register
 
-- If you use any Eremex control except `Graphics3DControl` you only need to register the `DeltaDesign` theme. 
+- If you use any Eremex control except [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) you only need to register the `DeltaDesign` theme. 
 
-- If you only use `Graphics3DControl`, you only need to register the `Controls3D` theme.
+- If you only use [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md), you only need to register the `Controls3D` theme.
 
-- If you use `Graphics3DControl` with other Eremex controls, register both themes.
+- If you use [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) with other Eremex controls, register both themes.
 
 - The `DeltaDesign` paint theme also includes styles for common standard Avalonia controls. If you use standard Avalonia controls not supported by the `DeltaDesign` theme, you must also register the `Fluent` theme. See [Register the 'FluentTheme' Theme for Standard Avalonia Controls](#register-the-fluenttheme-theme-for-standard-avalonia-controls).
 

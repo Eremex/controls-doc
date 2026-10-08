@@ -6,11 +6,11 @@ seealso: []
 
 # Date-Time Masks
 
-The `DateTime` mask type allows users to enter date-time values in editors according to a specified input mask. The input mask can also be used to format date-time values in display mode (when text editing is not active). The `DateEditor` control has the `DateTime` mask type enabled by default. To enable this mask type for other text editors, set the editor's `TextEditor.MaskType` property to `DateTime`.
+The `DateTime` mask type allows users to enter date-time values in editors according to a specified input mask. The input mask can also be used to format date-time values in display mode (when text editing is not active). The [`DateEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md) control has the [`DateTime`](../../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor/DateTime.md) mask type enabled by default. To enable this mask type for other text editors, set the editor's [`TextEditor.MaskType`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskType.md) property to [`DateTime`](../../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor/DateTime.md).
 
-Use the editor's `Mask` property to specify an input mask. The input mask is a string that defines a pattern according to which a date-time value is entered or formatted.
+Use the editor's [`Mask`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Mask.md) property to specify an input mask. The input mask is a string that defines a pattern according to which a date-time value is entered or formatted.
 
-The current culture affects most date-time masks. For example, the culture defines display names for the days of the week and months. You can forcibly assign a specific culture to a mask using the `TextEditor.MaskCulture` property.
+The current culture affects most date-time masks. For example, the culture defines display names for the days of the week and months. You can forcibly assign a specific culture to a mask using the [`TextEditor.MaskCulture`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskCulture.md) property.
 
 Eremex editors support standard and custom date-time masks.
 
@@ -20,7 +20,7 @@ Standard date-time masks supported by Eremex editors match the most common [stan
 
 ### Example
 
-The following example applies the `d` mask to a `DateEditor`. This mask formats the edit value according to the system short date pattern.
+The following example applies the `d` mask to a [`DateEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md). This mask formats the edit value according to the system short date pattern.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -56,7 +56,7 @@ You can create custom masks if the standard masks do not meet your specific need
 
 ### Example
 
-The following example applies the `'DATE:' yyyy MMMM dd, 'TIME:' HH:mm` mask to a `DateEditor`. This mask allows users to enter the date and time portions of a date-time value. The mask also displays the static (read-only) strings `DATE` and `TIME`.
+The following example applies the `'DATE:' yyyy MMMM dd, 'TIME:' HH:mm` mask to a [`DateEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md). This mask allows users to enter the date and time portions of a date-time value. The mask also displays the static (read-only) strings `DATE` and `TIME`.
 
 ![dateeditor-custommask-example](../../../images/dateeditor-custommask-example.png)
 

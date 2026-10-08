@@ -2,6 +2,12 @@
 
 The style classes applied to the hosting window, one per element. Set only by the constructor that takes them separately; otherwise `null`.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public string[]? StyleClassesArray { get; }
 ```

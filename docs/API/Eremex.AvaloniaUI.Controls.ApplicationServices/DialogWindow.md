@@ -2,6 +2,12 @@
 
 The window that hosts a view model shown through IDialogService or IWindowService. It renders Content in the body and the buttons of ButtonsSource in the footer, sizing itself to its content. The services create it for you; there is normally no reason to instantiate it directly.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public class DialogWindow : MxWindow, IActionWindow
 ```

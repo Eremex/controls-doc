@@ -26,7 +26,7 @@ This template adds the assemblies with the Eremex controls and DeltaDesign [pain
 
 ## 2. Add a ToolbarManager Component
 
-Start by defining a `ToolbarManager` component in XAML. 
+Start by defining a [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) component in XAML. 
 
 ``` xml
 <mx:MxWindow ...
@@ -53,16 +53,16 @@ Start by defining a `ToolbarManager` component in XAML.
 </mx:MxWindow>
 ```
 
-`ToolbarManager` is the main component that manages toolbars, context menus, and menu items. The component processes keyboard shortcuts, invokes commands associated with corresponding items, maintains toolbar runtime customization, and performs bar UI serialization and deserialization.
+[`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) is the main component that manages toolbars, context menus, and menu items. The component processes keyboard shortcuts, invokes commands associated with corresponding items, maintains toolbar runtime customization, and performs bar UI serialization and deserialization.
 
-The `ToolbarManager` component should wrap the client control (controls) for which a toolbar UI is created.
+The [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) component should wrap the client control (controls) for which a toolbar UI is created.
 
 
 ## 3. Create Toolbar Containers
 
-To allow a toolbar to be docked at a specific position in a window/UserControl, first create a toolbar container (`ToolbarContainerControl`). A toolbar container is a control that displays toolbars in the docked state, and maintains toolbar drag-and-drop operations.
+To allow a toolbar to be docked at a specific position in a window/UserControl, first create a toolbar container ([`ToolbarContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl.md)). A toolbar container is a control that displays toolbars in the docked state, and maintains toolbar drag-and-drop operations.
 
-In XAML, create four toolbar containers (`ToolbarContainerControl` objects) along the top, bottom, left and right edges of the window. You will then be able to dock toolbars at these positions.  
+In XAML, create four toolbar containers ([`ToolbarContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl.md) objects) along the top, bottom, left and right edges of the window. You will then be able to dock toolbars at these positions.  
 
 ![toolbars-get-started-empty=toolbarcontainers](../../images/toolbars-get-started-empty=toolbarcontainers.png)
 
@@ -92,15 +92,15 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ### Toolbar Container Options
 
-A `ToolbarContainerControl`'s main setting is `ToolbarContainerControl.DockType`, which specifies how the container is docked to its parent. You can set the `DockType` property to `Left`, `Right`, `Top`, `Bottom`, and `Standalone`. 
+A [`ToolbarContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl.md)'s main setting is [`ToolbarContainerControl.DockType`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl/DockType.md), which specifies how the container is docked to its parent. You can set the [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) property to `Left`, `Right`, `Top`, `Bottom`, and `Standalone`. 
 
-The `DockType` setting determines the container's border visibility, and default alignment of nested toolbars. For instance, if a container's `DockType` option is `Left`, the container draws a border at its right edge, and arranges nested toolbars vertically. The image below demonstrates the toolbar container that has its `DockType` option set to `Left`. The child toolbars are oriented vertically according to the `DockType` setting.
+The [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) setting determines the container's border visibility, and default alignment of nested toolbars. For instance, if a container's [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) option is `Left`, the container draws a border at its right edge, and arranges nested toolbars vertically. The image below demonstrates the toolbar container that has its [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) option set to `Left`. The child toolbars are oriented vertically according to the [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) setting.
 
 ![toolbars-get-started-toolbarcontainer-docktype-left](../../images/toolbars-get-started-toolbarcontainer-docktype-left.png)
 
 ## 4. Create Toolbars
 
-Add toolbars (`Toolbar` objects) to required toolbar containers. 
+Add toolbars ([`Toolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar.md) objects) to required toolbar containers. 
 
 ![toolbars-get-started-empty-toolbars](../../images/toolbars-get-started-empty-toolbars.png)
 
@@ -149,7 +149,7 @@ The snippet above populates three toolbar containers with toolbars, and leaves o
 
 ### Specify the Main Menu and Status Bar
 
-To indicate that a toolbar is the main menu or status bar, set its `Toolbar.DisplayMode` property to `MainMenu` and `StatusBar`, respectively.
+To indicate that a toolbar is the main menu or status bar, set its [`Toolbar.DisplayMode`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/DisplayMode.md) property to `MainMenu` and `StatusBar`, respectively.
 
 ``` xml
 <mxb:Toolbar x:Name="MainMenu" ToolbarName="Main Menu" DisplayMode="MainMenu">
@@ -162,34 +162,34 @@ The main menu and status bar have distinctive appearance settings and behavior. 
 
 ### Toolbar Options
 
-`Toolbar` objects expose many options to customize their view, layout, and behavior settings. Some of these options include:
+[`Toolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar.md) objects expose many options to customize their view, layout, and behavior settings. Some of these options include:
 
-- `ToolbarName` — The toolbar's display name. Toolbar names are displayed in the Customization window and also when a toolbar is in the floating state.
+- [`ToolbarName`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/ToolbarName.md) — The toolbar's display name. Toolbar names are displayed in the Customization window and also when a toolbar is in the floating state.
     
     ![toolbars-get-started-toolbarname](../../images/toolbars-get-started-toolbarname.png)
     
-- `ShowCustomizationButton` — Specifies the visibility of the Customization button used to activate customization mode and open the Customization window.
+- [`ShowCustomizationButton`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/ShowCustomizationButton.md) — Specifies the visibility of the Customization button used to activate customization mode and open the Customization window.
     
     ![toolbars-get-started-customization-button](../../images/toolbars-get-started-customization-button.png)
 
-- `AllowDragToolbar` — Specifies the visibility of a drag handle that enables users to drag the toolbar.
+- [`AllowDragToolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/AllowDragToolbar.md) — Specifies the visibility of a drag handle that enables users to drag the toolbar.
     
     ![toolbars-get-started-customization-drag-thumb](../../images/toolbars-get-started-customization-drag-thumb.png)
 
-- `DockType` — This property allows you to move a toolbar to a specific toolbar container in code-behind, or make the toolbar floating.
-- `StretchToolbar` — Enables toolbar stretching. In this mode, no other toolbar can be displayed in the same row.
-- `WrapItems` — Enables a multiple row layout for a toolbar.
+- [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) — This property allows you to move a toolbar to a specific toolbar container in code-behind, or make the toolbar floating.
+- [`StretchToolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/StretchToolbar.md) — Enables toolbar stretching. In this mode, no other toolbar can be displayed in the same row.
+- [`WrapItems`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/WrapItems.md) — Enables a multiple row layout for a toolbar.
 
 
 ## 5. Create Toolbar Items
 
-The next step is to populate toolbars with toolbar items: regular buttons, check buttons, in-place editors, sub-menus, and text items. Toolbar items are encapsulated by classes derived from the `ToolbarItem` class, which exposes common toolbar item options.
+The next step is to populate toolbars with toolbar items: regular buttons, check buttons, in-place editors, sub-menus, and text items. Toolbar items are encapsulated by classes derived from the [`ToolbarItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem.md) class, which exposes common toolbar item options.
 
 This tutorial creates the following toolbar items:
 
 ### ToolbarButtonItem
 
-A regular button that fires a command specified by the `Command` property. 
+A regular button that fires a command specified by the [`Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md) property. 
 
 ![toolbars-get-started-ToolbarButtonItem](../../images/toolbars-get-started-ToolbarButtonItem.png)
 
@@ -208,24 +208,24 @@ A regular button that fires a command specified by the `Command` property.
 
 #### Common Toolbar Item Options
 
-The base `ToolbarItem` class provides common options inherited by all toolbar items. Some of these options include:
+The base [`ToolbarItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem.md) class provides common options inherited by all toolbar items. Some of these options include:
 
-- `Alignment` — The item's alignment within the toolbar.        
-- `Category` — A category to which the item belongs. Categories are used to organize items into logical groups within the Customization window.
-- `Command` — A command executed when the button is clicked.
-- `CommandParameter` — A command parameter passed to the specified command.
-- `DisplayMode` — Gets whether to display only the glyph, the header, or both.
-- `Header` — The item's display text. 
-- `Glyph` — The item's image.
-- `GlyphAlignment` — The glyph alignment relative to the item's header.
-- `GlyphSize` — The glyph display size.
-- `ShowSeparator` — Allows you to display a separator before the item.
+- [`Alignment`](../../API/Eremex.AvaloniaUI.Controls.Bars/Alignment.md) — The item's alignment within the toolbar.        
+- [`Category`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Category.md) — A category to which the item belongs. Categories are used to organize items into logical groups within the Customization window.
+- [`Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md) — A command executed when the button is clicked.
+- [`CommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/CommandParameter.md) — A command parameter passed to the specified command.
+- [`DisplayMode`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/DisplayMode.md) — Gets whether to display only the glyph, the header, or both.
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) — The item's display text. 
+- [`Glyph`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Glyph.md) — The item's image.
+- [`GlyphAlignment`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/GlyphAlignment.md) — The glyph alignment relative to the item's header.
+- [`GlyphSize`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/GlyphSize.md) — The glyph display size.
+- [`ShowSeparator`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/ShowSeparator.md) — Allows you to display a separator before the item.
 
 #### Assign a Dropdown Control/Menu to a ToolbarButtonItem
 
-You can associate a dropdown control/menu with a `ToolbarButtonItem` object. The dropdown is activated by a click on the built-in dropdown arrow or the item itself (see the `DropDownArrowVisibility` option below for more information).
+You can associate a dropdown control/menu with a [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md) object. The dropdown is activated by a click on the built-in dropdown arrow or the item itself (see the [`DropDownArrowVisibility`](../../API/Eremex.AvaloniaUI.Controls.Bars/DropDownArrowVisibility.md) option below for more information).
 
-Let's associate the _Paste_ button (`ToolbarButtonItem`) with a dropdown menu. The dropdown menu will display the _Paste_ and _Paste As_ commands.
+Let's associate the _Paste_ button ([`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)) with a dropdown menu. The dropdown menu will display the _Paste_ and _Paste As_ commands.
 
 ![toolbars-get-started-pastebutton-with-dropdown-menu](../../images/toolbars-get-started-pastebutton-with-dropdown-menu.png)
 
@@ -249,9 +249,9 @@ Let's associate the _Paste_ button (`ToolbarButtonItem`) with a dropdown menu. T
 
 The following properties are used to specify a dropdown control and the way it is displayed:
 
-- `DropDownControl` — Gets or sets a dropdown control/menu associated with the item. This property accepts `PopupContainer` and `PopupMenu` objects.
+- [`DropDownControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem/DropDownControl.md) — Gets or sets a dropdown control/menu associated with the item. This property accepts [`PopupContainer`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupContainer.md) and [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) objects.
 
-- `DropDownArrowVisibility` — Specifies whether the item displays a dropdown arrow used to invoke the associated dropdown control. Supported options include:
+- [`DropDownArrowVisibility`](../../API/Eremex.AvaloniaUI.Controls.Bars/DropDownArrowVisibility.md) — Specifies whether the item displays a dropdown arrow used to invoke the associated dropdown control. Supported options include:
     - `ShowArrow` — The dropdown arrow is visible. The item and arrow act as a single button. A click on them displays an associated dropdown control.
 
     - `ShowSplitArrow` or `Default` — The dropdown arrow is visible. It acts as a separate button embedded in the item. A click on the dropdown arrow invokes the associated dropdown control. A click on the item invokes its command.
@@ -332,7 +332,7 @@ An item that allows you to embed an Eremex editor in a toolbar or menu.
 #### ToolbarEditorItem Options
 
 - `EditorValue` — Allows you to set and read the inplace editor's value.
-- `EditorProperties` — Specifies the type of the editor to be embedded in a toolbar/menu. In the code snippet above, the `EditorProperties` property is set to a `ComboBoxEditorProperties` object. This object contains settings specific to the `ComboBoxEditor` control. A toolbar will automatically create a `ComboBoxEditor` control at runtime from the specified `ComboBoxEditorProperties` object.
+- `EditorProperties` — Specifies the type of the editor to be embedded in a toolbar/menu. In the code snippet above, the `EditorProperties` property is set to a [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md) object. This object contains settings specific to the [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) control. A toolbar will automatically create a [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) control at runtime from the specified [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md) object.
 
 ### ToolbarTextItem
 
@@ -359,8 +359,8 @@ A text label. A click on a text label does not raise any action (command).
 
 The Toolbars library also supports other toolbar item types that are not demonstrated in this tutorial:
 
-- `ToolbarItemGroup` — A group of toolbar items.
-- `ToolbarCheckItemGroup` — A group of check buttons. Use it to create a group of mutually exclusive check items, or a group that supports selecting multiple items at a time.
+- [`ToolbarItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup.md) — A group of toolbar items.
+- [`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md) — A group of check buttons. Use it to create a group of mutually exclusive check items, or a group that supports selecting multiple items at a time.
 
 See the following topic for more information: [Toolbar Items](toolbar-items.md).
 
@@ -371,7 +371,7 @@ You can place toolbars at any position within a window, not only along its edges
 ![toolbars-get-started-standalone-toolbar](../../images/toolbars-get-started-standalone-toolbar.png)
 
 To create a standalone toolbar, do the following:
-1. Create a toolbar container (`ToolbarContainerControl`) at the required position. Set its `DockType` property to `Standalone`. 
+1. Create a toolbar container ([`ToolbarContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl.md)) at the required position. Set its [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) property to `Standalone`. 
    
    Standalone toolbar containers do not have borders.
 
@@ -406,7 +406,7 @@ The code below displays a standalone toolbar between two text editors. The toolb
 
 ## 7. Assign a Context Menu to a Text Editor
 
-To specify a context menu for a control, create a `PopupMenu` object and assign it to the target control using the `ToolbarManager.ContextPopup` attached property. Toolbar items of any type can be added to popup menus.
+To specify a context menu for a control, create a [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) object and assign it to the target control using the `ToolbarManager.ContextPopup` attached property. Toolbar items of any type can be added to popup menus.
 
 ![toolbars-get-started-context-menu](../../images/toolbars-get-started-context-menu.png)
 
@@ -435,20 +435,20 @@ To specify a context menu for a control, create a `PopupMenu` object and assign 
 
 ### PopupMenu Options
 
-- `ContentRightIndent` — Specifies the width of the empty space to the right of menu items' text.
+- [`ContentRightIndent`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ContentRightIndent.md) — Specifies the width of the empty space to the right of menu items' text.
 
   ![toolbars-popupmenu-contentrightindent](../../images/toolbars-popupmenu-contentrightindent.png)
 
-- `Header` — Allows you to specify a menu header.
-- `ShowHeader` — Gets or sets whether the menu header is visible.
-- `ShowIconStrip` — Gets or sets whether to display a vertical strip of icons for menu items. A menu item's icon is specified by the item's `Glyph` property.
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Header.md) — Allows you to specify a menu header.
+- [`ShowHeader`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ShowHeader.md) — Gets or sets whether the menu header is visible.
+- [`ShowIconStrip`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ShowIconStrip.md) — Gets or sets whether to display a vertical strip of icons for menu items. A menu item's icon is specified by the item's `Glyph` property.
 
 
 
 
 ## 8. Specify Hotkeys for Toolbar Items
 
-Use the `ToolbarItem.HotKey` property to assign shortcuts to items. 
+Use the [`ToolbarItem.HotKey`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/HotKey.md) property to assign shortcuts to items. 
 
 ``` xml
 <mxb:ToolbarButtonItem
@@ -456,8 +456,8 @@ Use the `ToolbarItem.HotKey` property to assign shortcuts to items.
     Glyph="{SvgImage 'avares://Bars-sample/Images/Toolbars/EditDelete.svg'}"  Category="Edit"/>
 ```
 
-The `ToolbarManager` component's bounds define the default hotkey scope. If focus is within the hotkey scope, the `ToolbarManager` can intercept and process hotkeys. 
-You can set the `ToolbarManager.IsWindowManager` property to `true` to expand the hotkey scope to the entire window. In this case, the `ToolbarManager` registers hotkeys in the window, and it can handle hotkeys even if focus is beyond the `ToolbarManager`'s bounds.
+The [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) component's bounds define the default hotkey scope. If focus is within the hotkey scope, the [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) can intercept and process hotkeys. 
+You can set the [`ToolbarManager.IsWindowManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/IsWindowManager.md) property to `true` to expand the hotkey scope to the entire window. In this case, the [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) registers hotkeys in the window, and it can handle hotkeys even if focus is beyond the [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md)'s bounds.
 
 See the following topic for more information: [Toolbar Item Hotkeys](toolbar-items.md#hotkeys).
 
@@ -480,14 +480,14 @@ The `ToolTip` property allows you to specify tooltips for toolbar items.
 
 ## 10. Make a Toolbar Floating
 
-Let's make a toolbar floating in code-behind. Ensure that the target toolbar has a name, so you can access it. After you get the toolbar object, set its `Toolbar.DockType` property to `Floating`. Use the `Toolbar.FloatingPosition` property to set the floating toolbar's location.
+Let's make a toolbar floating in code-behind. Ensure that the target toolbar has a name, so you can access it. After you get the toolbar object, set its [`Toolbar.DockType`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/DockType.md) property to `Floating`. Use the [`Toolbar.FloatingPosition`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/FloatingPosition.md) property to set the floating toolbar's location.
 
 ``` csharp
 EditToolbar.DockType = Eremex.AvaloniaUI.Controls.Bars.MxToolbarDockType.Floating;
 EditToolbar.FloatingPosition = new PixelPoint(200, 200);
 ```
 
-To create a floating toolbar in XAML, define a `Toolbar` object in the `ToolbarManager.Toolbars` collection, and set the `Toolbar.DockType` property to `Floating`. 
+To create a floating toolbar in XAML, define a [`Toolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar.md) object in the [`ToolbarManager.Toolbars`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/Toolbars.md) collection, and set the [`Toolbar.DockType`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/DockType.md) property to `Floating`. 
 
 See the following topic for more information: [Floating Toolbars](toolbars.md#floating-toolbars).
 

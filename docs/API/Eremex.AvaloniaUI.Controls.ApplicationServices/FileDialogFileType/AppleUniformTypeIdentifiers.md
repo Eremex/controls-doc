@@ -2,6 +2,12 @@
 
 The uniform type identifiers this type matches, such as `public.png`. Used on Apple platforms.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public IReadOnlyList<string>? AppleUniformTypeIdentifiers { get; set; }
 ```

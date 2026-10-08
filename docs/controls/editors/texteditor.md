@@ -6,7 +6,7 @@ seealso: []
 
 # TextEditor
 
-The `TextEditor` control provides base text editing features. It supports masks that allow you to restrict user input and to format values.
+The [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) control provides base text editing features. It supports masks that allow you to restrict user input and to format values.
 
 ![texteditor](../../images/texteditor.png)
 
@@ -21,17 +21,17 @@ The control's main features include:
 
 ## Specify Text and Customize Text Options
 
-The `TextEditor.EditorValue` property specifies the editor's text. If the text contains _NewLine_ characters, the editor displays the text on multiple lines. 
+The [`TextEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property specifies the editor's text. If the text contains _NewLine_ characters, the editor displays the text on multiple lines. 
 
 ### Text Wrapping
 
-The `TextEditor.TextWrapping` property allows you to activate automatic text wrapping at the editor's right edge. Set this property to the `Avalonia.Media.TextWrapping.Wrap` value to enable regular text wrapping mode.
+The [`TextEditor.TextWrapping`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/TextWrapping.md) property allows you to activate automatic text wrapping at the editor's right edge. Set this property to the `Avalonia.Media.TextWrapping.Wrap` value to enable regular text wrapping mode.
 
 ### Accept _Tab_ and _Enter_ keys During Input
 
 Users can press the _Tab_ and _Enter_ keys to insert _Tab_ and _Return_ characters in the text. You can use the following options to change this behavior:
 
-- `TextEditor.AcceptsReturn` — Specifies whether a _NewLine_ character is inserted when the _Enter_ key is pressed. If this property is disabled, the editor ignores the _Enter_ key.
+- [`TextEditor.AcceptsReturn`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/AcceptsReturn.md) — Specifies whether a _NewLine_ character is inserted when the _Enter_ key is pressed. If this property is disabled, the editor ignores the _Enter_ key.
 - `TextEditor.AcceptsTab`— Specifies whether a tab character is inserted when the _Tab_ key is pressed. If this property is disabled, focus is moved to the next control in the tab order when the _Tab_ key is pressed.
 
 ## Masks
@@ -40,20 +40,20 @@ A [mask](masks/index.md) applied to a text editor guides a user to enter values 
 
 To enable masked input, do the following:
 
-- Set the `TextEditor.MaskType` property to a mask type.
-- Set the `TextEditor.Mask` property to a mask.
+- Set the [`TextEditor.MaskType`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskType.md) property to a mask type.
+- Set the [`TextEditor.Mask`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Mask.md) property to a mask.
 
 ### Mask Type 
 
-The `TextEditor.MaskType` property allows you to select mask mode from the following options:
+The [`TextEditor.MaskType`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskType.md) property allows you to select mask mode from the following options:
 
-- `MaskType.Numeric` — Mask mode tailored to accept numeric values.
-- `MaskType.DateTime` — Mask mode tailored to accept date-time values.
-- `MaskType.None` — Masked input is disabled.
+- [`MaskType.Numeric`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) — Mask mode tailored to accept numeric values.
+- [`MaskType.DateTime`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) — Mask mode tailored to accept date-time values.
+- [`MaskType.None`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) — Masked input is disabled.
 
 ### Mask Strings
 
-Use the `TextEditor.Mask` property to set a string that specifies a mask. The mask is composed of mask specifiers which are specific to the selected mask type.
+Use the [`TextEditor.Mask`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Mask.md) property to set a string that specifies a mask. The mask is composed of mask specifiers which are specific to the selected mask type.
 
 See the following topics for more information:
 
@@ -76,13 +76,13 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 
 ### Using the Mask as a Display Format
 
-The mask specified by the `TextEditor.Mask` property can be used to format the editor's value in display mode (when text editing is not active). The `TextEditor.MaskUseAsDisplayFormat` property specifies this setting. The property's default value is `true`.
+The mask specified by the [`TextEditor.Mask`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Mask.md) property can be used to format the editor's value in display mode (when text editing is not active). The [`TextEditor.MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskUseAsDisplayFormat.md) property specifies this setting. The property's default value is `true`.
 
 ### Mask Culture Settings
 
 Many masks are dependent on the current culture. For instance, the decimal separator for numeric masks is different in different cultures. Date-time values are formatted using culture-specific patterns and localized names for the days of the week and months.
 
-The `TextEditor.MaskCulture` property allows you to set the culture to use by the mask. If this property is not set, the application's default culture is used.
+The [`TextEditor.MaskCulture`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskCulture.md) property allows you to set the culture to use by the mask. If this property is not set, the application's default culture is used.
 
 #### Example 
 
@@ -103,18 +103,18 @@ A user can select text using the mouse and keyboard.
 
 To select a portion of text and clear the selection in code, use the following API:
 
-- `TextEditor.SelectionStart` — The zero-based index of the starting character of the text selection.
-- `TextEditor.SelectionEnd` — The zero-based index of the end character of the text selection.
-- `TextEditor.SelectAll` — Selects all text.
-- `TextEditor.ClearSelection` — Deselects the selected text.
+- [`TextEditor.SelectionStart`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/SelectionStart.md) — The zero-based index of the starting character of the text selection.
+- [`TextEditor.SelectionEnd`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/SelectionEnd.md) — The zero-based index of the end character of the text selection.
+- [`TextEditor.SelectAll`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/SelectAll.md) — Selects all text.
+- [`TextEditor.ClearSelection`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/ClearSelection.md) — Deselects the selected text.
 
 ## Watermarks
 
-The `TextEditor` control and its descendants support watermarks. A watermark is a grayed out hint displayed when the editor's value is empty or null.
+The [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) control and its descendants support watermarks. A watermark is a grayed out hint displayed when the editor's value is empty or null.
 
 ![texteditor-watermark](../../images/texteditor-watermark.png)
 
-Use the `TextEditor.Watermark` property to specify a watermark.
+Use the [`TextEditor.Watermark`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Watermark.md) property to specify a watermark.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"

@@ -6,7 +6,7 @@ seealso: []
 
 # TreeList and TreeView
 
-The Eremex Controls library includes two data-aware controls to display hierarchical data in the form of a tree — `TreeListControl` and `TreeViewControl`. They render data source items as nodes (rows). If a node owns child nodes, you can expand it to display the next level of the node hierarchy. 
+The Eremex Controls library includes two data-aware controls to display hierarchical data in the form of a tree — [`TreeListControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md) and [`TreeViewControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md). They render data source items as nodes (rows). If a node owns child nodes, you can expand it to display the next level of the node hierarchy. 
 
 `TreeList` supports multiple columns:
 

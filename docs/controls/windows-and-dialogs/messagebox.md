@@ -28,8 +28,8 @@ public static MessageBoxResult MxMessageBox.Show(Window? owner, string text, str
 - owner — The window that will own the message box. If this parameter is `null`, the `MxMessageBox`  automatically identifies the owner: the owner is the last active window, or the application's main window.
 - text — The text to display in the dialog.
 - title — The dialog's title.
-- buttons — An `Eremex.AvaloniaUI.Controls.MessageBoxButtons` enumeration value that specifies buttons to display in the dialog. Available values include: `Ok`, `OkCancel`, `YesNoCancel`, `YesNo`, `AbortRetryIgnore`, `RetryCancel`
-- icon — One of the predefined icons to display before the text. Set the property to `MessageBoxIcon.None` to hide the icon.
+- buttons — An [`Eremex.AvaloniaUI.Controls.MessageBoxButtons`](../../API/Eremex.AvaloniaUI.Controls/MessageBoxButtons.md) enumeration value that specifies buttons to display in the dialog. Available values include: `Ok`, `OkCancel`, `YesNoCancel`, `YesNo`, `AbortRetryIgnore`, `RetryCancel`
+- icon — One of the predefined icons to display before the text. Set the property to [`MessageBoxIcon.None`](../../API/Eremex.AvaloniaUI.Controls/MessageBoxIcon.md) to hide the icon.
 - defaultButton — Identifies the default button. The default button is the one that is initially focused when the dialog is displayed. When a user presses ENTER, the default button is clicked.
 - configure — A delegate to perform additional dialog customization (for instance, the dialog's icon in the title bar, or the alignment of buttons).
 

@@ -2,6 +2,12 @@
 
 The icon shown next to the text of a message box, indicating how serious the message is.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public enum MessageBoxIcon
 ```

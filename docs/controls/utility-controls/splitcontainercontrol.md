@@ -6,7 +6,7 @@ seealso: []
 
 # SplitContainerControl
 
-`SplitContainerControl` is a composite control that displays two panels separated by a movable splitter. Users can drag the splitter to change size of the panels. They can also click the splitter to collapse a selected panel, and then click the splitter again to restore the panel.
+[`SplitContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl.md) is a composite control that displays two panels separated by a movable splitter. Users can drag the splitter to change size of the panels. They can also click the splitter to collapse a selected panel, and then click the splitter again to restore the panel.
 
 ![SplitContainerControl](../../images/SplitContainerControl.png)
 
@@ -20,10 +20,10 @@ The control's main features include:
 
 ## Specify Content for the Panels
 
-Use the `SplitContainerControl.Panel1` and `SplitContainerControl.Panel2` properties to place contents onto the control's panels. Two usage scenarios are supported:
+Use the [`SplitContainerControl.Panel1`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel1.md) and [`SplitContainerControl.Panel2`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel2.md) properties to place contents onto the control's panels. Two usage scenarios are supported:
 
 - Initialize these properties with controls to be displayed in the panels. 
-- Initialize these properties with custom objects. In this case, use the `SplitContainerControl.Panel1Template` and `SplitContainerControl.Panel2Template` properties to specify DataTemplates that will render the custom objects.
+- Initialize these properties with custom objects. In this case, use the [`SplitContainerControl.Panel1Template`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel1Template.md) and [`SplitContainerControl.Panel2Template`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel2Template.md) properties to specify DataTemplates that will render the custom objects.
 
 ``` xml
 <mxe:SplitContainerControl Name="splitContainer"
@@ -40,16 +40,16 @@ Use the `SplitContainerControl.Panel1` and `SplitContainerControl.Panel2` proper
 
 ## Set Panel Size and Direction
 
-Use the `SplitContainerControl.Orientation` property to choose between the horizontal (default) and vertical panel arrangement.
+Use the [`SplitContainerControl.Orientation`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Orientation.md) property to choose between the horizontal (default) and vertical panel arrangement.
 
 ![splitcontainercontrol-orientation](../../images/splitcontainercontrol-orientation.png)
 
-To set size of the container's panels, use the `SplitContainerControl.Panel1Length` or `SplitContainerControl.Panel2Length` properties.
+To set size of the container's panels, use the [`SplitContainerControl.Panel1Length`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel1Length.md) or [`SplitContainerControl.Panel2Length`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel2Length.md) properties.
 
 - In a horizontal orientation, these properties set the width of the panels.
 - In a vertical orientation, they set the height of the panels.
 
-The `Panel1MinLength`, `Panel1MaxLength`, `Panel2MinLength`, and `Panel2MaxLength` properties allow you to set resizing constraints for the panels.  Users cannot resize the panels beyond these limits. 
+The [`Panel1MinLength`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel1MinLength.md), [`Panel1MaxLength`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel1MaxLength.md), [`Panel2MinLength`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel2MinLength.md), and [`Panel2MaxLength`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel2MaxLength.md) properties allow you to set resizing constraints for the panels.  Users cannot resize the panels beyond these limits. 
 
 ## Collapse and Restore a Panel
 
@@ -57,14 +57,14 @@ An arrow icon displayed in the splitter indicates that a panel will be collapsed
 
 ![SplitContainerControl](../../images/splitcontainercontrol-collapse.gif)
 
-The `SplitContainerControl.CollapsePanel` property allows you to specify the collapsible panel. The property's default value is _Panel2_.
+The [`SplitContainerControl.CollapsePanel`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/CollapsePanel.md) property allows you to specify the collapsible panel. The property's default value is _Panel2_.
 
-To collapse and restore a panel in code, use the `IsCollapsed` property.
+To collapse and restore a panel in code, use the [`IsCollapsed`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/IsCollapsed.md) property.
 
 ## Disable Panel Collapsing
 
-Set the `SplitContainerControl.CollapsePanel` property to `None` to disable the panel collapse feature. In this mode, the splitter does not display arrow icons.
+Set the [`SplitContainerControl.CollapsePanel`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/CollapsePanel.md) property to `None` to disable the panel collapse feature. In this mode, the splitter does not display arrow icons.
 
 ## Hide the Splitter
 
-Use the `SplitContainerControl.IsSplitterVisible` property to `false` to hide the splitter in specific cases. This prevents a user from performing resize and collapse/restore operations on the panels.
+Use the [`SplitContainerControl.IsSplitterVisible`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/IsSplitterVisible.md) property to `false` to hide the splitter in specific cases. This prevents a user from performing resize and collapse/restore operations on the panels.

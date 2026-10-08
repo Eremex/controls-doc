@@ -6,14 +6,14 @@ seealso: []
 
 # Scroll and Zoom in a Chart Control
 
-The `CartesianChart` control supports scroll and zoom operations for the entire view and individual axes. A user can zoom and scroll the chart with the mouse and keyboard. In code, these operations are available through a dedicated API.
+The [`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) control supports scroll and zoom operations for the entire view and individual axes. A user can zoom and scroll the chart with the mouse and keyboard. In code, these operations are available through a dedicated API.
 
 ## Allow Scroll and Zoom Operations
 
 Scroll and zoom operations are enabled by default. The following options allow you to disable these operations for individual axes:
 
-- `Axis.EnableZooming`
-- `Axis.EnableScrolling`
+- [`Axis.EnableZooming`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableZooming.md)
+- [`Axis.EnableScrolling`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableScrolling.md)
 
 ``` xml
 <mxc:CartesianChart.AxesX>
@@ -24,7 +24,7 @@ Scroll and zoom operations are enabled by default. The following options allow y
 chartControl1.AxesX[0].EnableZooming = false;
 ```
 
-The chart control's minimum zoom bounds prevent zooming out too far and thus making the view too small. The total axis ranges define the minimum zoom bounds. To specify a total axis range, use the `WholeMin` and `WholeMax` properties of the `AxisX.Range`/`AxisY.Range` objects.
+The chart control's minimum zoom bounds prevent zooming out too far and thus making the view too small. The total axis ranges define the minimum zoom bounds. To specify a total axis range, use the `WholeMin` and `WholeMax` properties of the [`AxisX.Range`](../../API/Eremex.AvaloniaUI.Charts/AxisX/Range.md)/[`AxisY.Range`](../../API/Eremex.AvaloniaUI.Charts/AxisY/Range.md) objects.
 
 ``` xml
 <mxc:CartesianChart.AxesY>
@@ -80,7 +80,7 @@ See the following topic for more information: [Axis Value Range](cartesian-chart
 
 ### Make a Specific Data Portion Visible
 
-To see a specific data portion in the control's viewport, customize the visible range of the chart control's axes. Use the `VisualMin` and `VisualMax` properties of the `AxisX.Range`/`AxisY.Range` objects to specify the range of values for the viewport.
+To see a specific data portion in the control's viewport, customize the visible range of the chart control's axes. Use the `VisualMin` and `VisualMax` properties of the [`AxisX.Range`](../../API/Eremex.AvaloniaUI.Charts/AxisX/Range.md)/[`AxisY.Range`](../../API/Eremex.AvaloniaUI.Charts/AxisY/Range.md) objects to specify the range of values for the viewport.
 
 ``` cs
 chartControl1.AxesX[0].Range.VisualMin = 10;
@@ -91,7 +91,7 @@ chartControl1.AxesY[0].Range.VisualMax = 50;
 
 ### Imitate a User Scroll Operation in Code
 
-Use the `CartesianChart.Scroll` method to scroll the series data along specific axes or all axes simultaneously. This method imitates a scroll operation performed by users.
+Use the [`CartesianChart.Scroll`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Scroll.md) method to scroll the series data along specific axes or all axes simultaneously. This method imitates a scroll operation performed by users.
 
 The method's signature is shown below:
 
@@ -117,7 +117,7 @@ chartControl1.Scroll(10, 0, new[] { axisX });
 
 ### Imitate a User Zoom Operation in Code
 
-Use the `CartesianChart.Zoom` method to zoom the series data along specific axes or all axes simultaneously. This method imitates zoom operations performed by users.
+Use the [`CartesianChart.Zoom`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Zoom.md) method to zoom the series data along specific axes or all axes simultaneously. This method imitates zoom operations performed by users.
 
 The method's signature is shown below:
 

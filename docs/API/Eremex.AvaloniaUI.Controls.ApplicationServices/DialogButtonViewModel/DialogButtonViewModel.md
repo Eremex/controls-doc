@@ -2,6 +2,12 @@
 
 Initializes an empty button. Every property has to be assigned afterwards; prefer the `Create*` factory methods for the standard buttons.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public DialogButtonViewModel()
 ```
@@ -17,6 +23,12 @@ public DialogButtonViewModel()
 
 Initializes a fully configured button. The `Create*` factory methods call this constructor with the settings of each standard button.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public DialogButtonViewModel(string caption, ICommand command, object? commandParameter, 
     string? classes, bool isDefault = false, bool isCancel = false, 
@@ -24,17 +36,19 @@ public DialogButtonViewModel(string caption, ICommand command, object? commandPa
     DialogButtonType buttonType = DialogButtonType.Button)
 ```
 
-| parameter | description |
-| --- | --- |
-| caption | The text shown on the button. |
-| command | The command invoked when the button is pressed. |
-| commandParameter | The value passed to *command*. |
-| classes | Space-separated style classes applied to the button. |
-| isDefault | `true` to make this the default button, activated by Enter. |
-| isCancel | `true` to make this the cancel button, activated by Escape. |
-| dockType | The side of the dialog footer the button is docked to. |
-| index | The position among the buttons docked to the same side, in ascending order. `null` keeps the declaration order. |
-| buttonType | Whether to render a push button or a check box. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| caption | `string` | The text shown on the button. |
+| command | `ICommand` | The command invoked when the button is pressed. |
+| commandParameter | `object?` | The value passed to *command*. |
+| classes | `string?` | Space-separated style classes applied to the button. |
+| isDefault | `bool` | `true` to make this the default button, activated by Enter. |
+| isCancel | `bool` | `true` to make this the cancel button, activated by Escape. |
+| dockType | `DockType` | The side of the dialog footer the button is docked to. |
+| index | `int?` | The position among the buttons docked to the same side, in ascending order. `null` keeps the declaration order. |
+| buttonType | `DialogButtonType` | Whether to render a push button or a check box. |
 
 ## See Also
 

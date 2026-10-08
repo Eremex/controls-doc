@@ -2,6 +2,12 @@
 
 The available file filters as a collection. The predefined types are declared with [`FileDialogFileType`](../FileDialogFileType.md). Defining a set of them per module is recommended.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public IReadOnlyList<FileDialogFileType>? FilterFileTypes { get; set; }
 ```

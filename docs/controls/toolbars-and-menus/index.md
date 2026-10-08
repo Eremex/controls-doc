@@ -6,7 +6,7 @@ seealso: []
 
 # Toolbars and Menus
 
-The EMX Controls Library contains the `ToolbarManager` component that allows you to create traditional Toolbars & Menus or the [Ribbon UI](../ribbon/index.md) in your application. `ToolbarManager` offers rich capabilities to arrange and manage traditional toolbars, create context menus, adjust toolbar view and behavior settings, and customize bars at runtime.
+The EMX Controls Library contains the [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) component that allows you to create traditional Toolbars & Menus or the [Ribbon UI](../ribbon/index.md) in your application. [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) offers rich capabilities to arrange and manage traditional toolbars, create context menus, adjust toolbar view and behavior settings, and customize bars at runtime.
 
 ![toolbars](../../images/toolbars.png)
 
@@ -29,7 +29,7 @@ The main features of the Toolbar&Menu library include:
     - An option to show/hide bar drag handles.
     - An option to show/hide bar customization buttons.
     
-- Supported bar items: `ToolbarButtonItem`, `ToolbarCheckItem`, `ToolbarMenuItem`, `ToolbarEditorItem`, `ToolbarTextItem`, `ToolbarItemGroup`, and `ToolbarCheckItemGroup`.
+- Supported bar items: [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md), [`ToolbarCheckItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem.md), [`ToolbarMenuItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarMenuItem.md), [`ToolbarEditorItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem.md), [`ToolbarTextItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarTextItem.md), [`ToolbarItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup.md), and [`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md).
 
 - Context menus — You can create context menus for external controls. The style settings of the context menus are consistent with all components of the the Toolbar&Menu library.
 

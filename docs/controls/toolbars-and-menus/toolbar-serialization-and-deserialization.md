@@ -10,8 +10,8 @@ Users can customize the layout of toolbars at runtime. See [Runtime Toolbar Cust
 
 The layout of toolbars (including the layout of toolbar commands) can be saved to a stream, and loaded from it later (for instance, the next time your application runs). To do this, use the following layout serialization and deserialization methods:
 
-- `ToolbarManager.SaveLayout` — Saves the layout of toolbars to a stream.
-- `ToolbarManager.RestoreLayout` — Loads the previously saved layout from a stream.
+- [`ToolbarManager.SaveLayout`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/SaveLayout.md) — Saves the layout of toolbars to a stream.
+- [`ToolbarManager.RestoreLayout`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/RestoreLayout.md) — Loads the previously saved layout from a stream.
 
 !!! note
 

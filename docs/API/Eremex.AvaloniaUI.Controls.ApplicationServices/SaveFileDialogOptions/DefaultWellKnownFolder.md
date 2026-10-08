@@ -2,6 +2,12 @@
 
 The default folder, used when a well-known folder such as Documents or Pictures is needed. Ignored when [`DefaultFolder`](./DefaultFolder.md) is set.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public FileDialogFolder? DefaultWellKnownFolder { get; set; }
 ```

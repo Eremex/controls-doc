@@ -98,7 +98,7 @@ The `DeltaDesign` paint theme supports the `Light` and `Dark` theme variants. Us
 
 <br>
 
-In the sections below, we'll add an Eremex `DataGridControl` control to a View and bind it to the _Employees_ collection defined in a View Model.
+In the sections below, we'll add an Eremex [`DataGridControl`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md) control to a View and bind it to the _Employees_ collection defined in a View Model.
 
 ## 2. Define Data for a Data Grid
 
@@ -147,7 +147,7 @@ public partial class EmployeeInfo : ObservableObject
 
 ## 3. Add Eremex Avalonia Control Namespaces in XAML
 
-Before you define Eremex Avalonia controls in XAML, first declare namespaces that contain these controls. To use `DataGridControl` in the Main Window, add the following namespace to the _MainWindow.axaml_ file:
+Before you define Eremex Avalonia controls in XAML, first declare namespaces that contain these controls. To use [`DataGridControl`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md) in the Main Window, add the following namespace to the _MainWindow.axaml_ file:
 
 ``` xml
 <mx:MxWindow 
@@ -175,7 +175,7 @@ Common Helper Classes | `xmlns:mx="https://schemas.eremexcontrols.net/avalonia"`
 
 ## 4. Add a Data Grid in XAML
 
-In the _MainWindow.axaml_ file, define a `DataGridControl` and bind it to the _Employees_ collection.
+In the _MainWindow.axaml_ file, define a [`DataGridControl`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md) and bind it to the _Employees_ collection.
 
 ``` xml
 <mx:MxWindow xmlns="https://github.com/avaloniaui"
@@ -204,9 +204,9 @@ In the _MainWindow.axaml_ file, define a `DataGridControl` and bind it to the _E
 </mx:MxWindow>
 ```
 
-The `DataGridControl.AutoGenerateColumns` option is enabled to automatically generate columns from public properties of the bound item source. 
+The [`DataGridControl.AutoGenerateColumns`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md) option is enabled to automatically generate columns from public properties of the bound item source. 
 
-The `DataGridControl.SearchPanelDisplayMode` property specifies the visibility of the search box, which allows a user to quickly locate grid rows by values they contain.
+The [`DataGridControl.SearchPanelDisplayMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchPanelDisplayMode.md) property specifies the visibility of the search box, which allows a user to quickly locate grid rows by values they contain.
 
 ## 5. Run the Application
 

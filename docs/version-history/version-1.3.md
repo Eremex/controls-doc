@@ -13,7 +13,7 @@ seealso: []
 #### Fixed Issues
 
 - An exception is raised if the chart displays `DateTime` values on the _Y_ axis and the `AlwaysShowZeroLevel` option is set to `true`.
-- PolarChart and SmithChart — The `CrosshairSeriesLabelMode.None` option has no effect.
+- PolarChart and SmithChart — The [`CrosshairSeriesLabelMode.None`](../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md) option has no effect.
 
 
 ## 1.3.62
@@ -48,7 +48,7 @@ seealso: []
     }
     ```
 
-- Fixed issue: DataGrid - The `CustomColumnDisplayText` event is raised for values shown in the filter panel when a column's `ColumnFilterMode` property is set to `DisplayText`. This event should not be raised in this case.
+- Fixed issue: DataGrid - The `CustomColumnDisplayText` event is raised for values shown in the filter panel when a column's [`ColumnFilterMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnFilterMode.md) property is set to `DisplayText`. This event should not be raised in this case.
 
 - Fixed issue: DataGrid and TreeList - The `CustomUnboundColumnData` event is not raised when a user modifies other row cells.
 
@@ -70,16 +70,16 @@ seealso: []
 
 ### PropertyGrid
 
-- Fixed issue: An exception is raised when selecting a value in an in-place `PopupColorEditor`.
+- Fixed issue: An exception is raised when selecting a value in an in-place [`PopupColorEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md).
 
 
 ### Docking UI
 
-- Fixed issue: An exception is raised when deserializing a `DockManager` with an auto-hide panel in specific cases.
+- Fixed issue: An exception is raised when deserializing a [`DockManager`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) with an auto-hide panel in specific cases.
 
 ### Graphics3D Control
 
-- Fixed issue: A selected element is hidden when you disable selection using the `SelectionMode` property.
+- Fixed issue: A selected element is hidden when you disable selection using the [`SelectionMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectionMode.md) property.
 
 
 ## 1.3.49
@@ -98,10 +98,10 @@ To allow users to pin or unpin columns at runtime, enable the built-in _Fixed_ s
 
 Related API:
 
-- `ColumnBase.FixedMode`
-- `DataGridControl.ShowColumnMenuFixedItem` and `TreeListControl.ShowColumnMenuFixedItem`
-- `DataGridControl.ExtendScrollbarToFixedColumns` and `TreeListControl.ExtendScrollbarToFixedColumns`
-- `DataGridControl.FixedColumnSeparatorWidth` and `TreeListControl.FixedColumnSeparatorWidth`
+- [`ColumnBase.FixedMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FixedMode.md)
+- [`DataGridControl.ShowColumnMenuFixedItem`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowColumnMenuFixedItem.md) and [`TreeListControl.ShowColumnMenuFixedItem`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnMenuFixedItem.md)
+- [`DataGridControl.ExtendScrollbarToFixedColumns`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExtendScrollbarToFixedColumns.md) and [`TreeListControl.ExtendScrollbarToFixedColumns`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ExtendScrollbarToFixedColumns.md)
+- [`DataGridControl.FixedColumnSeparatorWidth`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FixedColumnSeparatorWidth.md) and [`TreeListControl.FixedColumnSeparatorWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/FixedColumnSeparatorWidth.md)
 
 Learn more: 
 
@@ -117,9 +117,9 @@ The Auto Filter Row has been enhanced to support runtime selection of filter ope
 
 Related API:
 
-- `DataGridControl.ShowConditionInAutoFilterRow`
-- `TreeListControl.ShowConditionInAutoFilterRow` 
-- `ColumnBase.ShowConditionInAutoFilterRow`
+- [`DataGridControl.ShowConditionInAutoFilterRow`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowConditionInAutoFilterRow.md)
+- [`TreeListControl.ShowConditionInAutoFilterRow`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowConditionInAutoFilterRow.md) 
+- [`ColumnBase.ShowConditionInAutoFilterRow`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ShowConditionInAutoFilterRow.md)
 
 Learn more:
 
@@ -134,8 +134,8 @@ Column filter menus now allow you to present their items as a checked list. In C
 
 You can enable Checked List display mode for all columns or individual columns, using the following properties:
 
-- `DataGridControl.ColumnFilterPopupMode` and `TreeListControl.ColumnFilterPopupMode`
-- `GridColumn.FilterPopupMode` and `TreeListColumn.FilterPopupMode`
+- [`DataGridControl.ColumnFilterPopupMode`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnFilterPopupMode.md) and [`TreeListControl.ColumnFilterPopupMode`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnFilterPopupMode.md)
+- [`GridColumn.FilterPopupMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) and [`TreeListColumn.FilterPopupMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md)
 
 Learn more: 
 
@@ -158,7 +158,7 @@ Learn more:
 
 #### Export to CSV
 
-The DataGrid, TreeList and TreeView controls support data export to CSV format. CSV is a text format in which row values are separated by a specific delimiter (a comma, by default). Use the `ExportToCsv` method to export the control's data. This method's parameters allow you to customize value export mode, the separator character, and more.
+The DataGrid, TreeList and TreeView controls support data export to CSV format. CSV is a text format in which row values are separated by a specific delimiter (a comma, by default). Use the [`ExportToCsv`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ExportToCsv.md) method to export the control's data. This method's parameters allow you to customize value export mode, the separator character, and more.
 
 - [Data Grid - Export to CSV](../controls/datagrid/export.md#export-to-csv-format)
 - [Tree List - Export to CSV](../controls/treelist/export.md#export-to-csv-format)
@@ -169,7 +169,7 @@ The DataGrid, TreeList, and TreeView controls now support alphanumeric sorting i
 
 ![grid-sorting-textsortmode-example2](../images/grid-sorting-textsortmode-example2.png)
 
-Use the `DataControlBase.TextSortMode` property exposed by the DataGrid, TreeList and TreeView controls to enable alphanumeric sorting. This property affects sorting for all columns that display text values.
+Use the [`DataControlBase.TextSortMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/TextSortMode.md) property exposed by the DataGrid, TreeList and TreeView controls to enable alphanumeric sorting. This property affects sorting for all columns that display text values.
 
 Learn more:
 
@@ -199,7 +199,7 @@ Learn more:
 
 #### Swapping X and Y Axes
 
-The new `CartesianChart.SwapAxes` property allows you to transpose the _X_ and _Y_ axes. Set it to `true` to display _X_ axes vertically, and _Y_ axes horizontally.
+The new [`CartesianChart.SwapAxes`](../API/Eremex.AvaloniaUI.Charts/CartesianChart/SwapAxes.md) property allows you to transpose the _X_ and _Y_ axes. Set it to `true` to display _X_ axes vertically, and _Y_ axes horizontally.
 
 ![chart-swap-axes-linear-chart](../images/chart-swap-axes-linear-chart.png)
 
@@ -259,13 +259,13 @@ The Graphics3DControl's Gizmo now displays the names of the _X_, _Y_, and _Z_ ax
 
 ![graphics3dControl-gizmo-axis-names](../images/graphics3dControl-gizmo-axis-names.png)
 
-To render the axis names, three models that represent the letters "X", "Y", and "Z" are added to the `Gizmo`.
-The new `Gizmo.Models` and `Gizmo.ModelsSource` properties allow you to specify 3D models to render the Gizmo in a custom manner. These properties replace the old `Gizmo.Model` property, which is now obsolete. 
+To render the axis names, three models that represent the letters "X", "Y", and "Z" are added to the [`Gizmo`](../API/Eremex.AvaloniaUI.Controls3D/Gizmo.md).
+The new [`Gizmo.Models`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Models.md) and [`Gizmo.ModelsSource`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/ModelsSource.md) properties allow you to specify 3D models to render the Gizmo in a custom manner. These properties replace the old `Gizmo.Model` property, which is now obsolete. 
 
 #### Breaking Change - Paint Theme is Now Required to Render Graphics3DControl
 
-Starting with version 1.3, `Graphics3DControl` and `Gizmo` classes inherit from `Graphics3DControlBase`, which is a descendant of the `TemplatedControl` class. 
-Common appearance settings for these controls are now specified by the `Controls3D` paint theme. To ensure correct rendering of the `Graphics3DControl`, you must register this theme in the _App.xaml_ file:
+Starting with version 1.3, [`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) and [`Gizmo`](../API/Eremex.AvaloniaUI.Controls3D/Gizmo.md) classes inherit from [`Graphics3DControlBase`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase.md), which is a descendant of the `TemplatedControl` class. 
+Common appearance settings for these controls are now specified by the `Controls3D` paint theme. To ensure correct rendering of the [`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md), you must register this theme in the _App.xaml_ file:
 
 ``` xml
 <!-- App.xaml file -->
@@ -279,19 +279,19 @@ Common appearance settings for these controls are now specified by the `Controls
 </Application>
 ```
 
-If the `Controls3D` paint theme is not registered, the `Graphics3DControl` will appear blank.
+If the `Controls3D` paint theme is not registered, the [`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) will appear blank.
 
 ### Docking
 
-You can now apply resizing constraints to dock items using their `MinWidth`, `MinHeight`, `MaxWidth`, and `MaxHeight` properties.
+You can now apply resizing constraints to dock items using their [`MinWidth`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MinWidth.md), `MinHeight`, [`MaxWidth`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MaxWidth.md), and `MaxHeight` properties.
 
 ### SplitContainerControl - Panel Size Constraints
 
-The new  `Panel1MinLength`, `Panel1MaxLength`, `Panel2MinLength`, and `Panel2MaxLength` properties allow you to set resizing constraints for the panels in the `SplitContainerControl`.  Users cannot resize the panels beyond these limits. 
+The new  `Panel1MinLength`, `Panel1MaxLength`, `Panel2MinLength`, and `Panel2MaxLength` properties allow you to set resizing constraints for the panels in the [`SplitContainerControl`](../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl.md).  Users cannot resize the panels beyond these limits. 
 
 ### MxWindow
 
-The new `Header` and `HeaderTemplate` properties allow you to display custom content in a window's title.
+The new [`Header`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) and [`HeaderTemplate`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderTemplate.md) properties allow you to display custom content in a window's title.
 
 ### Fixed Issues
 
@@ -301,6 +301,6 @@ The new `Header` and `HeaderTemplate` properties allow you to display custom con
 
 ### Breaking Changes
 
-- Graphics3DControl — The `Gizmo.Model` property has been deprecated. Use the new `Gizmo.Models` and `Gizmo.ModelsSource` properties instead.
+- Graphics3DControl — The `Gizmo.Model` property has been deprecated. Use the new [`Gizmo.Models`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Models.md) and [`Gizmo.ModelsSource`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/ModelsSource.md) properties instead.
 - Editors —  The `IsClearTextButtonVisible` property has been renamed to `IsNullValueButtonVisible`.
-- Editors — The `ClearTextCommand` command has been renamed to `SetNullValueCommand` and moved from the `PopupEditor` class to the `ButtonEditor` class.
+- Editors — The `ClearTextCommand` command has been renamed to `SetNullValueCommand` and moved from the [`PopupEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor.md) class to the [`ButtonEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) class.

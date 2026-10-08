@@ -2,6 +2,12 @@
 
 The set of buttons a message box offers. Each value is a combination of the individual button flags, so the buttons always appear in the standard order for that combination.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public enum MessageBoxButtons
 ```

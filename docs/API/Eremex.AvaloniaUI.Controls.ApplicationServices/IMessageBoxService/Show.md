@@ -2,21 +2,31 @@
 
 Shows a modal message box owned by the active application window.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public DialogResult Show(string text, string caption, MessageBoxButtons buttons, 
     MessageBoxIcon icon)
 ```
 
-| parameter | description |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| text | `string` | The message shown in the body of the message box. |
+| caption | `string` | The window caption. |
+| buttons | [`MessageBoxButtons`](../../Eremex.AvaloniaUI.Controls/MessageBoxButtons.md) | The set of buttons to offer. |
+| icon | [`MessageBoxIcon`](../../Eremex.AvaloniaUI.Controls/MessageBoxIcon.md) | The icon shown next to the message. |
+
+## Returns
+
+| type | description |
 | --- | --- |
-| text | The message shown in the body of the message box. |
-| caption | The window caption. |
-| buttons | The set of buttons to offer. |
-| icon | The icon shown next to the message. |
-
-## Return Value
-
-The button the user pressed.
+| [`DialogResult`](../DialogResult.md) | The button the user pressed. |
 
 ## See Also
 
@@ -32,22 +42,32 @@ The button the user pressed.
 
 Shows a modal message box owned by the specified window.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public DialogResult Show(IWindow? owner, string text, string caption, MessageBoxButtons buttons, 
     MessageBoxIcon icon)
 ```
 
-| parameter | description |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| owner | [`IWindow?`](../IWindow.md) | The window the message box is shown on top of. When `null`, the active application window is used. |
+| text | `string` | The message shown in the body of the message box. |
+| caption | `string` | The window caption. |
+| buttons | [`MessageBoxButtons`](../../Eremex.AvaloniaUI.Controls/MessageBoxButtons.md) | The set of buttons to offer. |
+| icon | [`MessageBoxIcon`](../../Eremex.AvaloniaUI.Controls/MessageBoxIcon.md) | The icon shown next to the message. |
+
+## Returns
+
+| type | description |
 | --- | --- |
-| owner | The window the message box is shown on top of. When `null`, the active application window is used. |
-| text | The message shown in the body of the message box. |
-| caption | The window caption. |
-| buttons | The set of buttons to offer. |
-| icon | The icon shown next to the message. |
-
-## Return Value
-
-The button the user pressed.
+| [`DialogResult`](../DialogResult.md) | The button the user pressed. |
 
 ## See Also
 

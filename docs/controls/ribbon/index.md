@@ -7,7 +7,7 @@ seealso: []
 # Ribbon
 
 
-`RibbonControl` allows you to create a ribbon UI inspired by the Microsoft Office applications. The control supports two views - Classic and Simplified, which arrange items in three and one row, respectively. A user can switch between them with a dedicated view selection button.
+[`RibbonControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl.md) allows you to create a ribbon UI inspired by the Microsoft Office applications. The control supports two views - Classic and Simplified, which arrange items in three and one row, respectively. A user can switch between them with a dedicated view selection button.
 
 ![ribbon](../../images/ribbon.png)
 

@@ -94,7 +94,7 @@ After adding the configuration, restart your editor or client (most clients only
 
 > How do I enable drag-and-drop between two Eremex DataGrid controls? Show a real example.
 
-If the server is connected, the assistant cites specific Eremex API members (for example, `GridColumn.EditorProperties`, `AllowDragDrop`) and real code from the documentation, demo application, or Support Center, instead of generic Avalonia guesses.
+If the server is connected, the assistant cites specific Eremex API members (for example, [`GridColumn.EditorProperties`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md), `AllowDragDrop`) and real code from the documentation, demo application, or Support Center, instead of generic Avalonia guesses.
 
 ## Troubleshooting
 

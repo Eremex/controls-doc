@@ -1,5 +1,11 @@
 # DialogService.ShowDialog&lt;T&gt; method (1 of 2)
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public DialogResult ShowDialog<T>(T viewModel, string? caption)
     where T : IDialogAwareViewModel
@@ -16,21 +22,36 @@ public DialogResult ShowDialog<T>(T viewModel, string? caption)
 
 Shows a modal dialog on top of the specified window. When no owner is given, the active application window is used.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public DialogResult ShowDialog<T>(T viewModel, string? caption, Window? owner)
     where T : IDialogAwareViewModel
 ```
 
-| parameter | description |
+## Type Parameters
+
+| name | description |
 | --- | --- |
 | T | The type of the view model that drives the dialog. |
-| viewModel | The view model to display. It supplies the dialog content and buttons, and stays attached to the window until the dialog closes. |
-| caption | The window caption. When `null`, the caption is taken from Title. |
-| owner | The window the dialog is shown on top of. When `null`, the active application window is used. |
 
-## Return Value
+## Parameters
 
-The button the dialog was closed with, or None if the user dismissed it through the window caption button.
+| name | type | description |
+| --- | --- | --- |
+| viewModel | `T` | The view model to display. It supplies the dialog content and buttons, and stays attached to the window until the dialog closes. |
+| caption | `string?` | The window caption. When `null`, the caption is taken from Title. |
+| owner | `Window?` | The window the dialog is shown on top of. When `null`, the active application window is used. |
+
+## Returns
+
+| type | description |
+| --- | --- |
+| `DialogResult` | The button the dialog was closed with, or None if the user dismissed it through the window caption button. |
 
 ## Exceptions
 

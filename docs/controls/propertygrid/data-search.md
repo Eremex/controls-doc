@@ -14,4 +14,4 @@ The control's built-in Search Panel allows users to search for properties of the
 
 When a user types text in the Search Box, the PropertyGrid control filters rows to display only those that match the search text.
 
-Use the `ShowSearchPanel` property to control the Search Box's visibility.
+Use the [`ShowSearchPanel`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/ShowSearchPanel.md) property to control the Search Box's visibility.

@@ -6,7 +6,7 @@ seealso: []
 
 # Range Area Series View
 
-The Range Area Series View (`CartesianRangeAreaSeriesView`) plots two lines and fills the area between these lines.
+The Range Area Series View ([`CartesianRangeAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView.md)) plots two lines and fills the area between these lines.
 
 ![chart-views-range-area-series-view](../../../images/chart-views-range-area-series-view.png)
 
@@ -14,11 +14,11 @@ You need to supply two Y-values for each data point. These values define the low
 
 ## Create a Range Series View
 
-To create a Range Series View, add a `CartesianSeries` object to the `CartesianChart.Series` collection, and initialize the `CartesianSeries.View`  with a `CartesianRangeAreaSeriesView` instance.
+To create a Range Series View, add a [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) object to the [`CartesianChart.Series`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) collection, and initialize the [`CartesianSeries.View`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md)  with a [`CartesianRangeAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView.md) instance.
 
-Use the `CartesianSeries.DataAdapter` property to supply data for the series. The Range Area Series View requires two Y-values per data point. You should use special data adapters to provide Y-values for the Range Area Series View. See the following link for information on supported data adapters: [Data for the Range Area Series View](#data-for-the-range-area-series-view).
+Use the [`CartesianSeries.DataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/Series/DataAdapter.md) property to supply data for the series. The Range Area Series View requires two Y-values per data point. You should use special data adapters to provide Y-values for the Range Area Series View. See the following link for information on supported data adapters: [Data for the Range Area Series View](#data-for-the-range-area-series-view).
 
-The `CartesianRangeAreaSeriesView` object includes the `Color1`, `Color2` and `Color` properties that allow you to specify different colors to paint the lines and the fill.
+The [`CartesianRangeAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView.md) object includes the [`Color1`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color1.md), [`Color2`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color2.md) and [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color.md) properties that allow you to specify different colors to paint the lines and the fill.
 
 The following code shows how to create a Range Area Series View in XAML and code-behind.
 
@@ -53,9 +53,9 @@ series.View = new CartesianRangeAreaSeriesView()
 
 ## Example - Use a Range Area Series View to Display the Min and Max Month Temperatures
 
-The following example uses the Range Area Series View to display monthly minimum and maximum temperatures in a city. The data adapter (`DateTimeRangeDataAdapter`) provides two Y-values for each data point (month).
+The following example uses the Range Area Series View to display monthly minimum and maximum temperatures in a city. The data adapter ([`DateTimeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeRangeDataAdapter.md)) provides two Y-values for each data point (month).
 
-Note the use of the `DateTimeScaleOptions.LabelFormatter` property to format labels of the _X_ axis in a custom manner.
+Note the use of the [`DateTimeScaleOptions.LabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) property to format labels of the _X_ axis in a custom manner.
 
 ![chart-views-rangeAreaSeriesView-example](../../../images/chart-views-rangeAreaSeriesView-example.png)
 
@@ -148,32 +148,32 @@ You can use the following data adapters to provide data for the Range Area Serie
 
 Numeric _X_ Values:
 
-- `NumericRangeDataAdapter`
+- [`NumericRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/NumericRangeDataAdapter.md)
 
 Date and Time _X_ Values:
 
-- `DateTimeRangeDataAdapter`
-- `TimeSpanRangeDataAdapter`
+- [`DateTimeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeRangeDataAdapter.md)
+- [`TimeSpanRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/TimeSpanRangeDataAdapter.md)
 
 Qualitative _X_ Values:
 
-- `QualitativeRangeDataAdapter` 
+- [`QualitativeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeRangeDataAdapter.md) 
 
 ## Range Area Series View Settings
 
-- `Color` — Specifies the color to fill the area between two lines. Use the `Transparency` option to control the transparency level of the filled area.
-- `Color1` — Specifies the color to paint the first line.
-- `Color2` — Specifies the color to paint the second line.
-- `CrosshairMode` — Specifies whether the crosshair's chart label snaps to the nearest data point, or displays an interpolated value. See [Show an Exact or Interpolated Value in Crosshair Chart Labels](../crosshair.md#show-an-exact-or-interpolated-value-in-crosshair-series-labels).
-- `Marker1Image` — Allows you to specify an image in SVG format to use as point markers for the first line.
-- `Marker1ImageCss` — Specifies the CSS code that allows you to customize colors of elements in the specified SVG image (`Marker1Image`).
-- `Marker1Size` — Specifies the size of point markers for the first line.
-- `Marker2Image` — Allows you to specify an image in SVG format to use as point markers for the second line.
-- `Marker2ImageCss` — Specifies the CSS code that allows you to customize colors of elements in the specified SVG image (`Marker2Image`).
-- `Marker2Size` — Specifies the size of point markers for the second line.
-- `ShowInCrosshair` — Specifies the visibility of the crosshair chart label for the current series. See [Customize Chart Labels of the Crosshair](../crosshair.md#hide-a-series-in-the-crosshair).
-- `ShowMarkers1` — Enables or disables point markers for the first line.
-- `ShowMarkers2` — Enables or disables point markers for the second line.
+- [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color.md) — Specifies the color to fill the area between two lines. Use the [`Transparency`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Transparency.md) option to control the transparency level of the filled area.
+- [`Color1`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color1.md) — Specifies the color to paint the first line.
+- [`Color2`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color2.md) — Specifies the color to paint the second line.
+- [`CrosshairMode`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/CrosshairMode.md) — Specifies whether the crosshair's chart label snaps to the nearest data point, or displays an interpolated value. See [Show an Exact or Interpolated Value in Crosshair Chart Labels](../crosshair.md#show-an-exact-or-interpolated-value-in-crosshair-series-labels).
+- [`Marker1Image`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker1Image.md) — Allows you to specify an image in SVG format to use as point markers for the first line.
+- [`Marker1ImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker1ImageCss.md) — Specifies the CSS code that allows you to customize colors of elements in the specified SVG image ([`Marker1Image`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker1Image.md)).
+- [`Marker1Size`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker1Size.md) — Specifies the size of point markers for the first line.
+- [`Marker2Image`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker2Image.md) — Allows you to specify an image in SVG format to use as point markers for the second line.
+- [`Marker2ImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker2ImageCss.md) — Specifies the CSS code that allows you to customize colors of elements in the specified SVG image ([`Marker2Image`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker2Image.md)).
+- [`Marker2Size`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker2Size.md) — Specifies the size of point markers for the second line.
+- [`ShowInCrosshair`](../../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) — Specifies the visibility of the crosshair chart label for the current series. See [Customize Chart Labels of the Crosshair](../crosshair.md#hide-a-series-in-the-crosshair).
+- [`ShowMarkers1`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/ShowMarkers1.md) — Enables or disables point markers for the first line.
+- [`ShowMarkers2`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/ShowMarkers2.md) — Enables or disables point markers for the second line.
 - `Thickness1` — Specifies the thickness of the first line.
 - `Thickness2` — Specifies the thickness of the second line.
-- `Transparency` — Gets or sets the transparency level for the filled area, expressed as a value between `0` (fully transparent) and `1` (fully opaque).
+- [`Transparency`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Transparency.md) — Gets or sets the transparency level for the filled area, expressed as a value between `0` (fully transparent) and `1` (fully opaque).

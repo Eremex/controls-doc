@@ -2,18 +2,28 @@
 
 Returns the service, throwing InvalidOperationException when it is missing.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public static T GetRequiredService<T>()
     where T : class
 ```
 
-| parameter | description |
+## Type Parameters
+
+| name | description |
 | --- | --- |
 | T | The service type to resolve, normally an interface. |
 
-## Return Value
+## Returns
 
-The registered service instance. Never `null`.
+| type | description |
+| --- | --- |
+| `T` | The registered service instance. Never `null`. |
 
 ## Exceptions
 

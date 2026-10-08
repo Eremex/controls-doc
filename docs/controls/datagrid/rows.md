@@ -16,9 +16,9 @@ All rows initially have the same height sufficient to display a single line of t
 
 ### Custom Row Height
 
-- `DataControlBase.RowMinHeight` property — Gets or sets the minimum row height. 
+- [`DataControlBase.RowMinHeight`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/RowMinHeight.md) property — Gets or sets the minimum row height. 
 
-  If the automatic row height feature is disabled, all rows have the same height specified by the `DataControlBase.RowMinHeight` property.
+  If the automatic row height feature is disabled, all rows have the same height specified by the [`DataControlBase.RowMinHeight`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/RowMinHeight.md) property.
 
 ### Row Auto-Height
 
@@ -26,11 +26,11 @@ For columns containing lengthy text, you can enable text wrapping to dynamically
 
 ![datagrid-rowautoheight](../../images/datagrid-rowautoheight.png)
 
-To enable text wrapping for column cells, assign a `TextEditorProperties` object (or its descendant; for example, `ButtonEditorProperties`) to the `GridColumn.EditorProperties` property, and set the `TextEditorProperties.TextWrapping` option to `Wrap`.
+To enable text wrapping for column cells, assign a [`TextEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties.md) object (or its descendant; for example, [`ButtonEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditorProperties.md)) to the [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) property, and set the [`TextEditorProperties.TextWrapping`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/TextWrapping.md) option to `Wrap`.
 
 !!! tip
 
-    A `TextEditorProperties` object is used to configure an in-place `TextEditor` editor for a column. At runtime, the editor is instantiated using these settings. See [Data Editing](data-editing/index.md) for more information.
+    A [`TextEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties.md) object is used to configure an in-place [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) editor for a column. At runtime, the editor is instantiated using these settings. See [Data Editing](data-editing/index.md) for more information.
 
 The following code enables text wrapping for a grid column.
 
@@ -46,7 +46,7 @@ The following code enables text wrapping for a grid column.
 
 DataGrid's horizontal [virtualization](performance-and-data-virtualization.md) enhances the control's performance by reducing the load time.
 
-With this feature enabled (default), row heights are calculated automatically according to the contents of the currently visible cells. Cells outside the viewport do not affect row height calculation. When you scroll to the cells with different content heights, the row height is adjusted dynamically. To prevent dynamic row height changes during horizontal scrolling, use the `DataGridControl.AllowHorizontalVirtualization` property to disable horizontal virtualization.
+With this feature enabled (default), row heights are calculated automatically according to the contents of the currently visible cells. Cells outside the viewport do not affect row height calculation. When you scroll to the cells with different content heights, the row height is adjusted dynamically. To prevent dynamic row height changes during horizontal scrolling, use the [`DataGridControl.AllowHorizontalVirtualization`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowHorizontalVirtualization.md) property to disable horizontal virtualization.
 
 ``` xml
 <mxdg:DataGridControl x:Name="dataGrid" AllowHorizontalVirtualization="False">
@@ -78,9 +78,9 @@ When data is grouped, row indexes and visible row indexes do not match:
 
 Data Grid reserves the following predefined row indexes to identify special rows:
 
-- `DataControlBase.AutoFilterRowIndex` constant — Identifies the **Auto Filter Row**. This row allows a user to type text in its cells to filter data against corresponding columns. See the following topic for more information: [Search and Filtering](filter-and-search.md). 
+- [`DataControlBase.AutoFilterRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/AutoFilterRowIndex.md) constant — Identifies the **Auto Filter Row**. This row allows a user to type text in its cells to filter data against corresponding columns. See the following topic for more information: [Search and Filtering](filter-and-search.md). 
 
-  **Example**: You can assign the `DataControlBase.AutoFilterRowIndex` value to the `DataGridControl.FocusedRowIndex` property to focus the **Auto Filter Row**.
+  **Example**: You can assign the [`DataControlBase.AutoFilterRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/AutoFilterRowIndex.md) value to the [`DataGridControl.FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md) property to focus the **Auto Filter Row**.
 
   <!-- TODO
   The following code does not work:
@@ -88,25 +88,25 @@ Data Grid reserves the following predefined row indexes to identify special rows
   dataGrid.SetCellValue(DataGridControl.AutoFilterRowIndex, "FirstName", "Alex");
    -->
 
-- `DataGridControl.InvalidRowIndex` constant — Identifies a row that does not exist in the Data Grid control. This constant may be returned by DataGrid methods used to obtain row indexes.
+- [`DataGridControl.InvalidRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/InvalidRowIndex.md) constant — Identifies a row that does not exist in the Data Grid control. This constant may be returned by DataGrid methods used to obtain row indexes.
 
-  **Example**: The `GetParentRowIndex` method allows you to return a row's parent group row when data is grouped. This method returns the `DataGridControl.InvalidRowIndex` value for a row that does not have a parent group row.
+  **Example**: The [`GetParentRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetParentRowIndex.md) method allows you to return a row's parent group row when data is grouped. This method returns the [`DataGridControl.InvalidRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/InvalidRowIndex.md) value for a row that does not have a parent group row.
 
 ### Source Items and Source Item Indexes
 
-Data rows correspond to items (business objects) in the bound item source (`DataControlBase.ItemsSource`). An item's position in the item source is called **source item index**.
+Data rows correspond to items (business objects) in the bound item source ([`DataControlBase.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ItemsSource.md)). An item's position in the item source is called **source item index**.
 
 You can use the following methods to obtain a data row's underlying source item and source item index. 
 
-- `GetSourceItemByRowIndex` — Returns the source item (business object) of the row specified by its row index.
-- `GetSourceItemByVisibleRowIndex` — Returns the source item (business object) of the row specified by its visible index.
-- `GetSourceItemIndexByRowIndex` — Returns the source item index (index of the business object in the item source) of the row specified by its row index. 
-- `GetSourceItemIndexByVisibleRowIndex` — Returns the source item index (index of the business object in the item source) of the row specified by its visible index. 
+- [`GetSourceItemByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByRowIndex.md) — Returns the source item (business object) of the row specified by its row index.
+- [`GetSourceItemByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByVisibleRowIndex.md) — Returns the source item (business object) of the row specified by its visible index.
+- [`GetSourceItemIndexByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemIndexByRowIndex.md) — Returns the source item index (index of the business object in the item source) of the row specified by its row index. 
+- [`GetSourceItemIndexByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemIndexByVisibleRowIndex.md) — Returns the source item index (index of the business object in the item source) of the row specified by its visible index. 
 
 To perform the opposite conversion of indexes, see the following methods:
 
-- `GetRowIndexBySourceItemIndex` — Returns the row index of the row specified by its source item index.
-- `GetVisibleRowIndexBySourceItemIndex` — Returns the visible index of the row specified by its source item index (index of the business object in the item source). 
+- [`GetRowIndexBySourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetRowIndexBySourceItemIndex.md) — Returns the row index of the row specified by its source item index.
+- [`GetVisibleRowIndexBySourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetVisibleRowIndexBySourceItemIndex.md) — Returns the visible index of the row specified by its source item index (index of the business object in the item source). 
 
 
 Source item indexes are zero-based. When you sort, group or filter rows, source item indexes of the grid rows do not change.
@@ -117,16 +117,16 @@ Group rows do not have corresponding items in the item source, so they cannot be
 
 Data Grid provides API members to retrieve rows by indexes, and to convert between row indexes, visible row indexes and indexes of data source items. The following list summarizes these API members:
 
-- `FocusedRowIndex` — Gets or sets the index of the focused row. You can use this property to move focus to a specific row.
-- `GetRowIndexBySourceItemIndex` — Returns the row index of the row specified by its source item index.
-- `GetRowIndexByVisibleRowIndex` — Returns the row index of the row specified by its visible index. 
-- `GetSourceItemByRowIndex` — Returns the source item (business object) of the row specified by its row index. 
-- `GetSourceItemByVisibleRowIndex` — Returns the source item (business object) of the row specified by its visible index. 
-- `GetSourceItemIndexByRowIndex` — Returns the source item index (index of the business object in the item source) of the row specified by its row index. 
-- `GetSourceItemIndexByVisibleRowIndex` — Returns the source item index (index of the business object in the item source) of the row specified by its visible index. 
-- `GetVisibleRowIndexByRowIndex` — Returns the visible index of the row specified by its row index. 
-- `GetVisibleRowIndexBySourceItemIndex` — Returns the visible index of the row specified by its source item index (index of the business object in the item source). 
-- `VisibleRowCount`
+- [`FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md) — Gets or sets the index of the focused row. You can use this property to move focus to a specific row.
+- [`GetRowIndexBySourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetRowIndexBySourceItemIndex.md) — Returns the row index of the row specified by its source item index.
+- [`GetRowIndexByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetRowIndexByVisibleRowIndex.md) — Returns the row index of the row specified by its visible index. 
+- [`GetSourceItemByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByRowIndex.md) — Returns the source item (business object) of the row specified by its row index. 
+- [`GetSourceItemByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByVisibleRowIndex.md) — Returns the source item (business object) of the row specified by its visible index. 
+- [`GetSourceItemIndexByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemIndexByRowIndex.md) — Returns the source item index (index of the business object in the item source) of the row specified by its row index. 
+- [`GetSourceItemIndexByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemIndexByVisibleRowIndex.md) — Returns the source item index (index of the business object in the item source) of the row specified by its visible index. 
+- [`GetVisibleRowIndexByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetVisibleRowIndexByRowIndex.md) — Returns the visible index of the row specified by its row index. 
+- [`GetVisibleRowIndexBySourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetVisibleRowIndexBySourceItemIndex.md) — Returns the visible index of the row specified by its source item index (index of the business object in the item source). 
+- [`VisibleRowCount`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/VisibleRowCount.md)
 
 Methods to iterate through group rows and their children:
 
@@ -138,9 +138,9 @@ Methods to obtain and set cell values:
 
 ## Focused Row
 
-Use the `DataGridControl.FocusedRowIndex` property to retrieve the focused row's index. The `DataGridControl.FocusedItem` property allows you to retrieve the focused row's underlying data object.
+Use the [`DataGridControl.FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md) property to retrieve the focused row's index. The [`DataGridControl.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) property allows you to retrieve the focused row's underlying data object.
 
-To move focus to a specific row, you can assign this row's index to the `DataGridControl.FocusedRowIndex` property.
+To move focus to a specific row, you can assign this row's index to the [`DataGridControl.FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md) property.
 
 
 
@@ -150,7 +150,7 @@ Data Grid supports multiple row selection mode, which allows you and your user t
 
 ![grid-multipleselection](../../images/grid-multipleselection.png)
 
-Set the `SelectionMode` property to `Multiple` to enable multiple row selection mode.
+Set the [`SelectionMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectionMode.md) property to `Multiple` to enable multiple row selection mode.
 
 ### Select Rows Using the Mouse and Keyboard
 
@@ -160,23 +160,23 @@ Users can select multiple rows with the mouse and keyboard. They need to click r
 
 The following API allows you to select/deselect rows, and identify whether a row is selected:
 
-- `SelectAll`
-- `SelectRow`
-- `SelectRange`
-- `UnselectRow`
-- `ClearSelection`
-- `IsRowSelected`
+- [`SelectAll`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectAll.md)
+- [`SelectRow`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SelectRow.md)
+- [`SelectRange`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SelectRange.md)
+- [`UnselectRow`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/UnselectRow.md)
+- [`ClearSelection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ClearSelection.md)
+- [`IsRowSelected`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/IsRowSelected.md)
 
 To retrieve the row selection, use the following members:
 
-- `GetSelectedRowIndexes` — Returns a collection of [indexes](#identify-and-get-rows) of currently selected rows.
-- `SelectedItems` — Specifies the collection of data (business) objects that correspond to selected rows.
+- [`GetSelectedRowIndexes`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSelectedRowIndexes.md) — Returns a collection of [indexes](#identify-and-get-rows) of currently selected rows.
+- [`SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectedItems.md) — Specifies the collection of data (business) objects that correspond to selected rows.
 
-Handle the `SelectionChanged` event to respond to changes to the row selection.
+Handle the [`SelectionChanged`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SelectionChanged.md) event to respond to changes to the row selection.
 
-A call to any method that changes a row's selected state causes an update of the DataGrid control, and raises the `SelectionChanged` event. 
+A call to any method that changes a row's selected state causes an update of the DataGrid control, and raises the [`SelectionChanged`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SelectionChanged.md) event. 
 
-To perform batch modifications to the row selection and prevent superfluous updates, you can wrap the code that modifies rows' selected states with the `BeginSelection` and `EndSelection` method pair. In this case, the control redraws the selection, and the `SelectionChanged` event fires after the call to the `EndSelection` method.
+To perform batch modifications to the row selection and prevent superfluous updates, you can wrap the code that modifies rows' selected states with the [`BeginSelection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/BeginSelection.md) and [`EndSelection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/EndSelection.md) method pair. In this case, the control redraws the selection, and the [`SelectionChanged`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SelectionChanged.md) event fires after the call to the [`EndSelection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/EndSelection.md) method.
 
 ``` csharp
 dataGrid1.SelectionMode = Eremex.AvaloniaUI.Controls.DataControl.RowSelectionMode.Multiple;
@@ -195,7 +195,7 @@ The focused row is the row that receives user input. The focused row may not be 
 
 #### Focused Row in Single Selection Mode
 
-In single selection mode, the focused row automatically gets the selected state. You can use the `FocusedRowIndex` property and `GetSelectedRowIndexes` method to retrieve the focused row.
+In single selection mode, the focused row automatically gets the selected state. You can use the [`FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md) property and [`GetSelectedRowIndexes`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSelectedRowIndexes.md) method to retrieve the focused row.
 
 
 
@@ -216,7 +216,7 @@ When you select a row in code, this row does not get the focused state in multip
 
 Data Grid provides the following methods to retrieve and set values in row cells:
 
-- `DataGridControl.GetCellValue` — Returns a value in a specific cell, addressed by a row and column (or field name).
+- [`DataGridControl.GetCellValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetCellValue.md) — Returns a value in a specific cell, addressed by a row and column (or field name).
 
     The following code retrieves a value from the focused row for the column bound to the _FirstName_ field:
 
@@ -224,17 +224,17 @@ Data Grid provides the following methods to retrieve and set values in row cells
     string firstName = dataGrid.GetCellValue(dataGrid.FocusedRowIndex, "FirstName") as String;
     ```
 
-- `DataGridControl.SetCellValue` — Sets a value in a specific cell.
+- [`DataGridControl.SetCellValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SetCellValue.md) — Sets a value in a specific cell.
 
-- `DataGridControl.GetCellDisplayText` — Returns the display text of a specific cell, addressed by a row and column (or field name). The display text is formed according to formatting options applied to in-place editors. You can also handle the `CustomColumnDisplayText` event to supply custom display text for cells. To supply custom value display text for group rows, handle the `DataGridControl.CustomGroupValueDisplayText` event.
+- [`DataGridControl.GetCellDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetCellDisplayText.md) — Returns the display text of a specific cell, addressed by a row and column (or field name). The display text is formed according to formatting options applied to in-place editors. You can also handle the [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) event to supply custom display text for cells. To supply custom value display text for group rows, handle the [`DataGridControl.CustomGroupValueDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomGroupValueDisplayText.md) event.
 
 You can also retrieve source items and their values using the following API members:
 
-- `DataControlBase.FocusedItem` — Allows you to retrieve the source item object of the currently focused row. 
-- `GetSourceItem` — Returns the source object by its index in the data source. 
-- `GetSourceItemValue` — Returns the value of a specific field in the data source at the specified index.
-- `DataGridControl.GetSourceItemByRowIndex` — Returns a source item object by a row's index.
-- `DataGridControl.GetSourceItemByVisibleRowIndex` — Returns a source item object by a row's visible index.
+- [`DataControlBase.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) — Allows you to retrieve the source item object of the currently focused row. 
+- [`GetSourceItem`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItem.md) — Returns the source object by its index in the data source. 
+- [`GetSourceItemValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemValue.md) — Returns the value of a specific field in the data source at the specified index.
+- [`DataGridControl.GetSourceItemByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByRowIndex.md) — Returns a source item object by a row's index.
+- [`DataGridControl.GetSourceItemByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByVisibleRowIndex.md) — Returns a source item object by a row's visible index.
 
 The following code sets the _HiredDate_ property for the focused row's business object:
 
@@ -248,13 +248,13 @@ if (employee != null )
 
 ## Handle Row Clicks and Double-Clicks
 
-The `DataGridControl.RowClick` event allows you to perform actions when a user clicks a row/cell once or multiple times in succession. The event's `e.ClickCount` parameter returns the number of successive mouse clicks.
+The [`DataGridControl.RowClick`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowClick.md) event allows you to perform actions when a user clicks a row/cell once or multiple times in succession. The event's `e.ClickCount` parameter returns the number of successive mouse clicks.
 
-Note that a single click on a cell activates the cell editor by default. Subsequent clicks within this cell are intercepted by the active cell editor, and the `DataGridControl.RowClick` event is not raised for those clicks. See the following section to learn how to handle this scenario: [Example - Handle a row double-click when cell editing is enabled](#example-handle-a-row-double-click-when-cell-editing-is-enabled)
+Note that a single click on a cell activates the cell editor by default. Subsequent clicks within this cell are intercepted by the active cell editor, and the [`DataGridControl.RowClick`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowClick.md) event is not raised for those clicks. See the following section to learn how to handle this scenario: [Example - Handle a row double-click when cell editing is enabled](#example-handle-a-row-double-click-when-cell-editing-is-enabled)
 
 ### Example - Handle a row double-click when cell editing is disabled
 
-The following example handles the `RowClick` event to detect a row double-click when cell edit operations are disabled.
+The following example handles the [`RowClick`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowClick.md) event to detect a row double-click when cell edit operations are disabled.
 
 ``` cs
 dataGrid.AllowEditing = false;
@@ -271,11 +271,11 @@ private void DataGrid_RowClick(object sender, Eremex.AvaloniaUI.Controls.DataGri
 
 ### Example - Handle a row double-click when cell editing is enabled
 
-The example below shows how you can handle row double-clicks when cell edit operations are enabled. This example uses a combination of the `RowClick` and `ShowingEditor` events to manually control cell editor activation.
+The example below shows how you can handle row double-clicks when cell edit operations are enabled. This example uses a combination of the [`RowClick`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowClick.md) and [`ShowingEditor`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowingEditor.md) events to manually control cell editor activation.
 The following scenario is implemented:
 
-- A single click activates a cell editor (after a short delay). The editor is activated using a timer started in the `RowClick` event handler.
-- A double-click (and multiple successive clicks) prevents the cell editor from being activated. Perform custom actions when a row/cell is double-clicked in the `RowClick` event handler.
+- A single click activates a cell editor (after a short delay). The editor is activated using a timer started in the [`RowClick`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowClick.md) event handler.
+- A double-click (and multiple successive clicks) prevents the cell editor from being activated. Perform custom actions when a row/cell is double-clicked in the [`RowClick`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowClick.md) event handler.
 
 
 ``` xml

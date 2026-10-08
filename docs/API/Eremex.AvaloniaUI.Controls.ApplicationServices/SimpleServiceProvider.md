@@ -2,6 +2,12 @@
 
 A minimal IServiceProvider implementation with no dependency on any DI container. Intended for applications and tests that do not need a full container. Applications with a container register the services their own way, see [`RegisterApplicationServices`](./ApplicationServicesContext/RegisterApplicationServices.md).
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public sealed class SimpleServiceProvider : IDisposable, IServiceProvider
 ```

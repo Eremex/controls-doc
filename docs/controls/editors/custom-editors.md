@@ -10,13 +10,13 @@ seealso: []
 
 A standard approach to specifying in-place editors in container controls is to use the `EditorProperties` property provided by these container controls:
 
-- `GridColumn.EditorProperties`
-- `TreeListColumn.EditorProperties`
-- `TreeViewControl.EditorProperties`
-- `PropertyGridRow.EditorProperties`
-- `ToolbarEditorItem.EditorProperties`
+- [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md)
+- [`TreeListColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md)
+- [`TreeViewControl.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/EditorProperties.md)
+- [`PropertyGridRow.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/EditorProperties.md)
+- [`ToolbarEditorItem.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/EditorProperties.md)
 
-For example, the following code assigns a `ButtonEditor` control to a grid column. The code sets the `GridColumn.EditorProperties` property to a `ButtonEditorProperties` object. As a result, the grid control will automatically create an in-place `ButtonEditor` control based on the specified `ButtonEditorProperties` object when a cell edit operation starts in this column.
+For example, the following code assigns a [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) control to a grid column. The code sets the [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) property to a [`ButtonEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditorProperties.md) object. As a result, the grid control will automatically create an in-place [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) control based on the specified [`ButtonEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditorProperties.md) object when a cell edit operation starts in this column.
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid" 
@@ -43,13 +43,13 @@ To allow custom Eremex editor descendants to be assigned this way to cells in co
 
     !!! tip
     
-        All Eremex editors are `BaseEditor` descendants.
+        All Eremex editors are [`BaseEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor.md) descendants.
 
-2. Create a descendant of the corresponding `...Properties` class. For instance, if your custom editor is derived from the `ButtonEditor` control, derive your `...Properties` class from `ButtonEditorProperties`.
+2. Create a descendant of the corresponding `...Properties` class. For instance, if your custom editor is derived from the [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) control, derive your `...Properties` class from [`ButtonEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditorProperties.md).
 
     !!! tip
     
-        All `...Properties` classes of Eremex editors are descendants of the `BaseEditorProperties` class.
+        All `...Properties` classes of Eremex editors are descendants of the [`BaseEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties.md) class.
 
 3. Add custom editor registration code to the static constructor of your `...Properties` class. Use the `EditorPropertiesProvider.Default.RegisterEditor` method to register the editor.
 
@@ -65,7 +65,7 @@ The method's parameters:
 - `createEditorFunc` — A custom function invoked when a custom editor control is created.
 - `createEditorPropertiesFunc` — A custom function invoked when a custom `...Properties` object is created.
 
-The following code creates a custom `TextEditor` control. It overrides the display format used to format the editor's values. The _TextEditorWithCustomFormatProperties_ class contains a static constructor which registers the editor.
+The following code creates a custom [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) control. It overrides the display format used to format the editor's values. The _TextEditorWithCustomFormatProperties_ class contains a static constructor which registers the editor.
 
 ``` cs
 using Eremex.AvaloniaUI.Controls.Editors;

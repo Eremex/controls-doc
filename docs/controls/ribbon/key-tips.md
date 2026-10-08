@@ -31,7 +31,7 @@ Press ALT to show Key Tips for the top-level ribbon elements ([ribbon pages](pag
 - Pressing a Key Tip that is not currently visible is not in effect. 
 
     !!! tip
-        You can assign keyboard shortcuts (such as CTRL+O, CTRL+B and so on) to ribbon commands using the `HotKey` property. Hotkeys allow users to activate commands if focus is within the hotkey scope (the default hotkey scope is defined by the boundaries of the `ToolbarManager` component.). See [Ribbon Items. Hot Keys](ribbon-items.md#hot-keys) for more details.
+        You can assign keyboard shortcuts (such as CTRL+O, CTRL+B and so on) to ribbon commands using the `HotKey` property. Hotkeys allow users to activate commands if focus is within the hotkey scope (the default hotkey scope is defined by the boundaries of the [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) component.). See [Ribbon Items. Hot Keys](ribbon-items.md#hot-keys) for more details.
 
 ## Go Back During Keyboard Navigation
 
@@ -51,9 +51,9 @@ or
 
 The following properties allow you to assign key tips to Ribbon elements:
 
-- `ToolbarItem.KeyTip`
-- `RibbonPage.KeyTip`
-- `RibbonControl.ApplicationButtonKeyTip`
+- [`ToolbarItem.KeyTip`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/KeyTip.md)
+- [`RibbonPage.KeyTip`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/KeyTip.md)
+- [`RibbonControl.ApplicationButtonKeyTip`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/ApplicationButtonKeyTip.md)
 
 ``` xml
 <!-- Specify a Key Tip for the Application Menu-->

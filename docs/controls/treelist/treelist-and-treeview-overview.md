@@ -6,9 +6,9 @@ seealso: []
 
 # TreeList and TreeView Controls Overview
 
-TreeList (`TreeListControl` class) and TreeView (`TreeViewControl` class) controls allow you to display hierarchical data in the form of a tree, where nodes (records) can have other nodes as children.
+TreeList ([`TreeListControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md) class) and TreeView ([`TreeViewControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md) class) controls allow you to display hierarchical data in the form of a tree, where nodes (records) can have other nodes as children.
 
-Both the `TreeListControl` and `TreeViewControl` controls are `TreeListControlBase` descendants, and as such, they have many features in common.
+Both the [`TreeListControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md) and [`TreeViewControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md) controls are [`TreeListControlBase`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase.md) descendants, and as such, they have many features in common.
 The difference between the controls is that TreeList supports multiple columns of data — each node (row) displays one or more cells. TreeView can only display a single column of data.
 
 ## Data Binding

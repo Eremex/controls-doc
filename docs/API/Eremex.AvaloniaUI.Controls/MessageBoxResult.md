@@ -2,6 +2,12 @@
 
 Identifies a single message box button, both as the button the user pressed and as the button that should be the default one.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public enum MessageBoxResult
 ```

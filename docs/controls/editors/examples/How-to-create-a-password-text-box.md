@@ -10,7 +10,7 @@ This example shows how to mask user input with a password character (for example
 
 ![texteditor-passwordchar](../../../images/texteditor-password.gif)
 
-The `TextEditor` class currently does not contain the `PasswordChar` property. However, you can enable password mode for an internal text box (a `TextBox` control), which is embedded in the `TextEditor` control and provides the text editing functionality.
+The [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) class currently does not contain the `PasswordChar` property. However, you can enable password mode for an internal text box (a `TextBox` control), which is embedded in the [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) control and provides the text editing functionality.
 
 The following example creates the _PasswordBoxBehavior_ behavior which activates password mode for a text editor's internal text box (`TextBox`). The _PasswordBoxBehavior_ class exposes the `PasswordChar` and `ShowRevealButton` properties to specify the password mask character and the visibility of the password reveal button.
 
@@ -50,7 +50,7 @@ public class PasswordBoxBehavior : Avalonia.Xaml.Interactivity.Behavior<TextEdit
 }
 ```
 
-Attach the _PasswordBoxBehavior_ behavior to the `TextEditor` control in your project, as follows:
+Attach the _PasswordBoxBehavior_ behavior to the [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) control in your project, as follows:
 
 ``` xml
 xmlns:view="using:DemoCenter.Views"

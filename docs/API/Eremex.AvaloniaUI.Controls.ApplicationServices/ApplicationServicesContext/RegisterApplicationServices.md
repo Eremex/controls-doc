@@ -2,14 +2,22 @@
 
 Describes the application service composition without knowing anything about a particular DI container. The host receives service type / factory pairs and decides how to register them and with which lifetime.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public static void RegisterApplicationServices(
     Action<Type, Func<IServiceProvider, object>> register)
 ```
 
-| parameter | description |
-| --- | --- |
-| register | Called once per service with the service type and a factory that creates it from an IServiceProvider. Register each pair with the container of your choice; the services are designed to be singletons. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| register | `Action<Type, Func<IServiceProvider, object>>` | Called once per service with the service type and a factory that creates it from an IServiceProvider. Register each pair with the container of your choice; the services are designed to be singletons. |
 
 ## Exceptions
 

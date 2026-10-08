@@ -2,6 +2,12 @@
 
 Shows a dialog with an arbitrary set of buttons and returns the result of the pressed one.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public interface IChoiceDialogService
 ```

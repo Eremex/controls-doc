@@ -22,19 +22,19 @@ The following approaches are available to format cell values:
 
 ### Use Masked Input
 
-Eremex editors allow you to use [masks](../../controls/editors/masks/index.md) to restrict data input and format numeric and date-time values. Masks are supported both for standalone editors and editors embedded in container controls (DataGrid, TreeList, PropertyGrid, and so on).
+Eremex editors allow you to use [masks](../editors/masks/index.md) to restrict data input and format numeric and date-time values. Masks are supported both for standalone editors and editors embedded in container controls (DataGrid, TreeList, PropertyGrid, and so on).
 
 
-*Applicable to*: Cells in display and edit mode. To prevent masks from being applied in display mode (when cell editing is not active), disable the editor's `MaskUseAsDisplayFormat` property.
+*Applicable to*: Cells in display and edit mode. To prevent masks from being applied in display mode (when cell editing is not active), disable the editor's [`MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/MaskUseAsDisplayFormat.md) property.
 
 *Steps*:
 
 1. Assign an Eremex [in-place editor](data-editing/index.md) to a column. 
-2. Set the editor's `MaskType` property to `MaskType.Numeric` or `MaskType.DateTime` to apply a mask to numeric or date-time values, respectively.
-3. Set the editor's `Mask` property to the required mask. See the following topics for information on mask specifiers:
+2. Set the editor's [`MaskType`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) property to [`MaskType.Numeric`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) or [`MaskType.DateTime`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) to apply a mask to numeric or date-time values, respectively.
+3. Set the editor's [`Mask`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/Mask.md) property to the required mask. See the following topics for information on mask specifiers:
 
-    - [Numeric Masks](../../controls/editors/masks/numeric-masks.md)
-    - [Date-Time Masks](../../controls/editors/masks/date-time-masks.md)
+    - [Numeric Masks](../editors/masks/numeric-masks.md)
+    - [Date-Time Masks](../editors/masks/date-time-masks.md)
 
 
 #### Example - Custom Format Date-time Values Using Masks
@@ -64,8 +64,8 @@ You can use standard and custom format specifiers to format cell values in displ
 *Steps*:
 
 1. Assign an Eremex [in-place editor](data-editing/index.md) to a column. 
-2. Set the editor's display format using its `DisplayFormatString` property.
-3. For editors that use masks for display value formatting, disable the editor's `MaskUseAsDisplayFormat` property. For example, DateEditor and SpinEditor use masks for value formatting in display mode, by default. So, disabling the `MaskUseAsDisplayFormat` property is required for these editors to apply the display format specified by the `DisplayFormatString` property.
+2. Set the editor's display format using its [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) property.
+3. For editors that use masks for display value formatting, disable the editor's [`MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/MaskUseAsDisplayFormat.md) property. For example, DateEditor and SpinEditor use masks for value formatting in display mode, by default. So, disabling the [`MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/MaskUseAsDisplayFormat.md) property is required for these editors to apply the display format specified by the [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) property.
 
     You can find the description of all display formats in the .NET documentation:
 
@@ -78,8 +78,8 @@ You can use standard and custom format specifiers to format cell values in displ
 
 The following example assigns a DateEditor in-place editor to a column, and uses its settings to apply different value formatting in display and edit modes:
 
-- The `DisplayFormatString` property is set to 'd'. This setting applies the short date format to values in display mode. For the `DisplayFormatString` property to be in effect, the `MaskUseAsDisplayFormat` property is disabled.
-- The `Mask` property is set to 'g'. This format enables the full date-time pattern with long time in edit mode.
+- The [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) property is set to 'd'. This setting applies the short date format to values in display mode. For the [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) property to be in effect, the [`MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/MaskUseAsDisplayFormat.md) property is disabled.
+- The [`Mask`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/Mask.md) property is set to 'g'. This format enables the full date-time pattern with long time in edit mode.
 
 ![cells-formatting-displayformat-dateeditors-example](../../images/cells-formatting-displayformat-dateeditors-example.png)
 
@@ -93,7 +93,7 @@ The following example assigns a DateEditor in-place editor to a column, and uses
 
 #### Example - Format Values as Currency
 
-The following example assigns a TextEditor in-place editor to a column, and sets the editor's `DisplayFormatString` property to the "c" string. This format displays cell values as a currency when cells are in display mode:
+The following example assigns a TextEditor in-place editor to a column, and sets the editor's [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) property to the "c" string. This format displays cell values as a currency when cells are in display mode:
 
 ![cells-formatting-currencyexample](../../images/cells-formatting-currencyexample.png)
 
@@ -107,7 +107,7 @@ The following example assigns a TextEditor in-place editor to a column, and sets
 
 #### Example - Custom Format Float Values 
 
-The code below assigns a TextEditor in-place editor to a column, and sets the `DisplayFormatString` property to the "{}{0:F1} kW" string. This format displays float values with one digit after the decimal point, and adds the "kW" suffix to the output. When a cell is in edit mode, the display format is not applied. The "{}" string is an escape token that allows the XAML parser to treat a string starting with an open curly brace ("{") as literal text rather than a markup extension.
+The code below assigns a TextEditor in-place editor to a column, and sets the [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) property to the "{}{0:F1} kW" string. This format displays float values with one digit after the decimal point, and adds the "kW" suffix to the output. When a cell is in edit mode, the display format is not applied. The "{}" string is an escape token that allows the XAML parser to treat a string starting with an open curly brace ("{") as literal text rather than a markup extension.
 
 ![cells-formatting-float-customformatting](../../images/cells-formatting-float-customformatting.png)
 
@@ -125,13 +125,13 @@ The code below assigns a TextEditor in-place editor to a column, and sets the `D
 
 *Applicable to*: Cells in display mode
 
-If no display format or mask meets your requirements, you can handle the `CustomColumnDisplayText` event to format cell values in a custom manner. This event allows you to replace default text representatation of values in cells and [column filters](filter-and-search.md#column-filters). To supply custom value display text for group rows, handle the `DataGridControl.CustomGroupValueDisplayText` event.
+If no display format or mask meets your requirements, you can handle the [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) event to format cell values in a custom manner. This event allows you to replace default text representatation of values in cells and [column filters](filter-and-search.md#column-filters). To supply custom value display text for group rows, handle the [`DataGridControl.CustomGroupValueDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomGroupValueDisplayText.md) event.
 
 When you change cell display text, underlying cell values are not modified.
 
 #### Example - Custom Format Cell Values Using the CustomColumnDisplayText Event
 
-The following `CustomColumnDisplayText` event handler displays the "pcs" string after cell values in the "Stock" column. Custom display values provided using this event are ignored when cells are being edited.
+The following [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) event handler displays the "pcs" string after cell values in the "Stock" column. Custom display values provided using this event are ignored when cells are being edited.
 
 ![cells-formatting-customcolumndisplaytext-example](../../images/cells-formatting-customcolumndisplaytext-example.png)
 
@@ -158,12 +158,12 @@ Vertically cell values are centered, by default.
 To custom align values in cells horizontally or vertically, do the following:
 
 1. Assign an Eremex [in-place editor](data-editing/index.md) to a column. 
-2. Use the editor's `HorizontalContentAlignment` property to set the horizontal alignment.
-2. Use the editor's `VerticalContentAlignment` property to set the vertical alignment.
+2. Use the editor's [`HorizontalContentAlignment`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/HorizontalContentAlignment.md) property to set the horizontal alignment.
+2. Use the editor's [`VerticalContentAlignment`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/VerticalContentAlignment.md) property to set the vertical alignment.
 
 ### Example - Center Column Values and Header
 
-The following code centers values and header in the _Hire Date_ column. To align cell values, the code assigns a `DateEditor`in-place editor to this column, and then sets the editor's `HorizontalContentAlignment` property to `Center`.
+The following code centers values and header in the _Hire Date_ column. To align cell values, the code assigns a [`DateEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md)in-place editor to this column, and then sets the editor's [`HorizontalContentAlignment`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/HorizontalContentAlignment.md) property to `Center`.
 To align the column header's content, the column's `HorizontalContentAlignment` property is used.
 
 ![cells-value-alignment-example](../../images/cells-value-alignment-example.png)
@@ -181,7 +181,7 @@ To align the column header's content, the column's `HorizontalContentAlignment` 
 Do the following to display multi-line text in cells:
 
 1. Assign a TextEditor [in-place editor](data-editing/index.md) (or its descendant) to a column. 
-2. Use the editor's `TextWrapping` property to enable text wrapping.
+2. Use the editor's [`TextWrapping`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/TextWrapping.md) property to enable text wrapping.
 
 When text wrapping is enabled, the heights of rows are automatically adjusted to display cell contents in their entirety.
 
@@ -205,17 +205,17 @@ The following code assigns a text editor to a column and enables text wrapping f
 
 Cells in the DataGrid control belong to either bound or unbound columns. 
 
-[Bound columns](data-binding/index.md) are linked to fields (properties) in the control's underlyinga data source. The `GridColumn.FieldName` properties of these columns are set to the field names that exist in the data source.
+[Bound columns](data-binding/index.md) are linked to fields (properties) in the control's underlyinga data source. The [`GridColumn.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) properties of these columns are set to the field names that exist in the data source.
 Cells of bound columns get their values from corresponding data source fields.
 
-[Unbound columns](data-binding/unbound-columns.md) (also called calculated columns) allow you to display (and optionally edit) values that are not present in the data source. For instance, you can create a read-only unbound column that displays values calculated from multiple other fields. Values for unbound columns are provided with the `CustomUnboundColumnData` event. You can also create editable unbound columns. In this case, your `CustomUnboundColumnData` event handler must also save data entered by users (for instance, you can save it to a cache or a data source).
+[Unbound columns](data-binding/unbound-columns.md) (also called calculated columns) allow you to display (and optionally edit) values that are not present in the data source. For instance, you can create a read-only unbound column that displays values calculated from multiple other fields. Values for unbound columns are provided with the [`CustomUnboundColumnData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) event. You can also create editable unbound columns. In this case, your [`CustomUnboundColumnData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) event handler must also save data entered by users (for instance, you can save it to a cache or a data source).
  
 Unbound columns can be used to customize display text of cells. For information on other methods for display text customization, see [Customize Display Text of Cells](#customize-display-text-of-cells).
 
 
 ### Example — Create a Calculated Column 
 
-The following example creates an unbound column _Year Total_. The `CustomUnboundColumnData` event handler calculates values for this column as a sum of Quarter1, Quarter2, Quarter3 and Quarter4 fields.
+The following example creates an unbound column _Year Total_. The [`CustomUnboundColumnData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) event handler calculates values for this column as a sum of Quarter1, Quarter2, Quarter3 and Quarter4 fields.
 
 ![cells-unbound-columns-revenue-example](../../images/cells-unbound-columns-revenue-example.png)
 
@@ -318,21 +318,21 @@ See the following topic for more information: [Unbound Columns](data-binding/unb
 
 ## Customize Display Text of Cells
 
-You can handle the `CustomColumnDisplayText` event to customize display text of specific cells. This event affects only displayed text, but not cell edit values. 
+You can handle the [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) event to customize display text of specific cells. This event affects only displayed text, but not cell edit values. 
 
-The `CustomColumnDisplayText` event also allows you to modify text representation of cell values in column filters and filter panel. When the `CustomColumnDisplayText` event fires for values in the filter panel, the event's `SourceItemIndex` parameter returns `-1`. To supply custom value display text for group rows, handle the `DataGridControl.CustomGroupValueDisplayText` event.
+The [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) event also allows you to modify text representation of cell values in column filters and filter panel. When the [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) event fires for values in the filter panel, the event's [`SourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomColumnDisplayTextEventArgs/SourceItemIndex.md) parameter returns `-1`. To supply custom value display text for group rows, handle the [`DataGridControl.CustomGroupValueDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomGroupValueDisplayText.md) event.
 
-If cell display text is dependent of values of other data source fields/properties, you can retrieve these field values using the DataGridControl's methods (`DataGridControl.GetSourceItem` and `DataGridControl.GetSourceItemValue`) and the methods of your data source.
+If cell display text is dependent of values of other data source fields/properties, you can retrieve these field values using the DataGridControl's methods ([`DataGridControl.GetSourceItem`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItem.md) and [`DataGridControl.GetSourceItemValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemValue.md)) and the methods of your data source.
 
 ### Example - Modify Cell Display Text Using an Event
 
-The following example handles the `CustomColumnDisplayText` event to modify display text of _HireDate_ column values.
+The following example handles the [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) event to modify display text of _HireDate_ column values.
 
 The grid in the current example displays a collection of _EmployeeInfo_ objects. The _EmployeeInfo.HireDate_ field specifies a date when a person was hired. The _EmployeeInfo.Experience_ field specifies the total number of the employee's working years. The initial layout is shown below:
 
 ![cells-grid-customcolumndisplaytext-example-initial-layout](../../images/cells-grid-customcolumndisplaytext-example-initial-layout.png)
 
-The `CustomColumnDisplayText` event handler provides custom display text for _HireDate_ values. Instead of date-time values, the _HireDate_ column will display the number of working years from the hiring date till today, followed by the total number of working years (a value of the _Experience_ column). The captions of the _HireDate_ and _Experience_ columns are replaced with "Company Work Experience" and "Total Work Experience", respectively.
+The [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) event handler provides custom display text for _HireDate_ values. Instead of date-time values, the _HireDate_ column will display the number of working years from the hiring date till today, followed by the total number of working years (a value of the _Experience_ column). The captions of the _HireDate_ and _Experience_ columns are replaced with "Company Work Experience" and "Total Work Experience", respectively.
 
 ![cells-grid-customcolumndisplaytext-example-final-layout](../../images/cells-grid-customcolumndisplaytext-example-final-layout.png)
 
@@ -444,9 +444,9 @@ For more details on row identification, see: [Identify and Get Rows](rows.md#ide
 
 | Method | Description |
 |--------|-------------|
-| `GetCellValue` | Returns the edit (raw) value stored in a specific cell. |
-| `SetCellValue` | Sets a new value in a specific cell. |
-| `GetCellDisplayText` | Returns the formatted display text of a cell, which may differ from the edit value due to column formatting or a custom `CustomColumnDisplayText` event handler. |
+| [`GetCellValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetCellValue.md) | Returns the edit (raw) value stored in a specific cell. |
+| [`SetCellValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SetCellValue.md) | Sets a new value in a specific cell. |
+| [`GetCellDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetCellDisplayText.md) | Returns the formatted display text of a cell, which may differ from the edit value due to column formatting or a custom [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) event handler. |
 
 **Examples:**
 
@@ -467,11 +467,11 @@ The DataGrid control includes methods that allow you to retrieve a row's source 
 
 | Member | Description |
 |--------|-------------|
-| `DataControlBase.FocusedItem` | Gets the source object for the currently focused row. |
-| `GetSourceItem` | Returns the source object by its index in the data source. |
-| `GetSourceItemValue` | Returns the value of a specific field in the data source at the specified index. |
-| `GetSourceItemByRowIndex` | Returns the source object by a row's index. |
-| `GetSourceItemByVisibleRowIndex` | Returns the source object by a row's visible index. |
+| [`DataControlBase.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) | Gets the source object for the currently focused row. |
+| [`GetSourceItem`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItem.md) | Returns the source object by its index in the data source. |
+| [`GetSourceItemValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemValue.md) | Returns the value of a specific field in the data source at the specified index. |
+| [`GetSourceItemByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByRowIndex.md) | Returns the source object by a row's index. |
+| [`GetSourceItemByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByVisibleRowIndex.md) | Returns the source object by a row's visible index. |
 
 For an explanation of different row index types, refer to [Identify and Get Rows](rows.md#identify-and-get-rows).
 
@@ -503,41 +503,41 @@ Cell in-place editors serve two purposes:
 
 ![cells-editors](../../images/cells-editors.png)
 
-The DataGrid uses EMX editors to present and edit values of common data types, by default. For instance, double values are presented using the `SpinEditor` in-place editor, Boolean values are presented using the `CheckEditor` control, etc.
+The DataGrid uses EMX editors to present and edit values of common data types, by default. For instance, double values are presented using the [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md) in-place editor, Boolean values are presented using the [`CheckEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/CheckEditor.md) control, etc.
 
 You can explicitly assign editors to columns/cells using these approaches:
 
-1. Specify EMX editors using the `GridColumn.EditorProperties` property.
-2. Specify EMX editors using the `GridColumn.CellTemplate` property.
-3. Specify custom editors using the `GridColumn.CellTemplate` property.
+1. Specify EMX editors using the [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) property.
+2. Specify EMX editors using the [`GridColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) property.
+3. Specify custom editors using the [`GridColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) property.
 
-The first approach (`GridColumn.EditorProperties`) s preferred, as it provides the following advantages:
+The first approach ([`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md)) s preferred, as it provides the following advantages:
 
 - In-place EMX editors and the DataGrid share the same paint theme, ensuring synchronized appearance settings.
 - The DataGrid can correctly obtain display text from cells and export it to various formats (XLSX, PDF, images, and so on). When you use cell templates, cells are exported blank.
 - High performance during initialization, display, and scrolling. The control mimics the editor's appearance in display mode; the actual editor is created only when editing begins and destroyed once editing ends.
 
 
-To specify an in-place EMX editor using the `GridColumn.EditorProperties` property, do the following:
+To specify an in-place EMX editor using the [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) property, do the following:
 
-1. Set the `GridColumn.EditorProperties` property to one of the following `BaseEditorProperties` class descendants that corresponds to the required editor type:
+1. Set the [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) property to one of the following [`BaseEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties.md) class descendants that corresponds to the required editor type:
 
-    - `ButtonEditorProperties` — Corresponds to and contains settings specific to the `ButtonEditor` control.
-    - `CheckEditorProperties` — Corresponds to and contains settings specific to the `CheckEditor` control.
-    - `ComboBoxEditorProperties` — Corresponds to and contains settings specific to the `ComboBoxEditor` control.
-    - `DateEditorProperties` — Corresponds to and contains settings specific to the `DateEditor` control.
-    - `HyperlinkEditorProperties` — Corresponds to and contains settings specific to the `HyperlinkEditor` control.
-    - `MemoEditorProperties` — Corresponds to and contains settings specific to the `MemoEditor` control.
-    - `PopupColorEditorProperties` — Corresponds to and contains settings specific to the `PopupColorEditor` control.
-    - `SegmentedEditorProperties` — Corresponds to and contains settings specific to the `SegmentedEditor` control.
-    - `SpinEditorProperties` — Corresponds to and contains settings specific to the `SpinEditor` control.
-    - `TextEditorProperties` — Corresponds to and contains settings specific to the `TextEditor` control.
+    - [`ButtonEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditorProperties.md) — Corresponds to and contains settings specific to the [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) control.
+    - [`CheckEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/CheckEditorProperties.md) — Corresponds to and contains settings specific to the [`CheckEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/CheckEditor.md) control.
+    - [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md) — Corresponds to and contains settings specific to the [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) control.
+    - [`DateEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditorProperties.md) — Corresponds to and contains settings specific to the [`DateEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md) control.
+    - [`HyperlinkEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/HyperlinkEditorProperties.md) — Corresponds to and contains settings specific to the [`HyperlinkEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/HyperlinkEditor.md) control.
+    - [`MemoEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/MemoEditorProperties.md) — Corresponds to and contains settings specific to the [`MemoEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/MemoEditor.md) control.
+    - [`PopupColorEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditorProperties.md) — Corresponds to and contains settings specific to the [`PopupColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) control.
+    - [`SegmentedEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditorProperties.md) — Corresponds to and contains settings specific to the [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) control.
+    - [`SpinEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditorProperties.md) — Corresponds to and contains settings specific to the [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md) control.
+    - [`TextEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties.md) — Corresponds to and contains settings specific to the [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) control.
 
-2. Modify the settings of the specified `BaseEditorProperties` descendant object.
+2. Modify the settings of the specified [`BaseEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties.md) descendant object.
 
 ### Example - Assign a ComboBoxEditor Control to a Column
 
-The following example assigns a `ComboBoxEditor` editor to a column by setting the `GridColumn.EditorProperties` property to a `ComboBoxEditorProperties` object. The `ComboBoxEditorProperties.ItemsSource` property specifies the source of items to display in the combobox editor's dropdown.
+The following example assigns a [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) editor to a column by setting the [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) property to a [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md) object. The [`ComboBoxEditorProperties.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties/ItemsSource.md) property specifies the source of items to display in the combobox editor's dropdown.
 
 ![cells-editors-comboboxexample](../../images/cells-editors-comboboxexample.png)
 
@@ -556,8 +556,8 @@ See the following topic for more information: [Data Editing](data-editing/index.
 
 You can make column cells read-only, while allowing users to copy cell values. To achieve this:
 
-- Set the column's `ReadOnly` property to `true`.
-- Keep the column's `AllowEditing` property set to `true` (default).
+- Set the column's [`ReadOnly`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ReadOnly.md) property to `true`.
+- Keep the column's [`AllowEditing`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowEditing.md) property set to `true` (default).
 
 ``` xml
 <mxdg:GridColumn FieldName="FirstName" ReadOnly="True"/>
@@ -571,7 +571,7 @@ You can make column cells read-only, while allowing users to copy cell values. T
 
 ### Entire Grid
 
-To make the entire grid non-editable, set the control's `AllowEditing` property to `false`.
+To make the entire grid non-editable, set the control's [`AllowEditing`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/AllowEditing.md) property to `false`.
 
 ``` xml
 <mxdg:DataGridControl x:Name="dataGrid" AllowEditing="False">
@@ -581,7 +581,7 @@ To make the entire grid non-editable, set the control's `AllowEditing` property 
 
 To make all cells in a specific column non-editable, use one of the following approaches:
 
-- Set the column's `AllowEditing` property to `false`.
+- Set the column's [`AllowEditing`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowEditing.md) property to `false`.
 
     ``` xml
     <mxdg:GridColumn FieldName="HireDate" AllowEditing="False"/>
@@ -589,11 +589,11 @@ To make all cells in a specific column non-editable, use one of the following ap
 
     ![cells-noneditable](../../images/cells-noneditable.png)
 
-- Set the column's `AllowFocus` property to `false`. This setting prevents the column from receiving focus.
+- Set the column's [`AllowFocus`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowFocus.md) property to `false`. This setting prevents the column from receiving focus.
 
 ### Specific Cells
 
-To make individual cells non-editable, handle the `ShowingEditor` event. This event fires when a cell editor is about to be activated. Set the `Cancel` event parameter to `true` to prevent cell editor activation.
+To make individual cells non-editable, handle the [`ShowingEditor`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowingEditor.md) event. This event fires when a cell editor is about to be activated. Set the [`Cancel`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridShowingEditorEventArgs/Cancel.md) event parameter to `true` to prevent cell editor activation.
 
 ``` cs
 private void DataGrid_ShowingEditor(object sender, DataGridShowingEditorEventArgs e)

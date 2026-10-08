@@ -2,13 +2,21 @@
 
 The chosen density. Assigning it resizes the controls of the running application at once: paddings, row heights and the like follow the density, the colours do not change.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public IAppearanceOption SelectedDensity { get; set; }
 ```
 
 ## Property Value
 
-One of the entries of [`Densities`](./Densities.md), or `null` when the theme has no densities.
+| type | description |
+| --- | --- |
+| [`IAppearanceOption`](../IAppearanceOption.md) | One of the entries of [`Densities`](./Densities.md), or `null` when the theme has no densities. |
 
 ## See Also
 

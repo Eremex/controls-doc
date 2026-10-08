@@ -6,7 +6,7 @@ seealso: []
 
 # Candlestick Series View
 
-Use the Candlestick Series View (`CartesianCandlestickSeriesView`) in a `CartesianChart` control to create a financial chart that shows an asset's price movement. Data points display the High, Low, Open, and Close prices of a security for a specific period. 
+Use the Candlestick Series View ([`CartesianCandlestickSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView.md)) in a [`CartesianChart`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) control to create a financial chart that shows an asset's price movement. Data points display the High, Low, Open, and Close prices of a security for a specific period. 
 
 ![chart-views-candlestick](../../../images/chart-views-candlestick.png)
 
@@ -41,20 +41,20 @@ SeriesName="Price"
 
 ## Data for the Candlestick Series View
 
-Data for any Cartersian Series View is provided using a [data adapter](../cartesian-chart.md#series-data) assigned to the `CartesianSeries.DataAdapter` property. A data adapter supplies the _X_ and _Y_ values for the chart.
+Data for any Cartersian Series View is provided using a [data adapter](../cartesian-chart.md#series-data) assigned to the [`CartesianSeries.DataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/Series/DataAdapter.md) property. A data adapter supplies the _X_ and _Y_ values for the chart.
 
 Two data adapters are available for the Candlestick Series View:
 
-- `CandlestickDataAdapter`
-- `SummaryCandlestickDataAdapter`
+- [`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md)
+- [`SummaryCandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter.md)
 
 The _X_ values are of the DateTime type in both data adapters. Choose one of these data adapters according to the type of _Y_ values you have.
 
 ### CandlestickDataAdapter
 
-When you use a `CandlestickDataAdapter` object, you supply four _Y_ values of the Double type that specify the Open, Close, High and Low prices for each _X_ argument. You can use the `CandlestickDataAdapter` constructor to populate the adapter with data.
+When you use a [`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) object, you supply four _Y_ values of the Double type that specify the Open, Close, High and Low prices for each _X_ argument. You can use the [`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) constructor to populate the adapter with data.
 
-The following code from the "Candlestick" chart demo demonstrates a `CandlestickDataAdapter` object initialization.
+The following code from the "Candlestick" chart demo demonstrates a [`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) object initialization.
 
 ``` cs
 [ObservableProperty] CandlestickDataAdapter stockData;
@@ -79,7 +79,7 @@ public CartesianCandlestickSeriesViewViewModel()
 }
 ```
 
-The `CandlestickDataAdapter` object requires that you set the time unit (axis unit) for the _X_ axis using the `DateTimeScaleOptions.MeasureUnit` property. 
+The [`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) object requires that you set the time unit (axis unit) for the _X_ axis using the [`DateTimeScaleOptions.MeasureUnit`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeScaleOptions/MeasureUnit.md) property. 
 
 In the code snippet below, the axis unit is set to `Day`.
 
@@ -94,19 +94,19 @@ In the code snippet below, the axis unit is set to `Day`.
 </mxc:CartesianChart.AxesX>
 ```
 
-The _X_ arguments should be supplied to the `CandlestickDataAdapter` data adapter according to this axis unit. For instance, when the axis unit is set to `Day`, the _X_ values should specify individual days.
+The _X_ arguments should be supplied to the [`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) data adapter according to this axis unit. For instance, when the axis unit is set to `Day`, the _X_ values should specify individual days.
 
 ### SummaryCandlestickDataAdapter
 
-The `SummaryCandlestickDataAdapter` adapter summarizes the data you provide, and automatically calculates the Open, Close, High and Low prices per specified time frame (time unit) (for instance, per second, minute, hour, day, week, etc., or multiples of a time frame). For instance, you can supply data at one-second interval, and allow the `SummaryCandlestickDataAdapter` to automatically summarize this data in, say, 5-second, minute or hour intervals.
+The [`SummaryCandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter.md) adapter summarizes the data you provide, and automatically calculates the Open, Close, High and Low prices per specified time frame (time unit) (for instance, per second, minute, hour, day, week, etc., or multiples of a time frame). For instance, you can supply data at one-second interval, and allow the [`SummaryCandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter.md) to automatically summarize this data in, say, 5-second, minute or hour intervals.
 
 The _X_ values specify distinct date-time values. For each _X_ value, provide a single _Y_ value of the Double type.
 
 To specify an aggregation time frame, use two properties:
 
-- `SummaryCandlestickDataAdapter.MeasureUnit` — Specifies the base aggregation time frame (Millisecond, Second, Minute, Hour, Day, Week, Month, Quarter, or Year) for which the data adapter calculates the Open, Close, High and Low prices.
+- [`SummaryCandlestickDataAdapter.MeasureUnit`](../../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter/MeasureUnit.md) — Specifies the base aggregation time frame (Millisecond, Second, Minute, Hour, Day, Week, Month, Quarter, or Year) for which the data adapter calculates the Open, Close, High and Low prices.
 
-- `SummaryCandlestickDataAdapter.MeasureUnitFactor` (an integer value; default is `1`) — Specifies a multiplier for the base time frame to calculate the actual time frame. The actual length of the time frame is calculated by the expression: `MeasureUnit x MeasureUnitFactor`. 
+- [`SummaryCandlestickDataAdapter.MeasureUnitFactor`](../../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter/MeasureUnitFactor.md) (an integer value; default is `1`) — Specifies a multiplier for the base time frame to calculate the actual time frame. The actual length of the time frame is calculated by the expression: `MeasureUnit x MeasureUnitFactor`. 
 
 The following example sets the time frame to "2 seconds":
 
@@ -128,36 +128,36 @@ public CartesianSummaryCandlestickViewModel()
 ```
 
 
-The `CandlestickDataAdapter` and `SummaryCandlestickDataAdapter` classes expose methods to remove and add points. These methods are helpful when the chart data needs to be updated in real time.
+The [`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) and [`SummaryCandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter.md) classes expose methods to remove and add points. These methods are helpful when the chart data needs to be updated in real time.
 
 - `Add` — Adds a new data point at the end of the data array.
-- `UpdateValue` — Modifies a data point at a specific position.
-- `RemoveFromStart` — Removes the specified number of data points from the beginning.
-- `Clear` — Clears all data.
+- [`UpdateValue`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter/UpdateValue.md) — Modifies a data point at a specific position.
+- [`RemoveFromStart`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter/RemoveFromStart.md) — Removes the specified number of data points from the beginning.
+- [`Clear`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter/Clear.md) — Clears all data.
 
 ## Candle Color and Thickness
 
-Use the `Color` and `ReductionColor` properties of the `CartesianCandlestickSeriesView` to specify candle colors:
+Use the [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/Color.md) and [`ReductionColor`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/ReductionColor.md) properties of the [`CartesianCandlestickSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView.md) to specify candle colors:
 
-- `CartesianCandlestickSeriesView.Color` — Specifies the color to paint candles whose Close price is higher than or equal to the Open price.
-- `CartesianCandlestickSeriesView.ReductionColor` — Specifies the color to paint candles whose Close price is lower than the Open price.
+- [`CartesianCandlestickSeriesView.Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/Color.md) — Specifies the color to paint candles whose Close price is higher than or equal to the Open price.
+- [`CartesianCandlestickSeriesView.ReductionColor`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/ReductionColor.md) — Specifies the color to paint candles whose Close price is lower than the Open price.
 
 
 ![chart-candlestick-colors](../../../images/chart-candlestick-colors.png)
 
 The following properties allow you to customize thickness of candles:
 
-- `CandleWidth` — A Double value that specifies the thickness of a candle's solid bar. The `CandleWidth` property value is measured in axis units. The Candlestick series view uses a date-time axis. Its axis unit is determined by the `DateTimeScaleOptions.MeasureUnit` property. For instance, if the `MeasureUnit` property is set to `Day`, the axis unit is set to the distance between two adjacent days along the date-time axis. When the `CandleWidth` property is set to `0.5`, the candle width is set to half the distance between two adjacent days.
+- [`CandleWidth`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/CandleWidth.md) — A Double value that specifies the thickness of a candle's solid bar. The [`CandleWidth`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/CandleWidth.md) property value is measured in axis units. The Candlestick series view uses a date-time axis. Its axis unit is determined by the [`DateTimeScaleOptions.MeasureUnit`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeScaleOptions/MeasureUnit.md) property. For instance, if the [`MeasureUnit`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeScaleOptions/MeasureUnit.md) property is set to `Day`, the axis unit is set to the distance between two adjacent days along the date-time axis. When the [`CandleWidth`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/CandleWidth.md) property is set to `0.5`, the candle width is set to half the distance between two adjacent days.
 
-- `Thickness` — A Double value that specifies the thickness of a candle's whiskers. This property's value is measured in pixels.
+- [`Thickness`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/Thickness.md) — A Double value that specifies the thickness of a candle's whiskers. This property's value is measured in pixels.
 
 ![chart-candlestick-widths](../../../images/chart-candlestick-widths.png)
 
 ## Axes
 
-As with other series views, you can customize axes for the Candlestick chart type using the `CartesianChart.AxesX` and `CartesianChart.AxesY` properties. The _X_ axis of the Candlestick chart displays date-time values. To customize the scale settings of the _X_ axis, set the `AxisX.ScaleOptions` property to a `DateTimeScaleOptions` object.
+As with other series views, you can customize axes for the Candlestick chart type using the [`CartesianChart.AxesX`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesX.md) and [`CartesianChart.AxesY`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesY.md) properties. The _X_ axis of the Candlestick chart displays date-time values. To customize the scale settings of the _X_ axis, set the [`AxisX.ScaleOptions`](../../../API/Eremex.AvaloniaUI.Charts/AxisX/ScaleOptions.md) property to a [`DateTimeScaleOptions`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeScaleOptions.md) object.
 
-The following code snippet creates a `CartesianChart` control with a Candlestick series view, and customizes the chart's axes. See the "Candlestick" chart demo for the complete example.
+The following code snippet creates a [`CartesianChart`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) control with a Candlestick series view, and customizes the chart's axes. See the "Candlestick" chart demo for the complete example.
 
 ``` xml
 <mxc:CartesianChart Grid.Row="1" Classes="DemoChart" x:Name="DemoControl">

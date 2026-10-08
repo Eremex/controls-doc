@@ -88,7 +88,7 @@ You can embed the Eremex data editors in cells in container controls (DataGrid, 
     
 <br/>
 
-- `PopupEditor` — The base class for editors that have dropdown windows.
+- [`PopupEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor.md) — The base class for editors that have dropdown windows.
 
 <!--TODO Describe PopupEditor
  -->
@@ -145,7 +145,7 @@ You can embed the Eremex data editors in cells in container controls (DataGrid, 
 
 <br/>
 
-- [Eremex Application Themes](../../controls/themes/index.md)
+- [Eremex Application Themes](../themes/index.md)
     - Themes define the appearance of all Eremex controls.
     - They are automatically applied to a set of standard Avalonia UI Controls, ensuring a consistent appearance with Eremex controls.
     - Eremex editors support the primary and secondary color variants for each theme. These color variants allow you to give editors a different color accent by changing a single property.

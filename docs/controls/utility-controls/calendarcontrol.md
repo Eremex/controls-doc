@@ -6,7 +6,7 @@ seealso: []
 
 # CalendarControl
 
-The `CalendarControl` displays a calendar that allows a user to select a date. The control's navigation header displays buttons to browse through months and years.
+The [`CalendarControl`](../../API/Eremex.AvaloniaUI.Controls.Editors/CalendarControl.md) displays a calendar that allows a user to select a date. The control's navigation header displays buttons to browse through months and years.
 
 ![calendarcontrol](../../images/calendarcontrol.png)
 

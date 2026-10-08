@@ -198,10 +198,10 @@ To customize a row cell's style, use the following information:
 
 A `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData` object. The main properties exposed by the `CellData` object are:
 
-- `Column` — The column (a `GridColumn` object) that displays the cell. 
-- `DataControl` — The current `DataGridControl` object.
+- `Column` — The column (a [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) object) that displays the cell. 
+- `DataControl` — The current [`DataGridControl`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md) object.
 - `Row` — The row's underlying data (business) object.
-- `ValidationInfo` — An object that contains the cell's validation information.
+- [`ValidationInfo`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationInfo.md) — An object that contains the cell's validation information.
 - `Value` — The cell's value.
 
 ### Custom Pseudo Classes
@@ -331,7 +331,7 @@ Use the following information to customize a column header's style:
 
 ### DataContext
 
-`GridColumn`
+[`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md)
 
 ### Custom Pseudo Classes
 

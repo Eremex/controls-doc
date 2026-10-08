@@ -2,13 +2,21 @@
 
 Declares the view for the annotated view model, leaving the hosting window with its default style classes.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public ViewLocatorAttribute(Type viewType)
 ```
 
-| parameter | description |
-| --- | --- |
-| viewType | The type of the view to create. It must have a parameterless constructor. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| viewType | `Type` | The type of the view to create. It must have a parameterless constructor. |
 
 ## See Also
 
@@ -21,14 +29,22 @@ public ViewLocatorAttribute(Type viewType)
 
 Declares the view for the annotated view model together with the style classes of the hosting window, replacing the default ones.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public ViewLocatorAttribute(Type viewType, params string[] styleClassesArray)
 ```
 
-| parameter | description |
-| --- | --- |
-| viewType | The type of the view to create. It must have a parameterless constructor. |
-| styleClassesArray | The style classes to apply to the hosting window, one per argument. See [`DialogWindowClasses`](../DialogWindowClasses.md) for the recognised names. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| viewType | `Type` | The type of the view to create. It must have a parameterless constructor. |
+| styleClassesArray | `string[]` | The style classes to apply to the hosting window, one per argument. See [`DialogWindowClasses`](../DialogWindowClasses.md) for the recognised names. |
 
 ## See Also
 

@@ -2,6 +2,12 @@
 
 Releases the association established by [`Attach`](./Attach.md). Called by the window services once the window has closed, including when the user closed it through the caption button.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public void Detach()
 ```

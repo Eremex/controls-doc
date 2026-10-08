@@ -57,13 +57,13 @@ python serve.py            # запустить уже собранный сай
 На машине с интернетом и той же ОС/версией Python, что в закрытом контуре:
 
 ```bash
-pip download -r requirements.in -d wheels
+pip download -r requirements.in -d offline-packages
 ```
 
-Перенесите репозиторий вместе с папкой `wheels` в закрытый контур и выполните:
+Перенесите репозиторий вместе с папкой `offline-packages` в закрытый контур и выполните:
 
 ```bash
-python build.py --wheels wheels
+python build.py --packages offline-packages
 ```
 
 ### Docker

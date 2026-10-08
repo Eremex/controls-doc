@@ -28,11 +28,11 @@ To learn how to save and restore user changes to the Ribbon Quick Access Toolbar
 
 ### Disable Quick Access Toolbar Customization
 
-Set the `RibbonControl.AllowQuickAccessToolbarCustomizationMenu` property to `false` to hide the **Add to Quick Access Toolbar** and **Remove from Quick Access Toolbar** commands, thus preventing users from customizing the Quick Access Toolbar.
+Set the [`RibbonControl.AllowQuickAccessToolbarCustomizationMenu`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/AllowQuickAccessToolbarCustomizationMenu.md) property to `false` to hide the **Add to Quick Access Toolbar** and **Remove from Quick Access Toolbar** commands, thus preventing users from customizing the Quick Access Toolbar.
 
 ### Add Items to the Quick Access Toolbar in Code
 
-To populate the Quick Access Toolbar with items in code, use the `RibbonControl.QuickAccessToolbarItems` collection. You can also use this collection to access and then modify Quick Access Toolbar items in code-behind.
+To populate the Quick Access Toolbar with items in code, use the [`RibbonControl.QuickAccessToolbarItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/QuickAccessToolbarItems.md) collection. You can also use this collection to access and then modify Quick Access Toolbar items in code-behind.
 
 ``` xml
 <mxr:RibbonControl.QuickAccessToolbarItems>
@@ -45,7 +45,7 @@ To populate the Quick Access Toolbar with items in code, use the `RibbonControl.
 </mxr:RibbonControl.QuickAccessToolbarItems>
 ```
 
-Use the `RibbonControl.QuickAccessToolbarItemsSource` property to populate the Quick Access Toolbar with items from a collection of business objects stored in a View Model. Corresponding data templates should define ribbon items and initialize their settings from underlying business objects.
+Use the [`RibbonControl.QuickAccessToolbarItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/QuickAccessToolbarItemsSource.md) property to populate the Quick Access Toolbar with items from a collection of business objects stored in a View Model. Corresponding data templates should define ribbon items and initialize their settings from underlying business objects.
 
 
 ## Change the Position and Visibility
@@ -58,12 +58,12 @@ A user can click the dropdown button in the Quick Access Toolbar and select the 
 
 ![ribbon-qat-below-change-position-menu](../../images/ribbon-qat-below-change-position-menu.png)
 
-You can hide the dropdown button in the Quick Access Toolbar using the `RibbonControl.IsQuickAccessToolbarCustomizationButtonVisible` property.
+You can hide the dropdown button in the Quick Access Toolbar using the [`RibbonControl.IsQuickAccessToolbarCustomizationButtonVisible`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/IsQuickAccessToolbarCustomizationButtonVisible.md) property.
 
 The following properties allow you to control the position and visibility of the Quick Access Toolbar in code:
 
-- `RibbonControl.QuickAccessToolbarLocation` — Allows you to choose between the `Top` and `Bottom` positions for the Quick Access Toolbar.
-- `RibbonControl.IsQuickAccessToolbarVisible` — Allows you to hide the Quick Access Toolbar.
+- [`RibbonControl.QuickAccessToolbarLocation`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/QuickAccessToolbarLocation.md) — Allows you to choose between the `Top` and `Bottom` positions for the Quick Access Toolbar.
+- [`RibbonControl.IsQuickAccessToolbarVisible`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/IsQuickAccessToolbarVisible.md) — Allows you to hide the Quick Access Toolbar.
 
 ## See Also
 

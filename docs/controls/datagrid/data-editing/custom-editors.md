@@ -22,13 +22,13 @@ The current topic shows how to use cell templates to embed custom editors in cel
  
 ## Assign a Custom Editor to a Grid Column Directly
  
-You can specify an in-place editor for a grid column by assigning a `DataTemplate` to the `GridColumn.CellTemplate` property.
+You can specify an in-place editor for a grid column by assigning a `DataTemplate` to the [`GridColumn.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) property.
 
 - Create a `DataTemplate` object with an editor defined inside the template. 
-- Assign the `DataTemplate` to the `CellTemplate` property.
+- Assign the `DataTemplate` to the [`CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) property.
 - Bind the editor to a column value explicitly, when required. 
  
-The following example shows XAML code that sets a grid column's `CellTemplate` property to a `TextBox` object:
+The following example shows XAML code that sets a grid column's [`CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) property to a `TextBox` object:
  
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -46,7 +46,7 @@ xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
  
 If you use an Eremex editor inside a `DataTemplate`, you may omit explicit data binding to a column value for the editor. 
 
-Set the `x:Name` property to **"PART_Editor"** for the Eremex editor defined in a template. This ensures automatic binding of the editor's value (`BaseEditor.EditorValue`) to the column's field. Additionally, the editor's appearance settings (border visibility and foreground colors in the active and inactive states) will be managed by the DataGrid control.
+Set the `x:Name` property to **"PART_Editor"** for the Eremex editor defined in a template. This ensures automatic binding of the editor's value ([`BaseEditor.EditorValue`](../../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)) to the column's field. Additionally, the editor's appearance settings (border visibility and foreground colors in the active and inactive states) will be managed by the DataGrid control.
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -73,7 +73,7 @@ Explicit data binding for inplace editors is required in the following cases:
 
     !!! tip
     
-        Eremex editors are controls derived from the `Eremex.AvaloniaUI.Controls.Editors.BaseEditor` class.
+        Eremex editors are controls derived from the [`Eremex.AvaloniaUI.Controls.Editors.BaseEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor.md) class.
 
 - You need to specify a custom value converter in the data binding expression.
  
@@ -90,11 +90,11 @@ You can assign in-place editors to columns based on the data type of the column'
 
 - Define an editor within a `DataTemplate`.
 - Set the `DataTemplate.DataType` property to the target data type. 
-- Assign the created template to the `DataGridControl.CellTemplate` property.
+- Assign the created template to the [`DataGridControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CellTemplate.md) property.
 
 ### Example - How to associate an in-place editor with a column's data type
 
-The following example associates a `TextEditor` that paints values in green with columns bound to Integer fields:
+The following example associates a [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) that paints values in green with columns bound to Integer fields:
  
 ```xml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -140,7 +140,7 @@ public class CellTemplateLocator : AvaloniaList<IDataTemplate>, IDataTemplate
 }
 ```
  
-- Initialize the `DataGridControl.CellTemplate` property with a *CellTemplateLocator* object.
+- Initialize the [`DataGridControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CellTemplate.md) property with a *CellTemplateLocator* object.
 - Populate the *CellTemplateLocator* object with `DataTemplate` objects associated with your data types.
  
 The following example defines two `DataTemplate` objects with editors associated with the _String_ and _Integer_ data types, respectively.

@@ -2,17 +2,27 @@
 
 The Avalonia window behind the contract.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public static Window? AsAvaloniaWindow(this IWindow? window)
 ```
 
-| parameter | description |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| window | `IWindow?` | The window handed to a service, or `null`. |
+
+## Returns
+
+| type | description |
 | --- | --- |
-| window | The window handed to a service, or `null`. |
-
-## Return Value
-
-The Avalonia window, or `null` when *window* is `null` or does not stand for an Avalonia window.
+| `Window?` | The Avalonia window, or `null` when *window* is `null` or does not stand for an Avalonia window. |
 
 ## See Also
 

@@ -6,7 +6,7 @@ seealso: []
 
 # Side-by-side Range Bar Series View
 
-The Side-by-side Range Bar Series View (`CartesianSideBySideRangeBarSeriesView`) draws rectangular bars between the two Y-values of a data series.
+The Side-by-side Range Bar Series View ([`CartesianSideBySideRangeBarSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideRangeBarSeriesView.md)) draws rectangular bars between the two Y-values of a data series.
 
 ![chart-views-rangebarseriesview](../../../images/chart-views-rangebarseriesview.png)
 
@@ -16,14 +16,14 @@ You can use the following data adapters to provide data for Side-by-side Range B
 
 Numeric _X_ Values:
 
-- `NumericRangeDataAdapter`
+- [`NumericRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/NumericRangeDataAdapter.md)
 
 Date and Time _X_ Values:
 
-- `DateTimeRangeDataAdapter`
-- `TimeSpanRangeDataAdapter`
+- [`DateTimeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeRangeDataAdapter.md)
+- [`TimeSpanRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/TimeSpanRangeDataAdapter.md)
 
 
 Qualitative _X_ Values:
 
-- `QualitativeRangeDataAdapter` 
+- [`QualitativeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeRangeDataAdapter.md) 

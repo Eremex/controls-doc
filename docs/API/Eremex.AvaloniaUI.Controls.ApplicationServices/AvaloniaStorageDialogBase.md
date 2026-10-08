@@ -2,6 +2,12 @@
 
 Base class for the storage picker dialogs used by the file dialog services. It carries the settings every picker shares — caption and start folder — and turns them into the Avalonia storage provider options.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public abstract class AvaloniaStorageDialogBase
 ```

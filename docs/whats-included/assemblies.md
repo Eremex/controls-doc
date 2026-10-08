@@ -20,20 +20,20 @@ The Eremex Controls assemblies and project templates are distributed as NuGet pa
 
 - **Eremex.Avalonia.Controls** — Contains the Eremex data shaping and editing controls and common utility classes. The main controls in this assembly include:
 
-    - `DataGridControl`
-    - `TreeListControl` and `TreeViewControl`
-    - `PropertyGridControl`
+    - [`DataGridControl`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md)
+    - [`TreeListControl`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md) and [`TreeViewControl`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md)
+    - [`PropertyGridControl`](../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl.md)
     - `ListViewControl`
-    - `CartesianChart`, `PolarChart` and `SmithChart`
-    - `RibbonControl`
-    - `ToolbarManager`
-    - `DockManager`
-    - `Heatmap`
-    - Data editors (`TextEditor`, `ButtonEditor`, `ComboBoxEditor`, `CheckEditor`, `SpinEditor`, and more)
-    - Utility controls (`MxTabControl`, `MxMessageBox`, `SplitContainerControl`, `CalendarControl`, and more)
+    - [`CartesianChart`](../API/Eremex.AvaloniaUI.Charts/CartesianChart.md), [`PolarChart`](../API/Eremex.AvaloniaUI.Charts/PolarChart.md) and [`SmithChart`](../API/Eremex.AvaloniaUI.Charts/SmithChart.md)
+    - [`RibbonControl`](../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl.md)
+    - [`ToolbarManager`](../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md)
+    - [`DockManager`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md)
+    - [`Heatmap`](../API/Eremex.AvaloniaUI.Charts/Heatmap.md)
+    - Data editors ([`TextEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md), [`ButtonEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md), [`ComboBoxEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md), [`CheckEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/CheckEditor.md), [`SpinEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md), and more)
+    - Utility controls (`MxTabControl`, `MxMessageBox`, [`SplitContainerControl`](../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl.md), [`CalendarControl`](../API/Eremex.AvaloniaUI.Controls.Editors/CalendarControl.md), and more)
 
 - **Eremex.Avalonia.Controls3D** — Includes the controls and classes to render 3D models in your applications. 
-    - `Graphics3DControl` — The main control in this library that allows you to display and interact with 3D models.
+    - [`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) — The main control in this library that allows you to display and interact with 3D models.
 
 - **Eremex.DocumentProcessing** — A library of non-visual components to generate PDF and XLSX documents.
 

@@ -2,18 +2,28 @@
 
 Creates the Close button, captioned in the current UI language and activated by Escape. Use it instead of Cancel in dialogs that only display information and have nothing to cancel.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public static IDialogButtonViewModel CreateClose(ICommand command, object? commandParameter = null)
 ```
 
-| parameter | description |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| command | `ICommand` | The command invoked when the button is pressed. |
+| commandParameter | `object?` | The value passed to *command*. |
+
+## Returns
+
+| type | description |
 | --- | --- |
-| command | The command invoked when the button is pressed. |
-| commandParameter | The value passed to *command*. |
-
-## Return Value
-
-The button view model.
+| `IDialogButtonViewModel` | The button view model. |
 
 ## See Also
 

@@ -6,7 +6,7 @@ seealso: []
 
 # PopupColorEditor
 
-The Eremex Controls library includes the `PopupColorEditor` control that allows you to display a color in the edit box, and pick a color from the associated popup window.
+The Eremex Controls library includes the [`PopupColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) control that allows you to display a color in the edit box, and pick a color from the associated popup window.
 
 ![popupcoloreditor](../../images/popupcoloreditor.png)
 
@@ -21,11 +21,11 @@ The control's main features include:
 
 A user can pick a color using color palletes displayed in the dropdown window.
 
-In code, you can specify a color or read the currently selected color with the `PopupColorEditor.Color` or `PopupColorEditor.EditorValue` property. These properties are in sync. They differ in the value type: the `Color` property is of the nullable `Color` type, while the `EditorValue` property is of the `object` type as in all Eremex editors.
+In code, you can specify a color or read the currently selected color with the [`PopupColorEditor.Color`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/Color.md) or [`PopupColorEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property. These properties are in sync. They differ in the value type: the [`Color`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/Color.md) property is of the nullable [`Color`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/Color.md) type, while the [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property is of the `object` type as in all Eremex editors.
 
 ## Palettes
 
-The `PopupColorEditor` supports three palettes: default, standard and custom. Use the `PopupColorEditor.ColorsShowMode` property to customize the visibility of individual palettes. The `ColorsShowMode` property is defined as a set of flags.
+The [`PopupColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) supports three palettes: default, standard and custom. Use the [`PopupColorEditor.ColorsShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/ColorsShowMode.md) property to customize the visibility of individual palettes. The [`ColorsShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorsShowMode.md) property is defined as a set of flags.
 
 ![popupcoloreditor-three-palettes](../../images/popupcoloreditor-three-palettes.png)
 
@@ -69,7 +69,7 @@ popupColorEditor1.ThemePalette = colorPalette;
 
 ## Standard Color Palette
 
-Enable the `StandardColors` flag in the `ColorsShowMode` property value to display the 'Standard Colors' palette.
+Enable the `StandardColors` flag in the [`ColorsShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorsShowMode.md) property value to display the 'Standard Colors' palette.
 
 ![popupcoloredit-standardpalette](../../images/popupcoloredit-standardpalette.png)
 
@@ -82,7 +82,7 @@ Enable the `StandardColors` flag in the `ColorsShowMode` property value to displ
 
 ## Custom Color Palette
 
-Include the `CustomColors` flag into the `ColorsShowMode` property value to display the 'Custom Colors' palette. 
+Include the [`CustomColors`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/CustomColors.md) flag into the [`ColorsShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorsShowMode.md) property value to display the 'Custom Colors' palette. 
 
 ![popupcoloredit-custompalette](../../images/popupcoloredit-custompalette.png)
 
@@ -98,7 +98,7 @@ Right-click an existing color to display the context menu that allows you to cha
 
 ![popupcoloreditor-customcolor-contextmenu](../../images/popupcoloreditor-customcolor-contextmenu.png)
 
-You can populate the 'Custom Colors' palette in code beforehand, using the `CustomColors` property.
+You can populate the 'Custom Colors' palette in code beforehand, using the [`CustomColors`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/CustomColors.md) property.
 
 ### Example - How to set up a custom palette
 
@@ -151,8 +151,8 @@ The dialog's UI contains the color picker and controls to specify components of 
 
 #### Related API
 
-- `ShowAlphaChannel` — Allows you to hide the controls used to specify the Alpha component of a color.
-- `PopupFooterButtons` — Specifies whether to display the Apply and Cancel buttons in the Color Selection dialog. If the property is set to `OkCancel`, a user needs to press the Apply button to confirm a color selection. A click on the Back or Cancel button cancels the dialog. 
+- [`ShowAlphaChannel`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/ShowAlphaChannel.md) — Allows you to hide the controls used to specify the Alpha component of a color.
+- [`PopupFooterButtons`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupFooterButtons.md) — Specifies whether to display the Apply and Cancel buttons in the Color Selection dialog. If the property is set to `OkCancel`, a user needs to press the Apply button to confirm a color selection. A click on the Back or Cancel button cancels the dialog. 
 
 <!-- TODO 
 rename PopupFooterButtons  to ShowConfirmationButtons
@@ -161,14 +161,14 @@ to sync the API with ColorEditor
 
 ## Prevent Popups in Read-only Editors
 
-In read-only mode, the default behavior of any popup editor is to allow users to open the editor's dropdown. However, they cannot modify values through either the edit box or dropdown. To disable popups for read-only editors, set the `ShowPopupIfReadOnly` property to `false`.
+In read-only mode, the default behavior of any popup editor is to allow users to open the editor's dropdown. However, they cannot modify values through either the edit box or dropdown. To disable popups for read-only editors, set the [`ShowPopupIfReadOnly`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/ShowPopupIfReadOnly.md) property to `false`.
 
 ## Prevent Popups From Opening and Closing
 
 You can handle the following inherited events to cancel popup opening and closing operations:
 
-- `PopupEditor.PopupOpening` — Fires when a popup is about to be created. 
-- `PopupEditor.PopupClosing` — Fires when the popup is about to be closed. 
+- [`PopupEditor.PopupOpening`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) — Fires when a popup is about to be created. 
+- [`PopupEditor.PopupClosing`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupClosing.md) — Fires when the popup is about to be closed. 
 
 These events provide the `e.Cancel` parameter. Set it to `true` to cancel the current operation.
 
@@ -176,12 +176,12 @@ These events provide the `e.Cancel` parameter. Set it to `true` to cancel the cu
 
 Handle the following inherited event to modify the popup or its nested controls:
 
-- `PopupEditor.PopupOpened` — Fires after the popup has been created and immediately before it is displayed. This is a notification event. It does not allow you to cancel popup opening. Handle the `PopupOpened` event to customize the popup or its child controls.
+- [`PopupEditor.PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) — Fires after the popup has been created and immediately before it is displayed. This is a notification event. It does not allow you to cancel popup opening. Handle the [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) event to customize the popup or its child controls.
 
-When handling the `PopupEditor.PopupOpened` event, use the editor's `PopupContent` property to safely access the control inside the editor's popup. The `PopupOpened` event ensures that the popup control exists when you access it. For the PopupColorEditor control, the `PopupContent` property returns an instance of the `ColorEditor` class.
+When handling the [`PopupEditor.PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) event, use the editor's [`PopupContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupContent.md) property to safely access the control inside the editor's popup. The [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) event ensures that the popup control exists when you access it. For the PopupColorEditor control, the [`PopupContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupContent.md) property returns an instance of the [`ColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorEditor.md) class.
 
 ## Respond to Popup Closing
 
 Use the following inherited event to perform actions after the popup has been closed:
 
-- `PopupEditor.PopupClosed` — Fires immediately after the popup has been closed. This is a notification event. It does not allow you to cancel popup closing.
+- [`PopupEditor.PopupClosed`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupClosed.md) — Fires immediately after the popup has been closed. This is a notification event. It does not allow you to cancel popup closing.

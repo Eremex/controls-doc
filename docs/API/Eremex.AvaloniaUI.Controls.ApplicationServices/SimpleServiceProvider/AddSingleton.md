@@ -2,14 +2,22 @@
 
 Registers a service factory. The instance is created on first request. The signature is compatible with [`RegisterApplicationServices`](../ApplicationServicesContext/RegisterApplicationServices.md): `ApplicationServicesContext.RegisterApplicationServices(provider.AddSingleton);`
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public void AddSingleton(Type serviceType, Func<IServiceProvider, object> factory)
 ```
 
-| parameter | description |
-| --- | --- |
-| serviceType | The type the service is resolved by, normally an interface. |
-| factory | Creates the instance on first request. It receives this provider, so a service may resolve its own dependencies through it. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| serviceType | `Type` | The type the service is resolved by, normally an interface. |
+| factory | `Func<IServiceProvider, object>` | Creates the instance on first request. It receives this provider, so a service may resolve its own dependencies through it. |
 
 ## Exceptions
 
@@ -28,15 +36,28 @@ public void AddSingleton(Type serviceType, Func<IServiceProvider, object> factor
 
 Registers a ready instance under the *TService* type. The type is stated explicitly so a service cannot be accidentally registered under its concrete class instead of its interface.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public void AddSingleton<TService>(TService instance)
     where TService : class
 ```
 
-| parameter | description |
+## Type Parameters
+
+| name | description |
 | --- | --- |
 | TService | The type the service is resolved by, normally an interface. |
-| instance | The instance returned for every request of *TService*. |
+
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| instance | `TService` | The instance returned for every request of *TService*. |
 
 ## Exceptions
 

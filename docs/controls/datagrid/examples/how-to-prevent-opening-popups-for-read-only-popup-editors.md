@@ -7,21 +7,21 @@ seealso: []
 # How to Prevent Opening Popups for Read-only Popup Editors
 
 
-Starting with version 1.2, you can use a popup editor's `ShowPopupIfReadOnly` property to prevent popups from being opened for read-only popup editors.
+Starting with version 1.2, you can use a popup editor's [`ShowPopupIfReadOnly`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditorProperties/ShowPopupIfReadOnly.md) property to prevent popups from being opened for read-only popup editors.
 
-In earlier versions, you can control this behavior using the `PopupEditor.PopupOpening` event. The current topic provides more information on using this event.
+In earlier versions, you can control this behavior using the [`PopupEditor.PopupOpening`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) event. The current topic provides more information on using this event.
 
 
-When bound to read-only columns, in-place popup editors (`DateEditor`, `ComboBoxEditor`, `MemoEditor`, and so on) still allow their popups to be displayed. 
-The `PopupEditor.PopupOpening` event fires just before a popup appears, allowing you to conditionally disable it — for example, when the editor is bound to a read-only column. You can handle this event for a specific in-place editor, or globally (to apply the logic to all popup editors in the application).
+When bound to read-only columns, in-place popup editors ([`DateEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md), [`ComboBoxEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md), [`MemoEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/MemoEditor.md), and so on) still allow their popups to be displayed. 
+The [`PopupEditor.PopupOpening`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) event fires just before a popup appears, allowing you to conditionally disable it — for example, when the editor is bound to a read-only column. You can handle this event for a specific in-place editor, or globally (to apply the logic to all popup editors in the application).
 
 
 ## Disable Popups for a Specific Read-only Column
 
-1. Associate an in-place editor with a grid column using the `GridColumn.CellTemplate` property. 
-2. Handle the editor's `PopupEditor.PopupOpening` event to perform actions when a popup is displayed for this editor. 
+1. Associate an in-place editor with a grid column using the [`GridColumn.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) property. 
+2. Handle the editor's [`PopupEditor.PopupOpening`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) event to perform actions when a popup is displayed for this editor. 
 
-In the following example, a grid column is associated with a `DateEditor` in-place editor. The `DateEditor.PopupOpening` event handler disables the editor's popup when the grid column is read-only.
+In the following example, a grid column is associated with a [`DateEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md) in-place editor. The [`DateEditor.PopupOpening`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) event handler disables the editor's popup when the grid column is read-only.
 
 ``` xml
 <mxdg:GridColumn FieldName="BirthDate" Width="*" MinWidth="80">
@@ -48,7 +48,7 @@ You can use Class Handlers or the Behavior mechanism to process editors' events 
 
 Class Handlers in Avalonia enable event processing at the class level rather than the instance level. They allow you to attach event handlers to all instances of a control type without manually subscribing to each one. 
 
-The following example adds a class handler for the `PopupEditor.PopupOpening` event. This code affects all `PopupEditor` descendants.
+The following example adds a class handler for the [`PopupEditor.PopupOpening`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) event. This code affects all [`PopupEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor.md) descendants.
 
 
 ``` cs
@@ -72,7 +72,7 @@ public partial class MainWindow : MxWindow
 
 This approach requires the use of the `Avalonia.Xaml.Interactivity` package, which provides the Behavior pattern implementation for Avalonia UI. `Behavior` objects allow you to customize properties and subscribe to events for all instances of a given control type.
 
-The following code creates a global `Behavior` object for all `PopupEditor` class instances. The `Behavior` object handles the `PopupEditor.PopupOpening` event to disable popups in read-only columns.
+The following code creates a global `Behavior` object for all [`PopupEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor.md) class instances. The `Behavior` object handles the [`PopupEditor.PopupOpening`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) event to disable popups in read-only columns.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"

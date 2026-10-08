@@ -17,7 +17,7 @@ Horizontal virtualization (when scrolling through columns) is enabled by default
 
 ##### Related API
 
-- `TreeListControl.AllowHorizontalVirtualization` property — Gets or sets whether horizontal virtualization is enabled.
+- [`TreeListControl.AllowHorizontalVirtualization`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowHorizontalVirtualization.md) property — Gets or sets whether horizontal virtualization is enabled.
 
 
 You may need to disable horizontal virtualization when rows/nodes have different heights (when a row height is calculated based on cell contents). See [Node Auto-Height](nodes.md#node-auto-height).

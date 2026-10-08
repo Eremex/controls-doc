@@ -2,6 +2,12 @@
 
 Describes a single button in a dialog footer: what it looks like, where it sits, and what it does when pressed. A dialog exposes its buttons through [`ButtonsSource`](./IDialogAwareViewModel/ButtonsSource.md).
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public interface IDialogButtonViewModel
 ```

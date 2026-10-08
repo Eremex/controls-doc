@@ -2,6 +2,12 @@
 
 An application window, as the services here see it. A view model receives one from [`IWindowsManager`](./IWindowsManager.md) and hands it back as the owner of the dialog it asks for, without ever naming a window type of the UI framework.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public interface IWindow
 ```

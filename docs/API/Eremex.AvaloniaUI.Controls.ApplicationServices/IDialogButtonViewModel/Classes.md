@@ -2,6 +2,12 @@
 
 Space-separated style classes applied to the button, used to give it a distinct appearance such as the accent style of a primary action.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public string? Classes { get; }
 ```

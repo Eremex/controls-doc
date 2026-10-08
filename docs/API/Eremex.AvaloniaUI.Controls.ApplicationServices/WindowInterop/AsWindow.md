@@ -2,17 +2,27 @@
 
 Presents an Avalonia window through the framework free contract the services take.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public static IWindow? AsWindow(this Window? window)
 ```
 
-| parameter | description |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| window | `Window?` | The window to present, or `null`. |
+
+## Returns
+
+| type | description |
 | --- | --- |
-| window | The window to present, or `null`. |
-
-## Return Value
-
-The window as an IWindow, or `null` when *window* is `null`.
+| `IWindow?` | The window as an IWindow, or `null` when *window* is `null`. |
 
 ## See Also
 

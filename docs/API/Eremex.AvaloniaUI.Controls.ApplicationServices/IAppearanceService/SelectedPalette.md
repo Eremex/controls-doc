@@ -2,13 +2,21 @@
 
 The chosen palette. Assigning it recolours the running application at once.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public IAppearanceOption SelectedPalette { get; set; }
 ```
 
 ## Property Value
 
-One of the entries of [`Palettes`](./Palettes.md), or `null` when the theme has no palettes.
+| type | description |
+| --- | --- |
+| [`IAppearanceOption`](../IAppearanceOption.md) | One of the entries of [`Palettes`](./Palettes.md), or `null` when the theme has no palettes. |
 
 ## See Also
 

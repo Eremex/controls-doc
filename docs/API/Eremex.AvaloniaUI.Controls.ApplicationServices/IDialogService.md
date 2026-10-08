@@ -2,6 +2,12 @@
 
 Shows application dialogs from view model code, so that a view model can ask the user a question without referencing any window type. The view that hosts the view model is located through [`ViewLocatorAttribute`](./ViewLocatorAttribute.md), and the owner window is chosen by the implementation.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public interface IDialogService
 ```

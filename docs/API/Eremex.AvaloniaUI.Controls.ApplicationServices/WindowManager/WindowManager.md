@@ -2,6 +2,12 @@
 
 Initializes a new instance of the [`WindowManager`](../WindowManager.md) class and starts observing window opening, closing and activation across the application. Create a single instance at startup and keep it alive; call [`Dispose`](./Dispose.md) to stop observing.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public WindowManager()
 ```

@@ -2,13 +2,21 @@
 
 Sets the current service provider. Called once at application startup. Passing `null` resets the context (used in tests).
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public static void SetCurrent(IServiceProvider? serviceProvider)
 ```
 
-| parameter | description |
-| --- | --- |
-| serviceProvider | The provider that resolves the application services, or `null` to clear the context. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| serviceProvider | `IServiceProvider?` | The provider that resolves the application services, or `null` to clear the context. |
 
 ## See Also
 

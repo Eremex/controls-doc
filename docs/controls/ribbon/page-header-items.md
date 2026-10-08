@@ -10,7 +10,7 @@ Page Header Items are [ribbon items](ribbon-items.md) displayed in line with pag
 
 ![ribbon-pageheaderitems](../../images/ribbon-pageheaderitems.png)
 
-Use the `RibbonControl.PageHeaderItems` collection to add, access and modify Page Header Items.
+Use the [`RibbonControl.PageHeaderItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/PageHeaderItems.md) collection to add, access and modify Page Header Items.
 
 ``` xml
 <mxr:RibbonControl.PageHeaderItems>
@@ -27,4 +27,4 @@ Use the `RibbonControl.PageHeaderItems` collection to add, access and modify Pag
 </mxr:RibbonControl.PageHeaderItems>
 ```
 
-You can also use the `RibbonControl.PageHeaderItemsSource` property to create Page Header Items from a collection of business objects stored in a View Model. Corresponding data templates should define [ribbon items](ribbon-items.md).
+You can also use the [`RibbonControl.PageHeaderItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/PageHeaderItemsSource.md) property to create Page Header Items from a collection of business objects stored in a View Model. Corresponding data templates should define [ribbon items](ribbon-items.md).

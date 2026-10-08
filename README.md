@@ -56,13 +56,13 @@ the built site makes no requests to external hosts.
 On an internet-connected machine with the same OS and Python version as the target:
 
 ```bash
-pip download -r requirements.in -d wheels
+pip download -r requirements.in -d offline-packages
 ```
 
-Move the repository together with the `wheels` folder into the closed network and run:
+Move the repository together with the `offline-packages` folder into the closed network and run:
 
 ```bash
-python build.py --wheels wheels
+python build.py --packages offline-packages
 ```
 
 ### Docker

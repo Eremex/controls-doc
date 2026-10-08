@@ -6,7 +6,7 @@ seealso: []
 
 # SegmentedEditor
 
-`SegmentedEditor` presents a set of items (options) as horizontally arranged segments. A user can click one of the segments to select a corresponding option, or CTRL-click on a selected segment to clear the selection.
+[`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) presents a set of items (options) as horizontally arranged segments. A user can click one of the segments to select a corresponding option, or CTRL-click on a selected segment to clear the selection.
 
 ![segmentededitor](../../images/segmentededitor.png)
 
@@ -18,14 +18,14 @@ The control's main features include:
 
 ## Specify the Items Source
 
-Use the `SegmentedEditor.ItemsSource` property to specify the items source used to create the control's segments. You can bind the editor to a list of strings, a list of business objects, or an enumeration type.
+Use the [`SegmentedEditor.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ItemsSource.md) property to specify the items source used to create the control's segments. You can bind the editor to a list of strings, a list of business objects, or an enumeration type.
 
 ## Bind to a List of Strings
 
 The simplest items source is a list of strings.
 
 ### Example - How to bind to a string list
-The following example populates a `SegmentedEditor` control with a list of strings.
+The following example populates a [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) control with a list of strings.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -46,15 +46,15 @@ xmlns:col="using:System.Collections"
 
 ## Bind to a List of Business Objects
 
-You can bind a `SegmentedEditor` control to a list of business objects. In this case, the control's default behavior is as follows:
+You can bind a [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) control to a list of business objects. In this case, the control's default behavior is as follows:
 
 - A business object's `ToString` method specifies the default text representation of items.
-- When you select an item, the editor's value (`SegmentedEditor.EditorValue`) is set to the corresponding business object.
+- When you select an item, the editor's value ([`SegmentedEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)) is set to the corresponding business object.
 
 A typical business object has multiple properties. You can specify which business object properties supply item display text and edit values. Use the following API members for this purpose:
 
-- `SegmentedEditor.DisplayMember` - Gets or sets the name of the business object's property that specifies item display text. 
-- `SegmentedEditor.ValueMember` - Gets or sets the name of the business object's property that specifies item values. When you select an item, the editor's value (`SegmentedEditor.EditorValue`) is set to the item's `ValueMember` property value. 
+- [`SegmentedEditor.DisplayMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/DisplayMember.md) - Gets or sets the name of the business object's property that specifies item display text. 
+- [`SegmentedEditor.ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) - Gets or sets the name of the business object's property that specifies item values. When you select an item, the editor's value ([`SegmentedEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)) is set to the item's [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) property value. 
 
 ### Example - How to bind to a business object list
 
@@ -111,7 +111,7 @@ public partial class Product :ObservableObject
 
 ## Bind to an Enumeration
 
-`SegmentedEditor` can populate its segments with values of an enumeration type. 
+[`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) can populate its segments with values of an enumeration type. 
 
 The `Eremex.AvaloniaUI.Controls.Common.EnumItemsSource` helper class facilitates binding to an enumeration. Its main features include:
 
@@ -121,7 +121,7 @@ The `Eremex.AvaloniaUI.Controls.Common.EnumItemsSource` helper class facilitates
 
 Use the following `EnumItemsSource` properties to set up binding to an enumeration type:
 
-- `EnumItemsSource.EnumType` — Specifies the enumeration type whose values are displayed in the `SegmentedEditor` control.
+- `EnumItemsSource.EnumType` — Specifies the enumeration type whose values are displayed in the [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) control.
 - `EnumItemsSource.ShowImages` — Specifies whether to display images for enumeration members. You can supply images using the `Eremex.AvaloniaUI.Controls.Common.ImageAttribute` attribute.
 - `EnumItemsSource.ShowNames` — Specifies whether to display item text. Set `ShowNames` to `false` and `ShowImages` to `true` to render enumeration members using images without text.
 - `EnumItemsSource.ImageSize` — Specifies the display size of images assigned to enumeration members.
@@ -130,7 +130,7 @@ Use the following `EnumItemsSource` properties to set up binding to an enumerati
 
 ### Example - How to display enumeration values, and use attributes to supply display text and images for enumeration members.
 
-The following example displays values of a _ProductCategoryEnum_ enumeration in `SegmentedEditor`. It uses the `EnumItemsSource` class for data binding.
+The following example displays values of a _ProductCategoryEnum_ enumeration in [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md). It uses the `EnumItemsSource` class for data binding.
 
 The `System.ComponentModel.DataAnnotations.DisplayAttribute` and `Eremex.AvaloniaUI.Controls.Common.ImageAttribute` attributes specify custom display text, descriptions (tooltips) and images for the enumeration members.
 
@@ -172,7 +172,7 @@ public enum ProductCategoryEnum
 
 ### Example - How to display enumeration values, and use custom converters to supply display text for enumeration members.
 
-The following example uses the `EnumItemsSource` class to display values of an enumeration type in a `SegmentedEditor` control. The `EnumItemsSource.NameToDisplayTextConverter` and `EnumItemsSource.NameToDescriptionConverter` objects supply custom display text and descriptions (tooltips) for enumeration members.
+The following example uses the `EnumItemsSource` class to display values of an enumeration type in a [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) control. The `EnumItemsSource.NameToDisplayTextConverter` and `EnumItemsSource.NameToDescriptionConverter` objects supply custom display text and descriptions (tooltips) for enumeration members.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -269,21 +269,21 @@ public abstract class BaseEnumConverter : MarkupExtension, IValueConverter
 
 ## Get and Set the Selected Item, and Specify the Editor Value
 
-When a user selects a segment or deselects it with a Ctrl-click, the `SegmentedEditor.SelectedItem` and `SegmentedEditor.EditorValue` properties are changed accordingly.
+When a user selects a segment or deselects it with a Ctrl-click, the [`SegmentedEditor.SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) and [`SegmentedEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) properties are changed accordingly.
 You can use any of these properties to get and set the editor's selected value.
 
-The `SegmentedEditor.SelectedItem` property specifies the selected segment's underlying data object.
+The [`SegmentedEditor.SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) property specifies the selected segment's underlying data object.
 
-The `SegmentedEditor.EditorValue` property has the following meanings:
+The [`SegmentedEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property has the following meanings:
 
-- If the `ValueMember` property is empty, the `EditorValue` and `SelectedItem` properties are equivalent.
-- Otherwise, the `EditorValue` property is synced with the `ValueMember` property value of the selected underlying data object.
+- If the [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) property is empty, the [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) and [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) properties are equivalent.
+- Otherwise, the [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property is synced with the [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) property value of the selected underlying data object.
 
-To clear the selection, set the `SegmentedEditor.SelectedItem` property to `null`.
+To clear the selection, set the [`SegmentedEditor.SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) property to `null`.
  
 ### Example - How to select an item when SegmentedEditor is bound to a string list
 
-The following example shows how to use the `SelectedItem` or `EditorValue` property to select an item in a `SegmentedEditor` control that is bound to a list of strings.
+The following example shows how to use the [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) or [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property to select an item in a [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) control that is bound to a list of strings.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -310,7 +310,7 @@ segmEditorStrings.EditorValue = "Santiago";
 
 ### Example - How to select an item when SegmentedEditor is bound to a business object list
 
-In the following example, a `SegmentedEditor` control is bound to a list of _Product_ objects. The `ValueMember` property refers to the _Product.ProductID_ member. Thus, product IDs serve as item values. When a user selects a segment, the `EditorValue` property is set to a correponding product ID. The example uses the `EditorValue` property to select an item in code.
+In the following example, a [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) control is bound to a list of _Product_ objects. The [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) property refers to the _Product.ProductID_ member. Thus, product IDs serve as item values. When a user selects a segment, the [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property is set to a correponding product ID. The example uses the [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property to select an item in code.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -378,21 +378,21 @@ public partial class Product :ObservableObject
 
 ## Specify Item Templates
 
-When a `SegmentedEditor` is bound to a list of strings or business objects, the control's segments display the default text representation of items. The default item display text is defined as follows:
+When a [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) is bound to a list of strings or business objects, the control's segments display the default text representation of items. The default item display text is defined as follows:
 
-- The value returned by an underlying data object's `ToString` method, if the `ValueMember` property is not set.
-- Otherwise, the text representation of the value stored in the data object's `ValueMember` property.
+- The value returned by an underlying data object's `ToString` method, if the [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) property is not set.
+- Otherwise, the text representation of the value stored in the data object's [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) property.
 
-Item templates give you the flexiblity to specify what to display in the editor's segments. They allow you to display images, and values of multiple properties in the segments. Use the `SegmentedEditor.ItemTemplate` property to specify an item template.
+Item templates give you the flexiblity to specify what to display in the editor's segments. They allow you to display images, and values of multiple properties in the segments. Use the [`SegmentedEditor.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ItemTemplate.md) property to specify an item template.
 
 ### Example - How to display an image and text for SegmentedEditor items
 
-The following example shows how to create an item template that displays images and text in a `SegmentedEditor` control's segments.
+The following example shows how to create an item template that displays images and text in a [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) control's segments.
 
-In the example, the `SegmentedEditor` control is bound to a collection of _CapitalInfo_ objects which store information on countries, capitals of the countries, and national flags. 
-The created item template (the `SegmentedEditor.ItemTemplate` property) displays a country flag followed by the name of the country's capital.
+In the example, the [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) control is bound to a collection of _CapitalInfo_ objects which store information on countries, capitals of the countries, and national flags. 
+The created item template (the [`SegmentedEditor.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ItemTemplate.md) property) displays a country flag followed by the name of the country's capital.
 
-The `SegmentedEditor.ValueMember` property refers to the _CapitalInfo.Capital_ property. When a user selects a segment, the editor's `EditorValue` property is set to the name of the corresponding country's capital.
+The [`SegmentedEditor.ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) property refers to the _CapitalInfo.Capital_ property. When a user selects a segment, the editor's [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) property is set to the name of the corresponding country's capital.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"

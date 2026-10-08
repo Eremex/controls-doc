@@ -23,9 +23,9 @@ The following approaches allow you to generate column bands:
 
 Follow these steps to manually create bands:
 
-1. Create band objects (`TreeListBand` class instances) and add them to the `TreeListControl.Bands` collection. 
+1. Create band objects ([`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) class instances) and add them to the [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) collection. 
 
-    Assign unique band names to the created bands using the `TreeListBand.BandName` property. 
+    Assign unique band names to the created bands using the [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property. 
 
     ``` xml
     <mxtl:TreeListControl.Bands>
@@ -36,8 +36,8 @@ Follow these steps to manually create bands:
 
     You can create a hierarchical band structure. To create nested bands:
         
-    - In code-behind: Add bands to the `TreeListBand.Bands` collection.
-    - In XAML: Define nested bands directly between the opening and closing `TreeListBand` tags.
+    - In code-behind: Add bands to the [`TreeListBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/Bands.md) collection.
+    - In XAML: Define nested bands directly between the opening and closing [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) tags.
 
 
     ``` xml
@@ -47,9 +47,9 @@ Follow these steps to manually create bands:
     </mxtl:TreeListBand>
     ```
 
-    The `TreeListBand.Header` property allows you to specify custom content (for example, custom text) for a band. If this property is not set, the band header displays the `TreeListBand.BandName` property's value.
+    The [`TreeListBand.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) property allows you to specify custom content (for example, custom text) for a band. If this property is not set, the band header displays the [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property's value.
 
-2. Associate columns with specific bands by setting each column's `TreeListColumn.BandName` property to the corresponding band name (`TreeListBand.BandName`).
+2. Associate columns with specific bands by setting each column's [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) property to the corresponding band name ([`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)).
 
     ``` xml
     <mxtl:TreeListControl.Columns>
@@ -60,7 +60,7 @@ Follow these steps to manually create bands:
     </mxtl:TreeListControl.Columns>
     ```
 
-Columns are arranged in the TreeListControl according to their `TreeListColumn.VisibleIndex` properties. The control does not automatically rearrange columns to group them by bands.
+Columns are arranged in the TreeListControl according to their [`TreeListColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) properties. The control does not automatically rearrange columns to group them by bands.
 
 <!-- TODO
 
@@ -72,11 +72,11 @@ See [Order of Columns and Bands](#order-of-columns-and-bands)
 
 ### Related API
 
-- `TreeListBand` class — Encapsulates a column band.
-- `TreeListBand.BandName` — A unique name used to identify a band and associate it with columns.
-- `TreeListColumn.BandName` — The name of the band associated with the column. This value matches the `TreeListBand.BandName` property's value.
-- `TreeListControl.Bands` — A collection of root bands.
-- `TreeListBand.Bands` — A collection of child bands for this band.
+- [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) class — Encapsulates a column band.
+- [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) — A unique name used to identify a band and associate it with columns.
+- [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) — The name of the band associated with the column. This value matches the [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property's value.
+- [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) — A collection of root bands.
+- [`TreeListBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/Bands.md) — A collection of child bands for this band.
 
 ### Example - Create column bands in a TreeList control
 
@@ -87,9 +87,9 @@ The following example creates bands and assigns them to TreeList columns, as sho
 - The "Employee", "Job", "Personal", "Address", and "Contact" bands are associated with TreeList columns. 
 - The "Details" band owns two nested bands ("Address" and "Contact"). This band is not directly associated with columns.
 
-Each band is assigned a unique name using the `TreeListBand.BandName` property. To link columns to a specific band, the `TreeListColumn.BandName` property is set to the target band's `BandName` value.
+Each band is assigned a unique name using the [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property. To link columns to a specific band, the [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) property is set to the target band's `BandName` value.
 
-The `TreeListControl.Bands` property defines the structure of bands. To create nested bands, define them as children of a parent band.
+The [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) property defines the structure of bands. To create nested bands, define them as children of a parent band.
 
 ``` xml
 <!-- MainWindow.axaml file -->
@@ -295,19 +295,19 @@ public static class EmployeeDataGenerator
 
 ## Generate Bands from a Band Source
 
-You can populate column bands from a band source defined in a View Model. Use the `TreeListControl.BandsSource` and `TreeListControl.BandTemplate` properties to generate bands from a collection of business objects.
+You can populate column bands from a band source defined in a View Model. Use the [`TreeListControl.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandsSource.md) and [`TreeListControl.BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandTemplate.md) properties to generate bands from a collection of business objects.
 
-As an alternative to specifying the `BandTemplate` property, you can use the `Styles` property to initialize `TreeListBand` objects from business objects. See [Initialize Bands Using a Style](#initialize-bands-using-a-style) for an example.
+As an alternative to specifying the [`BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandTemplate.md) property, you can use the `Styles` property to initialize [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) objects from business objects. See [Initialize Bands Using a Style](#initialize-bands-using-a-style) for an example.
 
-To associate columns with bands, set each column's `TreeListColumn.BandName` to the corresponding band name (`TreeListBand.BandName`).
+To associate columns with bands, set each column's [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) to the corresponding band name ([`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)).
 
 ### Related API
 
-- `TreeListControl.BandsSource` — A collection of business objects used to generate root bands.
-- `TreeListControl.BandTemplate` — A template that creates `TreeListBand` instances from business objects.
-- `TreeListBand.BandsSource` — A collection of business objects used to generate child bands.
-- `TreeListBand.BandName` — A unique name used to identify a band and associate it with columns.
-- `TreeListColumn.BandName` — The name of the band associated with the column. This value matches the `TreeListBand.BandName` property's value.
+- [`TreeListControl.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandsSource.md) — A collection of business objects used to generate root bands.
+- [`TreeListControl.BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandTemplate.md) — A template that creates [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) instances from business objects.
+- [`TreeListBand.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/BandsSource.md) — A collection of business objects used to generate child bands.
+- [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) — A unique name used to identify a band and associate it with columns.
+- [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) — The name of the band associated with the column. This value matches the [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property's value.
 
 <!-- TODO
 Example
@@ -315,7 +315,7 @@ Example
 
 ### Initialize Bands Using a Style
 
-As an alternative to specifying the `BandTemplate` property, you can use the `Styles` property to initialize `TreeListBand` objects from business objects.
+As an alternative to specifying the [`BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandTemplate.md) property, you can use the `Styles` property to initialize [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) objects from business objects.
 
 ``` xml
 <mxtl:TreeListControl.Styles>
@@ -333,7 +333,7 @@ See the "Column Bands" demo for an example of using the `BandsSource` and `Style
 
 This approach allows you to use attributes to associate [auto-generated columns](columns.md#automatic-column-generation) with bands. 
 
-When column auto-generation is enabled (see `TreeListControl.AutoGenerateColumns`), TreeList control can initialize column settings from [dedicated attributes](columns.md#use-attributes-to-customize-settings-of-auto-generated-columns) applied to a business object's properties.
+When column auto-generation is enabled (see [`TreeListControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md)), TreeList control can initialize column settings from [dedicated attributes](columns.md#use-attributes-to-customize-settings-of-auto-generated-columns) applied to a business object's properties.
 The `System.ComponentModel.DataAnnotations.DisplayAttribute` attribute allows you to associate auto-generated columns with bands. Specify the `DisplayAttribute.GroupName` parameter to define the band name for the corresponding column.
 
 ``` cs
@@ -346,11 +346,11 @@ public partial class Order : ObservableObject
 }
 ```
 
-When TreeList encounters `DisplayAttribute.GroupName`, it checks for an existing band with a matching name (`TreeListBand.BandName`). If no such band is found, the band is created and initialized as follows:
+When TreeList encounters `DisplayAttribute.GroupName`, it checks for an existing band with a matching name ([`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)). If no such band is found, the band is created and initialized as follows:
 
-- The control automatically creates the band and set its `TreeListBand.BandName` property to the `DisplayAttribute.GroupName` value.
-- The band is added to the control's `TreeListControl.Bands` collection. Nested bands are added to the appropriate `TreeListBand.Bands` collections.
-- The created band is associated with the auto-generated column, using the `TreeListColumn.BandName` property.
+- The control automatically creates the band and set its [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property to the `DisplayAttribute.GroupName` value.
+- The band is added to the control's [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) collection. Nested bands are added to the appropriate [`TreeListBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/Bands.md) collections.
+- The created band is associated with the auto-generated column, using the [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) property.
 
 The `DisplayAttribute.GroupName` parameter supports nested bands. Use the '/' character to separate parent and child bands (for instance, "ParentBandName/ChildBandName"). To include '/' as a literal character, use the double slash ("//") notation.
 
@@ -370,11 +370,11 @@ public partial class Order : ObservableObject
 
 ### Related API
 
-- `TreeListControl.AutoGenerateBands` (default is `true`) — Gets or sets whether bands are automatically generated from the `DisplayAttribute.GroupName` attributes applied to the underlying business object's properties. These bands are then automatically linked to their corresponding auto-generated columns.
+- [`TreeListControl.AutoGenerateBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateBands.md) (default is `true`) — Gets or sets whether bands are automatically generated from the `DisplayAttribute.GroupName` attributes applied to the underlying business object's properties. These bands are then automatically linked to their corresponding auto-generated columns.
 
-    Automatic band generation (and linking bands to auto-generated columns) is forcibly disabled if `TreeListControl.AutoGenerateColumns` is `false`.
+    Automatic band generation (and linking bands to auto-generated columns) is forcibly disabled if [`TreeListControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md) is `false`.
 
-- `TreeListControl.Bands` and `TreeListBand.Bands` — You can use these collections to access automatically generated bands.
+- [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) and [`TreeListBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/Bands.md) — You can use these collections to access automatically generated bands.
 
 <!-- TODO
 Example - Generate bands based on the DisplayAttribute.GroupName parameter
@@ -382,7 +382,7 @@ Example - Generate bands based on the DisplayAttribute.GroupName parameter
 
 ### Order of Columns and Bands
 
-The TreeListControl arranges columns according to their `TreeListColumn.VisibleIndex` properties.
+The TreeListControl arranges columns according to their [`TreeListColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) properties.
 
 The order of band headers is determined by the visual order of the columns. 
 If columns linked to the same band are placed next to each other, their band headers are merged.
@@ -419,11 +419,11 @@ In the following code snippet, columns linked to the _Customer_ band are separat
 
 ### Column Drag-and-Drop
 
-Users can freely drag and drop columns within the control if `TreeListControl.AllowColumnMoving` is `true` (default). If they drag a column into a different band, the control draws an appropriate band header (`TreeListColumn.BandHeader`) above this column in its new position. See [Order of Columns and Bands](#order-of-columns-and-bands).
+Users can freely drag and drop columns within the control if [`TreeListControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnMoving.md) is `true` (default). If they drag a column into a different band, the control draws an appropriate band header (`TreeListColumn.BandHeader`) above this column in its new position. See [Order of Columns and Bands](#order-of-columns-and-bands).
 
 #### Related API
 
-- `TreeListControl.AllowColumnMoving` — Gets or sets whether column drag-and-drop operations are enabled.
+- [`TreeListControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnMoving.md) — Gets or sets whether column drag-and-drop operations are enabled.
 
 ### Band Drag-and-Drop
 
@@ -435,12 +435,12 @@ The TreeList control does not support drag-and-drop operations on bands.
 
 The band panel displays band headers. The panel is visible when any column is associated with an existing band. Use the following property to forcibly hide the band panel, when required:
 
-- `TreeListControl.ShowBands` — Gets or sets whether the band panel is visible.
+- [`TreeListControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBands.md) — Gets or sets whether the band panel is visible.
 
 ## Specify Band Header Content
 
-- `Header` — Gets or sets a band header's content. If this property is not set, the band displays the value of the `TreeListBand.BandName` property.
-- `HeaderTemplate` — Gets or sets a template used to render the `Header` object. The template allows you to display images and custom controls, and to render text in a custom manner.
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) — Gets or sets a band header's content. If this property is not set, the band displays the value of the [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property.
+- [`HeaderTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderTemplate.md) — Gets or sets a template used to render the [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) object. The template allows you to display images and custom controls, and to render text in a custom manner.
 
 ### Example - Display an image in a band header
 The following example displays an SVG image followed by a text caption in a band header. The SVG image (`address-location-icon.svg` file) is located in the project's `Assets` folder, with its `Build Action` property set to `AvaloniaResource`.
@@ -473,7 +473,7 @@ example + image
 
 ## Band Separators
 
-- `TreeListControl.ShowBandSeparators` — Enables thick separators between adjacent bands. Use this property to emphasize divisions between bands. If `ShowBandSeparators` is disabled, the tree list draws  regular column separators (thin lines) between bands.
+- [`TreeListControl.ShowBandSeparators`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBandSeparators.md) — Enables thick separators between adjacent bands. Use this property to emphasize divisions between bands. If [`ShowBandSeparators`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBandSeparators.md) is disabled, the tree list draws  regular column separators (thin lines) between bands.
 
 <!-- TODO
 The following image demonstrates thick band separators.
@@ -491,7 +491,7 @@ Bands without associated columns are never displayed.
 
 ## Band Header Tooltips
 
-Use the `HeaderToolTip` property to specify custom tooltips for band headers. Custom tooltips are displayed when hovering over band headers regardless of whether band header text is trimmed or not.
+Use the [`HeaderToolTip`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderToolTip.md) property to specify custom tooltips for band headers. Custom tooltips are displayed when hovering over band headers regardless of whether band header text is trimmed or not.
 
 ``` xml
 <mxtl:TreeListBand BandName="Details" HeaderHorizontalAlignment="Center" HeaderToolTip="Contact and location information">

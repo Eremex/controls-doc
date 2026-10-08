@@ -6,15 +6,15 @@ seealso: []
 
 # Popup and Context Menus
 
-The Toolbar&Menu library contains the `PopupMenu` component that allows you to create popup and context menus for controls.
+The Toolbar&Menu library contains the [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) component that allows you to create popup and context menus for controls.
 
 ## Context Menus
 
-To specify a context menu, set the `ToolbarManager.ContextPopup` attached property for the target control to a `PopupMenu` object.
+To specify a context menu, set the `ToolbarManager.ContextPopup` attached property for the target control to a [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) object.
 
 ![toolbars-contextmenu](../../images/toolbars-contextmenu.png)
 
-You can add all types of [toolbar items](toolbar-items.md) to a context menu. Define items between the start and end `<PopupMenu>` tags in XAML, or add the items to the `PopupMenu.Items` collection in code-behind.
+You can add all types of [toolbar items](toolbar-items.md) to a context menu. Define items between the start and end `<PopupMenu>` tags in XAML, or add the items to the [`PopupMenu.Items`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Items.md) collection in code-behind.
 
 ``` xml
 xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
@@ -42,17 +42,17 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ## PopupMenu's Main Settings and Events
 
-- `ShowIconStrip` — Gets or sets whether to display a vertical strip of icons for menu items.
-- `Header` — Allows you to specify a header for the menu.
-- `ShowHeader` — Gets or sets whether the menu header is visible.
-- `ContentRightIndent` — Specifies the width of the empty space to the right of menu items' text.
+- [`ShowIconStrip`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ShowIconStrip.md) — Gets or sets whether to display a vertical strip of icons for menu items.
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Header.md) — Allows you to specify a header for the menu.
+- [`ShowHeader`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ShowHeader.md) — Gets or sets whether the menu header is visible.
+- [`ContentRightIndent`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ContentRightIndent.md) — Specifies the width of the empty space to the right of menu items' text.
 
 **Events**
 
-- `Opening` — Fires when the menu is about to be displayed. This event allows you to cancel the display of the menu.
-- `Opened` — Fires after the menu is displayed.
-- `Closing` — Fires when the menu is about to be closed. This event allows you to cancel closing the menu.
-- `Closed` — Fires after the menu is closed.
+- [`Opening`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Opening.md) — Fires when the menu is about to be displayed. This event allows you to cancel the display of the menu.
+- [`Opened`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Opened.md) — Fires after the menu is displayed.
+- [`Closing`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Closing.md) — Fires when the menu is about to be closed. This event allows you to cancel closing the menu.
+- [`Closed`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Closed.md) — Fires after the menu is closed.
 
 ## Example - How to assign context menus to controls of a specific type
 

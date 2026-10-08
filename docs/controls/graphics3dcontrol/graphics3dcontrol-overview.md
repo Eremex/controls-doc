@@ -6,11 +6,11 @@ seealso: []
 
 # Graphics3DControl Overview
 
-The `Graphics3DControl` control allows you to embed 3D models in your Avalonia application. The control supports the rotate, pan and zoom operations using the mouse and keyboard, allowing a user to interact with the models at runtime. 
+The [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) control allows you to embed 3D models in your Avalonia application. The control supports the rotate, pan and zoom operations using the mouse and keyboard, allowing a user to interact with the models at runtime. 
 
 ![g3dControl-overview](../../images/g3dControl-overview.png)
 
-Any 3D model is composed of meshes painted using specified materials. The `Graphics3DControl` provides an API to define meshes, materials, camera and light settings. You can also utilize third-party libraries to load models in OBJ and STL formats to the `Graphics3DControl` control.
+Any 3D model is composed of meshes painted using specified materials. The [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) provides an API to define meshes, materials, camera and light settings. You can also utilize third-party libraries to load models in OBJ and STL formats to the [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) control.
 
 ## Main Features
 
@@ -38,7 +38,7 @@ See [User Interactions with 3D Models](user-interactions-with-3d-models.md)
 
 ## Demos
 
-Check out the [Eremex Avalonia Controls Demo](https://github.com/Eremex/controls-demo) application which contains examples demonstrating various features of the `Graphics3DControl`:
+Check out the [Eremex Avalonia Controls Demo](https://github.com/Eremex/controls-demo) application which contains examples demonstrating various features of the [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md):
 
 - Loading Wavefront (Obj) and Stl models from external files using third-party libraries, and creating 3D models from the loaded data.
 - Creating 3D models from scratch.
@@ -48,19 +48,19 @@ Check out the [Eremex Avalonia Controls Demo](https://github.com/Eremex/controls
 
 ## Paint Theme for the Graphics3DControl
 
-Starting with version 1.3, to use the `Graphics3DControl` you must register the `Controls3D` paint theme in the _App.xaml_ file.  This theme contains common appearance settings required to render the `Graphics3DControl`. See the following topic for more information:
+Starting with version 1.3, to use the [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) you must register the `Controls3D` paint theme in the _App.xaml_ file.  This theme contains common appearance settings required to render the [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md). See the following topic for more information:
 
 - [Register the Paint Theme for the Graphics3DControl](get-started-with-graphics3dcontrol.md#prerequisites-register-the-paint-theme-for-the-graphics3dcontrol)
 
 
 !!! note
 
-    If the `Controls3D` paint theme is not registered, a `Graphics3DControl` will appear blank.
+    If the `Controls3D` paint theme is not registered, a [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) will appear blank.
 
 
 ## Coordinate System, Axes and Grids
 
-The `Graphics3DControl` supports right-handed (default) and left-handed coordinate systems. You can use the `Graphics3DControl.CoordinateSystem` property to enable the required option.
+The [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) supports right-handed (default) and left-handed coordinate systems. You can use the [`Graphics3DControl.CoordinateSystem`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/CoordinateSystem.md) property to enable the required option.
 
 ``` xml
 <mx3d:Graphics3DControl Name="g3DControl" ShowAxes="True" CoordinateSystem="LeftHanded" ...>
@@ -85,7 +85,7 @@ The positive X, Y and Z axes point right, up and away from the viewer, respectiv
 
 ### Axes
 
-Enable the `Graphics3DControl.ShowAxes` property to display the X, Y and Z axes in the control.
+Enable the [`Graphics3DControl.ShowAxes`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/ShowAxes.md) property to display the X, Y and Z axes in the control.
 
 ![g3d-showaxes](../../images/g3d-showaxes.png)
 
@@ -95,18 +95,18 @@ Enable the `Graphics3DControl.ShowAxes` property to display the X, Y and Z axes 
 
 #### Related Options
 
-- `Graphics3DControl.AxisThickness` property — Specifies the thickness of the axes.
+- [`Graphics3DControl.AxisThickness`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/AxisThickness.md) property — Specifies the thickness of the axes.
 
 
 
 
 ### Gizmo
 
-`Graphics3DControl` can display a Gizmo. It is a separate widget that visually indicates the current orientation of the axes in 3D space.
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) can display a Gizmo. It is a separate widget that visually indicates the current orientation of the axes in 3D space.
 
 ![g3d-gizmo](../../images/g3d-gizmo.png)
 
-To enable the Gizmo, initialize the `Graphics3DControl.Gizmo` property with an instance of the `Eremex.AvaloniaUI.Controls3D.Gizmo` class.
+To enable the Gizmo, initialize the [`Graphics3DControl.Gizmo`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Gizmo.md) property with an instance of the [`Eremex.AvaloniaUI.Controls3D.Gizmo`](../../API/Eremex.AvaloniaUI.Controls3D/Gizmo.md) class.
 
 ``` xml
 <mx3d:Graphics3DControl Name="g3DControl" >
@@ -117,11 +117,11 @@ To enable the Gizmo, initialize the `Graphics3DControl.Gizmo` property with an i
 </mx3d:Graphics3DControl>
 ```
 
-You can paint the Gizmo in a custom manner. To do this, use the `Gizmo.Models` or `Gizmo.ModelsSource` property to specify 3D model(s) to render the Gizmo. The process of populating these properties is identical to that of the `Graphics3dControl`, as both classes inherit from the same base class.
+You can paint the Gizmo in a custom manner. To do this, use the [`Gizmo.Models`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Models.md) or [`Gizmo.ModelsSource`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/ModelsSource.md) property to specify 3D model(s) to render the Gizmo. The process of populating these properties is identical to that of the `Graphics3dControl`, as both classes inherit from the same base class.
 
 ### Grids
 
-The `Graphics3DControl.ShowGrid` property allows you to display grids on the XY, XZ, and YZ planes.
+The [`Graphics3DControl.ShowGrid`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/ShowGrid.md) property allows you to display grids on the XY, XZ, and YZ planes.
 
 ![![g3d-grid](../../images/g3d-grid.png)](../../images/g3d-grid.png)
 
@@ -131,7 +131,7 @@ The `Graphics3DControl.ShowGrid` property allows you to display grids on the XY,
 
 #### Related Options
 
-- `Graphics3DControl.GridThickness` property — Specifies the thickness of grid lines.
+- [`Graphics3DControl.GridThickness`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/GridThickness.md) property — Specifies the thickness of grid lines.
 
 <!-- TODO
 Option for grid spacing ?
@@ -140,15 +140,15 @@ Option for grid spacing ?
 
 ## Models
 
-To define 3D models for a `Graphics3DControl`, use the `Graphics3DControl`'s API to create objects that represent models, meshes, vertices, materials, cameras, etc.
+To define 3D models for a [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md), use the [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md)'s API to create objects that represent models, meshes, vertices, materials, cameras, etc.
 
 ###  Define 3D Models
 
-The `GeometryModel3D` class encapsulates a single 3D Model in the `Graphics3DControl`. 
+The [`GeometryModel3D`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D.md) class encapsulates a single 3D Model in the [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md). 
 Use one of the following properties to add 3D models to the control:
 
-- `Graphics3DControl.Models` — A collection of `GeometryModel3D` objects. 
-- `Graphics3DControl.ModelsSource` — A source of business objects used to create 3D models (`GeometryModel3D` objects) according to the MVVM design pattern.
+- [`Graphics3DControl.Models`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Models.md) — A collection of [`GeometryModel3D`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D.md) objects. 
+- [`Graphics3DControl.ModelsSource`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/ModelsSource.md) — A source of business objects used to create 3D models ([`GeometryModel3D`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D.md) objects) according to the MVVM design pattern.
 
 ``` xml
 xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/controls3d"
@@ -168,23 +168,23 @@ g3DControl.Models.Add(model);
 
 A 3D model represents a collection of meshes rendered using specific materials. Meshes define the shape and structure of a 3D object. 
 
-The `MeshGeometry3D` class represents a mesh in the `Graphics3DControl`. The following properties allow you to specify meshes for the model:
+The [`MeshGeometry3D`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D.md) class represents a mesh in the [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md). The following properties allow you to specify meshes for the model:
 
-- `GeometryModel3D.Meshes` — A collection of `MeshGeometry3D` objects.
-- `GeometryModel3D.MeshesSource` — A source of business objects used to create meshes (`MeshGeometry3D` objects) according to the MVVM design pattern.
+- [`GeometryModel3D.Meshes`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Meshes.md) — A collection of [`MeshGeometry3D`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D.md) objects.
+- [`GeometryModel3D.MeshesSource`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/MeshesSource.md) — A source of business objects used to create meshes ([`MeshGeometry3D`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D.md) objects) according to the MVVM design pattern.
 
-The control supports three mesh types, which you can choose with the `MeshGeometry3D.FillType` property.
+The control supports three mesh types, which you can choose with the [`MeshGeometry3D.FillType`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/FillType.md) property.
 
 
-- `MeshFillType.Triangles` (default) — A triangle mesh. Consists of triangular faces (flat areas enclosed by three edges). 
+- [`MeshFillType.Triangles`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md) (default) — A triangle mesh. Consists of triangular faces (flat areas enclosed by three edges). 
 
   ![g3d-mesh-triangle](../../images/g3d-mesh-triangle.png)
 
-- `MeshFillType.Lines` — Line mesh. Vertices are connected with lines to form a wireframe.
+- [`MeshFillType.Lines`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md) — Line mesh. Vertices are connected with lines to form a wireframe.
 
   ![g3d-mesh-lines](../../images/g3d-mesh-lines.png)
 
-- `MeshFillType.Points` — Point mesh (point cloud). Consists of vertices, which are not connected with lines.
+- [`MeshFillType.Points`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md) — Point mesh (point cloud). Consists of vertices, which are not connected with lines.
 
   ![g3d-mesh-points](../../images/g3d-mesh-points.png)
   
@@ -203,15 +203,15 @@ model.Meshes.AddRange(new[] { meshTriangle1, meshSquare, meshPoints });
 
 When creating a mesh, use the following properties to define vertices and faces/lines:
 
-- `MeshGeometry3D.Vertices` array — Specifies an array of all vertices that compose the mesh. 
-- `MeshGeometry3D.Indices` array — Defines triangular faces (for a triangle mesh), or lines (for a line mesh).
+- [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) array — Specifies an array of all vertices that compose the mesh. 
+- [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) array — Defines triangular faces (for a triangle mesh), or lines (for a line mesh).
 
 
 #### Vertices
 
 A vertex is a point in 3D space defined by its coordinates (x, y, z).
 
-The `Vertex3D` type encapsulates a single vertex in the `Graphics3DControl`. Use the `MeshGeometry3D.Vertices` array to add vertices to a mesh.
+The `Vertex3D` type encapsulates a single vertex in the [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md). Use the [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) array to add vertices to a mesh.
 
 The `Vertex3D` type exposes the following main properties that you need to initialize.
 
@@ -224,13 +224,13 @@ The `Vertex3D` type exposes the following main properties that you need to initi
 
 #### Define a Triangle Mesh
 
-To create a triangle mesh you need to divide a shape into triangles. Vertices specify the corners of the triangles. The `MeshGeometry3D.FillType` property needs to be set to its default value (`MeshFillType.Triangles`).
+To create a triangle mesh you need to divide a shape into triangles. Vertices specify the corners of the triangles. The [`MeshGeometry3D.FillType`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/FillType.md) property needs to be set to its default value ([`MeshFillType.Triangles`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md)).
 
 Consider an example in which a mesh has a quadrilateral shape. It can be triangulated by adding a single diagonal.
 
 ![g3d-triangle-mesh-quad-coords](../../images/g3d-triangle-mesh-quad-coords.png)
 
-First, add all vertices to the `MeshGeometry3D.Vertices` array.
+First, add all vertices to the [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) array.
 
 ``` xml
 <mx3d:Graphics3DControl Name="g3DControl" ShowAxes="True"/>
@@ -261,12 +261,12 @@ meshSquare.Vertices = meshSquareVertices;
 model.Meshes.AddRange(new[] { meshSquare });
 ```
 
-Then use the `MeshGeometry3D.Indices` property to form triangle faces.
+Then use the [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) property to form triangle faces.
 
-For a triangle mesh, the `MeshGeometry3D.Indices` property is an array of indices of vertices in the `MeshGeometry3D.Vertices` array that define individual mesh triangles. This array contains groups of **three** indices each. The first three indices in the array refer to the vertices of the first mesh triangle. The next three indices refer to the vertices of the second mesh triangle, and so on.
+For a triangle mesh, the [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) property is an array of indices of vertices in the [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) array that define individual mesh triangles. This array contains groups of **three** indices each. The first three indices in the array refer to the vertices of the first mesh triangle. The next three indices refer to the vertices of the second mesh triangle, and so on.
 The order of the indices for each triangle is important because it determines the surface normal. The surface normal, in turn, identifies the front and back sides of the triangle, which is essential for operations like back-face and front-face culling.
 
-For the quad mesh above, the `MeshGeometry3D.Indices` array should contain six indices. The first three indices refer to the vertices of the first triangle. The second three indices refer to the vertices of the second triangle.
+For the quad mesh above, the [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) array should contain six indices. The first three indices refer to the vertices of the first triangle. The second three indices refer to the vertices of the second triangle.
 
 ``` cs
 uint[] meshSquareIndices = new uint[] { 0, 1, 3, 1, 2, 3 };
@@ -275,13 +275,13 @@ meshSquare.Indices = meshSquareIndices;
 
 #### Define a Line Mesh
 
-In a line mesh, vertices are connected with lines. To define a line mesh, create a `MeshGeometry3D` object and set its `MeshGeometry3D.FillType` property to `MeshFillType.Lines`. Then use the `MeshGeometry3D.Vertices` property to specify all vertices, and the `MeshGeometry3D.Indices` property to connect the vertices with lines.
+In a line mesh, vertices are connected with lines. To define a line mesh, create a [`MeshGeometry3D`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D.md) object and set its [`MeshGeometry3D.FillType`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/FillType.md) property to [`MeshFillType.Lines`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md). Then use the [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) property to specify all vertices, and the [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) property to connect the vertices with lines.
 
 Consider the following 3D model composed of lines connecting six points.
 
 ![g3d-triangle-mesh-lines-coords](../../images/g3d-triangle-mesh-lines-coords.png)
 
-First, add all vertices to the `MeshGeometry3D.Vertices` array.
+First, add all vertices to the [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) array.
 
 ``` xml
 <mx3d:Graphics3DControl Name="g3DControl" ShowAxes="True"/>
@@ -320,10 +320,10 @@ Should I specify vertex Normals in a line and point meshes?
  -->
 
 
-Use the `MeshGeometry3D.Indices` property to connect the vertices with lines. For a line mesh, the `MeshGeometry3D.Indices` property is an array of indices of vertices in the `MeshGeometry3D.Vertices` array that define individual lines.
+Use the [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) property to connect the vertices with lines. For a line mesh, the [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) property is an array of indices of vertices in the [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) array that define individual lines.
 This array contains pairs of indices. The first two indices in the array refer to the vertices of the first line. The next two indices refer to the vertices of the second line, and so on.
 
-For the example above, the `MeshGeometry3D.Indices` array should contain 10 indices. The first pair of indices refers to the points that define the first line. The second pair of indices refers to the vertices of the second line, and so on.
+For the example above, the [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) array should contain 10 indices. The first pair of indices refers to the points that define the first line. The second pair of indices refers to the vertices of the second line, and so on.
 
 ``` cs
 uint[] meshLinesIndices = new uint[] { 0, 1, 1, 2, 2, 3, 3, 4, 4, 5 };
@@ -332,7 +332,7 @@ meshLines.Indices = meshLinesIndices;
 
 ##### Thickness of Lines
 
-In a line mesh, use the `PrimitiveSize` property to change the thickness of lines. 
+In a line mesh, use the [`PrimitiveSize`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/PrimitiveSize.md) property to change the thickness of lines. 
 
 
 
@@ -342,7 +342,7 @@ In a line mesh, use the `PrimitiveSize` property to change the thickness of line
 
 In a point mesh, vertices are rendered as individual points. 
 
-To define a point mesh, create a `MeshGeometry3D` object and set its `MeshGeometry3D.FillType` property to `MeshFillType.Points`. Then use the `MeshGeometry3D.Vertices` property to specify all vertices, and the `MeshGeometry3D.Indices` property to specify which vertices to render.
+To define a point mesh, create a [`MeshGeometry3D`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D.md) object and set its [`MeshGeometry3D.FillType`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/FillType.md) property to [`MeshFillType.Points`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md). Then use the [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) property to specify all vertices, and the [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) property to specify which vertices to render.
 
 Let's create a point mesh that forms a spiral, in which points are arranged in the XY plane.
 
@@ -398,21 +398,21 @@ The code below shows how to use a textured material to colorize vertices. The in
 
 ![g3d-point-mesh-color-gradient-example](../../images/g3d-point-mesh-color-gradient-example.png)
 
-1. Add a textured material (`TexturedPbrMaterial`) to the `Graphics3DControl.Materials` collection. A textured material represents a set of bitmaps that specify the following texture settings:
-    - `Albedo` — Base color
-    - `Alpha` — Transparency
-    - `Emission` — Intensity of light emitted from the surface
-    - `AmbientOcclusion` — Level of the shadowing caused by objects blocking the ambient light
-    - `Roughness` — Smoothness of the surface
-    - `Metallic` — Reflectivity of the surface settings 
+1. Add a textured material ([`TexturedPbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial.md)) to the [`Graphics3DControl.Materials`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Materials.md) collection. A textured material represents a set of bitmaps that specify the following texture settings:
+    - [`Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Albedo.md) — Base color
+    - [`Alpha`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Alpha.md) — Transparency
+    - [`Emission`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Emission.md) — Intensity of light emitted from the surface
+    - [`AmbientOcclusion`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/AmbientOcclusion.md) — Level of the shadowing caused by objects blocking the ambient light
+    - [`Roughness`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Roughness.md) — Smoothness of the surface
+    - [`Metallic`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Metallic.md) — Reflectivity of the surface settings 
 
     Vertices are later mapped to specific positions within these texture bitmaps.
 
     To ensure that the vertices display the realistic colors from the target color gradient, configure the texture bitmaps as follows:
     
-    - Set `TexturedPbrMaterial.Emission` to the gradient bitmap that determines the real color of the vertices. 
-    - Set `TexturedPbrMaterial.Albedo` to a bitmap filled with black.
-    - Set `TexturedPbrMaterial.Roughness` and `TexturedPbrMaterial.AmbientOcclusion` to bitmaps that are filled with white.
+    - Set [`TexturedPbrMaterial.Emission`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Emission.md) to the gradient bitmap that determines the real color of the vertices. 
+    - Set [`TexturedPbrMaterial.Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Albedo.md) to a bitmap filled with black.
+    - Set [`TexturedPbrMaterial.Roughness`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Roughness.md) and [`TexturedPbrMaterial.AmbientOcclusion`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/AmbientOcclusion.md) to bitmaps that are filled with white.
 
     ``` cs
     using DynamicData;
@@ -465,9 +465,9 @@ The code below shows how to use a textured material to colorize vertices. The in
     }
     ```
 
-    The material's `TexturedPbrMaterial.Key` property is set to a unique key (string). Unique keys allow identification of materials in the `Graphics3DControl.Materials` collection.
+    The material's [`TexturedPbrMaterial.Key`](../../API/Eremex.AvaloniaUI.Controls3D/Material/Key.md) property is set to a unique key (string). Unique keys allow identification of materials in the [`Graphics3DControl.Materials`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Materials.md) collection.
 
-2. Assign the created material to the mesh using the `MeshGeometry3D.MaterialKey` property. The `MeshGeometry3D.MaterialKey` property should match the value of the `TexturedPbrMaterial.Key` setting.
+2. Assign the created material to the mesh using the [`MeshGeometry3D.MaterialKey`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/MaterialKey.md) property. The [`MeshGeometry3D.MaterialKey`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/MaterialKey.md) property should match the value of the [`TexturedPbrMaterial.Key`](../../API/Eremex.AvaloniaUI.Controls3D/Material/Key.md) setting.
 
     ``` cs
     meshPoints.MaterialKey = "pointsMaterial";
@@ -499,13 +499,13 @@ The code below shows how to use a textured material to colorize vertices. The in
 
 ##### Thickness of Points
 
-In a point mesh, use the `PrimitiveSize` property to change the thickness of points.
+In a point mesh, use the [`PrimitiveSize`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/PrimitiveSize.md) property to change the thickness of points.
 
 
 
 ### Model Visibility
 
-Use the `GeometryModel3D.Visible` property to temporarily hide and then restore a model.
+Use the [`GeometryModel3D.Visible`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Visible.md) property to temporarily hide and then restore a model.
 
 ``` cs
 GeometryModel3D model = new GeometryModel3D();
@@ -516,9 +516,9 @@ model.Visible = !model.Visible;
 
 ### Model Transformations
 
-The `Graphics3DControl` allows you to perform transformations on models. For this purpose, construct a transformation matrix that rotates, scales and/or translates the model. Once created, assign this matrix to the `GeometryModel3D.Transform` property.
+The [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) allows you to perform transformations on models. For this purpose, construct a transformation matrix that rotates, scales and/or translates the model. Once created, assign this matrix to the [`GeometryModel3D.Transform`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Transform.md) property.
 
-To clear the current transformation, set the `GeometryModel3D.Transform` property to a `Matrix4x4.Identity` object.
+To clear the current transformation, set the [`GeometryModel3D.Transform`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Transform.md) property to a `Matrix4x4.Identity` object.
 
 The `Matrix4x4` class provides methods to generate transformation matrices for various types of transformations. Some of these methods include:
 
@@ -534,7 +534,7 @@ To apply multiple transformations at the same time, you can multiply matrices th
 #### Example - Rotate a model
 
 The following example creates an animation that rotates a 3D model (a spiral consisting of points). The `Matrix4x4.CreateRotationZ` method is called to generate a transformation matrix that rotates the model by a specified angle around the Z axis.
-To apply the transformation, this matrix is assigned to the `GeometryModel3D.Transform` property.
+To apply the transformation, this matrix is assigned to the [`GeometryModel3D.Transform`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Transform.md) property.
 
 ![g3dControl-rotateZ-animation](../../images/g3dControl-rotateZ-animation.gif)
 
@@ -563,7 +563,7 @@ private void BtnRotate_Click(object? sender, Avalonia.Interactivity.RoutedEventA
 
 The following example creates a 3D model that renders a triangle, and shows how to perform multiple transformations on the model.
 
-The example combines scaling, rotation and translation operations into a single transformation matrix, and then assigns this matrix to the `GeometryModel3D.Transform` property to apply the transformations.
+The example combines scaling, rotation and translation operations into a single transformation matrix, and then assigns this matrix to the [`GeometryModel3D.Transform`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Transform.md) property to apply the transformations.
 
 The example applies small incremental changes to the transformation matrices, creating a smooth animation effect.
 
@@ -650,17 +650,17 @@ private void BtnRotate_Click(object? sender, Avalonia.Interactivity.RoutedEventA
 
 ### Multisampling (Anti-aliasing)
 
-- `Graphics3DControl.MultisamplingMode` — Activates multisample anti-aliasing (MSAA) or disables it. 
+- [`Graphics3DControl.MultisamplingMode`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/MultisamplingMode.md) — Activates multisample anti-aliasing (MSAA) or disables it. 
 
 The anti-aliasing feature is used to reduce visual artifacts, such as jagged edges (aliasing), in rendered graphics, producing smoother and more refined results. 
 
 ![g3dcontrol-multisampling](../../images/g3dcontrol-multisampling.png)
 
-The `MultisamplingMode` property can be set to the following values: `None`, `X2`, `X4`, `X8`, `X16`, `X32`, `X64`. The `X2`...`X64` values determine the number of sample points per pixel to calculate the final color of a pixel. More samples lead to better results, however it is also more computationally expensive.
+The [`MultisamplingMode`](../../API/Eremex.AvaloniaUI.Controls3D/MultisamplingMode.md) property can be set to the following values: `None`, `X2`, `X4`, `X8`, `X16`, `X32`, `X64`. The `X2`...`X64` values determine the number of sample points per pixel to calculate the final color of a pixel. More samples lead to better results, however it is also more computationally expensive.
 
-- The `MultisamplingMode` property's default value is `X8`.
-- Not all MSAA modes may be supported by your GPU. If an unsupported MSAA mode is chosen, the system falls back to a lower available mode. You can use the `Graphics3DControl.AvailableMultisamplingModes` property to return a list of MSAA modes supported by your graphics driver.
-- Multisampling for large 3D models increases memory usage and computational costs. To improve application performance in such cases, consider setting the `MultisamplingMode` to a lower value or disabling MSAA.
+- The [`MultisamplingMode`](../../API/Eremex.AvaloniaUI.Controls3D/MultisamplingMode.md) property's default value is `X8`.
+- Not all MSAA modes may be supported by your GPU. If an unsupported MSAA mode is chosen, the system falls back to a lower available mode. You can use the [`Graphics3DControl.AvailableMultisamplingModes`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/AvailableMultisamplingModes.md) property to return a list of MSAA modes supported by your graphics driver.
+- Multisampling for large 3D models increases memory usage and computational costs. To improve application performance in such cases, consider setting the [`MultisamplingMode`](../../API/Eremex.AvaloniaUI.Controls3D/MultisamplingMode.md) to a lower value or disabling MSAA.
 
 
 
@@ -679,24 +679,24 @@ The `MultisamplingMode` property can be set to the following values: `None`, `X2
 
 ## Materials
 
-Each mesh in a `Graphics3DControl` control can be painted with its own material. A material specifies how surfaces interact with light, giving objects their visual appearance.
+Each mesh in a [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) control can be painted with its own material. A material specifies how surfaces interact with light, giving objects their visual appearance.
 
-The `Graphics3DControl` control supports two material types:
+The [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) control supports two material types:
 
-- `SimplePbrMaterial` — A material that defines the visual properties of a surface using numeric values, such as colors (e.g., albedo and emission) and light interaction settings (e.g., metallic and roughness). For more information see [Simple Materials (SimplePbrMaterial)](#simple-materials-simplepbrmaterial)
+- [`SimplePbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial.md) — A material that defines the visual properties of a surface using numeric values, such as colors (e.g., albedo and emission) and light interaction settings (e.g., metallic and roughness). For more information see [Simple Materials (SimplePbrMaterial)](#simple-materials-simplepbrmaterial)
 
-- `TexturedPbrMaterial` — A textured material in PBR format. This material specifies the visual properties of a surface using textures (bitmaps). For more information see [Textured Materials (TexturedPbrMaterial)](#textured-materials-texturedpbrmaterial)
+- [`TexturedPbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial.md) — A textured material in PBR format. This material specifies the visual properties of a surface using textures (bitmaps). For more information see [Textured Materials (TexturedPbrMaterial)](#textured-materials-texturedpbrmaterial)
 
 To apply materials to meshes, do the following:
 
 1. Create and initialize materials.
-1. Set the `Key` property for the materials to unique strings. The keys allow for material identification when assigning the materials to meshes.
-1. Add the materials to the `Graphics3DControl.Materials` collection.
-1. Use the `MeshGeometry3D.MaterialKey` property to associate a mesh with a specific material. For this purpose, set the `MeshGeometry3D.MaterialKey` property to the `Key` property of the target material.
+1. Set the [`Key`](../../API/Eremex.AvaloniaUI.Controls3D/Material/Key.md) property for the materials to unique strings. The keys allow for material identification when assigning the materials to meshes.
+1. Add the materials to the [`Graphics3DControl.Materials`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Materials.md) collection.
+1. Use the [`MeshGeometry3D.MaterialKey`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/MaterialKey.md) property to associate a mesh with a specific material. For this purpose, set the [`MeshGeometry3D.MaterialKey`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/MaterialKey.md) property to the [`Key`](../../API/Eremex.AvaloniaUI.Controls3D/Material/Key.md) property of the target material.
 
 ### Example - Assign a material to a mesh
 
-The following example creates three materials (`SimplePbrMaterial` objects), and applies one of these materials to a mesh. The materials created are identified by unique string keys ("BrownColor", "TomatoColor" and "VioletColor").
+The following example creates three materials ([`SimplePbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial.md) objects), and applies one of these materials to a mesh. The materials created are identified by unique string keys ("BrownColor", "TomatoColor" and "VioletColor").
 
 ``` cs
 using DynamicData;
@@ -716,11 +716,11 @@ mesh1.MaterialKey = "VioletColor";
 
 ### Simple Materials (`SimplePbrMaterial`)
 
-`SimplePbrMaterial` is a material that describes the visual properties of a surface as numeric values. It provides the following members to specify the visual settings:
+[`SimplePbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial.md) is a material that describes the visual properties of a surface as numeric values. It provides the following members to specify the visual settings:
 
 - `Albedo` — The base color. 
 
-    The property's value is a Vector3 object whose X, Y and Z members specify normalized values for the Red, Green and Blue color components. Normalized values fall in the range [0;1]. To convert a standard color component (0–255) to a normalized value, divide it by 255. You can also use the `SimplePbrMaterial` constructor to initialize the `Albedo` and `Alpha` properties from a specified `Color` object. This constructor automaticaly normalizes the color components.
+    The property's value is a Vector3 object whose X, Y and Z members specify normalized values for the Red, Green and Blue color components. Normalized values fall in the range [0;1]. To convert a standard color component (0–255) to a normalized value, divide it by 255. You can also use the [`SimplePbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial.md) constructor to initialize the `Albedo` and `Alpha` properties from a specified `Color` object. This constructor automaticaly normalizes the color components.
 
 - `Alpha` — The transparency level. 
 
@@ -750,8 +750,8 @@ The `Simple Materials` example in the [demo application](../../index.md#demo-app
 
 #### Example - Apply a simple material to a model
 
-The following code creates a simple material (`SimplePbrMaterial` object) and applies it to the first mesh of a 3D model.
-The `SimplePbrMaterial.Albedo` property is set to the base color (Teal), using normalized color coordinates.
+The following code creates a simple material ([`SimplePbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial.md) object) and applies it to the first mesh of a 3D model.
+The [`SimplePbrMaterial.Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Albedo.md) property is set to the base color (Teal), using normalized color coordinates.
 
 ``` cs
 SimplePbrMaterial material = new SimplePbrMaterial();
@@ -780,7 +780,7 @@ This material, when applied to a sample 3D model, is shown below:
 
 ### Textured Materials (`TexturedPbrMaterial`)
 
-`TexturedPbrMaterial` is a material that uses PBR textures (bitmaps) to define the visual properties of a surface. The `TexturedPbrMaterial` class provides the following members to configure the material's settings:
+[`TexturedPbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial.md) is a material that uses PBR textures (bitmaps) to define the visual properties of a surface. The [`TexturedPbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial.md) class provides the following members to configure the material's settings:
 
 - `Albedo` — A bitmap that specifies the base color of the material. 
 
@@ -794,7 +794,7 @@ This material, when applied to a sample 3D model, is shown below:
 
 - `Metallic` — A bitmap that specifies reflectivity of the surface.
 
-- `Normal` — A bitmap that specifies a Normal Map.
+- [`Normal`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Normal.md) — A bitmap that specifies a Normal Map.
 
 #### Demo
 
@@ -802,7 +802,7 @@ The `Textured Materials` example in the [demo application](../../index.md#demo-a
 
 ![g3d-texturedmaterials-demo](../../images/g3d-texturedmaterials-demo.png)
 
-The following code snippet from the `Textured Materials` demo populates a View Model's `Materials` collection with materials (`TexturedPbrMaterial` objects). These materials are created for all textures that are stored as ZIP files in the application's resources, located in the `DemoCenter.Resources.Graphics3D.Materials` folder. For each material, if a ZIP file with a texture contains bitmaps for the `Albedo`, `AmbientOcclusion`, `Metallic`, `Roughness`, `Normal` and `Emission` settings, these bitmaps are loaded and applied to the material.
+The following code snippet from the `Textured Materials` demo populates a View Model's [`Materials`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Materials.md) collection with materials ([`TexturedPbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial.md) objects). These materials are created for all textures that are stored as ZIP files in the application's resources, located in the `DemoCenter.Resources.Graphics3D.Materials` folder. For each material, if a ZIP file with a texture contains bitmaps for the `Albedo`, `AmbientOcclusion`, `Metallic`, `Roughness`, [`Normal`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Normal.md) and `Emission` settings, these bitmaps are loaded and applied to the material.
 
 ``` cs
 public partial class Graphics3DControlTexturedMaterialsViewModel : Graphics3DControlViewModel
@@ -850,7 +850,7 @@ public partial class Graphics3DControlTexturedMaterialsViewModel : Graphics3DCon
 }
 ```
 
-The XAML code below from the `Textured Materials` demo binds a `Graphics3DControl` control to the collection of materials in the View Model (`Graphics3DControlTexturedMaterialsViewModel.Materials`). The material currently applied is specified by the `Graphics3DControlTexturedMaterialsViewModel.SelectedMaterial` property.
+The XAML code below from the `Textured Materials` demo binds a [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) control to the collection of materials in the View Model (`Graphics3DControlTexturedMaterialsViewModel.Materials`). The material currently applied is specified by the `Graphics3DControlTexturedMaterialsViewModel.SelectedMaterial` property.
 
 ``` xml
 <mx3d:Graphics3DControl x:Name="DemoControl" MaterialsSource="{Binding Materials}">
@@ -887,17 +887,17 @@ Examples that demonstrate the use of the `Vertex3D.TextureCoord` property:
 
 ## Back-face and Front-face Culling
 
-The `Graphics3DControl.CullMode` property allows you to enable back-face and front-face culling for [triangle meshes](#meshes). Cull mode determines which faces of a 3D model should be drawn and which should be discarded. You can set the `Graphics3DControl.CullMode` property to the following values:
+The [`Graphics3DControl.CullMode`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/CullMode.md) property allows you to enable back-face and front-face culling for [triangle meshes](#meshes). Cull mode determines which faces of a 3D model should be drawn and which should be discarded. You can set the [`Graphics3DControl.CullMode`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/CullMode.md) property to the following values:
 
-- `CullMode.Back` — Enables back-face culling, in which back faces of the triangles are not drawn.
+- [`CullMode.Back`](../../API/Eremex.AvaloniaUI.Controls3D/CullMode.md) — Enables back-face culling, in which back faces of the triangles are not drawn.
 
-- `CullMode.Front` — Enables front-face culling, in which front faces of the triangles are not drawn.
+- [`CullMode.Front`](../../API/Eremex.AvaloniaUI.Controls3D/CullMode.md) — Enables front-face culling, in which front faces of the triangles are not drawn.
 
-- `CullMode.None` — Front and back faces are drawn.
+- [`CullMode.None`](../../API/Eremex.AvaloniaUI.Controls3D/CullMode.md) — Front and back faces are drawn.
 
 ### Identify Back and Front of Faces
 
-When you [define triangular faces](#define-a-triangle-mesh) for a mesh you use the `MeshGeometry3D.Indices` property to specify the indices of the vertices that form each triangle. 
+When you [define triangular faces](#define-a-triangle-mesh) for a mesh you use the [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) property to specify the indices of the vertices that form each triangle. 
 
 The order of indices for each mesh triangle is important, as it determines the surface normal direction, and so the front and back of the triangle:
 
@@ -955,15 +955,15 @@ g3DControl.Materials.Add(new SimplePbrMaterial(Colors.SeaGreen, "myMaterial"));
 mesh1.MaterialKey = "myMaterial";
 ```
 
-When you set the `Graphics3DControl.CullMode` property to `CullMode.Back`, back faces are not drawn. The second (right) triangle is facing away from the camera, so it is not drawn.
+When you set the [`Graphics3DControl.CullMode`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/CullMode.md) property to [`CullMode.Back`](../../API/Eremex.AvaloniaUI.Controls3D/CullMode.md), back faces are not drawn. The second (right) triangle is facing away from the camera, so it is not drawn.
 
 ![g3d-cullmode-example-cull-back](../../images/g3d-cullmode-example-cull-back.png)
 
-When `Graphics3DControl.CullMode` equals to `CullMode.Front`, front faces are not drawn. The first (left) triangle is facing toward the camera, so it is hidden:
+When [`Graphics3DControl.CullMode`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/CullMode.md) equals to [`CullMode.Front`](../../API/Eremex.AvaloniaUI.Controls3D/CullMode.md), front faces are not drawn. The first (left) triangle is facing toward the camera, so it is hidden:
 
 ![g3d-cullmode-example-cull-front](../../images/g3d-cullmode-example-cull-front.png)
 
 ## Gamma and Exposure Corrections
 
-- `Graphics3DControl.Exposure` — Controls the exposure correction level, which adjusts the brightness of the rendered image. The default value is 4.5. The property can be set to a non-negative value.
-- `Graphics3DControl.Gamma` — Controls gamma correction. The default value is 2.2, which is the standard gamma value for most displays. This property can be set to a non-negative value.
+- [`Graphics3DControl.Exposure`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Exposure.md) — Controls the exposure correction level, which adjusts the brightness of the rendered image. The default value is 4.5. The property can be set to a non-negative value.
+- [`Graphics3DControl.Gamma`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Gamma.md) — Controls gamma correction. The default value is 2.2, which is the standard gamma value for most displays. This property can be set to a non-negative value.

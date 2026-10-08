@@ -2,14 +2,21 @@
 
 Wires up the controls and optionally loads XAML markup and attaches dev tools (if Avalonia.Diagnostics package is referenced).
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
-public void InitializeComponent(bool loadXaml = true, bool attachDevTools = true)
+public void InitializeComponent(bool loadXaml = true)
 ```
 
-| parameter | description |
-| --- | --- |
-| loadXaml | Should the XAML be loaded into the component. |
-| attachDevTools | Should the dev tools be attached. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| loadXaml | `bool` | Should the XAML be loaded into the component. |
 
 ## See Also
 

@@ -14,8 +14,8 @@ End-users can use context menus to add commands to the [Quick Access Toolbar](qu
 
 The layout of commands in the Quick Access Toolbar can be saved to a stream, and loaded from it later (for instance, the next time your application runs). To do this, use the following layout serialization and deserialization methods:
 
-- `RibbonControl.SaveLayout` — Saves the layout of ribbon items in the Quick Access Toolbar to a stream.
-- `RibbonControl.RestoreLayout` — Reads the previously saved layout from a stream and applies it to the Quick Access Toolbar.
+- [`RibbonControl.SaveLayout`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/SaveLayout.md) — Saves the layout of ribbon items in the Quick Access Toolbar to a stream.
+- [`RibbonControl.RestoreLayout`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/RestoreLayout.md) — Reads the previously saved layout from a stream and applies it to the Quick Access Toolbar.
 
 !!! note
 

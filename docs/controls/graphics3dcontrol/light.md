@@ -11,7 +11,7 @@ In Graphics3DControl, lights are used to illuminate 3D models. You can use the d
 
 ## Default Light
 
-The `Graphics3DControl` provides the default light out of the box. The default light represents a white point light linked to the camera. Its direction is always synced with the camera's direction.
+The [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) provides the default light out of the box. The default light represents a white point light linked to the camera. Its direction is always synced with the camera's direction.
 
 The following image demonstrates the default light reflected from a metallic plane. 
 
@@ -25,7 +25,7 @@ The actual visual effect of any light is determined by [materials](graphics3dcon
 
 #### Related Options
 
-- `Graphics3DControl.AllowDefaultLight` (default value is `true`) — Set this property to `false` to forcibly disable the default light.
+- [`Graphics3DControl.AllowDefaultLight`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/AllowDefaultLight.md) (default value is `true`) — Set this property to `false` to forcibly disable the default light.
 
     When you create custom lights, the default light is automatically disabled. 
 
@@ -34,17 +34,17 @@ The actual visual effect of any light is determined by [materials](graphics3dcon
 ## Custom Lights
 
 
-To add custom lights to a 3D scene, create light sources and add them to the `Graphics3DControl.Lights` сollection. You can also use the `Graphics3DControl.LightsSource` and `Graphics3DControl.LightTemplate` property to add custom lights according to the MVVM design pattern.
+To add custom lights to a 3D scene, create light sources and add them to the [`Graphics3DControl.Lights`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Lights.md) сollection. You can also use the [`Graphics3DControl.LightsSource`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/LightsSource.md) and [`Graphics3DControl.LightTemplate`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/LightTemplate.md) property to add custom lights according to the MVVM design pattern.
 
 
-`Graphics3DControl` supports the following light source types:
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) supports the following light source types:
 
-- Point Light (`PointLight`)
-- Directional Light (`DirectionalLight`)
-- Camera-related Point Light (`CameraPointLight`)
-- Camera-related Directional Light (`CameraDirectionalLight`)
+- Point Light ([`PointLight`](../../API/Eremex.AvaloniaUI.Controls3D/PointLight.md))
+- Directional Light ([`DirectionalLight`](../../API/Eremex.AvaloniaUI.Controls3D/DirectionalLight.md))
+- Camera-related Point Light ([`CameraPointLight`](../../API/Eremex.AvaloniaUI.Controls3D/CameraPointLight.md))
+- Camera-related Directional Light ([`CameraDirectionalLight`](../../API/Eremex.AvaloniaUI.Controls3D/CameraDirectionalLight.md))
 
-All these light sources have one ancestor, the `Light` abstract class.
+All these light sources have one ancestor, the [`Light`](../../API/Eremex.AvaloniaUI.Controls3D/Light.md) abstract class.
 
 ### Point Light
 
@@ -52,13 +52,13 @@ Radiates in all directions (like a light bulb).
 
 #### Class
 
-`PointLight`
+[`PointLight`](../../API/Eremex.AvaloniaUI.Controls3D/PointLight.md)
 
 #### Settings
     
-- `Color` — The color of the light.
-- `Position` — The position of the light emitter.
-- `Radius` — The radius of the light emitter.
+- [`Color`](../../API/Eremex.AvaloniaUI.Controls3D/Light/Color.md) — The color of the light.
+- [`Position`](../../API/Eremex.AvaloniaUI.Controls3D/PointLight/Position.md) — The position of the light emitter.
+- [`Radius`](../../API/Eremex.AvaloniaUI.Controls3D/PointLightBase/Radius.md) — The radius of the light emitter.
 
 #### Example
 
@@ -86,12 +86,12 @@ Emits parallel rays in a specified direction, simulating distant illumination (l
 
 #### Class
 
-`DirectionalLight`
+[`DirectionalLight`](../../API/Eremex.AvaloniaUI.Controls3D/DirectionalLight.md)
 
 #### Settings
 
-- `Color` — The color of the light.
-- `Direction` — A vector that specifies the direction of the light rays.
+- [`Color`](../../API/Eremex.AvaloniaUI.Controls3D/Light/Color.md) — The color of the light.
+- [`Direction`](../../API/Eremex.AvaloniaUI.Controls3D/DirectionalLight/Direction.md) — A vector that specifies the direction of the light rays.
 
 #### Example
 
@@ -124,12 +124,12 @@ A point light emitted from the camera. The position and direction of this light 
 
 #### Class
 
-`CameraPointLight`
+[`CameraPointLight`](../../API/Eremex.AvaloniaUI.Controls3D/CameraPointLight.md)
 
 #### Settings
 
-- `Color` — The color of the light.
-- `Radius` — The radius of the light emitter.
+- [`Color`](../../API/Eremex.AvaloniaUI.Controls3D/Light/Color.md) — The color of the light.
+- [`Radius`](../../API/Eremex.AvaloniaUI.Controls3D/PointLightBase/Radius.md) — The radius of the light emitter.
 
 #### Example 
 
@@ -158,11 +158,11 @@ Emits parallel rays in the camera's direction, simulating distant illumination (
 
 #### Class
 
-`CameraDirectionalLight`
+[`CameraDirectionalLight`](../../API/Eremex.AvaloniaUI.Controls3D/CameraDirectionalLight.md)
 
 #### Settings
 
-- `Color` — The color of the light.
+- [`Color`](../../API/Eremex.AvaloniaUI.Controls3D/Light/Color.md) — The color of the light.
 
 
 #### Example 
@@ -189,6 +189,6 @@ g3DControl.Lights.Add(myLight);
 
 ### Add Lights Using the MVVM Approach
 
-- `Graphics3DControl.LightsSource` — Supports the MVVM design patters. The `LightsSource` property is a collection of business objects  -->
+- [`Graphics3DControl.LightsSource`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/LightsSource.md) — Supports the MVVM design patters. The [`LightsSource`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/LightsSource.md) property is a collection of business objects  -->
 
 

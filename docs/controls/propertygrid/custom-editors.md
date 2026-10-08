@@ -18,13 +18,13 @@ Use the following approaches to specify custom editors:
  
 ## Assign an Editor to a Row Cell Directly
  
-Use the `PropertyGridRow.CellTemplate` property to assign an editor to a specific row. Do the following to accomplish this task:
+Use the [`PropertyGridRow.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/CellTemplate.md) property to assign an editor to a specific row. Do the following to accomplish this task:
  
 - Create a DataTemplate object with an editor defined inside the template.
-- Assign the DataTemplate to the `PropertyGridRow.CellTemplate` property.
+- Assign the DataTemplate to the [`PropertyGridRow.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/CellTemplate.md) property.
 - Bind the editor to the row's bound field explicitly, when required. 
  
-The following example shows XAML code that initializes the `CellTemplate` property:
+The following example shows XAML code that initializes the [`CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/CellTemplate.md) property:
  
 ``` xml
 xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
@@ -67,7 +67,7 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
  
 Explicit data binding is required in the following cases:
 
-- You use an editor that is not an Eremex editor. Eremex editors all derive from the `Eremex.AvaloniaUI.Controls.Editors.BaseEditor` class.
+- You use an editor that is not an Eremex editor. Eremex editors all derive from the [`Eremex.AvaloniaUI.Controls.Editors.BaseEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor.md) class.
 - You need to specify a custom value converter in the data binding expression.
  
 ```xml
@@ -79,7 +79,7 @@ Explicit data binding is required in the following cases:
  
 ## Dynamically Assign Editors Based on Row Data Type
  
-The PropertyGrid control can automatically assign templates to row cells based on the data type of the row's bound field. Use the `PropertyGridControl.CellTemplate` property for this purpose.
+The PropertyGrid control can automatically assign templates to row cells based on the data type of the row's bound field. Use the [`PropertyGridControl.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/CellTemplate.md) property for this purpose.
  
 The following example associates a TextEditor (paints values in green) with rows bound to Integer fields:
  
@@ -119,9 +119,9 @@ Use the following approach if you have a list of DataTemplate objects associated
     ```
     
     !!! tip
-        The _data_ parameter of the `Match` method specifies a target cell template's value. The _data_ parameter's contains the bound property's value by default. You can handle the `CustomCellTemplateData` event to supply a custom object as the cell template's value. The specified custom object will be passed to the `Match` method.
+        The _data_ parameter of the `Match` method specifies a target cell template's value. The _data_ parameter's contains the bound property's value by default. You can handle the [`CustomCellTemplateData`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/CustomCellTemplateData.md) event to supply a custom object as the cell template's value. The specified custom object will be passed to the `Match` method.
 
-- Initialize the `PropertyGridControl.CellTemplate` property with a *CellTemplateLocator* object.
+- Initialize the [`PropertyGridControl.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/CellTemplate.md) property with a *CellTemplateLocator* object.
 - Populate the *CellTemplateLocator* object with DataTemplate objects associated with your data types.
  
 The following example defines two DataTemplate objects associated with the String and Integer data types, respectively.

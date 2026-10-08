@@ -2,6 +2,12 @@
 
 The default IOpenFileDialogService implementation. It resolves the owner window through IWindowsManager and shows the platform open file dialog.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public class OpenFileDialogService : IOpenFileDialogService
 ```

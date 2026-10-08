@@ -13,13 +13,13 @@ The TreeList control supports multiple columns of data, while TreeView displays 
 
 ## Column in TreeView Control
 
-The TreeView control displays data in a single column. This column cannot be deleted. Values displayed in the TreeView column are retrieved from the field/property specified by the `TreeViewControl.DataFieldName` member.
+The TreeView control displays data in a single column. This column cannot be deleted. Values displayed in the TreeView column are retrieved from the field/property specified by the [`TreeViewControl.DataFieldName`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) member.
 
-The `TreeViewControl.CellWidth` property allows you to customize the width of this column. See the following link for more information: [Column Width](#column-width).
+The [`TreeViewControl.CellWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) property allows you to customize the width of this column. See the following link for more information: [Column Width](#column-width).
 
 ## Create TreeList Columns
 
-TreeList columns are encapsulated by the `TreeListColumn` class, which is a `ColumnBase` class descendant. The `GridColumn` class (a column in the `DataGridControl`) is also derrived from `ColumnBase`. Thus, columns in the DataGrid and TreeList controls share many API members.
+TreeList columns are encapsulated by the [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md) class, which is a [`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md) class descendant. The [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) class (a column in the [`DataGridControl`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md)) is also derrived from [`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md). Thus, columns in the DataGrid and TreeList controls share many API members.
 
 The TreeList control does not automatically create columns once you bind the control to a data source. Four approaches allow you to create columns:
 
@@ -47,11 +47,11 @@ The TreeList control does not automatically create columns once you bind the con
 
 - **Automatic Column Generation**
 
-    Enable the `TreeListControl.AutoGenerateColumns` option to automatically generate missing columns once you bind the control to a data source. You can apply specific attributes (from the `System.ComponentModel` and `System.ComponentModel.DataAnnotations` namespaces) to properties of a business object to manage the automatic generation of columns, and customize settings of auto-generated columns (for instance, the column display name and order). See [Column Automatic Generation](#automatic-column-generation).
+    Enable the [`TreeListControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md) option to automatically generate missing columns once you bind the control to a data source. You can apply specific attributes (from the `System.ComponentModel` and `System.ComponentModel.DataAnnotations` namespaces) to properties of a business object to manage the automatic generation of columns, and customize settings of auto-generated columns (for instance, the column display name and order). See [Column Automatic Generation](#automatic-column-generation).
 
 - **Combining Manual Column Creation and Automatic Generation**
 
-    You can combine the two approaches above: create required columns manually in the `TreeList.Columns` collection, and then enable the `TreeListControl.AutoGenerateColumns` option to delegate the generation of other columns to the TreeList.
+    You can combine the two approaches above: create required columns manually in the `TreeList.Columns` collection, and then enable the [`TreeListControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md) option to delegate the generation of other columns to the TreeList.
 
 - **Column Generation from a View Model**
 
@@ -62,9 +62,9 @@ The TreeList control does not automatically create columns once you bind the con
 
 ## Bind Columns to Data
 
-The `TreeListColumn.FieldName` property allows you to bind a column to a field in the underlying data table, or to a public property of a business object. Once the column is bound, it retrieves values from the data source.
+The [`TreeListColumn.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) property allows you to bind a column to a field in the underlying data table, or to a public property of a business object. Once the column is bound, it retrieves values from the data source.
 
-TreeList also allows you to create unbound columns, whose values should be supplied manually, via the `TreeListControl.CustomUnboundColumnData` event. See [Unbound Columns](data-binding/unbound-columns.md) for more information.
+TreeList also allows you to create unbound columns, whose values should be supplied manually, via the [`TreeListControl.CustomUnboundColumnData`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomUnboundColumnData.md) event. See [Unbound Columns](data-binding/unbound-columns.md) for more information.
 
 It is not recommended to bind multiple TreeList columns to the same data field/property.
 
@@ -101,11 +101,11 @@ treeList1.Columns.Add(colFirstName);
 
 ## Automatic Column Generation
 
-Set the `AutoGenerateColumns` property to `true` (the default value is `false`) to enable automatic column generation for properties in the data source. When `AutoGenerateColumns` is set to `true`, the TreeList control fetches public properties from the data source, generates columns and binds them to the properties. If the control's `Columns` collection already contains a column bound to a specific property/field, no extra column bound to the same property/field is auto-generated.
+Set the [`AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md) property to `true` (the default value is `false`) to enable automatic column generation for properties in the data source. When [`AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md) is set to `true`, the TreeList control fetches public properties from the data source, generates columns and binds them to the properties. If the control's [`Columns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Columns.md) collection already contains a column bound to a specific property/field, no extra column bound to the same property/field is auto-generated.
 
-The `AutoGeneratingColumn` and `AutoGeneratedColumns` events allow you to customize auto-generated columns. The `AutoGeneratingColumn` event fires when an auto-generated column is about to be added to the `Columns` collection. The event allows you to prevent a column from being added to the collection. 
+The [`AutoGeneratingColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGeneratingColumn.md) and [`AutoGeneratedColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGeneratedColumns.md) events allow you to customize auto-generated columns. The [`AutoGeneratingColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGeneratingColumn.md) event fires when an auto-generated column is about to be added to the [`Columns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Columns.md) collection. The event allows you to prevent a column from being added to the collection. 
 
-The `AutoGeneratedColumns` event fires after all columns have been auto-generated.
+The [`AutoGeneratedColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGeneratedColumns.md) event fires after all columns have been auto-generated.
 
 When you assign another data source to the control, the TreeList first deletes columns that were previously auto-generated, and then auto-generates columns for the new data source.
 
@@ -136,16 +136,16 @@ The `System.ComponentModel.DataAnnotations.DisplayAttribute` is a general-purpos
 
 - `AutoGenerateField` — Specifies whether to auto-generate a corresponding column.
 
-- `Order` — Specifies the auto-generated column's visible position (`ColumnBase.VisibleIndex`). 
+- `Order` — Specifies the auto-generated column's visible position ([`ColumnBase.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md)). 
 
-- `Name` — Specifies the auto-generated column's caption (`ColumnBase.Header`).
+- `Name` — Specifies the auto-generated column's caption ([`ColumnBase.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md)).
 
 - `ShortName` — Equivalent to the `Name` parameter.
  
 - `GroupName` — Specifies the name of the band to associate with the auto-generated column. 
-This attribute value is used to initialize the `TreeListColumn.BandName` property if the `TreeListControl.AutoGenerateBands` option is `true` (default).
+This attribute value is used to initialize the [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) property if the [`TreeListControl.AutoGenerateBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateBands.md) option is `true` (default).
 
-    When Tree List encounters `DisplayAttribute.GroupName`, it checks for an existing band with a matching name (`TreeListBand.BandName`). If none exists, the control automatically creates the band and initializes its `TreeListBand.BandName` property with the `DisplayAttribute.GroupName` value.
+    When Tree List encounters `DisplayAttribute.GroupName`, it checks for an existing band with a matching name ([`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)). If none exists, the control automatically creates the band and initializes its [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property with the `DisplayAttribute.GroupName` value.
 
     The `DisplayAttribute.GroupName` parameter also supports nested bands. Use the '/' character to separate parent and child bands (for instance, "ParentBandName/ChildBandName"). 
     To include '/' as a literal, use "//".
@@ -174,7 +174,7 @@ public partial class MyBusinessObject : ObservableObject
 
 #### `DisplayName` Attribute
 
-The `System.ComponentModel.DisplayNameAttribute` attribute allows you to initialize an auto-generated column's caption (`ColumnBase.Header`).
+The `System.ComponentModel.DisplayNameAttribute` attribute allows you to initialize an auto-generated column's caption ([`ColumnBase.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md)).
 
 ``` csharp
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -224,11 +224,11 @@ public partial class MyBusinessObject : ObservableObject
 
 ## Generate Columns from a View Model
 
-You can populate the TreeList control with columns from a column source defined in a View Model. The column source is a collection of business objects from which `TreeListColumn` objects are generated according to a specified template. The following API members maintain column generation from a View Model:
+You can populate the TreeList control with columns from a column source defined in a View Model. The column source is a collection of business objects from which [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md) objects are generated according to a specified template. The following API members maintain column generation from a View Model:
 
-- `TreeListControl.ColumnsSource` — A collection of business objects used to generate treelist columns according to the `ColumnTemplate` template. 
+- [`TreeListControl.ColumnsSource`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnsSource.md) — A collection of business objects used to generate treelist columns according to the [`ColumnTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnTemplate.md) template. 
 
-- `TreeListControl.ColumnTemplate` — A template that initializes a `TreeListColumn` object from business objects stored in the column source.
+- [`TreeListControl.ColumnTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnTemplate.md) — A template that initializes a [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md) object from business objects stored in the column source.
 
 <!-- TODO
 пример
@@ -237,12 +237,12 @@ You can populate the TreeList control with columns from a column source defined 
 
 ## Move Columns
 
-Use the `TreeListColumn.VisibleIndex` property to specify the column's visual position. To hide the column, set its `TreeListColumn.VisibleIndex` property to **-1**, or set the `IsVisible` property to `false`.
+Use the [`TreeListColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) property to specify the column's visual position. To hide the column, set its [`TreeListColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) property to **-1**, or set the [`IsVisible`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/IsVisible.md) property to `false`.
 
 The control's default behavior allows a user to rearrange columns. Use the following properties to forbid column movement:
 
-- `TreeListControl.AllowColumnMoving` — Specifies whether a user can move any column.
-- `TreeListColumn.AllowMoving` — Specifies whether a user can move a specific column.
+- [`TreeListControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnMoving.md) — Specifies whether a user can move any column.
+- [`TreeListColumn.AllowMoving`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowMoving.md) — Specifies whether a user can move a specific column.
 
 ## Column Width
 
@@ -250,15 +250,15 @@ You can use the following properties to control column width in the TreeList and
 
 **TreeList settings:**
 
-- `TreeListColumn.Width` — The column width specified as a `GridLength` value. 
-- `TreeListColumn.MinWidth` — The column's minimum width.
-- `TreeListColumn.MaxWidth` — The column's maximum width.
+- [`TreeListColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md) — The column width specified as a `GridLength` value. 
+- [`TreeListColumn.MinWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MinWidth.md) — The column's minimum width.
+- [`TreeListColumn.MaxWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MaxWidth.md) — The column's maximum width.
 
 **TreeView settings:**
 
-- `TreeViewControl.CellWidth` - The width of the control's cells specified as a `GridLength` value. 
+- [`TreeViewControl.CellWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) - The width of the control's cells specified as a `GridLength` value. 
 
-The `TreeListColumn.Width` and `TreeViewControl.CellWidth` properties are of the `GridLength` type. The `GridLength` type allows you to set the column width to:
+The [`TreeListColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md) and [`TreeViewControl.CellWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) properties are of the `GridLength` type. The `GridLength` type allows you to set the column width to:
 
 - A fixed width (a number of pixels).
 - A weighted proportion of available space (the _star_ notation).
@@ -281,8 +281,8 @@ xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
 
 The following properties control column resize operations performed by users.
 
-- `TreeListControl.AllowColumnResizing` — Specifies whether a user can resize any column.
-- `TreeListColumn.AllowResizing` — Specifies whether a user can resize a specific column.
+- [`TreeListControl.AllowColumnResizing`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnResizing.md) — Specifies whether a user can resize any column.
+- [`TreeListColumn.AllowResizing`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowResizing.md) — Specifies whether a user can resize a specific column.
 
 
 
@@ -296,9 +296,9 @@ By default, the hierarchy column is the first visible column in the TreeList. If
 
 ![treelist-hierarchycolumn-anothercolumn](../../images/treelist-hierarchycolumn-anothercolumn.png)
 
-The `TreeListControl.TreeColumnFieldName` property allows you to designate any column as the hierarchy column. This property specifies the field name (`ColumnBase.FieldName`) of the column that should display the node hierarchy.
+The [`TreeListControl.TreeColumnFieldName`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/TreeColumnFieldName.md) property allows you to designate any column as the hierarchy column. This property specifies the field name ([`ColumnBase.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md)) of the column that should display the node hierarchy.
 
-You can then position this column (and therefore the node hierarchy) anywhere within the column layout using the `ColumnBase.VisibleIndex` property.
+You can then position this column (and therefore the node hierarchy) anywhere within the column layout using the [`ColumnBase.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) property.
 
 The following example assigns the _colDescription_ column as the hierarchy column and places it in the second position:
 
@@ -318,7 +318,7 @@ The Best Fit feature resizes columns to their optimal widths — the minimum wid
 
 ![bestfit-feature](../../images/bestfit-feature.png)
 
-Best Fit calculates the optimal widths for columns **in pixels** and assigns these values to the `TreeListColumn.Width` properties, replacing any previously set widths. 
+Best Fit calculates the optimal widths for columns **in pixels** and assigns these values to the [`TreeListColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md) properties, replacing any previously set widths. 
 
 !!! Note
 
@@ -342,12 +342,12 @@ Users can invoke the Best Fit functionality in the following ways:
 
 The Best Fit functionality is enabled by default. You can use the following properties to control Best Fit operations for all columns and individual columns.
 
-- `TreeListControl.AllowBestFit` (default is `true`) — Specifies whether Best Fit operations are enabled for all TreeList columns. You can override this global setting for individual columns using the `TreeListColumn.AllowBestFit` property.
-- `TreeListColumn.AllowBestFit` (default is `null`) — Specifies whether Best Fit operations are enabled for a specific column. If the `TreeListColumn.AllowBestFit` property is set to `null`, the actual setting is specified by the global `TreeListControl.AllowBestFit` property.
+- [`TreeListControl.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowBestFit.md) (default is `true`) — Specifies whether Best Fit operations are enabled for all TreeList columns. You can override this global setting for individual columns using the [`TreeListColumn.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md) property.
+- [`TreeListColumn.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md) (default is `null`) — Specifies whether Best Fit operations are enabled for a specific column. If the [`TreeListColumn.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md) property is set to `null`, the actual setting is specified by the global [`TreeListControl.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowBestFit.md) property.
 
 ### Best Fit Mode
 
-You can use the `TreeListControl.BestFitMode` and `TreeListColumn.BestFitMode` properties to control the scope of processed row values for Best Fit operations.
+You can use the [`TreeListControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md) and [`TreeListColumn.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md) properties to control the scope of processed row values for Best Fit operations.
 
 ``` xaml
 <mxtl:TreeListControl BestFitMode="Full" >
@@ -355,40 +355,40 @@ You can use the `TreeListControl.BestFitMode` and `TreeListColumn.BestFitMode` p
 
 #### Available Best Fit Calculation Modes
 
-- `BestFitMode.Fast` mode — Measures widths of unique row values, which significantly boosts Best Fit performance in most scenarios. 
+- [`BestFitMode.Fast`](../../API/Eremex.AvaloniaUI.Controls.DataControl/BestFitMode.md) mode — Measures widths of unique row values, which significantly boosts Best Fit performance in most scenarios. 
 
     !!! Note
 
         - `Fast` mode is not applicable if the display text of target cells is dependent on other cells. You need to switch to `Full` mode in this case.
 
-        - `Fast` mode may incorrectly calculate column widths if cell templates (`TreeListColumn.CellTemplate`) are used to assign custom editors, or cells show validation errors triggered by the data source (see `ShowItemsSourceErrors`).
+        - `Fast` mode may incorrectly calculate column widths if cell templates ([`TreeListColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md)) are used to assign custom editors, or cells show validation errors triggered by the data source (see [`ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md)).
 
-- `BestFitMode.Full` mode — Measures widths of all row values, including duplicates. Although this mode is slower than `Fast`, it corrrectly calculates column widths if cell templates or validation errors are used.
+- [`BestFitMode.Full`](../../API/Eremex.AvaloniaUI.Controls.DataControl/BestFitMode.md) mode — Measures widths of all row values, including duplicates. Although this mode is slower than `Fast`, it corrrectly calculates column widths if cell templates or validation errors are used.
 
 #### Automatic (Default) Best Fit Calculation Mode
 
 - `Fast` is the default mode in most cases.
 - `Full` is automatically activated as the default in the following scenarios:
-    - Cell templates (`TreeListColumn.CellTemplate`) are used to assign editors to columns.
-    - The control's `DataControlBase.ShowItemsSourceErrors` property is set to `true` and validation errors are applied to columns at the data source level (using validation attributes, the `IDataErrorInfo` interface, or the `INotifyDataErrorInfo` interface).
+    - Cell templates ([`TreeListColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md)) are used to assign editors to columns.
+    - The control's [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) property is set to `true` and validation errors are applied to columns at the data source level (using validation attributes, the `IDataErrorInfo` interface, or the `INotifyDataErrorInfo` interface).
 
 #### Choose Best Fit Calculation Mode
 
 Use the following properties to specify Best Fit calculation mode for all or individual columns:
 
-- `TreeListControl.BestFitMode` — Specifies the global Best Fit calculation mode for all TreeList columns.
-When `TreeListControl.BestFitMode` is set to `null` (the initial value), Best Fit calculation mode is determined [automatically](#automatic-default-best-fit-calculation-mode). Use the `TreeListColumn.BestFitMode` property to override this global setting for specific columns.
+- [`TreeListControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md) — Specifies the global Best Fit calculation mode for all TreeList columns.
+When [`TreeListControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md) is set to `null` (the initial value), Best Fit calculation mode is determined [automatically](#automatic-default-best-fit-calculation-mode). Use the [`TreeListColumn.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md) property to override this global setting for specific columns.
 
-- `TreeListColumn.BestFitMode` — Allows you to set Best Fit calculation mode for individual columns, overriding the `TreeListControl.BestFitMode` property. If the `TreeListColumn.BestFitMode` property is `null` (the initial value), the actual setting is specified by the control's `TreeListControl.BestFitMode` property.
+- [`TreeListColumn.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md) — Allows you to set Best Fit calculation mode for individual columns, overriding the [`TreeListControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md) property. If the [`TreeListColumn.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md) property is `null` (the initial value), the actual setting is specified by the control's [`TreeListControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md) property.
 
 ### Call Best Fit Operations in Code
 
 Use the following methods to resize TreeList columns to their optimal widths:
 
-- `TreeListControl.BestFit(TreeListColumn column)` — Resizes the specified column to the width required to fully display its content.
-- `TreeListControl.BestFitAllColumns()` — Resizes all columns to the widths required to fully display their contents.
+- [`TreeListControl.BestFit(TreeListColumn column)`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFit.md) — Resizes the specified column to the width required to fully display its content.
+- [`TreeListControl.BestFitAllColumns()`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitAllColumns.md) — Resizes all columns to the widths required to fully display their contents.
 
-To perform Best-Fit operations when the TreeList control is initialized, call the `BestFit` or `BestFitAllColumns` method within a `TreeListControl.AttachedToVisualTree` event handler.
+To perform Best-Fit operations when the TreeList control is initialized, call the [`BestFit`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFit.md) or [`BestFitAllColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitAllColumns.md) method within a `TreeListControl.AttachedToVisualTree` event handler.
 
 ## Reset Column Width User Modifications
 
@@ -398,8 +398,8 @@ After a user changes column widths (by dragging or using Best Fit), the _Reset C
 
 ### Related API
 
-- `TreeListControl.AllowResetColumnWidth` (default is `true`) — Specifies whether the _Reset Column Width_ command is availble in column context menus. If this property is disabled, users cannot undo their column resize operations through the UI. The `TreeListControl.AllowResetColumnWidth` does not affect resetting column width using the `TreeListControl.ResetColumnWidth` method.
-- `TreeListControl.ResetColumnWidth` method — Resizes columns to their original widths, as defined in XAML or code-behind before any user modifications.
+- [`TreeListControl.AllowResetColumnWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowResetColumnWidth.md) (default is `true`) — Specifies whether the _Reset Column Width_ command is availble in column context menus. If this property is disabled, users cannot undo their column resize operations through the UI. The [`TreeListControl.AllowResetColumnWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowResetColumnWidth.md) does not affect resetting column width using the [`TreeListControl.ResetColumnWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ResetColumnWidth.md) method.
+- [`TreeListControl.ResetColumnWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ResetColumnWidth.md) method — Resizes columns to their original widths, as defined in XAML or code-behind before any user modifications.
 
 
 
@@ -419,15 +419,15 @@ After a user changes column widths (by dragging or using Best Fit), the _Reset C
 
 ## Column Headers
 
-TreeList column headers are displayed in the header panel. You can hide this panel with the `TreeListControl.ShowColumnHeaders` property. 
+TreeList column headers are displayed in the header panel. You can hide this panel with the [`TreeListControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnHeaders.md) property. 
 
-The panel's height is automatically adjusted to fit contents of column headers. Use the `HeaderPanelMinHeight` property to limit the panel's minimum height.
+The panel's height is automatically adjusted to fit contents of column headers. Use the [`HeaderPanelMinHeight`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/HeaderPanelMinHeight.md) property to limit the panel's minimum height.
 
-A column header initially displays a caption (text label), which is a text representation of the `ColumnBase.Header` property. If the `ColumnBase.Header` property is not set, the column caption is generated from the column's field name (`ColumnBase.FieldName`).
+A column header initially displays a caption (text label), which is a text representation of the [`ColumnBase.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) property. If the [`ColumnBase.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) property is not set, the column caption is generated from the column's field name ([`ColumnBase.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md)).
 
-Use the `ColumnBase.HeaderTemplate` property to specify a template used to render the column header. The template allows you to display images and custom controls, and to render text in a custom manner.
+Use the [`ColumnBase.HeaderTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderTemplate.md) property to specify a template used to render the column header. The template allows you to display images and custom controls, and to render text in a custom manner.
 
-The following code displays an image before the column's caption. The `<TextBlock Text="{Binding}">` expression displays the contents of the column's `Header` property:
+The following code displays an image before the column's caption. The `<TextBlock Text="{Binding}">` expression displays the contents of the column's [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) property:
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -448,7 +448,7 @@ xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
 </mxtl:TreeListControl>
 ```
 
-Use the `ColumnBase.HeaderHorizontalAlignment` and `ColumnBase.HeaderVerticalAlignment` properties to align a column header's content horizontally and vertically. 
+Use the [`ColumnBase.HeaderHorizontalAlignment`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderHorizontalAlignment.md) and [`ColumnBase.HeaderVerticalAlignment`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderVerticalAlignment.md) properties to align a column header's content horizontally and vertically. 
 
 ## Column Sorting 
 
@@ -460,7 +460,7 @@ To learn how to retrieve cell values for specific nodes, see [Nodes](nodes.md).
 
 ## Column Header Tooltips
 
-Use the `HeaderToolTip` property to specify custom tooltips for column headers. Custom tooltips are displayed when hovering over column headers regardless of whether column header text is trimmed or not.
+Use the [`HeaderToolTip`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderToolTip.md) property to specify custom tooltips for column headers. Custom tooltips are displayed when hovering over column headers regardless of whether column header text is trimmed or not.
 
 ``` xml
 <mxtl:TreeListColumn FieldName="Position" HeaderToolTip="The job title or role of the employee"/>
@@ -479,9 +479,9 @@ If the total column width exceeds the control's viewport, a scrollbar appears to
 
 !!! tip
 
-    The total column width is calculated as a sum of individual column widths (see `TreeListColumn.Width`). To activate a horizontal scrollbar, set the widths of individual columns so that their sum exceeds the viewport width. Do not use star notation ("*") for column widths when you use fixed columns.
+    The total column width is calculated as a sum of individual column widths (see [`TreeListColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md)). To activate a horizontal scrollbar, set the widths of individual columns so that their sum exceeds the viewport width. Do not use star notation ("*") for column widths when you use fixed columns.
 
-To fix a column or restore it to its normal state, set the `TreeListColumn.FixedMode` property to one of the following values:
+To fix a column or restore it to its normal state, set the [`TreeListColumn.FixedMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FixedMode.md) property to one of the following values:
 
 - `Left` — Pins the column to the left edge. 
 - `Right` — Pins the column to the right edge. 
@@ -494,13 +494,13 @@ To fix a column or restore it to its normal state, set the `TreeListColumn.Fixed
 
 ### _Fixed_ Menu
 
-Users can fix a column at runtime using the built-in _Fixed_ sub-menu available from the column's context menu. Set the control's `ShowColumnMenuFixedItem` property to `true` to enable this _Fixed_ sub-menu:
+Users can fix a column at runtime using the built-in _Fixed_ sub-menu available from the column's context menu. Set the control's [`ShowColumnMenuFixedItem`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnMenuFixedItem.md) property to `true` to enable this _Fixed_ sub-menu:
 
 ![column-columnmenu-fixed](../../images/column-columnmenu-fixed.png)
 
 ### Fixed Column Position
 
-When a column is fixed (pinned) or restored to its normal state, its visible position (synced with the `TreeListColumn.VisibleIndex` property) is automatically updated.
+When a column is fixed (pinned) or restored to its normal state, its visible position (synced with the [`TreeListColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) property) is automatically updated.
 
 - Fixing to the left: The column is placed after existing left-fixed columns.
 - Fixing to the right: The column is placed before existing right-fixed columns.
@@ -509,20 +509,20 @@ When a column is fixed (pinned) or restored to its normal state, its visible pos
 
 ### Fixed Column Width
 
-To change a fixed column's width, set the `TreeListColumn.Width` property to an absolute pixel value, or to `Auto` for automatic calculation based on cell content. Fixed columns do not support the star notation (proportional sizing) to set column width. 
+To change a fixed column's width, set the [`TreeListColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md) property to an absolute pixel value, or to `Auto` for automatic calculation based on cell content. Fixed columns do not support the star notation (proportional sizing) to set column width. 
 
 When a column with a `star` width is fixed, its width is automatically reset to 120 pixels.
 
 ### Horizontal Scrollbar Display Mode
 
-The horizontal scrollbar is displayed across scrollable columns, by default. Enable the `ExtendScrollbarToFixedColumns` property to display the horizontal scrollbar across all columns, including the fixed ones.
+The horizontal scrollbar is displayed across scrollable columns, by default. Enable the [`ExtendScrollbarToFixedColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ExtendScrollbarToFixedColumns.md) property to display the horizontal scrollbar across all columns, including the fixed ones.
 
 ![fixedcolumns-scrollbar-extendtofixedcolumns](../../images/fixedcolumns-scrollbar-extendtofixedcolumns.png)
 
 
 ### Related API
 
-- `TreeListControl.FixedColumnSeparatorWidth` — Specifies the width of separators that delimit fixed columns from scrollable columns.
+- [`TreeListControl.FixedColumnSeparatorWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/FixedColumnSeparatorWidth.md) — Specifies the width of separators that delimit fixed columns from scrollable columns.
 
 
 

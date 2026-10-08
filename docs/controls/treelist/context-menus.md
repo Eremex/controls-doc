@@ -14,14 +14,14 @@ When a user right-clicks a TreeList column header, the control displays the buil
 
 ![treelist-columnheadermenu](../../images/treelist-columnheadermenu.png)
 
-Use the `TreeListControl.ColumnMenu` property to customize this menu.
-You can assign a `Eremex.AvaloniaUI.Controls.Bars.PopupMenu` object to the `TreeListControl.ColumnMenu` property to replace the default menu.
+Use the [`TreeListControl.ColumnMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnMenu.md) property to customize this menu.
+You can assign a [`Eremex.AvaloniaUI.Controls.Bars.PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) object to the [`TreeListControl.ColumnMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnMenu.md) property to replace the default menu.
 
 To customize the existing column header menu (add or remove default items), access the menu after it has been initialized (for instance, within your TreeList's `Initialized` event handler), and then modify the menu.
 
 ### Data Context
 
-The `DataContext` property of the column header menu and its items (`ToolbarButtonItem` objects) specifies the `TreeListColumn` object for which the menu has been invoked. 
+The `DataContext` property of the column header menu and its items ([`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md) objects) specifies the [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md) object for which the menu has been invoked. 
 
 ### Example - How to replace the default column header menu
 
@@ -29,9 +29,9 @@ The following code creates a custom column header menu that contains the _Clear 
 
 ![treelist-contextmenus-columnmenu-replace-example](../../images/treelist-contextmenus-columnmenu-replace-example.png)
 
-Take note of the initialization of the `Command` and `CommandParameter` properties for the menu item in the code below. The expression `CommandParameter="{Binding FieldName}"` specifies binding to the `FieldName` property of the menu item's `DataContext` (`TreeListColumn.FieldName`).
+Take note of the initialization of the [`Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md) and [`CommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/CommandParameter.md) properties for the menu item in the code below. The expression `CommandParameter="{Binding FieldName}"` specifies binding to the [`FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) property of the menu item's `DataContext` ([`TreeListColumn.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md)).
 
-A `TreeListColumn`'s `DataContext` matches the Tree List's `DataContext` (a _ViewModel_ object in this example). This allows you to access the View Model and its _ClearColumnDataCommand_ command using the expression: `Command="{Binding DataContext.ClearColumnDataCommand}"`.
+A [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md)'s `DataContext` matches the Tree List's `DataContext` (a _ViewModel_ object in this example). This allows you to access the View Model and its _ClearColumnDataCommand_ command using the expression: `Command="{Binding DataContext.ClearColumnDataCommand}"`.
 
 
 ``` xml
@@ -109,22 +109,22 @@ void UpdateTreeList(TreeListControl treeList)
 
 ## Row Cell Menu (TreeList and TreeView)
 
-TreeList and TreeView controls support a built-in context menu for row cells (see the `TreeListControlBase.RowCellMenu` property). This menu is initially empty, and therefore hidden. To show the row cell menu, populate it with items in XAML or in code-behind.
+TreeList and TreeView controls support a built-in context menu for row cells (see the [`TreeListControlBase.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RowCellMenu.md) property). This menu is initially empty, and therefore hidden. To show the row cell menu, populate it with items in XAML or in code-behind.
 
 ### Data Context
 
 The `DataContext` of the row cell menu and its items contains a `CellData` object, which allows you to access context specific information:
 
-- `CellData.DataControl` — Returns the container control (`TreeListControl`) for which the menu is invoked. 
+- `CellData.DataControl` — Returns the container control ([`TreeListControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md)) for which the menu is invoked. 
 - `CellData.Row` — Returns the clicked node's underlying data object. 
 
 ### Example - How to show the same context menu commands for all rows
 
-The following example adds the "_Delete Row_" command to the row cell menu (`TreeListControlBase.RowCellMenu`) for all rows. 
+The following example adds the "_Delete Row_" command to the row cell menu ([`TreeListControlBase.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RowCellMenu.md)) for all rows. 
 
 ![treelist-contextmenus-rowmenu-deleterow-example](../../images/treelist-contextmenus-rowmenu-deleterow-example.png)
 
-The XAML code below assigns a popup menu to the `TreeListControlBase.RowCellMenu` property. The popup menu contains a single item (`ToolbarButtonItem`) bound to the _DeleteRowCommand_ command defined in a View Model (a Tree List's `DataContext`).
+The XAML code below assigns a popup menu to the [`TreeListControlBase.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RowCellMenu.md) property. The popup menu contains a single item ([`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)) bound to the _DeleteRowCommand_ command defined in a View Model (a Tree List's `DataContext`).
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -276,13 +276,13 @@ public partial class Department : ObservableObject
 
 ### Example - How to show different context menu commands for different rows
 
-The following example initializes the context menu for rows (`TreeListControlBase.RowCellMenu`), and displays different menu items for root and nested rows.
+The following example initializes the context menu for rows ([`TreeListControlBase.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RowCellMenu.md)), and displays different menu items for root and nested rows.
 
 The root context menu displays the "_Add Child Dep_" command, while the context menu for nested rows displays the "_Delete Row_" command.
 
 ![treelist-contextmenus-rowcellmenu-different-example](../../images/treelist-contextmenus-rowcellmenu-different-example.png)
 
-The XAML code defines the context menu (a `PopupMenu` object) with the "_Add Child Dep_" and "_Delete Row_" commands. 
+The XAML code defines the context menu (a [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) object) with the "_Add Child Dep_" and "_Delete Row_" commands. 
 The "_Add Child Dep_" command is displayed for root nodes. The "_Delete Row_" command is displayed for nested nodes.
 Visibility of these commands is managed dynamically by the business object's _IsRoot_ property.
 
@@ -460,18 +460,18 @@ This example shows how to populate a TreeList control's row cell menu with items
 
 ![treelist-contextmenus-rowcellmenu-fromViewModel-example](../../images/treelist-contextmenus-rowcellmenu-fromViewModel-example.png)
 
-The row cell menu (`TreeListControlBase.RowCellMenu`) is populated with items (`ToolbarButtonItem` objects) from an item source specified by the `PopupMenu.ItemsSource` collection. In this example, the `PopupMenu.ItemsSource` property is bound to the _MenuItems_ collection defined in the main View Model using the following binding expression:
+The row cell menu ([`TreeListControlBase.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RowCellMenu.md)) is populated with items ([`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md) objects) from an item source specified by the [`PopupMenu.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ItemsSource.md) collection. In this example, the [`PopupMenu.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ItemsSource.md) property is bound to the _MenuItems_ collection defined in the main View Model using the following binding expression:
 
 ``` xml
 <mxb:PopupMenu ItemsSource="{Binding DataControl.DataContext.MenuItems}">
 ```
 
-When a `PopupMenu` is displayed for a TreeList cell, the menu's `DataContext` contains a `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData` object. The `CellData` object exposes the `DataControl` property, which allows you to access the control for which the menu is displayed. 
+When a [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) is displayed for a TreeList cell, the menu's `DataContext` contains a `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData` object. The `CellData` object exposes the `DataControl` property, which allows you to access the control for which the menu is displayed. 
 The main View Model is assigned to the control's `DataContext`. Thus, the `DataControl.DataContext.MenuItems` syntax refers to the _MenuItems_ collection defined in the main View Model.
 
 The `CellData` object also contains other properties that allow you to access cell-related information (column, row object, etc.).
 
-The menu items are initialized using styles. The `DataContext` of the menu items are elements of the `PopupMenu.ItemsSource` collection. In this example, the `PopupMenu.ItemsSource` property stores a collection of _MenuItemViewModel_ objects. The following snippet binds the `ToolbarButtonItem.Header` and `ToolbarButtonItem.Command` properties to the  _MenuItemViewModel.Header_ and _MenuItemViewModel.Command_ properties, respectively.
+The menu items are initialized using styles. The `DataContext` of the menu items are elements of the [`PopupMenu.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ItemsSource.md) collection. In this example, the [`PopupMenu.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ItemsSource.md) property stores a collection of _MenuItemViewModel_ objects. The following snippet binds the [`ToolbarButtonItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) and [`ToolbarButtonItem.Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md) properties to the  _MenuItemViewModel.Header_ and _MenuItemViewModel.Command_ properties, respectively.
 
 ``` xml
 <mxb:PopupMenu.Styles>
@@ -482,7 +482,7 @@ The menu items are initialized using styles. The `DataContext` of the menu items
 </mxb:PopupMenu.Styles>
 ```
 
-A `ToolbarButtonItem`'s command requires information about the row that has been right-clicked. To pass the data row to the command, the XAML code sets the `ToolbarButtonItem.CommandParameter` property, as follows:
+A [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)'s command requires information about the row that has been right-clicked. To pass the data row to the command, the XAML code sets the [`ToolbarButtonItem.CommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/CommandParameter.md) property, as follows:
 
 ``` xml
 xmlns:mxvis="clr-namespace:Eremex.AvaloniaUI.Controls.DataControl.Visuals;
@@ -497,7 +497,7 @@ xmlns:mxvis="clr-namespace:Eremex.AvaloniaUI.Controls.DataControl.Visuals;
 </mxb:PopupMenu.Styles>
 ```
 
-Here, the `$parent[mxvis:CellControl]` expression traverses the logical tree to locate a `CellControl` object (it is a parent of the `ToolbarButtonItem`'s `DataContext`). The `CellControl.DataContext` object contains an `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData` object, which allows you to access the data row from the `CellData.Row` property.
+Here, the `$parent[mxvis:CellControl]` expression traverses the logical tree to locate a `CellControl` object (it is a parent of the [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)'s `DataContext`). The `CellControl.DataContext` object contains an `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData` object, which allows you to access the data row from the `CellData.Row` property.
 
 The complete code is shown below.                
 
@@ -683,13 +683,13 @@ public partial class Department : ObservableObject
 
 ## Customize Menus on Showing
 
-You can handle the `PopupMenu.Opening` event to dynamically customize a TreeList's menu. The event occurs when the PopupMenu is about to be displayed.
+You can handle the [`PopupMenu.Opening`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Opening.md) event to dynamically customize a TreeList's menu. The event occurs when the PopupMenu is about to be displayed.
 
 ## Example - How to show a context menu for the first column
 
-The following example assign an empty `PopupMenu` to the `TreeListControlBase.RowCellMenu` property, and then handles the `PopupMenu.Opening` event to populate the menu with items when a user right-clicks cells within the first visible TreeList column. The menu remains empty (and thus it's not displayed) when a user right-clicks within other columns.
+The following example assign an empty [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) to the [`TreeListControlBase.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RowCellMenu.md) property, and then handles the [`PopupMenu.Opening`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Opening.md) event to populate the menu with items when a user right-clicks cells within the first visible TreeList column. The menu remains empty (and thus it's not displayed) when a user right-clicks within other columns.
 
-The created menu contains the "_Show/Hide Root Indent_" check button that toggles the visibility of the TreeList's indent (the `TreeListControlBase.ShowRootIndent` property).
+The created menu contains the "_Show/Hide Root Indent_" check button that toggles the visibility of the TreeList's indent (the [`TreeListControlBase.ShowRootIndent`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ShowRootIndent.md) property).
 
 ![treelist-contextmenus-customizeonshowing](../../images/treelist-contextmenus-customizeonshowing.png)
 
@@ -733,11 +733,11 @@ void ShowRootIndentCommand(TreeListControl treeList)
 
 ## Show a Context Menu for Controls Using a ToolbarManager's Attached Property
 
-The `Eremex.AvaloniaUI.Controls.Bars.ToolbarManager` component provides the `ContextPopup` attached property that allows you to assign a context menu to any control, including TreeList and TreeView. This context menu is displayed for TreeList/TreeView regions that have no default context menus, and for regions with empty default menus.
+The [`Eremex.AvaloniaUI.Controls.Bars.ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) component provides the `ContextPopup` attached property that allows you to assign a context menu to any control, including TreeList and TreeView. This context menu is displayed for TreeList/TreeView regions that have no default context menus, and for regions with empty default menus.
 
 ### Example - How to assign a context menu using the _ToolbarManager.ContextPopup_ attached property
 
-The following code uses the `ToolbarManager.ContextPopup` attached property to specify a context menu for a TreeList control. The menu contains the _Show Column Header Panel_/_Hide Column Header Panel_ menu check item which toggles the visibility of the `TreeListControl.ShowColumnHeaders` option.
+The following code uses the `ToolbarManager.ContextPopup` attached property to specify a context menu for a TreeList control. The menu contains the _Show Column Header Panel_/_Hide Column Header Panel_ menu check item which toggles the visibility of the [`TreeListControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnHeaders.md) option.
 
 ![treelist-contextmenus-toolbarmanager-example](../../images/treelist-contextmenus-toolbarmanager-example.png)
 

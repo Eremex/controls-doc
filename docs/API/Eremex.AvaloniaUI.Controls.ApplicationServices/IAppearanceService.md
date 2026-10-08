@@ -2,6 +2,12 @@
 
 Lists the appearance choices an application offers and applies the chosen one.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public interface IAppearanceService : INotifyPropertyChanged
 ```
@@ -14,12 +20,12 @@ public interface IAppearanceService : INotifyPropertyChanged
 | [Palettes](IAppearanceService/Palettes.md) { get; } | The colour palettes on offer. Empty when the current theme has no palettes. |
 | [SelectedDensity](IAppearanceService/SelectedDensity.md) { get; set; } | The chosen density. Assigning it resizes the controls of the running application at once: paddings, row heights and the like follow the density, the colours do not change. |
 | [SelectedPalette](IAppearanceService/SelectedPalette.md) { get; set; } | The chosen palette. Assigning it recolours the running application at once. |
-| [SelectedTheme](IAppearanceService/SelectedTheme.md) { get; set; } | The chosen variant. Assigning it recolours the running application at once. |
-| [Themes](IAppearanceService/Themes.md) { get; } | The light/dark variants on offer, normally the system default plus an explicit light and dark. |
+| [SelectedThemeVariant](IAppearanceService/SelectedThemeVariant.md) { get; set; } | The chosen variant. Assigning it recolours the running application at once. |
+| [ThemeVariants](IAppearanceService/ThemeVariants.md) { get; } | The light/dark variants on offer, normally the system default plus an explicit light and dark. |
 
 ## Remarks
 
-Meant to be bound straight to a selector — a ribbon gallery, a combo box, a menu: assigning [`SelectedTheme`](./IAppearanceService/SelectedTheme.md) or [`SelectedPalette`](./IAppearanceService/SelectedPalette.md) applies the change immediately, so a view model needs no code of its own beyond exposing this service.
+Meant to be bound straight to a selector — a ribbon gallery, a combo box, a menu: assigning [`SelectedThemeVariant`](./IAppearanceService/SelectedThemeVariant.md) or [`SelectedPalette`](./IAppearanceService/SelectedPalette.md) applies the change immediately, so a view model needs no code of its own beyond exposing this service.
 
 Which palettes and densities exist depends on the theme in use; a theme that offers neither simply reports empty [`Palettes`](./IAppearanceService/Palettes.md) and [`Densities`](./IAppearanceService/Densities.md) lists.
 

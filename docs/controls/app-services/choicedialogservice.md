@@ -6,7 +6,7 @@ seealso: []
 
 # IChoiceDialogService
 
-`IChoiceDialogService` provides a platform-agnostic way to show a modal dialog with an arbitrary set of buttons and return the result of the pressed one. The dialog result can be a `string`, `bool`, enumeration value, or any other type. From your ViewModel, you can use `IChoiceDialogService` to display a dialog and receive a strongly typed answer, without referencing any window type.
+[`IChoiceDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService.md) provides a platform-agnostic way to show a modal dialog with an arbitrary set of buttons and return the result of the pressed one. The dialog result can be a `string`, `bool`, enumeration value, or any other type. From your ViewModel, you can use [`IChoiceDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService.md) to display a dialog and receive a strongly typed answer, without referencing any window type.
 
 <!-- TODO
 image
@@ -21,8 +21,8 @@ Main features include:
 - Customizable button placement — Dialog buttons support the `Dock` property which allows you to forcibly place buttons first or last.
 - Default button — You can mark a specific button as default. When the user presses ENTER, the dialog invokes this button's command.
 - Cancel button — Mark any button with `IsCancel` to make it respond to ESC. 
-- Automatic owner — The owner window is resolved by the underlying `IDialogService` through `IWindowsManager`, so it does not need to be specified explicitly.
-- Choice buttons are always enabled — Unlike [IDialogService](dialogservice.md), which supports `CanOk` for validation, `IChoiceDialogService` has no mechanism to disable individual choices based on input state.
+- Automatic owner — The owner window is resolved by the underlying [`IDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IDialogService.md) through [`IWindowsManager`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IWindowsManager.md), so it does not need to be specified explicitly.
+- Choice buttons are always enabled — Unlike [IDialogService](dialogservice.md), which supports `CanOk` for validation, [`IChoiceDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService.md) has no mechanism to disable individual choices based on input state.
 
 ## Interface Definition
 
@@ -57,7 +57,7 @@ See also: [Handle a Dismissed Dialog](#handle-a-dismissed-dialog).
 
 ## DialogChoice<T>
 
-Each choice button in the dialog is described by a `DialogChoice<T>` instance:
+Each choice button in the dialog is described by a [`DialogChoice<T>`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T.md) instance:
 
 ```csharp
 public sealed class DialogChoice<T>
@@ -86,11 +86,11 @@ public sealed class DialogChoice<T>
 
 ## How to Use IChoiceDialogService
 
-In your ViewModel, call the `IChoiceDialogService.Show` method to display the dialog with specified choice buttons. The method returns the `Result` value of the pressed choice button.
+In your ViewModel, call the [`IChoiceDialogService.Show`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService/Show.md) method to display the dialog with specified choice buttons. The method returns the `Result` value of the pressed choice button.
 
 ### Access the Service
 
-There are two ways to access an `IChoiceDialogService` object in a ViewModel:
+There are two ways to access an [`IChoiceDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService.md) object in a ViewModel:
 
 - Through the `Service<T>()` helper method. This is a convenient approach to obtain registered application services shipped with the Eremex Controls library.
 - Through constructor injection.
@@ -136,7 +136,7 @@ public partial class MyViewModel : ObservableObject
 }
 ```
 
-In the App.axaml.cs file, ensure that Eremex application services are registered using `SimpleServiceProvider` and `ApplicationServicesContext` as follows:
+In the App.axaml.cs file, ensure that Eremex application services are registered using [`SimpleServiceProvider`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/SimpleServiceProvider.md) and [`ApplicationServicesContext`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ApplicationServicesContext.md) as follows:
 
 ```csharp
 public class App : Application
@@ -159,7 +159,7 @@ public class App : Application
 
 #### Constructor Injection
 
-Implement a constructor in your ViewModel with `IChoiceDialogService` as a parameter. When you instantiate the ViewModel, pass the service object to this constructor.
+Implement a constructor in your ViewModel with [`IChoiceDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService.md) as a parameter. When you instantiate the ViewModel, pass the service object to this constructor.
 
 ```csharp
 public partial class MyViewModel
@@ -192,9 +192,9 @@ public partial class MyViewModel
 
 ### Return a String Result
 
-To return a string value when a dialog button is clicked, use `DialogChoice<string>` for that button. The value associated with this button is specified by the _result_ parameter of the `DialogChoice<T>` constructor.
+To return a string value when a dialog button is clicked, use [`DialogChoice<string>`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T.md) for that button. The value associated with this button is specified by the _result_ parameter of the [`DialogChoice<T>`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T.md) constructor.
 
-The following example shows a dialog with three buttons. Specific dialog results (string values — "log", "retry", and "close") are associated with these buttons. The dialog's `Show` method returns a corresponding value when one of its buttons is clicked.
+The following example shows a dialog with three buttons. Specific dialog results (string values — "log", "retry", and "close") are associated with these buttons. The dialog's [`Show`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService/Show.md) method returns a corresponding value when one of its buttons is clicked.
 
 <!-- TODO image
 app-services-ichoicedialogservice-custom-captions
@@ -220,9 +220,9 @@ private void ShowDialogWithCustomCaptions()
 
 ### Return a Boolean Result
 
-To return a Boolean value when a dialog button is clicked, use `DialogChoice<bool>` for that button. The value associated with this button is specified by the _result_ parameter of the `DialogChoice<T>` constructor.
+To return a Boolean value when a dialog button is clicked, use [`DialogChoice<bool>`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T.md) for that button. The value associated with this button is specified by the _result_ parameter of the [`DialogChoice<T>`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T.md) constructor.
 
-The following example shows a dialog with two buttons. Specific dialog results (`true` and `false`) are associated with these buttons. The dialog's `Show` method returns a corresponding value when one of its buttons is clicked.
+The following example shows a dialog with two buttons. Specific dialog results (`true` and `false`) are associated with these buttons. The dialog's [`Show`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService/Show.md) method returns a corresponding value when one of its buttons is clicked.
 
 <!-- TODO image
 app-services-ichoicedialogservice-boolean-result
@@ -248,9 +248,9 @@ See also: [Handle a Dismissed Dialog](#handle-a-dismissed-dialog).
 
 ### Return an Enum Result
 
-To return an enumeration value when a dialog button is clicked, use `DialogChoice< enum >` for that button. The value associated with this button is specified by the _result_ parameter of the `DialogChoice<T>` constructor.
+To return an enumeration value when a dialog button is clicked, use [`DialogChoice< enum >`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T.md) for that button. The value associated with this button is specified by the _result_ parameter of the [`DialogChoice<T>`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T.md) constructor.
 
-The following example shows a dialog with three buttons. Specific dialog results (`DialogResult.Abort`, `DialogResult.Retry`, and `DialogResult.Ignore`) are associated with these buttons. The dialog's `Show` method returns a corresponding value when one of its buttons is clicked.
+The following example shows a dialog with three buttons. Specific dialog results ([`DialogResult.Abort`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogResult.md), [`DialogResult.Retry`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogResult.md), and [`DialogResult.Ignore`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogResult.md)) are associated with these buttons. The dialog's [`Show`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService/Show.md) method returns a corresponding value when one of its buttons is clicked.
 
 <!-- TODO image
 app-services-ichoicedialogservice-enum-result
@@ -276,7 +276,7 @@ private void ShowDialogWithEnumResult()
 
 ### Set Button Placement
 
-Use the `DialogChoice<T>.Dock` property to forcibly position specific buttons first (set the `Dock` property to `DockType.Left`) or last (set the `Dock` property to `DockType.Right`) among all buttons. The `Dock` property defaults to `DockType.Right`.
+Use the [`DialogChoice<T>.Dock`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T/Dock.md) property to forcibly position specific buttons first (set the [`Dock`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T/Dock.md) property to [`DockType.Left`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md)) or last (set the [`Dock`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T/Dock.md) property to [`DockType.Right`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md)) among all buttons. The [`Dock`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T/Dock.md) property defaults to [`DockType.Right`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md).
 
 <!-- TODO image
 app-services-ichoicedialogservice-docked-choices
@@ -304,13 +304,13 @@ private void ShowDialogWithCustomButtonPlacement()
 
 ## Handle a Dismissed Dialog
 
-When the user dismisses the dialog by clicking the caption 'x' button, the `Show` method returns `default(T)`:
+When the user dismisses the dialog by clicking the caption 'x' button, the [`Show`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService/Show.md) method returns `default(T)`:
 
 - For reference types (`string`, etc.), the result is `null`.
 - For value types (`bool`, enums, etc.), the result is the default value of the type (`false` for a Boolean type, `0` for an enumeration, etc.)
 
 
-If the dialog contains a cancel button (a choice button whose `IsCancel` property is `true`), clicking it or pressing Escape closes the dialog with that button's result. The caption 'x' button still closes the dialog with the `default(T)` result.
+If the dialog contains a cancel button (a choice button whose [`IsCancel`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T/IsCancel.md) property is `true`), clicking it or pressing Escape closes the dialog with that button's result. The caption 'x' button still closes the dialog with the `default(T)` result.
 
 ### Example — Handle a Dialog's Dismissal
 

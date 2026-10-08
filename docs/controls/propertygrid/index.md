@@ -6,7 +6,7 @@ seealso: []
 
 # PropertyGrid
 
-The `PropertyGridControl` control allows a user to browse properties of a single or multiple objects. The control displays public properties and their values of a bound object(s) as a vertical list, and allows a user to edit the property values.
+The [`PropertyGridControl`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl.md) control allows a user to browse properties of a single or multiple objects. The control displays public properties and their values of a bound object(s) as a vertical list, and allows a user to edit the property values.
 
 ![propertygrid](../../images/propertygrid.png)
 

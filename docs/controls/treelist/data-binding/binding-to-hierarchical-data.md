@@ -22,22 +22,22 @@ In a typical hierarchical data source, a business object has a property that sto
 
 When bound to a hierarchical data source, TreeList and TreeView controls load nodes on demand by default: child nodes are dynamically loaded when a parent node is expanded. 
 
-Set the `AllowDynamicDataLoading` property to `false` to load all nodes simultaneously after you bind the control to the data source.
+Set the [`AllowDynamicDataLoading`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/AllowDynamicDataLoading.md) property to `false` to load all nodes simultaneously after you bind the control to the data source.
 
 If you use dynamic node loading, the TreeList and TreeView controls do not have access to nodes (and their underlying data) that haven't been loaded. This applies the following restrictions to the node checking and filter/search functionalities:
 
-- When you check a parent node in recursive mode (see `AllowRecursiveNodeChecking`), the control checks this node along with currently loaded child nodes. The control does not check child nodes that haven't been loaded.
+- When you check a parent node in recursive mode (see [`AllowRecursiveNodeChecking`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/AllowRecursiveNodeChecking.md)), the control checks this node along with currently loaded child nodes. The control does not check child nodes that haven't been loaded.
 
 - When you search for data in the built-in Search box, or filter data with the auto-filter row, the control searches for data only across currently loaded nodes.
 
 ## Specify Path to Child Data 
 
-One approach to supply child data to the TreeList/TreeView control is to specify the name of the property that stores child data in a business object. Use the `ChildrenFieldName` property for this purpose. For instance, if a business object stores child data in the `Items` collection, set the `ChildrenFieldName` property to "_Items_". 
+One approach to supply child data to the TreeList/TreeView control is to specify the name of the property that stores child data in a business object. Use the [`ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) property for this purpose. For instance, if a business object stores child data in the `Items` collection, set the [`ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) property to "_Items_". 
 
-You also need to set the `HasChildrenFieldName` property to the name of the property that returns `true` if a business object has child data, and `false`, otherwise. This information is required to display or hide node expand buttons.
-If you do not specify the `HasChildrenFieldName` property the control displays expand buttons for childless nodes until a user tries to expand these nodes.
+You also need to set the [`HasChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/HasChildrenFieldName.md) property to the name of the property that returns `true` if a business object has child data, and `false`, otherwise. This information is required to display or hide node expand buttons.
+If you do not specify the [`HasChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/HasChildrenFieldName.md) property the control displays expand buttons for childless nodes until a user tries to expand these nodes.
 
-The following example demonstrates how to bind a TreeList control to data. An _Employee_ object in the example has the _Subordinates_ collection that contains child items. The `ChildrenFieldName` property specifies the name of the property (the "_Subordinates_" string) that stores child data.
+The following example demonstrates how to bind a TreeList control to data. An _Employee_ object in the example has the _Subordinates_ collection that contains child items. The [`ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) property specifies the name of the property (the "_Subordinates_" string) that stores child data.
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -90,11 +90,11 @@ Another approach to supply child data in hierarchical binding mode is to impleme
 A children selector is useful in the following scenarios:
 
 - When parent and child business objects are [of different types](#use-a-children-selector-when-parent-and-child-business-objects-are-different)
-- In all other cases, when you cannot specify a path to children with the `ChildrenFieldName` property.
+- In all other cases, when you cannot specify a path to children with the [`ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) property.
 
 
 
-Use the `TreeListControlBase.ChildrenSelector` property to assign a selector to your TreeList/TreeView control. A selector is an object that implements the `ITreeListChildrenSelector` interface:
+Use the [`TreeListControlBase.ChildrenSelector`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenSelector.md) property to assign a selector to your TreeList/TreeView control. A selector is an object that implements the [`ITreeListChildrenSelector`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/ITreeListChildrenSelector.md) interface:
 
 ``` cs
 public interface ITreeListChildrenSelector
@@ -172,7 +172,7 @@ public partial class Employee : ObservableObject
 
 The following considerations apply when parent and child business objects are of different types. 
 
-- TreeList displays values from the fields to which TreeList columns are bound (see `TreeListColumn.FieldName`). The parent and child business objects must expose these fields.
+- TreeList displays values from the fields to which TreeList columns are bound (see [`TreeListColumn.FieldName`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md)). The parent and child business objects must expose these fields.
 
 - The TreeView control displays values from business objects from a field whose name is specified by the `DataFieldName` property. Ensure that the parent and child data objects have this field.
 
@@ -183,7 +183,7 @@ Assume that a TreeView control is bound to a collection of _City_ objects. Each 
 ![treeview-hierarchical-different-bus-objects-example](../../../images/treeview-hierarchical-different-bus-objects-example.png)
 
 The code below shows the definitions of the _City_, _Street_ and _Building_ business objects.
-Note that these objects all have the _Name_ property. The name of this property will be assigned to the `TreeViewControl.DataFieldName` property in XAML.
+Note that these objects all have the _Name_ property. The name of this property will be assigned to the [`TreeViewControl.DataFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) property in XAML.
 
 ``` cs
 public class City
@@ -213,7 +213,7 @@ public class Building
 }
 ```
 
-The TreeView control is bound to the _Cities_ collection defined in a View Model. The `TreeViewControl.DataFieldName` property is set to "Name". This property identifies the field of business objects whose values should be displayed in the TreeView control.
+The TreeView control is bound to the _Cities_ collection defined in a View Model. The [`TreeViewControl.DataFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) property is set to "Name". This property identifies the field of business objects whose values should be displayed in the TreeView control.
 
 ``` cs
 public partial class MainWindowViewModel : ViewModelBase
@@ -256,7 +256,7 @@ public class MyTreeListChildrenSelector : ITreeListChildrenSelector
 }
 ```
 
-To assign the _MyTreeListChildrenSelector_ selector to the TreeView control, use the `TreeListControlBase.ChildrenSelector` property.
+To assign the _MyTreeListChildrenSelector_ selector to the TreeView control, use the [`TreeListControlBase.ChildrenSelector`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenSelector.md) property.
 
 ``` xml
 xmlns:local="clr-namespace:EremexAvaloniaApplication10.Views"

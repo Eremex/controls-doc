@@ -1,0 +1,45 @@
+## Eremex.AvaloniaUI.Controls.DataControl namespace
+
+| public type | description |
+| --- | --- |
+| enum [AutoFilterCondition](./AutoFilterCondition.md) | Lists values that specify the condition used to filter cell values in the auto-filter row. |
+| class [BandInfo](./BandInfo.md) | Represents layout information about a data control band. |
+| enum [BestFitMode](./BestFitMode.md) | Lists values that specify how the best-fit column width is calculated. |
+| abstract class [ColumnBase](./ColumnBase.md) | Serves as the base class for data control columns. |
+| class [ColumnCollectionBase&lt;ColumnType&gt;](./ColumnCollectionBase-ColumnType.md) | Represents a collection of data control columns. |
+| class [ColumnDisplayTextEventArgs](./ColumnDisplayTextEventArgs.md) | Provides data for the ColumnDisplayText event. |
+| enum [ColumnFilterButtonDisplayMode](./ColumnFilterButtonDisplayMode.md) | Lists values that specify when a column's filter button is displayed. |
+| enum [ColumnFilterMode](./ColumnFilterMode.md) | Lists values that specify how a column's data is filtered. |
+| enum [ColumnHeaderPlacement](./ColumnHeaderPlacement.md) | Lists values that specify where a column's header is displayed. |
+| abstract class [DataControlBandBase](./DataControlBandBase.md) | Serves as the base class for data control bands. |
+| abstract class [DataControlBandCollectionBase&lt;T&gt;](./DataControlBandCollectionBase-T.md) | Represents a collection of data control bands. |
+| abstract class [DataControlBase](./DataControlBase.md) | Provides a base class for data controls that display a collection of items as rows. |
+| abstract class [DataControlColumnBase](./DataControlColumnBase.md) | Serves as the base class for data control columns and bands. |
+| class [DataControlCommands](./DataControlCommands.md) | Provides a set of commands for a data control. |
+| class [DataControlDragDropDataObject](./DataControlDragDropDataObject.md) | Represents the data object that stores the items dragged from a data control. |
+| class [DataGridControlCommands](./DataGridControlCommands.md) | Provides a set of commands for a data grid. |
+| class [DragDropData](./DragDropData.md) | Provides access to the data transferred in a drag-and-drop operation. |
+| enum [DropPosition](./DropPosition.md) | Lists values that specify where a dragged column or band is dropped relative to the target element. |
+| enum [EditorButtonShowMode](./EditorButtonShowMode.md) | Lists values that specify when an editor's buttons are displayed. |
+| enum [EditorShowMode](./EditorShowMode.md) | Lists values that specify which mouse action activates a cell's editor. |
+| class [ExportOptions](./ExportOptions.md) | Serves as the base class for classes that provide options for exporting a data control's data. |
+| class [ExportProgressEventArgs](./ExportProgressEventArgs.md) | Provides data for the ExportProgress event. |
+| enum [FilterPanelDisplayMode](./FilterPanelDisplayMode.md) | Lists values that specify when the filter panel is displayed. |
+| enum [FilterPopupMode](./FilterPopupMode.md) | Lists values that specify the type of a column's filter dropdown. |
+| enum [FixedMode](./FixedMode.md) | Lists values that specify whether a column is fixed and where. |
+| class [ImageExportOptions](./ImageExportOptions.md) | Provides options that define how a data control's data is exported to an image. |
+| class [InvalidCellValueExceptionEventArgs](./InvalidCellValueExceptionEventArgs.md) | Provides data for the InvalidCellValueException event. |
+| enum [NavigationMode](./NavigationMode.md) | Lists values that specify whether navigation moves focus between cells or rows. |
+| class [PageExportOptions](./PageExportOptions.md) | Provides page settings for exporting a data control's data. |
+| enum [RowDragMode](./RowDragMode.md) | Lists values that specify how users drag rows. |
+| enum [RowSelectionMode](./RowSelectionMode.md) | Lists values that specify whether users can select a single row or multiple rows. |
+| enum [SearchPanelDisplayMode](./SearchPanelDisplayMode.md) | Lists values that specify when the search panel is displayed. |
+| enum [SortMode](./SortMode.md) | Lists values that specify how a column's data is sorted. |
+| class [SummaryCollection](./SummaryCollection.md) | Represents a collection of summary items. |
+| class [SummaryItem](./SummaryItem.md) | Represents a summary calculated for a data field. |
+| enum [SummaryItemType](./SummaryItemType.md) | Lists values that specify the type of the aggregate function a summary calculates. |
+| enum [TextExportMode](./TextExportMode.md) | Lists values that specify whether cell values are exported as values or as display text. |
+| enum [TextSortMode](./TextSortMode.md) | Lists values that specify how text values are sorted. |
+| class [XlsxExportOptions](./XlsxExportOptions.md) | Provides options that define how a data control's data is exported to XLSX format. |
+
+<!-- DO NOT EDIT: generated by xmldocmd for Eremex.Avalonia.Controls.dll -->

@@ -2,6 +2,12 @@
 
 Initializes a new instance of the [`OkCancelDialogAwareViewModel`](../OkCancelDialogAwareViewModel.md) class with an empty dialog caption.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public OkCancelDialogAwareViewModel()
 ```
@@ -17,13 +23,21 @@ public OkCancelDialogAwareViewModel()
 
 Initializes a new instance of the [`OkCancelDialogAwareViewModel`](../OkCancelDialogAwareViewModel.md) class with the given dialog caption.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public OkCancelDialogAwareViewModel(string title)
 ```
 
-| parameter | description |
-| --- | --- |
-| title | The caption of the dialog window. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| title | `string` | The caption of the dialog window. |
 
 ## See Also
 

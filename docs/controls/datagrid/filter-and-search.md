@@ -36,9 +36,9 @@ Filter menus can present items (column values) using one of two display modes:
 
 You can set filter menu display mode globally for all columns, or set it for individual columns, using the following properties:
 
-- `DataGridControl.ColumnFilterPopupMode` (default value is `List`) — Specifies default display mode for all column filter menus. This setting is applied to the columns that have their `GridColumn.FilterPopupMode` property set to `null`.
+- [`DataGridControl.ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnFilterPopupMode.md) (default value is `List`) — Specifies default display mode for all column filter menus. This setting is applied to the columns that have their [`GridColumn.FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) property set to `null`.
 
-- `GridColumn.FilterPopupMode` (default value is `null`) — Specifies filter menu display mode for individual columns. When set, this property overrides the global setting (`DataGridControl.ColumnFilterPopupMode`).
+- [`GridColumn.FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) (default value is `null`) — Specifies filter menu display mode for individual columns. When set, this property overrides the global setting ([`DataGridControl.ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnFilterPopupMode.md)).
 
 The following example applies `CheckedList` display mode to all columns, and `List` display mode to the _City_ column.
 
@@ -63,47 +63,47 @@ To learn how to filter programmatically, see the following section:
 
 **DataGrid Control Members**
 
-- `AllowColumnFiltering` — Gets or sets whether filter buttons are allowed for all columns. You can use a column's `ColumnBase.AllowColumnFiltering` property to override the global setting for individual columns.
+- `AllowColumnFiltering` — Gets or sets whether filter buttons are allowed for all columns. You can use a column's [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) property to override the global setting for individual columns.
 
-    For instance, to disable filter buttons for all columns except one, set the `DataGridControl.AllowColumnFiltering` property to `false`, and the target column's `ColumnBase.AllowColumnFiltering` property to `true`.
+    For instance, to disable filter buttons for all columns except one, set the [`DataGridControl.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnFiltering.md) property to `false`, and the target column's [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) property to `true`.
 
-- `ColumnFilterButtonDisplayMode` — Gets or sets whether filter buttons are always visible, or only appear when a user hovers a column header with the mouse (default).
+- [`ColumnFilterButtonDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnFilterButtonDisplayMode.md) — Gets or sets whether filter buttons are always visible, or only appear when a user hovers a column header with the mouse (default).
 
-- `ColumnFilterPopupMode` — Gets or sets default display mode (`List` or `CheckedList`) for all column filter menus. Use a column's `FilterPopupMode` property to override this setting for individual columns.
+- [`ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnFilterPopupMode.md) — Gets or sets default display mode (`List` or `CheckedList`) for all column filter menus. Use a column's [`FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/FilterPopupMode.md) property to override this setting for individual columns.
 
-- `CustomColumnDisplayText` event — Allows you to provide custom display text for column values, including those in filter menus and the filter panel. When the `CustomColumnDisplayText` event fires for values in the filter panel, the event's `SourceItemIndex` parameter returns `-1`.
+- [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) event — Allows you to provide custom display text for column values, including those in filter menus and the filter panel. When the [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) event fires for values in the filter panel, the event's [`SourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomColumnDisplayTextEventArgs/SourceItemIndex.md) parameter returns `-1`.
 
-- `FilterPanelText` — Gets the text representation of the filter displayed in the filter panel.
+- [`FilterPanelText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FilterPanelText.md) — Gets the text representation of the filter displayed in the filter panel.
 
-- `FilterPanelDisplayMode` — Gets or sets the filter panel's visibility mode. Available options include: 
+- [`FilterPanelDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/FilterPanelDisplayMode.md) — Gets or sets the filter panel's visibility mode. Available options include: 
 
     - `Auto` (default) — The filter panel appears when a filter is applied to any column.
     - `Never` — The filter panel is always hidden.
 
-- `FilterString` — Gets or sets the filter criteria applied to the control. You can use this property to [construct a filter in code](#filter-in-code).
+- [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) — Gets or sets the filter criteria applied to the control. You can use this property to [construct a filter in code](#filter-in-code).
 
-- `IsFilterEnabled` — Gets or sets whether the filter is active.
+- [`IsFilterEnabled`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsFilterEnabled.md) — Gets or sets whether the filter is active.
 
-- `IsFilterPanelVisible` — Gets whether the filter panel is currently visible.
+- [`IsFilterPanelVisible`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/IsFilterPanelVisible.md) — Gets whether the filter panel is currently visible.
 
 
 
 **Column Members**
 
- - `ColumnBase.AllowColumnFiltering` — Gets or sets whether a filter button is allowed for the current column. To enable or disable filter buttons for all columns, see the `DataGridControl.AllowColumnFiltering` setting. The `ColumnBase.AllowColumnFiltering` option allows you to override the  `DataGridControl.AllowColumnFiltering` setting for individual columns.
- - `ColumnBase.ColumnFilterMode` — Gets or sets how a column's data is filtered. Available options include:
+ - [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) — Gets or sets whether a filter button is allowed for the current column. To enable or disable filter buttons for all columns, see the [`DataGridControl.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnFiltering.md) setting. The [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) option allows you to override the  [`DataGridControl.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnFiltering.md) setting for individual columns.
+ - [`ColumnBase.ColumnFilterMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ColumnFilterMode.md) — Gets or sets how a column's data is filtered. Available options include:
 
-    - `Value` (default) — A column's data is filtered by underlying values.
-    - `DisplayText` — A column's data is filtered by cell display text.
+    - [`Value`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomColumnDisplayTextEventArgsBase/Value.md) (default) — A column's data is filtered by underlying values.
+    - [`DisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomColumnDisplayTextEventArgsBase/DisplayText.md) — A column's data is filtered by cell display text.
 
 <!-- TODO 
 Example for ColumnFilterMode.DisplayText.
 -->
 
-- `ColumnBase.FilterPopupMode` — Gets or sets filter menu display mode (`List` or `CheckedList`) for individual columns. When set, this property overrides the control's `ColumnFilterPopupMode` property.
+- [`ColumnBase.FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) — Gets or sets filter menu display mode (`List` or `CheckedList`) for individual columns. When set, this property overrides the control's [`ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnFilterPopupMode.md) property.
 
- - `ColumnBase.IsFiltered` — Gets whether a filter is applied to the current column.
- - `ColumnBase.RoundDateTimeForColumnFilter` — Gets or sets whether to ignore the time portion of DateTime values when constructing filters for columns that display DateTime values. This property is in effect for filters created using column filter menus and the [auto filter row](#auto-filter-row).
+ - [`ColumnBase.IsFiltered`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/IsFiltered.md) — Gets whether a filter is applied to the current column.
+ - [`ColumnBase.RoundDateTimeForColumnFilter`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/RoundDateTimeForColumnFilter.md) — Gets or sets whether to ignore the time portion of DateTime values when constructing filters for columns that display DateTime values. This property is in effect for filters created using column filter menus and the [auto filter row](#auto-filter-row).
 
 <!-- TODO
 Add screenshots for RoundDateTimeForColumnFilter
@@ -120,22 +120,22 @@ The Search Panel helps a user quickly locate rows by the data they contain. When
 - The **Contains** comparison operator is used for data searching.
 - Data search is performed across all columns.
 
-Set the control's `SearchPanelDisplayMode` property (inherited from the `DataControlBase` class) to one of the following values to enable the Search Panel:
+Set the control's [`SearchPanelDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) property (inherited from the [`DataControlBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase.md) class) to one of the following values to enable the Search Panel:
 
-- `SearchPanelDisplayMode.Always` — The control permanently displays the Search Panel.
-- `SearchPanelDisplayMode.HotKey` — The control displays the Search Panel when a user presses the CTRL+F hotkey. The ESC shortcut clears the Search Panel. A subsequent ESC key press closes the panel. A user can also activate the Search Panel from a column header's context menu.
+- [`SearchPanelDisplayMode.Always`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) — The control permanently displays the Search Panel.
+- [`SearchPanelDisplayMode.HotKey`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) — The control displays the Search Panel when a user presses the CTRL+F hotkey. The ESC shortcut clears the Search Panel. A subsequent ESC key press closes the panel. A user can also activate the Search Panel from a column header's context menu.
 
 
 
 ### Related API
 
-- `DataControlBase.IsSearchPanelVisible` — Gets whether the Search Panel is currently visible.
-- `DataControlBase.SearchPanelHighlightResults` — Specifies whether to highlight the search text in the found rows. The property's default value is `true`.
-- `DataControlBase.SearchText` — Gets or sets the search text. You can assign a value to this property to filter the control in code. This filtering functionality is supported even if the Search Panel is hidden or disabled (the `SearchPanelDisplayMode` property is set to `SearchPanelDisplayMode.Never`).
-- `DataControlBase.ShowSearchPanelCloseButton` — Allows you to hide the Search Panel's built-in Close button.
+- [`DataControlBase.IsSearchPanelVisible`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsSearchPanelVisible.md) — Gets whether the Search Panel is currently visible.
+- [`DataControlBase.SearchPanelHighlightResults`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchPanelHighlightResults.md) — Specifies whether to highlight the search text in the found rows. The property's default value is `true`.
+- [`DataControlBase.SearchText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchText.md) — Gets or sets the search text. You can assign a value to this property to filter the control in code. This filtering functionality is supported even if the Search Panel is hidden or disabled (the [`SearchPanelDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) property is set to [`SearchPanelDisplayMode.Never`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md)).
+- [`DataControlBase.ShowSearchPanelCloseButton`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowSearchPanelCloseButton.md) — Allows you to hide the Search Panel's built-in Close button.
 
 ### Example
-The following code enables the Search Panel. The `SearchText` property is used to set the search text.
+The following code enables the Search Panel. The [`SearchText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchText.md) property is used to set the search text.
 
 ``` csharp
 dataGrid.SearchPanelDisplayMode = SearchPanelDisplayMode.Always;
@@ -152,7 +152,7 @@ The Auto Filter Row is a special row displayed above all grid rows. It allows a 
 
 ### Enable Auto Filter Row
 
-Set the `DataGridControl.ShowAutoFilterRow` property to `true`.
+Set the [`DataGridControl.ShowAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowAutoFilterRow.md) property to `true`.
 
 
 ### Enable Runtime Filter Operator Selectors
@@ -163,12 +163,12 @@ You can allow users to choose filter logic for Auto Filter Row cells at runtime.
 
 Use the following properties to enable filter operator selectors:
 
-- `DataGridControl.ShowConditionInAutoFilterRow` (default is `false`) — Specifies the default visibility of filter operator selectors for all Auto Filter Row cells (columns). 
-- `ColumnBase.ShowConditionInAutoFilterRow` — Enables or disables the filter operator selector for an individual column. This property overrides the `DataGridControl.ShowConditionInAutoFilterRow` setting.
+- [`DataGridControl.ShowConditionInAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowConditionInAutoFilterRow.md) (default is `false`) — Specifies the default visibility of filter operator selectors for all Auto Filter Row cells (columns). 
+- [`ColumnBase.ShowConditionInAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ShowConditionInAutoFilterRow.md) — Enables or disables the filter operator selector for an individual column. This property overrides the [`DataGridControl.ShowConditionInAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowConditionInAutoFilterRow.md) setting.
 
 ### Specify Filter Operators in Code
 
-Use the `ColumnBase.AutoFilterCondition` property to programmatically specify filter operators for individual Auto Filter Row cells (columns). The following filter operators are supported:
+Use the [`ColumnBase.AutoFilterCondition`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AutoFilterCondition.md) property to programmatically specify filter operators for individual Auto Filter Row cells (columns). The following filter operators are supported:
 
 - `Contains` (applicable to string values) — Row values must contain the entered text.
 - `Default` — Default mode. 
@@ -188,7 +188,7 @@ Use the `ColumnBase.AutoFilterCondition` property to programmatically specify fi
 
 ### Specify Filter Values
 
-The `ColumnBase.AutoFilterValue` property allows you to set a value for a specific Auto Filter Row cell in code. You can use the `ColumnBase.AutoFilterValue` property to filter the Data Grid even if the Auto Filter Row is hidden.
+The [`ColumnBase.AutoFilterValue`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AutoFilterValue.md) property allows you to set a value for a specific Auto Filter Row cell in code. You can use the [`ColumnBase.AutoFilterValue`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AutoFilterValue.md) property to filter the Data Grid even if the Auto Filter Row is hidden.
 
 ### Example
 
@@ -206,21 +206,21 @@ colName.AutoFilterValue = "M";
 
 ## Filter Rows Dynamically Using an Event
 
-You can handle the `CustomRowFilter` event to hide specific rows based on a custom condition. 
+You can handle the [`CustomRowFilter`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomRowFilter.md) event to hide specific rows based on a custom condition. 
 
-The `CustomRowFilter` event fires for each item in the bound item source in the following cases:
+The [`CustomRowFilter`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomRowFilter.md) event fires for each item in the bound item source in the following cases:
 
 - The control's item source changes.
 - The control's rows are filtered (for instance, using the Search Panel and Auto Filter Row).
-- The control's `RefreshData` method is called.
+- The control's [`RefreshData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RefreshData.md) method is called.
 
-Use the `SourceItemIndex` event parameter to identify the currently processed item. To hide the corresponding row, set the `Visible` event parameter to `false`.
+Use the [`SourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomRowFilterEventArgs/SourceItemIndex.md) event parameter to identify the currently processed item. To hide the corresponding row, set the [`Visible`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomRowFilterEventArgs/Visible.md) event parameter to `false`.
 
 ### Example - Filter Rows with an Event
 
-In the following example, a Data Grid control displays a list of _EmployeeInfo_ objects. The `CustomRowFilter` event is handled to implement custom filtration of rows. Rows are hidden according to a value of the _EmployeeInfo.EmploymentType_ property.
+In the following example, a Data Grid control displays a list of _EmployeeInfo_ objects. The [`CustomRowFilter`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomRowFilter.md) event is handled to implement custom filtration of rows. Rows are hidden according to a value of the _EmployeeInfo.EmploymentType_ property.
 
-It is assumed that the example contains the "Enable Filter" toggle button that activates and deactivates the custom filtration. When the button is clicked, the `ToggleButton.IsCheckedChanged` event handler calls the `RefreshData` method to refresh grid rows and re-raise the `CustomRowFilter` event.
+It is assumed that the example contains the "Enable Filter" toggle button that activates and deactivates the custom filtration. When the button is clicked, the `ToggleButton.IsCheckedChanged` event handler calls the [`RefreshData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RefreshData.md) method to refresh grid rows and re-raise the [`CustomRowFilter`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomRowFilter.md) event.
 
 ``` xml
 <ToggleButton Name="btnEnableFilter" Content="Enable Filter" IsCheckedChanged="BtnEnableFilter_IsCheckedChanged" />
@@ -253,7 +253,7 @@ private void DataGrid_CustomRowFilter(object sender, DataGridCustomRowFilterEven
 
 ## Filter in Code
 
-Starting with version 1.2, you can use the `DataGridControl.FilterString` property to filter the control's data in code.
+Starting with version 1.2, you can use the [`DataGridControl.FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) property to filter the control's data in code.
 
 ``` cs
 dataGrid.FilterString = "[FirstName] = 'Julia' && [Position] = 'Sales Representative'";
@@ -267,8 +267,8 @@ A filter string consists of individual filter expressions combined by [logical o
 
 ### Clear and Disable the Filter
 
-- To clear the filter, set the `FilterString` property to `null` or an empty string.
-- To temporarily disable the filter, use the `DataControlBase.IsFilterEnabled` property.
+- To clear the filter, set the [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) property to `null` or an empty string.
+- To temporarily disable the filter, use the [`DataControlBase.IsFilterEnabled`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsFilterEnabled.md) property.
 
 ### Specify Columns
 
@@ -345,7 +345,7 @@ The following table lists available operators and functions to construct filter 
 
 You can use the `Eremex.AvaloniaUI.Controls.Data.Filtering.ExprStringBuilder` class to create advanced filter criteria. These filter criteria can include operations on operands, calls of supported functions, and more. To construct filter criteria, use members of the `ExprStringBuilder` class.
 
-To get a filter string, call the `ToString` method of a resulting `ExprStringBuilder` object. You can then assign this filter string to a target control's `DataControlBase.FilterString` property.
+To get a filter string, call the `ToString` method of a resulting `ExprStringBuilder` object. You can then assign this filter string to a target control's [`DataControlBase.FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) property.
 
 
 ``` cs
@@ -371,7 +371,7 @@ control.FilterString = filterString;
 ### Specify Enumeration Values
 
 To specify enumeration values in a filter string, you should construct filter criteria using the `Eremex.AvaloniaUI.Controls.Data.Filtering.ExprStringBuilder` class.
-The `ExprStringBuilder.ToString` method allows you to get a filter string, which you can assign to a target control's `FilterString` property.
+The `ExprStringBuilder.ToString` method allows you to get a filter string, which you can assign to a target control's [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) property.
 
 You also need to register the enumeration type using the `EnumProcessingHelper.RegisterEnum` method before the filter string is assigned to the target control.
 

@@ -2,6 +2,12 @@
 
 The glob patterns this type matches, such as `*.png`. Used on Windows and Linux.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public IReadOnlyList<string>? Patterns { get; set; }
 ```

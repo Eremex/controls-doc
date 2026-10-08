@@ -2,6 +2,12 @@
 
 Base class for view models shown as modal dialogs by IDialogService. On top of [`WindowAwareViewModel`](./WindowAwareViewModel.md) it builds the dialog buttons when the window opens.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public abstract class DialogAwareViewModel : WindowAwareViewModel, IDialogAwareViewModel
 ```

@@ -37,51 +37,51 @@ After data is exported, you can process and analyze it in Microsoft Excel or ano
 
 !!! note
 
-    Cell formatting implemented using cell templates (`GridColumn.CellTemplate`) is not exported.
+    Cell formatting implemented using cell templates ([`GridColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md)) is not exported.
 
 Use the following methods to export the control's data to XLSX format:
 
-- <code>DataGridControl.ExportToXlsx(string fileName, XlsxExportOptions? options = null)</code> — Exports data to a file.
+- <code>[DataGridControl.ExportToXlsx](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToXlsx.md)(string fileName, XlsxExportOptions? options = null)</code> — Exports data to a file.
 
-- <code>DataGridControl.ExportToXlsx(Stream stream, XlsxExportOptions? options = null)</code> — Exports data to a stream.
+- <code>[DataGridControl.ExportToXlsx](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToXlsx.md)(Stream stream, XlsxExportOptions? options = null)</code> — Exports data to a stream.
 
-The optional `options` parameter (of type `XlsxExportOptions`) allows you to customize export settings. The `XlsxExportOptions` class exposes the following members:
+The optional `options` parameter (of type [`XlsxExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions.md)) allows you to customize export settings. The [`XlsxExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions.md) class exposes the following members:
 
-- `ExportProgress` event — Fires repeatedly during data export. The event's `ExportProgressEventArgs.ProgressPercentage` parameter indicates the progress as a percentage (0 to 100). You can use this event to display export progress to users in a customized way.
-- `AllowFixedColumnHeaderPanel` property (default is `true`) — Specifies whether the column header panel remains fixed at the top in the exported document. 
+- [`ExportProgress`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ExportProgress.md) event — Fires repeatedly during data export. The event's [`ExportProgressEventArgs.ProgressPercentage`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportProgressEventArgs/ProgressPercentage.md) parameter indicates the progress as a percentage (0 to 100). You can use this event to display export progress to users in a customized way.
+- [`AllowFixedColumnHeaderPanel`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowFixedColumnHeaderPanel.md) property (default is `true`) — Specifies whether the column header panel remains fixed at the top in the exported document. 
 
-- `ApplyFormattingToEntireColumn` — Specifies whether cell formatting is applied to entire columns or individual cells in the output document.
+- [`ApplyFormattingToEntireColumn`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ApplyFormattingToEntireColumn.md) — Specifies whether cell formatting is applied to entire columns or individual cells in the output document.
 
-- `AllowGrouping` property (default is `true`) — Specifies whether group rows and the group hierarchy are exported. If `AllowGrouping` is `false`, data rows are only exported.
+- [`AllowGrouping`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowGrouping.md) property (default is `true`) — Specifies whether group rows and the group hierarchy are exported. If `AllowGrouping` is `false`, data rows are only exported.
 
-- `DocumentCulture` — A custom `CultureInfo` object that determines formatting rules for numeric and date-time values in the output document.
+- [`DocumentCulture`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/DocumentCulture.md) — A custom `CultureInfo` object that determines formatting rules for numeric and date-time values in the output document.
 
-    If the `DocumentCulture` property is not specified, the export engine uses the application's current culture.
+    If the [`DocumentCulture`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/DocumentCulture.md) property is not specified, the export engine uses the application's current culture.
 
-- `ShowBands` property (default is `null`) — Specifies whether the control's [bands](bands.md) are included in the export. 
+- [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowBands.md) property (default is `null`) — Specifies whether the control's [bands](bands.md) are included in the export. 
 
-    If `ShowBands` is `null`, the setting is specified by the control's `DataGridControl.ShowBands` property. 
+    If [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowBands.md) is `null`, the setting is specified by the control's [`DataGridControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBands.md) property. 
 
-- `ShowColumnHeaders` property (default is `null`) — Specifies whether the column header panel is included in the export. 
+- [`ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) property (default is `null`) — Specifies whether the column header panel is included in the export. 
 
-    If `ShowColumnHeaders` is `null`, the setting is specified by the control's `DataGridControl.ShowColumnHeaders` property. 
+    If `ShowColumnHeaders` is `null`, the setting is specified by the control's [`DataGridControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowColumnHeaders.md) property. 
 
-- `ShowHorizontalLines` — Specifies whether horizontal lines between cells are visible in the output document.
+- [`ShowHorizontalLines`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowHorizontalLines.md) — Specifies whether horizontal lines between cells are visible in the output document.
 
-- `ShowVerticalLines` — Specifies whether vertical lines between cells are visible in the output document.
+- [`ShowVerticalLines`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowVerticalLines.md) — Specifies whether vertical lines between cells are visible in the output document.
 
-- `TextExportMode` property — The **default** export mode of cell values. 
+- [`TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) property — The **default** export mode of cell values. 
 
     Available options include: 
 
-    - `TextExportMode.Value` — Exports cell values. If cell values are formatted in the DataGrid control, the export engine attempts to apply matching formatting to the exported values in the output document.
-    - `TextExportMode.Text` — Exports cell display text. If cell values are formatted in the DataGrid control, the formatted string representation is exported.
+    - [`TextExportMode.Value`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — Exports cell values. If cell values are formatted in the DataGrid control, the export engine attempts to apply matching formatting to the exported values in the output document.
+    - [`TextExportMode.Text`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — Exports cell display text. If cell values are formatted in the DataGrid control, the formatted string representation is exported.
 
-    You can use the `GridColumn.TextExportMode` property to override the `XlsxExportOptions.TextExportMode` setting for individual columns.
+    You can use the [`GridColumn.TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/TextExportMode.md) property to override the [`XlsxExportOptions.TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/TextExportMode.md) setting for individual columns.
 
     !!! note
 
-        The export engine only takes into account cell formatting applied using the `GridColumn.EditorProperties` property. For example:
+        The export engine only takes into account cell formatting applied using the [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) property. For example:
 
         ```
         <mxdg:GridColumn Width="*" FieldName="Salary">
@@ -91,7 +91,7 @@ The optional `options` parameter (of type `XlsxExportOptions`) allows you to cus
         </mxdg:GridColumn>
         ```
 
-        Cell formatting applied using other approaches (for instance, with `GridColumn.CellTemplate`) is ignored during data export.
+        Cell formatting applied using other approaches (for instance, with [`GridColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md)) is ignored during data export.
 
         
 
@@ -113,48 +113,48 @@ The PDF rendering engine follows the WYSIWYG concept, which retains the layout o
 
 Use the following methods to export the control's data to PDF format:
 
-- <code>DataGridControl.ExportToPdf(string fileName, PageExportOptions? options = null)</code> — Exports data to a file.
+- <code>[DataGridControl.ExportToPdf](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToPdf.md)(string fileName, PageExportOptions? options = null)</code> — Exports data to a file.
 
-- <code>DataGridControl.ExportToPdf(Stream stream, PageExportOptions? options = null)</code> — Exports data to a stream.
+- <code>[DataGridControl.ExportToPdf](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToPdf.md)(Stream stream, PageExportOptions? options = null)</code> — Exports data to a stream.
 
-The optional `options` parameter (of type `PageExportOptions`) allows you to customize export settings. The `PageExportOptions` class exposes the following members:
+The optional `options` parameter (of type [`PageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions.md)) allows you to customize export settings. The [`PageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions.md) class exposes the following members:
 
-- `PageExportOptions.ExportProgress` event — Fires repeatedly during data export. The event's `ExportProgressEventArgs.ProgressPercentage` parameter indicates the progress as a percentage (0 to 100). You can use this event to display export progress to users in a customized way.
+- [`PageExportOptions.ExportProgress`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ExportProgress.md) event — Fires repeatedly during data export. The event's [`ExportProgressEventArgs.ProgressPercentage`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportProgressEventArgs/ProgressPercentage.md) parameter indicates the progress as a percentage (0 to 100). You can use this event to display export progress to users in a customized way.
 
-- `PageExportOptions.FitToPageWidth` (default is `false`) — Specifies whether grid columns are stretched to fit the paper width.
+- [`PageExportOptions.FitToPageWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/FitToPageWidth.md) (default is `false`) — Specifies whether grid columns are stretched to fit the paper width.
 
-- `PageExportOptions.Landscape` (default is `false`) — Specifies whether the page orientation is horizontal (`Landscape`) or vertical (`Portrait`).
+- [`PageExportOptions.Landscape`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Landscape.md) (default is `false`) — Specifies whether the page orientation is horizontal ([`Landscape`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Landscape.md)) or vertical (`Portrait`).
 
-- `PageExportOptions.Margins` (default is `72,72,72,72`) — The page margins, in points. 1 point = 1/72 inch.
+- [`PageExportOptions.Margins`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Margins.md) (default is `72,72,72,72`) — The page margins, in points. 1 point = 1/72 inch.
 
-- `PageExportOptions.PageRange` — A string that specifies the range of pages to be exported. You can use the following notations to specify the output page range:
+- [`PageExportOptions.PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) — A string that specifies the range of pages to be exported. You can use the following notations to specify the output page range:
 
     - "1" — Exports page 1.
     - "1, 4, 8-10" — Exports pages 1, 4, and 8 through 10.
     <!-- - "7-" — Exports from page 7 to the end. -->
 
-    The default value of the `PageRange` property is an empty string, which exports all pages.
+    The default value of the [`PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) property is an empty string, which exports all pages.
 
-- `PageExportOptions.PaperKind` (default is `A4`) — The paper size.
+- [`PageExportOptions.PaperKind`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PaperKind.md) (default is `A4`) — The paper size.
 
-- `PageExportOptions.ShowBands` property (default is `null`) — Specifies whether the control's [bands](bands.md) are included in the export. 
+- [`PageExportOptions.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) property (default is `null`) — Specifies whether the control's [bands](bands.md) are included in the export. 
 
-    If `ShowBands` is `null`, the setting is specified by the control's `DataGridControl.ShowBands` property. 
+    If [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) is `null`, the setting is specified by the control's [`DataGridControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBands.md) property. 
 
-- `PageExportOptions.ShowColumnHeaders` property (default is `null`) — Specifies whether the column header panel is included in the export. 
+- [`PageExportOptions.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) property (default is `null`) — Specifies whether the column header panel is included in the export. 
 
-    If `ShowColumnHeaders` is `null`, the setting is specified by the control's `DataGridControl.ShowColumnHeaders` property.  
+    If `ShowColumnHeaders` is `null`, the setting is specified by the control's [`DataGridControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowColumnHeaders.md) property.  
     
 
 ## Export to CSV Format
 
-The DataGrid control provides the `ExportToCsv` method to export data to CSV format. CSV (comma-separated values) is a plain text data format to store tabular data. Each record is exported as a text line, in which values are delimited by a separator (typically, a comma).
+The DataGrid control provides the [`ExportToCsv`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ExportToCsv.md) method to export data to CSV format. CSV (comma-separated values) is a plain text data format to store tabular data. Each record is exported as a text line, in which values are delimited by a separator (typically, a comma).
 
-The following `ExportToCsv` method overloads are available:
+The following [`ExportToCsv`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ExportToCsv.md) method overloads are available:
 
-- <code>DataGridControl.ExportToCsv(string filePath, TextExportMode textExportNode = TextExportMode.Text, string separator = ",", bool quoteStringsWithSeparators = true)</code> — Exports data to a file.
+- <code>[DataGridControl.ExportToCsv](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ExportToCsv.md)(string filePath, TextExportMode textExportNode = TextExportMode.Text, string separator = ",", bool quoteStringsWithSeparators = true)</code> — Exports data to a file.
 
-- <code>DataGridControl.ExportToCsv(Stream stream, TextExportMode textExportMode = TextExportMode.Text, string separator = ",", bool quoteStringsWithSeparators = true)</code> — Exports data to a stream.
+- <code>[DataGridControl.ExportToCsv](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ExportToCsv.md)(Stream stream, TextExportMode textExportMode = TextExportMode.Text, string separator = ",", bool quoteStringsWithSeparators = true)</code> — Exports data to a stream.
 
 The following method parameters allow you to customize export options:
 
@@ -162,14 +162,14 @@ The following method parameters allow you to customize export options:
 
     Available options include: 
 
-    - `TextExportMode.Value` — Exports cell values. Data formats applied to cell values are not exported.
-    - `TextExportMode.Text` — Exports cell display text. If cell values are formatted in the DataGrid control, the formatted string representation is exported.
+    - [`TextExportMode.Value`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — Exports cell values. Data formats applied to cell values are not exported.
+    - [`TextExportMode.Text`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — Exports cell display text. If cell values are formatted in the DataGrid control, the formatted string representation is exported.
 
         !!! note
 
-            The export engine only takes into account cell formatting applied using the `GridColumn.EditorProperties` property.
+            The export engine only takes into account cell formatting applied using the [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) property.
 
-    You can use the `GridColumn.TextExportMode` property to override the method's `textExportMode` parameter for individual columns. 
+    You can use the [`GridColumn.TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/TextExportMode.md) property to override the method's `textExportMode` parameter for individual columns. 
 
 
 - `separator` — A string that specified the separator used to delimit cell values in the output document. The default separator is a comma (",").
@@ -180,13 +180,13 @@ The following method parameters allow you to customize export options:
 
 ## Export to Image Formats
 
-The DataGrid control's `ExportToImages` method performs a paginated export to an image format (PNG, JPEG, SVG, or WebP). If the control's content is too large to fit a single page, the method paginates the data (splits it into pages) and exports each page as a separate image. 
+The DataGrid control's [`ExportToImages`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToImages.md) method performs a paginated export to an image format (PNG, JPEG, SVG, or WebP). If the control's content is too large to fit a single page, the method paginates the data (splits it into pages) and exports each page as a separate image. 
 
 ![treelist-export-to-images](../../images/treelist-export-to-images.png)
 
-The target page's format and size are defined by a parameter passed to the method. The `ExportToImages` method uses the same pagination mechanism as the `ExportToPdf` method.
+The target page's format and size are defined by a parameter passed to the method. The [`ExportToImages`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToImages.md) method uses the same pagination mechanism as the [`ExportToPdf`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToPdf.md) method.
 
-- <code>DataGridControl.ExportToImages(string directory, string fileNameFormat, ImageExportOptions? options = null)</code>
+- <code>[DataGridControl.ExportToImages](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToImages.md)(string directory, string fileNameFormat, ImageExportOptions? options = null)</code>
 
 ``` cs
 using Eremex.AvaloniaUI.Controls.DataControl;
@@ -201,7 +201,7 @@ options.PageRange = "1-2";
 dataGrid.ExportToImages(@"c:\images\", "img{0}.svg", options);
 ```
 
-Use the `ExportToImages` method's parameters to customize the page settings, output image format, and file name pattern.
+Use the [`ExportToImages`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToImages.md) method's parameters to customize the page settings, output image format, and file name pattern.
 
 - `directory` — Specifies the directory in which to save image files. An exception is raised if the specified directory does not exist.
 
@@ -212,38 +212,38 @@ Use the `ExportToImages` method's parameters to customize the page settings, out
     - "image{0}.png" — Produces files like "image1.png", "image2.png", and so on.
     - "image{0:D3}.svg"  — Produces files like "image001.svg", "image002.svg", and so on.
     
-The optional `options` parameter (of type `ImageExportOptions`) allows you to customize export settings. The `ImageExportOptions` class exposes the following members:
+The optional `options` parameter (of type [`ImageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions.md)) allows you to customize export settings. The [`ImageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions.md) class exposes the following members:
 
-- `ImageExportOptions.Format` — The output image format (PNG, JPEG, SVG, or WebP).
+- [`ImageExportOptions.Format`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/Format.md) — The output image format (PNG, JPEG, SVG, or WebP).
 
-- `ImageExportOptions.PageBorderColor` — The color of the border drawn around each page.
-- `ImageExportOptions.PageBorderWidth`  — The width of the border drawn around each page.
-
-
-- `PageExportOptions.ExportProgress` event — Fires repeatedly during data export. The event's `ExportProgressEventArgs.ProgressPercentage` parameter indicates the progress as a percentage (0 to 100). You can use this event to display export progress to users in a customized way.
+- [`ImageExportOptions.PageBorderColor`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/PageBorderColor.md) — The color of the border drawn around each page.
+- [`ImageExportOptions.PageBorderWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/PageBorderWidth.md)  — The width of the border drawn around each page.
 
 
-- `PageExportOptions.ShowBands` property (default is `null`) — Specifies whether the control's [bands](bands.md) are included in the export. 
-
-    If `ShowBands` is `null`, the setting is specified by the control's `DataGridControl.ShowBands` property. 
-
-- `PageExportOptions.ShowColumnHeaders` property (default is `null`) — Specifies whether the column header panel is included in the export. 
-
-    If `ShowColumnHeaders` is `null`, the setting is specified by the control's `DataGridControl.ShowColumnHeaders` property.  
-
-- `PageExportOptions.FitToPageWidth` (default is `false`) — Specifies whether grid columns are stretched to fit the paper width.
-
-- `PageExportOptions.Landscape` (default is `false`) — Specifies whether the page orientation is horizontal (`Landscape`) or vertical (`Portrait`).
-
-- `PageExportOptions.Margins` (default is `72,72,72,72`) — The page margins, in points. 1 point = 1/72 inch.
+- [`PageExportOptions.ExportProgress`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ExportProgress.md) event — Fires repeatedly during data export. The event's [`ExportProgressEventArgs.ProgressPercentage`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportProgressEventArgs/ProgressPercentage.md) parameter indicates the progress as a percentage (0 to 100). You can use this event to display export progress to users in a customized way.
 
 
-- `PageExportOptions.PageRange` — A string that specifies the range of pages to be exported. You can use the following notations to specify the output page range:
+- [`PageExportOptions.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) property (default is `null`) — Specifies whether the control's [bands](bands.md) are included in the export. 
+
+    If [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) is `null`, the setting is specified by the control's [`DataGridControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBands.md) property. 
+
+- [`PageExportOptions.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) property (default is `null`) — Specifies whether the column header panel is included in the export. 
+
+    If `ShowColumnHeaders` is `null`, the setting is specified by the control's [`DataGridControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowColumnHeaders.md) property.  
+
+- [`PageExportOptions.FitToPageWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/FitToPageWidth.md) (default is `false`) — Specifies whether grid columns are stretched to fit the paper width.
+
+- [`PageExportOptions.Landscape`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Landscape.md) (default is `false`) — Specifies whether the page orientation is horizontal ([`Landscape`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Landscape.md)) or vertical (`Portrait`).
+
+- [`PageExportOptions.Margins`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Margins.md) (default is `72,72,72,72`) — The page margins, in points. 1 point = 1/72 inch.
+
+
+- [`PageExportOptions.PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) — A string that specifies the range of pages to be exported. You can use the following notations to specify the output page range:
 
     - "1" — Exports page 1.
     - "1, 4, 8-10" — Exports pages 1, 4, and 8 through 10.
     - "7-" — Exports from page 7 to the end.
 
-    The default value of the `PageRange` property is an empty string, which exports all pages.
+    The default value of the [`PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) property is an empty string, which exports all pages.
 
-- `PageExportOptions.PaperKind` (default is `A4`) — The paper size.
+- [`PageExportOptions.PaperKind`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PaperKind.md) (default is `A4`) — The paper size.

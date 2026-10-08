@@ -2,6 +2,12 @@
 
 Initializes a new instance of the [`WindowAwareViewModel`](../WindowAwareViewModel.md) class with an empty window caption.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public WindowAwareViewModel()
 ```
@@ -17,13 +23,21 @@ public WindowAwareViewModel()
 
 Initializes a new instance of the [`WindowAwareViewModel`](../WindowAwareViewModel.md) class with the given window caption.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public WindowAwareViewModel(string title)
 ```
 
-| parameter | description |
-| --- | --- |
-| title | The caption of the window that shows this view model. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| title | `string` | The caption of the window that shows this view model. |
 
 ## See Also
 

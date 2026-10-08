@@ -6,7 +6,7 @@ seealso: []
 
 # Save and Restore the Layout of Panels
 
-Dock Manager allows you to save the layout of dock panels and documents and then restore it later. Use the `DockManager.SaveLayout` and `DockManager.RestoreLayout` methods for the layout serialization and deserialization.
+Dock Manager allows you to save the layout of dock panels and documents and then restore it later. Use the [`DockManager.SaveLayout`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/SaveLayout.md) and [`DockManager.RestoreLayout`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/RestoreLayout.md) methods for the layout serialization and deserialization.
 
 All panels and documents must have unique names, which you can specify with the `Name` property. Unique names ensure correct identification and serialization of dock items.
 
@@ -17,7 +17,7 @@ All panels and documents must have unique names, which you can specify with the 
 </mxd:DockGroup>
 ```
 
-The `DockManager.SaveLayout` method uses the specified stream as is - it neither clears the stream nor changes the current stream position before saving the layout.
+The [`DockManager.SaveLayout`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/SaveLayout.md) method uses the specified stream as is - it neither clears the stream nor changes the current stream position before saving the layout.
 
 
 ## Example

@@ -2,6 +2,12 @@
 
 Legacy bridge for code that creates the service directly, without a container. Requires an initialized [`Current`](../ApplicationServicesContext/Current.md).
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public OpenFileDialogService()
 ```
@@ -17,13 +23,21 @@ public OpenFileDialogService()
 
 Primary constructor. Dependencies are passed explicitly, so the service can be created by any DI container and substituted in tests.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public OpenFileDialogService(IWindowsManager windowsManager)
 ```
 
-| parameter | description |
-| --- | --- |
-| windowsManager | Supplies the window the dialog is shown on top of. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| windowsManager | `IWindowsManager` | Supplies the window the dialog is shown on top of. |
 
 ## Exceptions
 

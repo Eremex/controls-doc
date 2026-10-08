@@ -2,6 +2,12 @@
 
 Moves the dialog buttons into a separate footer bar with its own background, and widens them, instead of placing them directly under the content.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public const string WithFooter;
 ```

@@ -1,5 +1,11 @@
 # WindowService.Show&lt;T&gt; method (1 of 2)
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public void Show<T>(T viewModel, string? caption = null)
     where T : IWindowAwareViewModel
@@ -16,17 +22,30 @@ public void Show<T>(T viewModel, string? caption = null)
 
 Shows a non-modal window. When no owner is given, the active application window is used.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public void Show<T>(T viewModel, string? caption, Window? owner)
     where T : IWindowAwareViewModel
 ```
 
-| parameter | description |
+## Type Parameters
+
+| name | description |
 | --- | --- |
 | T | The type of the view model that drives the window. |
-| viewModel | The view model to display. It stays attached to the window until the window closes. |
-| caption | The window caption. When `null`, the caption is taken from Title. |
-| owner | The window that owns the new window. When `null`, the active application window is used; if there is none, the window is shown without an owner. |
+
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| viewModel | `T` | The view model to display. It stays attached to the window until the window closes. |
+| caption | `string?` | The window caption. When `null`, the caption is taken from Title. |
+| owner | `Window?` | The window that owns the new window. When `null`, the active application window is used; if there is none, the window is shown without an owner. |
 
 ## Exceptions
 

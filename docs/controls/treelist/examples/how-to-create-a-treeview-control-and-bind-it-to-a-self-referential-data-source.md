@@ -6,20 +6,20 @@ seealso: []
 
 # How to Create a TreeView Control and Bind It to a Self Referential Data Source
 
-This example creates a `TreeViewControl` control that displays a hierarchical collection of _Employee_ objects. The name of the employee currently focused in the TreeView is displayed in a text editor.
+This example creates a [`TreeViewControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md) control that displays a hierarchical collection of _Employee_ objects. The name of the employee currently focused in the TreeView is displayed in a text editor.
 
 The _Employee_ class is [self-referential data source](../data-binding/binding-to-self-referential-data-source.md). It stores information on parent-child relationships in two service properties (_ID_ and _ParentID_).
 
-In the example the following main properties are used to set up the `TreeViewControl`:
+In the example the following main properties are used to set up the [`TreeViewControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md):
 
-- `DataControlBase.ItemsSource` — Specifies the control's data source.
-- `TreeListControlBase.KeyFieldName` — Specifies the name of the _Key field_ (property) that stores unique record identifiers.
-- `TreeListControlBase.ParentFieldName` — Specifies the name of the parent record's _Key field_ (property).
-- `TreeListControlBase.RootValue` — Identifies root records in the bound collection. The `RootValue` property specifies the value that root records have in the _Parent key field_ (property).
-- `TreeViewControl.DataFieldName` — Specifies the name of the field (property) whose data is displayed in the `TreeViewControl`.
+- [`DataControlBase.ItemsSource`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ItemsSource.md) — Specifies the control's data source.
+- [`TreeListControlBase.KeyFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/KeyFieldName.md) — Specifies the name of the _Key field_ (property) that stores unique record identifiers.
+- [`TreeListControlBase.ParentFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ParentFieldName.md) — Specifies the name of the parent record's _Key field_ (property).
+- [`TreeListControlBase.RootValue`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RootValue.md) — Identifies root records in the bound collection. The [`RootValue`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RootValue.md) property specifies the value that root records have in the _Parent key field_ (property).
+- [`TreeViewControl.DataFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) — Specifies the name of the field (property) whose data is displayed in the [`TreeViewControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md).
 
-When a user focuses a node, you can use the TreeView's `DataControlBase.FocusedItem` inherited property to retrieve the focused node's underlying data object.
-In the example, the `DataControlBase.FocusedItem` property returns an _Employee_ object. The _Name_ value of the focused _Employee_ object is displayed in a `TextEditor`.
+When a user focuses a node, you can use the TreeView's [`DataControlBase.FocusedItem`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) inherited property to retrieve the focused node's underlying data object.
+In the example, the [`DataControlBase.FocusedItem`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) property returns an _Employee_ object. The _Name_ value of the focused _Employee_ object is displayed in a [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md).
 
 ``` xml
 <Window xmlns="https://github.com/avaloniaui"

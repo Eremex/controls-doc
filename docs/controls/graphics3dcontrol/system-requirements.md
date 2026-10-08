@@ -6,7 +6,7 @@ seealso: []
 
 # System Requirements
 
-`Graphics3DControl` is built on Vulkan SDK 1.1. Vulkan employs GPU-accelerated rendering when supported by hardware. This approach delivers significantly higher performance compared to software-based rendering.
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) is built on Vulkan SDK 1.1. Vulkan employs GPU-accelerated rendering when supported by hardware. This approach delivers significantly higher performance compared to software-based rendering.
 
 ## GPU Requirements
 

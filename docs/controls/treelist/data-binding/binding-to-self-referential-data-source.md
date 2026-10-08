@@ -20,17 +20,17 @@ All records that are going to be displayed as root nodes (at the root level) sho
 To bind a TreeList/TreeView control to a self-referential data source, do the following:
 
 - Ensure that data source records have two public properties that specify the Key field and _Parent key field_.
-- Set the control's `TreeListControlBase.KeyFieldName` property to the Key field name.
-- Set the control's `TreeListControlBase.ParentFieldName` property to the _Parent key field_ name.
-- Set the control's `TreeListControlBase.RootValue` property to the root value defined for root records in the data source.
+- Set the control's [`TreeListControlBase.KeyFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/KeyFieldName.md) property to the Key field name.
+- Set the control's [`TreeListControlBase.ParentFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ParentFieldName.md) property to the _Parent key field_ name.
+- Set the control's [`TreeListControlBase.RootValue`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RootValue.md) property to the root value defined for root records in the data source.
 
 ## Visibility of Service Columns
 
-TreeList does not create columns bound to service key fields by default. To allow the control to automatically create columns bound to the specified _Key field_ and _Parent key field_, set the `AutoGenerateColumns` and `AutoGenerateServiceColumns` properties to `true`.
+TreeList does not create columns bound to service key fields by default. To allow the control to automatically create columns bound to the specified _Key field_ and _Parent key field_, set the [`AutoGenerateColumns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md) and [`AutoGenerateServiceColumns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateServiceColumns.md) properties to `true`.
 
 ## Example
 
-The following example binds a TreeList control to a self-referential data source (a collection of _Employee_ records). The Employee class defines two properties (_ID_ and _ParentID_) that specify a record's _Key field_ and _Parent key field_, respectively. Root records have the _Parent key field_ set to **-1**, so the control's `RootValue` property is set to this value.
+The following example binds a TreeList control to a self-referential data source (a collection of _Employee_ records). The Employee class defines two properties (_ID_ and _ParentID_) that specify a record's _Key field_ and _Parent key field_, respectively. Root records have the _Parent key field_ set to **-1**, so the control's [`RootValue`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RootValue.md) property is set to this value.
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"

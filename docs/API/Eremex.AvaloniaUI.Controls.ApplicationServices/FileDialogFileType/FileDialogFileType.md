@@ -2,13 +2,21 @@
 
 Initializes a new instance of the [`FileDialogFileType`](../FileDialogFileType.md) class.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public FileDialogFileType(string name)
 ```
 
-| parameter | description |
-| --- | --- |
-| name | The text shown for this type in the dialog. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| name | `string` | The text shown for this type in the dialog. |
 
 ## See Also
 

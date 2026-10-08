@@ -6,7 +6,7 @@ seealso: []
 
 # Get Started with Charts
 
-This tutorial shows how to display three data series within a `CartesianChart` control, using the Bar and Line series views.
+This tutorial shows how to display three data series within a [`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) control, using the Bar and Line series views.
 
 ![charts-get-started](../../images/charts-get-started.png)
 
@@ -33,8 +33,8 @@ The _SeriesViewModel_ class exposes two properties that specify the color and da
 Data for a chart control's series is supplied using _Data Adapter_ objects. 
 Eremex Charts support multiple Data Adapters for various data types (numeric, date-time, and qualitative). In this tutorial, we'll use two Data Adapters:
 
-- `SortedNumericDataAdapter` — Supplies (numeric _X_, numeric _Y_) pairs sorted by the _X_ values.
-- `SortedDateTimeDataAdapter` — Supplies (DateTime _X_, numeric _Y_) pairs sorted by the _X_ values.
+- [`SortedNumericDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md) — Supplies (numeric _X_, numeric _Y_) pairs sorted by the _X_ values.
+- [`SortedDateTimeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) — Supplies (DateTime _X_, numeric _Y_) pairs sorted by the _X_ values.
 
 These Data Adapters are initialized in the main View Model.
 
@@ -98,9 +98,9 @@ public partial class MainWindowViewModel : ViewModelBase
 
 Data Adapters are populated with random data:
 
-- The `SortedDateTimeDataAdapter` objects are filled with 12 points that correspond to 12 months of the year. The _X_ values of the `SortedDateTimeDataAdapter` objects are `DateTime` values.
+- The [`SortedDateTimeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) objects are filled with 12 points that correspond to 12 months of the year. The _X_ values of the [`SortedDateTimeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) objects are `DateTime` values.
 
-- The `SortedNumericDataAdapter` object is populated with 365 points that correspond to the days of the year. The _X_ values of the `SortedNumericDataAdapter` object are numeric values.
+- The [`SortedNumericDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md) object is populated with 365 points that correspond to the days of the year. The _X_ values of the [`SortedNumericDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md) object are numeric values.
 
 
 ## Create a Cartesian Chart Control
@@ -124,13 +124,13 @@ xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
 </mxc:CartesianChart>
 ```
 
-This code adds two series (`CartesianSeries` objects) to the `CartesianChart.Series` collection, and binds them to corresponding data adapters in the main  View Model.
+This code adds two series ([`CartesianSeries`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) objects) to the [`CartesianChart.Series`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) collection, and binds them to corresponding data adapters in the main  View Model.
 
 ### Specify a Series View
 
 A **series view** determines the visual appearance and settings of the series. The Cartesian Chart supports multiple series views: Line, Scatter Line, Range Area, Bar, Range Bar, etc. See the following topic for more information: [Cartesian Chart](cartesian-chart.md).
 
-Let's apply the Bar series view to the series. For this purpose, define a `CartesianSideBySideBarSeriesView` object as a `CartesianSeries` object's content. 
+Let's apply the Bar series view to the series. For this purpose, define a [`CartesianSideBySideBarSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md) object as a [`CartesianSeries`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) object's content. 
 
 ``` xml
 <mxc:CartesianChart>
@@ -145,18 +145,18 @@ Let's apply the Bar series view to the series. For this purpose, define a `Carte
 </mxc:CartesianChart>
 ```
 
-`CartesianSideBySideBarSeriesView` renders points as rectangular bars:
+[`CartesianSideBySideBarSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md) renders points as rectangular bars:
 
 ![chart-CartesianSideBySideBarSeriesView-oneseries](../../images/chart-CartesianSideBySideBarSeriesView-oneseries.png)
 
-The series view's `Color` setting allows you to specify the color to render the associated series.
+The series view's [`Color`](../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/Color.md) setting allows you to specify the color to render the associated series.
 
 
 ## Create and Customize Default Axes
 
 Cartesian Chart can automatically create axes for underlying data. You may need to manually define the _X_ and _Y_ axes if you want to customize axis settings (for instance, specify a title and scale options). 
 
-To define axes, add `AxisX` and/or `AxisY` objects to the `CartesianChart.AxesX`/`CartesianChart.AxesY` collections:
+To define axes, add [`AxisX`](../../API/Eremex.AvaloniaUI.Charts/AxisX.md) and/or [`AxisY`](../../API/Eremex.AvaloniaUI.Charts/AxisY.md) objects to the [`CartesianChart.AxesX`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesX.md)/[`CartesianChart.AxesY`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesY.md) collections:
 
 ``` xml
 <mxc:CartesianChart>
@@ -177,7 +177,7 @@ To define axes, add `AxisX` and/or `AxisY` objects to the `CartesianChart.AxesX`
 
 The code above creates the _X_ and _Y_ axes, and specifies titles for them. 
 
-Since the underlying data points represent values for individual months, the `Month` time unit is applied to the horizontal date-time axis (using the `AxisX.ScaleOptions` property). 
+Since the underlying data points represent values for individual months, the `Month` time unit is applied to the horizontal date-time axis (using the [`AxisX.ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/AxisX/ScaleOptions.md) property). 
 
 If you run the application now, you'll see the following result:
 
@@ -190,7 +190,7 @@ You can add as many series to the chart control as you want. These series can us
 
 Let's add a Line Series and an axis for it to the chart. 
 
-First, create a new `CartesianSeries` object in the `CartesianChart.Series` collection, and bind it to the _LineSeries.DataAdapter_ object defined in the View Model.
+First, create a new [`CartesianSeries`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) object in the [`CartesianChart.Series`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) collection, and bind it to the _LineSeries.DataAdapter_ object defined in the View Model.
 
 ``` xml
 <mxc:CartesianChart>
@@ -204,7 +204,7 @@ First, create a new `CartesianSeries` object in the `CartesianChart.Series` coll
 
 ### Specify a Line Series View
 
-To apply the Line Series View to this series, define a `CartesianLineSeriesView` object as the series' content:
+To apply the Line Series View to this series, define a [`CartesianLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesView.md) object as the series' content:
 
 ``` xml
 <mxc:CartesianSeries Name="lineSeries" DataAdapter="{Binding LineSeries.DataAdapter}" >
@@ -212,17 +212,17 @@ To apply the Line Series View to this series, define a `CartesianLineSeriesView`
 </mxc:CartesianSeries> 
 ```
 
-`CartesianLineSeriesView` is a series view that connects points with lines:
+[`CartesianLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesView.md) is a series view that connects points with lines:
 
 ![chart-CartesianLineSeriesView-one-series](../../images/chart-CartesianLineSeriesView-one-series.png)
 
-As with any series view, you can use the `CartesianLineSeriesView.Color` property to specify the paint color of the series.
+As with any series view, you can use the [`CartesianLineSeriesView.Color`](../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) property to specify the paint color of the series.
 
 ### Specify its Own Axis for the Line Series
 
 The _X_ values of the Line series are of the numeric type, while the existing horizontal axis displays `DateTime` values. Thus, an additional numeric axis is required for the Line series. 
 
-Define a new numeric _X_ axis in the `CartesianChart.AxesX` collection.
+Define a new numeric _X_ axis in the [`CartesianChart.AxesX`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesX.md) collection.
 
 ``` xml
 <mxc:CartesianChart.AxesX>
@@ -238,7 +238,7 @@ Define a new numeric _X_ axis in the `CartesianChart.AxesX` collection.
 
 The axis's `Position` property is set to `Far` to display the axis at the edge opposite to the default position. For a horizontal axis, the `Far` option corresponds to the chart's top edge. For a vertical axis, the `Far` option places the axis at the chart's right edge.
 
-Now we need to associate the Line series with its axis. This is accomplished by specifying the axis ID (a unique string value). Set the same ID to the `Key` property of the axis and the `CartesianSeries.AxisXKey`/`CartesianSeries.AxisYKey` property of the series. 
+Now we need to associate the Line series with its axis. This is accomplished by specifying the axis ID (a unique string value). Set the same ID to the `Key` property of the axis and the [`CartesianSeries.AxisXKey`](../../API/Eremex.AvaloniaUI.Charts/Series/AxisXKey.md)/[`CartesianSeries.AxisYKey`](../../API/Eremex.AvaloniaUI.Charts/Series/AxisYKey.md) property of the series. 
 
 In this tutorial, specify the _"lineSeriesAxis"_ ID for the series and axis, as follows:
 
@@ -267,13 +267,13 @@ You can run the application to see the chart control displaying three series:
 
 ## Create a Custom Label Formatter
 
-`CartesianChart` formats labels for major tickmarks based on the axis scaling options. The following image shows label formatting when the `Month` time unit is applied to the _X_ axis:
+[`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) formats labels for major tickmarks based on the axis scaling options. The following image shows label formatting when the `Month` time unit is applied to the _X_ axis:
 
 ![chart-get-started-label-formatting-month-default](../../images/chart-get-started-label-formatting-month-default.png)
 
-The `ScaleOptions.LabelFormatter` property of an axis allows you to change the display format of the labels. You can use the `Eremex.AvaloniaUI.Charts.FuncLabelFormatter` class as a label formatter, or create a custom label formatter by implementing the `IAxisLabelFormatter` interface.
+The [`ScaleOptions.LabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) property of an axis allows you to change the display format of the labels. You can use the [`Eremex.AvaloniaUI.Charts.FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md) class as a label formatter, or create a custom label formatter by implementing the [`IAxisLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/IAxisLabelFormatter.md) interface.
 
-We'll use the `FuncLabelFormatter` class to create short labels for date-time values of the _X_ axis. In the main View Model, implement a property of the `FuncLabelFormatter` type that formats labels in a specific manner. In XAML, bind the axis's `ScaleOptions.LabelFormatter` option to this formatter.
+We'll use the [`FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md) class to create short labels for date-time values of the _X_ axis. In the main View Model, implement a property of the [`FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md) type that formats labels in a specific manner. In XAML, bind the axis's [`ScaleOptions.LabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) option to this formatter.
 
 ![chart-get-started-label-formatting-month-custom](../../images/chart-get-started-label-formatting-month-custom.png)
 
@@ -295,7 +295,7 @@ public partial class MainWindowViewModel : ViewModelBase
 
 ## Result
 
-Now you can run the application to see the result of this tutorial. The `CartesianChart` control displays three data series using the Bar and Line series views. The Line series is associated with its own _X_ axis displayed at the top of the chart. 
+Now you can run the application to see the result of this tutorial. The [`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) control displays three data series using the Bar and Line series views. The Line series is associated with its own _X_ axis displayed at the top of the chart. 
 
 ![charts-get-started](../../images/charts-get-started.png)
 

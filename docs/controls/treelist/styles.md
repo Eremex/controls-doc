@@ -173,10 +173,10 @@ To customize a row cell's style, use the following information:
 
 A `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData` object. The main properties exposed by the `CellData` object are:
 
-- `Column` — The column (a `ColumnBase` object) that displays the cell. When you apply a style to a TreeView object, the `CellData.Column` property contains a `ColumnBase` object that encapsulates the TreeView's value column.
-- `DataControl` — The TreeList/TreeView control (a `DataControlBase` object).
+- `Column` — The column (a [`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md) object) that displays the cell. When you apply a style to a TreeView object, the `CellData.Column` property contains a [`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md) object that encapsulates the TreeView's value column.
+- `DataControl` — The TreeList/TreeView control (a [`DataControlBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase.md) object).
 - `Row` — The row's underlying data (business) object.
-- `ValidationInfo` — An object that contains the cell's validation information.
+- [`ValidationInfo`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationInfo.md) — An object that contains the cell's validation information.
 - `Value` — The cell's value.
 
 ### Custom Pseudo Classes
@@ -300,7 +300,7 @@ Use the following information to customize a column header's style:
 
 ### DataContext
 
-`TreeListColumn`
+[`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md)
 
 ### Custom Pseudo Classes
 

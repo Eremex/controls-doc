@@ -6,6 +6,12 @@ The class knows about no particular DI container: the only integration type is I
 
 [`Current`](./ApplicationServicesContext/Current.md) is meant only for places where constructor injection cannot reach: markup extensions, attached properties, converters, code-behind without a container. The library services themselves take dependencies through constructors and never touch the ambient context.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public static class ApplicationServicesContext
 ```

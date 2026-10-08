@@ -33,11 +33,11 @@ To close the Document Switcher and activate the selected panel or document, rele
 
 ## Disable the Document Switcher
 
-Set the `DockManager.AllowDocumentSwitcher` property to `false` to disable the Document Switcher. This setting also disables the CTRL+TAB and CTRL+SHIFT+TAB shortcuts for navigation between dock items.
+Set the [`DockManager.AllowDocumentSwitcher`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AllowDocumentSwitcher.md) property to `false` to disable the Document Switcher. This setting also disables the CTRL+TAB and CTRL+SHIFT+TAB shortcuts for navigation between dock items.
 
 ## Show Panes in the Document Switcher
 
-To prevent a pane from being displayed in the Document Switcher, disable the `DockPane.ShowInDocumentSwitcher` option.
+To prevent a pane from being displayed in the Document Switcher, disable the [`DockPane.ShowInDocumentSwitcher`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/ShowInDocumentSwitcher.md) option.
 
 Closed panels are not accessible in the Document Switcher.
 
@@ -49,5 +49,5 @@ The Document Switcher supports two regions where it displays descriptions of the
 
 Use the following properties to specify pane descriptions to display in the Document Switcher: 
 
-- `DockPane.DocumentSwitcherDescription` — Specifies the pane's description to display at the top of the Document Switcher.
-- `DockPane.DocumentSwitcherFooterDescription` — Specifies the pane's description to display at the bottom of the Document Switcher.
+- [`DockPane.DocumentSwitcherDescription`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/DocumentSwitcherDescription.md) — Specifies the pane's description to display at the top of the Document Switcher.
+- [`DockPane.DocumentSwitcherFooterDescription`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/DocumentSwitcherFooterDescription.md) — Specifies the pane's description to display at the bottom of the Document Switcher.

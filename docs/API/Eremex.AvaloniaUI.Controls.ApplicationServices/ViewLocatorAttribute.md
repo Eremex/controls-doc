@@ -2,6 +2,12 @@
 
 Applied to a view model to declare which view renders it and how the hosting window should look. The window services read this attribute when a view model is shown, create the view and put it in [`Content`](./IWindowAwareViewModel/Content.md), so the view model never has to construct its own view.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 [AttributeUsage(AttributeTargets.Class)]
 public class ViewLocatorAttribute : Attribute

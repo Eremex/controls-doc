@@ -2,6 +2,12 @@
 
 Names of the style classes a dialog window recognises. Pass them to [`ViewLocatorAttribute`](./ViewLocatorAttribute.md) to pick the appearance of the window that hosts a view model, instead of repeating the literal strings at every call site.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public static class DialogWindowClasses
 ```

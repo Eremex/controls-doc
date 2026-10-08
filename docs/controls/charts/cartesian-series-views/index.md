@@ -6,7 +6,7 @@ seealso: []
 
 # Cartersian Series Views
 
-The `CartesianChart` control provides the following Views to visualize series data in different ways:
+The [`CartesianChart`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) control provides the following Views to visualize series data in different ways:
 
 - [Line Series View](line-series-vew.md)
 - [Scatter Line Series View](scatter-line-series-view.md)

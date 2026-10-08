@@ -29,7 +29,7 @@ Multiple utility controls shipped with the Eremex Controls library help you crea
     - Ability to collapse/expand one of the panels.
     - An option to hide the splitter.
 
-- `ColorEditor` — A standalone control that allows a user to pick a color. 
+- [`ColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorEditor.md) — A standalone control that allows a user to pick a color. 
     - The ColorEditor is used as part of the PopupColorEditor control, and it can be used as a standalone control as well.
     - Three color palettes — Default, Standard, Custom.
     - The Default color palette can be initialized in code.

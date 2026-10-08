@@ -2,6 +2,12 @@
 
 The position of the button among the buttons docked to the same side, in ascending order. `null` leaves the button in its declaration order.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public int? Index { get; }
 ```

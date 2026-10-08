@@ -14,7 +14,7 @@ You can initially hide individual pages, and then make them visible and active a
 
 ## Define and Access Ribbon Pages
 
-Ribbon pages are encapsulated by `RibbonPage` class objects. In code-behind, you can create, access and modify ribbon pages using the `RibbonControl.Pages` collection. To define ribbon pages in XAML, add `RibbonPage` objects between the **&lt;RibbonControl&gt;** start and end tags.
+Ribbon pages are encapsulated by [`RibbonPage`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage.md) class objects. In code-behind, you can create, access and modify ribbon pages using the [`RibbonControl.Pages`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/Pages.md) collection. To define ribbon pages in XAML, add [`RibbonPage`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage.md) objects between the **&lt;RibbonControl&gt;** start and end tags.
 
 ``` xml
 <mxb:ToolbarManager IsWindowManager="True">
@@ -33,11 +33,11 @@ Ribbon pages are encapsulated by `RibbonPage` class objects. In code-behind, you
 ```
 
 <!-- TODO
-Example of adding, hiding, positioning pages via `RibbonControl.Pages`.
+Example of adding, hiding, positioning pages via [`RibbonControl.Pages`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/Pages.md).
  -->
 
 
-You can also use the `RibbonControl.PagesSource` property to create ribbon pages from a collection of business objects in a View Model. A corresponding data template should define a `RibbonPage` object and initialize its settings from an underlying business object.
+You can also use the [`RibbonControl.PagesSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/PagesSource.md) property to create ribbon pages from a collection of business objects in a View Model. A corresponding data template should define a [`RibbonPage`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage.md) object and initialize its settings from an underlying business object.
 
 <!-- TODO
 PagesSource example 
@@ -45,13 +45,13 @@ PagesSource example
 
 ## Page Header and Content
 
-When you create a page, use the `RibbonPage.Header` property to specify text for the page header.
+When you create a page, use the [`RibbonPage.Header`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/Header.md) property to specify text for the page header.
 
 <!-- TODO
 There is a Glyph property in RibbonPage.  Doesn't work???
  -->
 
-The content of ribbon pages are [ribbon page groups](page-groups.md). Use the `RibbonPage.Groups` collection to create and access ribbon page groups. In XAML, you can define page groups between the **&lt;RibbonPage&gt;** start and end tags.
+The content of ribbon pages are [ribbon page groups](page-groups.md). Use the [`RibbonPage.Groups`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/Groups.md) collection to create and access ribbon page groups. In XAML, you can define page groups between the **&lt;RibbonPage&gt;** start and end tags.
 
 ``` xml
  <mxr:RibbonPage Header="Home" KeyTip="H">
@@ -75,18 +75,18 @@ The content of ribbon pages are [ribbon page groups](page-groups.md). Use the `R
 ```
 
 
-You can also use the `RibbonPage.GroupsSource` property to create page groups from a collection of business objects in a View Model. A corresponding data template should define a `RibbonPageGroup` object and initialize its settings from a business object.
+You can also use the [`RibbonPage.GroupsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/GroupsSource.md) property to create page groups from a collection of business objects in a View Model. A corresponding data template should define a [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md) object and initialize its settings from a business object.
 
 ## Selected Page
 
 The content of a page is shown to a user when the page is selected. A user can select a page by clicking the page header. In code, you can select a page with one of the following properties:
 
-- `RibbonControl.SelectedPage`
-- `RibbonPage.IsSelected`
+- [`RibbonControl.SelectedPage`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/SelectedPage.md)
+- [`RibbonPage.IsSelected`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/IsSelected.md)
 
 ## Page Visibility
 
-Use the `RibbonPage.IsVisible` property to hide and display a page. The page's position is specified by its place in the `RibbonControl.Pages` collection.
+Use the `RibbonPage.IsVisible` property to hide and display a page. The page's position is specified by its place in the [`RibbonControl.Pages`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/Pages.md) collection.
 
 The following code displays and activates an initially hidden _Table_ page.
 

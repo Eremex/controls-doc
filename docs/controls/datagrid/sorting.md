@@ -22,14 +22,14 @@ To sort data by a specific column, users can also use the column header's contex
 
 You can prevent specific columns from being sorted by users. Use the following properties for this purpose:
 
-- `DataGridControl.AllowSorting` — Specifies whether a user can sort/group by any column.
-- `ColumnBase.AllowSorting` — Specifies whether a user can sort and group a specific column.
+- [`DataGridControl.AllowSorting`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowSorting.md) — Specifies whether a user can sort/group by any column.
+- [`ColumnBase.AllowSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowSorting.md) — Specifies whether a user can sort and group a specific column.
 
 These properties do not prevent you from sorting data in code.
 
 ## Alphanumeric Sorting
 
-For columns that display text, you can use the `DataGridControl.TextSortMode` property to choose between alphabetical and alphanumeric sorting.
+For columns that display text, you can use the [`DataGridControl.TextSortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/TextSortMode.md) property to choose between alphabetical and alphanumeric sorting.
 
 - `Alphabetical` Sort (default): This mode compares strings character by character. If the text contains numbers, the sorting algorithm treats them as individual characters, but not as numbers. For example:
 
@@ -49,7 +49,7 @@ For columns that display text, you can use the `DataGridControl.TextSortMode` pr
                         />
     ```
 
-The `DataGridControl.TextSortMode` property affects sorting for all columns that display text values.
+The [`DataGridControl.TextSortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/TextSortMode.md) property affects sorting for all columns that display text values.
 
 The following image demonstrates more examples that compare alphabetical and alphanumeric sort modes:
 
@@ -61,11 +61,11 @@ The following image demonstrates more examples that compare alphabetical and alp
 
 You can use the following properties to specify sort settings for columns:
 
-- `ColumnBase.SortDirection` — Specifies the sort order. You can set this property to `Ascending` or `Descending` to sort the column. When you initialize this property the column is added to the Data Grid's internal sorted column collection. Set the `SortDirection` property to `null` to clear sorting for this column, and remove the column from the sorted column collection.
+- [`ColumnBase.SortDirection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortDirection.md) — Specifies the sort order. You can set this property to `Ascending` or `Descending` to sort the column. When you initialize this property the column is added to the Data Grid's internal sorted column collection. Set the [`SortDirection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortDirection.md) property to `null` to clear sorting for this column, and remove the column from the sorted column collection.
 
-- `ColumnBase.SortIndex` — Specifies the zero-based index of the column within the sorted column collection. The Data Grid control sorts data first by the first sorted column, then by the second sorted column, and so on. You can set the `SortIndex` property to a non-negative value to sort this column in ascending order. Set `SortIndex` to `-1` to clear sorting by this column.
+- [`ColumnBase.SortIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortIndex.md) — Specifies the zero-based index of the column within the sorted column collection. The Data Grid control sorts data first by the first sorted column, then by the second sorted column, and so on. You can set the [`SortIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortIndex.md) property to a non-negative value to sort this column in ascending order. Set [`SortIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortIndex.md) to `-1` to clear sorting by this column.
 
-Call the control's inherited `DataControlBase.ClearSorting` method to remove sorting applied to all columns.
+Call the control's inherited [`DataControlBase.ClearSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ClearSorting.md) method to remove sorting applied to all columns.
 
 The following code clears sorting and then sorts data by two columns:
 
@@ -75,7 +75,7 @@ gridColumn1.SortDirection = ListSortDirection.Ascending;
 gridColumn3.SortDirection = ListSortDirection.Descending;
 ```
 
-You can wrap your code with the `BeginDataUpdate` and `EndDataUpdate` methods to prevent superfluous updates when changing the control's multiple settings (including sort settings).
+You can wrap your code with the [`BeginDataUpdate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/BeginDataUpdate.md) and [`EndDataUpdate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/EndDataUpdate.md) methods to prevent superfluous updates when changing the control's multiple settings (including sort settings).
 
 ``` csharp
 dataGrid1.BeginDataUpdate();
@@ -94,26 +94,26 @@ Data Grid can sort (and [group](grouping.md)) columns by edit values, display va
 - Sorting/grouping by display text — Columns with an embedded ComboBoxEditor.
 - No sorting/grouping — Columns bound to objects that do not implement the `IComparable` interface. For instance, image data types do not implement this interface, thus no sorting is available for corresponding columns, by default. See the [Custom Sorting](#custom-sorting) section below for information, on how to forcibly sort these columns.
 
-Use the `ColumnBase.SortMode` property to change sort/group mode for a column. The following options are available:
+Use the [`ColumnBase.SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortMode.md) property to change sort/group mode for a column. The following options are available:
 
-- `SortMode.Value` — Sort/group by cell edit values.
-- `SortMode.DisplayText` — Sort/group by cell display text.
-- `SortMode.Custom` — Enables custom sorting and grouping. Set the `SortMode` property to `Custom`, and then handle the `DataGridControl.CustomColumnSort` and/or `DataGridControl.CustomColumnGroup` event to implement custom sorting and/or custom grouping logic. See the following links for more information:
+- [`SortMode.Value`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) — Sort/group by cell edit values.
+- [`SortMode.DisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) — Sort/group by cell display text.
+- [`SortMode.Custom`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) — Enables custom sorting and grouping. Set the [`SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) property to `Custom`, and then handle the [`DataGridControl.CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnSort.md) and/or [`DataGridControl.CustomColumnGroup`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnGroup.md) event to implement custom sorting and/or custom grouping logic. See the following links for more information:
 
     - [Custom Sorting](#custom-sorting)
     - [Custom Grouping](grouping.md#custom-grouping)
 
 ### Custom Sorting
 
-The `CustomColumnSort` event allows you to implement custom sorting logic for a specific column. Set the `ColumnBase.SortMode` property to `Custom` to enable this event.
+The [`CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnSort.md) event allows you to implement custom sorting logic for a specific column. Set the [`ColumnBase.SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortMode.md) property to `Custom` to enable this event.
 
 If a column's bound data type does not implement the `IComparable` interface (for instance, an image data type), the Data Grid defaults to preventing sorting for this column. You can, however, enable sorting for this column, as follows:
 
-- Set the column's `AllowSorting` property to `true` (this property's default value is `null`).
-- Set the column's `SortMode` property to `Custom`.
-- Handle the `CustomColumnSort` event to implement custom sorting.
+- Set the column's [`AllowSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowSorting.md) property to `true` (this property's default value is `null`).
+- Set the column's [`SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) property to `Custom`.
+- Handle the [`CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnSort.md) event to implement custom sorting.
 
-When you handle the `CustomColumnSort` event, you should compare two rows specified in the event arguments. Assign the result of the comparison to the `Result` event parameter as follows:
+When you handle the [`CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnSort.md) event, you should compare two rows specified in the event arguments. Assign the result of the comparison to the `Result` event parameter as follows:
 
 - Set `Result` to `-1` if the first row should be displayed above the second row when data is sorted in ascending order. 
 
@@ -122,7 +122,7 @@ When you handle the `CustomColumnSort` event, you should compare two rows specif
  - Set `Result` to `0` if the two rows are equal. 
  
 
-The following example handles the `DataGridControl.CustomColumnSort` event to sort data in the "_FileName_" column in a custom manner. The "_FileName_" column stores file names in the standard "_filename.ext_" format. The custom sorting routine sorts file names by their extensions.
+The following example handles the [`DataGridControl.CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnSort.md) event to sort data in the "_FileName_" column in a custom manner. The "_FileName_" column stores file names in the standard "_filename.ext_" format. The custom sorting routine sorts file names by their extensions.
 
 ``` csharp
 <mxdg:DataGridControl Name="dataGrid1" CustomColumnSort="DataGrid_CustomColumnSort">
@@ -158,5 +158,5 @@ string extractFileExtension(string fileName)
 
 Handle the following events to perform custom actions when data is sorted:
 
-- `DataControlBase.StartSorting` — Fires when data is about to be sorted.
-- `DataControlBase.EndSorting` — Fires when data sorting is complete.
+- [`DataControlBase.StartSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/StartSorting.md) — Fires when data is about to be sorted.
+- [`DataControlBase.EndSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/EndSorting.md) — Fires when data sorting is complete.

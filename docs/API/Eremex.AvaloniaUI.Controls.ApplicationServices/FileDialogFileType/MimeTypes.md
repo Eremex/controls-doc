@@ -2,6 +2,12 @@
 
 The MIME types this type matches, such as `image/png`. Used on platforms that identify files by MIME type rather than by extension.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public IReadOnlyList<string>? MimeTypes { get; set; }
 ```

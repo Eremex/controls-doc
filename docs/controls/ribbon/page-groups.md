@@ -12,7 +12,7 @@ seealso: []
 
 ## Define and Access Ribbon Page Groups
 
-Ribbon page groups are encapsulated by `RibbonPageGroup` class objects. In code-behind, you can create, access and modify page groups using the `RibbonPage.Groups` collection. To define page groups in XAML, add `RibbonPageGroup` objects between the **&lt;RibbonPage&gt;** start and end tags.
+Ribbon page groups are encapsulated by [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md) class objects. In code-behind, you can create, access and modify page groups using the [`RibbonPage.Groups`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/Groups.md) collection. To define page groups in XAML, add [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md) objects between the **&lt;RibbonPage&gt;** start and end tags.
 
 ``` xml
 <mxr:RibbonPage Header="Home" KeyTip="H" Name="pageHome">
@@ -29,7 +29,7 @@ Ribbon page groups are encapsulated by `RibbonPageGroup` class objects. In code-
 </mxr:RibbonPageGroup>
 ```
 
-You can also use the `RibbonPage.GroupsSource` property to create page groups from a collection of business objects in a View Model. A corresponding data template should define a `RibbonPageGroup` object and initialize its settings from a business object.
+You can also use the [`RibbonPage.GroupsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/GroupsSource.md) property to create page groups from a collection of business objects in a View Model. A corresponding data template should define a [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md) object and initialize its settings from a business object.
 
 <!-- TODO
 GroupsSource example
@@ -38,19 +38,19 @@ GroupsSource example
 
 ## Page Group Header
 
-When the [Classic command layout](ribbon-command-layouts.md) is applied, page groups have headers at the bottom. A group header displays a caption (`RibbonPageGroup.Header`) and a header button.
+When the [Classic command layout](ribbon-command-layouts.md) is applied, page groups have headers at the bottom. A group header displays a caption ([`RibbonPageGroup.Header`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/Header.md)) and a header button.
 
 ![ribbon-page-group-header](../../images/ribbon-page-group-header.png)
 
 A click on the header button has no default action. You can associate an action with the header button as follows:
 
-- Handle the `RibbonPageGroup.HeaderButtonClick` or `RibbonPageGroup.HeaderButtonPress` event. For instance, your event handler can display a dialog or menu that brings up more settings related to the group.
+- Handle the [`RibbonPageGroup.HeaderButtonClick`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonClick.md) or [`RibbonPageGroup.HeaderButtonPress`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonPress.md) event. For instance, your event handler can display a dialog or menu that brings up more settings related to the group.
 
-  The `HeaderButtonClick` event is raised after the left mouse button is pressed and released over the header button. The `HeaderButtonPress` event is raised immediately after a user presses any mouse button over the header button. 
+  The [`HeaderButtonClick`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonClick.md) event is raised after the left mouse button is pressed and released over the header button. The [`HeaderButtonPress`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonPress.md) event is raised immediately after a user presses any mouse button over the header button. 
 
-- Assign a command to the `RibbonPageGroup.HeaderButtonCommand` property. You can specify an optional command parameter using the `RibbonPageGroup.HeaderButtonCommandParameter` property.
+- Assign a command to the [`RibbonPageGroup.HeaderButtonCommand`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonCommand.md) property. You can specify an optional command parameter using the [`RibbonPageGroup.HeaderButtonCommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonCommandParameter.md) property.
 
-Use the `RibbonPageGroup.IsHeaderButtonVisible` property to hide the header button.
+Use the [`RibbonPageGroup.IsHeaderButtonVisible`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/IsHeaderButtonVisible.md) property to hide the header button.
 
 
 
@@ -59,7 +59,7 @@ Use the `RibbonPageGroup.IsHeaderButtonVisible` property to hide the header butt
 
 A page group displays a set of closely related ribbon items. Ribbon items are buttons, check buttons, button groups, sub-menus, in-place editors, galleries and more. See the following topics for more information: [Ribbon Items](ribbon-items.md) and [Galleries](galleries.md)
 
-To populate a ribbon page group with items, use the `RibbonPageGroup.Items` collection.  In XAML, you can define items between the **&lt;RibbonPageGroup&gt;** start and end tags.
+To populate a ribbon page group with items, use the [`RibbonPageGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/Items.md) collection.  In XAML, you can define items between the **&lt;RibbonPageGroup&gt;** start and end tags.
 
 
 
@@ -84,7 +84,7 @@ To populate a ribbon page group with items, use the `RibbonPageGroup.Items` coll
 </mxr:RibbonPage>
 ```
 
-You can also use the `RibbonPageGroup.ItemsSource` property to create items from a collection of business objects in a View Model. Corresponding data templates should define ribbon items and initialize their settings from underlying business objects.
+You can also use the [`RibbonPageGroup.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/ItemsSource.md) property to create items from a collection of business objects in a View Model. Corresponding data templates should define ribbon items and initialize their settings from underlying business objects.
 
 <!-- TODO
 ItemsSource example
@@ -97,7 +97,7 @@ When a Ribbon control is resized, the adaptive layout feature may collapse speci
 
 ![page-group-collapsed](../../images/page-group-collapsed.png)
 
-You can use the `RibbonPageGroup.Glyph` property to display an image in a collapsed group's button:
+You can use the [`RibbonPageGroup.Glyph`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/Glyph.md) property to display an image in a collapsed group's button:
 
 ![page-group-collapsed-with-glyph](../../images/page-group-collapsed-with-glyph.png)
 
@@ -187,7 +187,7 @@ This layout consists of three rows of ribbon items:
     <mxb:ToolbarCheckItem Name="btnSort" Header="Sort Results Alphabetically" CheckBoxStyle="CheckBox"/>
     ```
 
-- Row 2 displays a container (`ToolbarItemGroup`) that combines a text editor and a button. Grouping the items in a container is required to position the items next to each other.
+- Row 2 displays a container ([`ToolbarItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup.md)) that combines a text editor and a button. Grouping the items in a container is required to position the items next to each other.
 
     ``` xml
     <mxb:ToolbarItemGroup Name="groupSearchBox">
@@ -203,7 +203,7 @@ This layout consists of three rows of ribbon items:
     </mxb:ToolbarItemGroup>
     ```
     
-- Row 3 displays a container (`ToolbarCheckItemGroup`) that combines three check items:
+- Row 3 displays a container ([`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md)) that combines three check items:
 
     ``` xml
     <mxb:ToolbarCheckItemGroup Name="groupSearchProperties"  >
@@ -222,7 +222,7 @@ This layout consists of three rows of ribbon items:
     </mxb:ToolbarCheckItemGroup>
     ```
 
-Place the _btnSort_, _groupSearchBox_ and _groupSearchProperties_ items in a `RibbonPageGroup`:
+Place the _btnSort_, _groupSearchBox_ and _groupSearchProperties_ items in a [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md):
 
 ``` xml
 <mxr:RibbonControl>
@@ -300,7 +300,7 @@ For this purpose, set the `RibbonPageGroup.ItemGroupLayoutMode` attached propert
 
 #### Example - Forcibly Arrange Containers in Two Rows
 
-Consider a `RibbonPageGroup` that contains four non-breaking containers (groups) of items.
+Consider a [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md) that contains four non-breaking containers (groups) of items.
 
 ![ItemGroupLayoutMode-example-indicate4groups](../../images/ItemGroupLayoutMode-example-indicate4groups.png)
 
@@ -341,7 +341,7 @@ This results in the containers being arranged in two rows. If there is not enoug
 
 ![ItemGroupLayoutMode-example-result-animation](../../images/ItemGroupLayoutMode-example-result-animation.gif)
 
-If you need a specific item to start a new column, place a  `ToolbarSeparatorItem` object before this item.
+If you need a specific item to start a new column, place a  [`ToolbarSeparatorItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarSeparatorItem.md) object before this item.
 
 ``` xml
 <mxr:RibbonPageGroup Header="Paragraph">

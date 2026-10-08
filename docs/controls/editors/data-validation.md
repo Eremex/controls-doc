@@ -9,7 +9,7 @@ seealso: []
 Eremex editors support the following approaches to data validation, which maintain correct data input, value checking and displaying errors for invalid data:
 
 - [Masks](masks/index.md) — Allow you to specify a pattern that restricts data input by users in text editors. 
-- Data validation at the editor level, using the `BaseEditor.Validate` event.
+- Data validation at the editor level, using the [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) event.
 - Data validation at the bound object level, using the `DataAnnotation` attributes and `INotifyDataErrorInfo` interface.
 
 <!-- TODO
@@ -47,20 +47,20 @@ Why ValidateOnInput is true by default?
 
 ### Force Data Validation
 
-In specific cases, you may want to forcibly invoke the validation mechanism for an editor. Use the `BaseEditor.DoValidate` method for this purpose.
+In specific cases, you may want to forcibly invoke the validation mechanism for an editor. Use the [`BaseEditor.DoValidate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/DoValidate.md) method for this purpose.
 
 ## Data Validation at the Editor Level
 
 ### 'Validate' Event
 
-The `BaseEditor.Validate` event allows you to perform data validation at the editor level in code-behind. The following event arguments are available:
+The [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) event allows you to perform data validation at the editor level in code-behind. The following event arguments are available:
 
-- `ValidationEventArgs.Value` — Gets the current value.
-- `ValidationEventArgs.ErrorContent` — Allows you to specify an error if the current value is invalid. If you leave the `ErrorContent` property set to `null`, the current value is considered valid.
+- [`ValidationEventArgs.Value`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/Value.md) — Gets the current value.
+- [`ValidationEventArgs.ErrorContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/ErrorContent.md) — Allows you to specify an error if the current value is invalid. If you leave the [`ErrorContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/ErrorContent.md) property set to `null`, the current value is considered valid.
 
 #### Example - Verify that the entered value is a valid email address
 
-The following example handles the `BaseEditor.Validate` event to check that the string entered in a Text Editor is a valid email address. The `ValidateOnInput` option set to `true` ensures that the validation is invoked whenever a character is pressed.
+The following example handles the [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) event to check that the string entered in a Text Editor is a valid email address. The `ValidateOnInput` option set to `true` ensures that the validation is invoked whenever a character is pressed.
 
 ![editors-validation-validate-event-example](../../images/editors-validation-validate-event-example.png)
 
@@ -212,17 +212,17 @@ public partial class MainViewModel : ObservableObject, INotifyDataErrorInfo
 
 ## Indicate Errors
 
-When an error occurs during data validation, the editor indicates the error as specified by the `BaseEditor.ErrorShowMode` property. Two error display modes are supported: 
+When an error occurs during data validation, the editor indicates the error as specified by the [`BaseEditor.ErrorShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ErrorShowMode.md) property. Two error display modes are supported: 
 
 ### Show Built-in Error Icon and Tooltip
 
-If the `ErrorShowMode` property is set to `Inplace`, an editor displays an error icon within the edit box. When a user hovers over the icon, a tooltip with an error description appears.
+If the [`ErrorShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ErrorShowMode.md) property is set to `Inplace`, an editor displays an error icon within the edit box. When a user hovers over the icon, a tooltip with an error description appears.
 
 ![texteditor-errorshowmode-inplace](../../images/texteditor-errorshowmode-inplace.png)
 
 ### Show Error Below Editor
 
-Set the `ErrorShowMode` property to `Full` to display an error description below the edit box. The inplace error icon is hidden in this case.
+Set the [`ErrorShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ErrorShowMode.md) property to `Full` to display an error description below the edit box. The inplace error icon is hidden in this case.
 
 ![texteditor-errorshowmode-full](../../images/texteditor-errorshowmode-full.png)
 
@@ -231,11 +231,11 @@ Set the `ErrorShowMode` property to `Full` to display an error description below
 
 You can do one of the following to specify the error text:
 
-- Handle the `BaseEditor.Validate` event and set the `ErrorContent` event argument. No error is applied if you leave the `ErrorContent` event argument set to `null`.
+- Handle the [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) event and set the `ErrorContent` event argument. No error is applied if you leave the `ErrorContent` event argument set to `null`.
 
-    To forcibly raise the `BaseEditor.Validate` event, call the `BaseEditor.DoValidate` method.
+    To forcibly raise the [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) event, call the [`BaseEditor.DoValidate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/DoValidate.md) method.
 
-- Specify the error using the `BaseEditor.ValidationInfo` property.
+- Specify the error using the [`BaseEditor.ValidationInfo`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ValidationInfo.md) property.
 
     The following code sets an error for an editor if the editor's value is `null` or `0`.
 
@@ -246,12 +246,12 @@ You can do one of the following to specify the error text:
 
     ```
 
-    Set the `BaseEditor.ValidationInfo` property to `null` to clear the error.
+    Set the [`BaseEditor.ValidationInfo`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ValidationInfo.md) property to `null` to clear the error.
 
 
 ### Get the Error Text
 
-Use the `BaseEditor.ErrorText` property to get the error text.
+Use the [`BaseEditor.ErrorText`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ErrorText.md) property to get the error text.
 
 
 

@@ -2,6 +2,12 @@
 
 Shows non-modal application windows from view model code, so that a view model can open a window without referencing any window type. The counterpart for modal dialogs is [`IDialogService`](./IDialogService.md).
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public interface IWindowService
 ```

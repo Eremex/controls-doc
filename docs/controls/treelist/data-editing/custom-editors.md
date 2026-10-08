@@ -21,13 +21,13 @@ The current topic shows how to use cell templates to embed custom editors in cel
  
 ## Assign a Custom Editor to a TreeList Column and TreeView Directly
  
-You can assign an in-place editor to a TreeList column or TreeView by creating a `DataTemplate`. Use the `TreeListColumn.CellTemplate` and `TreeViewControl.CellTemplate` properties for this purpose, as follows.
+You can assign an in-place editor to a TreeList column or TreeView by creating a `DataTemplate`. Use the [`TreeListColumn.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) and [`TreeViewControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellTemplate.md) properties for this purpose, as follows.
 
 - Create a `DataTemplate` object with an editor defined inside the template. 
 - Assign the `DataTemplate` to the `CellTemplate` property.
 - Bind the editor to a column value explicitly, when required. 
  
-The following example shows XAML code that sets a TreeList column's `CellTemplate` property to a `TextBox` object:
+The following example shows XAML code that sets a TreeList column's [`CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) property to a `TextBox` object:
  
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -70,7 +70,7 @@ Explicit data binding is required in the following cases:
 
 !!! tip
 
-    Eremex editors are controls derived from the `Eremex.AvaloniaUI.Controls.Editors.BaseEditor` class.
+    Eremex editors are controls derived from the [`Eremex.AvaloniaUI.Controls.Editors.BaseEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor.md) class.
 
 - You need to specify a custom value converter in the data binding expression.
  
@@ -84,11 +84,11 @@ Explicit data binding is required in the following cases:
  
 ## Dynamically Assign Editors Based on a TreeList Column Data Type
  
-The TreeList control allows you to assign in-place editors wrapped within `DataTemplate`s to column cells based on the data type of the column's bound field. Use the `TreeListControl.CellTemplate` property for this purpose.
+The TreeList control allows you to assign in-place editors wrapped within `DataTemplate`s to column cells based on the data type of the column's bound field. Use the [`TreeListControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CellTemplate.md) property for this purpose.
 
 ### Example - How to associate an editor with a single data type
 
-The following example associates a `TextEditor` that paints values in green with columns bound to Integer fields:
+The following example associates a [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) that paints values in green with columns bound to Integer fields:
  
 ```xml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -134,7 +134,7 @@ public class CellTemplateLocator : AvaloniaList<IDataTemplate>, IDataTemplate
 }
 ```
  
-- Initialize the `TreeListControl.CellTemplate` property with a *CellTemplateLocator* object.
+- Initialize the [`TreeListControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CellTemplate.md) property with a *CellTemplateLocator* object.
 - Populate the *CellTemplateLocator* object with `DataTemplate` objects associated with your data types.
  
 The following example defines two `DataTemplate` objects with editors associated with the _String_ and _Integer_ data types, respectively.

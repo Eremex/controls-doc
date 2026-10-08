@@ -101,11 +101,11 @@ The secondary button opens a dropdown control/menu, which is specified by the `M
 
 You can set the `DropDownControl` property to the following objects:
 
-- `Eremex.AvaloniaUI.Controls.Bars.PopupMenu` — A popup menu that can host various items (buttons, check buttons, sub-menus, and so on). See the following topic for more information: [Popup and Context Menus](../../controls/toolbars-and-menus/popup-and-context-menus.md).
+- [`Eremex.AvaloniaUI.Controls.Bars.PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) — A popup menu that can host various items (buttons, check buttons, sub-menus, and so on). See the following topic for more information: [Popup and Context Menus](../toolbars-and-menus/popup-and-context-menus.md).
   
-- `Eremex.AvaloniaUI.Controls.Bars.PopupContainer` — A popup control that can display custom content.
+- [`Eremex.AvaloniaUI.Controls.Bars.PopupContainer`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupContainer.md) — A popup control that can display custom content.
 
-The following example defines a `PopupMenu` with two commands as a SplitButton's dropdown control:
+The following example defines a [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) with two commands as a SplitButton's dropdown control:
 
 ``` xml
 xmlns:mx="https://schemas.eremexcontrols.net/avalonia"

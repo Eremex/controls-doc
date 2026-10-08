@@ -7,7 +7,7 @@ seealso: []
 # Cartesian Chart
 
 
-The `CartesianChart` control allows you to create diagrams using the Cartesian coordinate system. 
+The [`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) control allows you to create diagrams using the Cartesian coordinate system. 
 
 ![cartesian-chart](../../images/cartesian-chart.png)
 
@@ -48,10 +48,10 @@ The main elements of the chart control are series and axes.
 
 A series provides data to plot by the chart control, and specifies the series view (visual presentation of this data).
 
-The `CartesianSeries` class encapsulates a series for the `CartesianChart` control. To add series to the chart, use the `CartesianChart.Series` collection. You can also populate the chart with series using the MVVM design pattern. Use the `CartesianChart.SeriesSource` and `CartesianChart.SeriesTemplate` properties for this purpose. See the following link for more information: [Get Started with Charts - MVVM Pattern](get-started-with-charts-mvvm.md).
+The [`CartesianSeries`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) class encapsulates a series for the [`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) control. To add series to the chart, use the [`CartesianChart.Series`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) collection. You can also populate the chart with series using the MVVM design pattern. Use the [`CartesianChart.SeriesSource`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/SeriesSource.md) and [`CartesianChart.SeriesTemplate`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/SeriesTemplate.md) properties for this purpose. See the following link for more information: [Get Started with Charts - MVVM Pattern](get-started-with-charts-mvvm.md).
 
 
-The following code defines one series in the `CartesianChart.Series` collection.
+The following code defines one series in the [`CartesianChart.Series`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) collection.
 
 ``` xml
 <mxc:CartesianChart>
@@ -77,30 +77,30 @@ You can supply data for a chart control's series using _Data Adapters_.
 </mxc:CartesianSeries>
 ```
 
-A Data Adapter is an object that implements the `ISeriesDataAdapter` interface. Typically you do not need to implement this interface manually. Eremex Charts ship with multiple Data Adapters for various data types (numeric, date-time, and qualitative). Choose a Data Adapter based on your requirements. 
+A Data Adapter is an object that implements the [`ISeriesDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/ISeriesDataAdapter.md) interface. Typically you do not need to implement this interface manually. Eremex Charts ship with multiple Data Adapters for various data types (numeric, date-time, and qualitative). Choose a Data Adapter based on your requirements. 
 
 Below you'll find Data Adapters grouped by the type of the _X_ values:
 
 Numeric _X_ Values:
 
-- `SortedNumericDataAdapter`
-- `FormulaDataAdapter`
-- `ScatterDataAdapter`
-- `NumericRangeDataAdapter`
+- [`SortedNumericDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md)
+- [`FormulaDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/FormulaDataAdapter.md)
+- [`ScatterDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/ScatterDataAdapter.md)
+- [`NumericRangeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/NumericRangeDataAdapter.md)
 
 Date and Time _X_ Values:
 
-- `SortedDateTimeDataAdapter`
-- `DateTimeRangeDataAdapter`
-- `SortedTimeSpanDataAdapter`
-- `TimeSpanRangeDataAdapter`
-- `CandlestickDataAdapter` (for the [Candlestick Series View](cartesian-series-views/candlestick-series-view.md))
-- `SummaryCandlestickDataAdapter` (for the [Candlestick Series View](cartesian-series-views/candlestick-series-view.md))
+- [`SortedDateTimeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md)
+- [`DateTimeRangeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/DateTimeRangeDataAdapter.md)
+- [`SortedTimeSpanDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedTimeSpanDataAdapter.md)
+- [`TimeSpanRangeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/TimeSpanRangeDataAdapter.md)
+- [`CandlestickDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) (for the [Candlestick Series View](cartesian-series-views/candlestick-series-view.md))
+- [`SummaryCandlestickDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter.md) (for the [Candlestick Series View](cartesian-series-views/candlestick-series-view.md))
 
 Qualitative _X_ Values:
 
-- `QualitativeDataAdapter`
-- `QualitativeRangeDataAdapter` 
+- [`QualitativeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/QualitativeDataAdapter.md)
+- [`QualitativeRangeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/QualitativeRangeDataAdapter.md) 
 
 
 
@@ -165,14 +165,14 @@ public partial class CartesianStripsAndConstantLinesViewModel : ChartsPageViewMo
 
 ### Series Visibility
 
-Use the `Series.Visible` property to hide a series.
+Use the [`Series.Visible`](../../API/Eremex.AvaloniaUI.Charts/Series/Visible.md) property to hide a series.
 
 ``` cs
 chart1.Series[0].Visible = !chart1.Series[0].Visible;
 ```
 
 ### Series Views 
-`CartesianChart` supports multiple series views (diagram types):
+[`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) supports multiple series views (diagram types):
 
 <style>
 
@@ -187,15 +187,15 @@ td, th, tr {
 
 | <div style="width:400px"></div> | <div style="width:400px"></div> | 
 | --- | --- |
-| [Line Series View](cartesian-series-views/line-series-vew.md) (`CartesianLineSeriesView` object)<br>Plots points connected with lines.<br>![chart-CartesianLineSeriesView](../../images/chart-CartesianLineSeriesView.png) | [Scatter Line Series View](cartesian-series-views/scatter-line-series-view.md) (`CartesianScatterLineSeriesView` object)<br>Connects points in the order in which they appear in the data series.<br>![chart-CartesianScatterLineSeriesView](../../images/chart-CartesianScatterLineSeriesView.png) |
-| [Point Series View](cartesian-series-views/point-series-view.md) (`CartesianPointSeriesView` object)<br>Plots individual points.<br>![chart-CartesianPointSeriesView](../../images/chart-CartesianPointSeriesView.png) | [Area Series View](cartesian-series-views/area-series-view.md) (`CartesianAreaSeriesView` object)<br>Connects points with lines and paints filled areas.<br>![chart-CartesianAreaSeriesView](../../images/chart-CartesianAreaSeriesView.png) | 
-| [Step Line Series View](cartesian-series-views/step-line-series-view.md) (`CartesianStepLineSeriesView` object)<br>Connects points with horizontal and vertical line segments.<br>![chart-CartesianStepLineSeriesView](../../images/chart-CartesianStepLineSeriesView.png) | [Step Area Series View](cartesian-series-views/step-area-series-view.md) (`CartesianStepAreaSeriesView` object)<br>Connects points with horizontal and vertical line segments, and paints filled areas.<br>![chart-CartesianStepAreaSeriesView](../../images/chart-CartesianStepAreaSeriesView.png) |
-| [Range Area Series View](cartesian-series-views/range-area-series-view.md) (`CartesianRangeAreaSeriesView` object)<br>Fills the area between the two Y-values of a data series.<br>![chart-CartesianRangeAreaSeriesView](../../images/chart-CartesianRangeAreaSeriesView.png) | [Stacked Area Series View](cartesian-series-views/stacked-area-series-view.md) (`CartesianStackedAreaSeriesView` object)<br>These Views render filled areas stacked on each other to show absolute relationships between data series. <br>![chart-CartesianStackedAreaSeriesView](../../images/chart-CartesianStackedAreaSeriesView.png) |
-| [Full-Stacked Area Series View](cartesian-series-views/full-stacked-area-series-view.md) (`CartesianFullStackedAreaSeriesView` object)<br>These Views render filled areas stacked on each other to show proportional relationships between data series.<br>![chart-CartesianFullStackedAreaSeriesView](../../images/chart-CartesianFullStackedAreaSeriesView.png) | [Bar Series View](cartesian-series-views/side-by-side-bar-series-view.md) (`CartesianSideBySideBarSeriesView` object)<br>Visualizes data as a set of rectangular bars.<br>![chart-CartesianSideBySideBarSeriesView](../../images/chart-CartesianSideBySideBarSeriesView.png) |
-| [Range Bar Series View](cartesian-series-views/side-by-side-range-bar-series-view.md) (`CartesianSideBySideRangeBarSeriesView` object)<br>Draws rectangular bars between the two Y-values of a data series.<br>![chart-CartesianSideBySideRangeBarSeriesView](../../images/chart-CartesianSideBySideRangeBarSeriesView.png) | [Candlestick Series View](cartesian-series-views/candlestick-series-view.md)<br>(`CartesianCandlestickSeriesView` object)<br>A financial chart that describes price movements of an asset. For each data point, the chart displays a set of four values, the Open, Close, High and Low prices. <br>![](../../images/chart-CartesianCandleStickSeriesView.png) |
-| [Lollipop Series View](cartesian-series-views/lollipop-series-view.md) (`CartesianLollipopSeriesView` object)<br>Presents data as points (markers) connected with a horizontal or vertical axis by thin lines.<br>![chart-CartesianLollipopSeriesView](../../images/chart-CartesianLollipopSeriesView.png) |  |
+| [Line Series View](cartesian-series-views/line-series-vew.md) ([`CartesianLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesView.md) object)<br>Plots points connected with lines.<br>![chart-CartesianLineSeriesView](../../images/chart-CartesianLineSeriesView.png) | [Scatter Line Series View](cartesian-series-views/scatter-line-series-view.md) ([`CartesianScatterLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianScatterLineSeriesView.md) object)<br>Connects points in the order in which they appear in the data series.<br>![chart-CartesianScatterLineSeriesView](../../images/chart-CartesianScatterLineSeriesView.png) |
+| [Point Series View](cartesian-series-views/point-series-view.md) ([`CartesianPointSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView.md) object)<br>Plots individual points.<br>![chart-CartesianPointSeriesView](../../images/chart-CartesianPointSeriesView.png) | [Area Series View](cartesian-series-views/area-series-view.md) ([`CartesianAreaSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianAreaSeriesView.md) object)<br>Connects points with lines and paints filled areas.<br>![chart-CartesianAreaSeriesView](../../images/chart-CartesianAreaSeriesView.png) | 
+| [Step Line Series View](cartesian-series-views/step-line-series-view.md) ([`CartesianStepLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianStepLineSeriesView.md) object)<br>Connects points with horizontal and vertical line segments.<br>![chart-CartesianStepLineSeriesView](../../images/chart-CartesianStepLineSeriesView.png) | [Step Area Series View](cartesian-series-views/step-area-series-view.md) ([`CartesianStepAreaSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianStepAreaSeriesView.md) object)<br>Connects points with horizontal and vertical line segments, and paints filled areas.<br>![chart-CartesianStepAreaSeriesView](../../images/chart-CartesianStepAreaSeriesView.png) |
+| [Range Area Series View](cartesian-series-views/range-area-series-view.md) ([`CartesianRangeAreaSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView.md) object)<br>Fills the area between the two Y-values of a data series.<br>![chart-CartesianRangeAreaSeriesView](../../images/chart-CartesianRangeAreaSeriesView.png) | [Stacked Area Series View](cartesian-series-views/stacked-area-series-view.md) ([`CartesianStackedAreaSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianStackedAreaSeriesView.md) object)<br>These Views render filled areas stacked on each other to show absolute relationships between data series. <br>![chart-CartesianStackedAreaSeriesView](../../images/chart-CartesianStackedAreaSeriesView.png) |
+| [Full-Stacked Area Series View](cartesian-series-views/full-stacked-area-series-view.md) ([`CartesianFullStackedAreaSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianFullStackedAreaSeriesView.md) object)<br>These Views render filled areas stacked on each other to show proportional relationships between data series.<br>![chart-CartesianFullStackedAreaSeriesView](../../images/chart-CartesianFullStackedAreaSeriesView.png) | [Bar Series View](cartesian-series-views/side-by-side-bar-series-view.md) ([`CartesianSideBySideBarSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md) object)<br>Visualizes data as a set of rectangular bars.<br>![chart-CartesianSideBySideBarSeriesView](../../images/chart-CartesianSideBySideBarSeriesView.png) |
+| [Range Bar Series View](cartesian-series-views/side-by-side-range-bar-series-view.md) ([`CartesianSideBySideRangeBarSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideRangeBarSeriesView.md) object)<br>Draws rectangular bars between the two Y-values of a data series.<br>![chart-CartesianSideBySideRangeBarSeriesView](../../images/chart-CartesianSideBySideRangeBarSeriesView.png) | [Candlestick Series View](cartesian-series-views/candlestick-series-view.md)<br>([`CartesianCandlestickSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView.md) object)<br>A financial chart that describes price movements of an asset. For each data point, the chart displays a set of four values, the Open, Close, High and Low prices. <br>![](../../images/chart-CartesianCandleStickSeriesView.png) |
+| [Lollipop Series View](cartesian-series-views/lollipop-series-view.md) ([`CartesianLollipopSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianLollipopSeriesView.md) object)<br>Presents data as points (markers) connected with a horizontal or vertical axis by thin lines.<br>![chart-CartesianLollipopSeriesView](../../images/chart-CartesianLollipopSeriesView.png) |  |
 
-To specify a view for a series, define a corresponding **...SeriesView** object as the content of the `CartesianSeries` object. In code behind, use the `CartesianSeries.View` property to specify a series view. 
+To specify a view for a series, define a corresponding **...SeriesView** object as the content of the [`CartesianSeries`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) object. In code behind, use the [`CartesianSeries.View`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md) property to specify a series view. 
 
 The following sample assigns the 'Line Series View' to a series.
 ``` xml
@@ -207,7 +207,7 @@ The following sample assigns the 'Line Series View' to a series.
 
 ## Axes
 
-The `CartesianChart` control automatically creates cartesian axes (the X-axis and Y-axis) if you do not define them manually. If you need to customize axes in XAML, define `AxisX` and/or `AxisY` objects in the `CartesianChart.AxesX`/`CartesianChart.AxesY` collections, and then modify settings of these axes.
+The [`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) control automatically creates cartesian axes (the X-axis and Y-axis) if you do not define them manually. If you need to customize axes in XAML, define [`AxisX`](../../API/Eremex.AvaloniaUI.Charts/AxisX.md) and/or [`AxisY`](../../API/Eremex.AvaloniaUI.Charts/AxisY.md) objects in the [`CartesianChart.AxesX`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesX.md)/[`CartesianChart.AxesY`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesY.md) collections, and then modify settings of these axes.
 
 ``` xml
 <mxc:CartesianChart>
@@ -228,9 +228,9 @@ The `CartesianChart` control automatically creates cartesian axes (the X-axis an
 
 ### Swap the X and Y Axes
 
-The default orientation of the axes in the Cartesian Chart control is horizontal for the _X_ axes, and vertical for the _Y_ axes. Use the `CartesianChart.SwapAxes` property to transpose the axes. This property is supported for all series view types.
+The default orientation of the axes in the Cartesian Chart control is horizontal for the _X_ axes, and vertical for the _Y_ axes. Use the [`CartesianChart.SwapAxes`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/SwapAxes.md) property to transpose the axes. This property is supported for all series view types.
 
-The following images demonstrate how the `SwapAxes` property changes the layout of axes for linear and bar diagrams.
+The following images demonstrate how the [`SwapAxes`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/SwapAxes.md) property changes the layout of axes for linear and bar diagrams.
 
 ![chart-swap-axes-linear-chart](../../images/chart-swap-axes-linear-chart.png)
 
@@ -253,7 +253,7 @@ Use the `Axis.Reverse` property to invert the direction of the _X_ and _Y_ axis.
 
 ### Axis Value Range
 
-Place `AxisXRange`/`AxisYRange` objects as the content of the `AxisX`/`AxisY` objects to specify range settings of the axes. The `AxisXRange`/`AxisYRange` objects allow you to customize the total value range, visible value range, visibility of the zero level, etc.
+Place [`AxisXRange`](../../API/Eremex.AvaloniaUI.Charts/AxisXRange.md)/[`AxisYRange`](../../API/Eremex.AvaloniaUI.Charts/AxisYRange.md) objects as the content of the [`AxisX`](../../API/Eremex.AvaloniaUI.Charts/AxisX.md)/[`AxisY`](../../API/Eremex.AvaloniaUI.Charts/AxisY.md) objects to specify range settings of the axes. The [`AxisXRange`](../../API/Eremex.AvaloniaUI.Charts/AxisXRange.md)/[`AxisYRange`](../../API/Eremex.AvaloniaUI.Charts/AxisYRange.md) objects allow you to customize the total value range, visible value range, visibility of the zero level, etc.
 
 ``` xml
 <mxc:CartesianChart.AxesX>
@@ -268,22 +268,22 @@ Place `AxisXRange`/`AxisYRange` objects as the content of the `AxisX`/`AxisY` ob
 </mxc:CartesianChart.AxesY>
 ```
 
-- `AutoCorrectWholeRange` (default is `true`) — Gets or sets whether the total axis range is calculated automatically based on the series data.
+- [`AutoCorrectWholeRange`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/AutoCorrectWholeRange.md) (default is `true`) — Gets or sets whether the total axis range is calculated automatically based on the series data.
 
-  To set a custom total axis range, disable the `AutoCorrectWholeRange` option and then use the `WholeMin` and `WholeMax` properties.
+  To set a custom total axis range, disable the [`AutoCorrectWholeRange`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/AutoCorrectWholeRange.md) option and then use the [`WholeMin`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMin.md) and [`WholeMax`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMax.md) properties.
 
-- `SynchronizeVisualRange` — Gets or sets whether the visible axis range is set to the total axis range when the latter is changed.
-- `AlwaysShowZeroLevel`  (for `AxisYRange` objects only) (default is `true`) — Gets or sets whether the total axis range is automatically adjusted to include the zero level. See `WholeMax`.
+- [`SynchronizeVisualRange`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/SynchronizeVisualRange.md) — Gets or sets whether the visible axis range is set to the total axis range when the latter is changed.
+- [`AlwaysShowZeroLevel`](../../API/Eremex.AvaloniaUI.Charts/AxisYRange/AlwaysShowZeroLevel.md)  (for [`AxisYRange`](../../API/Eremex.AvaloniaUI.Charts/AxisYRange.md) objects only) (default is `true`) — Gets or sets whether the total axis range is automatically adjusted to include the zero level. See [`WholeMax`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMax.md).
 
-- `WholeMax` — Gets or sets the maximum value of the total axis range. The `WholeMin` property specifies the minimum value.
+- [`WholeMax`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMax.md) — Gets or sets the maximum value of the total axis range. The [`WholeMin`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMin.md) property specifies the minimum value.
     
-    Disable the `AutoCorrectWholeRange` property to use the `WholeMin` and `WholeMax` properties. 
+    Disable the [`AutoCorrectWholeRange`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/AutoCorrectWholeRange.md) property to use the [`WholeMin`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMin.md) and [`WholeMax`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMax.md) properties. 
     
-    If the `AlwaysShowZeroLevel` option is enabled (default behavior), the zero level is forcibly included in the total axis range.
+    If the [`AlwaysShowZeroLevel`](../../API/Eremex.AvaloniaUI.Charts/AxisYRange/AlwaysShowZeroLevel.md) option is enabled (default behavior), the zero level is forcibly included in the total axis range.
 
     #### Example - Show and Hide the Zero Level
 
-    Consider the following example in which the `WholeMin` and `WholeMax` properties define custom bounds for the total axis range. The range automatically includes the zero level because the `AlwaysShowZeroLevel` property is enabled.
+    Consider the following example in which the [`WholeMin`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMin.md) and [`WholeMax`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMax.md) properties define custom bounds for the total axis range. The range automatically includes the zero level because the [`AlwaysShowZeroLevel`](../../API/Eremex.AvaloniaUI.Charts/AxisYRange/AlwaysShowZeroLevel.md) property is enabled.
 
     ``` xml
     <mxc:CartesianChart.AxesY>
@@ -295,7 +295,7 @@ Place `AxisXRange`/`AxisYRange` objects as the content of the `AxisX`/`AxisY` ob
     ![chart-axisrange-example-AlwaysShowZeroLevel-true](../../images/chart-axisrange-example-AlwaysShowZeroLevel-true.png)
 
 
-    Disable the `AlwaysShowZeroLevel` property to limit the total axis range by the `WholeMin` and `WholeMax` properties, while ignoring the zero level.
+    Disable the [`AlwaysShowZeroLevel`](../../API/Eremex.AvaloniaUI.Charts/AxisYRange/AlwaysShowZeroLevel.md) property to limit the total axis range by the [`WholeMin`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMin.md) and [`WholeMax`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMax.md) properties, while ignoring the zero level.
 
     ``` xml
     <mxc:AxisYRange WholeMin="100" WholeMax="350" AutoCorrectWholeRange="False" AlwaysShowZeroLevel="False" />
@@ -304,17 +304,17 @@ Place `AxisXRange`/`AxisYRange` objects as the content of the `AxisX`/`AxisY` ob
     ![chart-axisrange-example-AlwaysShowZeroLevel-false](../../images/chart-axisrange-example-AlwaysShowZeroLevel-false.png)
     
 
-- `WholeMin` — Gets or sets the minimum value of the total axis range. See `WholeMax` for more information.
-- `VisualMax` — Gets or sets the maximum value of the currently visible axis range. The `VisualMin` property specifies the minimum value.
-- `VisualMin` — Gets or sets the minimum value of the currently visible axis range.
+- [`WholeMin`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMin.md) — Gets or sets the minimum value of the total axis range. See [`WholeMax`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/WholeMax.md) for more information.
+- [`VisualMax`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/VisualMax.md) — Gets or sets the maximum value of the currently visible axis range. The [`VisualMin`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/VisualMin.md) property specifies the minimum value.
+- [`VisualMin`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/VisualMin.md) — Gets or sets the minimum value of the currently visible axis range.
 
-- `MaxSideMargin` — Gets or sets  the amount of empty space between the rightmost (or topmost) data point and the edge of the chart area, expressed as a fraction of the total data range. For example, a value of 0.1 adds a margin equal to 10% of the range.
+- [`MaxSideMargin`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/MaxSideMargin.md) — Gets or sets  the amount of empty space between the rightmost (or topmost) data point and the edge of the chart area, expressed as a fraction of the total data range. For example, a value of 0.1 adds a margin equal to 10% of the range.
     
-    For the _Y_ axis, the `MaxSideMargin` property is not in effect when the `AlwaysShowZeroLevel` property is `true` and the zero level is displayed at the topmost edge. Set the `AlwaysShowZeroLevel` property to `false` to resolve the issue.
+    For the _Y_ axis, the [`MaxSideMargin`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/MaxSideMargin.md) property is not in effect when the [`AlwaysShowZeroLevel`](../../API/Eremex.AvaloniaUI.Charts/AxisYRange/AlwaysShowZeroLevel.md) property is `true` and the zero level is displayed at the topmost edge. Set the [`AlwaysShowZeroLevel`](../../API/Eremex.AvaloniaUI.Charts/AxisYRange/AlwaysShowZeroLevel.md) property to `false` to resolve the issue.
 
-- `MinSideMargin` — Gets or sets  the amount of empty space between the leftmost (or bottommost) data point and the edge of the chart area, expressed as a fraction of the total data range. For example, a value of 0.1 adds a margin equal to 10% of the range.
+- [`MinSideMargin`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/MinSideMargin.md) — Gets or sets  the amount of empty space between the leftmost (or bottommost) data point and the edge of the chart area, expressed as a fraction of the total data range. For example, a value of 0.1 adds a margin equal to 10% of the range.
 
-    For the _Y_ axis, the `MinSideMargin` property is not in effect when the `AlwaysShowZeroLevel` property is `true` and the zero level is displayed at the bottommost edge. Set the `AlwaysShowZeroLevel` property to `false` to resolve the issue.
+    For the _Y_ axis, the [`MinSideMargin`](../../API/Eremex.AvaloniaUI.Charts/AxisRange/MinSideMargin.md) property is not in effect when the [`AlwaysShowZeroLevel`](../../API/Eremex.AvaloniaUI.Charts/AxisYRange/AlwaysShowZeroLevel.md) property is `true` and the zero level is displayed at the bottommost edge. Set the [`AlwaysShowZeroLevel`](../../API/Eremex.AvaloniaUI.Charts/AxisYRange/AlwaysShowZeroLevel.md) property to `false` to resolve the issue.
 
   ![chart-axisrange-sidemargin](../../images/chart-axisrange-sidemargin.png)
 
@@ -331,16 +331,16 @@ An axis scale defines the type of scale units and various axis display options. 
 
 ![chart-scales](../../images/chart-scales.png)
 
-To specify the scale settings for axes, use the `AxisX.ScaleOptions` and `AxisY.ScaleOptions` properties.
+To specify the scale settings for axes, use the [`AxisX.ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/AxisX/ScaleOptions.md) and [`AxisY.ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/AxisY/ScaleOptions.md) properties.
 
 #### Customize Scale Settings for an _X_ Axis
 
-Use the `AxisX.ScaleOptions` property to change the scale settings for an _X_ axis. 
-This property is of the base `ScaleOptions` type. 
+Use the [`AxisX.ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/AxisX/ScaleOptions.md) property to change the scale settings for an _X_ axis. 
+This property is of the base [`ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/ScaleOptions.md) type. 
 
-To modify the scale settings, set the `AxisX.ScaleOptions` property to one of the following objects based on the type of the _X_ values of the series: 
+To modify the scale settings, set the [`AxisX.ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/AxisX/ScaleOptions.md) property to one of the following objects based on the type of the _X_ values of the series: 
 
-- `NumericScaleOptions` — Numeric data scale. Use this scale type if the _X_ values provided by the series are numeric values.
+- [`NumericScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/NumericScaleOptions.md) — Numeric data scale. Use this scale type if the _X_ values provided by the series are numeric values.
     ``` xml
     <mxc:AxisX Title="Frequency">
         <mxc:AxisX.ScaleOptions>
@@ -357,7 +357,7 @@ GridSpacing, LabelFormatter
 etc
   -->
 
-- `DateTimeScaleOptions` — DateTime data scale. Use this scale type if the _X_ values provided by the series are `DateTime` values. The `DateTimeScaleOptions.MeasureUnit` property allows you to specify the time unit (axis unit) for the axis scale: `Millisecond`, `Second`, `Minute`, `Hour`, `Day`, `Week`, `Month`, `Quarter`, or `Year`
+- [`DateTimeScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/DateTimeScaleOptions.md) — DateTime data scale. Use this scale type if the _X_ values provided by the series are `DateTime` values. The [`DateTimeScaleOptions.MeasureUnit`](../../API/Eremex.AvaloniaUI.Charts/DateTimeScaleOptions/MeasureUnit.md) property allows you to specify the time unit (axis unit) for the axis scale: `Millisecond`, `Second`, `Minute`, `Hour`, `Day`, `Week`, `Month`, `Quarter`, or `Year`
 
     ``` xml
     <mxc:AxisX ShowTitle="False">
@@ -367,7 +367,7 @@ etc
     </mxc:AxisX>
     ```
 
-- `TimeSpanScaleOptions`— TimeSpan data scale. Use this scale type if the _X_ values provided by the series are `TimeSpan` values. The `TimeSpanScaleOptions.MeasureUnit` property allows you to specify the time unit for the axis scale: `Millisecond`, `Second`, `Minute`, `Hour`, or `Day`.
+- [`TimeSpanScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/TimeSpanScaleOptions.md)— TimeSpan data scale. Use this scale type if the _X_ values provided by the series are `TimeSpan` values. The [`TimeSpanScaleOptions.MeasureUnit`](../../API/Eremex.AvaloniaUI.Charts/TimeSpanScaleOptions/MeasureUnit.md) property allows you to specify the time unit for the axis scale: `Millisecond`, `Second`, `Minute`, `Hour`, or `Day`.
 
     ``` xml
     <mxc:AxisX>
@@ -377,7 +377,7 @@ etc
     </mxc:AxisX>
     ```
 
-- `QualitativeScaleOptions` — Qualitative data scale. Use this scale type if the _X_ values provided by the series are qualitative values (text strings).
+- [`QualitativeScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/QualitativeScaleOptions.md) — Qualitative data scale. Use this scale type if the _X_ values provided by the series are qualitative values (text strings).
 
     ``` xml
     <mxc:AxisX >
@@ -389,7 +389,7 @@ etc
 
 #### Customize Scale Settings for an _Y_ Axis
 
-Use the `AxisY.ScaleOptions` property to modify the scale settings of the _Y_ axis. This property is of the `NumericScaleOptions` type.
+Use the [`AxisY.ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/AxisY/ScaleOptions.md) property to modify the scale settings of the _Y_ axis. This property is of the [`NumericScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/NumericScaleOptions.md) type.
 
 ``` xml
 <mxc:AxisY Title="Amplitude (dB SPL)">
@@ -401,7 +401,7 @@ Use the `AxisY.ScaleOptions` property to modify the scale settings of the _Y_ ax
 
 #### Format Axis Labels
 
-The `ScaleOptions.LabelFormatter` property allows you to specify an object that formats axis display values in a custom manner. You can implement a custom label formatter based on a function/expression using the `Eremex.AvaloniaUI.Charts.FuncLabelFormatter` object.
+The [`ScaleOptions.LabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) property allows you to specify an object that formats axis display values in a custom manner. You can implement a custom label formatter based on a function/expression using the [`Eremex.AvaloniaUI.Charts.FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md) object.
 
 The following example implements a custom label formatter for `DateTime` values.
 
@@ -479,33 +479,33 @@ See the following topic for more information: [Scroll and Zoom in a Chart Contro
 
 The following list summarizes display and behavior settings of cartesian axes:
 
-- `ConstantLines` and `ConstantLinesSource` — Allows you to paint constant lines for specific values. See [Constant Lines and Strips](#constant-lines-and-strips).
-- `EnableScrolling` —  Allows a user to scroll an axis with a mouse drag operation.
-- `EnableZooming` —  Allows a user to zoom an axis.
-- `InterlacingColor` - The color used to paint interlaced strip lines (when the `ShowInterlacing` option is enabled).
-- `MinorCount` — Specifies the number of minor tickmarks and grid lines.
-- `Position` — Specifies the position of the axis. Available options include: `Near` (the X-axis is displayed at the bottom, and the Y-axis is displayed at the chart's left edge), and `Far` (the X-axis is displayed at the top, and the Y-axis is displayed at the chart's right edge).
-- `ShowAxisLine` — Specifies the visibility of the axis line.
-- `ShowInterlacing` — Specifies whether to paint interlaced strip lines between major gridlines.
-- `ShowLabels` — Specifies the visibility of the labels corresponding to major tickmarks.
-- `ShowMajorGridlines` — Specifies the visibility of the grid lines corresponding to major tickmarks.
-- `ShowMajorTickmarks` — Specifies the visibility of the major tickmarks.
-- `ShowMinorGridlines` — Specifies the visibility of the grid lines corresponding to minor tickmarks.
-- `ShowMinorTickmarks` — Specifies the visibility of the minor tickmarks.
-- `ShowTitle` — Specifies the visibility of the axis title (the `Title` property).
-- `Strips` and `StripsSource` — Allows you to fill ranges between specific values. See [Constant Lines and Strips](#constant-lines-and-strips).
-- `Thickness` — The thickness of the axis line.
-- `Title` — Gets or sets the title for the axis.
-- `TitlePosition` — Specifies the position of the axis title.
+- [`ConstantLines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLines.md) and [`ConstantLinesSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLinesSource.md) — Allows you to paint constant lines for specific values. See [Constant Lines and Strips](#constant-lines-and-strips).
+- [`EnableScrolling`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableScrolling.md) —  Allows a user to scroll an axis with a mouse drag operation.
+- [`EnableZooming`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableZooming.md) —  Allows a user to zoom an axis.
+- [`InterlacingColor`](../../API/Eremex.AvaloniaUI.Charts/Axis/InterlacingColor.md) - The color used to paint interlaced strip lines (when the [`ShowInterlacing`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowInterlacing.md) option is enabled).
+- [`MinorCount`](../../API/Eremex.AvaloniaUI.Charts/Axis/MinorCount.md) — Specifies the number of minor tickmarks and grid lines.
+- [`Position`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/Position.md) — Specifies the position of the axis. Available options include: `Near` (the X-axis is displayed at the bottom, and the Y-axis is displayed at the chart's left edge), and `Far` (the X-axis is displayed at the top, and the Y-axis is displayed at the chart's right edge).
+- [`ShowAxisLine`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowAxisLine.md) — Specifies the visibility of the axis line.
+- [`ShowInterlacing`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowInterlacing.md) — Specifies whether to paint interlaced strip lines between major gridlines.
+- [`ShowLabels`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowLabels.md) — Specifies the visibility of the labels corresponding to major tickmarks.
+- [`ShowMajorGridlines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMajorGridlines.md) — Specifies the visibility of the grid lines corresponding to major tickmarks.
+- [`ShowMajorTickmarks`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMajorTickmarks.md) — Specifies the visibility of the major tickmarks.
+- [`ShowMinorGridlines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMinorGridlines.md) — Specifies the visibility of the grid lines corresponding to minor tickmarks.
+- [`ShowMinorTickmarks`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMinorTickmarks.md) — Specifies the visibility of the minor tickmarks.
+- [`ShowTitle`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/ShowTitle.md) — Specifies the visibility of the axis title (the [`Title`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/Title.md) property).
+- [`Strips`](../../API/Eremex.AvaloniaUI.Charts/Axis/Strips.md) and [`StripsSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/StripsSource.md) — Allows you to fill ranges between specific values. See [Constant Lines and Strips](#constant-lines-and-strips).
+- [`Thickness`](../../API/Eremex.AvaloniaUI.Charts/Axis/Thickness.md) — The thickness of the axis line.
+- [`Title`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/Title.md) — Gets or sets the title for the axis.
+- [`TitlePosition`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/TitlePosition.md) — Specifies the position of the axis title.
 
 
 ### Constant Lines and Strips
 
-The `CartesianChart` control includes support for constant lines and strips. They allow you to highlight specific values and value ranges along the axes.
+The [`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) control includes support for constant lines and strips. They allow you to highlight specific values and value ranges along the axes.
 
 #### Constant Lines
 
-Constant lines are vertical or horizontal lines that are drawn perpendicular to the axes. They serve as visual markers to highlight specific values along the axes. Use the `Axis.ConstantLines` or `Axis.ConstantLinesSource` property to specify constant lines. Each constant line is encapsulated by a `ConstantLine` object.
+Constant lines are vertical or horizontal lines that are drawn perpendicular to the axes. They serve as visual markers to highlight specific values along the axes. Use the [`Axis.ConstantLines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLines.md) or [`Axis.ConstantLinesSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLinesSource.md) property to specify constant lines. Each constant line is encapsulated by a [`ConstantLine`](../../API/Eremex.AvaloniaUI.Charts/ConstantLine.md) object.
 
 The following code creates a horizontal constant line that indicates the value of 85 along the Y axis.
 
@@ -521,24 +521,24 @@ The following code creates a horizontal constant line that indicates the value o
 </mxc:CartesianChart.AxesY>
 ```
 
-The `Axis.ConstantLinesSource` property allows you to initialize constant lines from a collection of objects defined in a View Model. To create `ConstantLine` objects from the underlying data objects, use the `Axis.ConstantLineTemplate` property to specify a template. See the `Strips and Constant Lines` demo for an example.
+The [`Axis.ConstantLinesSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLinesSource.md) property allows you to initialize constant lines from a collection of objects defined in a View Model. To create [`ConstantLine`](../../API/Eremex.AvaloniaUI.Charts/ConstantLine.md) objects from the underlying data objects, use the [`Axis.ConstantLineTemplate`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLineTemplate.md) property to specify a template. See the `Strips and Constant Lines` demo for an example.
 
 
 ##### Constant Line Settings
 
-- `ConstantLine.AxisValue` — The axis value associated with the constant line.
-- `ConstantLine.Color` — The color to paint the constant line.
-- `ConstantLine.ShowBehind` — Specifies whether to paint the constant line below (default) or above the series.
-- `ConstantLine.ShowTitle` — Specifies whether to show (default) or hide the title (See the `Title` option).
+- [`ConstantLine.AxisValue`](../../API/Eremex.AvaloniaUI.Charts/ConstantLine/AxisValue.md) — The axis value associated with the constant line.
+- [`ConstantLine.Color`](../../API/Eremex.AvaloniaUI.Charts/ConstantLine/Color.md) — The color to paint the constant line.
+- [`ConstantLine.ShowBehind`](../../API/Eremex.AvaloniaUI.Charts/ConstantLine/ShowBehind.md) — Specifies whether to paint the constant line below (default) or above the series.
+- [`ConstantLine.ShowTitle`](../../API/Eremex.AvaloniaUI.Charts/ConstantLine/ShowTitle.md) — Specifies whether to show (default) or hide the title (See the `Title` option).
 - `ConstantLine.Thickness` — The thickness of the constant line.
-- `ConstantLine.Title` — A title to paint next to the constant line. The `TitlePosition` option specifies the position of the title.
-- `ConstantLine.TitleIndent` — The horizontal and vertical distance of the title from the line.
-- `ConstantLine.TitlePosition` — The placement of the title relative to the line. Available options include: `NearAboveLine`, `NearBelowLine`, `FarAboveLine` and `FarBelowLine`.
+- [`ConstantLine.Title`](../../API/Eremex.AvaloniaUI.Charts/ConstantLine/Title.md) — A title to paint next to the constant line. The `TitlePosition` option specifies the position of the title.
+- [`ConstantLine.TitleIndent`](../../API/Eremex.AvaloniaUI.Charts/ConstantLine/TitleIndent.md) — The horizontal and vertical distance of the title from the line.
+- [`ConstantLine.TitlePosition`](../../API/Eremex.AvaloniaUI.Charts/ConstantLine/TitlePosition.md) — The placement of the title relative to the line. Available options include: `NearAboveLine`, `NearBelowLine`, `FarAboveLine` and `FarBelowLine`.
 
 
 #### Constant Strips
 
-Constant strips allow you to highlight specific value ranges along the axes. Similar to constant lines, strips are drawn perpendicular to the axes. You can specify strips using the `Axis.Strips` and `Axis.StripsSource` properties. Each strip is encapsulated by a `Strip` object.
+Constant strips allow you to highlight specific value ranges along the axes. Similar to constant lines, strips are drawn perpendicular to the axes. You can specify strips using the [`Axis.Strips`](../../API/Eremex.AvaloniaUI.Charts/Axis/Strips.md) and [`Axis.StripsSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/StripsSource.md) properties. Each strip is encapsulated by a [`Strip`](../../API/Eremex.AvaloniaUI.Charts/Strip.md) object.
 
 The following code creates a strip that highlights a range of _Y_ values between 40 and 65. The strip is filled with a semi-transparent light green color. Note that if you use an opaque color for the strip, it will obscure the chart control's grid lines.
 
@@ -554,13 +554,13 @@ The following code creates a strip that highlights a range of _Y_ values between
 </mxc:CartesianChart.AxesY>
 ```
 
-The `Axis.StripsSource` property allows you to initialize strips from a collection of objects defined in a View Model. To create `Strip` objects from the underlying data objects, use the `Axis.StripTemplate` property to specify a template.
+The [`Axis.StripsSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/StripsSource.md) property allows you to initialize strips from a collection of objects defined in a View Model. To create [`Strip`](../../API/Eremex.AvaloniaUI.Charts/Strip.md) objects from the underlying data objects, use the [`Axis.StripTemplate`](../../API/Eremex.AvaloniaUI.Charts/Axis/StripTemplate.md) property to specify a template.
 
 ##### Strip Settings
 
 - `ConstantLine.AxisValue1` — Specifies the first (start or end) value of the range along the axis
 - `ConstantLine.AxisValue2` —  Specifies the second (end or start) value of the range along the axis.
-- `ConstantLine.Color` — The color used to fill the strip.
+- [`ConstantLine.Color`](../../API/Eremex.AvaloniaUI.Charts/ConstantLine/Color.md) — The color used to fill the strip.
 
     !!! tip
     
@@ -572,5 +572,5 @@ The `Axis.StripsSource` property allows you to initialize strips from a collecti
 
 Sometimes you may need to translate from chart coordinates to screen coordinates, and vice versa. The following methods allow you to accomplish this task:
 
-- `CartesianChart.DiagramPointToScreenPoint` — Converts coordinates of a chart point to screen coordinates. The chart point is addressed by the _X_ and _Y_ axes, and the values along these axes.
-- `CartesianChart.ScreenPointToDiagramPoint` — Converts screen coordinates to the coordinates of a point within the chart control. The object returned by the method allows you to obtain the chart coordinates, or determine if the screen coordinates are within the control's viewport.
+- [`CartesianChart.DiagramPointToScreenPoint`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/DiagramPointToScreenPoint.md) — Converts coordinates of a chart point to screen coordinates. The chart point is addressed by the _X_ and _Y_ axes, and the values along these axes.
+- [`CartesianChart.ScreenPointToDiagramPoint`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/ScreenPointToDiagramPoint.md) — Converts screen coordinates to the coordinates of a point within the chart control. The object returned by the method allows you to obtain the chart coordinates, or determine if the screen coordinates are within the control's viewport.

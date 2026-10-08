@@ -23,9 +23,9 @@ The following approaches allow you to generate column bands:
 
 Follow these steps to manually create bands:
 
-1. Create band objects (`GridBand` class instances) and add them to the `DataGridControl.Bands` collection. 
+1. Create band objects ([`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) class instances) and add them to the [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) collection. 
 
-    Assign unique band names to the created bands using the `GridBand.BandName` property.
+    Assign unique band names to the created bands using the [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property.
 
     ``` xml
     <mxdg:DataGridControl.Bands>
@@ -36,8 +36,8 @@ Follow these steps to manually create bands:
 
     You can create a hierarchical band structure. To create nested bands:
         
-    - In code-behind: Add bands to the `GridBand.Bands` collection.
-    - In XAML: Define nested bands directly between the opening and closing `GridBand` tags.
+    - In code-behind: Add bands to the [`GridBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/Bands.md) collection.
+    - In XAML: Define nested bands directly between the opening and closing [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) tags.
 
     ``` xml
     <mxdg:GridBand BandName="Details" HeaderHorizontalAlignment="Center">
@@ -46,9 +46,9 @@ Follow these steps to manually create bands:
     </mxdg:GridBand>
     ```
 
-    The `GridBand.Header` property allows you to specify custom content (for example, custom text) for a band. If this property is not set, the band header displays the `GridBand.BandName` property's value.
+    The [`GridBand.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) property allows you to specify custom content (for example, custom text) for a band. If this property is not set, the band header displays the [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property's value.
 
-2. Associate columns with specific bands by setting each column's `GridColumn.BandName` property to the corresponding band name (`GridBand.BandName`).
+2. Associate columns with specific bands by setting each column's [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) property to the corresponding band name ([`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)).
 
     ``` xml
     <mxdg:DataGridControl.Columns>
@@ -59,7 +59,7 @@ Follow these steps to manually create bands:
     </mxdg:DataGridControl.Columns>
     ```
 
-Columns are arranged in the DataGrid control according to their `GridColumn.VisibleIndex` properties.
+Columns are arranged in the DataGrid control according to their [`GridColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) properties.
 The control does not automatically rearrange columns to group them by bands.
 
 ![datagrid-bands-not-keep-columns-together](../../images/datagrid-bands-not-keep-columns-together.png)
@@ -71,11 +71,11 @@ See [Order of Columns and Bands](#order-of-columns-and-bands)
 
 ### Related API
 
-- `GridBand` class — Encapsulates a column band.
-- `GridBand.BandName` — A unique name used to identify a band and associate it with columns.
-- `GridColumn.BandName` — The name of the band associated with the column. This value matches the `GridBand.BandName` property's value.
-- `DataGridControl.Bands` — A collection of root bands.
-- `GridBand.Bands` — A collection of child bands for this band.
+- [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) class — Encapsulates a column band.
+- [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) — A unique name used to identify a band and associate it with columns.
+- [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) — The name of the band associated with the column. This value matches the [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property's value.
+- [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) — A collection of root bands.
+- [`GridBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/Bands.md) — A collection of child bands for this band.
 
 
 ### Example - Manually create column bands in a DataGrid control
@@ -87,9 +87,9 @@ The following example creates bands and assigns them to columns, as demonstrated
 - The "Customer", "Address", and "Contact" bands are associated with grid columns. 
 - The "Details" band owns two nested bands ("Address" and "Contact"). This band is not directly associated with columns.
 
-Each band is assigned a unique name using the `GridBand.BandName` property. To link columns to a specific band, set the column's `GridColumn.BandName` property to the target band's `BandName` value.
+Each band is assigned a unique name using the [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property. To link columns to a specific band, set the column's [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) property to the target band's `BandName` value.
 
-The `DataGridControl.Bands` property defines the structure of bands. To create nested bands, define them as children of a parent band.
+The [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) property defines the structure of bands. To create nested bands, define them as children of a parent band.
 
 ``` xml
 <!-- MainWindow.axaml file -->
@@ -262,25 +262,25 @@ namespace DataGridColumnBands.ViewModels
 
 ## Generate Bands from a Band Source
 
-You can populate column bands from a band source defined in a View Model. Use the `DataGridControl.BandsSource` and `DataGridControl.BandTemplate` properties to generate bands from a collection of business objects. 
+You can populate column bands from a band source defined in a View Model. Use the [`DataGridControl.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandsSource.md) and [`DataGridControl.BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandTemplate.md) properties to generate bands from a collection of business objects. 
 
-As an alternative to specifying the `BandTemplate` property, you can use the `Styles` property to initialize `GridBand` objects from business objects. See [Initialize Bands Using a Style](#initialize-bands-using-a-style) for an example.
+As an alternative to specifying the [`BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandTemplate.md) property, you can use the `Styles` property to initialize [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) objects from business objects. See [Initialize Bands Using a Style](#initialize-bands-using-a-style) for an example.
 
-To associate columns with bands, set each column's `GridColumn.BandName` to the corresponding band name (`GridBand.BandName`).
+To associate columns with bands, set each column's [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) to the corresponding band name ([`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)).
 
 ### Related API
 
-- `DataGridControl.BandsSource` — A collection of business objects used to generate root bands.
-- `DataGridControl.BandTemplate` — A template that creates `GridBand` instances from business objects.
-- `GridBand.BandsSource` — A collection of business objects used to generate child bands.
-- `GridBand.BandName` — A unique name used to identify a band and associate it with columns.
-- `GridColumn.BandName` — The name of the band associated with the column. This value matches the `GridBand.BandName` property's value.
+- [`DataGridControl.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandsSource.md) — A collection of business objects used to generate root bands.
+- [`DataGridControl.BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandTemplate.md) — A template that creates [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) instances from business objects.
+- [`GridBand.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/BandsSource.md) — A collection of business objects used to generate child bands.
+- [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) — A unique name used to identify a band and associate it with columns.
+- [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) — The name of the band associated with the column. This value matches the [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property's value.
 
 ### Example - Generate bands from a band source
 
 The following example creates bands from a collection of _BandInfo_ objects defined in a View Model.
 
-The DataGrid control displays a collection of _Order_ business objects. Grid columns are automatically generated from the public properties exposed by the _Order_ class. The data grid's `AutoGeneratingColumn` event handler associates the generated columns with the appropriate bands.
+The DataGrid control displays a collection of _Order_ business objects. Grid columns are automatically generated from the public properties exposed by the _Order_ class. The data grid's [`AutoGeneratingColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGeneratingColumn.md) event handler associates the generated columns with the appropriate bands.
 
 ![grid-bands-source-example](../../images/grid-bands-source-example.png)
 
@@ -475,7 +475,7 @@ public partial class Order : ObservableObject
 
 ### Initialize Bands Using a Style
 
-As an alternative to specifying the `BandTemplate` property, you can use the `Styles` property to initialize `GridBand` objects from business objects. 
+As an alternative to specifying the [`BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandTemplate.md) property, you can use the `Styles` property to initialize [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) objects from business objects. 
 
 ``` xml
 <mxdg:DataGridControl.Styles>
@@ -506,11 +506,11 @@ public partial class Order : ObservableObject
 }
 ```
 
-When Data Grid encounters `DisplayAttribute.GroupName`, it checks for an existing band with a matching name (`GridBand.BandName`). If no such band is found, the band is created and initialized as follows:
+When Data Grid encounters `DisplayAttribute.GroupName`, it checks for an existing band with a matching name ([`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)). If no such band is found, the band is created and initialized as follows:
 
-- The control automatically creates the band and set its `GridBand.BandName` property to the `DisplayAttribute.GroupName` value.
-- The band is added to the control's `DataGridControl.Bands` collection. Nested bands are added to the appropriate `GridBand.Bands` collections.
-- The created band is associated with the auto-generated column, using the `GridColumn.BandName` property.
+- The control automatically creates the band and set its [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property to the `DisplayAttribute.GroupName` value.
+- The band is added to the control's [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) collection. Nested bands are added to the appropriate [`GridBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/Bands.md) collections.
+- The created band is associated with the auto-generated column, using the [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) property.
 
 The `DisplayAttribute.GroupName` parameter supports nested bands. Use the '/' character to separate parent and child bands (for instance, "ParentBandName/ChildBandName"). To include '/' as a literal character, use the double slash ("//") notation.
 
@@ -530,15 +530,15 @@ public partial class Order : ObservableObject
 
 ### Related API
 
-- `DataGridControl.AutoGenerateBands` (default is `true`) — Gets or sets whether bands are automatically generated from the `DisplayAttribute.GroupName` attributes applied to the underlying business object's properties. These bands are then automatically linked to their corresponding auto-generated columns.
+- [`DataGridControl.AutoGenerateBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateBands.md) (default is `true`) — Gets or sets whether bands are automatically generated from the `DisplayAttribute.GroupName` attributes applied to the underlying business object's properties. These bands are then automatically linked to their corresponding auto-generated columns.
 
-    Automatic band generation (and linking bands to auto-generated columns) is forcibly disabled if `DataGridControl.AutoGenerateColumns` is `false`.
+    Automatic band generation (and linking bands to auto-generated columns) is forcibly disabled if [`DataGridControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md) is `false`.
     
-- `DataGridControl.Bands` and `GridBand.Bands` — You can use these collections to access automatically generated bands.
+- [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) and [`GridBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/Bands.md) — You can use these collections to access automatically generated bands.
 
 ### Example - Generate bands based on the DisplayAttribute.GroupName parameter
 
-In this example, the DataGrid control displays a list of _Order_ objects. The `AutoGenerateColumns` option enables automatic generation of columns from the public properties of the _Order_ class. Bands are generated based on the `System.ComponentModel.DataAnnotations.DisplayAttribute` attribute applied to the _Order_ class properties.
+In this example, the DataGrid control displays a list of _Order_ objects. The [`AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md) option enables automatic generation of columns from the public properties of the _Order_ class. Bands are generated based on the `System.ComponentModel.DataAnnotations.DisplayAttribute` attribute applied to the _Order_ class properties.
 
 ![datagrid-bands-from-attributes-example](../../images/datagrid-bands-from-attributes-example.png)
 
@@ -653,7 +653,7 @@ public partial class Order : ObservableObject
 
 ### Order of Columns and Bands
 
-The DataGrid control arranges columns according to their `GridColumn.VisibleIndex` properties.
+The DataGrid control arranges columns according to their [`GridColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) properties.
 
 The order of band headers is determined by the visual order of the columns. 
 If columns linked to the same band are placed next to each other, their band headers are merged.
@@ -689,11 +689,11 @@ In the following code snippet, columns linked to the _Customer_ band are separat
 
 ### Column Drag-and-Drop
 
-Users can freely drag and drop columns within the control if `DataGridControl.AllowColumnMoving` is `true` (default). If they drag a column into a different band, the control draws an appropriate band header (`GridColumn.BandHeader`) above this column in its new position. See [Order of Columns and Bands](#order-of-columns-and-bands).
+Users can freely drag and drop columns within the control if [`DataGridControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnMoving.md) is `true` (default). If they drag a column into a different band, the control draws an appropriate band header (`GridColumn.BandHeader`) above this column in its new position. See [Order of Columns and Bands](#order-of-columns-and-bands).
 
 #### Related API
 
-- `DataGridControl.AllowColumnMoving` — Gets or sets whether column drag-and-drop operations are enabled.
+- [`DataGridControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnMoving.md) — Gets or sets whether column drag-and-drop operations are enabled.
 
 ### Band Drag-and-Drop
 
@@ -703,12 +703,12 @@ DataGrid does not support drag-and-drop operations on bands.
 
 The band panel displays band headers. The panel is visible when any column is associated with an existing band. Use the following property to forcibly hide the band panel, when required:
 
-- `DataGridControl.ShowBands` — Gets or sets whether the band panel is visible.
+- [`DataGridControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBands.md) — Gets or sets whether the band panel is visible.
 
 ## Specify Band Header Content
 
-- `Header` — Gets or sets a band header's content. If this property is not set, the band displays the value of the `GridBand.BandName` property.
-- `HeaderTemplate` —  Gets or sets a template used to render the `Header` object. The template allows you to display images and custom controls, and to render text in a custom manner.
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) — Gets or sets a band header's content. If this property is not set, the band displays the value of the [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) property.
+- [`HeaderTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderTemplate.md) —  Gets or sets a template used to render the [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) object. The template allows you to display images and custom controls, and to render text in a custom manner.
 
 ### Example - Display an image in a band header
 
@@ -749,7 +749,7 @@ Columns not associated with existing bands are displayed under a blank band head
 
 ## Band Separators
 
-- `DataGridControl.ShowBandSeparators` — Enables thick separators between adjacent bands. Use this property to emphasize divisions between bands. If `ShowBandSeparators` is disabled, the grid draws regular column separators (thin lines) between bands.
+- [`DataGridControl.ShowBandSeparators`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBandSeparators.md) — Enables thick separators between adjacent bands. Use this property to emphasize divisions between bands. If [`ShowBandSeparators`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBandSeparators.md) is disabled, the grid draws regular column separators (thin lines) between bands.
 
     The following image demonstrates band separators.
 
@@ -765,7 +765,7 @@ Bands without associated columns are never displayed.
 
 ## Band Header Tooltips
 
-Use the `HeaderToolTip` property to specify custom tooltips for band headers. Custom tooltips are displayed when hovering over band headers regardless of whether band header text is trimmed or not.
+Use the [`HeaderToolTip`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderToolTip.md) property to specify custom tooltips for band headers. Custom tooltips are displayed when hovering over band headers regardless of whether band header text is trimmed or not.
 
 ``` xml
 <mxdg:GridBand BandName="Details" HeaderHorizontalAlignment="Center" HeaderToolTip="Contact and location information">

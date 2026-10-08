@@ -2,6 +2,12 @@
 
 `true` to let the user select several files at once. Defaults to a single selection.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public bool? AllowMultiple { get; set; }
 ```

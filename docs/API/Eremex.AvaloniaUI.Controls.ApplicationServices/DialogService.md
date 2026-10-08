@@ -2,6 +2,12 @@
 
 The default IDialogService implementation. It hosts the view model in a [`DialogWindow`](./DialogWindow.md), attaches the view model for as long as the dialog is open, and picks the owner window through IWindowsManager.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public class DialogService : IDialogService
 ```

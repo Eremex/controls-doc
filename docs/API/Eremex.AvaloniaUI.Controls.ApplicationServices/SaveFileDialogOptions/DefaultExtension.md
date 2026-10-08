@@ -2,6 +2,12 @@
 
 The default file extension: the extension itself, without dots or wildcards. For XML files specify "xml", not "*.xml".
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public string? DefaultExtension { get; set; }
 ```

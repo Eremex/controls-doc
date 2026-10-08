@@ -10,7 +10,7 @@ seealso: []
 ## Cell and Row Navigation Modes
 
 The DataGrid's default behavior allows users to navigate between cells using the keyboard, or focus them using the mouse.
-Use the `DataGridControl.NavigationMode` property to switch between Cell Navigation and Row Navigation modes.
+Use the [`DataGridControl.NavigationMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/NavigationMode.md) property to switch between Cell Navigation and Row Navigation modes.
 
 **Cell Navigation** (default)
 
@@ -32,7 +32,7 @@ Users cannot focus individual cells, and cell edit operations are disabled. Clic
 
 ## Focused Column
 
-Use the `DataGridControl.FocusedColumn` property to obtain the focused column. To move focus to a specific column, assign a corresponding `GridColumn` object to the `FocusedColumn` property.
+Use the [`DataGridControl.FocusedColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedColumn.md) property to obtain the focused column. To move focus to a specific column, assign a corresponding [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) object to the [`FocusedColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedColumn.md) property.
 
 !!! note
 
@@ -40,9 +40,9 @@ Use the `DataGridControl.FocusedColumn` property to obtain the focused column. T
 
 ## Focused Row
 
-Use the `DataGridControl.FocusedRowIndex` property to retrieve the focused row's [index](rows.md#identify-and-get-rows). The `DataGridControl.FocusedItem` property allows you to retrieve the focused row's underlying data object.
+Use the [`DataGridControl.FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md) property to retrieve the focused row's [index](rows.md#identify-and-get-rows). The [`DataGridControl.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) property allows you to retrieve the focused row's underlying data object.
 
-To move focus to a specific row, you can assign this row's index to the `DataGridControl.FocusedRowIndex` property.
+To move focus to a specific row, you can assign this row's index to the [`DataGridControl.FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md) property.
 
 ## Focused Cell
 

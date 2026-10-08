@@ -2,6 +2,12 @@
 
 The style classes applied to the hosting window, as a single space-separated string. Defaults to `"DefaultDialogWindow"`, and is `null` when the classes were supplied as an array instead. See [`DialogWindowClasses`](../DialogWindowClasses.md) for the recognised names.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public string? StyleClasses { get; set; }
 ```

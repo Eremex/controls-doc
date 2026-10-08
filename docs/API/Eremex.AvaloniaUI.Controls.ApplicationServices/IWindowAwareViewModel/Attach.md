@@ -2,13 +2,21 @@
 
 Associates the view model with the window that is about to show it. Called by the window services before the window becomes visible.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public void Attach(IActionWindow window)
 ```
 
-| parameter | description |
-| --- | --- |
-| window | The window that will host this view model. |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| window | [`IActionWindow`](../IActionWindow.md) | The window that will host this view model. |
 
 ## See Also
 

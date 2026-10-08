@@ -2,6 +2,12 @@
 
 The standard IDialogButtonViewModel implementation. Use the `Create*` factory methods for the common buttons — they apply the right caption, style classes and default/cancel behaviour — and return the results from CreateButtons.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public class DialogButtonViewModel : ViewModelBase, IDialogButtonViewModel
 ```

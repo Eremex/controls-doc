@@ -1,5 +1,11 @@
 # MessageBoxService.Show method (1 of 2)
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public DialogResult Show(string text, string caption, MessageBoxButtons buttons, 
     MessageBoxIcon icon)
@@ -13,6 +19,12 @@ public DialogResult Show(string text, string caption, MessageBoxButtons buttons,
 ---
 
 # MessageBoxService.Show method (2 of 2)
+
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
 
 ```csharp
 public DialogResult Show(IWindow? owner, string text, string caption, MessageBoxButtons buttons, 

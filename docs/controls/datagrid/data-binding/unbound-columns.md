@@ -6,31 +6,31 @@ seealso: []
 
 # Unbound Columns
 
-You can create unbound columns to display custom information in the DataGrid control. An unbound column is not bound to a field in the underlying data source. You should populate this column with data manually, using the `DataGridControl.CustomUnboundColumnData` event.
+You can create unbound columns to display custom information in the DataGrid control. An unbound column is not bound to a field in the underlying data source. You should populate this column with data manually, using the [`DataGridControl.CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) event.
 
 To create an unbound column, do the following:
 
-- Create a `GridColumn` object.
-- Set the column's `UnboundDataType` property to the type of data this column is intended to display. 
-- Set the column's `FieldName` property to a unique field name.
-- Add the column to the `DataGridControl.Columns` collection, using the `Add` or `Insert` method. You can also position the column with the `GridColumn.VisibleIndex` property.
+- Create a [`GridColumn`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) object.
+- Set the column's [`UnboundDataType`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/UnboundDataType.md) property to the type of data this column is intended to display. 
+- Set the column's [`FieldName`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) property to a unique field name.
+- Add the column to the [`DataGridControl.Columns`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Columns.md) collection, using the `Add` or `Insert` method. You can also position the column with the [`GridColumn.VisibleIndex`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) property.
 
-Note that the control does not store or cache data for unbound columns. It invokes the `CustomUnboundColumnData` event, which you need to handle to specify data for unbound columns. 
+Note that the control does not store or cache data for unbound columns. It invokes the [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) event, which you need to handle to specify data for unbound columns. 
 
-The `CustomUnboundColumnData` event fires in the following cases:
+The [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) event fires in the following cases:
 
-- When a cell value in an unbound column is about to be displayed (for instance, during the initial load of the control or while scrolling). In this case, the `IsGettingData` event parameter returns `true`. You need to assign a value to the `Value` event parameter.
+- When a cell value in an unbound column is about to be displayed (for instance, during the initial load of the control or while scrolling). In this case, the [`IsGettingData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridUnboundColumnDataEventArgs/IsGettingData.md) event parameter returns `true`. You need to assign a value to the [`Value`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridUnboundColumnDataEventArgs/Value.md) event parameter.
 
-- When a user changes data in an unbound column's cells. In this case, the `IsGettingData` event parameter returns `false`. Read the `Value` event parameter and cache it manually in your storage for further use.
+- When a user changes data in an unbound column's cells. In this case, the [`IsGettingData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridUnboundColumnDataEventArgs/IsGettingData.md) event parameter returns `false`. Read the [`Value`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridUnboundColumnDataEventArgs/Value.md) event parameter and cache it manually in your storage for further use.
 
-You can forcibly fire the `CustomUnboundColumnData` event with the following methods:
+You can forcibly fire the [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) event with the following methods:
 
-- `RefreshRow` - Updates a specified row.
-- `RefreshData` - Forces the grid to reload all data.
+- [`RefreshRow`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RefreshRow.md) - Updates a specified row.
+- [`RefreshData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RefreshData.md) - Forces the grid to reload all data.
 
 ## Example 1
 
-The following example creates an unbound read-only _Total_ column, and handles the _CustomUnboundColumnData_ event to calculate column values based on values of other fields, according to the expression: `Total=UnitPrice*Quantity`. The event handler checks the `IsGettingData` event parameter, and retrieves values when this parameter is `true`. 
+The following example creates an unbound read-only _Total_ column, and handles the _CustomUnboundColumnData_ event to calculate column values based on values of other fields, according to the expression: `Total=UnitPrice*Quantity`. The event handler checks the [`IsGettingData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridUnboundColumnDataEventArgs/IsGettingData.md) event parameter, and retrieves values when this parameter is `true`. 
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -82,7 +82,7 @@ public partial class PurchaseRecord : ObservableObject
 
 ## Example 2
 
-The following example shows how you can cache data entered by users in unbound columns. The example creates a _Data_ column and handles the `CustomUnboundColumnData` event to supply data to the DataGrid and save data typed by users.
+The following example shows how you can cache data entered by users in unbound columns. The example creates a _Data_ column and handles the [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) event to supply data to the DataGrid and save data typed by users.
 
 ``` cs
 dataGrid1.Columns.Add(new GridColumn() { FieldName = "UserData", UnboundDataType = typeof(string), Header = "Data" });

@@ -17,7 +17,7 @@ Horizontal virtualization (when scrolling through columns) is enabled by default
 
 ##### Related API
 
-- `DataGridControl.AllowHorizontalVirtualization` property — Gets or sets whether horizontal virtualization is enabled.
+- [`DataGridControl.AllowHorizontalVirtualization`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowHorizontalVirtualization.md) property — Gets or sets whether horizontal virtualization is enabled.
 
 
 You may need to disable horizontal virtualization when rows have different heights (when a row height is calculated based on cell contents). See [Row Auto-Height](rows.md#row-auto-height).

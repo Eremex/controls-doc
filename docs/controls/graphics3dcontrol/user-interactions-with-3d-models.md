@@ -6,8 +6,8 @@ seealso: []
 
 # User Interactions with 3D Models
 
-`Graphics3DControl` enables users to interact with 3D models. Users can rotate, zoom, and pan (move) the models with the mouse and keyboard. Additionally, you can allow users to select elements of the model with a mouse click or highlight elements when hovering over them with the mouse. 
-The `Graphics3DControl` also supports tooltips for the models and its elements (meshes).
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) enables users to interact with 3D models. Users can rotate, zoom, and pan (move) the models with the mouse and keyboard. Additionally, you can allow users to select elements of the model with a mouse click or highlight elements when hovering over them with the mouse. 
+The [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) also supports tooltips for the models and its elements (meshes).
 
 ## Rotate the Model
 
@@ -25,7 +25,7 @@ The `Graphics3DControl` also supports tooltips for the models and its elements (
 
 ### Rotate Options
 
-- `Graphics3DControl.RotateStep` — Allows you to control the rotation speed. The `RotateStep` property is specified in internal units. The default value is 20. A higher value results in a greater rotation speed. 
+- [`Graphics3DControl.RotateStep`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/RotateStep.md) — Allows you to control the rotation speed. The [`RotateStep`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/RotateStep.md) property is specified in internal units. The default value is 20. A higher value results in a greater rotation speed. 
 
 <!-- TODO
 Check the property in the demo. 
@@ -44,7 +44,7 @@ Check the property in the demo.
 
 ### Zoom Options
 
-- `Graphics3DControl.ZoomRate` — Controls the speed of zoom operations performed using the keyboard and mouse wheel. The default value is 0.1. A higher value increases the zoom speed.
+- [`Graphics3DControl.ZoomRate`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/ZoomRate.md) — Controls the speed of zoom operations performed using the keyboard and mouse wheel. The default value is 0.1. A higher value increases the zoom speed.
 
 ## Move the Model
 
@@ -61,7 +61,7 @@ Check the property in the demo.
 
 ### Move Options
 
-- `Graphics3DControl.KeyboardMoveStep` property — Allows you to specify the distance by which a model is shifted during a single keyboard move operation.
+- [`Graphics3DControl.KeyboardMoveStep`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/KeyboardMoveStep.md) property — Allows you to specify the distance by which a model is shifted during a single keyboard move operation.
 
 <!-- TODO
 which units ?
@@ -77,7 +77,7 @@ To view a model from a specific position and angle in code, you need to adjust t
 
 ## Override Keyboard Shortcuts
 
-The `Graphics3DControl.NavigationBindings` property of the `Graphics3DKeyBindings` class allows you to override the default keyboard shortcuts. The `Graphics3DKeyBindings` class contains properties that define the shortcuts for the zoom, rotate and pan operations. Initially, these properties are set to the default shortcuts, which are listed above. You can use these properties to assign custom shortcuts to the operations.
+The [`Graphics3DControl.NavigationBindings`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/NavigationBindings.md) property of the [`Graphics3DKeyBindings`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DKeyBindings.md) class allows you to override the default keyboard shortcuts. The [`Graphics3DKeyBindings`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DKeyBindings.md) class contains properties that define the shortcuts for the zoom, rotate and pan operations. Initially, these properties are set to the default shortcuts, which are listed above. You can use these properties to assign custom shortcuts to the operations.
 
 The following code assigns the CTRL+1 and CTRL+2 shortcuts to the Zoom In and Zoom Out operations.
 
@@ -91,14 +91,14 @@ g3DControl.NavigationBindings.ZoomOut = zoomOutShortcut;
 
 ## Show Hints
 
-`Graphics3DControl` can display hints when a user hovers over models or individual meshes. 
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) can display hints when a user hovers over models or individual meshes. 
 
 ![g3dControl-hint](../../images/g3dControl-hint.png)
 
 Use the following properties to assign hints to models, meshes, or both models and meshes at the same time:
 
-- `GeometryModel3D.Hint` — A hint for a model.
-- `MeshGeometry3D.Hint` — A hint for a mesh.
+- [`GeometryModel3D.Hint`](../../API/Eremex.AvaloniaUI.Controls3D/SelectableElement/Hint.md) — A hint for a model.
+- [`MeshGeometry3D.Hint`](../../API/Eremex.AvaloniaUI.Controls3D/SelectableElement/Hint.md) — A hint for a mesh.
 
 The following example sets hints for a model and its meshes. Hints for meshes indicate their names.
 
@@ -128,15 +128,15 @@ When hints are set for both the model and a mesh, these hints are merged into a 
 
 ![g3dcontrol hints animation](../../images/g3dcontrol-hints-animation.gif)
 
-Set the `Graphics3DControl.ShowHints` property to `false` to disable hints. This property has a default value of `true`.
+Set the [`Graphics3DControl.ShowHints`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/ShowHints.md) property to `false` to disable hints. This property has a default value of `true`.
 
 ## Highlight Elements
 
-`Graphics3DControl` supports model and mesh highlighting. With this feature, the control draws a highlight border around a model/mesh when a user hovers over it.
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) supports model and mesh highlighting. With this feature, the control draws a highlight border around a model/mesh when a user hovers over it.
 
 ![g3dControl-highlight](../../images/g3dControl-highlight.png)
 
-Use the `Graphics3DControl.HighlightMode` property to enable the highlight feature and specify highlight mode. The following options are available:
+Use the [`Graphics3DControl.HighlightMode`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/HighlightMode.md) property to enable the highlight feature and specify highlight mode. The following options are available:
 
 - `Mesh` — Enables highlighting of individual meshes.
 - `Model` — Enables highlighting of individual models.
@@ -144,8 +144,8 @@ Use the `Graphics3DControl.HighlightMode` property to enable the highlight featu
 
 **Related API**
 
-- `Graphics3DControl.HighlightedElement` — Gets or sets the currently highlighted element.
-- `Graphics3DControl.HighlightColor` — Gets or sets the color used to draw a highlight border around highlighted elements.
+- [`Graphics3DControl.HighlightedElement`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/HighlightedElement.md) — Gets or sets the currently highlighted element.
+- [`Graphics3DControl.HighlightColor`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/HighlightColor.md) — Gets or sets the color used to draw a highlight border around highlighted elements.
 
 
 ## Select Elements
@@ -154,7 +154,7 @@ You can enable the selection feature to allow a user to select elements (models 
 
 ![g3dcontrol selection animation](../../images/g3dcontrol-selection-animation.gif)
 
-Use the `Graphics3DControl.SelectionMode` property to activate the selection feature and define selection mode. The available options include:
+Use the [`Graphics3DControl.SelectionMode`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/SelectionMode.md) property to activate the selection feature and define selection mode. The available options include:
 
 - `Mesh` — Enables selection of individual meshes on a mouse click.
 - `Model` — Enables selection of individual models on a mouse click.
@@ -163,8 +163,8 @@ Use the `Graphics3DControl.SelectionMode` property to activate the selection fea
 
 **Related API**
 
-- `Graphics3DControl.SelectedElement` — Gets or sets the currently selected element.
-- `Graphics3DControl.SelectionColor` — Gets or sets the color used to draw a border around selected elements.
+- [`Graphics3DControl.SelectedElement`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/SelectedElement.md) — Gets or sets the currently selected element.
+- [`Graphics3DControl.SelectionColor`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/SelectionColor.md) — Gets or sets the color used to draw a border around selected elements.
 
 
 ## See Also

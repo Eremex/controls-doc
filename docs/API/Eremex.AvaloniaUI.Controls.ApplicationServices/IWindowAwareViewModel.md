@@ -2,6 +2,12 @@
 
 Implemented by view models that are shown in a window of their own. The window services call [`Attach`](./IWindowAwareViewModel/Attach.md) before showing the window and [`Detach`](./IWindowAwareViewModel/Detach.md) after it closes, which lets the view model observe its window without depending on any window type.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public interface IWindowAwareViewModel
 ```

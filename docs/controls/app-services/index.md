@@ -9,7 +9,7 @@ seealso: []
 
 Application Services provides a clean, decoupled way to work with windows, dialogs, and application-wide appearance settings from your ViewModels and business logic. Instead of directly referencing windows and dialogs, or accessing system features, you request these capabilities through well-defined service interfaces. The services handle platform-specific code, while your business logic remains platform-agnostic.
 
-Here is a code snippet that demonstrates the use of the `IMessageBoxService` to display a message box from a View Model.
+Here is a code snippet that demonstrates the use of the [`IMessageBoxService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IMessageBoxService.md) to display a message box from a View Model.
 
 ``` cs
 using Eremex.AvaloniaUI.Controls.ApplicationServices;
@@ -34,7 +34,7 @@ public class MyViewModel
 
 !!! Tip
     
-    See [Access Built-in Services Using the ApplicationServicesContext and SimpleServiceProvider](#access-built-in-services-using-the-applicationservicescontext-and-simpleserviceprovider) for complete code, which shows how to register built-in services with `ApplicationServicesContext`.
+    See [Access Built-in Services Using the ApplicationServicesContext and SimpleServiceProvider](#access-built-in-services-using-the-applicationservicescontext-and-simpleserviceprovider) for complete code, which shows how to register built-in services with [`ApplicationServicesContext`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ApplicationServicesContext.md).
 
 
 
@@ -71,32 +71,32 @@ The Eremex Controls library contains the following services, each providing a sp
 
 | Service | Description |
 |---------|---------|
-| `IMessageBoxService` | Shows standard message boxes with fixed button sets defined by the `MessageBoxButtons` enumeration (Ok, Ok&vert;Cancel, Yes&vert;No&vert;Cancel, Yes&vert;No, Abort&vert;Retry&vert;Ignore, and Retry&vert;Cancel). |
-| `IDialogService` | Shows dialogs from ViewModel code, so that a ViewModel can ask the user a question without referencing any window type. A dialog is driven by a _dialog ViewModel_. You can also implement a View to display as the dialog's content. This View is located through the `ViewLocatorAttribute` applied to the dialog ViewModel. |
-| `IChoiceDialogService` | Shows a dialog with an arbitrary set of buttons and returns the result of the pressed one. |
-| `IWindowService` | Shows non-modal windows from ViewModel code, so that a ViewModel can open a window without referencing any window type. The counterpart for modal dialogs is `IDialogService`. |
+| [`IMessageBoxService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IMessageBoxService.md) | Shows standard message boxes with fixed button sets defined by the [`MessageBoxButtons`](../../API/Eremex.AvaloniaUI.Controls/MessageBoxButtons.md) enumeration (Ok, Ok&vert;Cancel, Yes&vert;No&vert;Cancel, Yes&vert;No, Abort&vert;Retry&vert;Ignore, and Retry&vert;Cancel). |
+| [`IDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IDialogService.md) | Shows dialogs from ViewModel code, so that a ViewModel can ask the user a question without referencing any window type. A dialog is driven by a _dialog ViewModel_. You can also implement a View to display as the dialog's content. This View is located through the [`ViewLocatorAttribute`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ViewLocatorAttribute.md) applied to the dialog ViewModel. |
+| [`IChoiceDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService.md) | Shows a dialog with an arbitrary set of buttons and returns the result of the pressed one. |
+| [`IWindowService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IWindowService.md) | Shows non-modal windows from ViewModel code, so that a ViewModel can open a window without referencing any window type. The counterpart for modal dialogs is [`IDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IDialogService.md). |
 
 ### File Services
 
 | Service | Description |
 |---------|---------|
-| `IOpenFileDialogService` | Shows the platform `Open File` dialog from ViewModel code in sync or async mode. |
-| `ISaveFileDialogService` | Shows the platform `Save File` dialog from ViewModel code in sync or async mode. |
+| [`IOpenFileDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IOpenFileDialogService.md) | Shows the platform `Open File` dialog from ViewModel code in sync or async mode. |
+| [`ISaveFileDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ISaveFileDialogService.md) | Shows the platform `Save File` dialog from ViewModel code in sync or async mode. |
 
 ### Infrastructure Services
 
 | Service | Description |
 |---------|---------|
-| `IWindowsManager` | Tracks the active window of the application. Dialog services use the `IWindowsManager` service to get the default owner for newly created dialogs. |
-| `IAppearanceService` | Lists visual theme settings and applies the chosen theme variant. |
+| [`IWindowsManager`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IWindowsManager.md) | Tracks the active window of the application. Dialog services use the [`IWindowsManager`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IWindowsManager.md) service to get the default owner for newly created dialogs. |
+| [`IAppearanceService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IAppearanceService.md) | Lists visual theme settings and applies the chosen theme variant. |
 
 ### Use Services
 
-You can use the `ApplicationServicesContext` and `SimpleServiceProvider` classes to work with built-in services, or use custom DI containers.
+You can use the [`ApplicationServicesContext`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ApplicationServicesContext.md) and [`SimpleServiceProvider`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/SimpleServiceProvider.md) classes to work with built-in services, or use custom DI containers.
 
 #### Access Built-in Services Using the ApplicationServicesContext and SimpleServiceProvider
 
-Register the built-in services with the `SimpleServiceProvider` and `ApplicationServicesContext` when the application starts (in the `App` class). Then create a convenient `Service<T>()` helper method in your ViewModel to access these services using the `ApplicationServicesContext.GetRequiredService<T>` method.
+Register the built-in services with the [`SimpleServiceProvider`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/SimpleServiceProvider.md) and [`ApplicationServicesContext`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ApplicationServicesContext.md) when the application starts (in the `App` class). Then create a convenient `Service<T>()` helper method in your ViewModel to access these services using the `ApplicationServicesContext.GetRequiredService<T>` method.
 
 ```csharp
 using Eremex.AvaloniaUI.Controls.ApplicationServices;
@@ -138,7 +138,7 @@ public class App : Application
 }
 ```
 
-The `SimpleServiceProvider` is a minimal `IServiceProvider` implementation that requires no external NuGet packages. It is a lightweight, thread-safe container intended for applications and tests that do not need a full DI container. All services are created lazily and live as singletons (created once and cached for the application lifetime). Created instances implementing `IDisposable` are disposed by the `Dispose` method.
+The [`SimpleServiceProvider`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/SimpleServiceProvider.md) is a minimal `IServiceProvider` implementation that requires no external NuGet packages. It is a lightweight, thread-safe container intended for applications and tests that do not need a full DI container. All services are created lazily and live as singletons (created once and cached for the application lifetime). Created instances implementing `IDisposable` are disposed by the [`Dispose`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/SimpleServiceProvider/Dispose.md) method.
 
  
 #### Access Services Through Constructor Injection

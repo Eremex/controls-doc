@@ -2,24 +2,39 @@
 
 Shows a modal dialog with the given choices.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public T Show<T>(string message, string? caption, IReadOnlyList<DialogChoice<T>> choices)
 ```
 
-| parameter | description |
+## Type Parameters
+
+| name | description |
 | --- | --- |
 | T | The result type. |
-| message | The message text. |
-| caption | The window caption. |
-| choices | The available choices. The order matches the button order. |
 
-## Return Value
+## Parameters
 
-The result of the pressed button, or `default` if the dialog was closed without a choice (by the caption button or Escape).
+| name | type | description |
+| --- | --- | --- |
+| message | `string` | The message text. |
+| caption | `string?` | The window caption. |
+| choices | `IReadOnlyList<DialogChoice<T>>` | The available choices. The order matches the button order. |
+
+## Returns
+
+| type | description |
+| --- | --- |
+| `T` | The result of the pressed button, or `default` if the dialog was closed without a choice (by the caption button or Escape). |
 
 ## See Also
 
-* class [DialogChoice&lt;T&gt;](../DialogChoice-1.md)
+* class [DialogChoice&lt;T&gt;](../DialogChoice-T.md)
 * interface [IChoiceDialogService](../IChoiceDialogService.md)
 * namespace [Eremex.AvaloniaUI.Controls.ApplicationServices](../index.md)
 

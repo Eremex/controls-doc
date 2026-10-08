@@ -6,10 +6,10 @@ seealso: []
 
 # Heatmap
 
-The Heatmap control (`Eremex.AvaloniaUI.Charts.Heatmap`) allows you to create a two-dimensional [heat map](https://en.wikipedia.org/wiki/Heat_map), a chart that visualizes data using color. 
+The Heatmap control ([`Eremex.AvaloniaUI.Charts.Heatmap`](../../API/Eremex.AvaloniaUI.Charts/Heatmap.md)) allows you to create a two-dimensional [heat map](https://en.wikipedia.org/wiki/Heat_map), a chart that visualizes data using color. 
 The control paints each data point within a 2D "map" with a color that corresponds to a value at this point.
 
-Heatmap control is a `Eremex.AvaloniaUI.Charts.ChartControl` descendant, which is the base class for all chart controls, including `CartersianChart` and `PolarChart`. Thus, it inherits specific functionality common to all chart controls. The Heatmap control's features include:
+Heatmap control is a [`Eremex.AvaloniaUI.Charts.ChartControl`](../../API/Eremex.AvaloniaUI.Charts/ChartControl.md) descendant, which is the base class for all chart controls, including `CartersianChart` and [`PolarChart`](../../API/Eremex.AvaloniaUI.Charts/PolarChart.md). Thus, it inherits specific functionality common to all chart controls. The Heatmap control's features include:
 
 - Custom color encoding
 - Grayscale colorization
@@ -37,8 +37,8 @@ The values of the data points within the "map" are of the Double type.
 
 ## Provide Data
 
-Set the `Heatmap.DataAdapter` property to a `Eremex.AvaloniaUI.Charts.HeatmapDataAdapter` object to supply data to a Heatmap control. 
-The `HeatmapDataAdapter` class contains the following main properties that need to be initialized:
+Set the [`Heatmap.DataAdapter`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/DataAdapter.md) property to a [`Eremex.AvaloniaUI.Charts.HeatmapDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter.md) object to supply data to a Heatmap control. 
+The [`HeatmapDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter.md) class contains the following main properties that need to be initialized:
 
 ``` cs
 public class HeatmapDataAdapter : ISeriesDataAdapter
@@ -50,29 +50,29 @@ public class HeatmapDataAdapter : ISeriesDataAdapter
 }
 ```
 
-- `XArguments` — A list of strings that specify arguments of the _X_ axis. The _X_ arguments must be unique.
-- `YArguments` — A list of strings that specify arguments of the _Y_ axis. The _Y_ arguments must be unique.
-- `Values` — A two-dimensional array of values of the Double type. 
+- [`XArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/XArguments.md) — A list of strings that specify arguments of the _X_ axis. The _X_ arguments must be unique.
+- [`YArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/YArguments.md) — A list of strings that specify arguments of the _Y_ axis. The _Y_ arguments must be unique.
+- [`Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md) — A two-dimensional array of values of the Double type. 
     
-    The width and height of the `Values` array must match the number of items in the `XArguments` and `YArguments` list, respectively.
+    The width and height of the [`Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md) array must match the number of items in the [`XArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/XArguments.md) and [`YArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/YArguments.md) list, respectively.
     
-    The `Values` array may contain the `Double.NaN` value for specific points. These points are not rendered by the Heatmap control, and a user can see the control's background through these points.
+    The [`Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md) array may contain the `Double.NaN` value for specific points. These points are not rendered by the Heatmap control, and a user can see the control's background through these points.
 
-    Rows of the `Values` array are rendered by the Heatmap control from bottom to top.
-    The first row of the `Values` array is rendered at the bottom, and the last row at the top. See the example below for details.
+    Rows of the [`Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md) array are rendered by the Heatmap control from bottom to top.
+    The first row of the [`Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md) array is rendered at the bottom, and the last row at the top. See the example below for details.
 
 Use the following methods to update data for the Heatmap control at runtime:
 
-- `HeatmapDataAdapter.UpdateValues(double[,] newValues)` — Updates current values (`HeatmapDataAdapter.Values`) with values specified by the method's `newValues` parameter. The number of columns and rows in the `newValues` array must match those in the `HeatmapDataAdapter.Values` array.
-- `HeatmapDataAdapter.UpdateXArguments(IList<string> newArguments)` — Updates current _X_ arguments (`HeatmapDataAdapter.XArguments`) with new arguments. The number of elements in the `newArguments` list must match the number of elements in the `HeatmapDataAdapter.XArguments` list. The _X_ arguments must be unique.
-- `HeatmapDataAdapter.UpdateYArguments(IList<string> newArguments)` — Updates current _Y_ arguments (`HeatmapDataAdapter.YArguments`) with new arguments. The number of elements in the `newArguments` list must match the number of elements in the `HeatmapDataAdapter.YArguments` list. The _Y_ arguments must be unique.
+- [`HeatmapDataAdapter.UpdateValues(double[,] newValues)`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/UpdateValues.md) — Updates current values ([`HeatmapDataAdapter.Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md)) with values specified by the method's `newValues` parameter. The number of columns and rows in the `newValues` array must match those in the [`HeatmapDataAdapter.Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md) array.
+- [`HeatmapDataAdapter.UpdateXArguments(IList<string> newArguments)`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/UpdateXArguments.md) — Updates current _X_ arguments ([`HeatmapDataAdapter.XArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/XArguments.md)) with new arguments. The number of elements in the `newArguments` list must match the number of elements in the [`HeatmapDataAdapter.XArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/XArguments.md) list. The _X_ arguments must be unique.
+- [`HeatmapDataAdapter.UpdateYArguments(IList<string> newArguments)`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/UpdateYArguments.md) — Updates current _Y_ arguments ([`HeatmapDataAdapter.YArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/YArguments.md)) with new arguments. The number of elements in the `newArguments` list must match the number of elements in the [`HeatmapDataAdapter.YArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/YArguments.md) list. The _Y_ arguments must be unique.
 
 ### Example - Provide data and Use Default Rendering
 
 The following example supplies sample data to a Heatmap control. 
 The data represents a two-dimensional array that consists of three rows and five columns.
 
-The control's default color provider (`HeatmapGrayscaleColorProvider`) represents the minimum value in black, and the maximum value in white. Other values are colored in proportional shades of gray.
+The control's default color provider ([`HeatmapGrayscaleColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapGrayscaleColorProvider.md)) represents the minimum value in black, and the maximum value in white. Other values are colored in proportional shades of gray.
 
 ![heatmap-grayscale-example](../../images/heatmap-grayscale-example.png)
 
@@ -94,25 +94,25 @@ heatMap1.DataAdapter = dataAdapter;
 
 ## Data Point Value Colorization
 
-Color providers are used to color data points in a Heatmap control. For each data point, the control requests a color for a specific value from the color provider (the `Heatmap.ColorProvider` property).
+Color providers are used to color data points in a Heatmap control. For each data point, the control requests a color for a specific value from the color provider (the [`Heatmap.ColorProvider`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/ColorProvider.md) property).
 
 The following color providers are available:
 
-- `HeatmapGrayscaleColorProvider` (default) — Allows you to color values in grayscale.
-- `HeatmapRangeColorProvider` — Allows you to color data points in a custom manner by associating custom colors with specific values.
+- [`HeatmapGrayscaleColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapGrayscaleColorProvider.md) (default) — Allows you to color values in grayscale.
+- [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) — Allows you to color data points in a custom manner by associating custom colors with specific values.
 
 
-When required, you can create your own color provider by implementing the `IHeatmapColorProvider` interface.
+When required, you can create your own color provider by implementing the [`IHeatmapColorProvider`](../../API/Eremex.AvaloniaUI.Charts/IHeatmapColorProvider.md) interface.
 
 ## Grayscale Colorization
 
-The Heatmap control uses grayscale coloring of data points by default. Grayscale coloring is implemented by `HeatmapGrayscaleColorProvider`. To use this color provider, you can leave the `Heatmap.ColorProvider` property unassigned, or explicitly set the `Heatmap.ColorProvider` property to a `HeatmapGrayscaleColorProvider` object.
+The Heatmap control uses grayscale coloring of data points by default. Grayscale coloring is implemented by [`HeatmapGrayscaleColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapGrayscaleColorProvider.md). To use this color provider, you can leave the [`Heatmap.ColorProvider`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/ColorProvider.md) property unassigned, or explicitly set the [`Heatmap.ColorProvider`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/ColorProvider.md) property to a [`HeatmapGrayscaleColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapGrayscaleColorProvider.md) object.
 
-The `HeatmapGrayscaleColorProvider` object renders the minimum value across all data points in black, and the maximum value in white. Other values, which lie between the minimum and maximum values, are rendered in proportional shades of gray.
+The [`HeatmapGrayscaleColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapGrayscaleColorProvider.md) object renders the minimum value across all data points in black, and the maximum value in white. Other values, which lie between the minimum and maximum values, are rendered in proportional shades of gray.
 
 ### Example - Grayscale Colorization
 
-The following example binds a Heatmap control to sample data and renders data points using the default color provider (`HeatmapGrayscaleColorProvider`). The code also shows how to change axis titles.
+The following example binds a Heatmap control to sample data and renders data points using the default color provider ([`HeatmapGrayscaleColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapGrayscaleColorProvider.md)). The code also shows how to change axis titles.
 
 ![heatmap-grayscale-gradient-spot-example](../../images/heatmap-grayscale-gradient-spot-example.png)
 
@@ -160,11 +160,11 @@ public partial class MainWindowViewModel : ViewModelBase
 
 ## Custom Colorization
 
-To color data points in a Heatmap control in a custom manner, assign a `HeatmapRangeColorProvider` object to the `Heatmap.ColorProvider` property. `HeatmapRangeColorProvider` allows you to associate custom colors with specific values (transition values). To calculate the colors for values that fall between two transition values, `HeatmapRangeColorProvider` uses a gradient between the colors assigned to these transition values.
+To color data points in a Heatmap control in a custom manner, assign a [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) object to the [`Heatmap.ColorProvider`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/ColorProvider.md) property. [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) allows you to associate custom colors with specific values (transition values). To calculate the colors for values that fall between two transition values, [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) uses a gradient between the colors assigned to these transition values.
 
 When specifying transition values, you can specify absolute or normalized magnitudes.
 
-The following image shows how `HeatmapRangeColorProvider` builds color gradients between sample absolute transition values. In this example three transition values are defined:
+The following image shows how [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) builds color gradients between sample absolute transition values. In this example three transition values are defined:
 
 - Value 1 is associated with the Teal color
 - Value 6 is associated with Yellow
@@ -174,7 +174,7 @@ The following image shows how `HeatmapRangeColorProvider` builds color gradients
 
 ### Example - Custom Colorization
 
-The following example uses `HeatmapRangeColorProvider` to colorize a Heatmap control's data points according to custom color rules. The code specifies colors to represent the absolute transition values: 95, 110, 150, 210 and 233.
+The following example uses [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) to colorize a Heatmap control's data points according to custom color rules. The code specifies colors to represent the absolute transition values: 95, 110, 150, 210 and 233.
 Colors for other values are calculated according to a gradient between the colors assigned to adjacent transition values.
 
 
@@ -236,21 +236,21 @@ public partial class MainWindowViewModel : ViewModelBase
 
 ### Colors for Values Beyond the Boundary Transition Values
 
-Typically, a `HeatmapRangeColorProvider` object should include colors for the minimum and maximum values of the entire value range. This ensures that the color gradients built by the `HeatmapRangeColorProvider` object cover all values supplied to the Heatmap control.
+Typically, a [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) object should include colors for the minimum and maximum values of the entire value range. This ensures that the color gradients built by the [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) object cover all values supplied to the Heatmap control.
 Otherwise, the values beyond the boundary transition values are colored with the same colors as the boundary transition values.
 
-The following image demonstrates how `HeatmapRangeColorProvider` calculates colors when specific values are beyond the minimum and maximum transition values.
+The following image demonstrates how [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) calculates colors when specific values are beyond the minimum and maximum transition values.
 
 ![heatmap-transitionvalues-beyond-gradient](../../images/heatmap-transitionvalues-beyond-gradient.png)
 
 ### Normalized Transition Values
 
-If you do not know the minimum and maximum absolute values of the entire data range, you can specify transition values using normalized magnitudes. Set the `HeatmapRangeColorProvider.IsNormalizedValues` property to `true` to enable value normalization for the `HeatmapRangeColorProvider` object. In this mode, specify transition values in the range between `0` and `1`, where `0` and `1` represent the minimum and maximum values, respectively. The normalized value `0.5` represents the absolute value in the middle of the data range (`minimum + (maximum-minimum)/2`).
+If you do not know the minimum and maximum absolute values of the entire data range, you can specify transition values using normalized magnitudes. Set the [`HeatmapRangeColorProvider.IsNormalizedValues`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider/IsNormalizedValues.md) property to `true` to enable value normalization for the [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) object. In this mode, specify transition values in the range between `0` and `1`, where `0` and `1` represent the minimum and maximum values, respectively. The normalized value `0.5` represents the absolute value in the middle of the data range (`minimum + (maximum-minimum)/2`).
 
 
 #### Example - Colorize Data Points if the Minimum and Maximum are not Known Beforehand
 
-The following example uses the `HeatmapRangeColorProvider` object to colorize data points using normalized transition values. The `HeatmapRangeColorProvider.IsNormalizedValues` property is set to `true` to enable value normalization. Transition values are specified in normalized magnitudes: 0, 0.3, 0.7 and 1, where values 0 and 1 represent the minimum and maximum values of the data range.
+The following example uses the [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) object to colorize data points using normalized transition values. The [`HeatmapRangeColorProvider.IsNormalizedValues`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider/IsNormalizedValues.md) property is set to `true` to enable value normalization. Transition values are specified in normalized magnitudes: 0, 0.3, 0.7 and 1, where values 0 and 1 represent the minimum and maximum values of the data range.
 
 ![heatmap-normalizedvalues-example](../../images/heatmap-normalizedvalues-example.png)
 
@@ -288,7 +288,7 @@ heatmap.DataAdapter = new HeatmapDataAdapter(xArgs, yArgs, values);
 
 ## Axes
 
-The Heatmap control contains two axes, _X_ and _Y_. Arguments for these axes are provided with a call to the `HeatmapDataAdapter` constructor, by the `xArguments` and `yArguments` parameters.
+The Heatmap control contains two axes, _X_ and _Y_. Arguments for these axes are provided with a call to the [`HeatmapDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter.md) constructor, by the `xArguments` and `yArguments` parameters.
 
 ``` cs
 double[,] values = new double[,] 
@@ -305,10 +305,10 @@ heatmap.DataAdapter = dataAdapter;
 ```
 
 - The control's axes are qualitative, which means that their values are of the string type.
-- The number of elements in the `yArguments` list must match the number of rows in the two-dimensional data array (`HeatmapDataAdapter.Values`).
-- The number of elements in the `xArguments` list must match the number of columns in the two-dimensional data array (`HeatmapDataAdapter.Values`).
+- The number of elements in the `yArguments` list must match the number of rows in the two-dimensional data array ([`HeatmapDataAdapter.Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md)).
+- The number of elements in the `xArguments` list must match the number of columns in the two-dimensional data array ([`HeatmapDataAdapter.Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md)).
 
-You can customize axis settings by specifying the `Heatmap.AxisX` and `Heatmap.AxisY` objects.
+You can customize axis settings by specifying the [`Heatmap.AxisX`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/AxisX.md) and [`Heatmap.AxisY`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/AxisY.md) objects.
 
 The following code sets titles for the axes.
 
@@ -331,9 +331,9 @@ xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
 
 ### Axis Scale
 
-You can use the `AxisX.ScaleOptions` and `AxisY.ScaleOptions` properties to customize axis display options. These properties are of the `QualitativeScaleOptions` type.
+You can use the [`AxisX.ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/AxisX/ScaleOptions.md) and [`AxisY.ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/AxisY/ScaleOptions.md) properties to customize axis display options. These properties are of the [`QualitativeScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/QualitativeScaleOptions.md) type.
 
-The following example sets the `GridSpacing` scale option to 2 to display every second label and major tickmark, and skip the labels and tickmarks in between.
+The following example sets the [`GridSpacing`](../../API/Eremex.AvaloniaUI.Charts/QualitativeScaleOptions/GridSpacing.md) scale option to 2 to display every second label and major tickmark, and skip the labels and tickmarks in between.
 
 ![heatmap-scale-gridspacing-example](../../images/heatmap-scale-gridspacing-example.png)
 
@@ -349,7 +349,7 @@ The following example sets the `GridSpacing` scale option to 2 to display every 
 
 #### Format Axis Labels
 
-The `ScaleOptions.LabelFormatter` property allows you to specify an object that formats axis display values in a custom manner. You can implement a custom label formatter based on a function/expression using the `Eremex.AvaloniaUI.Charts.FuncLabelFormatter` object.
+The [`ScaleOptions.LabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) property allows you to specify an object that formats axis display values in a custom manner. You can implement a custom label formatter based on a function/expression using the [`Eremex.AvaloniaUI.Charts.FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md) object.
 
 The following example implements a custom label formatter for axis values.
 
@@ -380,28 +380,28 @@ public partial class MainWindowViewModel : ViewModelBase
 
 The following list summarizes display and behavior settings of the Heatmap control's axes:
 
-- `ConstantLines` and `ConstantLinesSource` — Allows you to paint constant lines for specific values. See [Constant Lines and Strips](#constant-lines-and-strips).
-- `EnableZooming` —  Allows a user to zoom an axis with the mouse wheel and keyboard.
-- `EnableScrolling` —  Allows a user to scroll an axis with a mouse drag operation and keyboard shortcuts.
-- `InterlacingColor` - The color used to paint interlaced strip lines (when the `ShowInterlacing` option is enabled).
-- `MinorCount` — Specifies the number of minor tickmarks and grid lines.
-- `Position` — Specifies the position of the axis. Available options include: `Near` (the X-axis is displayed at the bottom, and the Y-axis is displayed at the chart's left edge), and `Far` (the X-axis is displayed at the top, and the Y-axis is displayed at the chart's right edge).
-- `ShowAxisLine` — Specifies the visibility of the axis line.
-- `ShowInterlacing` — Specifies whether to paint interlaced strip lines between major gridlines. See `ShowMajorGridlines` for more information.
-- `ShowLabels` — Specifies the visibility of the labels corresponding to major tickmarks.
-- `ShowMajorGridlines` — Specifies the visibility of the grid lines corresponding to major tickmarks. Major and minor gridlines are displayed behind colored data points. Gridlines are visible in the following cases:
+- [`ConstantLines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLines.md) and [`ConstantLinesSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLinesSource.md) — Allows you to paint constant lines for specific values. See [Constant Lines and Strips](#constant-lines-and-strips).
+- [`EnableZooming`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableZooming.md) —  Allows a user to zoom an axis with the mouse wheel and keyboard.
+- [`EnableScrolling`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableScrolling.md) —  Allows a user to scroll an axis with a mouse drag operation and keyboard shortcuts.
+- [`InterlacingColor`](../../API/Eremex.AvaloniaUI.Charts/Axis/InterlacingColor.md) - The color used to paint interlaced strip lines (when the [`ShowInterlacing`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowInterlacing.md) option is enabled).
+- [`MinorCount`](../../API/Eremex.AvaloniaUI.Charts/Axis/MinorCount.md) — Specifies the number of minor tickmarks and grid lines.
+- [`Position`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/Position.md) — Specifies the position of the axis. Available options include: `Near` (the X-axis is displayed at the bottom, and the Y-axis is displayed at the chart's left edge), and `Far` (the X-axis is displayed at the top, and the Y-axis is displayed at the chart's right edge).
+- [`ShowAxisLine`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowAxisLine.md) — Specifies the visibility of the axis line.
+- [`ShowInterlacing`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowInterlacing.md) — Specifies whether to paint interlaced strip lines between major gridlines. See [`ShowMajorGridlines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMajorGridlines.md) for more information.
+- [`ShowLabels`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowLabels.md) — Specifies the visibility of the labels corresponding to major tickmarks.
+- [`ShowMajorGridlines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMajorGridlines.md) — Specifies the visibility of the grid lines corresponding to major tickmarks. Major and minor gridlines are displayed behind colored data points. Gridlines are visible in the following cases:
     
     - at positions where data points are rendered using semi-transparent colors.
     - at positions where data points are not rendered (for instance, when a data point's value is `Double.NaN`).
     
-- `ShowMajorTickmarks` — Specifies the visibility of the major tickmarks.
-- `ShowMinorGridlines` — Specifies the visibility of the grid lines corresponding to minor tickmarks. See `ShowMajorGridlines` for more information.
-- `ShowMinorTickmarks` — Specifies the visibility of the minor tickmarks.
-- `ShowTitle` — Specifies the visibility of the axis title (the `Title` property).
-- `Strips` and `StripsSource` — Allows you to fill ranges between specific values. See [Constant Lines and Strips](#constant-lines-and-strips).
-- `Thickness` — The thickness of the axis line.
-- `Title` — Gets or sets the title for the axis.
-- `TitlePosition` — Gets or sets the position of the axis title.
+- [`ShowMajorTickmarks`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMajorTickmarks.md) — Specifies the visibility of the major tickmarks.
+- [`ShowMinorGridlines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMinorGridlines.md) — Specifies the visibility of the grid lines corresponding to minor tickmarks. See [`ShowMajorGridlines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMajorGridlines.md) for more information.
+- [`ShowMinorTickmarks`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMinorTickmarks.md) — Specifies the visibility of the minor tickmarks.
+- [`ShowTitle`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/ShowTitle.md) — Specifies the visibility of the axis title (the [`Title`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/Title.md) property).
+- [`Strips`](../../API/Eremex.AvaloniaUI.Charts/Axis/Strips.md) and [`StripsSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/StripsSource.md) — Allows you to fill ranges between specific values. See [Constant Lines and Strips](#constant-lines-and-strips).
+- [`Thickness`](../../API/Eremex.AvaloniaUI.Charts/Axis/Thickness.md) — The thickness of the axis line.
+- [`Title`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/Title.md) — Gets or sets the title for the axis.
+- [`TitlePosition`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/TitlePosition.md) — Gets or sets the position of the axis title.
 
 
 
@@ -412,11 +412,11 @@ A crosshair is a pair of thin vertical and horizontal lines (argument and value 
 
 ![chart-crosshair-heatmap](../../images/chart-crosshair-heatmap.png)
 
-Use the `Heatmap.CrosshairOptions` property to customize display settings of the crosshair, or disable this feature. 
+Use the [`Heatmap.CrosshairOptions`](../../API/Eremex.AvaloniaUI.Charts/ChartControl/CrosshairOptions.md) property to customize display settings of the crosshair, or disable this feature. 
 
 ### Disable the Crosshair
 
-The `CrosshairOptions.ShowCrosshair` property allows you to disable the crosshair.
+The [`CrosshairOptions.ShowCrosshair`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ShowCrosshair.md) property allows you to disable the crosshair.
 
 ``` xml
 <mxc:Heatmap x:Name="heatmap1" >
@@ -433,7 +433,7 @@ The Heatmap control allows you to use constant lines and strips to mark specific
 
 ### Constant Lines
 
-A constant line is a line drawn perpendicular to an axis that marks a specific axis value. To create constant lines, use the `ConstantLines` collection or the `ConstantLinesSource` source of the `HeatmapAxisX` and `HeatmapAxisY` objects.
+A constant line is a line drawn perpendicular to an axis that marks a specific axis value. To create constant lines, use the [`ConstantLines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLines.md) collection or the [`ConstantLinesSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLinesSource.md) source of the [`HeatmapAxisX`](../../API/Eremex.AvaloniaUI.Charts/HeatmapAxisX.md) and [`HeatmapAxisY`](../../API/Eremex.AvaloniaUI.Charts/HeatmapAxisY.md) objects.
 
 The following example creates constant lines for the _X_ and _Y_ axes to mark axis values "H" and "V", respectively.
 
@@ -458,7 +458,7 @@ The following example creates constant lines for the _X_ and _Y_ axes to mark ax
 </mxc:Heatmap>
 ```
 
-Set the `ConstantLine.ShowBehind` option to `false` to draw constant lines above colored data points. Otherwise, they are drawn behind data points, and are visible in the following cases:
+Set the [`ConstantLine.ShowBehind`](../../API/Eremex.AvaloniaUI.Charts/ConstantLine/ShowBehind.md) option to `false` to draw constant lines above colored data points. Otherwise, they are drawn behind data points, and are visible in the following cases:
     
 - at positions where data points are rendered using semi-transparent colors.
 - at positions where data points are not rendered (for instance, when a data point's value is `Double.NaN`).
@@ -467,7 +467,7 @@ Set the `ConstantLine.ShowBehind` option to `false` to draw constant lines above
 
 A strip is an extension of a constant line. Strips are used to highlight ranges of axis values. They are always displayed behind colored data points.
 
-To create strips, use the `Strips` collection or the `StripsSource` source of the `HeatmapAxisX` and `HeatmapAxisY` objects.
+To create strips, use the [`Strips`](../../API/Eremex.AvaloniaUI.Charts/Axis/Strips.md) collection or the [`StripsSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/StripsSource.md) source of the [`HeatmapAxisX`](../../API/Eremex.AvaloniaUI.Charts/HeatmapAxisX.md) and [`HeatmapAxisY`](../../API/Eremex.AvaloniaUI.Charts/HeatmapAxisY.md) objects.
 
 ``` xml
 <mxc:Heatmap.AxisY>
@@ -491,8 +491,8 @@ The strips are visible in the following cases:
 
 Scroll and zoom operations are enabled by default. The following options allow you to disable these operations for the _X_ and/or _Y_ axes:
 
-- `Axis.EnableZooming`
-- `Axis.EnableScrolling`
+- [`Axis.EnableZooming`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableZooming.md)
+- [`Axis.EnableScrolling`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableScrolling.md)
 
 ``` xml
 <!-- Disable scroll and zoom operations for the X axis -->
@@ -553,7 +553,7 @@ Make animations for scrolling and zooming features, like in Charts
 
 ### Export
 
-You can use the `Heatmap.Export` method to export the control's rendering to a `WriteableBitmap` object. The resulting bitmap contains colored data points. The size of the bitmap matches the size of the Heatmap control's data specified by the `Heatmap.DataAdapter.Values` array.
+You can use the [`Heatmap.Export`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/Export.md) method to export the control's rendering to a `WriteableBitmap` object. The resulting bitmap contains colored data points. The size of the bitmap matches the size of the Heatmap control's data specified by the `Heatmap.DataAdapter.Values` array.
 
 The following example saves a Heatmap control's rendering to an image file.
 

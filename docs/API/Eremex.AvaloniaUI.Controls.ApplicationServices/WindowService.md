@@ -2,6 +2,12 @@
 
 The default IWindowService implementation. It hosts the view model in a [`DialogWindow`](./DialogWindow.md) shown non-modally, and detaches the view model automatically once the window closes — including when the user closes it through the caption button.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public class WindowService : IWindowService
 ```

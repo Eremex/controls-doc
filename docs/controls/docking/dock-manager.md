@@ -6,7 +6,7 @@ seealso: []
 
 # Dock Manager and Dock Items
 
-The `DockManager` component allows you to create the Visual Studio-inspired docking UI. Dock Panes and Document Panes are basic elements of a docking UI. Dock Panes are used to implement tool panels. Document Panes are tailored to display the main content of the window. You can combine multiple Document Panes in a special container to implement a tabbed MDI (Multiple Document Interface).
+The [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) component allows you to create the Visual Studio-inspired docking UI. Dock Panes and Document Panes are basic elements of a docking UI. Dock Panes are used to implement tool panels. Document Panes are tailored to display the main content of the window. You can combine multiple Document Panes in a special container to implement a tabbed MDI (Multiple Document Interface).
 
 
 ![docking-ui-dockpanes-and-documentpanes-v2](../../images/docking-ui-dockpanes-and-documentpanes-v2.png)
@@ -26,24 +26,24 @@ The following topics demonstrate how to create sample docking interfaces from sc
 
 ## Dock Panes
 
-Dock Panes (`DockPane` objects) allow you to create dockable and floating tool panels. Panels can be displayed side-by-side or as tabs. They also support the auto-hide feature.
+Dock Panes ([`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) objects) allow you to create dockable and floating tool panels. Panels can be displayed side-by-side or as tabs. They also support the auto-hide feature.
 
 ![dockingui-dockpanes](../../images/dockingui-dockpanes.png)
 
-To create a Docking UI in XAML or code-behind, Dock Panes need to be combined in containers (groups). For instance, you can combine items in a `DockGroup` container to display them next to each other, either horizontally or vertically. If you combine panels in a `TabbedGroup` container, they are displayed as tabs. Containers can also include other containers as children.
+To create a Docking UI in XAML or code-behind, Dock Panes need to be combined in containers (groups). For instance, you can combine items in a [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) container to display them next to each other, either horizontally or vertically. If you combine panels in a [`TabbedGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup.md) container, they are displayed as tabs. Containers can also include other containers as children.
 
 See the following topic to learn more: [Dock Panes and Containers](dock-panes-and-containers.md)
 
 
 ## Document Panes
 
-Use Document Panes (`DocumentPane` objects) to display the main content of your Window. If you create multiple Document Panes, you can combine them in a `DocumentGroup` container. `DocumentGroup` is a special container that presents Document Panes as tabs (similar to the `TabbedGroup` container used to present Dock Panes as tabs).
+Use Document Panes ([`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) objects) to display the main content of your Window. If you create multiple Document Panes, you can combine them in a [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) container. [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) is a special container that presents Document Panes as tabs (similar to the [`TabbedGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup.md) container used to present Dock Panes as tabs).
 
 ![dockingui-documentpanes](../../images/dockingui-documentpanes.png)
 
 Document Panes can be made floating. Unlike Dock Panes, Document Panes do not support the auto-hide functionality.
 
-You can create two or more `DocumentGroup` containers, each displaying its own set of Document Panes.
+You can create two or more [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) containers, each displaying its own set of Document Panes.
 
 <animated gif>
 
@@ -63,10 +63,10 @@ The Docking library provides built-in context menus for Dock Panes and Document 
 
 ![dockingui-contextmenus](../../images/dockingui-contextmenus.png)
 
-Handle the `DockManager.DockItemContextMenuOpening` event to customize the context menus, or to prevent them from being displayed.
+Handle the [`DockManager.DockItemContextMenuOpening`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockItemContextMenuOpening.md) event to customize the context menus, or to prevent them from being displayed.
 
 <!-- TODO
-example for the `DockManager.DockItemContextMenuOpening` event 
+example for the [`DockManager.DockItemContextMenuOpening`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockItemContextMenuOpening.md) event 
  -->
 
 ## Prevent Certain Operations on Dock Items

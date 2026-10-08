@@ -2,6 +2,12 @@
 
 The default folder, used when a well-known folder such as Documents or Pictures is needed. Ignored when [`DefaultFolder`](./DefaultFolder.md) is set.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public WellKnownFolder? DefaultWellKnownFolder { get; set; }
 ```

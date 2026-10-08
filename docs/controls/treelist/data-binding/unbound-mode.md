@@ -10,13 +10,13 @@ The TreeList and TreeView controls support unbound mode, in which you can manual
 
 Do not initialize a control's `ItemSource` property. Otherwise, the control switches to bound mode, and thus it forbids you to manually add nodes.
 
-Use the `TreeListControlBase.Nodes` property to add root nodes to the control. For each node, you can use the `TreeListNode.Nodes` property to add child nodes. 
+Use the [`TreeListControlBase.Nodes`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/Nodes.md) property to add root nodes to the control. For each node, you can use the [`TreeListNode.Nodes`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Nodes.md) property to add child nodes. 
 
-A node in the TreeList and TreeView controls is encapsulated by a `TreeListNode` object. Its `TreeListNode.Content` property allows you to specify a node's content. You can set the `TreeListNode.Content` property to a business object whose public properties provide data for the control's columns. For the TreeView control, you can set the `TreeListNode.Content` property to a String object.
+A node in the TreeList and TreeView controls is encapsulated by a [`TreeListNode`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode.md) object. Its [`TreeListNode.Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) property allows you to specify a node's content. You can set the [`TreeListNode.Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) property to a business object whose public properties provide data for the control's columns. For the TreeView control, you can set the [`TreeListNode.Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) property to a String object.
 
-If you use a TreeList control, ensure that the control's `TreeListControl.Columns` collection has columns bound to specific field names.
+If you use a TreeList control, ensure that the control's [`TreeListControl.Columns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Columns.md) collection has columns bound to specific field names.
 
-The following XAML code creates a hierarchical node structure in the `TreeListControl.Nodes` collection. Each node's `Content` property is initialized with a _Person_ object defined in code-behind.
+The following XAML code creates a hierarchical node structure in the [`TreeListControl.Nodes`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/Nodes.md) collection. Each node's [`Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) property is initialized with a _Person_ object defined in code-behind.
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -126,7 +126,7 @@ node1.Nodes.Add(node12);
 
 ### TreeView Specifics
 
-You can set the TreeView node's `Content` property to a business object or simple string.
+You can set the TreeView node's [`Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) property to a business object or simple string.
 
 The following code shows how to populate TreeView nodes with simple strings.
 
@@ -156,7 +156,7 @@ The following code shows how to populate TreeView nodes with simple strings.
 </mxtl:TreeViewControl>
 ```
 
-If you assign a business object to the `Content` property, set the `TreeViewControl.DataFieldName` member to the name of the business object's property that supplies display values for the control, as demonstrated in the example below.
+If you assign a business object to the [`Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) property, set the [`TreeViewControl.DataFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) member to the name of the business object's property that supplies display values for the control, as demonstrated in the example below.
 
 ``` cs
 TreeListNode node1 = new TreeListNode() 

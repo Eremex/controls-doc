@@ -2,14 +2,39 @@
   max-width: 1540px; /* Default is usually around 1220px */
 }
 
+/* Material scales the root font size up on wide windows (137.5% from 100em, 150% from 125em).
+   The sidebars are sized in rem, so they grew with it and squeezed the content area (878px at
+   1920px, 818px at 2370px) while the text and the header got bigger. Keep the size constant. */
+@media screen and (min-width: 100em) {
+  html {
+    font-size: 125%;
+  }
+}
+
 /* Make the left navigation sidebar wider */
 @media screen and (min-width: 76.25em) {
   .md-sidebar--primary {
     width: 18rem; /* Default is 12.1rem */
   }
   
-  .md-nav--primary .md-nav__list {
+  /* Only the top-level list gets a fixed width. The old rule matched every nested list too, and a
+     nested list is indented, so it stuck out of the sidebar by its indent: long entries were cut off
+     by the scroll wrapper before they could reach their ellipsis. Nested lists now fill what is left. */
+  .md-nav--primary > .md-nav__list {
     width: 17rem; /* Keep this slightly smaller than the sidebar width */
+  }
+
+  /* Keep every nav entry on one line and clip long names with an ellipsis,
+     so the sidebar never needs a horizontal scrollbar or grows taller. */
+  .md-sidebar--primary .md-nav__link .md-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* needs a width limit: the link is a flex box, so ... */
+    min-width: 0;            /* ... let the label shrink instead of overflowing and being cut off by the scroll wrapper */
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    overflow-x: hidden;
   }
 }
 

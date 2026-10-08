@@ -6,7 +6,7 @@ seealso: []
 
 # Version 1.5
 
-## 1.5.52-preview2
+## 1.5.53-preview3
 
 ### Color Palettes for DeltaDesign Theme
 
@@ -94,52 +94,52 @@ Available Application Services include:
 
 | Service | Description |
 |---------|---------|
-| `IMessageBoxService` | Shows standard message boxes with fixed button sets defined by the `MessageBoxButtons` enumeration (Ok, Ok&vert;Cancel, Yes&vert;No&vert;Cancel, Yes&vert;No, Abort&vert;Retry&vert;Ignore, and Retry&vert;Cancel). |
-| `IDialogService` | Shows dialogs from ViewModel code, so that a ViewModel can ask the user a question without referencing any window type. A dialog is driven by a _dialog ViewModel_. You can also implement a View to display as the dialog's content. This View is located through the `ViewLocatorAttribute` applied to the dialog ViewModel. |
-| `IChoiceDialogService` | Shows a dialog with an arbitrary set of buttons and returns the result of the pressed one. |
-| `IWindowService` | Shows non-modal windows from ViewModel code, so that a ViewModel can open a window without referencing any window type. The counterpart for modal dialogs is `IDialogService`. |
+| [`IMessageBoxService`](../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IMessageBoxService.md) | Shows standard message boxes with fixed button sets defined by the [`MessageBoxButtons`](../API/Eremex.AvaloniaUI.Controls/MessageBoxButtons.md) enumeration (Ok, Ok&vert;Cancel, Yes&vert;No&vert;Cancel, Yes&vert;No, Abort&vert;Retry&vert;Ignore, and Retry&vert;Cancel). |
+| [`IDialogService`](../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IDialogService.md) | Shows dialogs from ViewModel code, so that a ViewModel can ask the user a question without referencing any window type. A dialog is driven by a _dialog ViewModel_. You can also implement a View to display as the dialog's content. This View is located through the [`ViewLocatorAttribute`](../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ViewLocatorAttribute.md) applied to the dialog ViewModel. |
+| [`IChoiceDialogService`](../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService.md) | Shows a dialog with an arbitrary set of buttons and returns the result of the pressed one. |
+| [`IWindowService`](../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IWindowService.md) | Shows non-modal windows from ViewModel code, so that a ViewModel can open a window without referencing any window type. The counterpart for modal dialogs is [`IDialogService`](../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IDialogService.md). |
 
 **File Services**
 
 | Service | Description |
 |---------|---------|
-| `IOpenFileDialogService` | Shows the platform `Open File` dialog from ViewModel code in sync or async mode. |
-| `ISaveFileDialogService` | Shows the platform `Save File` dialog from ViewModel code in sync or async mode. |
+| [`IOpenFileDialogService`](../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IOpenFileDialogService.md) | Shows the platform `Open File` dialog from ViewModel code in sync or async mode. |
+| [`ISaveFileDialogService`](../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ISaveFileDialogService.md) | Shows the platform `Save File` dialog from ViewModel code in sync or async mode. |
 
 **Infrastructure Services**
 
 | Service | Description |
 |---------|---------|
-| `IWindowsManager` | Tracks the active window of the application. Dialog services use the `IWindowsManager` service to get the default owner for newly created dialogs. |
-| `IAppearanceService` | Lists visual theme settings and applies the chosen theme variant. |
+| [`IWindowsManager`](../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IWindowsManager.md) | Tracks the active window of the application. Dialog services use the [`IWindowsManager`](../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IWindowsManager.md) service to get the default owner for newly created dialogs. |
+| [`IAppearanceService`](../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IAppearanceService.md) | Lists visual theme settings and applies the chosen theme variant. |
 
 ### Charts
 
 #### Advanced Line Customization with LineStyle
 
-Chart objects now provide advanced options of the `LineStyle` type for customizing lines. `LineStyle` exposes properties that give you full control over how lines are rendered. 
+Chart objects now provide advanced options of the [`LineStyle`](../API/Eremex.AvaloniaUI.Charts/LineStyle.md) type for customizing lines. [`LineStyle`](../API/Eremex.AvaloniaUI.Charts/LineStyle.md) exposes properties that give you full control over how lines are rendered. 
 
 ![whats-new-v15-chart-linestyle](../images/whats-new-v15-chart-linestyle.png)
 
 These properties include:
 
-- `Thickness` — The stroke thickness.
-- `Dashes` — The dash pattern for dashed lines.
-- `DashOffset` — The offset at which the dash pattern starts.
-- `LineCap` — The shape used at both ends of a line.
-- `LineJoin` — The join style for the ends of two consecutive lines.
-- `MiterLimit` — The limit of the thickness of the join on a mitered corner.
+- [`Thickness`](../API/Eremex.AvaloniaUI.Charts/LineStyle/Thickness.md) — The stroke thickness.
+- [`Dashes`](../API/Eremex.AvaloniaUI.Charts/LineStyle/Dashes.md) — The dash pattern for dashed lines.
+- [`DashOffset`](../API/Eremex.AvaloniaUI.Charts/LineStyle/DashOffset.md) — The offset at which the dash pattern starts.
+- [`LineCap`](../API/Eremex.AvaloniaUI.Charts/LineStyle/LineCap.md) — The shape used at both ends of a line.
+- [`LineJoin`](../API/Eremex.AvaloniaUI.Charts/LineStyle/LineJoin.md) — The join style for the ends of two consecutive lines.
+- [`MiterLimit`](../API/Eremex.AvaloniaUI.Charts/LineStyle/MiterLimit.md) — The limit of the thickness of the join on a mitered corner.
 
 New line customization is available for:
 
 - Graph lines in the following series views: all Line and Area Series Views, Lollipop Series View, Range Area Series View, Polar Line and Polar Range Area Series Views, and Smith Line Series View.
 - Constant Lines in supported Series Views
 
-    The `ConstantLine.Thickness` property has been deprecated. Use the `LineStyle.Thickness` option instead.
+    The `ConstantLine.Thickness` property has been deprecated. Use the [`LineStyle.Thickness`](../API/Eremex.AvaloniaUI.Charts/LineStyle/Thickness.md) option instead.
 
 ### Docking UI
 
-The `DockManager` component now provides a new `CustomizeDockGuide` event that allows you to dynamically hide specific dock guides and individual guide items at runtime.
+The [`DockManager`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) component now provides a new [`CustomizeDockGuide`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/CustomizeDockGuide.md) event that allows you to dynamically hide specific dock guides and individual guide items at runtime.
 
 ![whats-new-v15-docking-dock-guides](../images/whats-new-v15-docking-dock-guides.png)
 
@@ -152,4 +152,6 @@ The SpinEditor control now includes a new `AllowRoundOutOfRangeValue` property t
 
 #### DateEditor and SpinEditor - Forced Masked Mode
 
-The `DateEditor` and `SpinEditor` now always work in masked mode — `MaskType.DateTime` and `MaskType.Numeric` respectively. It is no longer possible to disable masked mode (`MaskType.None`) or enable an incompatible mask mode for these editors.
+- The [`DateEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md) and [`SpinEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md) now always work in masked mode — [`MaskType.DateTime`](../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) and [`MaskType.Numeric`](../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) respectively. It is no longer possible to disable masked mode ([`MaskType.None`](../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md)) or enable an incompatible mask mode for these editors.
+
+- Docking UI — The `ShowAutoHideExpandButton` property is now obsolte. This property was not supported in previous versions, and not it's deprecated.

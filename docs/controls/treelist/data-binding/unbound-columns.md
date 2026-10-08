@@ -6,30 +6,30 @@ seealso: []
 
 # Unbound Columns (TreeList)
 
-If you need to display custom information in a TreeList column, you can create an unbound column. This column is not bound to a field in the underlying data source. You should populate this column with data manually, using the `TreeListControl.CustomUnboundColumnData` event.
+If you need to display custom information in a TreeList column, you can create an unbound column. This column is not bound to a field in the underlying data source. You should populate this column with data manually, using the [`TreeListControl.CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomUnboundColumnData.md) event.
 
 To create an unbound column, do the following:
 
-- Create a `TreeListColumn` object.
-- Set the column's `UnboundDataType` property to the type of data this column is intended to display. 
-- Set the column's `FieldName` property to a unique field name.
-- Add the column to the `TreeListControl.Columns` collection, using the `Add` or `Insert` method. You can also position the column with the `TreeListColumn.VisibleIndex` property.
+- Create a [`TreeListColumn`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md) object.
+- Set the column's [`UnboundDataType`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/UnboundDataType.md) property to the type of data this column is intended to display. 
+- Set the column's [`FieldName`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) property to a unique field name.
+- Add the column to the [`TreeListControl.Columns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Columns.md) collection, using the `Add` or `Insert` method. You can also position the column with the [`TreeListColumn.VisibleIndex`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) property.
 
-Note that the control does not store or cache data for unbound columns. It invokes the `CustomUnboundColumnData` event, which you need to handle to specify data for unbound columns. 
+Note that the control does not store or cache data for unbound columns. It invokes the [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomUnboundColumnData.md) event, which you need to handle to specify data for unbound columns. 
 
-The `CustomUnboundColumnData` event fires in the following cases:
+The [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomUnboundColumnData.md) event fires in the following cases:
 
-- When a cell value in an unbound column is about to be displayed (for instance, during the initial load of the control or while scrolling). In this case, the `IsGettingData` event parameter returns `true`. You need to assign a value to the `Value` event parameter.
+- When a cell value in an unbound column is about to be displayed (for instance, during the initial load of the control or while scrolling). In this case, the [`IsGettingData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListUnboundColumnDataEventArgs/IsGettingData.md) event parameter returns `true`. You need to assign a value to the [`Value`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListUnboundColumnDataEventArgs/Value.md) event parameter.
 
-- When a user changes data in unbound columns' cells. In this case, the `IsGettingData` event parameter returns `false`. Read the `Value` event parameter and cache it manually in your storage for further use.
+- When a user changes data in unbound columns' cells. In this case, the [`IsGettingData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListUnboundColumnDataEventArgs/IsGettingData.md) event parameter returns `false`. Read the [`Value`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListUnboundColumnDataEventArgs/Value.md) event parameter and cache it manually in your storage for further use.
 
-You can forcibly fire the `CustomUnboundColumnData` event with the following methods:
+You can forcibly fire the [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomUnboundColumnData.md) event with the following methods:
 
 - `RefreshRow` - Updates a specified row.
-- `RefreshData` - Forces the grid to reload all data.
+- [`RefreshData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RefreshData.md) - Forces the grid to reload all data.
 
 ## Example 1
-The following example creates an unbound read-only _Total_ column, and handles the _CustomUnboundColumnData_ event to calculate column values based on values of other fields, according to the expression: `Total=UnitPrice*Quantity`. The event handler checks the `IsGettingData` event parameter, and retrieves values when this parameter is `true`. 
+The following example creates an unbound read-only _Total_ column, and handles the _CustomUnboundColumnData_ event to calculate column values based on values of other fields, according to the expression: `Total=UnitPrice*Quantity`. The event handler checks the [`IsGettingData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListUnboundColumnDataEventArgs/IsGettingData.md) event parameter, and retrieves values when this parameter is `true`. 
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -81,7 +81,7 @@ public partial class PurchaseRecord : ObservableObject
 
 ## Example 2
 
-The following example shows how you can cache data entered by users in unbound columns. The example creates a _Data_ column and handles the `CustomUnboundColumnData` event to supply data to the TreeList and save data typed by users.
+The following example shows how you can cache data entered by users in unbound columns. The example creates a _Data_ column and handles the [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomUnboundColumnData.md) event to supply data to the TreeList and save data typed by users.
 
 ``` cs
 treeList1.Columns.Add(new TreeListColumn() 

@@ -2,11 +2,14 @@
 title: Skybox
 order: 80
 seealso: []
+image: /images/g3dControl-skybox-custom-example.png
 ---
 
 # Skybox
 
-`Graphics3DControl` supports a skybox. A skybox is a technique used to create an immersive background around a 3D scene.
+## What Is a Skybox?
+
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) supports a skybox. A skybox is a technique used to create an immersive background around a 3D scene.
 
 The skybox consists of a large cube surrounding the entire scene, with six textured faces (front, back, left, right, top, and bottom). These textures are mapped to the inner sides of the cube, giving the illusion of a distant sky, horizon, or other backdrop. The textures are designed to match perfectly at their edges, ensuring seamless visual continuity when viewed from inside the cube.
 
@@ -14,7 +17,7 @@ A skybox is hidden by default. However, if a model uses a metallic material, the
 
 ## Enable a Skybox
 
-To make a skybox visible, initialize the `Graphics3DControl.Skybox` property with a `Skybox` object, and set the `Skybox.IsVisible` property to `true`.
+To make a skybox visible, initialize the [`Graphics3DControl.Skybox`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Skybox.md) property with a [`Skybox`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox.md) object, and set the [`Skybox.IsVisible`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/IsVisible.md) property to `true`.
 
 ``` xml
 xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/controls3d"
@@ -35,14 +38,14 @@ To create a custom skybox, you need to specify six separate textures (bitmaps) t
 - All skybox textures must be the same size.
 - Each texture should have a square aspect ratio (1:1) to prevent distortion when mapped to the cube faces.
 
-Use the following properties of the `Skybox` object to provide skybox textures for the cube faces:
+Use the following properties of the [`Skybox`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox.md) object to provide skybox textures for the cube faces:
 
- - `Skybox.Top`
- - `Skybox.Bottom`
- - `Skybox.Left`
- - `Skybox.Right`
- - `Skybox.Front`
- - `Skybox.Rear`
+ - [`Skybox.Top`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Top.md)
+ - [`Skybox.Bottom`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Bottom.md)
+ - [`Skybox.Left`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Left.md)
+ - [`Skybox.Right`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Right.md)
+ - [`Skybox.Front`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Front.md)
+ - [`Skybox.Rear`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Rear.md)
 
 
 ### Example
@@ -79,7 +82,7 @@ The image below demonstrates a sample model with a custom skybox:
 
 When a 3D model uses a metallic material, the surface reflects the default light and skybox. To prevent these reflections for metallic materials, do the following:
 
-- Disable the default light with the `Graphics3DControl.AllowDefaultLight` property.
+- Disable the default light with the [`Graphics3DControl.AllowDefaultLight`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/AllowDefaultLight.md) property.
 - Apply a white bitmap to all skybox cube faces.
 
 ![g3dControl-skybox-all-white-example](../../images/g3dControl-skybox-all-white-example.png)

@@ -17,9 +17,9 @@ seealso: []
 - Feature: Provide a capability to handle navigation keys (Arrow keys, Tab, Enter, F2, Esc, Home, End, PgUp and PgDown) in in-place editors. 
     
     Grid/treelist controls intercept specific navigation keys (Arrow keys, Tab, Enter, F2, Esc, Home, End, PgUp and PgDown) to perform navigation between cells. To handle these keys in in-place editors, do the following:
-    - Create a class that implements the `IInplaceEditorNavigationHandler` interface. 
-    - Implement the `IInplaceEditorNavigationHandler.NeedsKey` method. The method should return `true` for the keys that need to be processed in an in-place editor.
-    - Associate your `IInplaceEditorNavigationHandler` object with a specific in-place editor type using the `EditorNavigationHandlers.RegisterHandler` static method. For instance: `EditorNavigationHandlers.RegisterHandler<TextBox, MyTextBoxNavigationHandler>();`.
+    - Create a class that implements the [`IInplaceEditorNavigationHandler`](../API/Eremex.AvaloniaUI.Editors.InplaceEditing/IInplaceEditorNavigationHandler.md) interface. 
+    - Implement the [`IInplaceEditorNavigationHandler.NeedsKey`](../API/Eremex.AvaloniaUI.Editors.InplaceEditing/IInplaceEditorNavigationHandler/NeedsKey.md) method. The method should return `true` for the keys that need to be processed in an in-place editor.
+    - Associate your [`IInplaceEditorNavigationHandler`](../API/Eremex.AvaloniaUI.Editors.InplaceEditing/IInplaceEditorNavigationHandler.md) object with a specific in-place editor type using the [`EditorNavigationHandlers.RegisterHandler`](../API/Eremex.AvaloniaUI.Editors.InplaceEditing/EditorNavigationHandlers/RegisterHandler.md) static method. For instance: `EditorNavigationHandlers.RegisterHandler<TextBox, MyTextBoxNavigationHandler>();`.
 
 - Fixed issue: When cell editing is disabled, a control placed in a cell's template is activated on a click.
 - Fixed issue: Updating a cell value in a sorted grid column results in value changes in other cells.
@@ -37,7 +37,7 @@ seealso: []
 
 #### Charts
 - Fixed issue: Crosshair crash in some cases.
-- Fixed issue: Exception when using the `SortedDateTimeDataAdapter` with empty data.
+- Fixed issue: Exception when using the [`SortedDateTimeDataAdapter`](../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) with empty data.
 
 
 ## 1.0.93
@@ -64,7 +64,7 @@ seealso: []
 
 #### Charts
 
-`PolarChart` control - A new chart control that plots a diagram on a polar coordinate system.
+[`PolarChart`](../API/Eremex.AvaloniaUI.Charts/PolarChart.md) control - A new chart control that plots a diagram on a polar coordinate system.
 
 - Crosshair
 - Strips and constant lines
@@ -75,7 +75,7 @@ seealso: []
 - Area Series View
 - Range Area Series View
 
-`SmithChart` control - A new control that plots a Smith chart.
+[`SmithChart`](../API/Eremex.AvaloniaUI.Charts/SmithChart.md) control - A new control that plots a Smith chart.
 
 - Crosshair
 - Point Series View
@@ -101,27 +101,27 @@ seealso: []
 
 
 #### Docking
-* `DockPane.ShowGlyphMode` property - Specifies the visibility and position of a glyph in a panel's header.
-* `DockPane.ShowTabGlyphMode` property - Specifies the visibility and position of a glyph in a panel's header (tab) when the panel is hosted within a tabbed group.
-- `FloatGroup.ShowGlyphMode` property -  Specifies the visibility and position of a glyph in a floating window's header
-- `DockItemBase.FloatGroup` property - Allows you to retrieve the floating window (`FloatGroup`) that hosts the current dock item (panel) in floating mode.
-- `DockItemBase.AutoHideGroup` property - Allows you to retrieve the auto-hide container (`AutoHideGroup`) that hosts the current dock item (panel) in auto-hide mode.
-- `DockManager.ExpandAutoHidePanel` - Expands a collapsed auto-hidden panel.
-- `DockManager.CollapseAutoHidePanel` - Collapses an expanded auto-hidden panel. 
-- `DockManager.SaveLayout` and `DockManager.RestoreLayout` methods - Allow you to save and restore a control's layout to/from a stream.
+* [`DockPane.ShowGlyphMode`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/ShowGlyphMode.md) property - Specifies the visibility and position of a glyph in a panel's header.
+* [`DockPane.ShowTabGlyphMode`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/ShowTabGlyphMode.md) property - Specifies the visibility and position of a glyph in a panel's header (tab) when the panel is hosted within a tabbed group.
+- [`FloatGroup.ShowGlyphMode`](../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/ShowGlyphMode.md) property -  Specifies the visibility and position of a glyph in a floating window's header
+- [`DockItemBase.FloatGroup`](../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/FloatGroup.md) property - Allows you to retrieve the floating window ([`FloatGroup`](../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md)) that hosts the current dock item (panel) in floating mode.
+- [`DockItemBase.AutoHideGroup`](../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/AutoHideGroup.md) property - Allows you to retrieve the auto-hide container ([`AutoHideGroup`](../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md)) that hosts the current dock item (panel) in auto-hide mode.
+- [`DockManager.ExpandAutoHidePanel`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ExpandAutoHidePanel.md) - Expands a collapsed auto-hidden panel.
+- [`DockManager.CollapseAutoHidePanel`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/CollapseAutoHidePanel.md) - Collapses an expanded auto-hidden panel. 
+- [`DockManager.SaveLayout`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/SaveLayout.md) and [`DockManager.RestoreLayout`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/RestoreLayout.md) methods - Allow you to save and restore a control's layout to/from a stream.
 
 #### DataGridControl and TreeListControl
 
-- `SaveLayout` and `RestoreLayout` methods - Allow you to save and restore a control's layout to/from a stream.
+- [`SaveLayout`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/SaveLayout.md) and [`RestoreLayout`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/RestoreLayout.md) methods - Allow you to save and restore a control's layout to/from a stream.
 
 #### TreeListControl and TreeViewControl
 
-- `ShowBranchesWithMatches` filter mode - You can set the `TreeListControlBase.FilterMode` property to `ShowBranchesWithMatches` to display entire branches when they contain nodes that match filter criteria.
+- `ShowBranchesWithMatches` filter mode - You can set the [`TreeListControlBase.FilterMode`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/FilterMode.md) property to `ShowBranchesWithMatches` to display entire branches when they contain nodes that match filter criteria.
 
 #### Editors
 
-* `BaseEditor.Validate` event - Eremex editors now support the `Validate` event that allows you to implement custom validation rules.
-* `BaseEditor.DoValidate` method - Allows you to forcibly invoke the validation.
+* [`BaseEditor.Validate`](../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) event - Eremex editors now support the [`Validate`](../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) event that allows you to implement custom validation rules.
+* [`BaseEditor.DoValidate`](../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/DoValidate.md) method - Allows you to forcibly invoke the validation.
 
 #### Common Classes
 
@@ -133,8 +133,8 @@ seealso: []
 
 #### DataGridControl and TreeListControl
 * `ColumnBase.HeaderContentTemplate` property renamed to `HeaderTemplate`
-* `ColumnBase.HeaderHorizontalContentAlignment`  property renamed to `HeaderHorizontalAlignment`
-* `ColumnBase.HeaderVerticalContentAlignment`  property renamed to `HeaderVerticalAlignment`
+* `ColumnBase.HeaderHorizontalContentAlignment`  property renamed to [`HeaderHorizontalAlignment`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderHorizontalAlignment.md)
+* `ColumnBase.HeaderVerticalContentAlignment`  property renamed to [`HeaderVerticalAlignment`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderVerticalAlignment.md)
 
 #### DataGridControl
 * `GetRowIndexBySourceIndex` method renamed to `GetRowIndexBySourceItemIndex`
@@ -149,12 +149,12 @@ seealso: []
 
 #### Docking
 
-* `TabbedGroup.TabHeader` attached property is replaced with the `DockPane.TabHeader` property
-* `TabbedGroup.TabHeaderTemplate` attached property is replaced with the `DockPane.TabHeaderTemplate` property
-* `TabbedGroup.TabGlyph` attached property  is replaced with the  `DockPane.TabGlyph` property
-* `TabbedGroup.TabGlyphSize` attached property is replaced with the `DockPane.TabGlyphSize` property
-* `TabbedGroup.ShowTabPanelForSinglePage` renamed to  `ShowTabStripForSingleChild`
-* `DockManager.Hide` method renamed to `DockManager.AutoHide`
+* `TabbedGroup.TabHeader` attached property is replaced with the [`DockPane.TabHeader`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/TabHeader.md) property
+* `TabbedGroup.TabHeaderTemplate` attached property is replaced with the [`DockPane.TabHeaderTemplate`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/TabHeaderTemplate.md) property
+* `TabbedGroup.TabGlyph` attached property  is replaced with the  [`DockPane.TabGlyph`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/TabGlyph.md) property
+* `TabbedGroup.TabGlyphSize` attached property is replaced with the [`DockPane.TabGlyphSize`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/TabGlyphSize.md) property
+* `TabbedGroup.ShowTabPanelForSinglePage` renamed to  [`ShowTabStripForSingleChild`](../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/ShowTabStripForSingleChild.md)
+* `DockManager.Hide` method renamed to [`DockManager.AutoHide`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHide.md)
 
 #### Common Classes
 * The `SerializationHelper` class renamed to `SerializationManager`

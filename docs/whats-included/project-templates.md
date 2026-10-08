@@ -88,7 +88,7 @@ An application with a tabbed multiple-document (MDI) layout built on the Docking
 dotnet new emx.mdi -n AvaloniaApplication1 
 </code>
 
-This template creates an MVVM application with the `DockManager` component to implement:
+This template creates an MVVM application with the [`DockManager`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) component to implement:
 
 - Tabbed multiple document interface (MDI)
 - Document creation and closing from the ViewModel

@@ -6,29 +6,29 @@ seealso: []
 
 # GroupBox
 
-`GroupBox` is a panel that has a header and a line at the bottom that visually separates the `GroupBox` from other controls.
+[`GroupBox`](../../API/Eremex.AvaloniaUI.Controls.Editors/GroupBox.md) is a panel that has a header and a line at the bottom that visually separates the [`GroupBox`](../../API/Eremex.AvaloniaUI.Controls.Editors/GroupBox.md) from other controls.
 
 ![groupbox](../../images/groupbox.png)
 
-`GroupBox` is a `Avalonia.Controls.Primitives.HeaderedContentControl` descendant.
+[`GroupBox`](../../API/Eremex.AvaloniaUI.Controls.Editors/GroupBox.md) is a `Avalonia.Controls.Primitives.HeaderedContentControl` descendant.
 
 ## Specify a Header
 
-Use the `Header` property to set the `GroupBox`'s header. The `HeaderTemplate` property allows you to set the template to render the control's header in a custom manner.
+Use the `Header` property to set the [`GroupBox`](../../API/Eremex.AvaloniaUI.Controls.Editors/GroupBox.md)'s header. The `HeaderTemplate` property allows you to set the template to render the control's header in a custom manner.
 
 ### Related API
 
-- `ShowHeader` — Gets or sets whether the header is visible.
-- `HeaderHorizontalAlignment` — Specifies the header's horizontal alignment.
-- `HeaderVerticalAlignment` — Specifies the header's vertical alignment.
+- [`ShowHeader`](../../API/Eremex.AvaloniaUI.Controls.Editors/GroupBox/ShowHeader.md) — Gets or sets whether the header is visible.
+- [`HeaderHorizontalAlignment`](../../API/Eremex.AvaloniaUI.Controls.Editors/GroupBox/HeaderHorizontalAlignment.md) — Specifies the header's horizontal alignment.
+- [`HeaderVerticalAlignment`](../../API/Eremex.AvaloniaUI.Controls.Editors/GroupBox/HeaderVerticalAlignment.md) — Specifies the header's vertical alignment.
 
 ## Define the Content
 
-You can specify the `GroupBox`'s content in XAML between the start and end `<GroupBox>` tags. In code, use the inherited `Content` property for this purpose. You can set the `ContentTemplate` property to specify the template used to render the control's content.
+You can specify the [`GroupBox`](../../API/Eremex.AvaloniaUI.Controls.Editors/GroupBox.md)'s content in XAML between the start and end `<GroupBox>` tags. In code, use the inherited `Content` property for this purpose. You can set the `ContentTemplate` property to specify the template used to render the control's content.
 
 ## Example
 
-The following example defines a `GroupBox` that displays a StackPanel with controls.
+The following example defines a [`GroupBox`](../../API/Eremex.AvaloniaUI.Controls.Editors/GroupBox.md) that displays a StackPanel with controls.
 
 ![groupbox-example](../../images/groupbox-example.png)
 

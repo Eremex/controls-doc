@@ -6,11 +6,11 @@ seealso: []
 
 # Numeric Masks
 
-The `Numeric` mask type allows users to enter numeric values (integer, real values, currency, percentage, etc.) in editors according to a specified input mask. The input mask can also be used to format numeric values in display mode (when text editing is not active). The `SpinEditor` control has the `Numeric` mask type enabled by default. To enable this mask type for other text editors, set the editor's `TextEditor.MaskType` property to `Numeric`.
+The `Numeric` mask type allows users to enter numeric values (integer, real values, currency, percentage, etc.) in editors according to a specified input mask. The input mask can also be used to format numeric values in display mode (when text editing is not active). The [`SpinEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md) control has the `Numeric` mask type enabled by default. To enable this mask type for other text editors, set the editor's [`TextEditor.MaskType`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskType.md) property to `Numeric`.
 
-Use the editor's `Mask` property to specify an input mask. The input mask is a string that defines a pattern according to which a numeric value is entered or formatted.
+Use the editor's [`Mask`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Mask.md) property to specify an input mask. The input mask is a string that defines a pattern according to which a numeric value is entered or formatted.
 
-The current culture affects most numeric masks. For example, the culture defines the currency symbol and the decimal separator. You can forcibly assign a specific culture to a mask using the `TextEditor.MaskCulture` property.
+The current culture affects most numeric masks. For example, the culture defines the currency symbol and the decimal separator. You can forcibly assign a specific culture to a mask using the [`TextEditor.MaskCulture`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskCulture.md) property.
 
 Eremex editors support standard and custom numeric masks.
 
@@ -20,7 +20,7 @@ Standard numeric masks supported by Eremex editors match the most common [standa
 
 ### Example
 
-The following code applies the `p1` mask to `SpinEditor`. The mask `p` formats the editor's value as percentage. The suffix `1` (precision specifier) defines the number of digits to the right of the decimal point.
+The following code applies the `p1` mask to [`SpinEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md). The mask `p` formats the editor's value as percentage. The suffix `1` (precision specifier) defines the number of digits to the right of the decimal point.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -52,7 +52,7 @@ You can create custom masks if the standard masks do not meet your specific need
 
 ### Example
 
-The following code applies the `#,##0.##` custom mask to `SpinEditor`. The mask allows users to enter real numbers up in the range from -9999.99 to 9999.99. The editor's `Minimum` and `Maximum` properties limit the range to [0;5000].
+The following code applies the `#,##0.##` custom mask to [`SpinEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md). The mask allows users to enter real numbers up in the range from -9999.99 to 9999.99. The editor's [`Minimum`](../../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Minimum.md) and [`Maximum`](../../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Maximum.md) properties limit the range to [0;5000].
 
 The `,` mask specifier is used to insert localized separators between groups of three digits.
 
@@ -83,7 +83,7 @@ The following table shows supported custom mask specifiers.
 
 ## Numeric Mask Settings
 
-You can customize numeric mask behavior with additional settings. These settings are available from attached properties exposed by the `Eremex.AvaloniaUI.Controls.Editors.NumericMaskOptions` class.
+You can customize numeric mask behavior with additional settings. These settings are available from attached properties exposed by the [`Eremex.AvaloniaUI.Controls.Editors.NumericMaskOptions`](../../../API/Eremex.AvaloniaUI.Controls.Editors/NumericMaskOptions.md) class.
 
 ### Automatically Hide Decimal Separator
 

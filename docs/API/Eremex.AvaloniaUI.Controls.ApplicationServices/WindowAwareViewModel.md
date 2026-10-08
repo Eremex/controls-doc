@@ -2,6 +2,12 @@
 
 Base class for view models that are shown in a window of their own by IWindowService or IDialogService. It tracks the window the view model is attached to, closes it on request, and creates the view declared by ViewLocatorAttribute.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public class WindowAwareViewModel : ViewModelBase, IWindowAwareViewModel
 ```

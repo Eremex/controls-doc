@@ -2,18 +2,28 @@
 
 Shows a save file dialog and blocks until the user closes it.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public string? Show(IWindow? owner = null, SaveFileDialogOptions? options = null)
 ```
 
-| parameter | description |
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| owner | [`IWindow?`](../IWindow.md) | The window the dialog is shown on top of. When `null`, the active application window is used. |
+| options | [`SaveFileDialogOptions?`](../SaveFileDialogOptions.md) | The dialog configuration — caption, filters, start folder, suggested file name. When `null`, platform defaults apply. |
+
+## Returns
+
+| type | description |
 | --- | --- |
-| owner | The window the dialog is shown on top of. When `null`, the active application window is used. |
-| options | The dialog configuration — caption, filters, start folder, suggested file name. When `null`, platform defaults apply. |
-
-## Return Value
-
-The selected path, or `null` if the user cancelled the dialog or no owner window could be resolved.
+| `string?` | The selected path, or `null` if the user cancelled the dialog or no owner window could be resolved. |
 
 ## Remarks
 

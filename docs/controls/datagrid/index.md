@@ -6,7 +6,7 @@ seealso: []
 
 # DataGrid
 
-`DataGridControl` allows you to display data from an items source in columns and rows. It provides rich data shaping and editing functionality. Users can rearrange columns, edit, sort, group and search for data.
+[`DataGridControl`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md) allows you to display data from an items source in columns and rows. It provides rich data shaping and editing functionality. Users can rearrange columns, edit, sort, group and search for data.
 
 ![data-grid](../../images/data-grid.png)
 

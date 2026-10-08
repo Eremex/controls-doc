@@ -10,10 +10,10 @@ This topic describes operations on dock panels in code behind.
 
 ## Create Dock Panels
 
-You can create `DockPane` and `DocumentPane` objects using their constructors. After a panel is created you typically need to display it at a specific position relative to another panel or [container (group)](dock-panes-and-containers.md). The `DockManager.Dock` method allows you to dock a panel along an edge of another panel, add a panel to an existing container, and combine panels in a tabbed UI. To add a panel as a child of an existing container, you can also use the container's `Add` method.
+You can create [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) and [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) objects using their constructors. After a panel is created you typically need to display it at a specific position relative to another panel or [container (group)](dock-panes-and-containers.md). The [`DockManager.Dock`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Dock.md) method allows you to dock a panel along an edge of another panel, add a panel to an existing container, and combine panels in a tabbed UI. To add a panel as a child of an existing container, you can also use the container's `Add` method.
 
 
-The most frequently used overload of the `DockManager.Dock` method is defined as follows:
+The most frequently used overload of the [`DockManager.Dock`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Dock.md) method is defined as follows:
 
 ``` cs
 public bool Dock(DockItemBase item, DockItemBase target, DockType dockType)
@@ -23,9 +23,9 @@ The `target` parameter specifies the panel or container relative to which the so
 
 The `dockType` parameter specifies how to dock an item relative to the target item:
 
-- `DockType.Fill` — The source and target panels are combined in a tab container (`TabGroup`). If the target panel already belongs to a tab container, the source panel is added to this container; no extra tab container is created.
+- [`DockType.Fill`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) — The source and target panels are combined in a tab container (`TabGroup`). If the target panel already belongs to a tab container, the source panel is added to this container; no extra tab container is created.
 
-- `DockType.Left`, `DockType.Right`, `DockType.Top`, `DockType.Bottom` — A source dock item is docked at the corresponding side of a target dock item. When required, an additional horizontal or vertical split container (`DockGroup`) is created by the `DockManager.Dock` method, as described below. 
+- [`DockType.Left`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md), [`DockType.Right`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md), [`DockType.Top`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md), [`DockType.Bottom`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) — A source dock item is docked at the corresponding side of a target dock item. When required, an additional horizontal or vertical split container ([`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md)) is created by the [`DockManager.Dock`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Dock.md) method, as described below. 
 
   Assume that you dock a source panel at the top or bottom of the target panel that belongs to a **vertical** split container. 
   
@@ -61,14 +61,14 @@ The `dockType` parameter specifies how to dock an item relative to the target it
 
   ![docking-dock-horizontalcontainer-dock-to-bottom](../../images/docking-dock-horizontalcontainer-dock-to-bottom.png)
   
-  Use the `DockPane.DockWidth` and `DockPane.DockHeight` properties to set size of panels when they are hosted in a split container.
+  Use the [`DockPane.DockWidth`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockWidth.md) and [`DockPane.DockHeight`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockHeight.md) properties to set size of panels when they are hosted in a split container.
 
 
 
 
 ### Example - Create and Display Panels Side-by-side
 
-The following code creates `DockPane` and `DocumentPane` objects and arranges them as shown in the image below. The `DocumentPane` objects are placed in a `DocumentGroup` container to present them as tabs.
+The following code creates [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) and [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) objects and arranges them as shown in the image below. The [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) objects are placed in a [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) container to present them as tabs.
 
 ![docking-code-behind-create-panels](../../images/docking-code-behind-create-panels.png)
 
@@ -110,9 +110,9 @@ More examples:
 
 ### Access a Dock Item's Parent and Children
 
-The `DockPane.DockParent` property allows you to return the immediate parent of any dock item (panel or container). For instance, when a panel resides in a split container (`DockGroup`), the `DockPane.DockParent` returns this split container. For panels combined in a tab container, the `DockPane.DockParent` returns this parent tab container (a `TabbedGroup` or `DocumentGroup` object).
+The [`DockPane.DockParent`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockParent.md) property allows you to return the immediate parent of any dock item (panel or container). For instance, when a panel resides in a split container ([`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md)), the [`DockPane.DockParent`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockParent.md) returns this split container. For panels combined in a tab container, the [`DockPane.DockParent`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockParent.md) returns this parent tab container (a [`TabbedGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup.md) or [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) object).
 
-To get immediate children of a dock container, use its `Items` property.
+To get immediate children of a dock container, use its [`Items`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Items.md) property.
 
 See also: [Access Dock Panels and Containers](#access-dock-panels-and-containers).
 
@@ -138,27 +138,27 @@ paneDebug.DockParent.DockWidth = new GridLength(2, GridUnitType.Star);
 
 ## Close Panels
 
-The `DockManager.Close` method allows you to temporarily hide a panel or container. This method is called when a user closes a panel by clicking its 'Close' ('x') button.
+The [`DockManager.Close`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Close.md) method allows you to temporarily hide a panel or container. This method is called when a user closes a panel by clicking its 'Close' ('x') button.
 
 ![docking-dockpane-closebutton](../../images/docking-dockpane-closebutton.png)
 
-When called for a container (group), the `Close` method hides all panes of this container.
+When called for a container (group), the [`Close`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Close.md) method hides all panes of this container.
 
-Closed panels can be accessed from the `DockManager.ClosedPanes` collection.
+Closed panels can be accessed from the [`DockManager.ClosedPanes`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ClosedPanes.md) collection.
 
-Use the `DockPane.AllowClose` property to hide the 'Close' button for a panel, and thus prevent the panel from being closed using this button. This option does not prevent a panel from being closed with the `DockManager.Close` method.
+Use the [`DockPane.AllowClose`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/AllowClose.md) property to hide the 'Close' button for a panel, and thus prevent the panel from being closed using this button. This option does not prevent a panel from being closed with the [`DockManager.Close`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Close.md) method.
 
-When a panel is closed, the `DockPane.CloseCommand` command is activated.
+When a panel is closed, the [`DockPane.CloseCommand`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/CloseCommand.md) command is activated.
 
 ## Remove Panels
 
-You can use the `DockManager.Remove` method to remove a panel from a `DockManager`. This method does not dispose of the panel and its content.
+You can use the [`DockManager.Remove`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Remove.md) method to remove a panel from a [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md). This method does not dispose of the panel and its content.
 
-`DockManager` does not store references to removed panels.
+[`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) does not store references to removed panels.
 
 ## Combine Panels in a Tab Container
 
-You can combine panels in a tab container (`TabGroup`). For this purpose, use the following `DockManager.Dock` method overload:
+You can combine panels in a tab container (`TabGroup`). For this purpose, use the following [`DockManager.Dock`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Dock.md) method overload:
 
 ``` cs
 public bool Dock(DockItemBase item, DockItemBase target, DockType dockType)
@@ -166,15 +166,15 @@ public bool Dock(DockItemBase item, DockItemBase target, DockType dockType)
 
 The `target` parameter can be a panel or an existing tab container. 
 
-The `dockType` parameter specifies how to dock a panel. Set this parameter to `DockType.Fill` to combine panels in a tabbed UI.
+The `dockType` parameter specifies how to dock a panel. Set this parameter to [`DockType.Fill`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) to combine panels in a tabbed UI.
 
-When you dock a `DockPane` object into another `DockPane` object, a `TabGroup` container is created. A `DocumentGroup` container is created when you dock a `DocumentPane` into another `DocumentPane` object.
+When you dock a [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) object into another [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) object, a `TabGroup` container is created. A [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) container is created when you dock a [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) into another [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) object.
 
-You can also use a tab container's `Add` method to add a new item as a tab.
+You can also use a tab container's [`Add`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Add.md) method to add a new item as a tab.
 
 ### Example - Create a Tab Container
 
-The following code uses the `DockManager.Dock` method to create a tab container from two panels.
+The following code uses the [`DockManager.Dock`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Dock.md) method to create a tab container from two panels.
 
 ![docking-code-behind-create-tab-container](../../images/docking-code-behind-create-tab-container.png)
 
@@ -192,7 +192,7 @@ dockManager1.Dock(paneOutput, paneDebug, DockType.Fill);
 
 ### Access the Tab Container
 
-To obtain a parent tab container for a pane, use the pane's `DockParent` property.
+To obtain a parent tab container for a pane, use the pane's [`DockParent`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockParent.md) property.
 
 See also: [Access Dock Panels and Containers](#access-dock-panels-and-containers).
 
@@ -205,19 +205,19 @@ Auto-hide panels are initially collapsed. A user can click a panel's button to e
 
 ### Create Auto-Hide Panel
 
-Use the `DockManager.AutoHide` method to enable the auto-hide functionality for a panel in code-behind. This method hides a panel at its current or previous dock position.
+Use the [`DockManager.AutoHide`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHide.md) method to enable the auto-hide functionality for a panel in code-behind. This method hides a panel at its current or previous dock position.
 
 ``` cs
 dockManager1.AutoHide(paneOutput);
 ```
 
-When a panel is about to become auto-hidden, an `AutoHideGroup` container is created, and the panel is moved to this container.
+When a panel is about to become auto-hidden, an [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md) container is created, and the panel is moved to this container.
 
-You can call the `DockManager.AutoHide` method for a `TabGroup` container. In this case, all panels of the tab container become auto-hidden.
+You can call the [`DockManager.AutoHide`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHide.md) method for a `TabGroup` container. In this case, all panels of the tab container become auto-hidden.
 
 #### Example - Auto-Hide Tab Containers
 
-The following code creates two tab containers at the right edge of the `DockManager`, and then enables the auto-hide functionality for these tab containers. Two `AutoHideGroup` containers are created as a result, each displaying panels from a corresponding tab container.
+The following code creates two tab containers at the right edge of the [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md), and then enables the auto-hide functionality for these tab containers. Two [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md) containers are created as a result, each displaying panels from a corresponding tab container.
 
 ![docking-code-behind-autohide-two-tab-containers](../../images/docking-code-behind-autohide-two-tab-containers.png)
 
@@ -245,7 +245,7 @@ dockManager1.AutoHide(paneTasks.DockParent);
 
 ### Restore a Panel from the Auto-Hidden State
 
-Use the `DockManager.Dock(DockItemBase item)` method overload to restore a panel from the auto-hidden state to its previous dock position.
+Use the [`DockManager.Dock(DockItemBase item)`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Dock.md) method overload to restore a panel from the auto-hidden state to its previous dock position.
 
 ``` cs
 dockManager1.Dock(paneOutput);
@@ -259,13 +259,13 @@ dockManager1.Dock(paneOutput, paneDebug, DockType.Right););
 
 ### Show and Collapse an Auto-Hide Panel
 
-The `DockManager.ExpandAutoHidePanel` and `DockManager.CollapseAutoHidePanel` methods allow you to display and collapse an auto-hide panel. The `DockPane.IsActive` property allows you to focus any panel. For an auto-hide panel, this property expands the panel (if it is collapsed), and then focuses it.
+The [`DockManager.ExpandAutoHidePanel`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ExpandAutoHidePanel.md) and [`DockManager.CollapseAutoHidePanel`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/CollapseAutoHidePanel.md) methods allow you to display and collapse an auto-hide panel. The [`DockPane.IsActive`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/IsActive.md) property allows you to focus any panel. For an auto-hide panel, this property expands the panel (if it is collapsed), and then focuses it.
 
 ### Access Auto-Hide Panels
 
-You can use the `DockManager.AutoHideGroups` collection to access all existing `AutoHideGroup` containers. The `AutoHideGroup.Items` property allows you to retrieve all auto-hide panels displayed in a specific container.
+You can use the [`DockManager.AutoHideGroups`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHideGroups.md) collection to access all existing [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md) containers. The [`AutoHideGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Items.md) property allows you to retrieve all auto-hide panels displayed in a specific container.
 
-To retrieve a parent container for an auto-hide panel, see the `DockPane.AutoHideGroup` property.
+To retrieve a parent container for an auto-hide panel, see the [`DockPane.AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/AutoHideGroup.md) property.
 
 See also: [Access Dock Panels and Containers](#access-dock-panels-and-containers).
 
@@ -274,7 +274,7 @@ See also: [Access Dock Panels and Containers](#access-dock-panels-and-containers
 
 ### Create Floating Panels
 
-Use the `DockManager.Float` method to make a panel floating in code-behind. When you make a panel floating, it is moved to a `FloatGroup` container (a floating window). A floating panel's `DockPane.FloatGroup` property allows you to access the parent floating window, and set its bounds (see `FloatGroup.FloatLocation`, `FloatGroup.FloatWidth` and `FloatGroup.FloatHeight`).
+Use the [`DockManager.Float`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Float.md) method to make a panel floating in code-behind. When you make a panel floating, it is moved to a [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md) container (a floating window). A floating panel's [`DockPane.FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/FloatGroup.md) property allows you to access the parent floating window, and set its bounds (see [`FloatGroup.FloatLocation`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatLocation.md), [`FloatGroup.FloatWidth`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatWidth.md) and [`FloatGroup.FloatHeight`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatHeight.md)).
 
 
 ![docking-code-behind-create-floating-panel](../../images/docking-code-behind-create-floating-panel.png)
@@ -301,7 +301,7 @@ dockManager1.Dock(paneExplorer, paneTasks, DockType.Right);
 
 ### Access Floating Panels
 
-The `DockManager.FloatGroups` collection allows you to retrieve existing floating windows (`FloatGroup` objects). Use the `FloatGroup.Items` property to obtain a list of panels displayed in each floating window.
+The [`DockManager.FloatGroups`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/FloatGroups.md) collection allows you to retrieve existing floating windows ([`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md) objects). Use the [`FloatGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Items.md) property to obtain a list of panels displayed in each floating window.
 
 See also: [Access Dock Panels and Containers](#access-dock-panels-and-containers).
 
@@ -311,14 +311,14 @@ The following list summarizes properties and methods you can use to access dock 
 
 - DockManager's `GetItems` extension method — Returns a linear list of all docked, auto-hidden and closed panels and groups.
 - DockManager's `FindItem` extension method — Returns an item by name.
-- `DockGroup.Items` — Gets a list of a container's immediate children.
-- `DockPane.DockParent` — Gets a dock item's immediate parent.
-- `DockPane.FloatGroup` — Returns the floating window that hosts a panel in the floating state. 
-- `DockPane.AutoHideGroup` — Returns the `AutoHideGroup` container that hosts a panel in the auto-hidden state. 
-- `DockManager.Root` — Returns the root group (container) that displays all docked panels and containers.
-- `DockManager.FloatGroups` — Gets a collection of existing `FloatGroup` objects (floating windows).
-- `DockManager.AutoHideGroups` — Gets a collection of existing `AutoHideGroup` objects.
-- `DockManager.ClosedPanes` — Returns a collection of closed panels.
+- [`DockGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Items.md) — Gets a list of a container's immediate children.
+- [`DockPane.DockParent`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockParent.md) — Gets a dock item's immediate parent.
+- [`DockPane.FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/FloatGroup.md) — Returns the floating window that hosts a panel in the floating state. 
+- [`DockPane.AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/AutoHideGroup.md) — Returns the [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md) container that hosts a panel in the auto-hidden state. 
+- [`DockManager.Root`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Root.md) — Returns the root group (container) that displays all docked panels and containers.
+- [`DockManager.FloatGroups`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/FloatGroups.md) — Gets a collection of existing [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md) objects (floating windows).
+- [`DockManager.AutoHideGroups`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHideGroups.md) — Gets a collection of existing [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md) objects.
+- [`DockManager.ClosedPanes`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ClosedPanes.md) — Returns a collection of closed panels.
 
 
 
@@ -326,19 +326,19 @@ The following list summarizes properties and methods you can use to access dock 
 
 If you need flexible control over dock operations performed by users, you can handle the following events:
 
-- `DockManager.DockOperationStarting` — Fires when a dock operation is about to start.
+- [`DockManager.DockOperationStarting`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockOperationStarting.md) — Fires when a dock operation is about to start.
 
-- `DockManager.DockOperationCompleted` — Fires after a dock operation is complete.
+- [`DockManager.DockOperationCompleted`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockOperationCompleted.md) — Fires after a dock operation is complete.
 
-- `DockManager.DockItemActivated` — Fires after a dock item is activated.
+- [`DockManager.DockItemActivated`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockItemActivated.md) — Fires after a dock item is activated.
 
-- `DockManager.DockItemStartFloatDragging` — Fires when a panel becomes floating, or a floating window is about to be moved.
+- [`DockManager.DockItemStartFloatDragging`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockItemStartFloatDragging.md) — Fires when a panel becomes floating, or a floating window is about to be moved.
 
-- `DockManager.DockItemEndFloatDragging` — Fires after a floating window's dragging is complete.
+- [`DockManager.DockItemEndFloatDragging`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockItemEndFloatDragging.md) — Fires after a floating window's dragging is complete.
 
 ### Example - Prevent a Panel from Being Closed
 
-The following `DockManager.DockOperationStarting` event handler does not allow the 'Output' panel to be closed when a user clicks the panel's 'Close' ('x') button.
+The following [`DockManager.DockOperationStarting`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockOperationStarting.md) event handler does not allow the 'Output' panel to be closed when a user clicks the panel's 'Close' ('x') button.
 
 ``` cs
 private void DockManager1_DockOperationStarting(object? sender, DockOperationStartingEventArgs e)

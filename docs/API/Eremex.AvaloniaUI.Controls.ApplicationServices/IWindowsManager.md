@@ -2,6 +2,12 @@
 
 Tracks the windows of the application so that the other services know which window a new dialog belongs to. Implementations follow window activation and closing, which is why a single instance should live for the whole application.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Common.Contracts.dll`  
+**NuGet Package:** [Eremex.Common.Contracts](https://www.nuget.org/packages/Eremex.Common.Contracts)
+
+## Declaration
+
 ```csharp
 public interface IWindowsManager
 ```

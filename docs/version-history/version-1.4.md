@@ -24,14 +24,14 @@ seealso: []
 - When a crosshair is displayed, an exception is raised if the series only contains points with `NaN` values.
 - PolarChart — The inner area is not filled when the starting and ending points are equal.
 - An exception is raised if the chart displays `DateTime` values on the _Y_ axis and the `AlwaysShowZeroLevel` option is set to `true`.
-- PolarChart and SmithChart — The `CrosshairSeriesLabelMode.None` option has no effect.
+- PolarChart and SmithChart — The [`CrosshairSeriesLabelMode.None`](../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md) option has no effect.
 
 
 ## Windows and Message Boxes
 
 #### Fixed Issues
 
-- `MxMessageBox` - An incorrect icon is displayed when the `MessageBoxIcon` parameter is set to any value other than `None`, `Question`, or `Warning`.
+- `MxMessageBox` - An incorrect icon is displayed when the [`MessageBoxIcon`](../API/Eremex.AvaloniaUI.Controls/MessageBoxIcon.md) parameter is set to any value other than `None`, `Question`, or `Warning`.
 
 
 
@@ -76,10 +76,10 @@ Drag Handles simplify cell editor activation when drag-and-drop functionality is
 
 ###### Related API
 
-- `DataGridControl.RowDragMode`
-- `DataGridControl.RowIndicatorWidth`
-- `TreeListControl.RowDragMode`
-- `TreeListControl.RowIndicatorWidth`
+- [`DataGridControl.RowDragMode`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowDragMode.md)
+- [`DataGridControl.RowIndicatorWidth`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowIndicatorWidth.md)
+- [`TreeListControl.RowDragMode`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/RowDragMode.md)
+- [`TreeListControl.RowIndicatorWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/RowIndicatorWidth.md)
 
 ##### Breaking Change - Drag Rows Between Applications
 
@@ -112,7 +112,7 @@ To apply Best Fit, users can double-click a column header's right edge or select
 
 ![bestfit-feature-bestfitall](../images/bestfit-feature-bestfitall.png)
 
-The controls include `BestFitMode` properties to specify which row values are measured during Best Fit operations:
+The controls include [`BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/BestFitMode.md) properties to specify which row values are measured during Best Fit operations:
 
 - `Fast` mode – Measures widths of unique row values. This improves Best Fit performance in most standard scenarios.
 
@@ -120,22 +120,22 @@ The controls include `BestFitMode` properties to specify which row values are me
 
 ##### Related API
 
-- `DataGridControl.AllowBestFit`
-- `DataGridControl.BestFitMode`
-- `DataGridControl.BestFitMode`
-- `DataGridControl.BestFit`
-- `DataGridControl.BestFitAllColumns`
-- `GridColumn.AllowBestFit`
-- `GridColumn.BestFitMode`
-- `GridColumn.BestFitMode`
-- `TreeListControl.AllowBestFit`
-- `TreeListControl.BestFitMode`
-- `TreeListControl.BestFitMode`
-- `TreeListControl.BestFit`
-- `TreeListControl.BestFitAllColumns`
-- `TreeListColumn.AllowBestFit`
-- `TreeListColumn.BestFitMode`
-- `TreeListColumn.BestFitMode`
+- [`DataGridControl.AllowBestFit`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowBestFit.md)
+- [`DataGridControl.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitMode.md)
+- [`DataGridControl.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitMode.md)
+- [`DataGridControl.BestFit`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFit.md)
+- [`DataGridControl.BestFitAllColumns`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitAllColumns.md)
+- [`GridColumn.AllowBestFit`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md)
+- [`GridColumn.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md)
+- [`GridColumn.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md)
+- [`TreeListControl.AllowBestFit`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowBestFit.md)
+- [`TreeListControl.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md)
+- [`TreeListControl.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md)
+- [`TreeListControl.BestFit`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFit.md)
+- [`TreeListControl.BestFitAllColumns`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitAllColumns.md)
+- [`TreeListColumn.AllowBestFit`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md)
+- [`TreeListColumn.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md)
+- [`TreeListColumn.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md)
 
 ##### Documentation
 
@@ -150,14 +150,14 @@ After a user changes column widths (by dragging or using Best Fit), the _Reset C
 
 ##### Related API
 
-- `DataGridControl.AllowResetColumnWidth`
-- `DataGridControl.ResetColumnWidth`
-- `TreeListControl.AllowResetColumnWidth`
-- `TreeListControl.ResetColumnWidth`
+- [`DataGridControl.AllowResetColumnWidth`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowResetColumnWidth.md)
+- [`DataGridControl.ResetColumnWidth`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ResetColumnWidth.md)
+- [`TreeListControl.AllowResetColumnWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowResetColumnWidth.md)
+- [`TreeListControl.ResetColumnWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ResetColumnWidth.md)
 
 #### Fixed Issues
 
-- TreeList - `StackOverflowException` is raised when filtering data if `ExpandNodesOnFiltering` is `true`.
+- TreeList - `StackOverflowException` is raised when filtering data if [`ExpandNodesOnFiltering`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ExpandNodesOnFiltering.md) is `true`.
 - TreeList - Active editor in the auto-filter row is closed when the node collection is changed.
 - DataGrid and TreeList - The `Cmd+A` shortcut does not work on Mac.
 
@@ -167,7 +167,7 @@ The Cartesian Chart control extends its public API to give you finer control ove
 
 #### New Crosshair Label Display Mode
 
-The `CrosshairOptions.SeriesLabelMode` property specifies whether and how multiple crosshair labels are combined. This property's default value is now `Smart`:
+The [`CrosshairOptions.SeriesLabelMode`](../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelMode.md) property specifies whether and how multiple crosshair labels are combined. This property's default value is now `Smart`:
 
 - `Smart` mode — Each series displays its own crosshair label. When labels overlap, they are combined in a single label.
   
@@ -175,9 +175,9 @@ The `CrosshairOptions.SeriesLabelMode` property specifies whether and how multip
 
 #### Crosshair Series Sorting
 
-When multiple series are combined in a single crosshair label, you can use the new `CrosshairOptions.SeriesLabelItemSortMode` property to specify the display order of the series in the label:
+When multiple series are combined in a single crosshair label, you can use the new [`CrosshairOptions.SeriesLabelItemSortMode`](../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelItemSortMode.md) property to specify the display order of the series in the label:
 
-- `By Series` order —  Sorts series by the order in which these series are added to the `CartesianChart.Series` collection.
+- `By Series` order —  Sorts series by the order in which these series are added to the [`CartesianChart.Series`](../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) collection.
 
     ![chart-CrosshairSeriesLabelItemSortMode-BySeries](../images/chart-CrosshairSeriesLabelItemSortMode-BySeries.png)
 
@@ -189,19 +189,19 @@ When multiple series are combined in a single crosshair label, you can use the n
 
 The following property allows you to show crosshair labels only for data points near the cursor.
 
-- `CrosshairOptions.MaxPickDistance` —  Specifies the range within which to search for data points to include in crosshair labels.
+- [`CrosshairOptions.MaxPickDistance`](../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/MaxPickDistance.md) —  Specifies the range within which to search for data points to include in crosshair labels.
 
     ![chart-Crosshair-MaxPickDistance](../images/chart-Crosshair-MaxPickDistance.png)
 
 #### Crosshair Show Delay
 
-- `CrosshairOptions.SeriesLabelShowDelay` — Specifies the delay (in milliseconds) before a crosshair series label is displayed.
+- [`CrosshairOptions.SeriesLabelShowDelay`](../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelShowDelay.md) — Specifies the delay (in milliseconds) before a crosshair series label is displayed.
 
 
 #### Show and Hide Crosshair API
 
 - `ShowCrosshair(Point position)`
-- `HideCrosshair()`
+- [`HideCrosshair()`](../API/Eremex.AvaloniaUI.Charts/CartesianChart/HideCrosshair.md)
 
 #### Updated Crosshair Template
 
@@ -211,11 +211,11 @@ The chart control's crosshair template has been revamped to optimize the structu
 
 The template changes include:
 
-- The `CrosshairAllSeriesLabelControlData` class now contains the `ObservableCollection<CrosshairSeriesLabelItem> SeriesItems` collection instead of a `CrosshairAllSeriesLabelGroup` collection.
+- The [`CrosshairAllSeriesLabelControlData`](../API/Eremex.AvaloniaUI.Charts/CrosshairAllSeriesLabelControlData.md) class now contains the `ObservableCollection<CrosshairSeriesLabelItem> SeriesItems` collection instead of a `CrosshairAllSeriesLabelGroup` collection.
 - The `CrosshairAllSeriesLabelGroup` class has been removed.
-- The `CrosshairAllSeriesLabelSeriesItem` class has been renamed to `CrosshairSeriesLabelItem`. This class contains information on the series argument and argument prefix.
-- The `CrosshairAllSeriesLabelSeriesValueItem` class has been renamed to `CrosshairSeriesLabelSeriesValueItem`.
-- The `CrosshairSingleSeriesLabelControlData` class no longer inherits from `CrosshairAllSeriesLabelSeriesValueItem`. `CrosshairSingleSeriesLabelControlData` now exposes the `SeriesItem` property of type `CrosshairSeriesLabelItem`.
+- The `CrosshairAllSeriesLabelSeriesItem` class has been renamed to [`CrosshairSeriesLabelItem`](../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelItem.md). This class contains information on the series argument and argument prefix.
+- The `CrosshairAllSeriesLabelSeriesValueItem` class has been renamed to [`CrosshairSeriesLabelSeriesValueItem`](../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelSeriesValueItem.md).
+- The [`CrosshairSingleSeriesLabelControlData`](../API/Eremex.AvaloniaUI.Charts/CrosshairSingleSeriesLabelControlData.md) class no longer inherits from `CrosshairAllSeriesLabelSeriesValueItem`. [`CrosshairSingleSeriesLabelControlData`](../API/Eremex.AvaloniaUI.Charts/CrosshairSingleSeriesLabelControlData.md) now exposes the [`SeriesItem`](../API/Eremex.AvaloniaUI.Charts/CrosshairSingleSeriesLabelControlData/SeriesItem.md) property of type [`CrosshairSeriesLabelItem`](../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelItem.md).
 
 #### Documentation
 
@@ -232,4 +232,4 @@ The template changes include:
 ### Breaking Changes
 
 - The dependency on the `CommunityToolkit.Mvvm `package has been removed. If your project requires this package, add a reference to `CommunityToolkit.Mvvm` explicitly.
-- The `DataControlCommands`, `DataGridControlCommands`, `TreeListCommands`, and editor commands now contain `ICommand` instead of CommunityToolkit's `IRelayCommand`.
+- The [`DataControlCommands`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlCommands.md), [`DataGridControlCommands`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataGridControlCommands.md), [`TreeListCommands`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListCommands.md), and editor commands now contain `ICommand` instead of CommunityToolkit's `IRelayCommand`.

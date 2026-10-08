@@ -2,6 +2,7 @@ site/
 ru/site/
 zh/site/
 dist/
+offline-packages/
 wheels/
 .venv/
 .cache/

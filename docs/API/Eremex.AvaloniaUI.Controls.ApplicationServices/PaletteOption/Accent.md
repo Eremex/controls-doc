@@ -2,6 +2,12 @@
 
 The accent colour of the palette, read without applying it. Bind a swatch to this to let the user see a palette before picking it. `null` if the palette defines none.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public IBrush? Accent { get; }
 ```

@@ -2,6 +2,12 @@
 
 Base class for a dialog with the usual OK and Cancel buttons already wired up: OK closes the dialog with Ok, Cancel closes it with Cancel.
 
+**Namespace:** [`Eremex.AvaloniaUI.Controls.ApplicationServices`](./index.md)  
+**Assembly:** `Eremex.Avalonia.Controls.ApplicationServices.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls.ApplicationServices](https://www.nuget.org/packages/Eremex.Avalonia.Controls.ApplicationServices)
+
+## Declaration
+
 ```csharp
 public abstract class OkCancelDialogAwareViewModel : DialogAwareViewModel
 ```
