@@ -4,9 +4,9 @@ order: 104000
 seealso: []
 ---
 
-# SegmentedEditor
+# SegmentedEditor {#segmentededitor}
 
-`SegmentedEditor` 将一组项目（选项）呈现为一系列水平排列的分段。用户可以单击其中一个分段来选择相应的选项，或者按住 CTRL 键并单击已选中的分段来清除选择。
+[`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 将一组项目（选项）呈现为一系列水平排列的分段。用户可以单击其中一个分段来选择相应的选项，或者按住 CTRL 键并单击已选中的分段来清除选择。
 
 ![segmentededitor](../../images/segmentededitor.png)
 
@@ -14,18 +14,18 @@ seealso: []
 
 - 从字符串列表、业务对象列表或枚举类型填充分段。
 - 项目模板允许您以自定义方式呈现分段。
-- 将该控件用作容器控件（例如 TreeList、TreeView 和 PropertyGrid）内的内嵌编辑器。
+- 将该控件用作容器控件（例如 TreeList、TreeView 和 PropertyGrid）内的就地编辑器。
 
-## 指定项目来源
+## 指定项目来源 {#specify-the-items-source}
 
-使用 `SegmentedEditor.ItemsSource` 属性指定用于创建控件分段的项目源。您可以将编辑器绑定到字符串列表、业务对象列表或枚举类型。
+使用 [`SegmentedEditor.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ItemsSource.md) 属性指定用于创建控件分段的项目源。您可以将编辑器绑定到字符串列表、业务对象列表或枚举类型。
 
-## 绑定到字符串列表
+## 绑定到字符串列表 {#bind-to-a-list-of-strings}
 
 最简单的项目源是一个字符串列表。
 
-### 示例 - 如何绑定到字符串列表
-以下示例使用字符串列表填充 `SegmentedEditor` 控件。
+### 示例 - 如何绑定到字符串列表 {#example-how-to-bind-to-a-string-list}
+以下示例使用字符串列表填充 [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 控件。
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -44,19 +44,19 @@ xmlns:col="using:System.Collections"
 </mxe:SegmentedEditor>
 ```
 
-## 绑定到业务对象列表
+## 绑定到业务对象列表 {#bind-to-a-list-of-business-objects}
 
-您可以将 `SegmentedEditor` 控件绑定到业务对象列表。在这种情况下，该控件的默认行为如下：
+您可以将 [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 控件绑定到业务对象列表。在这种情况下，该控件的默认行为如下：
 
 - 业务对象的 `ToString` 方法指定项目的默认文本表示形式。
-- 当您选择项目时，编辑器的值 (`SegmentedEditor.EditorValue`) 将设置为相应的业务对象。
+- 当您选择项目时，编辑器的值 ([`SegmentedEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)) 将设置为相应的业务对象。
 
 一个典型的业务对象具有多个属性。您可以指定由哪些业务对象属性提供项目显示文本和编辑值。为此请使用以下 API 成员：
 
-- `SegmentedEditor.DisplayMember` - 获取或设置业务对象中用于指定项目显示文本的属性名称。 
-- `SegmentedEditor.ValueMember` - 获取或设置业务对象中用于指定项目值的属性名称。当您选择项目时，编辑器的值 (`SegmentedEditor.EditorValue`) 将设置为该项目的 `ValueMember` 属性值。
+- [`SegmentedEditor.DisplayMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/DisplayMember.md) - 获取或设置业务对象中用于指定项目显示文本的属性名称。 
+- [`SegmentedEditor.ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) - 获取或设置业务对象中用于指定项目值的属性名称。当您选择项目时，编辑器的值 ([`SegmentedEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)) 将设置为该项目的 [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) 属性值。
 
-### 示例 - 如何绑定到业务对象列表
+### 示例 - 如何绑定到业务对象列表 {#example-how-to-bind-to-a-business-object-list}
 
 以下示例将 SegmentedEditor 控件绑定到 _Product_ 业务对象列表。 _Product.ProductName_ 属性指定项目显示文本。 _Product.ProductID_ 属性指定项目值。
 
@@ -109,9 +109,9 @@ public partial class Product :ObservableObject
 }
 ```
 
-## 绑定到枚举
+## 绑定到枚举 {#bind-to-an-enumeration}
 
-`SegmentedEditor` 可以用枚举类型的值填充其段。
+[`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 可以用枚举类型的值填充其段。
 
 `Eremex.AvaloniaUI.Controls.Common.EnumItemsSource` 帮助程序类有助于绑定到枚举。其主要特点包括：
 
@@ -121,16 +121,16 @@ public partial class Product :ObservableObject
 
 使用以下 `EnumItemsSource` 属性设置与枚举类型的绑定：
 
-- `EnumItemsSource.EnumType` — 指定其值将显示在 `SegmentedEditor` 控件中的枚举类型。
+- `EnumItemsSource.EnumType` — 指定其值将显示在 [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 控件中的枚举类型。
 - `EnumItemsSource.ShowImages` — 指定是否显示枚举成员的图像。您可以使用 `Eremex.AvaloniaUI.Controls.Common.ImageAttribute` 属性来提供图像。
 - `EnumItemsSource.ShowNames` — 指定是否显示项目文本。将 `ShowNames` 设置为 `false` 并将 `ShowImages` 设置为 `true` 以使用不带文本的图像呈现枚举成员。
 - `EnumItemsSource.ImageSize` — 指定分配给枚举成员的图像的显示尺寸。
 - `EnumItemsSource.NameToDisplayTextConverter` — 允许您分配一个转换器，用于检索枚举成员的自定义显示文本。
 - `EnumItemsSource.NameToDescriptionConverter` — 允许您分配一个转换器来检索枚举成员描述，当用户将鼠标悬停在段上时，这些描述将显示为工具提示。
 
-### 示例 - 如何显示枚举值，以及如何使用特性为枚举成员提供显示文本和图像
+### 示例 - 如何显示枚举值，以及如何使用特性为枚举成员提供显示文本和图像 {#example-how-to-display-enumeration-values-and-use-attributes-to-supply-display-text-and-images-for-enumeration-members}
 
-以下示例显示 `SegmentedEditor` 中的 _ProductCategoryEnum_ 枚举的值。它使用 `EnumItemsSource` 类进行数据绑定。
+以下示例显示 [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 中的 _ProductCategoryEnum_ 枚举的值。它使用 `EnumItemsSource` 类进行数据绑定。
 
 `System.ComponentModel.DataAnnotations.DisplayAttribute` 和 `Eremex.AvaloniaUI.Controls.Common.ImageAttribute` 属性指定枚举成员的自定义显示文本、描述（工具提示）和图像。
 
@@ -170,9 +170,9 @@ public enum ProductCategoryEnum
 }
 ```
 
-### 示例 - 如何显示枚举值，并使用自定义转换器为枚举成员提供显示文本
+### 示例 - 如何显示枚举值，并使用自定义转换器为枚举成员提供显示文本 {#example-how-to-display-enumeration-values-and-use-custom-converters-to-supply-display-text-for-enumeration-members}
 
-以下示例使用 `EnumItemsSource` 类在 `SegmentedEditor` 控件中显示枚举类型的值。 `EnumItemsSource.NameToDisplayTextConverter` 和 `EnumItemsSource.NameToDescriptionConverter` 对象为枚举成员提供自定义显示文本和说明（工具提示）。
+以下示例使用 `EnumItemsSource` 类在 [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 控件中显示枚举类型的值。 `EnumItemsSource.NameToDisplayTextConverter` 和 `EnumItemsSource.NameToDescriptionConverter` 对象为枚举成员提供自定义显示文本和说明（工具提示）。
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -267,23 +267,23 @@ public abstract class BaseEnumConverter : MarkupExtension, IValueConverter
 }
 ```
 
-## 获取和设置所选项目，并指定编辑器值
+## 获取和设置所选项目，并指定编辑器值 {#get-and-set-the-selected-item-and-specify-the-editor-value}
 
-当用户按住 CTRL 键并单击某个段来选择或取消选择该段时，`SegmentedEditor.SelectedItem` 和 `SegmentedEditor.EditorValue` 属性会相应更改。
+当用户按住 CTRL 键并单击某个段来选择或取消选择该段时，[`SegmentedEditor.SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) 和 [`SegmentedEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) 属性会相应更改。
 您可以使用这些属性中的任何一个来获取和设置编辑器的选定值。
 
-`SegmentedEditor.SelectedItem` 属性指定所选段对应的底层数据对象。
+[`SegmentedEditor.SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) 属性指定所选段对应的底层数据对象。
 
-`SegmentedEditor.EditorValue` 属性具有以下含义：
+[`SegmentedEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) 属性具有以下含义：
 
-- 如果 `ValueMember` 属性为空，则 `EditorValue` 和 `SelectedItem` 属性等效。
-- 否则，`EditorValue` 属性将与所选底层数据对象的 `ValueMember` 属性值同步。
+- 如果 [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) 属性为空，则 [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) 和 [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) 属性等效。
+- 否则，[`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) 属性将与所选底层数据对象的 [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) 属性值同步。
 
-要清除选择，请将 `SegmentedEditor.SelectedItem` 属性设置为 `null`。
+要清除选择，请将 [`SegmentedEditor.SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) 属性设置为 `null`。
  
-### 示例 - 当 SegmentedEditor 绑定到字符串列表时如何选择项目
+### 示例 - 当 SegmentedEditor 绑定到字符串列表时如何选择项目 {#example-how-to-select-an-item-when-segmentededitor-is-bound-to-a-string-list}
 
-以下示例演示如何使用 `SelectedItem` 或 `EditorValue` 属性在绑定到字符串列表的 `SegmentedEditor` 控件中选择项目。
+以下示例演示如何使用 [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) 或 [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) 属性在绑定到字符串列表的 [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 控件中选择项目。
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -308,9 +308,9 @@ segmEditorStrings.SelectedItem = "Santiago";
 segmEditorStrings.EditorValue = "Santiago";
 ```
 
-### 示例 - 当 SegmentedEditor 绑定到业务对象列表时如何选择 item
+### 示例 - 当 SegmentedEditor 绑定到业务对象列表时如何选择项 {#example-how-to-select-an-item-when-segmentededitor-is-bound-to-a-business-object-list}
 
-在以下示例中，`SegmentedEditor` 控件绑定到 _Product_ 对象列表。 `ValueMember` 属性引用 _Product.ProductID_ 成员。因此，产品 ID 用作项目值。当用户选择某个分段时，`EditorValue` 属性将设置为相应的产品 ID。该示例使用 `EditorValue` 属性在代码中选择项目。
+在以下示例中，[`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 控件绑定到 _Product_ 对象列表。 [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) 属性引用 _Product.ProductID_ 成员。因此，产品 ID 用作项目值。当用户选择某个分段时，[`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) 属性将设置为相应的产品 ID。该示例使用 [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) 属性在代码中选择项目。
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -376,23 +376,23 @@ public partial class Product :ObservableObject
 }
 ```
 
-## 指定项目模板
+## 指定项目模板 {#specify-item-templates}
 
-当 `SegmentedEditor` 绑定到字符串或业务对象列表时，control 的段显示 default text representation 项目。 default item display text 定义如下：
+当 [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 绑定到字符串或业务对象列表时，控件的段显示默认文本表示形式项目。默认项显示文本定义如下：
 
-- 如果未设置 `ValueMember` 属性，则由 underlying 数据对象的 `ToString` method 返回的值。
-- 否则，存储在数据对象的 `ValueMember` 属性中的值的文本表示形式。
+- 如果未设置 [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) 属性，则由基础数据对象的 `ToString` 方法返回的值。
+- 否则，存储在数据对象的 [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) 属性中的值的文本表示形式。
 
-项目模板使您可以灵活地指定在编辑器的片段中显示的内容。它们允许您显示图像以及段中多个属性的值。使用 `SegmentedEditor.ItemTemplate` 属性指定 item 模板。
+项目模板使您可以灵活地指定在编辑器的片段中显示的内容。它们允许您显示图像以及段中多个属性的值。使用 [`SegmentedEditor.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ItemTemplate.md) 属性指定项模板。
 
-### 示例 - 如何显示 image 和 SegmentedEditor 项目的文本
+### 示例 - 如何显示图像和 SegmentedEditor 项目的文本 {#example-how-to-display-an-image-and-text-for-segmentededitor-items}
 
-以下示例演示如何创建在 `SegmentedEditor` control 的段中显示图像和文本的 item 模板。
+以下示例演示如何创建在 [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 控件的段中显示图像和文本的项模板。
 
-在示例中，`SegmentedEditor` control 绑定到 _CapitalInfo_ 对象的集合，该对象存储有关国家、国家首都和国旗的信息。 
-创建的 item 模板（`SegmentedEditor.ItemTemplate` 属性）显示国旗，后跟国家首都的名称。
+在示例中，[`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 控件绑定到 _CapitalInfo_ 对象的集合，该对象存储有关国家、国家首都和国旗的信息。 
+创建的项模板（[`SegmentedEditor.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ItemTemplate.md) 属性）显示国旗，后跟国家首都的名称。
 
-`SegmentedEditor.ValueMember` 属性引用 _CapitalInfo.Capital_ 属性。当用户选择一个段时，编辑器的 `EditorValue` 属性将设置为相应国家/地区首都的名称。
+[`SegmentedEditor.ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) 属性引用 _CapitalInfo.Capital_ 属性。当用户选择一个段时，编辑器的 [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) 属性将设置为相应国家/地区首都的名称。
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"

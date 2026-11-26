@@ -12,12 +12,22 @@ Base class for view models shown as modal dialogs by IDialogService. On top of [
 public abstract class DialogAwareViewModel : WindowAwareViewModel, IDialogAwareViewModel
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |
 | [ButtonsSource](DialogAwareViewModel/ButtonsSource.md) { get; set; } |  |
+| [CheckboxContent](DialogAwareViewModel/CheckboxContent.md) { get; set; } |  |
 | [CloseDialogCommand](DialogAwareViewModel/CloseDialogCommand.md) { get; } |  |
+| [FooterContent](DialogAwareViewModel/FooterContent.md) { get; set; } |  |
+| [IsCheckboxVisible](DialogAwareViewModel/IsCheckboxVisible.md) { get; } | `true` when the footer check box is shown: there is a [`CheckboxContent`](./DialogAwareViewModel/CheckboxContent.md) and no [`FooterContent`](./DialogAwareViewModel/FooterContent.md) taking its place. |
+| [IsChecked](DialogAwareViewModel/IsChecked.md) { get; set; } |  |
+| [IsEnabled](DialogAwareViewModel/IsEnabled.md) { get; set; } |  |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [CloseDialog](DialogAwareViewModel/CloseDialog.md)() | Closes the dialog with Cancel, as if the user had cancelled it. The generated `CloseDialogCommand` property makes this available to bindings. |
 
 ## Remarks

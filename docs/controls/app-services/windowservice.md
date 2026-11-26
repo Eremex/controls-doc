@@ -8,12 +8,9 @@ seealso: []
 
 [`IWindowService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IWindowService.md) provides a platform-agnostic way to show non-modal windows from your ViewModels. The ViewModels remain completely decoupled from Avalonia window types.
 
-<!-- TODO
-image
-app-services-iwindowservice
--->
+![app-services-iwindowservice](../../images/app-services-iwindowservice.png)
 
-Main features include:
+Main features:
 
 - Displaying non-modal windows.
 - ViewModel-driven windows — A window shown is defined by a custom ViewModel. You can specify the content of the target window using the ViewModel's `Content` property, or using the [`ViewLocatorAttribute`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ViewLocatorAttribute.md) applied to the window's ViewModel.

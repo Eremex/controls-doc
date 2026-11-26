@@ -12,11 +12,16 @@ Represents a point light that stays at a fixed position in the scene.
 public class PointLight : PointLightBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PointLight](PointLight/PointLight.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Position](PointLight/Position.md) { get; set; } | Gets or sets the position of the light in world space. The default value is the origin. |
 
 ## See Also

@@ -12,7 +12,7 @@ Represents a point light that follows the camera, so that the scene stays evenly
 public class CameraPointLight : PointLightBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

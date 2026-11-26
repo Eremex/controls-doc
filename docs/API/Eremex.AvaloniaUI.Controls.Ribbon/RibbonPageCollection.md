@@ -12,7 +12,7 @@ Stores the pages of a ribbon control.
 public class RibbonPageCollection : ObservableCollection<RibbonPage>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

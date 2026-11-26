@@ -35,7 +35,7 @@ With the automatic row generation feature enabled, an empty PropertyGrid control
 
 If any row has been manually added to the control (for instance, in XAML), automatic row generation is not in effect. Set the [`PropertyGridControl.AutoGenerateRows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/AutoGenerateRows.md) property to `false` to forcibly disable automatic row generation.
 
-Use the `PopulateRows` method to generate data and category rows from the bound object(s) in code-behind. This method clears the existing row collection before new rows are added.
+Use the [`RetrieveFields`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/RetrieveFields.md) method to generate data and category rows from the bound object(s) in code-behind. This method clears the existing row collection before new rows are added.
 
 You can apply specific Data Annotation attributes to a bound object's properties to control the presence, display name, and read-only status of generated PropertyGrid rows. See the following section for more details: [Use Attributes to Customize Row Settings](#use-attributes-to-customize-row-settings).
 
@@ -181,7 +181,6 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 
 <mxpg:PropertyGridControl x:Name="propertyGrid" 
                           SelectedObject="{Binding}" 
-                          UseModernAppearance="True" 
                           ImmediatePostEditor="True" 
                           BorderThickness="1,0" Grid.Column="1"
                           ShowSearchPanel="False"
@@ -303,7 +302,6 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 <mxpg:PropertyGridControl
             x:Name="propertyGrid1" 
             SelectedObject="{Binding Path=MyBusinessObject}"
-            UseModernAppearance="True"
             Margin="10"
             BorderThickness="1"
             ShowSearchPanel="False"
@@ -698,7 +696,6 @@ xmlns:local="using:PropertyGridSample"
     Background="FloralWhite" BorderThickness="1"
     SelectedObject="{Binding MyBusinessObject}"
     RowsSource="{Binding MyRowSource}"
-    UseModernAppearance="true"
     Margin="10">
 
     <mxpg:PropertyGridControl.RowsDataTemplates>

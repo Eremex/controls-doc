@@ -12,12 +12,17 @@ Serves as the base class for the styled chart elements that contribute to the vi
 public abstract class ChartElement : ChartTemplatedControl, IChartElement
 ```
 
-## Public Members
+## Methods
+
+| name | description |
+| --- | --- |
+| [RaiseChartElementChanged](ChartElement/RaiseChartElementChanged.md)(…) | Notifies subscribers that this element has changed. |
+
+## Events
 
 | name | description |
 | --- | --- |
 | event [ChartElementChanged](ChartElement/ChartElementChanged.md) | Occurs when a property of this element, or of any element nested inside it, has changed. |
-| [RaiseChartElementChanged](ChartElement/RaiseChartElementChanged.md)(…) | Notifies subscribers that this element has changed. |
 
 ## See Also
 

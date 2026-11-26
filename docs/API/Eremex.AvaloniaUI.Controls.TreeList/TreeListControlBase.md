@@ -12,7 +12,7 @@ Provides a base class for data controls that display a collection of items arran
 public abstract class TreeListControlBase : DataControlBase
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |
@@ -50,21 +50,11 @@ public abstract class TreeListControlBase : DataControlBase
 | [ShowRootIndent](TreeListControlBase/ShowRootIndent.md) { get; set; } | Gets or sets whether the root level indent is displayed. |
 | [UsePlatformRowDragDrop](TreeListControlBase/UsePlatformRowDragDrop.md) { get; set; } | Gets or sets whether the platform drag-and-drop is used when dragging nodes. |
 | [VisibleNodeCount](TreeListControlBase/VisibleNodeCount.md) { get; } | Gets the number of currently visible nodes. |
-| event [CompleteDragDrop](TreeListControlBase/CompleteDragDrop.md) | Occurs after the drag-and-drop operation is completed. |
-| event [CustomNodeFilter](TreeListControlBase/CustomNodeFilter.md) | Occurs when custom filtering is applied to nodes. |
-| event [DragOver](TreeListControlBase/DragOver.md) | Occurs when a dragged element is over the control. |
-| event [Drop](TreeListControlBase/Drop.md) | Occurs when a dragged element is dropped onto the control. |
-| event [FocusedColumnChanged](TreeListControlBase/FocusedColumnChanged.md) | Occurs when the focused column is changed. |
-| event [FocusedNodeChanged](TreeListControlBase/FocusedNodeChanged.md) | Occurs when the focused node is changed. |
-| event [NodeChanged](TreeListControlBase/NodeChanged.md) | Occurs when a node's data or state is changed. |
-| event [NodeCheckStateChanged](TreeListControlBase/NodeCheckStateChanged.md) | Occurs when a node's check state is changed. |
-| event [NodeClick](TreeListControlBase/NodeClick.md) | Occurs when a node is clicked. |
-| event [NodeCollapsed](TreeListControlBase/NodeCollapsed.md) | Occurs after a node is collapsed. |
-| event [NodeCollapsing](TreeListControlBase/NodeCollapsing.md) | Occurs before a node is collapsed. |
-| event [NodeExpanded](TreeListControlBase/NodeExpanded.md) | Occurs after a node is expanded. |
-| event [NodeExpanding](TreeListControlBase/NodeExpanding.md) | Occurs before a node is expanded. |
-| event [SelectionChanged](TreeListControlBase/SelectionChanged.md) | Occurs when the node selection is changed. |
-| event [StartDrag](TreeListControlBase/StartDrag.md) | Occurs when node dragging is started. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [CheckAllNodes](TreeListControlBase/CheckAllNodes.md)() | Checks all visible nodes. |
 | [CollapseAllNodes](TreeListControlBase/CollapseAllNodes.md)() | Collapses all nodes. |
 | override [CommitEditing](TreeListControlBase/CommitEditing.md)() |  |
@@ -87,6 +77,26 @@ public abstract class TreeListControlBase : DataControlBase
 | [SelectRange](TreeListControlBase/SelectRange.md)(…) | Selects all nodes between the specified start and end nodes. |
 | [UncheckAllNodes](TreeListControlBase/UncheckAllNodes.md)() | Unchecks all visible nodes. |
 | [UnselectNode](TreeListControlBase/UnselectNode.md)(…) | Removes the selection from the specified node. |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [CompleteDragDrop](TreeListControlBase/CompleteDragDrop.md) | Occurs after the drag-and-drop operation is completed. |
+| event [CustomNodeFilter](TreeListControlBase/CustomNodeFilter.md) | Occurs when custom filtering is applied to nodes. |
+| event [DragOver](TreeListControlBase/DragOver.md) | Occurs when a dragged element is over the control. |
+| event [Drop](TreeListControlBase/Drop.md) | Occurs when a dragged element is dropped onto the control. |
+| event [FocusedColumnChanged](TreeListControlBase/FocusedColumnChanged.md) | Occurs when the focused column is changed. |
+| event [FocusedNodeChanged](TreeListControlBase/FocusedNodeChanged.md) | Occurs when the focused node is changed. |
+| event [NodeChanged](TreeListControlBase/NodeChanged.md) | Occurs when a node's data or state is changed. |
+| event [NodeCheckStateChanged](TreeListControlBase/NodeCheckStateChanged.md) | Occurs when a node's check state is changed. |
+| event [NodeClick](TreeListControlBase/NodeClick.md) | Occurs when a node is clicked. |
+| event [NodeCollapsed](TreeListControlBase/NodeCollapsed.md) | Occurs after a node is collapsed. |
+| event [NodeCollapsing](TreeListControlBase/NodeCollapsing.md) | Occurs before a node is collapsed. |
+| event [NodeExpanded](TreeListControlBase/NodeExpanded.md) | Occurs after a node is expanded. |
+| event [NodeExpanding](TreeListControlBase/NodeExpanding.md) | Occurs before a node is expanded. |
+| event [SelectionChanged](TreeListControlBase/SelectionChanged.md) | Occurs when the node selection is changed. |
+| event [StartDrag](TreeListControlBase/StartDrag.md) | Occurs when node dragging is started. |
 
 ## See Also
 

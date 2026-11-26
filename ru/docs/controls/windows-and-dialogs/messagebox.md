@@ -28,15 +28,15 @@ public static MessageBoxResult MxMessageBox.Show(Window? owner, string text, str
 - owner — окно, которое будет владельцем окна сообщения. Если этот параметр равен `null`, `MxMessageBox` автоматически определяет владельца: владельцем становится последнее активное окно или главное окно приложения.
 - text — текст для отображения в диалоге.
 - title — заголовок диалога.
-- buttons — значение перечисления `Eremex.AvaloniaUI.Controls.MessageBoxButtons`, задающее кнопки для отображения в диалоге. Доступные значения: `Ok`, `OkCancel`, `YesNoCancel`, `YesNo`, `AbortRetryIgnore`, `RetryCancel`
-- icon — один из предопределённых значков для отображения перед текстом. Установите свойство в `MessageBoxIcon.None`, чтобы скрыть значок.
+- buttons — значение перечисления [`Eremex.AvaloniaUI.Controls.MessageBoxButtons`](../../API/Eremex.AvaloniaUI.Controls/MessageBoxButtons.md), задающее кнопки для отображения в диалоге. Доступные значения: `Ok`, `OkCancel`, `YesNoCancel`, `YesNo`, `AbortRetryIgnore`, `RetryCancel`
+- icon — один из предопределённых значков для отображения перед текстом. Установите свойство в [`MessageBoxIcon.None`](../../API/Eremex.AvaloniaUI.Controls/MessageBoxIcon.md), чтобы скрыть значок.
 - defaultButton — определяет кнопку по умолчанию. Кнопка по умолчанию — это кнопка, которая изначально получает фокус при отображении диалога. Когда пользователь нажимает ENTER, срабатывает кнопка по умолчанию.
 - configure — делегат для выполнения дополнительной настройки диалога (например, значка диалога в заголовке или выравнивания кнопок).
 
 
     ### Пример 
 
-    Следующий пример отображает окно сообщения с тремя кнопками — Yes, No и Cancel.
+    Этот пример отображает окно сообщения с тремя кнопками — Yes, No и Cancel.
 
     ![mxmessagebox-example](../../images/mxmessagebox-example.png)
 
@@ -87,7 +87,7 @@ public static Task<MessageBoxResult> ShowAsync(Action<MxMessageBox> configure)
 
 ### Пример
 
-Следующий пример показывает окно сообщения асинхронно и ожидает, пока пользователь нажмёт кнопку. 
+Этот пример показывает окно сообщения асинхронно и ожидает, пока пользователь нажмёт кнопку. 
 
 ``` cs
 async Task<MessageBoxResult> ShowMessageBoxAsync()

@@ -12,11 +12,16 @@ Represents the range of a vertical axis, such as AxisY or PolarAxisY.
 public class AxisYRange : AxisRange
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [AxisYRange](AxisYRange/AxisYRange.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AlwaysShowZeroLevel](AxisYRange/AlwaysShowZeroLevel.md) { get; set; } | Gets or sets whether the whole range always includes zero. The default value is true. |
 
 ## See Also

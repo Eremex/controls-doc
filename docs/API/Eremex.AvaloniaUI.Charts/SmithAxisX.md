@@ -12,7 +12,7 @@ Represents the angular axis of a Smith chart. It displays impedance or admittanc
 public class SmithAxisX : Axis
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

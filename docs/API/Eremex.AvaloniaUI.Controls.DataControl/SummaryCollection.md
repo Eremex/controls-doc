@@ -12,11 +12,17 @@ Represents a collection of summary items.
 public class SummaryCollection : LockableObservableCollection<SummaryItem>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SummaryCollection](SummaryCollection/SummaryCollection.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
+| [Item](SummaryCollection/Item.md) { get; } | Gets the summary item with the specified name. |
 
 ## See Also
 

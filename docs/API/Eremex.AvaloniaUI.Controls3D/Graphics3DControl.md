@@ -12,11 +12,16 @@ Renders interactive 3D models with the Vulkan API and lets the user navigate the
 public class Graphics3DControl : Graphics3DControlBase, ISceneHolder
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [Graphics3DControl](Graphics3DControl/Graphics3DControl.md)() | Initializes a new instance of the Graphics3DControl class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowDefaultLight](Graphics3DControl/AllowDefaultLight.md) { get; set; } | Gets or sets whether a default light attached to the camera is used when the scene has no lights of its own. |
 | [AvailableMultisamplingModes](Graphics3DControl/AvailableMultisamplingModes.md) { get; } | Gets the multisampling modes supported by the graphics device the control runs on. |
 | [AxesCenter](Graphics3DControl/AxesCenter.md) { get; set; } | Gets or sets the point that the coordinate axes and the grid pass through. |
@@ -29,6 +34,7 @@ public class Graphics3DControl : Graphics3DControlBase, ISceneHolder
 | [Exposure](Graphics3DControl/Exposure.md) { get; set; } | Gets or sets the exposure multiplier applied to the image during tone mapping. Larger values make the image brighter. |
 | [Gamma](Graphics3DControl/Gamma.md) { get; set; } | Gets or sets the gamma value applied to the image during tone mapping. Larger values make the image brighter. |
 | [Gizmo](Graphics3DControl/Gizmo.md) { get; set; } | Gets or sets the orientation indicator rendered on top of the control. |
+| [GridPlane](Graphics3DControl/GridPlane.md) { get; set; } | Gets or sets the coordinate planes on which the grid is drawn when ShowGrid is enabled. |
 | [GridSpacing](Graphics3DControl/GridSpacing.md) { get; set; } | Gets or sets the distance between the grid lines. When no value is set, the grid is split into ten equal parts. |
 | [GridThickness](Graphics3DControl/GridThickness.md) { get; set; } | Gets or sets the width, in pixels, of the grid lines. |
 | [HighlightColor](Graphics3DControl/HighlightColor.md) { get; set; } | Gets or sets the color of the box drawn around the highlighted element. |
@@ -44,6 +50,7 @@ public class Graphics3DControl : Graphics3DControlBase, ISceneHolder
 | [MultisamplingMode](Graphics3DControl/MultisamplingMode.md) { get; set; } | Gets or sets the number of samples per pixel used for multisample antialiasing. If the graphics device does not support the value, the closest supported mode is used. |
 | [NavigationBindings](Graphics3DControl/NavigationBindings.md) { get; set; } | Gets or sets the keyboard shortcuts that navigate the scene. When null, the control uses its default shortcuts. |
 | [RotateStep](Graphics3DControl/RotateStep.md) { get; set; } | Gets or sets the sensitivity of mouse-driven rotation. Larger values rotate the scene more slowly. |
+| [RotationMode](Graphics3DControl/RotationMode.md) { get; set; } | Gets or sets the pivot the camera orbits around when the user rotates the scene by dragging with the left mouse button. |
 | [SelectedElement](Graphics3DControl/SelectedElement.md) { get; set; } | Gets or sets the selected model or mesh. It is drawn with the selection outline. |
 | [SelectionColor](Graphics3DControl/SelectionColor.md) { get; set; } | Gets or sets the color of the box drawn around the selected element. |
 | [SelectionMode](Graphics3DControl/SelectionMode.md) { get; set; } | Gets or sets the level of the scene at which elements are selected when the user clicks them. |
@@ -53,9 +60,21 @@ public class Graphics3DControl : Graphics3DControlBase, ISceneHolder
 | [ShowInfoPanel](Graphics3DControl/ShowInfoPanel.md) { get; set; } | Gets or sets whether the panel that reports rendering statistics is displayed in the corner of the control. |
 | [Skybox](Graphics3DControl/Skybox.md) { get; set; } | Gets or sets the environment map that illuminates the scene and, when visible, forms its background. |
 | [ZoomRate](Graphics3DControl/ZoomRate.md) { get; set; } | Gets or sets the part of the scene size by which the camera moves on a single mouse wheel notch. |
+
+## Methods
+
+| name | description |
+| --- | --- |
+| [CalcHitInfo](Graphics3DControl/CalcHitInfo.md)(…) | Returns all models and meshes that are located under the given point. |
 | [Export](Graphics3DControl/Export.md)() | Creates a bitmap of the currently rendered image. |
 | [HitTest](Graphics3DControl/HitTest.md)(…) | Searches the scene for the model and mesh located under the given point. |
 | [LookCameraAtScene](Graphics3DControl/LookCameraAtScene.md)(…) | Moves the camera to a predefined view of the scene and places it at a distance that fits the scene into the control. (2 methods) |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [SelectionChanging](Graphics3DControl/SelectionChanging.md) | Occurs before the control applies a new selection, after the user clicks the control while SelectionMode is not None. Handlers can inspect the hit test results, replace the pending selection through the NewValue property, or cancel the change by setting Handled to true. |
 
 ## Remarks
 

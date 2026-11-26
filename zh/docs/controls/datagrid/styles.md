@@ -1,21 +1,21 @@
 ---
-title: Styles
+title: 样式
 order: 1000
 seealso: []
 ---
 
-# Styles
+# 样式 {#styles}
 
-Avalonia 样式系统允许您自定义 Eremex Avalonia 控件的设置以及 controls 组成的特定视觉元素的设置。本主题展示如何使用样式自定义数据 Grid control 的以下视觉元素：
+Avalonia 样式系统允许您自定义 Eremex Avalonia 控件的设置以及控件组成的特定视觉元素的设置。本主题展示如何使用样式自定义数据 Grid 控件的以下视觉元素：
 
 - 列标题
 - 行
 - 分组行
 - 行单元格
 
-使用 `DataGridControl.Styles` 属性更改 control 的样式。
+使用 `DataGridControl.Styles` 属性更改控件的样式。
 
-典型的样式具有样式选择器和属性设置器的集合。选择器指定封装视觉元素的目标 Control 对象。属性设置器指定目标 control 的属性及其值。
+典型的样式具有样式选择器和属性设置器的集合。选择器指定封装视觉元素的目标 Control 对象。属性设置器指定目标控件的属性及其值。
 
 以下代码创建一个简单的样式，将所有数据行的背景设置为相同的颜色。
 
@@ -30,11 +30,11 @@ xmlns:mxdgvis="clr-namespace:Eremex.AvaloniaUI.Controls.DataGrid.Visuals;assembl
 </mxdg:DataGridControl.Styles>
 ```
 
-## 将样式应用于特定的控制状态
+## 将样式应用于特定的控制状态 {#apply-styles-to-specific-control-states}
 
-Avalonia 中的样式选择器支持伪类。伪类是添加到选择器的关键字。它指定应用样式的目标 control 的状态。
+Avalonia 中的样式选择器支持伪类。伪类是添加到选择器的关键字。它指定应用样式的目标控件的状态。
 
-DataGrid 提供自定义伪类来处理 controls 视觉元素的特定状态。以下部分列出了 controls 视觉元素支持的自定义伪类。
+DataGrid 提供自定义伪类来处理控件视觉元素的特定状态。以下部分列出了控件视觉元素支持的自定义伪类。
 
 下面的代码创建一个针对 DataGrid 行的样式选择器。 `:focusedAndSelectedState` 伪类用于仅将样式应用于处于焦点状态的行。
 
@@ -46,9 +46,9 @@ xmlns:mxdgvis="clr-namespace:Eremex.AvaloniaUI.Controls.DataGrid.Visuals;assembl
 </Style>
 ```
 
-## 视觉元素的控件
+## 视觉元素的控件 {#visual-elements-controls}
 
-样式选择器的语法 should 指定应用样式的目标 control（封装可视元素的 Control 对象）。下面的 image 显示了 Data Grid 的视觉元素和相应的目标控件。
+样式选择器的语法应指定应用样式的目标控件（封装可视元素的 Control 对象）。下面的图像显示了 Data Grid 的视觉元素和相应的目标控件。
 
 ![datagrid-styling](../../images/datagrid-styling.png)
 
@@ -56,19 +56,19 @@ xmlns:mxdgvis="clr-namespace:Eremex.AvaloniaUI.Controls.DataGrid.Visuals;assembl
 Group row's DataContext?
 -->
 
-## 设置数据行样式
+## 设置数据行样式 {#style-a-data-row}
 
 数据行显示包含数据的单元格。
 
 使用以下信息自定义数据行的样式：
 
-### 目标控制类 
+### 目标控制类 {#target-control-class}
 `DataGridRowControl`
 
-### 数据上下文
+### 数据上下文 {#datacontext}
 一行的数据（业务）对象
 
-### 自定义伪类
+### 自定义伪类 {#custom-pseudo-classes}
 
 <!--TODO
 uncomment when multiple selection is implemented
@@ -83,14 +83,14 @@ uncomment when multiple selection is implemented
  uncomment when multiple selection is implemented
   and selected. This state is in effect in multiple- and single row selection modes. -->
 
-- ":editingState" — 一行有一个活动的 in-place 编辑器。
+- ":editingState" — 一行有一个活动的就地编辑器。
 
-### 示例 - 如何自定义焦点行的样式
+### 示例 - 如何自定义焦点行的样式 {#example-how-to-customize-the-focused-rows-style}
 
 以下代码创建一个自定义焦点行背景的样式。
 
 Data Grid 行根据预定义的模板呈现。该模板包含一个 `Border` 对象（名为 _RowBorder_），该对象用边框和背景装饰单元格。 
-下面的示例更改焦点行的 _RowBorder_ 对象的 `Background` setting。
+下面的示例更改焦点行的 _RowBorder_ 对象的 `Background` 设置。
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -118,14 +118,14 @@ xmlns:mxdgvis="clr-namespace:Eremex.AvaloniaUI.Controls.DataGrid.Visuals;assembl
 
 -->
 
-### 示例 - 如何根据单元格值自定义行的外观设置
+### 示例 - 如何根据单元格值自定义行的外观设置 {#example-how-to-customize-a-rows-appearance-settings-according-to-cell-values}
 
 以下代码根据行值自定义行的背景颜色和字体设置。
 
 ![datagrid-rowstyle-example](../../images/datagrid-rowstyle-example.png)
 
-_EmploymentType_ column 中具有 _Contract_ 值的行以斜体绘制。
-当行单元格不处于编辑模式时，它们将使用 _TextBlock_ 控件呈现。创建的样式会修改 _TextBlock.FontStyle_ attached property 以调整所有行单元格中文本的字体样式。实际的字体样式由 _EmploymentTypeToFontStyleConverter_ 对象确定。
+_EmploymentType_ 列中具有 _Contract_ 值的行以斜体绘制。
+当行单元格不处于编辑模式时，它们将使用 _TextBlock_ 控件呈现。创建的样式会修改 _TextBlock.FontStyle_ 附加属性以调整所有行单元格中文本的字体样式。实际的字体样式由 _EmploymentTypeToFontStyleConverter_ 对象确定。
 
 状态为 _Married_ 的行的背景颜色设置为 _CornSilk_。 `Binding` 对象从 DataContext 获取 _Married_ 布尔属性值，其中包含行的业务对象。然后，它使用 `Eremex.AvaloniaUI.Controls.BoolToObjectConverter` 转换器将布尔值转换为画笔。
 
@@ -184,27 +184,27 @@ public class EmploymentTypeToFontStyleConverter : IValueConverter
 }
 ```
 
-## 设置行单元格样式
+## 设置行单元格样式 {#style-a-row-cell}
 
 数据行中的单元格显示网格列的值。
 
 要自定义行单元格的样式，请使用以下信息：
 
-### 目标控制类
+### 目标控制类 {#target-control-class_1}
 
 `CellControl`
 
-### 数据上下文
+### 数据上下文 {#datacontext_1}
 
 一个 `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData` 对象。 `CellData` 对象公开的主要属性是：
 
-- `Column` — 显示单元格的 column（`GridColumn` 对象）。 
-- `DataControl` — 当前 `DataGridControl` 对象。
-- `Row` — 行的 underlying 数据（业务）对象。
-- `ValidationInfo` — 包含单元格 validation 信息的对象。
+- `Column` — 显示单元格的列（[`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) 对象）。 
+- `DataControl` — 当前 [`DataGridControl`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md) 对象。
+- `Row` — 行的基础数据（业务）对象。
+- [`ValidationInfo`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationInfo.md) — 包含单元格 validation 信息的对象。
 - `Value` — 单元格的值。
 
-### 自定义伪类
+### 自定义伪类 {#custom-pseudo-classes_1}
 
 自定义伪类与应用于行对象的伪类相匹配。它们如下所示：
 
@@ -222,13 +222,13 @@ uncomment when multiple selection is implemented
 并选择。该状态在多行和单行选择模式下有效。 
  -->
 
-- ":editingState" — 单元格的 in-place 编辑器处于活动状态。
+- ":editingState" — 单元格的就地编辑器处于活动状态。
 
-### 示例 - 如何根据单元格值自定义单元格样式
+### 示例 - 如何根据单元格值自定义单元格样式 {#example-how-to-customize-a-cells-style-according-to-the-cell-value}
 
 下面代码中的 Style 对象设置 _OnVacation_ 行属性中包含 `true` 值的单元格的背景。
 
-样式将单元格 controls（`CellControl` 对象）的 `Background` 属性设置为自定义 _OnVacationCellValueToBrushConverter_ 转换器返回的画笔。 converter 根据单元格的 column 和值返回画笔。
+样式将单元格控件（`CellControl` 对象）的 `Background` 属性设置为自定义 _OnVacationCellValueToBrushConverter_ 转换器返回的画笔。 converter 根据单元格的列和值返回画笔。
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -278,13 +278,13 @@ bool onVacation = (bool)values[0]; - InvalidCastException
 bug - MX-114
 -->
 
-## 设置组行样式
+## 设置组行样式 {#style-a-group-row}
 
-当您按 column 对数据进行分组时，分组行会合并其他行。
+当您按列对数据进行分组时，分组行会合并其他行。
 
 要自定义组行的样式，请使用以下信息：
 
-### 目标控制类
+### 目标控制类 {#target-control-class_2}
 
 `DataGridGroupRowControl`
 
@@ -304,9 +304,9 @@ check:
 - ":focusedAndSelectedState" — 一行已获得焦点并被选中。该状态在多行和单行选择模式下有效。
 - ":editingState" — 节点具有活动的 in-place 编辑器。 -->
 
-### 示例 - 如何自定义组行的外观设置
+### 示例 - 如何自定义组行的外观设置 {#example-how-to-customize-a-group-rows-appearance-settings}
 
-以下代码显示如何将 paint 组行的文本以粗体显示。
+以下代码显示如何将绘制组行的文本以粗体显示。
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -319,29 +319,29 @@ xmlns:mxdgvis="clr-namespace:Eremex.AvaloniaUI.Controls.DataGrid.Visuals;assembl
 </mxdg:DataGridControl.Styles>
 ```
 
-## 设置列标题的样式
+## 设置列标题的样式 {#style-a-column-header}
 
-column 标头显示 column 的标题和排序指示符。
+列标头显示列的标题和排序指示符。
 
-使用以下信息自定义 column 标头的样式：
+使用以下信息自定义列标头的样式：
 
-### 目标控制类
+### 目标控制类 {#target-control-class_3}
 
 `ColumnHeaderControl`
 
-### 数据上下文
+### 数据上下文 {#datacontext_2}
 
-`GridColumn`
+[`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md)
 
-### 自定义伪类
+### 自定义伪类 {#custom-pseudo-classes_2}
 
-- ":sortascending" — column 按升序排序。
-- ":sortdescending" — column 按降序排序。
-- ":dragging" — 正在拖动 column。
+- ":sortascending" — 列按升序排序。
+- ":sortdescending" — 列按降序排序。
+- ":dragging" — 正在拖动列。
 
-### 示例 - 如何自定义特定 column 标头的外观设置
+### 示例 - 如何自定义特定列标头的外观设置 {#example-how-to-customize-a-specific-column-headers-appearance-settings}
 
-以下代码将 _OnVacation_ column 标头绘制为粗体。
+以下代码将 _OnVacation_ 列标头绘制为粗体。
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"

@@ -11,11 +11,11 @@ The Eremex Controls Library includes Window and MessageBox components that suppo
 
 ## MxWindow
 
-`MxWindow` is a window that uses the Eremex visual themes to paint the window's title bar and borders.
+[`MxWindow`](../../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) is a window that uses the Eremex visual themes to paint the window's title bar and borders.
 
 ![mxwindow](../../images/mxwindow.png)
 
-- `MxWindow` is a Window component descendant.
+- [`MxWindow`](../../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) is a Window component descendant.
 - Provides options to customize the visibility of the standard buttons in the title bar
 - Provides options to specify custom glyphs for these buttons
 

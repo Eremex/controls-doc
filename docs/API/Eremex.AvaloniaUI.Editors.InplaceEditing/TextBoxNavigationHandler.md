@@ -12,11 +12,16 @@ Provides keyboard navigation for the text box inplace editor.
 public class TextBoxNavigationHandler : IInplaceEditorNavigationHandler
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TextBoxNavigationHandler](TextBoxNavigationHandler/TextBoxNavigationHandler.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [NeedsKey](TextBoxNavigationHandler/NeedsKey.md)(…) | Determines whether the text box processes the specified key. |
 
 ## See Also

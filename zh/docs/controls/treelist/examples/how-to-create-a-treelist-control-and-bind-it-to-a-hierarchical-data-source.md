@@ -1,31 +1,32 @@
 ---
 title: 如何创建 TreeList 并将其绑定到层次化数据源
+order: 10000
 seealso: []
 ---
 
-# 如何创建 TreeList 并将其绑定到层次化数据源
+# 如何创建 TreeList 并将其绑定到层次化数据源 {#how-to-create-a-treelist-control-and-bind-it-to-a-hierarchical-data-source}
 
 本示例创建以下控件:
 
-- 一个 `TreeListControl` 控件,用于显示 _Employee_ 对象的层次化列表。已启用多节点选择,允许您一次选中(高亮)多个节点。
+- 一个 [`TreeListControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md) 控件,用于显示 _Employee_ 对象的层次化列表。已启用多节点选择,允许您一次选中(高亮)多个节点。
 - 一个文本编辑器,用于显示当前在 TreeList 中获得焦点的员工姓名。
 - 一个列表框控件,用于显示在 TreeList 中被选中(高亮)的员工姓名。
 
 TreeList 绑定到 _Employee_ 业务对象,该对象表示一个[层次化数据源](../data-binding/binding-to-hierarchical-data.md)。它包含 _Subordinates_ 集合,该集合的内容应作为子节点显示。
 
-在本示例中,以下主要属性用于设置 `TreeListControl`:
+在本示例中,以下主要属性用于设置 [`TreeListControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md):
 
-- `DataControlBase.ItemsSource` — 指定控件的数据源。
-- `TreeListControl.Columns` — 指定绑定到数据源属性的 TreeList 列集合。
-- `TreeListControlBase.ChildrenFieldName` — 指定在底层业务对象中存储子数据的字段(属性)名称。
-- `TreeListControlBase.HasChildrenFieldName` — 指定一个字段(属性)的名称,如果业务对象拥有子数据,该字段返回 `true`,否则返回 `false`。
-- `TreeListControlBase.SelectionMode` — 启用多节点选择。
+- [`DataControlBase.ItemsSource`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ItemsSource.md) — 指定控件的数据源。
+- [`TreeListControl.Columns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Columns.md) — 指定绑定到数据源属性的 TreeList 列集合。
+- [`TreeListControlBase.ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) — 指定在底层业务对象中存储子数据的字段(属性)名称。
+- [`TreeListControlBase.HasChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/HasChildrenFieldName.md) — 指定一个字段(属性)的名称,如果业务对象拥有子数据,该字段返回 `true`,否则返回 `false`。
+- [`TreeListControlBase.SelectionMode`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectionMode.md) — 启用多节点选择。
 
-在多节点选择模式下,用户可以使用鼠标和键盘选中(高亮)多个节点。例如,用户可以按住 CTRL 键并单击各个节点来选中它们。TreeList 允许您通过 `DataControlBase.SelectedItems` 集合访问当前选中的节点。
+在多节点选择模式下,用户可以使用鼠标和键盘选中(高亮)多个节点。例如,用户可以按住 CTRL 键并单击各个节点来选中它们。TreeList 允许您通过 [`DataControlBase.SelectedItems`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectedItems.md) 集合访问当前选中的节点。
 
 以下两个控件用于显示当前获得焦点和被选中的 TreeList 节点的信息:
 
-- 文本编辑器显示获得焦点节点的 _Employee_ 对象的姓名。该控件绑定到 TreeList 的 `FocusedItem` 属性。
+- 文本编辑器显示获得焦点节点的 _Employee_ 对象的姓名。该控件绑定到 TreeList 的 [`FocusedItem`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) 属性。
 - 列表框显示与 TreeList 选中节点对应的 _Employee_ 对象的姓名。
 
 本示例在应用程序启动时按姓名查找两个 TreeList 节点,并选中它们。

@@ -12,12 +12,22 @@ Groups auto-hidden panes along an edge of the dock manager.
 public class AutoHideGroup : DockGroup
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [AutoHideGroup](AutoHideGroup/AutoHideGroup.md)() | Initializes a new instance of the AutoHideGroup class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Dock](AutoHideGroup/Dock.md) { get; set; } | Gets or sets the edge of the dock manager where the group is displayed. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | static [GetAutoHideHeight](AutoHideGroup/GetAutoHideHeight.md)(…) | Gets the height of the specified object's expanded auto-hide panel. |
 | static [GetAutoHideWidth](AutoHideGroup/GetAutoHideWidth.md)(…) | Gets the width of the specified object's expanded auto-hide panel. |
 | static [SetAutoHideHeight](AutoHideGroup/SetAutoHideHeight.md)(…) | Sets the height of the specified object's expanded auto-hide panel. |

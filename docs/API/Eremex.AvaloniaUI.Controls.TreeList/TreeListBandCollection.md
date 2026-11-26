@@ -12,7 +12,7 @@ Represents a collection of tree list bands.
 public class TreeListBandCollection : DataControlBandCollectionBase<TreeListBand>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

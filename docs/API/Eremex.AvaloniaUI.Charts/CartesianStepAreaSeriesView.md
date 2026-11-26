@@ -12,11 +12,16 @@ Displays the data of a Cartesian series as an area filled between the stepped li
 public class CartesianStepAreaSeriesView : CartesianStepLineSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CartesianStepAreaSeriesView](CartesianStepAreaSeriesView/CartesianStepAreaSeriesView.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Transparency](CartesianStepAreaSeriesView/Transparency.md) { get; set; } | Gets or sets the transparency of the filled area. Zero makes the area opaque, and one makes it fully transparent. |
 
 ## See Also

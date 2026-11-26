@@ -12,7 +12,7 @@ Represents a directional light that points along the camera's viewing direction,
 public class CameraDirectionalLight : DirectionLightBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

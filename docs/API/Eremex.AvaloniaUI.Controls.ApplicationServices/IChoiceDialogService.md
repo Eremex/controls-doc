@@ -12,7 +12,7 @@ Shows a dialog with an arbitrary set of buttons and returns the result of the pr
 public interface IChoiceDialogService
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

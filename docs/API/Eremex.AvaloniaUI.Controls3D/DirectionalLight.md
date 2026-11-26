@@ -12,11 +12,16 @@ Represents a light that illuminates the scene with parallel rays, as sunlight or
 public class DirectionalLight : DirectionLightBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DirectionalLight](DirectionalLight/DirectionalLight.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Direction](DirectionalLight/Direction.md) { get; set; } | Gets or sets the direction the rays travel in. The default value points along the negative Z axis, so the light illuminates surfaces that face the positive Z axis. |
 
 ## See Also

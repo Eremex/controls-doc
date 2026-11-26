@@ -12,7 +12,7 @@ A layout density offered by [`AppearanceService`](./AppearanceService.md).
 public sealed class DensityOption : IAppearanceOption
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

@@ -12,7 +12,7 @@ Provides data for the DragOver and Drop events.
 public class DataGridDragEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

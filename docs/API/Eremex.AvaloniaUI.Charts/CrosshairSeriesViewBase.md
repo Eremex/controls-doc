@@ -12,7 +12,7 @@ Serves as the base class for series views that can be located by the crosshair.
 public abstract class CrosshairSeriesViewBase : SeriesViewBase, ICrosshairSeriesView
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

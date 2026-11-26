@@ -12,11 +12,16 @@ Provides a set of commands for a data grid.
 public class DataGridControlCommands : DataControlCommands
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridControlCommands](DataGridControlCommands/DataGridControlCommands.md)(…) | Initializes a new instance of the DataGridControlCommands class with the specified data grid. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CollapseAllGroups](DataGridControlCommands/CollapseAllGroups.md) { get; } | Gets the command that collapses all group rows. |
 | [ExpandAllGroups](DataGridControlCommands/ExpandAllGroups.md) { get; } | Gets the command that expands all group rows. |
 | [GroupByColumn](DataGridControlCommands/GroupByColumn.md) { get; } | Gets the command that groups data by the specified column. |

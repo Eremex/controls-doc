@@ -4,24 +4,24 @@ order: 1000
 seealso: []
 ---
 
-# 如何为只读弹出式编辑器阻止打开弹出窗口
+# 如何为只读弹出式编辑器阻止打开弹出窗口 {#how-to-prevent-opening-popups-for-read-only-popup-editors}
 
 
-从 1.2 版本开始，您可以使用弹出式编辑器的 `ShowPopupIfReadOnly` 属性，来阻止只读弹出式编辑器打开弹出窗口。
+从 1.2 版本开始，您可以使用弹出式编辑器的 [`ShowPopupIfReadOnly`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditorProperties/ShowPopupIfReadOnly.md) 属性，来阻止只读弹出式编辑器打开弹出窗口。
 
-在早期版本中，您可以通过 `PopupEditor.PopupOpening` 事件来控制此行为。本主题将提供关于使用该事件的更多信息。
-
-
-当绑定到只读列时，内置弹出式编辑器（`DateEditor`、`ComboBoxEditor`、`MemoEditor` 等）仍然允许显示其弹出窗口。
-`PopupEditor.PopupOpening` 事件会在弹出窗口出现之前触发，使您可以有条件地禁用它——例如，当编辑器绑定到只读列时。您可以针对特定的内置编辑器处理此事件，也可以全局处理（将该逻辑应用于应用程序中所有的弹出式编辑器）。
+在早期版本中，您可以通过 [`PopupEditor.PopupOpening`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) 事件来控制此行为。本主题将提供关于使用该事件的更多信息。
 
 
-## 为特定的只读列禁用弹出窗口
+当绑定到只读列时，内置弹出式编辑器（[`DateEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md)、[`ComboBoxEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md)、[`MemoEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/MemoEditor.md) 等）仍然允许显示其弹出窗口。
+[`PopupEditor.PopupOpening`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) 事件会在弹出窗口出现之前触发，使您可以有条件地禁用它——例如，当编辑器绑定到只读列时。您可以针对特定的就地编辑器处理此事件，也可以全局处理（将该逻辑应用于应用程序中所有的弹出式编辑器）。
 
-1. 使用 `GridColumn.CellTemplate` 属性将内置编辑器与表格列关联。
-2. 处理该编辑器的 `PopupEditor.PopupOpening` 事件，以在为此编辑器显示弹出窗口时执行相应操作。
 
-在以下示例中，表格列与 `DateEditor` 内置编辑器相关联。`DateEditor.PopupOpening` 事件处理程序会在表格列为只读时禁用该编辑器的弹出窗口。
+## 为特定的只读列禁用弹出窗口 {#disable-popups-for-a-specific-read-only-column}
+
+1. 使用 [`GridColumn.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) 属性将就地编辑器与表格列关联。
+2. 处理该编辑器的 [`PopupEditor.PopupOpening`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) 事件，以在为此编辑器显示弹出窗口时执行相应操作。
+
+在以下示例中，表格列与 [`DateEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md) 就地编辑器相关联。[`DateEditor.PopupOpening`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) 事件处理程序会在表格列为只读时禁用该编辑器的弹出窗口。
 
 ``` xml
 <mxdg:GridColumn FieldName="BirthDate" Width="*" MinWidth="80">
@@ -40,15 +40,15 @@ private void DateEditor_PopupOpening(object sender, OpeningPopupEventArgs e)
 }
 ```
 
-## 为所有绑定到只读列的弹出式编辑器禁用弹出窗口
+## 为所有绑定到只读列的弹出式编辑器禁用弹出窗口 {#disable-popups-for-all-popup-editors-bound-to-read-only-columns}
 
 您可以使用类处理程序（Class Handlers）或行为（Behavior）机制来全局处理编辑器的事件。
 
-### 使用类处理程序全局禁用只读编辑器的弹出窗口
+### 使用类处理程序全局禁用只读编辑器的弹出窗口 {#use-a-class-handler-to-disable-popups-for-read-only-editors-globally}
 
 Avalonia 中的类处理程序允许在类级别而非实例级别处理事件。它们使您能够将事件处理程序附加到某种控件类型的所有实例上，而无需手动为每个实例订阅事件。
 
-以下示例为 `PopupEditor.PopupOpening` 事件添加了一个类处理程序。此代码会影响 `PopupEditor` 的所有后代类。
+以下示例为 [`PopupEditor.PopupOpening`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) 事件添加了一个类处理程序。此代码会影响 [`PopupEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor.md) 的所有后代类。
 
 
 ``` cs
@@ -68,11 +68,11 @@ public partial class MainWindow : MxWindow
 ```
 
 
-### 使用行为机制全局禁用只读编辑器的弹出窗口
+### 使用行为机制全局禁用只读编辑器的弹出窗口 {#use-the-behavior-mechanism-to-disable-popups-for-read-only-editors-globally}
 
 此方法需要使用 `Avalonia.Xaml.Interactivity` 包，该包为 Avalonia UI 提供了 Behavior 模式的实现。`Behavior` 对象允许您为给定控件类型的所有实例自定义属性并订阅事件。
 
-以下代码为所有 `PopupEditor` 类实例创建了一个全局 `Behavior` 对象。该 `Behavior` 对象处理 `PopupEditor.PopupOpening` 事件，以禁用只读列中的弹出窗口。
+以下代码为所有 [`PopupEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor.md) 类实例创建了一个全局 `Behavior` 对象。该 `Behavior` 对象处理 [`PopupEditor.PopupOpening`](../../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) 事件，以禁用只读列中的弹出窗口。
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"

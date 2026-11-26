@@ -10,8 +10,8 @@ seealso: []
 
 Размещение панелей (включая размещение команд панелей) можно сохранить в поток и загрузить из него позже (например, при следующем запуске приложения). Для этого используйте следующие методы сериализации и десериализации размещения:
 
-- `ToolbarManager.SaveLayout` — сохраняет размещение панелей в поток.
-- `ToolbarManager.RestoreLayout` — загружает ранее сохранённое размещение из потока.
+- [`ToolbarManager.SaveLayout`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/SaveLayout.md) — сохраняет размещение панелей в поток.
+- [`ToolbarManager.RestoreLayout`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/RestoreLayout.md) — загружает ранее сохранённое размещение из потока.
 
 !!! note
 
@@ -23,7 +23,7 @@ seealso: []
 <mxb:ToolbarButtonItem Name="btnNew" .../>
 ```
 
-Следующий пример показывает, как можно сохранить и восстановить размещение панелей в файл и из файла.
+Этот пример показывает, как можно сохранить и восстановить размещение панелей в файл и из файла.
 
 ``` cs
 string fileName = "bars_layout.xml";

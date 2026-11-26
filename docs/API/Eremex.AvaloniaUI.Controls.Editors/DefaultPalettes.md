@@ -12,7 +12,7 @@ Provides the default color palettes.
 public static class DefaultPalettes
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

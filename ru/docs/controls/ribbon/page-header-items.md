@@ -10,7 +10,7 @@ seealso: []
 
 ![ribbon-pageheaderitems](../../images/ribbon-pageheaderitems.png)
 
-Используйте коллекцию `RibbonControl.PageHeaderItems`, чтобы добавлять, получать доступ и изменять элементы заголовка страницы.
+Используйте коллекцию [`RibbonControl.PageHeaderItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/PageHeaderItems.md), чтобы добавлять, получать доступ и изменять элементы заголовка страницы.
 
 ``` xml
 <mxr:RibbonControl.PageHeaderItems>
@@ -27,7 +27,7 @@ seealso: []
 </mxr:RibbonControl.PageHeaderItems>
 ```
 
-Вы также можете использовать свойство `RibbonControl.PageHeaderItemsSource`, чтобы создавать элементы заголовка страницы из коллекции бизнес-объектов, хранящихся во View Model. Соответствующие шаблоны данных должны определять [элементы Ribbon](ribbon-items.md).
+Вы также можете использовать свойство [`RibbonControl.PageHeaderItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/PageHeaderItemsSource.md), чтобы создавать элементы заголовка страницы из коллекции бизнес-объектов, хранящихся во View Model. Соответствующие шаблоны данных должны определять [элементы Ribbon](ribbon-items.md).
 
 
 <br>

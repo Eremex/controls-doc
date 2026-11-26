@@ -12,11 +12,16 @@ Provides data for the ShowingEditor event.
 public class TreeViewShowingEditorEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeViewShowingEditorEventArgs](TreeViewShowingEditorEventArgs/TreeViewShowingEditorEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Cancel](TreeViewShowingEditorEventArgs/Cancel.md) { get; set; } | Gets or sets whether editor activation is canceled. |
 | [Node](TreeViewShowingEditorEventArgs/Node.md) { get; } | Gets the node whose cell is being edited. |
 

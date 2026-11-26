@@ -12,11 +12,16 @@ Represents a series of a Cartesian chart. The series plots the data supplied by 
 public class CartesianSeries : Series
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CartesianSeries](CartesianSeries/CartesianSeries.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [View](CartesianSeries/View.md) { get; set; } | Gets or sets the series view that defines the appearance of the series. |
 
 ## See Also

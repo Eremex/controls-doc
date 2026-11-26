@@ -4,7 +4,7 @@ order: 90000
 seealso: []
 ---
 
-# 绑定到自引用数据源
+# 绑定到自引用数据源 {#binding-to-self-referential-data-source}
 
 您可以使用自引用数据源对记录之间的层次结构关系进行编码。自引用数据源是一个平面列表或记录集合。它的记录有两个指定父子关系的服务属性：
 
@@ -20,17 +20,17 @@ seealso: []
 要将 TreeList/TreeView 控件绑定到自引用数据源，请执行以下操作：
 
 - 确保数据源记录具有两个指定“键”字段和“父键字段”的公共属性。
-- 将该控件的 `TreeListControlBase.KeyFieldName` 属性设置为键字段名称。
-- 将该控件的 `TreeListControlBase.ParentFieldName` 属性设置为_父键字段_名称。
-- 将该控件的 `TreeListControlBase.RootValue` 属性设置为为数据源中的根记录定义的根值。
+- 将该控件的 [`TreeListControlBase.KeyFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/KeyFieldName.md) 属性设置为键字段名称。
+- 将该控件的 [`TreeListControlBase.ParentFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ParentFieldName.md) 属性设置为_父键字段_名称。
+- 将该控件的 [`TreeListControlBase.RootValue`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RootValue.md) 属性设置为为数据源中的根记录定义的根值。
 
-## 服务栏的可见性
+## 服务栏的可见性 {#visibility-of-service-columns}
 
-TreeList 默认情况下不创建绑定到服务关键字段的列。要允许该控件自动创建绑定到指定_键字段_和_父键字段_的列，请将 `AutoGenerateColumns` 和 `AutoGenerateServiceColumns` 属性设置为 `true`。
+TreeList 默认情况下不创建绑定到服务关键字段的列。要允许该控件自动创建绑定到指定_键字段_和_父键字段_的列，请将 [`AutoGenerateColumns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md) 和 [`AutoGenerateServiceColumns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateServiceColumns.md) 属性设置为 `true`。
 
-## 例子
+## 例子 {#example}
 
-以下示例将 TreeList 控件绑定到自引用数据源（_Employee_ 记录的集合）。Employee 类定义了两个属性（_ID_ 和 _ParentID_），分别指定记录的_键字段_和_父键字段_。根记录的_父键字段_设置为 **-1**，因此该控件的 `RootValue` 属性设置为该值。
+以下示例将 TreeList 控件绑定到自引用数据源（_Employee_ 记录的集合）。Employee 类定义了两个属性（_ID_ 和 _ParentID_），分别指定记录的_键字段_和_父键字段_。根记录的_父键字段_设置为 **-1**，因此该控件的 [`RootValue`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RootValue.md) 属性设置为该值。
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -85,7 +85,7 @@ public partial class Employee : ObservableObject
 }
 ```
 
-# 另请参阅
+# 另请参阅 {#see-also}
 - [数据绑定](./index.md)
 - [绑定到层级数据](binding-to-hierarchical-data.md)
 - [列](../columns.md)

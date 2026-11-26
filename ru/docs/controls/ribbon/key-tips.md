@@ -31,7 +31,7 @@ seealso: []
 - Нажатие Key Tip, который в данный момент не виден, не действует. 
 
     !!! tip
-        Вы можете назначать сочетания клавиш (такие как CTRL+O, CTRL+B и так далее) командам Ribbon с помощью свойства `HotKey`. Горячие клавиши позволяют пользователям активировать команды, если фокус находится в пределах области действия горячих клавиш (область действия горячих клавиш по умолчанию задаётся границами компонента `ToolbarManager`). Подробнее смотрите [Элементы Ribbon. Горячие клавиши](ribbon-items.md#горячие-клавиши).
+        Вы можете назначать сочетания клавиш (такие как CTRL+O, CTRL+B и так далее) командам Ribbon с помощью свойства `HotKey`. Горячие клавиши позволяют пользователям активировать команды, если фокус находится в пределах области действия горячих клавиш (область действия горячих клавиш по умолчанию задаётся границами компонента [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md)). Подробнее смотрите [Элементы Ribbon. Горячие клавиши](ribbon-items.md#горячие-клавиши).
 
 ## Возврат назад во время навигации с клавиатуры
 
@@ -51,9 +51,9 @@ seealso: []
 
 Следующие свойства позволяют назначать key tips элементам Ribbon:
 
-- `ToolbarItem.KeyTip`
-- `RibbonPage.KeyTip`
-- `RibbonControl.ApplicationButtonKeyTip`
+- [`ToolbarItem.KeyTip`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/KeyTip.md)
+- [`RibbonPage.KeyTip`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/KeyTip.md)
+- [`RibbonControl.ApplicationButtonKeyTip`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/ApplicationButtonKeyTip.md)
 
 ``` xml
 <!-- Specify a Key Tip for the Application Menu-->

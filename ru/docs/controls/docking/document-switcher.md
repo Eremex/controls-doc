@@ -33,11 +33,11 @@ seealso: []
 
 ## Отключение переключателя документов
 
-Установите свойство `DockManager.AllowDocumentSwitcher` в `false`, чтобы отключить переключатель документов. Эта настройка также отключает сочетания клавиш CTRL+TAB и CTRL+SHIFT+TAB для навигации между элементами докинга.
+Установите свойство [`DockManager.AllowDocumentSwitcher`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AllowDocumentSwitcher.md) в `false`, чтобы отключить переключатель документов. Эта настройка также отключает сочетания клавиш CTRL+TAB и CTRL+SHIFT+TAB для навигации между элементами докинга.
 
 ## Показ панелей в переключателе документов
 
-Чтобы предотвратить отображение панели в переключателе документов, отключите опцию `DockPane.ShowInDocumentSwitcher`.
+Чтобы предотвратить отображение панели в переключателе документов, отключите опцию [`DockPane.ShowInDocumentSwitcher`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/ShowInDocumentSwitcher.md).
 
 Закрытые панели недоступны в переключателе документов.
 
@@ -49,8 +49,8 @@ seealso: []
 
 Используйте следующие свойства, чтобы задать описания панели для отображения в переключателе документов: 
 
-- `DockPane.DocumentSwitcherDescription` — задаёт описание панели для отображения в верхней части переключателя документов.
-- `DockPane.DocumentSwitcherFooterDescription` — задаёт описание панели для отображения в нижней части переключателя документов.
+- [`DockPane.DocumentSwitcherDescription`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/DocumentSwitcherDescription.md) — задаёт описание панели для отображения в верхней части переключателя документов.
+- [`DockPane.DocumentSwitcherFooterDescription`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/DocumentSwitcherFooterDescription.md) — задаёт описание панели для отображения в нижней части переключателя документов.
 
 
 <br>

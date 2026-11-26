@@ -12,11 +12,16 @@ Provides data for the CompleteDragDrop event.
 public class TreeListCompleteDragDropEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListCompleteDragDropEventArgs](TreeListCompleteDragDropEventArgs/TreeListCompleteDragDropEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [DragNodes](TreeListCompleteDragDropEventArgs/DragNodes.md) { get; } | Gets the dragged nodes. |
 | [Effects](TreeListCompleteDragDropEventArgs/Effects.md) { get; } | Gets the final drag-and-drop effect. |
 

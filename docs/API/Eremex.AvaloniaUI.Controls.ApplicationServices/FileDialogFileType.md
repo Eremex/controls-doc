@@ -12,11 +12,16 @@ One file type offered by a file dialog: a display name and the patterns it match
 public class FileDialogFileType
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [FileDialogFileType](FileDialogFileType/FileDialogFileType.md)(…) | Initializes a new instance of the [`FileDialogFileType`](./FileDialogFileType.md) class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AppleUniformTypeIdentifiers](FileDialogFileType/AppleUniformTypeIdentifiers.md) { get; set; } | The uniform type identifiers this type matches, such as `public.png`. Used on Apple platforms. |
 | [MimeTypes](FileDialogFileType/MimeTypes.md) { get; set; } | The MIME types this type matches, such as `image/png`. Used on platforms that identify files by MIME type rather than by extension. |
 | [Name](FileDialogFileType/Name.md) { get; } | The text shown for this type in the dialog. |

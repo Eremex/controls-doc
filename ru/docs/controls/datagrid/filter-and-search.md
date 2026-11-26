@@ -36,11 +36,11 @@ Data Grid поддерживает функции фильтрации и пои
 
 Вы можете задать режим отображения меню фильтра глобально для всех колонок или для отдельных колонок, используя следующие свойства:
 
-- `DataGridControl.ColumnFilterPopupMode` (значение по умолчанию — `List`) — определяет режим отображения по умолчанию для меню фильтра всех колонок. Эта настройка применяется к колонкам, у которых свойство `GridColumn.FilterPopupMode` имеет значение `null`.
+- [`DataGridControl.ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnFilterPopupMode.md) (значение по умолчанию — `List`) — определяет режим отображения по умолчанию для меню фильтра всех колонок. Эта настройка применяется к колонкам, у которых свойство [`GridColumn.FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) имеет значение `null`.
 
-- `GridColumn.FilterPopupMode` (значение по умолчанию — `null`) — определяет режим отображения меню фильтра для отдельных колонок. Если задано, это свойство переопределяет глобальную настройку (`DataGridControl.ColumnFilterPopupMode`).
+- [`GridColumn.FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) (значение по умолчанию — `null`) — определяет режим отображения меню фильтра для отдельных колонок. Если задано, это свойство переопределяет глобальную настройку ([`DataGridControl.ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnFilterPopupMode.md)).
 
-В следующем примере режим отображения `CheckedList` применяется ко всем колонкам, а режим `List` — к колонке _City_.
+В этом примере режим отображения `CheckedList` применяется ко всем колонкам, а режим `List` — к колонке _City_.
 
 ``` cs
 dataGrid.ColumnFilterPopupMode = Eremex.AvaloniaUI.Controls.DataControl.FilterPopupMode.CheckedList;
@@ -63,47 +63,47 @@ dataGrid.Columns["City"].FilterPopupMode = Eremex.AvaloniaUI.Controls.DataContro
 
 **Члены контрола DataGrid**
 
-- `AllowColumnFiltering` — определяет, разрешены ли кнопки фильтра для всех колонок. Вы можете использовать свойство колонки `ColumnBase.AllowColumnFiltering`, чтобы переопределить глобальную настройку для отдельных колонок.
+- `AllowColumnFiltering` — определяет, разрешены ли кнопки фильтра для всех колонок. Вы можете использовать свойство колонки [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md), чтобы переопределить глобальную настройку для отдельных колонок.
 
-    Например, чтобы отключить кнопки фильтра для всех колонок, кроме одного, установите свойство `DataGridControl.AllowColumnFiltering` в `false`, а для целевой колонки свойство `ColumnBase.AllowColumnFiltering` — в `true`.
+    Например, чтобы отключить кнопки фильтра для всех колонок, кроме одного, установите свойство [`DataGridControl.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnFiltering.md) в `false`, а для целевой колонки свойство [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) — в `true`.
 
-- `ColumnFilterButtonDisplayMode` — определяет, всегда ли видны кнопки фильтра или они появляются только при наведении курсора мыши на заголовок колонки (по умолчанию).
+- [`ColumnFilterButtonDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnFilterButtonDisplayMode.md) — определяет, всегда ли видны кнопки фильтра или они появляются только при наведении курсора мыши на заголовок колонки (по умолчанию).
 
-- `ColumnFilterPopupMode` — определяет режим отображения по умолчанию (`List` или `CheckedList`) для меню фильтра всех колонок. Используйте свойство колонки `FilterPopupMode`, чтобы переопределить эту настройку для отдельных колонок.
+- [`ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnFilterPopupMode.md) — определяет режим отображения по умолчанию (`List` или `CheckedList`) для меню фильтра всех колонок. Используйте свойство колонки [`FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/FilterPopupMode.md), чтобы переопределить эту настройку для отдельных колонок.
 
-- Событие `CustomColumnDisplayText` — позволяет предоставить пользовательский отображаемый текст для значений колонки, в том числе в меню фильтра и на панели фильтра. Когда событие `CustomColumnDisplayText` возникает для значений на панели фильтра, параметр `SourceItemIndex` этого события возвращает `-1`.
+- Событие [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) — позволяет предоставить пользовательский отображаемый текст для значений колонки, в том числе в меню фильтра и на панели фильтра. Когда событие [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) возникает для значений на панели фильтра, параметр [`SourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomColumnDisplayTextEventArgs/SourceItemIndex.md) этого события возвращает `-1`.
 
-- `FilterPanelText` — возвращает текстовое представление фильтра, отображаемое на панели фильтра.
+- [`FilterPanelText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FilterPanelText.md) — возвращает текстовое представление фильтра, отображаемое на панели фильтра.
 
-- `FilterPanelDisplayMode` — определяет режим видимости панели фильтра. Доступные варианты: 
+- [`FilterPanelDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/FilterPanelDisplayMode.md) — определяет режим видимости панели фильтра. Доступные варианты: 
 
     - `Auto` (по умолчанию) — панель фильтра появляется, когда фильтр применяется к любой колонке.
     - `Never` — панель фильтра всегда скрыта.
 
-- `FilterString` — определяет критерии фильтрации, применённые к контролу. Вы можете использовать это свойство для [построения фильтра в коде](#фильтрация-в-коде).
+- [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) — определяет критерии фильтрации, применённые к контролу. Вы можете использовать это свойство для [построения фильтра в коде](#фильтрация-в-коде).
 
-- `IsFilterEnabled` — определяет, активен ли фильтр.
+- [`IsFilterEnabled`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsFilterEnabled.md) — определяет, активен ли фильтр.
 
-- `IsFilterPanelVisible` — возвращает, отображается ли в данный момент панель фильтра.
+- [`IsFilterPanelVisible`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/IsFilterPanelVisible.md) — возвращает, отображается ли в данный момент панель фильтра.
 
 
 
 **Члены колонки**
 
- - `ColumnBase.AllowColumnFiltering` — определяет, разрешена ли кнопка фильтра для текущей колонки. Чтобы включить или отключить кнопки фильтра для всех колонок, см. настройку `DataGridControl.AllowColumnFiltering`. Параметр `ColumnBase.AllowColumnFiltering` позволяет переопределить настройку `DataGridControl.AllowColumnFiltering` для отдельных колонок.
- - `ColumnBase.ColumnFilterMode` — определяет способ фильтрации данных колонки. Доступные варианты:
+ - [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) — определяет, разрешена ли кнопка фильтра для текущей колонки. Чтобы включить или отключить кнопки фильтра для всех колонок, см. настройку [`DataGridControl.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnFiltering.md). Параметр [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) позволяет переопределить настройку [`DataGridControl.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnFiltering.md) для отдельных колонок.
+ - [`ColumnBase.ColumnFilterMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ColumnFilterMode.md) — определяет способ фильтрации данных колонки. Доступные варианты:
 
-    - `Value` (по умолчанию) — данные колонки фильтруются по исходным значениям.
-    - `DisplayText` — данные колонки фильтруются по отображаемому тексту ячейки.
+    - [`Value`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomColumnDisplayTextEventArgsBase/Value.md) (по умолчанию) — данные колонки фильтруются по исходным значениям.
+    - [`DisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomColumnDisplayTextEventArgsBase/DisplayText.md) — данные колонки фильтруются по отображаемому тексту ячейки.
 
 <!-- TODO 
 Example for ColumnFilterMode.DisplayText.
 -->
 
-- `ColumnBase.FilterPopupMode` — определяет режим отображения меню фильтра (`List` или `CheckedList`) для отдельных колонок. Если задано, это свойство переопределяет свойство `ColumnFilterPopupMode` контрола.
+- [`ColumnBase.FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) — определяет режим отображения меню фильтра (`List` или `CheckedList`) для отдельных колонок. Если задано, это свойство переопределяет свойство [`ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnFilterPopupMode.md) контрола.
 
- - `ColumnBase.IsFiltered` — возвращает, применён ли фильтр к текущей колонке.
- - `ColumnBase.RoundDateTimeForColumnFilter` — определяет, следует ли игнорировать временную часть значений DateTime при построении фильтров для колонок, отображающих значения DateTime. Это свойство действует для фильтров, созданных с помощью меню фильтра колонок и [строки автофильтра](#строка-автофильтра).
+ - [`ColumnBase.IsFiltered`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/IsFiltered.md) — возвращает, применён ли фильтр к текущей колонке.
+ - [`ColumnBase.RoundDateTimeForColumnFilter`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/RoundDateTimeForColumnFilter.md) — определяет, следует ли игнорировать временную часть значений DateTime при построении фильтров для колонок, отображающих значения DateTime. Это свойство действует для фильтров, созданных с помощью меню фильтра колонок и [строки автофильтра](#строка-автофильтра).
 
 <!-- TODO
 Add screenshots for RoundDateTimeForColumnFilter
@@ -120,22 +120,22 @@ Add screenshots for RoundDateTimeForColumnFilter
 - Для поиска данных используется оператор сравнения **Contains** (содержит).
 - Поиск данных выполняется по всем колонкам.
 
-Установите свойство контрола `SearchPanelDisplayMode` (унаследованное от класса `DataControlBase`) в одно из следующих значений, чтобы включить панель поиска:
+Установите свойство контрола [`SearchPanelDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) (унаследованное от класса [`DataControlBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase.md)) в одно из следующих значений, чтобы включить панель поиска:
 
-- `SearchPanelDisplayMode.Always` — контрол постоянно отображает панель поиска.
-- `SearchPanelDisplayMode.HotKey` — контрол отображает панель поиска, когда пользователь нажимает горячую клавишу CTRL+F. Клавиша ESC очищает панель поиска. Повторное нажатие ESC закрывает панель. Пользователь также может активировать панель поиска из контекстного меню заголовка колонки.
+- [`SearchPanelDisplayMode.Always`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) — контрол постоянно отображает панель поиска.
+- [`SearchPanelDisplayMode.HotKey`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) — контрол отображает панель поиска, когда пользователь нажимает горячую клавишу CTRL+F. Клавиша ESC очищает панель поиска. Повторное нажатие ESC закрывает панель. Пользователь также может активировать панель поиска из контекстного меню заголовка колонки.
 
 
 
 ### Связанный API
 
-- `DataControlBase.IsSearchPanelVisible` — возвращает, отображается ли в данный момент панель поиска.
-- `DataControlBase.SearchPanelHighlightResults` — определяет, следует ли подсвечивать искомый текст в найденных строках. Значение свойства по умолчанию — `true`.
-- `DataControlBase.SearchText` — определяет текст поиска. Вы можете присвоить значение этому свойству, чтобы отфильтровать контрол программно. Эта функция фильтрации поддерживается, даже если панель поиска скрыта или отключена (свойство `SearchPanelDisplayMode` установлено в `SearchPanelDisplayMode.Never`).
-- `DataControlBase.ShowSearchPanelCloseButton` — позволяет скрыть встроенную кнопку закрытия панели поиска.
+- [`DataControlBase.IsSearchPanelVisible`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsSearchPanelVisible.md) — возвращает, отображается ли в данный момент панель поиска.
+- [`DataControlBase.SearchPanelHighlightResults`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchPanelHighlightResults.md) — определяет, следует ли подсвечивать искомый текст в найденных строках. Значение свойства по умолчанию — `true`.
+- [`DataControlBase.SearchText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchText.md) — определяет текст поиска. Вы можете присвоить значение этому свойству, чтобы отфильтровать контрол программно. Эта функция фильтрации поддерживается, даже если панель поиска скрыта или отключена (свойство [`SearchPanelDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) установлено в [`SearchPanelDisplayMode.Never`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md)).
+- [`DataControlBase.ShowSearchPanelCloseButton`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowSearchPanelCloseButton.md) — позволяет скрыть встроенную кнопку закрытия панели поиска.
 
 ### Пример
-Следующий код включает панель поиска. Свойство `SearchText` используется для задания текста поиска.
+Следующий код включает панель поиска. Свойство [`SearchText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchText.md) используется для задания текста поиска.
 
 ``` csharp
 dataGrid.SearchPanelDisplayMode = SearchPanelDisplayMode.Always;
@@ -152,7 +152,7 @@ dataGrid.SearchText = "search";
 
 ### Включение строки автофильтра
 
-Установите свойство `DataGridControl.ShowAutoFilterRow` в `true`.
+Установите свойство [`DataGridControl.ShowAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowAutoFilterRow.md) в `true`.
 
 
 ### Включение селекторов оператора фильтра во время выполнения
@@ -163,12 +163,12 @@ dataGrid.SearchText = "search";
 
 Используйте следующие свойства для включения селекторов оператора фильтра:
 
-- `DataGridControl.ShowConditionInAutoFilterRow` (по умолчанию `false`) — определяет видимость селекторов оператора фильтра по умолчанию для всех ячеек (колонок) строки автофильтра. 
-- `ColumnBase.ShowConditionInAutoFilterRow` — включает или отключает селектор оператора фильтра для отдельной колонки. Это свойство переопределяет настройку `DataGridControl.ShowConditionInAutoFilterRow`.
+- [`DataGridControl.ShowConditionInAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowConditionInAutoFilterRow.md) (по умолчанию `false`) — определяет видимость селекторов оператора фильтра по умолчанию для всех ячеек (колонок) строки автофильтра. 
+- [`ColumnBase.ShowConditionInAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ShowConditionInAutoFilterRow.md) — включает или отключает селектор оператора фильтра для отдельной колонки. Это свойство переопределяет настройку [`DataGridControl.ShowConditionInAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowConditionInAutoFilterRow.md).
 
 ### Задание операторов фильтра в коде
 
-Используйте свойство `ColumnBase.AutoFilterCondition`, чтобы программно задать операторы фильтра для отдельных ячеек (колонок) строки автофильтра. Поддерживаются следующие операторы фильтра:
+Используйте свойство [`ColumnBase.AutoFilterCondition`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AutoFilterCondition.md), чтобы программно задать операторы фильтра для отдельных ячеек (колонок) строки автофильтра. Поддерживаются следующие операторы фильтра:
 
 - `Contains` (применим к строковым значениям) — значения строки должны содержать введённый текст.
 - `Default` — режим по умолчанию. 
@@ -188,7 +188,7 @@ dataGrid.SearchText = "search";
 
 ### Задание значений фильтра
 
-Свойство `ColumnBase.AutoFilterValue` позволяет задать значение для конкретной ячейки строки автофильтра в коде. Вы можете использовать свойство `ColumnBase.AutoFilterValue` для фильтрации Data Grid, даже если строка автофильтра скрыта.
+Свойство [`ColumnBase.AutoFilterValue`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AutoFilterValue.md) позволяет задать значение для конкретной ячейки строки автофильтра в коде. Вы можете использовать свойство [`ColumnBase.AutoFilterValue`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AutoFilterValue.md) для фильтрации Data Grid, даже если строка автофильтра скрыта.
 
 ### Пример
 
@@ -206,21 +206,21 @@ colName.AutoFilterValue = "M";
 
 ## Динамическая фильтрация строк с помощью события
 
-Вы можете обрабатывать событие `CustomRowFilter`, чтобы скрывать определённые строки на основе пользовательского условия. 
+Вы можете обрабатывать событие [`CustomRowFilter`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomRowFilter.md), чтобы скрывать определённые строки на основе пользовательского условия. 
 
-Событие `CustomRowFilter` возникает для каждого элемента в привязанном источнике данных в следующих случаях:
+Событие [`CustomRowFilter`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomRowFilter.md) возникает для каждого элемента в привязанном источнике данных в следующих случаях:
 
 - Изменяется источник данных контрола.
 - Строки контрола фильтруются (например, с помощью панели поиска и строки автофильтра).
-- Вызывается метод `RefreshData` контрола.
+- Вызывается метод [`RefreshData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RefreshData.md) контрола.
 
-Используйте параметр события `SourceItemIndex`, чтобы идентифицировать текущий обрабатываемый элемент. Чтобы скрыть соответствующую строку, установите параметр события `Visible` в `false`.
+Используйте параметр события [`SourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomRowFilterEventArgs/SourceItemIndex.md), чтобы идентифицировать текущий обрабатываемый элемент. Чтобы скрыть соответствующую строку, установите параметр события [`Visible`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomRowFilterEventArgs/Visible.md) в `false`.
 
 ### Пример — фильтрация строк с помощью события
 
-В следующем примере контрол Data Grid отображает список объектов _EmployeeInfo_. Событие `CustomRowFilter` обрабатывается для реализации пользовательской фильтрации строк. Строки скрываются в соответствии со значением свойства _EmployeeInfo.EmploymentType_.
+В этом примере контрол Data Grid отображает список объектов _EmployeeInfo_. Событие [`CustomRowFilter`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomRowFilter.md) обрабатывается для реализации пользовательской фильтрации строк. Строки скрываются в соответствии со значением свойства _EmployeeInfo.EmploymentType_.
 
-Предполагается, что пример содержит кнопку-переключатель "Enable Filter", которая включает и отключает пользовательскую фильтрацию. При нажатии этой кнопки обработчик события `ToggleButton.IsCheckedChanged` вызывает метод `RefreshData`, чтобы обновить строки грида и повторно вызвать событие `CustomRowFilter`.
+Предполагается, что пример содержит кнопку-переключатель "Enable Filter", которая включает и отключает пользовательскую фильтрацию. При нажатии этой кнопки обработчик события `ToggleButton.IsCheckedChanged` вызывает метод [`RefreshData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RefreshData.md), чтобы обновить строки грида и повторно вызвать событие [`CustomRowFilter`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomRowFilter.md).
 
 ``` xml
 <ToggleButton Name="btnEnableFilter" Content="Enable Filter" IsCheckedChanged="BtnEnableFilter_IsCheckedChanged" />
@@ -253,7 +253,7 @@ private void DataGrid_CustomRowFilter(object sender, DataGridCustomRowFilterEven
 
 ## Фильтрация в коде
 
-Начиная с версии 1.2, вы можете использовать свойство `DataGridControl.FilterString`, чтобы фильтровать данные контрола в коде.
+Начиная с версии 1.2, вы можете использовать свойство [`DataGridControl.FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md), чтобы фильтровать данные контрола в коде.
 
 ``` cs
 dataGrid.FilterString = "[FirstName] = 'Julia' && [Position] = 'Sales Representative'";
@@ -267,8 +267,8 @@ dataGrid.FilterString = "[FirstName] = 'Julia' && [Position] = 'Sales Representa
 
 ### Очистка и отключение фильтра
 
-- Чтобы очистить фильтр, установите свойство `FilterString` в `null` или пустую строку.
-- Чтобы временно отключить фильтр, используйте свойство `DataControlBase.IsFilterEnabled`.
+- Чтобы очистить фильтр, установите свойство [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) в `null` или пустую строку.
+- Чтобы временно отключить фильтр, используйте свойство [`DataControlBase.IsFilterEnabled`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsFilterEnabled.md).
 
 ### Указание колонок
 
@@ -345,7 +345,7 @@ dataGrid.FilterString = "[Price] < 5 OR [Price] > 15";
 
 Вы можете использовать класс `Eremex.AvaloniaUI.Controls.Data.Filtering.ExprStringBuilder`, чтобы создавать расширенные критерии фильтрации. Эти критерии фильтрации могут включать операции над операндами, вызовы поддерживаемых функций и многое другое. Для построения критериев фильтрации используйте члены класса `ExprStringBuilder`.
 
-Чтобы получить строку фильтра, вызовите метод `ToString` результирующего объекта `ExprStringBuilder`. Затем вы можете присвоить эту строку фильтра свойству `DataControlBase.FilterString` целевого контрола.
+Чтобы получить строку фильтра, вызовите метод `ToString` результирующего объекта `ExprStringBuilder`. Затем вы можете присвоить эту строку фильтра свойству [`DataControlBase.FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) целевого контрола.
 
 
 ``` cs
@@ -371,7 +371,7 @@ control.FilterString = filterString;
 ### Указание значений перечисления
 
 Чтобы указать значения перечисления в строке фильтра, необходимо построить критерии фильтрации с использованием класса `Eremex.AvaloniaUI.Controls.Data.Filtering.ExprStringBuilder`.
-Метод `ExprStringBuilder.ToString` позволяет получить строку фильтра, которую можно присвоить свойству `FilterString` целевого контрола.
+Метод `ExprStringBuilder.ToString` позволяет получить строку фильтра, которую можно присвоить свойству [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) целевого контрола.
 
 Также необходимо зарегистрировать тип перечисления с помощью метода `EnumProcessingHelper.RegisterEnum`, прежде чем присваивать строку фильтра целевому контролу.
 

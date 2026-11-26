@@ -12,7 +12,7 @@ Serves as the base class for controls that render 3D models with the Vulkan API.
 public abstract class Graphics3DControlBase : TemplatedControl, IVulkanContentProvider
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

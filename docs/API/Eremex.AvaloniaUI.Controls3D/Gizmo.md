@@ -12,7 +12,7 @@ Represents the orientation indicator that a Graphics3DControl renders in one of 
 public class Gizmo : Graphics3DControlBase, ISceneHolder
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

@@ -12,7 +12,7 @@ Provides data for the CustomUnboundColumnData event.
 public class DataGridUnboundColumnDataEventArgs : EventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

@@ -12,7 +12,7 @@ Represents a single series row displayed by a crosshair label.
 public class CrosshairSeriesLabelItem : ViewModelBase
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

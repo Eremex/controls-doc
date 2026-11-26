@@ -4,7 +4,7 @@ order: 99999
 seealso: []
 ---
 
-# ListView 控件入门
+# ListView 控件入门 {#get-started-with-listview-control}
 
 [ListViewControl](listview-overview.md) 允许您在单列或多列中显示项列表。该控件支持项排序、分组、筛选和多选。
 
@@ -22,14 +22,14 @@ focusedItem = value;
 ListView 控件可以使用项源中的项进行填充。若要呈现绑定的项,您需要提供一个项模板。使用 ListView 控件时,您可以创建由多个字段组成的复杂项模板。
 本示例创建一个项模板,该模板定义了一个带有 SVG 图像和内部文本块的边框。
 
-## 创建新应用程序
+## 创建新应用程序 {#create-a-new-application}
 创建一个新的 [Eremex Avalonia .NET MVVM 应用程序](../../get-started/index.md)。将其命名为 _ListView-example_。
 
 ![listview-getstarted-newapp-wizard](../../images/listview-getstarted-newapp-wizard.png)
 
 若要显示 SVG 图像,请将 `Avalonia.Svg.Skia` NuGet 包添加到项目中。
 
-## 定义项源
+## 定义项源 {#define-an-item-source}
 
 在 _MainWindowViewModel.cs_ 文件中,创建封装项对象的 _ItemViewModel_ 类。
 
@@ -94,7 +94,7 @@ public partial class MainWindowViewModel : ViewModelBase
 
 `Eremex.AvaloniaUI.Controls.Utils.ImageLoader.LoadSvgImage` 方法用于加载存储在当前项目特定文件夹中的 SVG 图像。假定 SVG 图像放置在 _Assets_ 文件夹中,并且其 `Build Action` 属性设置为 `AvaloniaResource`。请确保项目中已包含 `Avalonia.Svg.Skia` 包。
 
-## 创建 ListView 控件
+## 创建 ListView 控件 {#create-a-listview-control}
 
 打开 _MainWindow.axaml_ 文件,并在 XAML 中定义一个 `ListViewControl` 组件。
 
@@ -105,7 +105,7 @@ xmlns:mxlv="https://schemas.eremexcontrols.net/avalonia/listview"
 </mxlv:ListViewControl>
 ```
 
-## 将 ListView 绑定到项集合
+## 将 ListView 绑定到项集合 {#bind-the-listview-to-an-item-collection}
 
 请确保主窗口的 DataContext(以及由此产生的 ListView 的 DataContext)已设置为 _MainWindowViewModel_ 对象。请参阅将 DataContext 分配给主窗口的 _App.axaml.cs_ 文件。
 
@@ -116,7 +116,7 @@ xmlns:mxlv="https://schemas.eremexcontrols.net/avalonia/listview"
 </mxlv:ListViewControl>
 ```
 
-## 定义项模板
+## 定义项模板 {#define-an-item-template}
 
 ListView 控件没有针对项的默认呈现方式。若要以特定方式呈现项,请通过 `ListViewControl.ItemTemplate` 属性指定一个项模板。
 
@@ -142,7 +142,7 @@ ListView 控件没有针对项的默认呈现方式。若要以特定方式呈�
 </mxlv:ListViewControl>
 ```
 
-## 指定项大小
+## 指定项大小 {#specify-item-size}
 
 ListView 控件根据第一个项计算默认项大小,并将其应用于其他项。因此,所有 ListView 项的显示大小都相同。
 
@@ -154,7 +154,7 @@ ListView 控件根据第一个项计算默认项大小,并将其应用于其他�
 ```
 
 
-## 对项进行分组
+## 对项进行分组 {#group-items}
 
 您可以按任意数量的项属性对 ListView 元素进行排序和/或分组。当您按某个属性分组时,会创建组合项的组行。请注意,组行会按分组属性自动排序。
 
@@ -179,7 +179,7 @@ ListView 控件根据第一个项计算默认项大小,并将其应用于其他�
 </mxlv:ListViewControl>
 ```
 
-## 对项进行排序
+## 对项进行排序 {#sort-items}
 
 让我们按 _Date_ 项属性以降序对每个组中的项进行排序。为此,请向 `ListViewControl.SortInfo` 集合添加一个新的 `ListViewSortInfo` 对象,并将其 `ListViewSortInfo.FieldName` 和 `ListViewSortInfo.SortDirection` 成员设置为相应的值。
 
@@ -192,7 +192,7 @@ ListView 控件根据第一个项计算默认项大小,并将其应用于其他�
 
 由于 `ListViewControl.GroupCount` 属性设置为 `1`,`ListViewControl.SortInfo` 集合中的第一个 `ListViewSortInfo` 对象指定用于对数据进行分组的字段。第二个 `ListViewSortInfo` 对象则仅用于对数据进行排序的字段。
 
-## 选择项排列模式
+## 选择项排列模式 {#select-item-arrangement-mode}
 
 ListView 支持两种项排列模式,您可以使用 `ListViewControl.ItemLayoutMode` 属性进行选择:
 
@@ -207,7 +207,7 @@ ListView 支持两种项排列模式,您可以使用 `ListViewControl.ItemLayout
 在本教程中,我们将使用默认的 `Wrap` 排列模式。
 
 
-## 获取聚焦(选中)的项
+## 获取聚焦(选中)的项 {#obtain-focused-selected-item}
 
 当用户在单项选择模式下使用鼠标或键盘点击特定项时,聚焦项会发生变化。您可以使用 `ListViewControl.FocusedItem` 或 `ListViewControl.FocusedItemIndex` 属性来确定聚焦项。
 
@@ -246,13 +246,13 @@ public partial class MainWindowViewModel : ViewModelBase
 
 若要允许同时选中多个项,请将 `ListViewControl.SelectionMode` 属性设置为 `Multiple`。在这种情况下,您可以从 `ListViewControl.SelectedItems` 集合中获取选中的项。
 
-## 结果
+## 结果 {#result}
 
 您可以生成并运行该应用程序,以查看以下结果:
 
 ![listview-getstarted-result](../../images/listview-getstarted-result.png)
 
-## 完整代码
+## 完整代码 {#complete-code}
 
 _MainWindow.axaml_:
 

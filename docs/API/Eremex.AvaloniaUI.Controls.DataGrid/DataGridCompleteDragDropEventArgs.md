@@ -12,11 +12,16 @@ Provides data for the CompleteDragDrop event.
 public class DataGridCompleteDragDropEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridCompleteDragDropEventArgs](DataGridCompleteDragDropEventArgs/DataGridCompleteDragDropEventArgs.md)(…) | Initializes a new instance of the DataGridCompleteDragDropEventArgs class with the specified items and effects. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Effects](DataGridCompleteDragDropEventArgs/Effects.md) { get; } | Gets the final drag-and-drop effects. |
 | [Items](DataGridCompleteDragDropEventArgs/Items.md) { get; } | Gets the data source items that were dragged. |
 

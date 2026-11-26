@@ -12,11 +12,16 @@ Displays a control in a popup with optional resize and close buttons.
 public class PopupContainer : TemplatedControl, INavigatable, IPopup, IResizeablePopupOwner
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PopupContainer](PopupContainer/PopupContainer.md)() | Initializes a new instance of the PopupContainer class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Child](PopupContainer/Child.md) { get; set; } | Gets or sets the control displayed in the popup. |
 | [IsOpen](PopupContainer/IsOpen.md) { get; set; } | Gets or sets whether the popup is open. |
 | [Manager](PopupContainer/Manager.md) { get; set; } | Gets or sets the toolbar manager associated with this object. |
@@ -29,13 +34,23 @@ public class PopupContainer : TemplatedControl, INavigatable, IPopup, IResizeabl
 | [ShadowOffset](PopupContainer/ShadowOffset.md) { get; set; } | Gets or sets the offset of the popup shadow. |
 | [ShowCloseButton](PopupContainer/ShowCloseButton.md) { get; set; } | Gets or sets whether the popup displays a close button. |
 | [ShowSizeGrip](PopupContainer/ShowSizeGrip.md) { get; set; } | Gets or sets whether the popup displays a resize grip. |
+
+## Methods
+
+| name | description |
+| --- | --- |
+| [ClosePopup](PopupContainer/ClosePopup.md)() | Closes the popup. |
+| [OpenPopup](PopupContainer/OpenPopup.md)() | Opens the popup using its current placement settings. |
+| [OpenPopup](PopupContainer/OpenPopup.md)(…) | Opens the popup at the specified position relative to the placement target and returns whether it opened. (4 methods) |
+
+## Events
+
+| name | description |
+| --- | --- |
 | event [Closed](PopupContainer/Closed.md) | Occurs after the popup closes. |
 | event [Closing](PopupContainer/Closing.md) | Occurs before the popup closes. Cancel the event to prevent closing. |
 | event [Opened](PopupContainer/Opened.md) | Occurs after the popup opens. |
 | event [Opening](PopupContainer/Opening.md) | Occurs before the popup opens. Cancel the event to prevent opening. |
-| [ClosePopup](PopupContainer/ClosePopup.md)() | Closes the popup. |
-| [OpenPopup](PopupContainer/OpenPopup.md)() | Opens the popup using its current placement settings. |
-| [OpenPopup](PopupContainer/OpenPopup.md)(…) | Opens the popup at the specified position relative to the placement target and returns whether it opened. (4 methods) |
 
 ## See Also
 

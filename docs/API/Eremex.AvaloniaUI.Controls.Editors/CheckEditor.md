@@ -12,11 +12,16 @@ Represents a check editor.
 public class CheckEditor : BaseEditor
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CheckEditor](CheckEditor/CheckEditor.md)() | Initializes a new instance of the CheckEditor class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ActualStateGlyph](CheckEditor/ActualStateGlyph.md) { get; } | Gets the glyph image that corresponds to the editor's current check state. |
 | [CheckedGlyph](CheckEditor/CheckedGlyph.md) { get; set; } | Gets or sets the image displayed when the editor is checked. |
 | [Command](CheckEditor/Command.md) { get; set; } | Gets or sets the command associated with the editor. |
@@ -26,6 +31,11 @@ public class CheckEditor : BaseEditor
 | [IsChecked](CheckEditor/IsChecked.md) { get; set; } | Gets or sets whether the editor is checked. |
 | [IsThreeState](CheckEditor/IsThreeState.md) { get; set; } | Gets or sets whether the editor supports the indeterminate state. |
 | [UncheckedGlyph](CheckEditor/UncheckedGlyph.md) { get; set; } | Gets or sets the image displayed when the editor is unchecked. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | override [Render](CheckEditor/Render.md)(…) |  |
 
 ## See Also

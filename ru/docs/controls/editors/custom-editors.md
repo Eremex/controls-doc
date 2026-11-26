@@ -10,13 +10,13 @@ seealso: []
 
 Стандартный подход к заданию встроенных редакторов в контейнерных контролах — использовать свойство `EditorProperties`, предоставляемое этими контейнерными контролами:
 
-- `GridColumn.EditorProperties`
-- `TreeListColumn.EditorProperties`
-- `TreeViewControl.EditorProperties`
-- `PropertyGridRow.EditorProperties`
-- `ToolbarEditorItem.EditorProperties`
+- [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md)
+- [`TreeListColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md)
+- [`TreeViewControl.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/EditorProperties.md)
+- [`PropertyGridRow.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/EditorProperties.md)
+- [`ToolbarEditorItem.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/EditorProperties.md)
 
-Например, следующий код назначает контрол `ButtonEditor` столбцу грида. Код устанавливает свойство `GridColumn.EditorProperties` в объект `ButtonEditorProperties`. В результате контрол грида автоматически создаст встроенный контрол `ButtonEditor` на основе заданного объекта `ButtonEditorProperties`, когда в этом столбце начнётся операция редактирования ячейки.
+Например, следующий код назначает контрол [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) столбцу грида. Код устанавливает свойство [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) в объект [`ButtonEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditorProperties.md). В результате контрол грида автоматически создаст встроенный контрол [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) на основе заданного объекта [`ButtonEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditorProperties.md), когда в этом столбце начнётся операция редактирования ячейки.
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid" 
@@ -43,13 +43,13 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 
     !!! tip
     
-        Все редакторы Eremex являются потомками `BaseEditor`.
+        Все редакторы Eremex являются потомками [`BaseEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor.md).
 
-2. Создайте потомок соответствующего класса `...Properties`. Например, если ваш пользовательский редактор производен от контрола `ButtonEditor`, производите ваш класс `...Properties` от `ButtonEditorProperties`.
+2. Создайте потомок соответствующего класса `...Properties`. Например, если ваш пользовательский редактор производен от контрола [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md), производите ваш класс `...Properties` от [`ButtonEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditorProperties.md).
 
     !!! tip
     
-        Все классы `...Properties` редакторов Eremex являются потомками класса `BaseEditorProperties`.
+        Все классы `...Properties` редакторов Eremex являются потомками класса [`BaseEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties.md).
 
 3. Добавьте код регистрации пользовательского редактора в статический конструктор вашего класса `...Properties`. Используйте метод `EditorPropertiesProvider.Default.RegisterEditor`, чтобы зарегистрировать редактор.
 
@@ -65,7 +65,7 @@ void RegisterEditor(Type editor, Type editorProperties, Func<IBaseEditor> create
 - `createEditorFunc` — пользовательская функция, вызываемая при создании пользовательского контрола-редактора.
 - `createEditorPropertiesFunc` — пользовательская функция, вызываемая при создании пользовательского объекта `...Properties`.
 
-Следующий код создаёт пользовательский контрол `TextEditor`. Он переопределяет формат отображения, используемый для форматирования значений редактора. Класс _TextEditorWithCustomFormatProperties_ содержит статический конструктор, который регистрирует редактор.
+Следующий код создаёт пользовательский контрол [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md). Он переопределяет формат отображения, используемый для форматирования значений редактора. Класс _TextEditorWithCustomFormatProperties_ содержит статический конструктор, который регистрирует редактор.
 
 ``` cs
 using Eremex.AvaloniaUI.Controls.Editors;

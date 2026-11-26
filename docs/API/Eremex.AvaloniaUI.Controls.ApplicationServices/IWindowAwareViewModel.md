@@ -12,13 +12,18 @@ Implemented by view models that are shown in a window of their own. The window s
 public interface IWindowAwareViewModel
 ```
 
-## Members
+## Properties
 
 | name | description |
 | --- | --- |
 | [Content](IWindowAwareViewModel/Content.md) { get; } | The object shown in the window body. This is typically a nested view model or a view instance resolved from [`ViewLocatorAttribute`](./ViewLocatorAttribute.md), but plain text works as well. |
 | [IsVisible](IWindowAwareViewModel/IsVisible.md) { get; } | `true` while the view model is attached to an open window. |
 | [Title](IWindowAwareViewModel/Title.md) { get; } | The window caption, used when the caller does not supply one explicitly. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Attach](IWindowAwareViewModel/Attach.md)(…) | Associates the view model with the window that is about to show it. Called by the window services before the window becomes visible. |
 | [Detach](IWindowAwareViewModel/Detach.md)() | Releases the association established by [`Attach`](./IWindowAwareViewModel/Attach.md). Called by the window services once the window has closed, including when the user closed it through the caption button. |
 

@@ -6,6 +6,15 @@ seealso: []
 
 # Версия 1.3
 
+## 1.3.69
+
+### Диаграммы
+
+#### Исправленные проблемы
+
+- Возникает исключение, если диаграмма отображает значения `DateTime` по оси _Y_ и параметр `AlwaysShowZeroLevel` установлен в `true`.
+- PolarChart и SmithChart — параметр [`CrosshairSeriesLabelMode.None`](../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md) не действует.
+
 
 ## 1.3.62
 
@@ -39,11 +48,11 @@ seealso: []
     }
     ```
 
-- Исправлено: DataGrid — событие `CustomColumnDisplayText` возникает для значений, показываемых на панели фильтра, когда свойство колонки `ColumnFilterMode` установлено в `DisplayText`. В этом случае событие не должно возникать.
+- Исправлено: DataGrid — событие `CustomColumnDisplayText` возникает для значений, показываемых на панели фильтра, когда свойство колонки [`ColumnFilterMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnFilterMode.md) установлено в `DisplayText`. В этом случае событие не должно возникать.
 
 - Исправлено: DataGrid и TreeList — событие `CustomUnboundColumnData` не возникает, когда пользователь изменяет другие ячейки строки.
 
-- Исправлено: DataGrid и TreeList — ошибка «Layout cycle detected», когда у фиксированной колонки одновременно заданы ширина 'Auto' и настройка `MinWidth`.
+- Исправлено: DataGrid и TreeList — ошибка «Layout cycle detected», когда у фиксированной колонки одновременно заданы ширина 'Auto' и настройка [`MinWidth`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MinWidth.md).
 
 - Исправлено: DataGrid и TreeList — утечка памяти при прокрутке контрола.
 
@@ -61,16 +70,16 @@ seealso: []
 
 ### PropertyGrid
 
-- Исправлено: возникает исключение при выборе значения во встроенном `PopupColorEditor`.
+- Исправлено: возникает исключение при выборе значения во встроенном [`PopupColorEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md).
 
 
 ### Интерфейс Докинга
 
-- Исправлено: в определённых случаях возникает исключение при десериализации `DockManager` с панелью автоскрытия.
+- Исправлено: в определённых случаях возникает исключение при десериализации [`DockManager`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) с панелью автоскрытия.
 
 ### Контрол Graphics3D
 
-- Исправлено: выбранный элемент скрывается при отключении выбора с помощью свойства `SelectionMode`.
+- Исправлено: выбранный элемент скрывается при отключении выбора с помощью свойства [`SelectionMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectionMode.md).
 
 
 ## 1.3.49
@@ -89,10 +98,10 @@ seealso: []
 
 Связанный API:
 
-- `ColumnBase.FixedMode`
-- `DataGridControl.ShowColumnMenuFixedItem` и `TreeListControl.ShowColumnMenuFixedItem`
-- `DataGridControl.ExtendScrollbarToFixedColumns` и `TreeListControl.ExtendScrollbarToFixedColumns`
-- `DataGridControl.FixedColumnSeparatorWidth` и `TreeListControl.FixedColumnSeparatorWidth`
+- [`ColumnBase.FixedMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FixedMode.md)
+- [`DataGridControl.ShowColumnMenuFixedItem`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowColumnMenuFixedItem.md) и [`TreeListControl.ShowColumnMenuFixedItem`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnMenuFixedItem.md)
+- [`DataGridControl.ExtendScrollbarToFixedColumns`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExtendScrollbarToFixedColumns.md) и [`TreeListControl.ExtendScrollbarToFixedColumns`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ExtendScrollbarToFixedColumns.md)
+- [`DataGridControl.FixedColumnSeparatorWidth`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FixedColumnSeparatorWidth.md) и [`TreeListControl.FixedColumnSeparatorWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/FixedColumnSeparatorWidth.md)
 
 Подробнее: 
 
@@ -108,9 +117,9 @@ seealso: []
 
 Связанный API:
 
-- `DataGridControl.ShowConditionInAutoFilterRow`
-- `TreeListControl.ShowConditionInAutoFilterRow` 
-- `ColumnBase.ShowConditionInAutoFilterRow`
+- [`DataGridControl.ShowConditionInAutoFilterRow`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowConditionInAutoFilterRow.md)
+- [`TreeListControl.ShowConditionInAutoFilterRow`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowConditionInAutoFilterRow.md) 
+- [`ColumnBase.ShowConditionInAutoFilterRow`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ShowConditionInAutoFilterRow.md)
 
 Подробнее:
 
@@ -125,8 +134,8 @@ seealso: []
 
 Вы можете включить режим отображения списка с флажками для всех колонок или отдельных колонок, используя следующие свойства:
 
-- `DataGridControl.ColumnFilterPopupMode` и `TreeListControl.ColumnFilterPopupMode`
-- `GridColumn.FilterPopupMode` и `TreeListColumn.FilterPopupMode`
+- [`DataGridControl.ColumnFilterPopupMode`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnFilterPopupMode.md) и [`TreeListControl.ColumnFilterPopupMode`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnFilterPopupMode.md)
+- [`GridColumn.FilterPopupMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) и [`TreeListColumn.FilterPopupMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md)
 
 Подробнее: 
 
@@ -149,7 +158,7 @@ seealso: []
 
 #### Экспорт в CSV
 
-Контролы DataGrid, TreeList и TreeView поддерживают экспорт данных в формат CSV. CSV — это текстовый формат, в котором значения строк разделены определённым разделителем (по умолчанию запятой). Используйте метод `ExportToCsv` для экспорта данных контрола. Параметры этого метода позволяют настраивать режим экспорта значений, символ-разделитель и другое.
+Контролы DataGrid, TreeList и TreeView поддерживают экспорт данных в формат CSV. CSV — это текстовый формат, в котором значения строк разделены определённым разделителем (по умолчанию запятой). Используйте метод [`ExportToCsv`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ExportToCsv.md) для экспорта данных контрола. Параметры этого метода позволяют настраивать режим экспорта значений, символ-разделитель и другое.
 
 - [Data Grid — Экспорт в CSV](../controls/datagrid/export.md#экспорт-в-формат-csv)
 - [Tree List — Экспорт в CSV](../controls/datagrid/export.md#экспорт-в-формат-csv)
@@ -160,7 +169,7 @@ seealso: []
 
 ![grid-sorting-textsortmode-example2](../images/grid-sorting-textsortmode-example2.png)
 
-Используйте свойство `DataControlBase.TextSortMode`, предоставляемое контролами DataGrid, TreeList и TreeView, чтобы включить буквенно-числовую сортировку. Это свойство влияет на сортировку всех колонок, отображающих текстовые значения.
+Используйте свойство [`DataControlBase.TextSortMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/TextSortMode.md), предоставляемое контролами DataGrid, TreeList и TreeView, чтобы включить буквенно-числовую сортировку. Это свойство влияет на сортировку всех колонок, отображающих текстовые значения.
 
 Подробнее:
 
@@ -190,7 +199,7 @@ seealso: []
 
 #### Обмен осей X и Y
 
-Новое свойство `CartesianChart.SwapAxes` позволяет транспонировать оси _X_ и _Y_. Установите его в `true`, чтобы отображать оси _X_ вертикально, а оси _Y_ — горизонтально.
+Новое свойство [`CartesianChart.SwapAxes`](../API/Eremex.AvaloniaUI.Charts/CartesianChart/SwapAxes.md) позволяет транспонировать оси _X_ и _Y_. Установите его в `true`, чтобы отображать оси _X_ вертикально, а оси _Y_ — горизонтально.
 
 ![chart-swap-axes-linear-chart](../images/chart-swap-axes-linear-chart.png)
 
@@ -250,13 +259,13 @@ cameraPosition - это точка?
 
 ![graphics3dControl-gizmo-axis-names](../images/graphics3dControl-gizmo-axis-names.png)
 
-Для отрисовки имён осей в `Gizmo` добавляются три модели, представляющие буквы «X», «Y» и «Z».
-Новые свойства `Gizmo.Models` и `Gizmo.ModelsSource` позволяют задавать 3D-модели для отрисовки гизмо произвольным образом. Эти свойства заменяют старое свойство `Gizmo.Model`, которое теперь устарело. 
+Для отрисовки имён осей в [`Gizmo`](../API/Eremex.AvaloniaUI.Controls3D/Gizmo.md) добавляются три модели, представляющие буквы «X», «Y» и «Z».
+Новые свойства [`Gizmo.Models`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Models.md) и [`Gizmo.ModelsSource`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/ModelsSource.md) позволяют задавать 3D-модели для отрисовки гизмо произвольным образом. Эти свойства заменяют старое свойство `Gizmo.Model`, которое теперь устарело. 
 
 #### Критическое изменение — для отрисовки Graphics3DControl теперь требуется визуальная тема
 
-Начиная с версии 1.3, классы `Graphics3DControl` и `Gizmo` наследуются от `Graphics3DControlBase`, который является потомком класса `TemplatedControl`. 
-Общие настройки внешнего вида этих контролов теперь задаются визуальной темой `Controls3D`. Чтобы обеспечить корректную отрисовку `Graphics3DControl`, вы должны зарегистрировать эту тему в файле _App.xaml_:
+Начиная с версии 1.3, классы [`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) и [`Gizmo`](../API/Eremex.AvaloniaUI.Controls3D/Gizmo.md) наследуются от [`Graphics3DControlBase`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase.md), который является потомком класса `TemplatedControl`. 
+Общие настройки внешнего вида этих контролов теперь задаются визуальной темой `Controls3D`. Чтобы обеспечить корректную отрисовку [`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md), вы должны зарегистрировать эту тему в файле _App.xaml_:
 
 ``` xml
 <!-- App.xaml file -->
@@ -270,19 +279,19 @@ cameraPosition - это точка?
 </Application>
 ```
 
-Если визуальная тема `Controls3D` не зарегистрирована, `Graphics3DControl` будет отображаться пустым.
+Если визуальная тема `Controls3D` не зарегистрирована, [`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) будет отображаться пустым.
 
 ### Докинг
 
-Теперь вы можете применять ограничения на изменение размера к элементам докинга, используя их свойства `MinWidth`, `MinHeight`, `MaxWidth` и `MaxHeight`.
+Теперь вы можете применять ограничения на изменение размера к элементам докинга, используя их свойства [`MinWidth`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MinWidth.md), `MinHeight`, [`MaxWidth`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MaxWidth.md) и `MaxHeight`.
 
 ### SplitContainerControl — ограничения размера панелей
 
-Новые свойства `Panel1MinLength`, `Panel1MaxLength`, `Panel2MinLength` и `Panel2MaxLength` позволяют задавать ограничения на изменение размера панелей в `SplitContainerControl`. Пользователи не могут изменять размер панелей за пределами этих лимитов. 
+Новые свойства `Panel1MinLength`, `Panel1MaxLength`, `Panel2MinLength` и `Panel2MaxLength` позволяют задавать ограничения на изменение размера панелей в [`SplitContainerControl`](../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl.md). Пользователи не могут изменять размер панелей за пределами этих лимитов. 
 
 ### MxWindow
 
-Новые свойства `Header` и `HeaderTemplate` позволяют отображать пользовательское содержимое в заголовке окна.
+Новые свойства [`Header`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) и [`HeaderTemplate`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderTemplate.md) позволяют отображать пользовательское содержимое в заголовке окна.
 
 ### Исправленные проблемы
 
@@ -292,9 +301,9 @@ cameraPosition - это точка?
 
 ### Критические изменения
 
-- Graphics3DControl — свойство `Gizmo.Model` объявлено устаревшим. Используйте вместо него новые свойства `Gizmo.Models` и `Gizmo.ModelsSource`.
+- Graphics3DControl — свойство `Gizmo.Model` объявлено устаревшим. Используйте вместо него новые свойства [`Gizmo.Models`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Models.md) и [`Gizmo.ModelsSource`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/ModelsSource.md).
 - Редакторы — свойство `IsClearTextButtonVisible` переименовано в `IsNullValueButtonVisible`.
-- Редакторы — команда `ClearTextCommand` переименована в `SetNullValueCommand` и перенесена из класса `PopupEditor` в класс `ButtonEditor`.
+- Редакторы — команда `ClearTextCommand` переименована в `SetNullValueCommand` и перенесена из класса [`PopupEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor.md) в класс [`ButtonEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md).
 
 
 <br>

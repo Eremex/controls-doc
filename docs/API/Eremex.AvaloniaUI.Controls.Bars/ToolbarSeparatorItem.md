@@ -12,7 +12,7 @@ Displays a separator between toolbar items.
 public class ToolbarSeparatorItem : ToolbarItem
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

@@ -12,11 +12,16 @@ Displays text within a toolbar, menu, or ribbon.
 public class ToolbarTextItem : ToolbarItem
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ToolbarTextItem](ToolbarTextItem/ToolbarTextItem.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [BorderTemplate](ToolbarTextItem/BorderTemplate.md) { get; set; } | Gets or sets the template used to display the text item's border. |
 | [ShowBorder](ToolbarTextItem/ShowBorder.md) { get; set; } | Gets or sets whether the text item displays a border. |
 | [SizeMode](ToolbarTextItem/SizeMode.md) { get; set; } | Gets or sets how the text item uses the available space. |

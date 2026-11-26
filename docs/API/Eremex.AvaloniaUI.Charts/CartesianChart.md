@@ -12,11 +12,16 @@ Displays series in a rectangular plot area defined by an X axis and a Y axis.
 public class CartesianChart : ChartControl
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CartesianChart](CartesianChart/CartesianChart.md)() | Initializes a new instance of the [`CartesianChart`](./CartesianChart.md) class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AxesX](CartesianChart/AxesX.md) { get; } | Gets the axes drawn along the horizontal edge of the plot area. |
 | [AxesXSource](CartesianChart/AxesXSource.md) { get; set; } | Gets or sets the collection of axis definitions used to generate the items of [`AxesX`](./CartesianChart/AxesX.md). Each source item is turned into an axis by [`AxisXTemplate`](./CartesianChart/AxisXTemplate.md). |
 | [AxesY](CartesianChart/AxesY.md) { get; } | Gets the axes drawn along the vertical edge of the plot area. |
@@ -29,6 +34,11 @@ public class CartesianChart : ChartControl
 | [SeriesSource](CartesianChart/SeriesSource.md) { get; set; } | Gets or sets the collection of series definitions used to generate the items of [`Series`](./CartesianChart/Series.md). Each source item is turned into a series by [`SeriesTemplate`](./CartesianChart/SeriesTemplate.md). |
 | [SeriesTemplate](CartesianChart/SeriesTemplate.md) { get; set; } | Gets or sets the template used to create a series for each item of [`SeriesSource`](./CartesianChart/SeriesSource.md). |
 | [SwapAxes](CartesianChart/SwapAxes.md) { get; set; } | Gets or sets whether the X axes are drawn vertically and the Y axes horizontally, which turns the chart on its side. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [DiagramPointToScreenPoint](CartesianChart/DiagramPointToScreenPoint.md)(…) | Converts a pair of axis values to the corresponding position in control coordinates. |
 | [HideCrosshair](CartesianChart/HideCrosshair.md)() | Hides the crosshair and the value labels it displays. |
 | [ResetZoom](CartesianChart/ResetZoom.md)() | Restores the visible range of every axis to the full range of its data. |

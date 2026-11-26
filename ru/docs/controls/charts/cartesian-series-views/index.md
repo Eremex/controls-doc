@@ -6,7 +6,7 @@ seealso: []
 
 # Представления серий
 
-Контрол `CartesianChart` предоставляет следующие представления (Views) для визуализации данных серий различными способами:
+Контрол [`CartesianChart`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) предоставляет следующие представления (Views) для визуализации данных серий различными способами:
 
 - [Line Series View](line-series-vew.md)
 - [Scatter Line Series View](scatter-line-series-view.md)

@@ -12,11 +12,16 @@ Represents an item displayed in a ribbon gallery.
 public class GalleryItem : AvaloniaObject
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [GalleryItem](GalleryItem/GalleryItem.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Glyph](GalleryItem/Glyph.md) { get; set; } | Gets or sets the image displayed for the item. |
 | [Group](GalleryItem/Group.md) { get; set; } | Gets or sets the group to which the gallery item belongs. |
 | [Header](GalleryItem/Header.md) { get; set; } | Gets or sets the item's header content. |

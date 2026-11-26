@@ -14,11 +14,16 @@ public class ColumnCollectionBase<ColumnType> : LockableObservableCollection<Col
     where ColumnType : ColumnBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ColumnCollectionBase](ColumnCollectionBase-ColumnType/ColumnCollectionBase.md)(…) | Initializes a new instance of the ColumnCollectionBase class with the specified owner. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Item](ColumnCollectionBase-ColumnType/Item.md) { get; } | Gets the column with the specified field name. |
 
 ## See Also

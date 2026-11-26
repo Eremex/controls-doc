@@ -35,11 +35,11 @@ seealso: []
 
 Вы можете установить режим отображения меню фильтра глобально для всех колонок, либо задать его для отдельных колонок, используя следующие свойства:
 
-- `TreeListControl.ColumnFilterPopupMode` (значение по умолчанию — `List`) — Задаёт режим отображения по умолчанию для всех меню фильтра колонок. Этот параметр применяется к колонкам, у которых свойство `TreeListColumn.FilterPopupMode` установлено в `null`.
+- [`TreeListControl.ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnFilterPopupMode.md) (значение по умолчанию — `List`) — Задаёт режим отображения по умолчанию для всех меню фильтра колонок. Этот параметр применяется к колонкам, у которых свойство [`TreeListColumn.FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) установлено в `null`.
 
-- `TreeListColumn.FilterPopupMode` (значение по умолчанию — `null`) — Задаёт режим отображения меню фильтра для отдельных колонок. Когда это свойство установлено, оно переопределяет глобальный параметр (`TreeListControl.ColumnFilterPopupMode`).
+- [`TreeListColumn.FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) (значение по умолчанию — `null`) — Задаёт режим отображения меню фильтра для отдельных колонок. Когда это свойство установлено, оно переопределяет глобальный параметр ([`TreeListControl.ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnFilterPopupMode.md)).
 
-Следующий пример применяет режим отображения `CheckedList` ко всем колонкам, а режим `List` — к колонке _City_.
+Этот пример применяет режим отображения `CheckedList` ко всем колонкам, а режим `List` — к колонке _City_.
 
 ``` cs
 treeList.ColumnFilterPopupMode = Eremex.AvaloniaUI.Controls.DataControl.FilterPopupMode.CheckedList;
@@ -62,47 +62,47 @@ treeList.Columns["City"].FilterPopupMode = Eremex.AvaloniaUI.Controls.DataContro
 
 **Члены контрола TreeList**
 
-- `AllowColumnFiltering` — Получает или задаёт, разрешены ли кнопки фильтра для всех колонок. Вы можете использовать свойство колонки `ColumnBase.AllowColumnFiltering`, чтобы переопределить глобальный параметр для отдельных колонок.
+- `AllowColumnFiltering` — Получает или задаёт, разрешены ли кнопки фильтра для всех колонок. Вы можете использовать свойство колонки [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md), чтобы переопределить глобальный параметр для отдельных колонок.
 
-    Например, чтобы отключить кнопки фильтра для всех колонок, кроме одного, установите свойство `TreeListControl.AllowColumnFiltering` в `false`, а свойство `ColumnBase.AllowColumnFiltering` целевой колонки — в `true`.
+    Например, чтобы отключить кнопки фильтра для всех колонок, кроме одного, установите свойство [`TreeListControl.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnFiltering.md) в `false`, а свойство [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) целевой колонки — в `true`.
 
-- `ColumnFilterButtonDisplayMode` — Получает или задаёт, всегда ли видны кнопки фильтра, или они появляются только при наведении пользователем указателя мыши на заголовок колонки (по умолчанию).
+- [`ColumnFilterButtonDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnFilterButtonDisplayMode.md) — Получает или задаёт, всегда ли видны кнопки фильтра, или они появляются только при наведении пользователем указателя мыши на заголовок колонки (по умолчанию).
 
-- `ColumnFilterPopupMode` — Получает или задаёт режим отображения по умолчанию (`List` или `CheckedList`) для всех меню фильтра колонок. Используйте свойство колонки `FilterPopupMode`, чтобы переопределить этот параметр для отдельных колонок.
+- [`ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnFilterPopupMode.md) — Получает или задаёт режим отображения по умолчанию (`List` или `CheckedList`) для всех меню фильтра колонок. Используйте свойство колонки [`FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/FilterPopupMode.md), чтобы переопределить этот параметр для отдельных колонок.
 
-- Событие `CustomColumnDisplayText` — Позволяет предоставлять пользовательский отображаемый текст для значений колонки, включая значения в меню фильтра и на панели фильтра. Когда событие `CustomColumnDisplayText` возникает для значений на панели фильтра, параметр события `Node` возвращает `null`.
+- Событие [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnDisplayText.md) — Позволяет предоставлять пользовательский отображаемый текст для значений колонки, включая значения в меню фильтра и на панели фильтра. Когда событие [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnDisplayText.md) возникает для значений на панели фильтра, параметр события [`Node`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomCellDisplayTextEventArgs/Node.md) возвращает `null`.
 
-- `FilterPanelText` — Получает текстовое представление фильтра, отображаемого на панели фильтра.
+- [`FilterPanelText`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/FilterPanelText.md) — Получает текстовое представление фильтра, отображаемого на панели фильтра.
 
-- `FilterPanelDisplayMode` — Получает или задаёт режим видимости панели фильтра. Доступные варианты: 
+- [`FilterPanelDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/FilterPanelDisplayMode.md) — Получает или задаёт режим видимости панели фильтра. Доступные варианты: 
 
     - `Auto` (по умолчанию) — Панель фильтра появляется, когда фильтр применён к любой колонке.
     - `Never` — Панель фильтра всегда скрыта.
 
-- `FilterString` — Получает или задаёт критерии фильтра, применённые к контролу. Вы можете использовать это свойство, чтобы [построить фильтр в коде](#фильтрация-в-коде-treelist-и-treeview). Свойство `FilterString` поддерживается контролами TreeList и TreeView.
+- [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) — Получает или задаёт критерии фильтра, применённые к контролу. Вы можете использовать это свойство, чтобы [построить фильтр в коде](#фильтрация-в-коде-treelist-и-treeview). Свойство [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) поддерживается контролами TreeList и TreeView.
 
-- `IsFilterEnabled` — Получает или задаёт, активен ли фильтр. Свойство `IsFilterEnabled` поддерживается контролами TreeList и TreeView.
+- [`IsFilterEnabled`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsFilterEnabled.md) — Получает или задаёт, активен ли фильтр. Свойство [`IsFilterEnabled`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsFilterEnabled.md) поддерживается контролами TreeList и TreeView.
 
-- `IsFilterPanelVisible` — Получает, видна ли панель фильтра в данный момент.
+- [`IsFilterPanelVisible`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/IsFilterPanelVisible.md) — Получает, видна ли панель фильтра в данный момент.
 
 
 
 **Члены колонки**
 
- - `ColumnBase.AllowColumnFiltering` — Получает или задаёт, разрешена ли кнопка фильтра для текущей колонки. Чтобы включить или отключить кнопки фильтра для всех колонок, см. параметр `TreeListControl.AllowColumnFiltering`. Параметр `ColumnBase.AllowColumnFiltering` позволяет переопределить параметр `TreeListControl.AllowColumnFiltering` для отдельных колонок.
- - `ColumnBase.ColumnFilterMode` — Получает или задаёт, как фильтруются данные колонки. Доступные варианты:
+ - [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) — Получает или задаёт, разрешена ли кнопка фильтра для текущей колонки. Чтобы включить или отключить кнопки фильтра для всех колонок, см. параметр [`TreeListControl.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnFiltering.md). Параметр [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) позволяет переопределить параметр [`TreeListControl.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnFiltering.md) для отдельных колонок.
+ - [`ColumnBase.ColumnFilterMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ColumnFilterMode.md) — Получает или задаёт, как фильтруются данные колонки. Доступные варианты:
 
-    - `Value` — Данные колонки фильтруются по исходным значениям.
-    - `DisplayText` — Данные колонки фильтруются по отображаемому тексту ячейки.
+    - [`Value`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomCellDisplayTextEventArgs/Value.md) — Данные колонки фильтруются по исходным значениям.
+    - [`DisplayText`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomCellDisplayTextEventArgs/DisplayText.md) — Данные колонки фильтруются по отображаемому тексту ячейки.
 
 <!-- TODO 
 Explore this feature. When data is filtered by values and when by display text by default.
 -->
 
-- `ColumnBase.FilterPopupMode` — Получает или задаёт режим отображения меню фильтра (`List` или `CheckedList`) для отдельных колонок. Когда это свойство установлено, оно переопределяет свойство `ColumnFilterPopupMode` контрола.
+- [`ColumnBase.FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) — Получает или задаёт режим отображения меню фильтра (`List` или `CheckedList`) для отдельных колонок. Когда это свойство установлено, оно переопределяет свойство [`ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnFilterPopupMode.md) контрола.
 
- - `ColumnBase.IsFiltered` — Получает, применён ли фильтр к текущей колонке.
- - `ColumnBase.RoundDateTimeForColumnFilter` — Получает или задаёт, следует ли игнорировать составляющую времени значений DateTime при построении фильтров для колонок, отображающих значения DateTime. Это свойство действует для фильтров, созданных с помощью меню фильтра колонки и [строки автофильтра](#строка-автофильтра-treelist).
+ - [`ColumnBase.IsFiltered`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/IsFiltered.md) — Получает, применён ли фильтр к текущей колонке.
+ - [`ColumnBase.RoundDateTimeForColumnFilter`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/RoundDateTimeForColumnFilter.md) — Получает или задаёт, следует ли игнорировать составляющую времени значений DateTime при построении фильтров для колонок, отображающих значения DateTime. Это свойство действует для фильтров, созданных с помощью меню фильтра колонки и [строки автофильтра](#строка-автофильтра-treelist).
 
 <!-- TODO
 Add screenshots for RoundDateTimeForColumnFilter
@@ -120,33 +120,33 @@ Add screenshots for RoundDateTimeForColumnFilter
 - Для поиска данных используется оператор сравнения **Contains** (Содержит).
 - Поиск данных выполняется по всем колонкам контрола TreeList.
 
-Установите свойство `SearchPanelDisplayMode` контрола (унаследованное от класса `DataControlBase`) в одно из следующих значений, чтобы включить панель поиска:
+Установите свойство [`SearchPanelDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) контрола (унаследованное от класса [`DataControlBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase.md)) в одно из следующих значений, чтобы включить панель поиска:
 
-- `SearchPanelDisplayMode.Always` — Контрол постоянно отображает панель поиска.
-- `SearchPanelDisplayMode.HotKey` — Контрол отображает панель поиска, когда пользователь нажимает горячую клавишу CTRL+F. Сочетание клавиш ESC очищает панель поиска. Последующее нажатие клавиши ESC закрывает панель. Пользователь также может активировать панель поиска из контекстного меню заголовка колонки.
+- [`SearchPanelDisplayMode.Always`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) — Контрол постоянно отображает панель поиска.
+- [`SearchPanelDisplayMode.HotKey`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) — Контрол отображает панель поиска, когда пользователь нажимает горячую клавишу CTRL+F. Сочетание клавиш ESC очищает панель поиска. Последующее нажатие клавиши ESC закрывает панель. Пользователь также может активировать панель поиска из контекстного меню заголовка колонки.
 
-Свойство `TreeListControlBase.FilterMode` задаёт, какие узлы отображаются при обнаружении совпадений. Поддерживаются три режима фильтрации:
+Свойство [`TreeListControlBase.FilterMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/FilterMode.md) задаёт, какие узлы отображаются при обнаружении совпадений. Поддерживаются три режима фильтрации:
 
-- `FilterMode.ShowMatches` — Отображает узлы, соответствующие тексту поиска.
-- `FilterMode.ShowMatchesWithAncestors` — Отображает узлы, соответствующие тексту поиска, и их родительские узлы.
-- `FilterMode.ShowBranchesWithMatches` — Отображает целые ветви, если они содержат узлы, соответствующие критериям фильтра.
+- [`FilterMode.ShowMatches`](../../API/Eremex.AvaloniaUI.Controls.TreeList/FilterMode.md) — Отображает узлы, соответствующие тексту поиска.
+- [`FilterMode.ShowMatchesWithAncestors`](../../API/Eremex.AvaloniaUI.Controls.TreeList/FilterMode.md) — Отображает узлы, соответствующие тексту поиска, и их родительские узлы.
+- [`FilterMode.ShowBranchesWithMatches`](../../API/Eremex.AvaloniaUI.Controls.TreeList/FilterMode.md) — Отображает целые ветви, если они содержат узлы, соответствующие критериям фильтра.
 
 ### Поиск в свёрнутых узлах
 
-Во время поиска/фильтрации данных контролы TreeList/TreeView могут выполнять поиск в свёрнутых узлах. Установите параметр `TreeListControlBase.ExpandNodesOnFiltering` в `true`, чтобы выполнять поиск в свёрнутых узлах и автоматически разворачивать их при обнаружении совпадения. 
+Во время поиска/фильтрации данных контролы TreeList/TreeView могут выполнять поиск в свёрнутых узлах. Установите параметр [`TreeListControlBase.ExpandNodesOnFiltering`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ExpandNodesOnFiltering.md) в `true`, чтобы выполнять поиск в свёрнутых узлах и автоматически разворачивать их при обнаружении совпадения. 
 
-Контролы выполняют поиск только среди текущих загруженных узлов. Для [иерархических источников данных](data-binding/index.md#иерархический-источник-данных) вы можете установить свойство `AllowDynamicDataLoading` в `false`, чтобы отключить динамическую загрузку узлов и загрузить все узлы сразу. 
+Контролы выполняют поиск только среди текущих загруженных узлов. Для [иерархических источников данных](data-binding/index.md#иерархический-источник-данных) вы можете установить свойство [`AllowDynamicDataLoading`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/AllowDynamicDataLoading.md) в `false`, чтобы отключить динамическую загрузку узлов и загрузить все узлы сразу. 
 
 ### Связанный API
 
-- `DataControlBase.IsSearchPanelVisible` — Получает, видна ли панель поиска в данный момент.
-- `DataControlBase.SearchPanelHighlightResults` — Задаёт, выделять ли текст поиска в найденных узлах. Значение свойства по умолчанию — `true`.
-- `DataControlBase.SearchText` — Получает или задаёт текст поиска. Вы можете присвоить значение этому свойству, чтобы отфильтровать контрол в коде. Эта функциональность фильтрации поддерживается даже если панель поиска скрыта или отключена (свойство `SearchPanelDisplayMode` установлено в `SearchPanelDisplayMode.Never`).
-- `DataControlBase.ShowSearchPanelCloseButton` — Позволяет скрыть встроенную кнопку закрытия панели поиска.
-- `TreeListControlBase.ExpandNodesOnFiltering` — Задаёт, следует ли разворачивать свёрнутые узлы во время поиска/фильтрации данных, когда их дочерние узлы соответствуют текущим критериям фильтра/поиска. 
+- [`DataControlBase.IsSearchPanelVisible`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsSearchPanelVisible.md) — Получает, видна ли панель поиска в данный момент.
+- [`DataControlBase.SearchPanelHighlightResults`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchPanelHighlightResults.md) — Задаёт, выделять ли текст поиска в найденных узлах. Значение свойства по умолчанию — `true`.
+- [`DataControlBase.SearchText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchText.md) — Получает или задаёт текст поиска. Вы можете присвоить значение этому свойству, чтобы отфильтровать контрол в коде. Эта функциональность фильтрации поддерживается даже если панель поиска скрыта или отключена (свойство [`SearchPanelDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) установлено в [`SearchPanelDisplayMode.Never`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md)).
+- [`DataControlBase.ShowSearchPanelCloseButton`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowSearchPanelCloseButton.md) — Позволяет скрыть встроенную кнопку закрытия панели поиска.
+- [`TreeListControlBase.ExpandNodesOnFiltering`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ExpandNodesOnFiltering.md) — Задаёт, следует ли разворачивать свёрнутые узлы во время поиска/фильтрации данных, когда их дочерние узлы соответствуют текущим критериям фильтра/поиска. 
 
 ### Пример
-Следующий код делает панель поиска постоянно видимой и включает отображение отфильтрованных узлов вместе с их родителями. Свойство `SearchText` используется для установки текста поиска.
+Следующий код делает панель поиска постоянно видимой и включает отображение отфильтрованных узлов вместе с их родителями. Свойство [`SearchText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchText.md) используется для установки текста поиска.
 
 ``` csharp
 treeList.SearchPanelDisplayMode = SearchPanelDisplayMode.Always;
@@ -161,8 +161,8 @@ treeList.SearchText = "department";
 ![treelist-autofilterrow](../../images/treelist-autofilterrow.png)
 
 - Функциональность фильтра не чувствительна к регистру.
-- Чтобы выполнять поиск в свёрнутых узлах и разворачивать их при обнаружении совпадения, установите параметр `TreeListControlBase.ExpandNodesOnFiltering` в `true`. См. также: [Поиск в свёрнутых узлах](#поиск-в-свёрнутых-узлах).
-- Режим фильтрации контрола по умолчанию — отображать только узлы, соответствующие указанным критериям. Установите свойство `TreeListControlBase.FilterMode` в `FilterMode.ShowMatchesWithAncestors`, чтобы отображать целевые узлы вместе с их родителями.
+- Чтобы выполнять поиск в свёрнутых узлах и разворачивать их при обнаружении совпадения, установите параметр [`TreeListControlBase.ExpandNodesOnFiltering`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ExpandNodesOnFiltering.md) в `true`. См. также: [Поиск в свёрнутых узлах](#поиск-в-свёрнутых-узлах).
+- Режим фильтрации контрола по умолчанию — отображать только узлы, соответствующие указанным критериям. Установите свойство [`TreeListControlBase.FilterMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/FilterMode.md) в [`FilterMode.ShowMatchesWithAncestors`](../../API/Eremex.AvaloniaUI.Controls.TreeList/FilterMode.md), чтобы отображать целевые узлы вместе с их родителями.
 
 ### Включение строки автофильтра
 
@@ -176,15 +176,15 @@ treeList.SearchText = "department";
 
 Используйте следующие свойства, чтобы включить селекторы оператора фильтра:
 
-- `TreeListControl.ShowConditionInAutoFilterRow` (по умолчанию `false`) — Задаёт видимость по умолчанию селекторов оператора фильтра для всех ячеек строки автофильтра (колонок). 
-- `ColumnBase.ShowConditionInAutoFilterRow` — Включает или отключает селектор оператора фильтра для отдельной колонки. Это свойство переопределяет параметр `TreeListControl.ShowConditionInAutoFilterRow`.
+- [`TreeListControl.ShowConditionInAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowConditionInAutoFilterRow.md) (по умолчанию `false`) — Задаёт видимость по умолчанию селекторов оператора фильтра для всех ячеек строки автофильтра (колонок). 
+- [`ColumnBase.ShowConditionInAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ShowConditionInAutoFilterRow.md) — Включает или отключает селектор оператора фильтра для отдельной колонки. Это свойство переопределяет параметр [`TreeListControl.ShowConditionInAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowConditionInAutoFilterRow.md).
 
 
 
 
 ### Указание операторов фильтра в коде
 
-Используйте свойство `ColumnBase.AutoFilterCondition`, чтобы программно указать операторы фильтра для отдельных ячеек строки автофильтра (колонок). Поддерживаются следующие операторы фильтра:
+Используйте свойство [`ColumnBase.AutoFilterCondition`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AutoFilterCondition.md), чтобы программно указать операторы фильтра для отдельных ячеек строки автофильтра (колонок). Поддерживаются следующие операторы фильтра:
 
 - `Contains` (применим к строковым значениям) — Значения строк должны содержать введённый текст.
 - `Default` — Режим по умолчанию. 
@@ -205,7 +205,7 @@ treeList.SearchText = "department";
 
 ### Указание значений фильтра
 
-Свойство `ColumnBase.AutoFilterValue` позволяет установить значение для конкретной ячейки строки автофильтра в коде. Вы можете использовать свойство `ColumnBase.AutoFilterValue`, чтобы отфильтровать TreeList, даже если строка автофильтра скрыта.
+Свойство [`ColumnBase.AutoFilterValue`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AutoFilterValue.md) позволяет установить значение для конкретной ячейки строки автофильтра в коде. Вы можете использовать свойство [`ColumnBase.AutoFilterValue`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AutoFilterValue.md), чтобы отфильтровать TreeList, даже если строка автофильтра скрыта.
 
 
 ### Пример
@@ -221,19 +221,19 @@ colName.AutoFilterValue = "M";
 
 ## Динамическая фильтрация узлов с помощью события
 
-Событие `CustomNodeFilter` позволяет скрывать определённые узлы на основе пользовательского условия. Это событие возникает для каждого узла в следующих случаях:
+Событие [`CustomNodeFilter`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/CustomNodeFilter.md) позволяет скрывать определённые узлы на основе пользовательского условия. Это событие возникает для каждого узла в следующих случаях:
 
 - Изменяется источник элементов контрола.
 - Узлы контрола фильтруются (например, с помощью панели поиска и/или строки автофильтра).
-- Вызывается метод `RefreshData` контрола.
+- Вызывается метод [`RefreshData`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RefreshData.md) контрола.
 
-Используйте параметр события `Node`, чтобы определить текущий обрабатываемый узел. Чтобы скрыть узел, установите параметр события `Visible` в `false`.
+Используйте параметр события [`Node`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNodeEventArgs/Node.md), чтобы определить текущий обрабатываемый узел. Чтобы скрыть узел, установите параметр события [`Visible`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListCustomNodeFilterEventArgs/Visible.md) в `false`.
 
 ### Пример - Фильтрация строк с помощью события
 
-В следующем примере контрол Tree List отображает список объектов _ProjectTask_. Событие `CustomNodeFilter` обрабатывается для реализации пользовательской фильтрации узлов. Узлы скрываются в зависимости от значения свойства _ProjectTask.Status_.
+В этом примере контрол Tree List отображает список объектов _ProjectTask_. Событие [`CustomNodeFilter`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/CustomNodeFilter.md) обрабатывается для реализации пользовательской фильтрации узлов. Узлы скрываются в зависимости от значения свойства _ProjectTask.Status_.
 
-Предполагается, что пример содержит переключаемую кнопку "Enable Filter", которая активирует и деактивирует пользовательскую фильтрацию. При нажатии кнопки обработчик события `ToggleButton.IsCheckedChanged` вызывает метод `RefreshData`, чтобы обновить узлы treelist и повторно вызвать событие `CustomNodeFilter`.
+Предполагается, что пример содержит переключаемую кнопку "Enable Filter", которая активирует и деактивирует пользовательскую фильтрацию. При нажатии кнопки обработчик события `ToggleButton.IsCheckedChanged` вызывает метод [`RefreshData`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RefreshData.md), чтобы обновить узлы treelist и повторно вызвать событие [`CustomNodeFilter`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/CustomNodeFilter.md).
 
 ``` xml
 <ToggleButton Name="btnEnableFilter" Content="Enable Filter" IsCheckedChanged="BtnEnableFilter_IsCheckedChanged"/>
@@ -262,7 +262,7 @@ private void TreeList_CustomNodeFilter(object sender, TreeListCustomNodeFilterEv
 
 ## Фильтрация в коде (TreeList и TreeView)
 
-Начиная с версии 1.2, вы можете использовать свойство `DataControlBase.FilterString`, чтобы программно фильтровать данные в контролах TreeList и TreeView.
+Начиная с версии 1.2, вы можете использовать свойство [`DataControlBase.FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md), чтобы программно фильтровать данные в контролах TreeList и TreeView.
 
 ``` cs
 treeList.FilterString = "[Description] == 'Front-end development' && [Assignee] == 'Tim Robinson'";
@@ -273,8 +273,8 @@ treeList.FilterString = "[Description] == 'Front-end development' && [Assignee] 
 
 ### Очистка и отключение фильтра
 
-- Чтобы очистить фильтр, установите свойство `FilterString` в `null` или пустую строку.
-- Чтобы временно отключить фильтр, используйте свойство `DataControlBase.IsFilterEnabled`.
+- Чтобы очистить фильтр, установите свойство [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) в `null` или пустую строку.
+- Чтобы временно отключить фильтр, используйте свойство [`DataControlBase.IsFilterEnabled`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsFilterEnabled.md).
 
 ### Указание колонок
 
@@ -352,7 +352,7 @@ treeList.FilterString = "[Price] < 5 OR [Price] > 15";
 
 Вы можете использовать класс `Eremex.AvaloniaUI.Controls.Data.Filtering.ExprStringBuilder`, чтобы создавать расширенные критерии фильтра. Эти критерии фильтра могут включать операции над операндами, вызовы поддерживаемых функций и многое другое. Чтобы построить критерии фильтра, используйте члены класса `ExprStringBuilder`.
 
-Чтобы получить строку фильтра, вызовите метод `ToString` результирующего объекта `ExprStringBuilder`. Затем вы можете присвоить эту строку фильтра свойству `DataControlBase.FilterString` целевого контрола.
+Чтобы получить строку фильтра, вызовите метод `ToString` результирующего объекта `ExprStringBuilder`. Затем вы можете присвоить эту строку фильтра свойству [`DataControlBase.FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) целевого контрола.
 
 
 ``` cs
@@ -378,7 +378,7 @@ control.FilterString = filterString;
 ### Указание значений перечисления
 
 Чтобы указать значения перечисления в строке фильтра, вам следует построить критерии фильтра с помощью класса `Eremex.AvaloniaUI.Controls.Data.Filtering.ExprStringBuilder`.
-Метод `ExprStringBuilder.ToString` позволяет получить строку фильтра, которую можно присвоить свойству `FilterString` целевого контрола.
+Метод `ExprStringBuilder.ToString` позволяет получить строку фильтра, которую можно присвоить свойству [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) целевого контрола.
 
 Вам также необходимо зарегистрировать тип перечисления с помощью метода `EnumProcessingHelper.RegisterEnum` перед тем, как строка фильтра будет присвоена целевому контролу.
 

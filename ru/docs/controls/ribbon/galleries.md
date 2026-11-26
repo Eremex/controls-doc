@@ -19,7 +19,7 @@ seealso: []
 
 ## Создание галереи Ribbon
 
-Используйте элемент `RibbonGalleryItem`, чтобы добавить галерею в интерфейс Ribbon. Вы можете добавить объект `RibbonGalleryItem` в [группу страниц](page-groups.md), во всплывающие меню, в [область заголовков страниц](page-header-items.md) или на [панель быстрого доступа](quick-access-toolbar.md) так же, как и другие [элементы Ribbon](ribbon-items.md). Например, чтобы добавить элементы Ribbon в группу страниц, определите их между открывающим и закрывающим тегами &lt;RibbonPageGroup&gt;. В code-behind вы можете добавлять элементы с помощью коллекции `RibbonPageGroup.Items`.
+Используйте элемент [`RibbonGalleryItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem.md), чтобы добавить галерею в интерфейс Ribbon. Вы можете добавить объект [`RibbonGalleryItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem.md) в [группу страниц](page-groups.md), во всплывающие меню, в [область заголовков страниц](page-header-items.md) или на [панель быстрого доступа](quick-access-toolbar.md) так же, как и другие [элементы Ribbon](ribbon-items.md). Например, чтобы добавить элементы Ribbon в группу страниц, определите их между открывающим и закрывающим тегами &lt;RibbonPageGroup&gt;. В code-behind вы можете добавлять элементы с помощью коллекции [`RibbonPageGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/Items.md).
 
 Следующий фрагмент кода из демо _WordPad Example_ добавляет галерею в группу страниц _Styles_. Источник элементов галереи задаётся коллекцией _FontStyles_, определённой во View Model.
 
@@ -37,9 +37,9 @@ seealso: []
 
 ## Элементы галереи
 
-Используйте свойство `RibbonGalleryItem.ItemsSource`, чтобы предоставить коллекцию бизнес-объектов для отображения в виде элементов галереи. Чтобы отрисовать эти бизнес-объекты в галерее, определите соответствующие шаблоны данных. 
+Используйте свойство [`RibbonGalleryItem.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemsSource.md), чтобы предоставить коллекцию бизнес-объектов для отображения в виде элементов галереи. Чтобы отрисовать эти бизнес-объекты в галерее, определите соответствующие шаблоны данных. 
 
-Чтобы определить шаблоны элементов галереи, вы также можете использовать свойство `RibbonGalleryItem.ItemTemplate`.
+Чтобы определить шаблоны элементов галереи, вы также можете использовать свойство [`RibbonGalleryItem.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemTemplate.md).
 
 ### Пример - использование нескольких шаблонов для элементов галереи
 
@@ -103,9 +103,9 @@ public partial class WordPadExampleViewModel : PageViewModelBase
 
 ### Пример - использование одного шаблона для всех элементов галереи
 
-Пример ниже использует свойство `RibbonGalleryItem.ItemTemplate`, чтобы определить шаблон данных для отрисовки всех элементов галереи. Этот шаблон рисует текстовый блок, текст и цвета которого задаются настройками объектов элементов галереи (объектов _CellStyle_), хранящихся в коллекции _CellStyles_ View Model.
+Пример ниже использует свойство [`RibbonGalleryItem.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemTemplate.md), чтобы определить шаблон данных для отрисовки всех элементов галереи. Этот шаблон рисует текстовый блок, текст и цвета которого задаются настройками объектов элементов галереи (объектов _CellStyle_), хранящихся в коллекции _CellStyles_ View Model.
 
-Свойство `RibbonGalleryItem.FocusedItem` идентифицирует текущий [выбранный элемент галереи](#фокус-и-выбор-элементов-галереи). В примере свойство `RibbonGalleryItem.FocusedItem` привязано к свойству _SelectedCellStyle_ во View Model. Чтобы выполнять действия при выборе элемента галереи, обработчик события `PropertyChanged` View Model отслеживает изменения свойства _SelectedCellStyle_.
+Свойство [`RibbonGalleryItem.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/FocusedItem.md) идентифицирует текущий [выбранный элемент галереи](#фокус-и-выбор-элементов-галереи). В примере свойство [`RibbonGalleryItem.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/FocusedItem.md) привязано к свойству _SelectedCellStyle_ во View Model. Чтобы выполнять действия при выборе элемента галереи, обработчик события `PropertyChanged` View Model отслеживает изменения свойства _SelectedCellStyle_.
 
 ![ribbon-gallery-itemtemplate-example](../../images/ribbon-gallery-itemtemplate-example.png)
 
@@ -205,7 +205,7 @@ public class CellStyle : ObservableObject
 
 ## Настройки отображения галереи
 
-- `RibbonGalleryItem.Header` — подпись галереи.  
+- [`RibbonGalleryItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) — подпись галереи.  
 
   ``` xml
   <mxr:RibbonGalleryItem Header="Styles" ...>
@@ -214,44 +214,44 @@ public class CellStyle : ObservableObject
 
   Подпись галереи отображается в следующих случаях:
 
-  - В выпадающей галерее, когда включена опция `IsDropDownHeaderVisible`.
+  - В выпадающей галерее, когда включена опция [`IsDropDownHeaderVisible`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/IsDropDownHeaderVisible.md).
 
     ![ribbon-gallery-IsDropDownHeaderVisible](../../images/ribbon-gallery-IsDropDownHeaderVisible.png)
     
 
-  - Когда объект `RibbonGalleryItem` отрисовывается как кнопка со связанной выпадающей галереей. Это происходит, когда объект `RibbonGalleryItem` встроен во всплывающее меню или когда используется [упрощённая компоновка команд](ribbon-command-layouts.md). Свойство `RibbonGalleryItem.Header` задаёт подпись этой кнопки. 
+  - Когда объект [`RibbonGalleryItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem.md) отрисовывается как кнопка со связанной выпадающей галереей. Это происходит, когда объект [`RibbonGalleryItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem.md) встроен во всплывающее меню или когда используется [упрощённая компоновка команд](ribbon-command-layouts.md). Свойство [`RibbonGalleryItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) задаёт подпись этой кнопки. 
   
     ![ribbon-gallery-in-popup-menu](../../images/ribbon-gallery-in-popup-menu.png)
 
     Подробнее смотрите в следующих разделах: [Галереи в упрощённой компоновке команд](#галереи-в-упрощённой-компоновке-команд) и [Галереи на панелях инструментов, во всплывающих и контекстных меню](#галереи-на-панелях-инструментов-во-всплывающих-и-контекстных-меню).
 
-- `RibbonGalleryItem.ItemHeight` — задаёт высоту элементов галереи. Это свойство имеет более высокий приоритет, чем настройка `RibbonGalleryItem.StretchItemVertically`.
+- [`RibbonGalleryItem.ItemHeight`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemHeight.md) — задаёт высоту элементов галереи. Это свойство имеет более высокий приоритет, чем настройка [`RibbonGalleryItem.StretchItemVertically`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/StretchItemVertically.md).
 
-  Если свойство `RibbonGalleryItem.ItemHeight` не задано, высота элемента галереи по умолчанию задаётся высотой первого элемента галереи. Эта высота берётся из соответствующего шаблона данных.
+  Если свойство [`RibbonGalleryItem.ItemHeight`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemHeight.md) не задано, высота элемента галереи по умолчанию задаётся высотой первого элемента галереи. Эта высота берётся из соответствующего шаблона данных.
 
-- `RibbonGalleryItem.ItemWidth` — задаёт ширину элементов галереи.
-- `RibbonGalleryItem.MaxColumnCount` — задаёт максимальное число столбцов во встроенной в Ribbon галерее.
-- `RibbonGalleryItem.MaxDropDownColumnCount` — задаёт максимальное число столбцов в выпадающей галерее.
-- `RibbonGalleryItem.StretchItemVertically` — задаёт, растягивать ли по вертикали первую строку элементов галереи, чтобы уместить её в высоту встроенной в Ribbon галереи. Эта автоматическая высота распространяется на другие строки, включая строки в выпадающей галерее.
+- [`RibbonGalleryItem.ItemWidth`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemWidth.md) — задаёт ширину элементов галереи.
+- [`RibbonGalleryItem.MaxColumnCount`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/MaxColumnCount.md) — задаёт максимальное число столбцов во встроенной в Ribbon галерее.
+- [`RibbonGalleryItem.MaxDropDownColumnCount`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/MaxDropDownColumnCount.md) — задаёт максимальное число столбцов в выпадающей галерее.
+- [`RibbonGalleryItem.StretchItemVertically`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/StretchItemVertically.md) — задаёт, растягивать ли по вертикали первую строку элементов галереи, чтобы уместить её в высоту встроенной в Ribbon галереи. Эта автоматическая высота распространяется на другие строки, включая строки в выпадающей галерее.
 
   ![ribbon-gallery-StretchItemVertically](../../images/ribbon-gallery-StretchItemVertically.png)
 
-  Свойство `RibbonGalleryItem.StretchItemVertically` не действует, если задано свойство `RibbonGalleryItem.ItemHeight`.
+  Свойство [`RibbonGalleryItem.StretchItemVertically`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/StretchItemVertically.md) не действует, если задано свойство [`RibbonGalleryItem.ItemHeight`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemHeight.md).
 
-  Когда свойство `RibbonGalleryItem.StretchItemVertically` равно `false`, а свойство `RibbonGalleryItem.ItemHeight` не используется, высота элемента галереи по умолчанию задаётся высотой первого элемента галереи. Эта высота берётся из соответствующего шаблона данных.
+  Когда свойство [`RibbonGalleryItem.StretchItemVertically`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/StretchItemVertically.md) равно `false`, а свойство [`RibbonGalleryItem.ItemHeight`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemHeight.md) не используется, высота элемента галереи по умолчанию задаётся высотой первого элемента галереи. Эта высота берётся из соответствующего шаблона данных.
 
 ## Фокус и выбор элементов галереи
 
-- `RibbonGalleryItem.FocusedItem` — позволяет получить бизнес-объект, соответствующий текущему сфокусированному элементу галереи. Сфокусированный элемент — это тот, который получает фокус. Вы можете определить сфокусированный элемент по рамке фокуса.
+- [`RibbonGalleryItem.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/FocusedItem.md) — позволяет получить бизнес-объект, соответствующий текущему сфокусированному элементу галереи. Сфокусированный элемент — это тот, который получает фокус. Вы можете определить сфокусированный элемент по рамке фокуса.
 
   ![ribbon-gallery-focuseditem](../../images/ribbon-gallery-focuseditem.png)
   
 
-- `RibbonGalleryItem.ItemSelectionMode` — позволяет выбирать между режимами одиночного и множественного выбора элементов. Когда свойство `ItemSelectionMode` установлено в `Multiple`, пользователи могут выбирать несколько элементов галереи одновременно.
+- [`RibbonGalleryItem.ItemSelectionMode`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemSelectionMode.md) — позволяет выбирать между режимами одиночного и множественного выбора элементов. Когда свойство [`ItemSelectionMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ItemSelectionMode.md) установлено в `Multiple`, пользователи могут выбирать несколько элементов галереи одновременно.
   
-  В режиме одиночного выбора используйте свойство `RibbonGalleryItem.FocusedItem`, чтобы получить/задать сфокусированный (выбранный) элемент.
+  В режиме одиночного выбора используйте свойство [`RibbonGalleryItem.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/FocusedItem.md), чтобы получить/задать сфокусированный (выбранный) элемент.
   
-  В режиме множественного выбора используйте свойство `RibbonGalleryItem.SelectedItems`, чтобы получить/задать текущие выбранные элементы. 
+  В режиме множественного выбора используйте свойство [`RibbonGalleryItem.SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/SelectedItems.md), чтобы получить/задать текущие выбранные элементы. 
 
   Когда вы щёлкаете по элементу в режиме множественного выбора, этот элемент автоматически фокусируется и выбирается. 
   Выбранные элементы имеют подсвеченный фон. Рамка вокруг элемента галереи указывает, что он сфокусирован.
@@ -264,10 +264,10 @@ public class CellStyle : ObservableObject
 
   ![ribbon-gallery-multiple-selection-unselected](../../images/ribbon-gallery-multiple-selection-unselected.png)
 
-- `RibbonGalleryItem.SelectedItems` — коллекция бизнес-объектов, соответствующих выбранным элементам галереи. Установите свойство `RibbonGalleryItem.ItemSelectionMode` в `Multiple`, чтобы разрешить множественный выбор элементов.
+- [`RibbonGalleryItem.SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/SelectedItems.md) — коллекция бизнес-объектов, соответствующих выбранным элементам галереи. Установите свойство [`RibbonGalleryItem.ItemSelectionMode`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemSelectionMode.md) в `Multiple`, чтобы разрешить множественный выбор элементов.
 
   
-  В режиме одиночного выбора свойство `RibbonGalleryItem.SelectedItems` содержит один элемент. Он совпадает со свойством `RibbonGalleryItem.FocusedItem`.
+  В режиме одиночного выбора свойство [`RibbonGalleryItem.SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/SelectedItems.md) содержит один элемент. Он совпадает со свойством [`RibbonGalleryItem.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/FocusedItem.md).
 
   
 
@@ -276,8 +276,8 @@ public class CellStyle : ObservableObject
 
 ## Показ и закрытие выпадающей галереи
 
-- `RibbonGalleryItem.IsPopupOpen` — возвращает или задаёт, открыта ли выпадающая галерея.
-- `RibbonGalleryItem.ClosePopup` — закрывает выпадающую галерею.
+- [`RibbonGalleryItem.IsPopupOpen`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/IsPopupOpen.md) — возвращает или задаёт, открыта ли выпадающая галерея.
+- [`RibbonGalleryItem.ClosePopup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ClosePopup.md) — закрывает выпадающую галерею.
 
 ## Дополнительные команды в выпадающей галерее
 
@@ -285,7 +285,7 @@ public class CellStyle : ObservableObject
 
 ![ribbon-RibbonGalleryItem-dropdown](../../images/ribbon-RibbonGalleryItem-dropdown.png)
 
-Используйте свойство `RibbonGalleryItem.DropDownItems`, чтобы задать эти дополнительные элементы.
+Используйте свойство [`RibbonGalleryItem.DropDownItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/DropDownItems.md), чтобы задать эти дополнительные элементы.
 
 ``` xml
 <mxr:RibbonPageGroup Header="Styles" IsHeaderButtonVisible="True">
@@ -310,7 +310,7 @@ public class CellStyle : ObservableObject
 
 ![ribbon-gallery-simplified-layout](../../images/ribbon-gallery-simplified-layout.png)
 
-Текст кнопки задаётся свойством `RibbonGalleryItem.Header`.
+Текст кнопки задаётся свойством [`RibbonGalleryItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md).
 
 ## Галереи на панелях инструментов, во всплывающих и контекстных меню
 
@@ -318,7 +318,7 @@ public class CellStyle : ObservableObject
 
 ![ribbon-gallery-in-popup-menu](../../images/ribbon-gallery-in-popup-menu.png)
 
-Подпись подменю задаётся свойством `RibbonGalleryItem.Header`.
+Подпись подменю задаётся свойством [`RibbonGalleryItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md).
 
 
 <br>

@@ -4,19 +4,19 @@ order: 100000
 seealso: []
 ---
 
-# 工具栏入门
+# 工具栏入门 {#get-started-with-toolbars}
 
 本教程演示如何使用 Eremex Toolbars 库从头开始创建工具栏 UI。教程介绍了用于实现工具栏 UI 的控件，并演示了主要的工具栏设置。
 
 ![toolbar-ui-tutorial](../../images/toolbar-ui-tutorial.png)
 
-本教程为放置在窗口中央的两个文本编辑器创建一个工具栏 UI。工具栏 UI 由主菜单、状态栏，以及显示各种项目的常规工具栏组成：按钮、检查按钮、内嵌编辑器、子菜单和文本项目。
+本教程为放置在窗口中央的两个文本编辑器创建一个工具栏 UI。工具栏 UI 由主菜单、状态栏，以及显示各种项目的常规工具栏组成：按钮、检查按钮、就地编辑器、子菜单和文本项目。
 
 除其中一个工具栏外，所有工具栏都停靠在窗口的边缘。这些工具栏包含与第一个文本编辑器配合使用的命令。一个工具栏（独立工具栏）放置在两个文本编辑器之间，为第二个文本编辑器提供命令。
 
 本教程还展示了如何将文本编辑器与 Toolbars&Menu 库中的上下文菜单关联起来。
 
-## 1. 创建新项目
+## 1. 创建新项目 {#1-create-a-new-project}
 
 请确保您已安装 [Eremex Avalonia Templates](../../whats-included/project-templates.md)，它可以简化使用 Eremex 控件创建 Avalonia UI 项目的过程。从 `Eremex Avalonia .NET MVVM App` 模板创建一个新项目，并将其命名为 "Bars-sample"。
 
@@ -24,9 +24,9 @@ seealso: []
 
 该模板会将包含 Eremex 控件和 DeltaDesign [视觉主题](../themes/index.md) 的程序集添加到创建的项目中，并[注册](../themes/register-an-eremex-paint-theme.md)该视觉主题以供使用。
 
-## 2. 添加 ToolbarManager 组件
+## 2. 添加 ToolbarManager 组件 {#2-add-a-toolbarmanager-component}
 
-首先在 XAML 中定义 `ToolbarManager` 组件。
+首先在 XAML 中定义 [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) 组件。
 
 ``` xml
 <mx:MxWindow ...
@@ -53,16 +53,16 @@ seealso: []
 </mx:MxWindow>
 ```
 
-`ToolbarManager` 是管理工具栏、上下文菜单和菜单项的主要组件。该组件处理键盘快捷键，调用与相应项关联的命令，维护工具栏在运行时的自定义设置，并执行工具栏 UI 的序列化和反序列化。
+[`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) 是管理工具栏、上下文菜单和菜单项的主要组件。该组件处理键盘快捷键，调用与相应项关联的命令，维护工具栏在运行时的自定义设置，并执行工具栏 UI 的序列化和反序列化。
 
-`ToolbarManager` 组件应该包装为其创建工具栏 UI 的客户端控件（多个控件）。
+[`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) 组件应该包装为其创建工具栏 UI 的客户端控件（多个控件）。
 
 
-## 3. 创建工具栏容器
+## 3. 创建工具栏容器 {#3-create-toolbar-containers}
 
-要允许工具栏停靠在窗口/UserControl 中的特定位置，请先创建一个工具栏容器（`ToolbarContainerControl`）。工具栏容器是一种控件，用于在停靠状态下显示工具栏，并维护工具栏的拖放操作。
+要允许工具栏停靠在窗口/UserControl 中的特定位置，请先创建一个工具栏容器（[`ToolbarContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl.md)）。工具栏容器是一种控件，用于在停靠状态下显示工具栏，并维护工具栏的拖放操作。
 
-在 XAML 中，沿窗口的顶部、底部、左侧和右侧边缘创建四个工具栏容器（`ToolbarContainerControl` 对象）。这样您就可以将工具栏停靠在这些位置。
+在 XAML 中，沿窗口的顶部、底部、左侧和右侧边缘创建四个工具栏容器（[`ToolbarContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl.md) 对象）。这样您就可以将工具栏停靠在这些位置。
 
 ![toolbars-get-started-empty=toolbarcontainers](../../images/toolbars-get-started-empty=toolbarcontainers.png)
 
@@ -90,17 +90,17 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 </mxb:ToolbarManager>
 ```
 
-### 工具栏容器选项
+### 工具栏容器选项 {#toolbar-container-options}
 
-`ToolbarContainerControl` 的主要设置是 `ToolbarContainerControl.DockType`，它指定容器如何停靠到其父容器。您可以将 `DockType` 属性设置为 `Left`、`Right`、`Top`、`Bottom` 和 `Standalone`。
+[`ToolbarContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl.md) 的主要设置是 [`ToolbarContainerControl.DockType`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl/DockType.md)，它指定容器如何停靠到其父容器。您可以将 [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) 属性设置为 `Left`、`Right`、`Top`、`Bottom` 和 `Standalone`。
 
-`DockType` 设置决定容器边框的可见性以及嵌套工具栏的默认对齐方式。例如，如果容器的 `DockType` 选项为 `Left`，则容器会在其右边缘绘制边框，并将嵌套的工具栏垂直排列。下图展示了 `DockType` 选项设置为 `Left` 的工具栏容器。子工具栏根据 `DockType` 设置垂直排列。
+[`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) 设置决定容器边框的可见性以及嵌套工具栏的默认对齐方式。例如，如果容器的 [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) 选项为 `Left`，则容器会在其右边缘绘制边框，并将嵌套的工具栏垂直排列。下图展示了 [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) 选项设置为 `Left` 的工具栏容器。子工具栏根据 [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) 设置垂直排列。
 
 ![toolbars-get-started-toolbarcontainer-docktype-left](../../images/toolbars-get-started-toolbarcontainer-docktype-left.png)
 
-## 4. 创建工具栏
+## 4. 创建工具栏 {#4-create-toolbars}
 
-将工具栏（`Toolbar` 对象）添加到所需的工具栏容器中。
+将工具栏（[`Toolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar.md) 对象）添加到所需的工具栏容器中。
 
 ![toolbars-get-started-empty-toolbars](../../images/toolbars-get-started-empty-toolbars.png)
 
@@ -147,9 +147,9 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 上面的代码片段用工具栏填充了三个工具栏容器，并将一个工具栏容器留空。用户将能够在运行时把工具栏拖放到这四个工具栏容器中的任意一个。
 
-### 指定主菜单和状态栏
+### 指定主菜单和状态栏 {#specify-the-main-menu-and-status-bar}
 
-要指明某个工具栏是主菜单还是状态栏，请分别将其 `Toolbar.DisplayMode` 属性设置为 `MainMenu` 和 `StatusBar`。
+要指明某个工具栏是主菜单还是状态栏，请分别将其 [`Toolbar.DisplayMode`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/DisplayMode.md) 属性设置为 `MainMenu` 和 `StatusBar`。
 
 ``` xml
 <mxb:Toolbar x:Name="MainMenu" ToolbarName="Main Menu" DisplayMode="MainMenu">
@@ -160,36 +160,36 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ![toolbars-get-started-mainmenu-statusbar](../../images/toolbars-get-started-mainmenu-statusbar.png)
 
-### 工具栏选项
+### 工具栏选项 {#toolbar-options}
 
-`Toolbar` 对象公开了许多选项，用于自定义其视图、布局和行为设置。其中一些选项包括：
+[`Toolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar.md) 对象公开了许多选项，用于自定义其视图、布局和行为设置。其中一些选项包括：
 
-- `ToolbarName` — 工具栏的显示名称。工具栏名称显示在"自定义"窗口中，工具栏处于浮动状态时也会显示。
+- [`ToolbarName`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/ToolbarName.md) — 工具栏的显示名称。工具栏名称显示在"自定义"窗口中，工具栏处于浮动状态时也会显示。
     
     ![toolbars-get-started-toolbarname](../../images/toolbars-get-started-toolbarname.png)
     
-- `ShowCustomizationButton` — 指定用于激活自定义模式并打开"自定义"窗口的自定义按钮的可见性。
+- [`ShowCustomizationButton`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/ShowCustomizationButton.md) — 指定用于激活自定义模式并打开"自定义"窗口的自定义按钮的可见性。
     
     ![toolbars-get-started-customization-button](../../images/toolbars-get-started-customization-button.png)
 
-- `AllowDragToolbar` — 指定拖动手柄的可见性，该手柄使用户能够拖动工具栏。
+- [`AllowDragToolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/AllowDragToolbar.md) — 指定拖动手柄的可见性，该手柄使用户能够拖动工具栏。
     
     ![toolbars-get-started-customization-drag-thumb](../../images/toolbars-get-started-customization-drag-thumb.png)
 
-- `DockType` — 该属性允许您在代码隐藏文件中将工具栏移动到特定的工具栏容器，或使工具栏处于浮动状态。
-- `StretchToolbar` — 启用工具栏拉伸。在此模式下，同一行中不能显示其他工具栏。
-- `WrapItems` — 为工具栏启用多行布局。
+- [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) — 该属性允许您在代码隐藏文件中将工具栏移动到特定的工具栏容器，或使工具栏处于浮动状态。
+- [`StretchToolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/StretchToolbar.md) — 启用工具栏拉伸。在此模式下，同一行中不能显示其他工具栏。
+- [`WrapItems`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/WrapItems.md) — 为工具栏启用多行布局。
 
 
-## 5. 创建工具栏项
+## 5. 创建工具栏项 {#5-create-toolbar-items}
 
-下一步是用工具栏项填充工具栏：常规按钮、检查按钮、内嵌编辑器、子菜单和文本项目。工具栏项由派生自 `ToolbarItem` 类的类封装，该类公开了通用的工具栏项选项。
+下一步是用工具栏项填充工具栏：常规按钮、检查按钮、就地编辑器、子菜单和文本项目。工具栏项由派生自 [`ToolbarItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem.md) 类的类封装，该类公开了通用的工具栏项选项。
 
 本教程将创建以下工具栏项：
 
-### ToolbarButtonItem
+### ToolbarButtonItem {#toolbarbuttonitem}
 
-一个常规按钮，用于触发由 `Command` 属性指定的命令。
+一个常规按钮，用于触发由 [`Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md) 属性指定的命令。
 
 ![toolbars-get-started-ToolbarButtonItem](../../images/toolbars-get-started-ToolbarButtonItem.png)
 
@@ -206,26 +206,26 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 </mxb:Toolbar>
 ```
 
-#### 常用工具栏项选项
+#### 常用工具栏项选项 {#common-toolbar-item-options}
 
-基础 `ToolbarItem` 类提供了所有工具栏项继承的通用选项。其中一些选项包括：
+基础 [`ToolbarItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem.md) 类提供了所有工具栏项继承的通用选项。其中一些选项包括：
 
-- `Alignment` — 项在工具栏中的对齐方式。
-- `Category` — 项所属的类别。类别用于在"自定义"窗口中将项组织为逻辑分组。
-- `Command` — 单击按钮时执行的命令。
-- `CommandParameter` — 传递给指定命令的命令参数。
-- `DisplayMode` — 获取是仅显示图形符号、标题，还是两者都显示。
-- `Header` — 项的显示文本。
-- `Glyph` — 项的图像。
-- `GlyphAlignment` — 图形符号相对于项标题的对齐方式。
-- `GlyphSize` — 图形符号的显示尺寸。
-- `ShowSeparator` — 允许您在项之前显示分隔符。
+- [`Alignment`](../../API/Eremex.AvaloniaUI.Controls.Bars/Alignment.md) — 项在工具栏中的对齐方式。
+- [`Category`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Category.md) — 项所属的类别。类别用于在"自定义"窗口中将项组织为逻辑分组。
+- [`Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md) — 单击按钮时执行的命令。
+- [`CommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/CommandParameter.md) — 传递给指定命令的命令参数。
+- [`DisplayMode`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/DisplayMode.md) — 获取是仅显示图形符号、标题，还是两者都显示。
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) — 项的显示文本。
+- [`Glyph`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Glyph.md) — 项的图像。
+- [`GlyphAlignment`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/GlyphAlignment.md) — 图形符号相对于项标题的对齐方式。
+- [`GlyphSize`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/GlyphSize.md) — 图形符号的显示尺寸。
+- [`ShowSeparator`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/ShowSeparator.md) — 允许您在项之前显示分隔符。
 
-#### 为 ToolbarButtonItem 分配下拉控件/菜单
+#### 为 ToolbarButtonItem 分配下拉控件/菜单 {#assign-a-dropdown-controlmenu-to-a-toolbarbuttonitem}
 
-您可以将下拉控件/菜单与 `ToolbarButtonItem` 对象关联起来。单击内置的下拉箭头或项本身即可激活下拉内容（有关详细信息，请参阅下面的 `DropDownArrowVisibility` 选项）。
+您可以将下拉控件/菜单与 [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md) 对象关联起来。单击内置的下拉箭头或项本身即可激活下拉内容（有关详细信息，请参阅下面的 [`DropDownArrowVisibility`](../../API/Eremex.AvaloniaUI.Controls.Bars/DropDownArrowVisibility.md) 选项）。
 
-下面让我们将_粘贴_按钮（`ToolbarButtonItem`）与一个下拉菜单关联起来。该下拉菜单将显示_粘贴_和_粘贴为_命令。
+下面让我们将_粘贴_按钮（[`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)）与一个下拉菜单关联起来。该下拉菜单将显示_粘贴_和_粘贴为_命令。
 
 ![toolbars-get-started-pastebutton-with-dropdown-menu](../../images/toolbars-get-started-pastebutton-with-dropdown-menu.png)
 
@@ -249,9 +249,9 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 以下属性用于指定下拉控件及其显示方式：
 
-- `DropDownControl` — 获取或设置与该项关联的下拉控件/菜单。此属性接受 `PopupContainer` 和 `PopupMenu` 对象。
+- [`DropDownControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem/DropDownControl.md) — 获取或设置与该项关联的下拉控件/菜单。此属性接受 [`PopupContainer`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupContainer.md) 和 [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) 对象。
 
-- `DropDownArrowVisibility` — 指定该项是否显示用于调用关联下拉控件的下拉箭头。支持的选项包括：
+- [`DropDownArrowVisibility`](../../API/Eremex.AvaloniaUI.Controls.Bars/DropDownArrowVisibility.md) — 指定该项是否显示用于调用关联下拉控件的下拉箭头。支持的选项包括：
     - `ShowArrow` — 下拉箭头可见。该项和箭头充当单个按钮。单击它们会显示关联的下拉控件。
 
     - `ShowSplitArrow` 或 `Default` — 下拉箭头可见。它充当嵌入该项中的独立按钮。单击下拉箭头会调用关联的下拉控件。单击该项本身会调用其命令。
@@ -260,7 +260,7 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 
 
-### ToolbarMenuItem
+### ToolbarMenuItem {#toolbarmenuitem}
 
 一个用于调用子菜单的按钮。要向子菜单添加项，请在 XAML 标记中的起始和结束 `<ToolbarMenuItem>` 标记之间定义它们，或将它们添加到 `Items` 集合中。
 
@@ -286,7 +286,7 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
     
 
-### ToolbarCheckItem
+### ToolbarCheckItem {#toolbarcheckitem}
 
 一个检查按钮，可以处于正常状态或按下状态。
 
@@ -303,12 +303,12 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 </mxb:Toolbar>
 ```
 
-#### ToolbarCheckItem 选项
+#### ToolbarCheckItem 选项 {#toolbarcheckitem-options}
 
 - `IsChecked` — 获取或设置按钮的检查状态。
 - `CheckedChanged` — 当检查状态更改时触发的事件。
 
-### ToolbarEditorItem
+### ToolbarEditorItem {#toolbareditoritem}
 
 一个允许您在工具栏或菜单中嵌入 Eremex 编辑器的项。
 
@@ -329,12 +329,12 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 </mxb:Toolbar>
 ```
 
-#### ToolbarEditorItem 选项
+#### ToolbarEditorItem 选项 {#toolbareditoritem-options}
 
-- `EditorValue` — 允许您设置和读取内嵌编辑器的值。
-- `EditorProperties` — 指定要嵌入工具栏/菜单中的编辑器类型。在上面的代码片段中，`EditorProperties` 属性被设置为一个 `ComboBoxEditorProperties` 对象。该对象包含 `ComboBoxEditor` 控件特有的设置。工具栏会在运行时根据指定的 `ComboBoxEditorProperties` 对象自动创建 `ComboBoxEditor` 控件。
+- `EditorValue` — 允许您设置和读取就地编辑器的值。
+- `EditorProperties` — 指定要嵌入工具栏/菜单中的编辑器类型。在上面的代码片段中，`EditorProperties` 属性被设置为一个 [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md) 对象。该对象包含 [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) 控件特有的设置。工具栏会在运行时根据指定的 [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md) 对象自动创建 [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) 控件。
 
-### ToolbarTextItem
+### ToolbarTextItem {#toolbartextitem}
 
 一个文本标签。单击文本标签不会触发任何操作（命令）。
 
@@ -350,28 +350,28 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 </mxb:Toolbar>
 ```
 
-#### ToolbarTextItem 选项
+#### ToolbarTextItem 选项 {#toolbartextitem-options}
 
 - `SizeMode` — 获取或设置该项是自动调整大小以适应其内容，还是拉伸以占据工具栏中的可用空间。
 - `ShowBorder` — 获取或设置是否在该项周围显示边框。
 
-### 其他工具栏项类型
+### 其他工具栏项类型 {#other-toolbar-item-types}
 
 Toolbars 库还支持本教程中未演示的其他工具栏项类型：
 
-- `ToolbarItemGroup` — 一组工具栏项。
-- `ToolbarCheckItemGroup` — 一组检查按钮。使用它可以创建一组互斥的检查项，或者创建一个支持一次选择多个项的分组。
+- [`ToolbarItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup.md) — 一组工具栏项。
+- [`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md) — 一组检查按钮。使用它可以创建一组互斥的检查项，或者创建一个支持一次选择多个项的分组。
 
-有关详细信息，请参阅以下主题：[Toolbar Items](toolbar-items.md)。
+有关详细信息，请参阅以下主题：[工具栏项](toolbar-items.md)。
 
-## 6. 创建独立工具栏
+## 6. 创建独立工具栏 {#6-create-a-standalone-toolbar}
 
 您可以将工具栏放置在窗口内的任意位置，而不仅仅是沿其边缘放置。例如，您可以将带有命令的工具栏放置在目标控件旁边。这些工具栏被称为"独立"（standalone）工具栏，因为它们位于"独立"工具栏容器内。
 
 ![toolbars-get-started-standalone-toolbar](../../images/toolbars-get-started-standalone-toolbar.png)
 
 要创建独立工具栏，请执行以下操作：
-1. 在所需位置创建一个工具栏容器（`ToolbarContainerControl`），并将其 `DockType` 属性设置为 `Standalone`。
+1. 在所需位置创建一个工具栏容器（[`ToolbarContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl.md)），并将其 [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) 属性设置为 `Standalone`。
    
    独立工具栏容器没有边框。
 
@@ -404,9 +404,9 @@ Toolbars 库还支持本教程中未演示的其他工具栏项类型：
 </mxb:ToolbarManager>
 ```
 
-## 7. 为文本编辑器分配上下文菜单
+## 7. 为文本编辑器分配上下文菜单 {#7-assign-a-context-menu-to-a-text-editor}
 
-要为控件指定上下文菜单，请创建一个 `PopupMenu` 对象，并使用 `ToolbarManager.ContextPopup` 附加属性将其分配给目标控件。任何类型的工具栏项都可以添加到弹出菜单中。
+要为控件指定上下文菜单，请创建一个 [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) 对象，并使用 `ToolbarManager.ContextPopup` 附加属性将其分配给目标控件。任何类型的工具栏项都可以添加到弹出菜单中。
 
 ![toolbars-get-started-context-menu](../../images/toolbars-get-started-context-menu.png)
 
@@ -433,22 +433,22 @@ Toolbars 库还支持本教程中未演示的其他工具栏项类型：
 </TextBox>
 ```
 
-### PopupMenu 选项
+### PopupMenu 选项 {#popupmenu-options}
 
-- `ContentRightIndent` — 指定菜单项文本右侧空白区域的宽度。
+- [`ContentRightIndent`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ContentRightIndent.md) — 指定菜单项文本右侧空白区域的宽度。
 
   ![toolbars-popupmenu-contentrightindent](../../images/toolbars-popupmenu-contentrightindent.png)
 
-- `Header` — 允许您指定菜单标题。
-- `ShowHeader` — 获取或设置菜单标题是否可见。
-- `ShowIconStrip` — 获取或设置是否显示菜单项的垂直图标条。菜单项的图标由该项的 `Glyph` 属性指定。
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Header.md) — 允许您指定菜单标题。
+- [`ShowHeader`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ShowHeader.md) — 获取或设置菜单标题是否可见。
+- [`ShowIconStrip`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ShowIconStrip.md) — 获取或设置是否显示菜单项的垂直图标条。菜单项的图标由该项的 [`Glyph`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Glyph.md) 属性指定。
 
 
 
 
-## 8. 为工具栏项指定热键
+## 8. 为工具栏项指定热键 {#8-specify-hotkeys-for-toolbar-items}
 
-使用 `ToolbarItem.HotKey` 属性为项分配快捷键。
+使用 [`ToolbarItem.HotKey`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/HotKey.md) 属性为项分配快捷键。
 
 ``` xml
 <mxb:ToolbarButtonItem
@@ -456,13 +456,13 @@ Toolbars 库还支持本教程中未演示的其他工具栏项类型：
     Glyph="{SvgImage 'avares://Bars-sample/Images/Toolbars/EditDelete.svg'}"  Category="Edit"/>
 ```
 
-`ToolbarManager` 组件的边界定义了默认的热键作用范围。如果焦点位于热键作用范围内，`ToolbarManager` 就可以拦截并处理热键。
-您可以将 `ToolbarManager.IsWindowManager` 属性设置为 `true`，将热键作用范围扩展到整个窗口。在这种情况下，`ToolbarManager` 会在窗口中注册热键，即使焦点超出了 `ToolbarManager` 的边界，它也可以处理热键。
+[`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) 组件的边界定义了默认的热键作用范围。如果焦点位于热键作用范围内，[`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) 就可以拦截并处理热键。
+您可以将 [`ToolbarManager.IsWindowManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/IsWindowManager.md) 属性设置为 `true`，将热键作用范围扩展到整个窗口。在这种情况下，[`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) 会在窗口中注册热键，即使焦点超出了 [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) 的边界，它也可以处理热键。
 
-有关详细信息，请参阅以下主题：[Toolbar Item Hotkeys](toolbar-items.md#hotkeys)。
+有关详细信息，请参阅以下主题：[热键](toolbar-items.md#hotkeys)。
 
 
-## 9. 为工具栏项分配工具提示
+## 9. 为工具栏项分配工具提示 {#9-assign-tooltips-to-toolbar-items}
 
 `ToolTip` 属性允许您为工具栏项指定工具提示。
 
@@ -478,24 +478,24 @@ Toolbars 库还支持本教程中未演示的其他工具栏项类型：
 
 
 
-## 10. 使工具栏浮动
+## 10. 使工具栏浮动 {#10-make-a-toolbar-floating}
 
-下面让我们在代码隐藏文件中创建一个浮动工具栏。请确保目标工具栏具有名称，以便您可以访问它。获取工具栏对象后，将其 `Toolbar.DockType` 属性设置为 `Floating`。使用 `Toolbar.FloatingPosition` 属性设置浮动工具栏的位置。
+下面让我们在代码隐藏文件中创建一个浮动工具栏。请确保目标工具栏具有名称，以便您可以访问它。获取工具栏对象后，将其 [`Toolbar.DockType`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/DockType.md) 属性设置为 `Floating`。使用 [`Toolbar.FloatingPosition`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/FloatingPosition.md) 属性设置浮动工具栏的位置。
 
 ``` csharp
 EditToolbar.DockType = Eremex.AvaloniaUI.Controls.Bars.MxToolbarDockType.Floating;
 EditToolbar.FloatingPosition = new PixelPoint(200, 200);
 ```
 
-要在 XAML 中创建浮动工具栏，请在 `ToolbarManager.Toolbars` 集合中定义一个 `Toolbar` 对象，并将 `Toolbar.DockType` 属性设置为 `Floating`。
+要在 XAML 中创建浮动工具栏，请在 [`ToolbarManager.Toolbars`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/Toolbars.md) 集合中定义一个 [`Toolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar.md) 对象，并将 [`Toolbar.DockType`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/DockType.md) 属性设置为 `Floating`。
 
-有关详细信息，请参阅以下主题：[Floating Toolbars](toolbars.md#floating-toolbars)。
+有关详细信息，请参阅以下主题：[浮动工具栏](toolbars.md#floating-toolbars)。
 
 <!--TODO ## 10. Save and Restore a Toolbars Layout
 
  -->
 
-## 11. 运行时
+## 11. 运行时 {#11-runtime}
 
 Toolbars 库支持用户在运行时自定义工具栏。运行应用程序，即可实际体验这些功能：
 
@@ -518,7 +518,7 @@ Toolbars 库支持用户在运行时自定义工具栏。运行应用程序，�
 - 在工具栏和子菜单之间隐藏、恢复和重新排列工具栏项。
 
 
-## 12. 完整代码
+## 12. 完整代码 {#12-complete-code}
 
 您可以在下面找到本教程的完整代码。
 
@@ -890,11 +890,11 @@ public partial class MainWindowViewModel : ViewModelBase
 }
 ```
 
-## 另请参阅
+## 另请参阅 {#see-also}
 
 - [Toolbars](toolbars.md)
-- [Popup and Context Menus](popup-and-context-menus.md)
-- [Toolbar Items](toolbar-items.md)
+- [弹出菜单和上下文菜单](popup-and-context-menus.md)
+- [工具栏项](toolbar-items.md)
 - [Toolbar Serialization](toolbar-serialization-and-deserialization.md)
 
 <br>

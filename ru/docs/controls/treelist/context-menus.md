@@ -14,14 +14,14 @@ seealso: []
 
 ![treelist-columnheadermenu](../../images/treelist-columnheadermenu.png)
 
-Используйте свойство `TreeListControl.ColumnMenu`, чтобы настроить это меню.
-Вы можете назначить объект `Eremex.AvaloniaUI.Controls.Bars.PopupMenu` свойству `TreeListControl.ColumnMenu`, чтобы заменить меню по умолчанию.
+Используйте свойство [`TreeListControl.ColumnMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnMenu.md), чтобы настроить это меню.
+Вы можете назначить объект [`Eremex.AvaloniaUI.Controls.Bars.PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) свойству [`TreeListControl.ColumnMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnMenu.md), чтобы заменить меню по умолчанию.
 
 Чтобы настроить существующее меню заголовка колонки (добавить или удалить пункты по умолчанию), получите доступ к меню после его инициализации (например, в обработчике события `Initialized` вашего TreeList), а затем измените меню.
 
 ### Контекст данных
 
-Свойство `DataContext` меню заголовка колонки и его пунктов (объектов `ToolbarButtonItem`) задаёт объект `TreeListColumn`, для которого было вызвано меню. 
+Свойство `DataContext` меню заголовка колонки и его пунктов (объектов [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)) задаёт объект [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md), для которого было вызвано меню. 
 
 ### Пример - Как заменить меню заголовка колонки по умолчанию
 
@@ -29,9 +29,9 @@ seealso: []
 
 ![treelist-contextmenus-columnmenu-replace-example](../../images/treelist-contextmenus-columnmenu-replace-example.png)
 
-Обратите внимание на инициализацию свойств `Command` и `CommandParameter` для пункта меню в приведённом ниже коде. Выражение `CommandParameter="{Binding FieldName}"` задаёт привязку к свойству `FieldName` объекта `DataContext` пункта меню (`TreeListColumn.FieldName`).
+Обратите внимание на инициализацию свойств [`Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md) и [`CommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/CommandParameter.md) для пункта меню в приведённом ниже коде. Выражение `CommandParameter="{Binding FieldName}"` задаёт привязку к свойству [`FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) объекта `DataContext` пункта меню ([`TreeListColumn.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md)).
 
-Свойство `DataContext` объекта `TreeListColumn` совпадает со свойством `DataContext` списка Tree List (в этом примере — объект _ViewModel_). Это позволяет получить доступ к модели представления и её команде _ClearColumnDataCommand_ с помощью выражения: `Command="{Binding DataContext.ClearColumnDataCommand}"`.
+Свойство `DataContext` объекта [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md) совпадает со свойством `DataContext` списка Tree List (в этом примере — объект _ViewModel_). Это позволяет получить доступ к модели представления и её команде _ClearColumnDataCommand_ с помощью выражения: `Command="{Binding DataContext.ClearColumnDataCommand}"`.
 
 
 ``` xml
@@ -70,7 +70,7 @@ public partial class ViewModel : ObservableObject
 
 ### Пример - Как изменить существующее меню заголовка колонки
 
-Следующий пример добавляет пользовательскую команду в меню заголовка колонки по умолчанию.
+Этот пример добавляет пользовательскую команду в меню заголовка колонки по умолчанию.
 
 Пример обрабатывает событие `TreeListControl.Initialized`, чтобы получить доступ к меню заголовка колонки по умолчанию после его инициализации, и добавляет команду _Refresh Data_ в меню.
 
@@ -109,22 +109,22 @@ void UpdateTreeList(TreeListControl treeList)
 
 ## Меню ячейки строки (TreeList и TreeView)
 
-Контролы TreeList и TreeView поддерживают встроенное контекстное меню для ячеек строк (см. свойство `TreeListControlBase.RowCellMenu`). Изначально это меню пустое, и поэтому скрыто. Чтобы отобразить меню ячейки строки, заполните его пунктами в XAML или в code-behind.
+Контролы TreeList и TreeView поддерживают встроенное контекстное меню для ячеек строк (см. свойство [`TreeListControlBase.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RowCellMenu.md)). Изначально это меню пустое, и поэтому скрыто. Чтобы отобразить меню ячейки строки, заполните его пунктами в XAML или в code-behind.
 
 ### Контекст данных
 
 `DataContext` меню ячейки строки и его пунктов содержит объект `CellData`, который позволяет получить доступ к контекстно-специфичной информации:
 
-- `CellData.DataControl` — Возвращает контрол-контейнер (`TreeListControl`), для которого вызвано меню. 
+- `CellData.DataControl` — Возвращает контрол-контейнер ([`TreeListControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md)), для которого вызвано меню. 
 - `CellData.Row` — Возвращает объект данных, лежащий в основе узла, по которому был выполнен щелчок. 
 
 ### Пример - Как отобразить одинаковые команды контекстного меню для всех строк
 
-Следующий пример добавляет команду "_Delete Row_" в меню ячейки строки (`TreeListControlBase.RowCellMenu`) для всех строк. 
+Этот пример добавляет команду "_Delete Row_" в меню ячейки строки ([`TreeListControlBase.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RowCellMenu.md)) для всех строк. 
 
 ![treelist-contextmenus-rowmenu-deleterow-example](../../images/treelist-contextmenus-rowmenu-deleterow-example.png)
 
-Приведённый ниже XAML-код назначает всплывающее меню свойству `TreeListControlBase.RowCellMenu`. Всплывающее меню содержит один пункт (`ToolbarButtonItem`), привязанный к команде _DeleteRowCommand_, определённой в модели представления (`DataContext` списка Tree List).
+Приведённый ниже XAML-код назначает всплывающее меню свойству [`TreeListControlBase.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RowCellMenu.md). Всплывающее меню содержит один пункт ([`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)), привязанный к команде _DeleteRowCommand_, определённой в модели представления (`DataContext` списка Tree List).
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -276,13 +276,13 @@ public partial class Department : ObservableObject
 
 ### Пример - Как отобразить разные команды контекстного меню для разных строк
 
-Следующий пример инициализирует контекстное меню для строк (`TreeListControlBase.RowCellMenu`) и отображает разные пункты меню для корневых и вложенных строк.
+Этот пример инициализирует контекстное меню для строк ([`TreeListControlBase.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RowCellMenu.md)) и отображает разные пункты меню для корневых и вложенных строк.
 
 Корневое контекстное меню отображает команду "_Add Child Dep_", в то время как контекстное меню для вложенных строк отображает команду "_Delete Row_".
 
 ![treelist-contextmenus-rowcellmenu-different-example](../../images/treelist-contextmenus-rowcellmenu-different-example.png)
 
-XAML-код определяет контекстное меню (объект `PopupMenu`) с командами "_Add Child Dep_" и "_Delete Row_". 
+XAML-код определяет контекстное меню (объект [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md)) с командами "_Add Child Dep_" и "_Delete Row_". 
 Команда "_Add Child Dep_" отображается для корневых узлов. Команда "_Delete Row_" отображается для вложенных узлов.
 Видимость этих команд динамически управляется свойством _IsRoot_ бизнес-объекта.
 
@@ -460,18 +460,18 @@ public partial class Department : ObservableObject
 
 ![treelist-contextmenus-rowcellmenu-fromViewModel-example](../../images/treelist-contextmenus-rowcellmenu-fromViewModel-example.png)
 
-Меню ячейки строки (`TreeListControlBase.RowCellMenu`) заполняется пунктами (объектами `ToolbarButtonItem`) из источника, указанного коллекцией `PopupMenu.ItemsSource`. В этом примере свойство `PopupMenu.ItemsSource` привязано к коллекции _MenuItems_, определённой в главной модели представления, с помощью следующего выражения привязки:
+Меню ячейки строки ([`TreeListControlBase.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RowCellMenu.md)) заполняется пунктами (объектами [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)) из источника, указанного коллекцией [`PopupMenu.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ItemsSource.md). В этом примере свойство [`PopupMenu.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ItemsSource.md) привязано к коллекции _MenuItems_, определённой в главной модели представления, с помощью следующего выражения привязки:
 
 ``` xml
 <mxb:PopupMenu ItemsSource="{Binding DataControl.DataContext.MenuItems}">
 ```
 
-Когда `PopupMenu` отображается для ячейки TreeList, `DataContext` меню содержит объект `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData`. Объект `CellData` предоставляет свойство `DataControl`, которое позволяет получить доступ к контролу, для которого отображается меню. 
+Когда [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) отображается для ячейки TreeList, `DataContext` меню содержит объект `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData`. Объект `CellData` предоставляет свойство `DataControl`, которое позволяет получить доступ к контролу, для которого отображается меню. 
 Главная модель представления назначена свойству `DataContext` контрола. Таким образом, синтаксис `DataControl.DataContext.MenuItems` ссылается на коллекцию _MenuItems_, определённую в главной модели представления.
 
 Объект `CellData` также содержит другие свойства, позволяющие получить доступ к информации, связанной с ячейкой (колонка, объект строки и т.д.).
 
-Пункты меню инициализируются с помощью стилей. `DataContext` пунктов меню являются элементами коллекции `PopupMenu.ItemsSource`. В этом примере свойство `PopupMenu.ItemsSource` хранит коллекцию объектов _MenuItemViewModel_. Следующий фрагмент кода привязывает свойства `ToolbarButtonItem.Header` и `ToolbarButtonItem.Command` к свойствам _MenuItemViewModel.Header_ и _MenuItemViewModel.Command_ соответственно.
+Пункты меню инициализируются с помощью стилей. `DataContext` пунктов меню являются элементами коллекции [`PopupMenu.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ItemsSource.md). В этом примере свойство [`PopupMenu.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ItemsSource.md) хранит коллекцию объектов _MenuItemViewModel_. Следующий фрагмент кода привязывает свойства [`ToolbarButtonItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) и [`ToolbarButtonItem.Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md) к свойствам _MenuItemViewModel.Header_ и _MenuItemViewModel.Command_ соответственно.
 
 ``` xml
 <mxb:PopupMenu.Styles>
@@ -482,7 +482,7 @@ public partial class Department : ObservableObject
 </mxb:PopupMenu.Styles>
 ```
 
-Команда `ToolbarButtonItem` требует информацию о строке, по которой был выполнен щелчок правой кнопкой мыши. Чтобы передать строку данных команде, XAML-код устанавливает свойство `ToolbarButtonItem.CommandParameter` следующим образом:
+Команда [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md) требует информацию о строке, по которой был выполнен щелчок правой кнопкой мыши. Чтобы передать строку данных команде, XAML-код устанавливает свойство [`ToolbarButtonItem.CommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/CommandParameter.md) следующим образом:
 
 ``` xml
 xmlns:mxvis="clr-namespace:Eremex.AvaloniaUI.Controls.DataControl.Visuals;
@@ -497,7 +497,7 @@ xmlns:mxvis="clr-namespace:Eremex.AvaloniaUI.Controls.DataControl.Visuals;
 </mxb:PopupMenu.Styles>
 ```
 
-Здесь выражение `$parent[mxvis:CellControl]` обходит логическое дерево, чтобы найти объект `CellControl` (он является родителем `DataContext` объекта `ToolbarButtonItem`). Объект `CellControl.DataContext` содержит объект `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData`, который позволяет получить доступ к строке данных через свойство `CellData.Row`.
+Здесь выражение `$parent[mxvis:CellControl]` обходит логическое дерево, чтобы найти объект `CellControl` (он является родителем `DataContext` объекта [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)). Объект `CellControl.DataContext` содержит объект `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData`, который позволяет получить доступ к строке данных через свойство `CellData.Row`.
 
 Полный код показан ниже.                
 
@@ -683,13 +683,13 @@ public partial class Department : ObservableObject
 
 ## Настройка меню при отображении
 
-Вы можете обработать событие `PopupMenu.Opening`, чтобы динамически настроить меню TreeList. Это событие возникает, когда PopupMenu вот-вот будет отображено.
+Вы можете обработать событие [`PopupMenu.Opening`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Opening.md), чтобы динамически настроить меню TreeList. Это событие возникает, когда PopupMenu вот-вот будет отображено.
 
 ## Пример - Как отобразить контекстное меню для первой колонки
 
-Следующий пример назначает пустой объект `PopupMenu` свойству `TreeListControlBase.RowCellMenu`, а затем обрабатывает событие `PopupMenu.Opening`, чтобы заполнить меню пунктами, когда пользователь щёлкает правой кнопкой мыши по ячейкам в первом видимой колонке TreeList. Меню остаётся пустым (и, следовательно, не отображается), когда пользователь щёлкает правой кнопкой мыши в других колонках.
+Этот пример назначает пустой объект [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) свойству [`TreeListControlBase.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RowCellMenu.md), а затем обрабатывает событие [`PopupMenu.Opening`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Opening.md), чтобы заполнить меню пунктами, когда пользователь щёлкает правой кнопкой мыши по ячейкам в первом видимой колонке TreeList. Меню остаётся пустым (и, следовательно, не отображается), когда пользователь щёлкает правой кнопкой мыши в других колонках.
 
-Созданное меню содержит переключаемую кнопку "_Show/Hide Root Indent_", которая переключает видимость отступа TreeList (свойство `TreeListControlBase.ShowRootIndent`).
+Созданное меню содержит переключаемую кнопку "_Show/Hide Root Indent_", которая переключает видимость отступа TreeList (свойство [`TreeListControlBase.ShowRootIndent`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ShowRootIndent.md)).
 
 ![treelist-contextmenus-customizeonshowing](../../images/treelist-contextmenus-customizeonshowing.png)
 
@@ -733,11 +733,11 @@ void ShowRootIndentCommand(TreeListControl treeList)
 
 ## Отображение контекстного меню для контролов с помощью присоединённого свойства ToolbarManager
 
-Компонент `Eremex.AvaloniaUI.Controls.Bars.ToolbarManager` предоставляет присоединённое свойство `ContextPopup`, которое позволяет назначить контекстное меню любому контролу, включая TreeList и TreeView. Это контекстное меню отображается для областей TreeList/TreeView, у которых нет меню по умолчанию, и для областей с пустыми меню по умолчанию.
+Компонент [`Eremex.AvaloniaUI.Controls.Bars.ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) предоставляет присоединённое свойство `ContextPopup`, которое позволяет назначить контекстное меню любому контролу, включая TreeList и TreeView. Это контекстное меню отображается для областей TreeList/TreeView, у которых нет меню по умолчанию, и для областей с пустыми меню по умолчанию.
 
 ### Пример - Как назначить контекстное меню с помощью присоединённого свойства _ToolbarManager.ContextPopup_
 
-Следующий код использует присоединённое свойство `ToolbarManager.ContextPopup`, чтобы задать контекстное меню для контрола TreeList. Меню содержит переключаемый пункт меню _Show Column Header Panel_/_Hide Column Header Panel_, который переключает видимость параметра `TreeListControl.ShowColumnHeaders`.
+Следующий код использует присоединённое свойство `ToolbarManager.ContextPopup`, чтобы задать контекстное меню для контрола TreeList. Меню содержит переключаемый пункт меню _Show Column Header Panel_/_Hide Column Header Panel_, который переключает видимость параметра [`TreeListControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnHeaders.md).
 
 ![treelist-contextmenus-toolbarmanager-example](../../images/treelist-contextmenus-toolbarmanager-example.png)
 

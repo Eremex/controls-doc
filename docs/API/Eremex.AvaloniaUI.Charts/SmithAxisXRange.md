@@ -12,7 +12,7 @@ Represents the range of SmithAxisX, which covers the angular sweep of a full tur
 public class SmithAxisXRange : PredefinedRange
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

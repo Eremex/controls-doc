@@ -16,26 +16,42 @@ seealso: []
 
 ![TreeList - Validation Diagram](../../images/treelist-validation-diagram.png)
 
-1. Встроенный редактор ячейки выполняет первичную валидацию значения во время ввода данных. Например, `SpinEditor`, принимающий только числовые значения, показывает ошибки, если пользователь пытается ввести букву.
+1. **Валидация редактором**
 
-    Пользователь не может покинуть ячейку, пока не будет введено допустимое значение или не будет нажата клавиша ESC, которая возвращает предыдущее значение.
+    Встроенный редактор ячейки сразу проверяет данные во время ввода. Например, [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md), принимающий только числовые значения, показывает ошибки, если пользователь пытается ввести букву.
 
-1. Элемент управления TreeList/TreeView проверяет, применены ли к бизнес-объекту источника данных [атрибуты DataAnnotations](#атрибуты-dataannotations), и затем валидирует данные согласно этим правилам. Этот этап валидации включён, если свойство `DataControlBase.ShowItemsSourceErrors` установлено в `true` (значение по умолчанию).
-    
-    Пользователь не может покинуть ячейку, пока не будет введено допустимое значение или не будет нажата клавиша ESC, которая возвращает предыдущее значение.
-    
+    *Найдено недопустимое значение*: пользователь не может покинуть ячейку, пока не будет введено допустимое значение или не будет нажата клавиша ESC, которая возвращает предыдущее значение.
 
-1. Контрол вызывает [событие `DataControlBase.ValidateCellValue`](#событие-контрола-validatecellvalue), которое можно обработать для реализации собственной логики валидации значений.
+1. **Проверка атрибутов DataAnnotation**
 
-    Пользователь не может покинуть ячейку, пока не будет введено допустимое значение или не будет нажата клавиша ESC, которая возвращает предыдущее значение.
+    Элемент управления TreeList/TreeView проверяет, применены ли к бизнес-объекту источника данных [атрибуты DataAnnotations](#атрибуты-dataannotations), и затем валидирует данные согласно этим правилам.
 
-1. Контрол отправляет (post) значение ячейки. На этом этапе источник данных может выбрасывать исключения, если отправленные данные недопустимы. Если перехвачено какое-либо исключение, контрол отображает ошибку в ячейке.
+    *Применяется, когда*: свойство [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) установлено в `true` (по умолчанию).
 
-    Пользователь не может покинуть ячейку, пока не будет введено допустимое значение или не будет нажата клавиша ESC, которая возвращает предыдущее значение.
+    *Найдено недопустимое значение*: если свойство [`IgnoreValidationAttributesOnCommit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IgnoreValidationAttributesOnCommit.md) равно `false` (по умолчанию), пользователь не может покинуть ячейку, пока не будет введено допустимое значение или не будет нажата клавиша ESC, которая возвращает предыдущее значение.
 
-1. Элемент управления TreeList/TreeView проверяет, реализует ли бизнес-объект интерфейс [IDataErrorInfo](#интерфейс-idataerrorinfo) или [INotifyDataErrorInfo](#интерфейс-inotifydataerrorinfo), и использует эти интерфейсы для получения ошибок ячейки, если они есть. Этот этап валидации включён, если свойство `DataControlBase.ShowItemsSourceErrors` установлено в `true` (значение по умолчанию).
-    
-    Контрол позволяет пользователю покинуть ячейку, даже если значение ячейки недопустимо, поскольку значение уже было отправлено.
+    Если свойство [`IgnoreValidationAttributesOnCommit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IgnoreValidationAttributesOnCommit.md) равно `true`, контрол позволяет пользователю убрать фокус из ячейки и зафиксировать значение, даже если оно нарушает атрибуты DataAnnotation.
+
+
+1. **Событие ValidateCellValue**
+
+    Контрол вызывает [событие `DataControlBase.ValidateCellValue`](#событие-контрола-validatecellvalue), которое можно обработать для реализации собственной логики валидации значений.
+
+    *Найдено недопустимое значение*: пользователь не может покинуть ячейку, пока не будет введено допустимое значение или не будет нажата клавиша ESC, которая возвращает предыдущее значение.
+
+1. **Отправка значения**
+
+    Контрол отправляет (post) значение ячейки. На этом этапе источник данных может выбрасывать исключения, если отправленные данные недопустимы. Если перехвачено какое-либо исключение, контрол отображает ошибку в ячейке.
+
+    *Найдено недопустимое значение*: пользователь не может покинуть ячейку, пока не будет введено допустимое значение или не будет нажата клавиша ESC, которая возвращает предыдущее значение.
+
+1. **Проверка интерфейсов IDataErrorInfo и INotifyDataErrorInfo для получения ошибок**
+
+    Элемент управления TreeList/TreeView проверяет, реализует ли бизнес-объект интерфейс [IDataErrorInfo](#интерфейс-idataerrorinfo) или [INotifyDataErrorInfo](#интерфейс-inotifydataerrorinfo), и использует эти интерфейсы для получения ошибок ячейки, если они есть.
+
+    *Применяется, когда*: свойство [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) установлено в `true` (по умолчанию).
+
+    *Найдено недопустимое значение*: контрол позволяет пользователю покинуть ячейку, даже если значение ячейки недопустимо, поскольку значение уже было отправлено.
 
 
 ## Валидация значений вновь отображаемых ячеек и ячеек, обновлённых в коде
@@ -50,17 +66,29 @@ seealso: []
 
 ![TreeList - Validation Diagram](../../images/treelist-validation-diagram-When-ShowAndUpdate.png)
 
-1. Элемент управления TreeList/TreeView проверяет, применены ли к бизнес-объекту источника данных [атрибуты DataAnnotations](#атрибуты-dataannotations), и затем валидирует данные согласно этим правилам. Этот этап валидации включён, если свойство `DataControlBase.ShowItemsSourceErrors` имеет значение `true` (значение по умолчанию).
+1. **Проверка атрибутов DataAnnotation**
 
-1. Элемент управления TreeList/TreeView проверяет, реализует ли бизнес-объект интерфейс [IDataErrorInfo](#интерфейс-idataerrorinfo) или [INotifyDataErrorInfo](#интерфейс-inotifydataerrorinfo), и использует эти интерфейсы для получения ошибок ячейки, если они есть. Этот этап валидации включён, если свойство `DataControlBase.ShowItemsSourceErrors` установлено в `true` (значение по умолчанию).
+    Элемент управления TreeList/TreeView проверяет, применены ли к бизнес-объекту источника данных [атрибуты DataAnnotations](#атрибуты-dataannotations), и затем валидирует данные согласно этим правилам.
 
-1. Контрол вызывает [событие `DataControlBase.ValidateCellValue`](#событие-контрола-validatecellvalue), которое можно обработать для реализации собственной логики валидации значений. Этот этап валидации включён, если свойство `DataControlBase.ValidateCellValuesOnShowAndUpdate` имеет значение `true` (значение по умолчанию — `false`).
+    *Применяется, когда*: свойство [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) имеет значение `true` (по умолчанию).
+
+1. **Проверка интерфейсов IDataErrorInfo и INotifyDataErrorInfo для получения ошибок**
+
+    Элемент управления TreeList/TreeView проверяет, реализует ли бизнес-объект интерфейс [IDataErrorInfo](#интерфейс-idataerrorinfo) или [INotifyDataErrorInfo](#интерфейс-inotifydataerrorinfo), и использует эти интерфейсы для получения ошибок ячейки, если они есть.
+
+    *Применяется, когда*: свойство [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) имеет значение `true` (по умолчанию).
+
+1. **Событие ValidateCellValue**
+
+    Контрол вызывает [событие `DataControlBase.ValidateCellValue`](#событие-контрола-validatecellvalue), которое можно обработать для реализации собственной логики валидации значений.
+
+    *Применяется, когда*: свойство [`DataControlBase.ValidateCellValuesOnShowAndUpdate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ValidateCellValuesOnShowAndUpdate.md) имеет значение `true` (значение по умолчанию — `false`).
 
 
 
 ## Правила валидации источника данных
 
-Если свойство `DataControlBase.ShowItemsSourceErrors` включено (поведение по умолчанию), элемент управления TreeList/TreeView валидирует данные с использованием атрибутов `DataAnnotations` и интерфейса `IDataErrorInfo`, применённых к бизнес-объекту источника данных.
+Если свойство [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) включено (поведение по умолчанию), элемент управления TreeList/TreeView валидирует данные с использованием атрибутов `DataAnnotations` и интерфейса `IDataErrorInfo`, применённых к бизнес-объекту источника данных.
 
 ### Атрибуты DataAnnotations
 
@@ -98,7 +126,7 @@ public partial class Department : ObservableObject, IDataErrorInfo
 
 #### Пример — реализация интерфейса 'IDataErrorInfo'
 
-В следующем примере реализуется интерфейс `IDataErrorInfo` для бизнес-объекта, возвращающий ошибку, если свойство _Phone_ пусто.
+В этом примере реализуется интерфейс `IDataErrorInfo` для бизнес-объекта, возвращающий ошибку, если свойство _Phone_ пусто.
 
 ``` csharp
 public partial class Department : ObservableObject, IDataErrorInfo
@@ -130,7 +158,7 @@ public partial class Department : ObservableObject, IDataErrorInfo
 
 #### Пример — реализация интерфейса 'INotifyDataErrorInfo'
 
-Следующий пример показывает, как реализовать интерфейс `INotifyDataErrorInfo` для бизнес-объекта (_ProjectTask_). Интерфейс используется для определения правил валидации свойства _ProjectTask.EstimateTime_. Когда значение свойства нарушает правила валидации, элемент управления TreeList отображает ошибку в соответствующей ячейке.
+Этот пример показывает, как реализовать интерфейс `INotifyDataErrorInfo` для бизнес-объекта (_ProjectTask_). Интерфейс используется для определения правил валидации свойства _ProjectTask.EstimateTime_. Когда значение свойства нарушает правила валидации, элемент управления TreeList отображает ошибку в соответствующей ячейке.
 
 Приведённая ниже реализация интерфейса `INotifyDataErrorInfo` поддерживает одновременно несколько ошибок для одного свойства.
 
@@ -230,11 +258,11 @@ public partial class ProjectTask : ObservableObject, INotifyDataErrorInfo
 
 Возникновение события `DataControlBase.ValidateCellValue` — это обязательный этап механизма валидации, вызываемый после того, как пользователь изменил значение ячейки.
 
-Механизм валидации также используется для проверки корректности вновь отображаемых ячеек и ячеек, обновлённых в коде. В этом случае событие `DataControlBase.ValidateCellValue` возникает только в том случае, если унаследованное свойство `DataControlBase.ValidateCellValuesOnShowAndUpdate` имеет значение `true` (значение по умолчанию — `false`).
+Механизм валидации также используется для проверки корректности вновь отображаемых ячеек и ячеек, обновлённых в коде. В этом случае событие `DataControlBase.ValidateCellValue` возникает только в том случае, если унаследованное свойство [`DataControlBase.ValidateCellValuesOnShowAndUpdate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ValidateCellValuesOnShowAndUpdate.md) имеет значение `true` (значение по умолчанию — `false`).
 
 ### Пример 
 
-В следующем примере обрабатывается событие `ValidateCellValue`, чтобы отображать ошибки, когда значение свойства _Date1_ больше значения свойства _Date2_.
+В этом примере обрабатывается событие [`ValidateCellValue`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ValidateCellValue.md), чтобы отображать ошибки, когда значение свойства _Date1_ больше значения свойства _Date2_.
 
 ``` csharp
 public partial class Department : ObservableObject, IDataErrorInfo

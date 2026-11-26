@@ -12,11 +12,16 @@ Represents a single value of a numeric axis grid.
 public struct NumericGridEntry
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [NumericGridEntry](NumericGridEntry/NumericGridEntry.md)(…) | Initializes a new instance of the [`NumericGridEntry`](./NumericGridEntry.md) struct with the specified value and kind. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [IsMajorValue](NumericGridEntry/IsMajorValue.md) { get; } | Gets whether the value is drawn as a major gridline. |
 | [Value](NumericGridEntry/Value.md) { get; } | Gets the axis value at which the gridline is drawn. |
 

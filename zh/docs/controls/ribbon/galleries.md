@@ -1,27 +1,27 @@
 ---
-title: Galleries
+title: 库
 order: 700
 seealso: []
 ---
 
-# 画廊
+# 库 {#galleries}
 
-画廊是一种 [Ribbon 项](ribbon-items.md)，可以显示一组图形丰富的元素（例如带图片的格式化文本），并根据指定的数据模板进行渲染。画廊项从左到右、再从上到下排列，形成一个多列列表。
+库是一种 [Ribbon 项](ribbon-items.md)，可以显示一组图形丰富的元素（例如带图片的格式化文本），并根据指定的数据模板进行渲染。库项从左到右、再从上到下排列，形成一个多列列表。
 
-下图展示了一个显示 3 列项的内嵌 Ribbon 画廊。
+下图展示了一个显示 3 列项的内嵌 Ribbon 库。
 
 ![ribbon-inplace-gallery](../../images/ribbon-inplace-gallery.png)
 
-内嵌 Ribbon 画廊包含两个用于垂直滚动的按钮。这些按钮下方是一个下拉按钮，用于在下拉窗口中显示画廊的全部内容。
+内嵌 Ribbon 库包含两个用于垂直滚动的按钮。这些按钮下方是一个下拉按钮，用于在下拉窗口中显示库的全部内容。
 
 ![ribbon-dropdown-gallery](../../images/ribbon-dropdown-gallery.png)
 
 
-## 创建 Ribbon 画廊
+## 创建 Ribbon 库 {#create-a-ribbon-gallery}
 
-使用 `RibbonGalleryItem` 项将画廊添加到 Ribbon 界面。您可以将 `RibbonGalleryItem` 对象添加到[页面分组](page-groups.md)、弹出菜单、[页面标题区域](page-header-items.md)或[快速访问工具栏](quick-access-toolbar.md)中，方式与添加其他 [Ribbon 项](ribbon-items.md)相同。例如，要将 Ribbon 项添加到页面分组中，请在 &lt;RibbonPageGroup&gt; 起始和结束标签之间定义它们。在后台代码中，您可以使用 `RibbonPageGroup.Items` 集合添加项。
+使用 [`RibbonGalleryItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem.md) 项将库添加到 Ribbon 界面。您可以将 [`RibbonGalleryItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem.md) 对象添加到[页面分组](page-groups.md)、弹出菜单、[页面标题区域](page-header-items.md)或[快速访问工具栏](quick-access-toolbar.md)中，方式与添加其他 [Ribbon 项](ribbon-items.md)相同。例如，要将 Ribbon 项添加到页面分组中，请在 &lt;RibbonPageGroup&gt; 起始和结束标签之间定义它们。在代码隐藏中，您可以使用 [`RibbonPageGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/Items.md) 集合添加项。
 
-以下代码片段来自 _WordPad Example_ 演示，将一个画廊添加到 _Styles_ 页面分组中。画廊项的来源由视图模型中定义的 _FontStyles_ 集合指定。
+以下代码片段来自 _WordPad Example_ 演示，将一个库添加到 _Styles_ 页面分组中。库项的来源由视图模型中定义的 _FontStyles_ 集合指定。
 
 ![ribbon-create-gallery-example](../../images/ribbon-create-gallery-example.png)
 
@@ -35,15 +35,15 @@ seealso: []
 </mxr:RibbonPageGroup>
 ```
 
-## 画廊项
+## 库项 {#gallery-items}
 
-使用 `RibbonGalleryItem.ItemsSource` 属性提供一个业务对象集合，以作为画廊项显示。要在画廊中渲染这些业务对象，请定义相应的数据模板。
+使用 [`RibbonGalleryItem.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemsSource.md) 属性提供一个业务对象集合，以作为库项显示。要在库中渲染这些业务对象，请定义相应的数据模板。
 
-要定义画廊项模板，您也可以使用 `RibbonGalleryItem.ItemTemplate` 属性。
+要定义库项模板，您也可以使用 [`RibbonGalleryItem.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemTemplate.md) 属性。
 
-### 示例 - 为画廊项使用多个模板
+### 示例 - 为库项使用多个模板 {#example-use-multiple-templates-for-gallery-items}
 
-在以下来自 _WordPad Example_ 演示的代码中，画廊项由视图模型中定义的 _FontStyles_ 集合填充。_FontStyles_ 集合的元素是业务对象（_NormalGalleryItem_、_HeadingGalleryItem_ 和 _TitleGalleryItem_），其数据模板定义在 `UserControl.DataTemplates` 集合中。
+在以下来自 _WordPad Example_ 演示的代码中，库项由视图模型中定义的 _FontStyles_ 集合填充。_FontStyles_ 集合的元素是业务对象（_NormalGalleryItem_、_HeadingGalleryItem_ 和 _TitleGalleryItem_），其数据模板定义在 `UserControl.DataTemplates` 集合中。
 
 ![ribbon-gallery-itemssource-example](../../images/ribbon-gallery-itemssource-example.png)
 
@@ -101,11 +101,11 @@ public partial class WordPadExampleViewModel : PageViewModelBase
 完整代码请参见 _WordPad Example_ 演示。
 
 
-### 示例 - 为所有画廊项使用一个模板
+### 示例 - 为所有库项使用一个模板 {#example-use-one-template-for-all-gallery-items}
 
-下面的示例使用 `RibbonGalleryItem.ItemTemplate` 属性定义一个数据模板，用于渲染所有画廊项。该模板绘制一个文本块，其文本和颜色由存储在视图模型 _CellStyles_ 集合中的画廊项对象（_CellStyle_ 对象）的设置指定。
+下面的示例使用 [`RibbonGalleryItem.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemTemplate.md) 属性定义一个数据模板，用于渲染所有库项。该模板绘制一个文本块，其文本和颜色由存储在视图模型 _CellStyles_ 集合中的库项对象（_CellStyle_ 对象）的设置指定。
 
-`RibbonGalleryItem.FocusedItem` 属性用于标识当前[被选中的画廊项](#focus-and-select-gallery-items)。在该示例中，`RibbonGalleryItem.FocusedItem` 属性绑定到视图模型中的 _SelectedCellStyle_ 属性。为了在选中某个画廊项时执行操作，视图模型的 `PropertyChanged` 事件处理程序会跟踪 _SelectedCellStyle_ 属性的更改。
+[`RibbonGalleryItem.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/FocusedItem.md) 属性用于标识当前[被选中的库项](#focus-and-select-gallery-items)。在该示例中，[`RibbonGalleryItem.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/FocusedItem.md) 属性绑定到视图模型中的 _SelectedCellStyle_ 属性。为了在选中某个库项时执行操作，视图模型的 `PropertyChanged` 事件处理程序会跟踪 _SelectedCellStyle_ 属性的更改。
 
 ![ribbon-gallery-itemtemplate-example](../../images/ribbon-gallery-itemtemplate-example.png)
 
@@ -203,58 +203,58 @@ public class CellStyle : ObservableObject
 }
 ```
 
-## 画廊显示设置
+## 库显示设置 {#gallery-display-settings}
 
-- `RibbonGalleryItem.Header` — 画廊的标题。  
+- [`RibbonGalleryItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) — 库的标题。  
 
   ``` xml
   <mxr:RibbonGalleryItem Header="Styles" ...>
   ```
 
 
-  画廊的标题会在以下情况下显示：
+  库的标题会在以下情况下显示：
 
-  - 在启用了 `IsDropDownHeaderVisible` 选项的下拉画廊中。
+  - 在启用了 [`IsDropDownHeaderVisible`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/IsDropDownHeaderVisible.md) 选项的下拉库中。
 
     ![ribbon-gallery-IsDropDownHeaderVisible](../../images/ribbon-gallery-IsDropDownHeaderVisible.png)
     
 
-  - 当 `RibbonGalleryItem` 对象被渲染为带有关联下拉画廊的按钮时。这种情况出现在 `RibbonGalleryItem` 对象嵌入到弹出菜单中，或使用[简化命令布局](ribbon-command-layouts.md)时。`RibbonGalleryItem.Header` 属性指定该按钮的标题。
+  - 当 [`RibbonGalleryItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem.md) 对象被渲染为带有关联下拉库的按钮时。这种情况出现在 [`RibbonGalleryItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem.md) 对象嵌入到弹出菜单中，或使用[简化命令布局](ribbon-command-layouts.md)时。[`RibbonGalleryItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) 属性指定该按钮的标题。
   
     ![ribbon-gallery-in-popup-menu](../../images/ribbon-gallery-in-popup-menu.png)
 
-    有关详细信息，请参阅以下部分：[简化命令布局中的画廊](#galleries-in-the-simplified-command-layout) 和 [工具栏、弹出菜单和上下文菜单中的画廊](#galleries-in-toolbars-popups-and-context-menus)。
+    有关详细信息，请参阅以下部分：[简化命令布局中的库](#galleries-in-the-simplified-command-layout) 和 [工具栏、弹出菜单和上下文菜单中的库](#galleries-in-toolbars-popups-and-context-menus)。
 
-- `RibbonGalleryItem.ItemHeight` — 指定画廊项的高度。此属性的优先级高于 `RibbonGalleryItem.StretchItemVertically` 设置。
+- [`RibbonGalleryItem.ItemHeight`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemHeight.md) — 指定库项的高度。此属性的优先级高于 [`RibbonGalleryItem.StretchItemVertically`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/StretchItemVertically.md) 设置。
 
-  如果未设置 `RibbonGalleryItem.ItemHeight` 属性，则默认的画廊项高度由第一个画廊项的高度指定。该高度来自相应的数据模板。
+  如果未设置 [`RibbonGalleryItem.ItemHeight`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemHeight.md) 属性，则默认的库项高度由第一个库项的高度指定。该高度来自相应的数据模板。
 
-- `RibbonGalleryItem.ItemWidth` — 指定画廊项的宽度。
-- `RibbonGalleryItem.MaxColumnCount` — 指定内嵌 Ribbon 画廊中的最大列数。
-- `RibbonGalleryItem.MaxDropDownColumnCount` — 指定下拉画廊中的最大列数。
-- `RibbonGalleryItem.StretchItemVertically` — 指定是否在垂直方向拉伸画廊项的第一行，以适应内嵌 Ribbon 画廊的高度。该自动高度会传播到其他行，包括下拉画廊中的行。
+- [`RibbonGalleryItem.ItemWidth`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemWidth.md) — 指定库项的宽度。
+- [`RibbonGalleryItem.MaxColumnCount`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/MaxColumnCount.md) — 指定内嵌 Ribbon 库中的最大列数。
+- [`RibbonGalleryItem.MaxDropDownColumnCount`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/MaxDropDownColumnCount.md) — 指定下拉库中的最大列数。
+- [`RibbonGalleryItem.StretchItemVertically`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/StretchItemVertically.md) — 指定是否在垂直方向拉伸库项的第一行，以适应内嵌 Ribbon 库的高度。该自动高度会传播到其他行，包括下拉库中的行。
 
   ![ribbon-gallery-StretchItemVertically](../../images/ribbon-gallery-StretchItemVertically.png)
 
-  如果设置了 `RibbonGalleryItem.ItemHeight` 属性，则 `RibbonGalleryItem.StretchItemVertically` 属性不会生效。
+  如果设置了 [`RibbonGalleryItem.ItemHeight`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemHeight.md) 属性，则 [`RibbonGalleryItem.StretchItemVertically`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/StretchItemVertically.md) 属性不会生效。
 
-  当 `RibbonGalleryItem.StretchItemVertically` 属性为 `false`，且未使用 `RibbonGalleryItem.ItemHeight` 属性时，默认的画廊项高度由第一个画廊项的高度指定。该高度来自相应的数据模板。
+  当 [`RibbonGalleryItem.StretchItemVertically`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/StretchItemVertically.md) 属性为 `false`，且未使用 [`RibbonGalleryItem.ItemHeight`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemHeight.md) 属性时，默认的库项高度由第一个库项的高度指定。该高度来自相应的数据模板。
 
-## 聚焦和选择画廊项
+## 聚焦和选择库项 {#focus-and-select-gallery-items}
 
-- `RibbonGalleryItem.FocusedItem` — 允许您获取与当前获得焦点的画廊项对应的业务对象。获得焦点的项是指接收到焦点的项。您可以通过焦点框来识别获得焦点的项。
+- [`RibbonGalleryItem.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/FocusedItem.md) — 允许您获取与当前获得焦点的库项对应的业务对象。获得焦点的项是指接收到焦点的项。您可以通过焦点框来识别获得焦点的项。
 
   ![ribbon-gallery-focuseditem](../../images/ribbon-gallery-focuseditem.png)
   
 
-- `RibbonGalleryItem.ItemSelectionMode` — 允许您在单项选择和多项选择模式之间进行选择。当 `ItemSelectionMode` 属性设置为 `Multiple` 时，用户可以同时选择多个画廊项。
+- [`RibbonGalleryItem.ItemSelectionMode`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemSelectionMode.md) — 允许您在单项选择和多项选择模式之间进行选择。当 [`ItemSelectionMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ItemSelectionMode.md) 属性设置为 `Multiple` 时，用户可以同时选择多个库项。
   
-  在单项选择模式下，使用 `RibbonGalleryItem.FocusedItem` 属性获取/设置获得焦点（被选中）的项。
+  在单项选择模式下，使用 [`RibbonGalleryItem.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/FocusedItem.md) 属性获取/设置获得焦点（被选中）的项。
   
-  在多项选择模式下，使用 `RibbonGalleryItem.SelectedItems` 属性获取/设置当前选中的项。
+  在多项选择模式下，使用 [`RibbonGalleryItem.SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/SelectedItems.md) 属性获取/设置当前选中的项。
 
   在多选模式下点击某个项时，该项会自动获得焦点并被选中。
-  被选中的项具有高亮背景。画廊项周围的边框表示该项已获得焦点。
+  被选中的项具有高亮背景。库项周围的边框表示该项已获得焦点。
 
   ![ribbon-gallery-multiple-selection](../../images/ribbon-gallery-multiple-selection.png)
   
@@ -264,28 +264,28 @@ public class CellStyle : ObservableObject
 
   ![ribbon-gallery-multiple-selection-unselected](../../images/ribbon-gallery-multiple-selection-unselected.png)
 
-- `RibbonGalleryItem.SelectedItems` — 与被选中的画廊项对应的业务对象集合。将 `RibbonGalleryItem.ItemSelectionMode` 属性设置为 `Multiple` 以允许多项选择。
+- [`RibbonGalleryItem.SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/SelectedItems.md) — 与被选中的库项对应的业务对象集合。将 [`RibbonGalleryItem.ItemSelectionMode`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemSelectionMode.md) 属性设置为 `Multiple` 以允许多项选择。
 
   
-  在单项选择模式下，`RibbonGalleryItem.SelectedItems` 属性只包含一个元素，它与 `RibbonGalleryItem.FocusedItem` 属性一致。
+  在单项选择模式下，[`RibbonGalleryItem.SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/SelectedItems.md) 属性只包含一个元素，它与 [`RibbonGalleryItem.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/FocusedItem.md) 属性一致。
 
   
 
 
 
 
-## 显示和关闭下拉画廊
+## 显示和关闭下拉库 {#show-and-close-the-dropdown-gallery}
 
-- `RibbonGalleryItem.IsPopupOpen` — 获取或设置下拉画廊是否处于打开状态。
-- `RibbonGalleryItem.ClosePopup` — 关闭下拉画廊。
+- [`RibbonGalleryItem.IsPopupOpen`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/IsPopupOpen.md) — 获取或设置下拉库是否处于打开状态。
+- [`RibbonGalleryItem.ClosePopup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ClosePopup.md) — 关闭下拉库。
 
-## 下拉画廊中的附加命令
+## 下拉库中的附加命令 {#additional-commands-in-a-dropdown-gallery}
 
-下拉画廊可以在底部显示附加的 Ribbon 项（命令）。
+下拉库可以在底部显示附加的 Ribbon 项（命令）。
 
 ![ribbon-RibbonGalleryItem-dropdown](../../images/ribbon-RibbonGalleryItem-dropdown.png)
 
-使用 `RibbonGalleryItem.DropDownItems` 属性指定这些附加项。
+使用 [`RibbonGalleryItem.DropDownItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/DropDownItems.md) 属性指定这些附加项。
 
 ``` xml
 <mxr:RibbonPageGroup Header="Styles" IsHeaderButtonVisible="True">
@@ -304,21 +304,21 @@ public class CellStyle : ObservableObject
 </mxr:RibbonPageGroup>
 ```
 
-## 简化命令布局中的画廊
+## 简化命令布局中的库 {#galleries-in-the-simplified-command-layout}
 
-在[简化命令布局](ribbon-command-layouts.md)中，添加到页面分组中的画廊会渲染为一个按钮。点击该按钮会调出整个画廊。
+在[简化命令布局](ribbon-command-layouts.md)中，添加到页面分组中的库会渲染为一个按钮。点击该按钮会调出整个库。
 
 ![ribbon-gallery-simplified-layout](../../images/ribbon-gallery-simplified-layout.png)
 
-按钮的文本由 `RibbonGalleryItem.Header` 属性指定。
+按钮的文本由 [`RibbonGalleryItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) 属性指定。
 
-## 工具栏、弹出菜单和上下文菜单中的画廊
+## 工具栏、弹出菜单和上下文菜单中的库 {#galleries-in-toolbars-popups-and-context-menus}
 
-当您将画廊添加到传统工具栏或弹出菜单中时，画廊会显示为一个子菜单。
+当您将库添加到传统工具栏或弹出菜单中时，库会显示为一个子菜单。
 
 ![ribbon-gallery-in-popup-menu](../../images/ribbon-gallery-in-popup-menu.png)
 
-子菜单的标题由 `RibbonGalleryItem.Header` 属性指定。
+子菜单的标题由 [`RibbonGalleryItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) 属性指定。
 
 <br>
 <br>

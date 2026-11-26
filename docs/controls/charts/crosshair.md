@@ -154,7 +154,11 @@ The following code shows how to customize the [`CrosshairMode`](../../API/Eremex
 ``` xml
 <mxc:CartesianChart.Series>
     <mxc:CartesianSeries DataAdapter="{Binding Series.DataAdapter}">
-        <mxc:CartesianLineSeriesView Color="{Binding Series.Color}" Thickness="2" CrosshairMode="Interpolate"/>
+        <mxc:CartesianLineSeriesView Color="{Binding Series.Color}" CrosshairMode="Interpolate">
+            <mxc:CartesianLineSeriesView.LineStyle>
+                <mxc:LineStyle Thickness="2" />
+            </mxc:CartesianLineSeriesView.LineStyle>
+        </mxc:CartesianLineSeriesView>
     </mxc:CartesianSeries>
 </mxc:CartesianChart.Series>
 

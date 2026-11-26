@@ -6,7 +6,7 @@ seealso: []
 
 # CalendarControl
 
-`CalendarControl` отображает календарь, позволяющий пользователю выбрать дату. Навигационный заголовок контрола отображает кнопки для перемещения по месяцам и годам.
+[`CalendarControl`](../../API/Eremex.AvaloniaUI.Controls.Editors/CalendarControl.md) отображает календарь, позволяющий пользователю выбрать дату. Навигационный заголовок контрола отображает кнопки для перемещения по месяцам и годам.
 
 ![calendarcontrol](../../images/calendarcontrol.png)
 

@@ -12,11 +12,16 @@ Represents a property grid row that groups other rows under a category caption.
 public class PropertyGridCategoryRow : PropertyGridExpandableRowBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PropertyGridCategoryRow](PropertyGridCategoryRow/PropertyGridCategoryRow.md)() | Initializes a new instance of the PropertyGridCategoryRow class. The row is expanded by default. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Rows](PropertyGridCategoryRow/Rows.md) { get; } | Gets the collection of rows grouped by this category row. |
 
 ## See Also

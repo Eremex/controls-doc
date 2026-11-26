@@ -12,11 +12,16 @@ Represents an editor that allows users to select an item from segments.
 public class SegmentedEditor : BaseEditor
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SegmentedEditor](SegmentedEditor/SegmentedEditor.md)() | Initializes a new instance of the SegmentedEditor class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [DisplayMember](SegmentedEditor/DisplayMember.md) { get; set; } | Gets or sets the name of the property used to display items. |
 | [ItemsSource](SegmentedEditor/ItemsSource.md) { get; set; } | Gets or sets the collection of the editor's items. |
 | [ItemTemplate](SegmentedEditor/ItemTemplate.md) { get; set; } | Gets or sets the template used to display the editor's items. |

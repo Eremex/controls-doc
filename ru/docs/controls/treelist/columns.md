@@ -13,13 +13,13 @@ seealso: []
 
 ## Колонка в контроле TreeView
 
-Контрол TreeView отображает данные в одной колонке. Эта колонка нельзя удалить. Значения, отображаемые в колонке TreeView, извлекаются из поля/свойства, указанного членом `TreeViewControl.DataFieldName`.
+Контрол TreeView отображает данные в одной колонке. Эта колонка нельзя удалить. Значения, отображаемые в колонке TreeView, извлекаются из поля/свойства, указанного членом [`TreeViewControl.DataFieldName`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md).
 
-Свойство `TreeViewControl.CellWidth` позволяет настраивать ширину этой колонки. Дополнительную информацию смотрите по следующей ссылке: [Ширина колонки](#ширина-колонки).
+Свойство [`TreeViewControl.CellWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) позволяет настраивать ширину этой колонки. Дополнительную информацию смотрите по следующей ссылке: [Ширина колонки](#ширина-колонки).
 
 ## Создание колонок TreeList
 
-Колонки TreeList инкапсулируются классом `TreeListColumn`, который является потомком класса `ColumnBase`. Класс `GridColumn` (колонка в `DataGridControl`) также является потомком `ColumnBase`. Таким образом, колонки в контролах DataGrid и TreeList имеют много общих членов API.
+Колонки TreeList инкапсулируются классом [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md), который является потомком класса [`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md). Класс [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) (колонка в [`DataGridControl`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md)) также является потомком [`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md). Таким образом, колонки в контролах DataGrid и TreeList имеют много общих членов API.
 
 Контрол TreeList не создаёт колонки автоматически после привязки контрола к источнику данных. Существует четыре подхода к созданию колонок:
 
@@ -27,7 +27,7 @@ seealso: []
     
     Вы можете определить все колонки TreeList вручную в коллекции `TreeList.Columns` (в XAML или code-behind). При таком подходе у вас есть доступ к созданным объектам колонок по имени в коде.
 
-    Следующий пример создаёт две колонки TreeList и настраивает формат отображения значений второй колонки:
+    Этот пример создаёт две колонки TreeList и настраивает формат отображения значений второй колонки:
 
     ``` xml
     xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -47,28 +47,28 @@ seealso: []
 
 - **Автоматическое создание колонок**
 
-    Включите параметр `TreeListControl.AutoGenerateColumns`, чтобы автоматически создавать недостающие колонки после привязки контрола к источнику данных. Вы можете применять определённые атрибуты (из пространств имён `System.ComponentModel` и `System.ComponentModel.DataAnnotations`) к свойствам бизнес-объекта, чтобы управлять автоматическим созданием колонок и настраивать параметры автоматически создаваемых колонок (например, отображаемое имя и порядок колонки). Смотрите [Автоматическое создание колонок](#автоматическое-создание-колонок).
+    Включите параметр [`TreeListControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md), чтобы автоматически создавать недостающие колонки после привязки контрола к источнику данных. Вы можете применять определённые атрибуты (из пространств имён `System.ComponentModel` и `System.ComponentModel.DataAnnotations`) к свойствам бизнес-объекта, чтобы управлять автоматическим созданием колонок и настраивать параметры автоматически создаваемых колонок (например, отображаемое имя и порядок колонки). Смотрите [Автоматическое создание колонок](#автоматическое-создание-колонок).
 
 - **Сочетание ручного создания колонок и автоматической генерации**
 
-    Вы можете сочетать оба вышеописанных подхода: создать необходимые колонки вручную в коллекции `TreeList.Columns`, а затем включить параметр `TreeListControl.AutoGenerateColumns`, чтобы делегировать создание остальных колонок контролу TreeList.
+    Вы можете сочетать оба вышеописанных подхода: создать необходимые колонки вручную в коллекции `TreeList.Columns`, а затем включить параметр [`TreeListControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md), чтобы делегировать создание остальных колонок контролу TreeList.
 
 - **Создание колонок из View Model**
 
-    TreeList может создавать колонки из источника колонок, определённого во View Model. В этом сценарии используйте свойства `ColumnsSource` и `ColumnTemplate`. Смотрите [Создание колонок из View Model](#создание-колонок-из-view-model).
+    TreeList может создавать колонки из источника колонок, определённого во View Model. В этом сценарии используйте свойства `ColumnsSource` и [`ColumnTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnTemplate.md). Смотрите [Создание колонок из View Model](#создание-колонок-из-view-model).
 
 
 
 
 ## Привязка колонок к данным
 
-Свойство `TreeListColumn.FieldName` позволяет привязать колонку к полю в базовой таблице данных или к публичному свойству бизнес-объекта. После привязки колонка получает значения из источника данных.
+Свойство [`TreeListColumn.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) позволяет привязать колонку к полю в базовой таблице данных или к публичному свойству бизнес-объекта. После привязки колонка получает значения из источника данных.
 
-TreeList также позволяет создавать несвязанные колонки, значения которых должны предоставляться вручную, через событие `TreeListControl.CustomUnboundColumnData`. Дополнительную информацию смотрите в разделе [Несвязанные колонки](data-binding/unbound-columns.md).
+TreeList также позволяет создавать несвязанные колонки, значения которых должны предоставляться вручную, через событие [`TreeListControl.CustomUnboundColumnData`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomUnboundColumnData.md). Дополнительную информацию смотрите в разделе [Несвязанные колонки](data-binding/unbound-columns.md).
 
 Не рекомендуется привязывать несколько колонок TreeList к одному и тому же полю/свойству данных.
 
-Следующий пример создаёт колонки TreeList и привязывает их к данным.
+Этот пример создаёт колонки TreeList и привязывает их к данным.
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -101,11 +101,11 @@ treeList1.Columns.Add(colFirstName);
 
 ## Автоматическое создание колонок
 
-Установите свойство `AutoGenerateColumns` в значение `true` (значение по умолчанию — `false`), чтобы включить автоматическое создание колонок для свойств в источнике данных. Когда `AutoGenerateColumns` установлено в `true`, контрол TreeList получает публичные свойства из источника данных, создаёт колонки и привязывает их к этим свойствам. Если коллекция `Columns` контрола уже содержит колонку, привязанную к определённому свойству/полю, дополнительная колонка, привязанная к тому же свойству/полю, не создаётся автоматически.
+Установите свойство [`AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md) в значение `true` (значение по умолчанию — `false`), чтобы включить автоматическое создание колонок для свойств в источнике данных. Когда [`AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md) установлено в `true`, контрол TreeList получает публичные свойства из источника данных, создаёт колонки и привязывает их к этим свойствам. Если коллекция [`Columns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Columns.md) контрола уже содержит колонку, привязанную к определённому свойству/полю, дополнительная колонка, привязанная к тому же свойству/полю, не создаётся автоматически.
 
-События `AutoGeneratingColumn` и `AutoGeneratedColumns` позволяют настраивать автоматически создаваемые колонки. Событие `AutoGeneratingColumn` возникает, когда автоматически создаваемая колонка вот-вот будет добавлена в коллекцию `Columns`. Событие позволяет предотвратить добавление колонки в коллекцию.
+События [`AutoGeneratingColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGeneratingColumn.md) и [`AutoGeneratedColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGeneratedColumns.md) позволяют настраивать автоматически создаваемые колонки. Событие [`AutoGeneratingColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGeneratingColumn.md) возникает, когда автоматически создаваемая колонка вот-вот будет добавлена в коллекцию [`Columns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Columns.md). Событие позволяет предотвратить добавление колонки в коллекцию.
 
-Событие `AutoGeneratedColumns` возникает после того, как все колонки были автоматически созданы.
+Событие [`AutoGeneratedColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGeneratedColumns.md) возникает после того, как все колонки были автоматически созданы.
 
 Когда вы назначаете контролу другой источник данных, TreeList сначала удаляет колонки, которые были ранее созданы автоматически, а затем автоматически создаёт колонки для нового источника данных.
 
@@ -136,16 +136,16 @@ public partial class MyBusinessObject : ObservableObject
 
 - `AutoGenerateField` — Определяет, следует ли автоматически создавать соответствующую колонку.
 
-- `Order` — Определяет видимую позицию автоматически создаваемой колонки (`ColumnBase.VisibleIndex`).
+- `Order` — Определяет видимую позицию автоматически создаваемой колонки ([`ColumnBase.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md)).
 
-- `Name` — Определяет заголовок автоматически создаваемой колонки (`ColumnBase.Header`).
+- `Name` — Определяет заголовок автоматически создаваемой колонки ([`ColumnBase.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md)).
 
 - `ShortName` — Эквивалентен параметру `Name`.
  
 - `GroupName` — Определяет имя группы, связываемой с автоматически создаваемой колонкой.
-Это значение атрибута используется для инициализации свойства `TreeListColumn.BandName`, если параметр `TreeListControl.AutoGenerateBands` установлен в значение `true` (по умолчанию).
+Это значение атрибута используется для инициализации свойства [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md), если параметр [`TreeListControl.AutoGenerateBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateBands.md) установлен в значение `true` (по умолчанию).
 
-    Когда TreeList встречает `DisplayAttribute.GroupName`, он проверяет наличие существующей группы с совпадающим именем (`TreeListBand.BandName`). Если такой группы нет, контрол автоматически создаёт группу и инициализирует её свойство `TreeListBand.BandName` значением `DisplayAttribute.GroupName`.
+    Когда TreeList встречает `DisplayAttribute.GroupName`, он проверяет наличие существующей группы с совпадающим именем ([`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)). Если такой группы нет, контрол автоматически создаёт группу и инициализирует её свойство [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) значением `DisplayAttribute.GroupName`.
 
     Параметр `DisplayAttribute.GroupName` также поддерживает вложенные группы. Используйте символ '/' для разделения родительской и дочерней групп (например, "ParentBandName/ChildBandName").
     Чтобы включить '/' как буквальный символ, используйте "//".
@@ -174,7 +174,7 @@ public partial class MyBusinessObject : ObservableObject
 
 #### Атрибут `DisplayName`
 
-Атрибут `System.ComponentModel.DisplayNameAttribute` позволяет инициализировать заголовок автоматически создаваемой колонки (`ColumnBase.Header`).
+Атрибут `System.ComponentModel.DisplayNameAttribute` позволяет инициализировать заголовок автоматически создаваемой колонки ([`ColumnBase.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md)).
 
 ``` csharp
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -224,11 +224,11 @@ public partial class MyBusinessObject : ObservableObject
 
 ## Создание колонок из View Model
 
-Вы можете заполнить контрол TreeList колонками из источника колонок, определённого во View Model. Источник колонок — это коллекция бизнес-объектов, из которой создаются объекты `TreeListColumn` согласно указанному шаблону. Создание колонок из View Model обеспечивают следующие члены API:
+Вы можете заполнить контрол TreeList колонками из источника колонок, определённого во View Model. Источник колонок — это коллекция бизнес-объектов, из которой создаются объекты [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md) согласно указанному шаблону. Создание колонок из View Model обеспечивают следующие члены API:
 
-- `TreeListControl.ColumnsSource` — Коллекция бизнес-объектов, используемая для создания колонок treelist согласно шаблону `ColumnTemplate`.
+- [`TreeListControl.ColumnsSource`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnsSource.md) — Коллекция бизнес-объектов, используемая для создания колонок treelist согласно шаблону [`ColumnTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnTemplate.md).
 
-- `TreeListControl.ColumnTemplate` — Шаблон, инициализирующий объект `TreeListColumn` из бизнес-объектов, хранящихся в источнике колонок.
+- [`TreeListControl.ColumnTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnTemplate.md) — Шаблон, инициализирующий объект [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md) из бизнес-объектов, хранящихся в источнике колонок.
 
 <!-- TODO
 пример
@@ -237,12 +237,12 @@ public partial class MyBusinessObject : ObservableObject
 
 ## Перемещение колонок
 
-Используйте свойство `TreeListColumn.VisibleIndex`, чтобы задать визуальную позицию колонки. Чтобы скрыть колонку, установите её свойство `TreeListColumn.VisibleIndex` в значение **-1**, либо установите свойство `IsVisible` в значение `false`.
+Используйте свойство [`TreeListColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md), чтобы задать визуальную позицию колонки. Чтобы скрыть колонку, установите её свойство [`TreeListColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) в значение **-1**, либо установите свойство [`IsVisible`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/IsVisible.md) в значение `false`.
 
 Поведение контрола по умолчанию позволяет пользователю переупорядочивать колонки. Используйте следующие свойства, чтобы запретить перемещение колонок:
 
-- `TreeListControl.AllowColumnMoving` — Определяет, может ли пользователь перемещать любую колонку.
-- `TreeListColumn.AllowMoving` — Определяет, может ли пользователь перемещать конкретную колонку.
+- [`TreeListControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnMoving.md) — Определяет, может ли пользователь перемещать любую колонку.
+- [`TreeListColumn.AllowMoving`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowMoving.md) — Определяет, может ли пользователь перемещать конкретную колонку.
 
 ## Ширина колонки
 
@@ -250,15 +250,15 @@ public partial class MyBusinessObject : ObservableObject
 
 **Параметры TreeList:**
 
-- `TreeListColumn.Width` — Ширина колонки, заданная значением типа `GridLength`.
-- `TreeListColumn.MinWidth` — Минимальная ширина колонки.
-- `TreeListColumn.MaxWidth` — Максимальная ширина колонки.
+- [`TreeListColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md) — Ширина колонки, заданная значением типа `GridLength`.
+- [`TreeListColumn.MinWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MinWidth.md) — Минимальная ширина колонки.
+- [`TreeListColumn.MaxWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MaxWidth.md) — Максимальная ширина колонки.
 
 **Параметры TreeView:**
 
-- `TreeViewControl.CellWidth` — Ширина ячеек контрола, заданная значением типа `GridLength`.
+- [`TreeViewControl.CellWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) — Ширина ячеек контрола, заданная значением типа `GridLength`.
 
-Свойства `TreeListColumn.Width` и `TreeViewControl.CellWidth` имеют тип `GridLength`. Тип `GridLength` позволяет задавать ширину колонки следующим образом:
+Свойства [`TreeListColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md) и [`TreeViewControl.CellWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) имеют тип `GridLength`. Тип `GridLength` позволяет задавать ширину колонки следующим образом:
 
 - Фиксированная ширина (количество пикселей).
 - Взвешенная доля доступного пространства (нотация _star_).
@@ -281,8 +281,8 @@ xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
 
 Следующие свойства управляют операциями изменения размера колонок, выполняемыми пользователями.
 
-- `TreeListControl.AllowColumnResizing` — Определяет, может ли пользователь изменять размер любой колонки.
-- `TreeListColumn.AllowResizing` — Определяет, может ли пользователь изменять размер конкретной колонки.
+- [`TreeListControl.AllowColumnResizing`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnResizing.md) — Определяет, может ли пользователь изменять размер любой колонки.
+- [`TreeListColumn.AllowResizing`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowResizing.md) — Определяет, может ли пользователь изменять размер конкретной колонки.
 
 
 
@@ -296,11 +296,11 @@ xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
 
 ![treelist-hierarchycolumn-anothercolumn](../../images/treelist-hierarchycolumn-anothercolumn.png)
 
-Свойство `TreeListControl.TreeColumnFieldName` позволяет назначить любую колонку в качестве колонки иерархии. Это свойство указывает имя поля (`ColumnBase.FieldName`) колонки, которая должна отображать иерархию узлов.
+Свойство [`TreeListControl.TreeColumnFieldName`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/TreeColumnFieldName.md) позволяет назначить любую колонку в качестве колонки иерархии. Это свойство указывает имя поля ([`ColumnBase.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md)) колонки, которая должна отображать иерархию узлов.
 
-Затем с помощью свойства `ColumnBase.VisibleIndex` вы можете изменить положение этой колонки среди других колонок (а значит, и положение иерархии узлов).
+Затем с помощью свойства [`ColumnBase.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) вы можете изменить положение этой колонки среди других колонок (а значит, и положение иерархии узлов).
 
-Следующий пример назначает колонку _colDescription_ в качестве колонки иерархии и размещает её на второй позиции:
+Этот пример назначает колонку _colDescription_ в качестве колонки иерархии и размещает её на второй позиции:
 
 ``` xml
 <mxtl:TreeListControl x:Name="treeList" TreeColumnFieldName="Description">
@@ -318,7 +318,7 @@ xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
 
 ![bestfit-feature](../../images/bestfit-feature.png)
 
-Best Fit рассчитывает оптимальную ширину колонок **в пикселях** и присваивает эти значения свойствам `TreeListColumn.Width`, заменяя ранее установленные значения ширины.
+Best Fit рассчитывает оптимальную ширину колонок **в пикселях** и присваивает эти значения свойствам [`TreeListColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md), заменяя ранее установленные значения ширины.
 
 !!! Note
 
@@ -342,12 +342,12 @@ Best Fit рассчитывает оптимальную ширину колон
 
 Функциональность Best Fit включена по умолчанию. Вы можете использовать следующие свойства для управления операциями Best Fit для всех колонок и отдельных колонок.
 
-- `TreeListControl.AllowBestFit` (по умолчанию `true`) — Определяет, включены ли операции Best Fit для всех колонок TreeList. Вы можете переопределить этот глобальный параметр для отдельных колонок с помощью свойства `TreeListColumn.AllowBestFit`.
-- `TreeListColumn.AllowBestFit` (по умолчанию `null`) — Определяет, включены ли операции Best Fit для конкретной колонки. Если свойство `TreeListColumn.AllowBestFit` установлено в значение `null`, фактический параметр определяется глобальным свойством `TreeListControl.AllowBestFit`.
+- [`TreeListControl.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowBestFit.md) (по умолчанию `true`) — Определяет, включены ли операции Best Fit для всех колонок TreeList. Вы можете переопределить этот глобальный параметр для отдельных колонок с помощью свойства [`TreeListColumn.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md).
+- [`TreeListColumn.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md) (по умолчанию `null`) — Определяет, включены ли операции Best Fit для конкретной колонки. Если свойство [`TreeListColumn.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md) установлено в значение `null`, фактический параметр определяется глобальным свойством [`TreeListControl.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowBestFit.md).
 
 ### Режим Best Fit
 
-Вы можете использовать свойства `TreeListControl.BestFitMode` и `TreeListColumn.BestFitMode`, чтобы управлять областью обрабатываемых значений строк для операций Best Fit.
+Вы можете использовать свойства [`TreeListControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md) и [`TreeListColumn.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md), чтобы управлять областью обрабатываемых значений строк для операций Best Fit.
 
 ``` xaml
 <mxtl:TreeListControl BestFitMode="Full" >
@@ -355,40 +355,40 @@ Best Fit рассчитывает оптимальную ширину колон
 
 #### Доступные режимы расчёта Best Fit
 
-- Режим `BestFitMode.Fast` — Измеряет ширину уникальных значений строк, что значительно повышает производительность Best Fit в большинстве сценариев.
+- Режим [`BestFitMode.Fast`](../../API/Eremex.AvaloniaUI.Controls.DataControl/BestFitMode.md) — Измеряет ширину уникальных значений строк, что значительно повышает производительность Best Fit в большинстве сценариев.
 
     !!! Note
 
         - Режим `Fast` неприменим, если отображаемый текст целевых ячеек зависит от других ячеек. В этом случае вам нужно переключиться на режим `Full`.
 
-        - Режим `Fast` может неправильно рассчитывать ширину колонок, если используются шаблоны ячеек (`TreeListColumn.CellTemplate`) для назначения пользовательских редакторов, либо если ячейки отображают ошибки проверки, вызванные источником данных (см. `ShowItemsSourceErrors`).
+        - Режим `Fast` может неправильно рассчитывать ширину колонок, если используются шаблоны ячеек ([`TreeListColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md)) для назначения пользовательских редакторов, либо если ячейки отображают ошибки проверки, вызванные источником данных (см. [`ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md)).
 
-- Режим `BestFitMode.Full` — Измеряет ширину всех значений строк, включая дубликаты. Хотя этот режим медленнее, чем `Fast`, он корректно рассчитывает ширину колонок, если используются шаблоны ячеек или ошибки проверки.
+- Режим [`BestFitMode.Full`](../../API/Eremex.AvaloniaUI.Controls.DataControl/BestFitMode.md) — Измеряет ширину всех значений строк, включая дубликаты. Хотя этот режим медленнее, чем `Fast`, он корректно рассчитывает ширину колонок, если используются шаблоны ячеек или ошибки проверки.
 
 #### Автоматический (по умолчанию) режим расчёта Best Fit
 
 - `Fast` — режим по умолчанию в большинстве случаев.
 - `Full` автоматически активируется в качестве режима по умолчанию в следующих сценариях:
-    - Шаблоны ячеек (`TreeListColumn.CellTemplate`) используются для назначения редакторов колонкам.
-    - Свойство контрола `DataControlBase.ShowItemsSourceErrors` установлено в значение `true`, и ошибки проверки применяются к колонкам на уровне источника данных (с использованием атрибутов проверки, интерфейса `IDataErrorInfo` или интерфейса `INotifyDataErrorInfo`).
+    - Шаблоны ячеек ([`TreeListColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md)) используются для назначения редакторов колонкам.
+    - Свойство контрола [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) установлено в значение `true`, и ошибки проверки применяются к колонкам на уровне источника данных (с использованием атрибутов проверки, интерфейса `IDataErrorInfo` или интерфейса `INotifyDataErrorInfo`).
 
 #### Выбор режима расчёта Best Fit
 
 Используйте следующие свойства, чтобы указать режим расчёта Best Fit для всех или отдельных колонок:
 
-- `TreeListControl.BestFitMode` — Определяет глобальный режим расчёта Best Fit для всех колонок TreeList.
-Когда `TreeListControl.BestFitMode` установлено в значение `null` (исходное значение), режим расчёта Best Fit определяется [автоматически](#автоматический-по-умолчанию-режим-расчёта-best-fit). Используйте свойство `TreeListColumn.BestFitMode`, чтобы переопределить этот глобальный параметр для конкретных колонок.
+- [`TreeListControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md) — Определяет глобальный режим расчёта Best Fit для всех колонок TreeList.
+Когда [`TreeListControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md) установлено в значение `null` (исходное значение), режим расчёта Best Fit определяется [автоматически](#автоматический-по-умолчанию-режим-расчёта-best-fit). Используйте свойство [`TreeListColumn.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md), чтобы переопределить этот глобальный параметр для конкретных колонок.
 
-- `TreeListColumn.BestFitMode` — Позволяет задать режим расчёта Best Fit для отдельных колонок, переопределяя свойство `TreeListControl.BestFitMode`. Если свойство `TreeListColumn.BestFitMode` имеет значение `null` (исходное значение), фактический параметр определяется свойством контрола `TreeListControl.BestFitMode`.
+- [`TreeListColumn.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md) — Позволяет задать режим расчёта Best Fit для отдельных колонок, переопределяя свойство [`TreeListControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md). Если свойство [`TreeListColumn.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md) имеет значение `null` (исходное значение), фактический параметр определяется свойством контрола [`TreeListControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md).
 
 ### Вызов операций Best Fit в коде
 
 Используйте следующие методы, чтобы изменить размер колонок TreeList до их оптимальной ширины:
 
-- `TreeListControl.BestFit(TreeListColumn column)` — Изменяет размер указанной колонки до ширины, необходимой для полного отображения её содержимого.
-- `TreeListControl.BestFitAllColumns()` — Изменяет размер всех колонок до ширины, необходимой для полного отображения их содержимого.
+- [`TreeListControl.BestFit(TreeListColumn column)`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFit.md) — Изменяет размер указанной колонки до ширины, необходимой для полного отображения её содержимого.
+- [`TreeListControl.BestFitAllColumns()`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitAllColumns.md) — Изменяет размер всех колонок до ширины, необходимой для полного отображения их содержимого.
 
-Чтобы выполнить операции Best-Fit при инициализации контрола TreeList, вызовите метод `BestFit` или `BestFitAllColumns` в обработчике события `TreeListControl.AttachedToVisualTree`.
+Чтобы выполнить операции Best-Fit при инициализации контрола TreeList, вызовите метод [`BestFit`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFit.md) или [`BestFitAllColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitAllColumns.md) в обработчике события `TreeListControl.AttachedToVisualTree`.
 
 ## Сброс пользовательских изменений ширины колонки
 
@@ -398,22 +398,22 @@ Best Fit рассчитывает оптимальную ширину колон
 
 ### Связанный API
 
-- `TreeListControl.AllowResetColumnWidth` (по умолчанию `true`) — Определяет, доступна ли команда _Reset Column Width_ в контекстных меню колонок. Если это свойство отключено, пользователи не могут отменить свои операции изменения размера колонок через интерфейс. Свойство `TreeListControl.AllowResetColumnWidth` не влияет на сброс ширины колонки с помощью метода `TreeListControl.ResetColumnWidth`.
-- Метод `TreeListControl.ResetColumnWidth` — Изменяет размер колонок до их исходной ширины, заданной в XAML или code-behind до каких-либо пользовательских изменений.
+- [`TreeListControl.AllowResetColumnWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowResetColumnWidth.md) (по умолчанию `true`) — Определяет, доступна ли команда _Reset Column Width_ в контекстных меню колонок. Если это свойство отключено, пользователи не могут отменить свои операции изменения размера колонок через интерфейс. Свойство [`TreeListControl.AllowResetColumnWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowResetColumnWidth.md) не влияет на сброс ширины колонки с помощью метода [`TreeListControl.ResetColumnWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ResetColumnWidth.md).
+- Метод [`TreeListControl.ResetColumnWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ResetColumnWidth.md) — Изменяет размер колонок до их исходной ширины, заданной в XAML или code-behind до каких-либо пользовательских изменений.
 
 
 
 ## Заголовки колонок
 
-Заголовки колонок TreeList отображаются на панели заголовков. Вы можете скрыть эту панель с помощью свойства `TreeListControl.ShowColumnHeaders`.
+Заголовки колонок TreeList отображаются на панели заголовков. Вы можете скрыть эту панель с помощью свойства [`TreeListControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnHeaders.md).
 
-Высота панели автоматически подстраивается под содержимое заголовков колонок. Используйте свойство `HeaderPanelMinHeight`, чтобы ограничить минимальную высоту панели.
+Высота панели автоматически подстраивается под содержимое заголовков колонок. Используйте свойство [`HeaderPanelMinHeight`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/HeaderPanelMinHeight.md), чтобы ограничить минимальную высоту панели.
 
-Заголовок колонки изначально отображает подпись (текстовую метку), которая является текстовым представлением свойства `ColumnBase.Header`. Если свойство `ColumnBase.Header` не задано, подпись колонки формируется из имени поля колонки (`ColumnBase.FieldName`).
+Заголовок колонки изначально отображает подпись (текстовую метку), которая является текстовым представлением свойства [`ColumnBase.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md). Если свойство [`ColumnBase.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) не задано, подпись колонки формируется из имени поля колонки ([`ColumnBase.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md)).
 
-Используйте свойство `ColumnBase.HeaderTemplate`, чтобы указать шаблон, используемый для отрисовки заголовка колонки. Шаблон позволяет отображать изображения и пользовательские контролы, а также отображать текст особым образом.
+Используйте свойство [`ColumnBase.HeaderTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderTemplate.md), чтобы указать шаблон, используемый для отрисовки заголовка колонки. Шаблон позволяет отображать изображения и пользовательские контролы, а также отображать текст особым образом.
 
-Следующий код отображает изображение перед подписью колонки. Выражение `<TextBlock Text="{Binding}">` отображает содержимое свойства `Header` колонки:
+Следующий код отображает изображение перед подписью колонки. Выражение `<TextBlock Text="{Binding}">` отображает содержимое свойства [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) колонки:
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -434,7 +434,7 @@ xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
 </mxtl:TreeListControl>
 ```
 
-Используйте свойства `ColumnBase.HeaderHorizontalAlignment` и `ColumnBase.HeaderVerticalAlignment`, чтобы выровнять содержимое заголовка колонки по горизонтали и вертикали.
+Используйте свойства [`ColumnBase.HeaderHorizontalAlignment`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderHorizontalAlignment.md) и [`ColumnBase.HeaderVerticalAlignment`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderVerticalAlignment.md), чтобы выровнять содержимое заголовка колонки по горизонтали и вертикали.
 
 ## Сортировка по колонке
 
@@ -446,7 +446,7 @@ xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
 
 ## Всплывающие подсказки заголовков колонок
 
-Используйте свойство `HeaderToolTip`, чтобы задать пользовательские всплывающие подсказки для заголовков колонок. Пользовательские подсказки отображаются при наведении на заголовки колонок независимо от того, обрезан ли текст заголовка колонки.
+Используйте свойство [`HeaderToolTip`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderToolTip.md), чтобы задать пользовательские всплывающие подсказки для заголовков колонок. Пользовательские подсказки отображаются при наведении на заголовки колонок независимо от того, обрезан ли текст заголовка колонки.
 
 ``` xml
 <mxtl:TreeListColumn FieldName="Position" HeaderToolTip="The job title or role of the employee"/>
@@ -465,9 +465,9 @@ xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
 
 !!! tip
 
-    Общая ширина колонок рассчитывается как сумма ширины отдельных колонок (см. `TreeListColumn.Width`). Чтобы активировать горизонтальную полосу прокрутки, задайте ширину отдельных колонок так, чтобы их сумма превышала ширину области просмотра. Не используйте нотацию звёздочки ("*") для ширины колонок при использовании фиксированных колонок.
+    Общая ширина колонок рассчитывается как сумма ширины отдельных колонок (см. [`TreeListColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md)). Чтобы активировать горизонтальную полосу прокрутки, задайте ширину отдельных колонок так, чтобы их сумма превышала ширину области просмотра. Не используйте нотацию звёздочки ("*") для ширины колонок при использовании фиксированных колонок.
 
-Чтобы закрепить колонку или вернуть её в обычное состояние, установите свойство `TreeListColumn.FixedMode` в одно из следующих значений:
+Чтобы закрепить колонку или вернуть её в обычное состояние, установите свойство [`TreeListColumn.FixedMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FixedMode.md) в одно из следующих значений:
 
 - `Left` — Закрепляет колонку у левого края.
 - `Right` — Закрепляет колонку у правого края.
@@ -480,13 +480,13 @@ xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
 
 ### Меню _Fixed_
 
-Пользователи могут закрепить колонку во время работы, используя встроенное подменю _Fixed_, доступное в контекстном меню колонки. Установите свойство контрола `ShowColumnMenuFixedItem` в значение `true`, чтобы включить это подменю _Fixed_:
+Пользователи могут закрепить колонку во время работы, используя встроенное подменю _Fixed_, доступное в контекстном меню колонки. Установите свойство контрола [`ShowColumnMenuFixedItem`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnMenuFixedItem.md) в значение `true`, чтобы включить это подменю _Fixed_:
 
 ![column-columnmenu-fixed](../../images/column-columnmenu-fixed.png)
 
 ### Позиция фиксированной колонки
 
-Когда колонка закрепляется (фиксируется) или возвращается в обычное состояние, её видимая позиция (синхронизированная со свойством `TreeListColumn.VisibleIndex`) обновляется автоматически.
+Когда колонка закрепляется (фиксируется) или возвращается в обычное состояние, её видимая позиция (синхронизированная со свойством [`TreeListColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md)) обновляется автоматически.
 
 - Закрепление слева: колонка помещается после существующих колонок, закреплённых слева.
 - Закрепление справа: колонка помещается перед существующими колонками, закреплёнными справа.
@@ -495,20 +495,20 @@ xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
 
 ### Ширина фиксированной колонки
 
-Чтобы изменить ширину фиксированной колонки, установите свойство `TreeListColumn.Width` в абсолютное значение в пикселях или в значение `Auto` для автоматического расчёта на основе содержимого ячеек. Фиксированные колонки не поддерживают нотацию звёздочки (пропорциональное задание размера) для установки ширины колонки.
+Чтобы изменить ширину фиксированной колонки, установите свойство [`TreeListColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md) в абсолютное значение в пикселях или в значение `Auto` для автоматического расчёта на основе содержимого ячеек. Фиксированные колонки не поддерживают нотацию звёздочки (пропорциональное задание размера) для установки ширины колонки.
 
 Когда колонка с шириной `star` фиксируется, её ширина автоматически сбрасывается до 120 пикселей.
 
 ### Режим отображения горизонтальной полосы прокрутки
 
-По умолчанию горизонтальная полоса прокрутки отображается по всей ширине прокручиваемых колонок. Включите свойство `ExtendScrollbarToFixedColumns`, чтобы отображать горизонтальную полосу прокрутки по всей ширине всех колонок, включая фиксированные.
+По умолчанию горизонтальная полоса прокрутки отображается по всей ширине прокручиваемых колонок. Включите свойство [`ExtendScrollbarToFixedColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ExtendScrollbarToFixedColumns.md), чтобы отображать горизонтальную полосу прокрутки по всей ширине всех колонок, включая фиксированные.
 
 ![fixedcolumns-scrollbar-extendtofixedcolumns](../../images/fixedcolumns-scrollbar-extendtofixedcolumns.png)
 
 
 ### Связанный API
 
-- `TreeListControl.FixedColumnSeparatorWidth` — Определяет ширину разделителей, отделяющих фиксированные колонки от прокручиваемых.
+- [`TreeListControl.FixedColumnSeparatorWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/FixedColumnSeparatorWidth.md) — Определяет ширину разделителей, отделяющих фиксированные колонки от прокручиваемых.
 
 
 

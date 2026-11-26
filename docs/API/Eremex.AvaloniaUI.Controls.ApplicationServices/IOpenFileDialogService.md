@@ -12,7 +12,7 @@ Shows the platform open file dialog from view model code that must not reference
 public interface IOpenFileDialogService
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

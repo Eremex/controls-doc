@@ -25,11 +25,11 @@ td, th, tr {
 | <div style="width:400px"></div> | col 2 |
 | --- | --- |
 | **Data Grid** |  |
-| ![thumb-datagrid](../images/thumb-datagrid.png) | Displays data from an item source as a two-dimensional table, and provides rich data shaping and editing functionality.<br><br>- Large data sources support<br>- Unbound data<br>- Data sorting and grouping<br>- In-place editors<br>- Search and data filtration<br>- Multiple row selection<br>- Row drag-and-drop<br>- Data validation<br>- Built-in and custom context menus<br>- Column bands<br>[Learn more...](datagrid/index.md) |  
+| ![thumb-datagrid](../images/thumb-datagrid.png) | Displays data from an item source as a two-dimensional table, and provides rich data shaping and editing functionality.<br><br>- Large data sources support<br>- Unbound data<br>- Data sorting and grouping<br>- In-place editors<br>- Search and data filtration<br>- Total and group summaries<br>- Multiple row selection<br>- Row drag-and-drop<br>- Data validation<br>- Built-in and custom context menus<br>- Column bands<br>[Learn more...](datagrid/index.md) |  
 | **Tree List and Tree View** |
-| ![thumb-treelist](../images/thumb-treelist.png) | Renders hierarchical data in the form of a tree. Tree List supports multiple data columns, while Tree View is a single-column control.<br><br>- Binding to self-referential (flat) and hierarchical data sources<br>- Unbound mode (allows you to manually supply data)<br>- Multiple row selection<br>- Row selection via built-in checkboxes<br>- Data sorting<br>- In-place editors<br>- Data search and filtering<br>- Row drag-and-drop<br>- Data validation<br>- Built-in and custom context menus<br>- Column bands<br>[Learn more...](treelist/index.md) | 
+| ![thumb-treelist](../images/thumb-treelist.png) | Renders hierarchical data in the form of a tree. Tree List supports multiple data columns, while Tree View is a single-column control.<br><br>- Binding to self-referential (flat) and hierarchical data sources<br>- Unbound mode (allows you to manually supply data)<br>- Multiple row selection<br>- Row selection via built-in checkboxes<br>- Data sorting<br>- In-place editors<br>- Data search and filtering<br>- Summaries<br>- Row drag-and-drop<br>- Data validation<br>- Built-in and custom context menus<br>- Column bands<br>[Learn more...](treelist/index.md) | 
 | **Property Grid** |
-| ![thumb-propertygrid](../images/thumb-propertygrid.png) | An efficient solution for browsing and editing properties of one or more objects. <br><br>- Automatic generation of rows from public properties of a bound object(s)<br>- Manual row creation mode<br>- Combining rows into category rows<br>- Combining rows into embedded tabs<br>- Search panel (for quick row location)<br>- In-place editors<br>[Learn more...](propertygrid/index.md) | 
+| ![thumb-propertygrid](../images/thumb-propertygrid.png) | An efficient solution for browsing and editing properties of one or more objects. <br><br>- Automatic generation of rows from public properties of a bound object(s)<br>- Manual row creation mode<br>- Nested properties<br>- Combining rows into category rows<br>- Combining rows into embedded tabs<br>- Search panel (for quick row location)<br>- In-place editors<br>[Learn more...](propertygrid/index.md) | 
 | **List View** |
 | ![thumb-propertygrid](../images/thumb-listview.png) | An advanced list that renders items according to your template. Supports item sorting, grouping, filtering and multi-selection.<br><br>- Two item arrangement modes: `Stack` (a single column of items) and `Wrap` (multi-column arrangement with the item wrapping feature) <br>- Rendering ListView items in a custom manner according to your template<br>- Item sorting and grouping against an unlimited number of item properties<br>- Item filtration with an event<br>- Single and multiple selection modes<br>[Learn more...](listview/index.md) | 
 
@@ -64,6 +64,7 @@ td, th, tr {
 | ![thumb-graphics3dcontrol2](../images/thumb-graphics3dcontrol2.png) | Allows you to visualize 3D models in your Avalonia applications.<br><br>- API to specify 3D models<br>- Simple materials<br>- Textured materials in PBR format<br>- Displaying multiple 3D models simultaneously<br>- Perspective and isometric camera modes<br>- Model rotation, panning and zooming with the mouse and keyboard at runtime<br>- Rendering on a video card with the Vulkan SDK<br>- MVVM pattern support for specifying 3D models<br>[Learn more...](graphics3dcontrol/index.md) | 
 
 ## Editors and Utility Controls
+
 | <div style="width:400px"></div> | col 2 |
 | --- | --- |
 | **Data Editors** |  |
@@ -71,16 +72,24 @@ td, th, tr {
 | **Utility Controls** |  |
 | ![thumb-utilitycontrols](../images/thumb-utilitycontrols.png) | A collection of useful controls shipped with the Eremex Controls library allow you to create feature-rich applications.<br><br>- TabControl<br>-  SplitContainerControl<br>-  GroupBox<br>-  CalendarControl<br>-  MxMessageBox<br>-  CircleProgressIndicator<br>[Learn more...](utility-controls/index.md) |
 
+## MVVM App Infrastructure
+
+| <div style="width:400px"></div> | col 2 |
+| --- | --- |
+| **Application Services** |  |
+| ![thumb-app-services](../images/thumb-app-services.png) | Services that enable ViewModels in your MVVM applications to work with message boxes, windows, dialogs, and theme settings without referencing Avalonia types directly. <br><br>- IMessageBoxService<br>- IDialogService<br>- IChoiceDialogService<br>- IWindowService<br>- IOpenFileDialogService and ISaveFileDialogService<br>- IWindowsManager<br>- IAppearanceService<br><br>[Learn more...](app-services/index.md) |
+
+
+
 ## Eremex Paint Themes
 
-The Eremex Controls Library ships with the 'DeltaDesign' paint theme that helps you deliver interfaces with the light and dark color palettes.
+The Eremex Controls Library ships with the DeltaDesign visual theme, which defines the visual settings for the controls. This theme supports multiple color palettes to fine-tune the appearance of the controls in your application. Each color palette is available in either a light or dark variant.
 
+![controls-paint-theme-palettes](../images/controls-paint-theme-palettes.png)
 
-| <div style="width:400px"></div> | <div style="width:400px"></div> |
-| --- | --- |
-| **DeltaDesign Light Theme** | **DeltaDesign Dark Theme** |
-| ![thumb-lighttheme](../images/thumb-lighttheme.png) | ![thumb-darktheme](../images/thumb-darktheme.png) |
-| ![thumb-lighttheme2](../images/thumb-lighttheme2.png) | ![thumb-darktheme2](../images/thumb-darktheme2.png) |
+In addition to color palettes, you can customize the UI density of the controls, making the layout more compact or more spacious.
+
+![controls-paint-theme-ui-density](../images/controls-paint-theme-ui-density.png)
 
 See the following topic for more information: 
 

@@ -12,7 +12,7 @@ Provides the default color collections.
 public static class DefaultColorCollections
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

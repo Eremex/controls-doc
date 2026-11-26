@@ -1,26 +1,26 @@
 ---
-title: Range Area Series View
+title: 范围面积系列视图
 order: 700
 seealso: []
 ---
 
-# Range Area Series View
+# 范围面积系列视图 {#range-area-series-view}
 
-Range Area Series View（`CartesianRangeAreaSeriesView`）绘制两条线，并填充这两条线之间的区域。
+Range Area Series View（[`CartesianRangeAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView.md)）绘制两条线，并填充这两条线之间的区域。
 
 ![chart-views-range-area-series-view](../../../images/chart-views-range-area-series-view.png)
 
 您需要为每个数据点提供两个 Y 值。这些值定义了范围的下限和上限。图表用线条连接每个边界的 Y 值，并用指定的颜色填充它们之间的区域。
 
-## 创建 Range Series View
+## 创建 Range Series View {#create-a-range-series-view}
 
-要创建 Range Series View，请将一个 `CartesianSeries` 对象添加到 `CartesianChart.Series` 集合中，并使用一个 `CartesianRangeAreaSeriesView` 实例初始化 `CartesianSeries.View`。
+要创建 Range Series View，请将一个 [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) 对象添加到 [`CartesianChart.Series`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) 集合中，并使用一个 [`CartesianRangeAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView.md) 实例初始化 [`CartesianSeries.View`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md)。
 
-使用 `CartesianSeries.DataAdapter` 属性为该系列提供数据。Range Area Series View 要求每个数据点提供两个 Y 值。您应使用专门的数据适配器为 Range Area Series View 提供 Y 值。有关支持的数据适配器信息，请参阅以下链接：[Range Area Series View 的数据](#data-for-the-range-area-series-view)。
+使用 [`CartesianSeries.DataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/Series/DataAdapter.md) 属性为该系列提供数据。Range Area Series View 要求每个数据点提供两个 Y 值。您应使用专门的数据适配器为 Range Area Series View 提供 Y 值。有关支持的数据适配器信息，请参阅以下链接：[Range Area Series View 的数据](#data-for-the-range-area-series-view)。
 
-`CartesianRangeAreaSeriesView` 对象包含 `Color1`、`Color2` 和 `Color` 属性，允许您为线条和填充区域指定不同的颜色。
+[`CartesianRangeAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView.md) 对象包含 [`Color1`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color1.md)、[`Color2`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color2.md) 和 [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color.md) 属性，允许您为线条和填充区域指定不同的颜色。
 
-以下代码展示了如何在 XAML 和 code-behind 中创建 Range Area Series View。
+以下代码展示了如何在 XAML 和代码隐藏中创建 Range Area Series View。
 
 ``` xml
 <mxc:CartesianChart x:Name="chartControl">
@@ -51,11 +51,11 @@ series.View = new CartesianRangeAreaSeriesView()
 };
 ```
 
-## 示例 - 使用 Range Area Series View 显示月度最低和最高气温
+## 示例 - 使用 Range Area Series View 显示月度最低和最高气温 {#example-use-a-range-area-series-view-to-display-the-min-and-max-month-temperatures}
 
-以下示例使用 Range Area Series View 显示某城市每月的最低和最高气温。数据适配器（`DateTimeRangeDataAdapter`）为每个数据点（月份）提供两个 Y 值。
+以下示例使用 Range Area Series View 显示某城市每月的最低和最高气温。数据适配器（[`DateTimeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeRangeDataAdapter.md)）为每个数据点（月份）提供两个 Y 值。
 
-请注意此处使用 `DateTimeScaleOptions.LabelFormatter` 属性以自定义方式格式化 _X_ 轴的标签。
+请注意此处使用 [`DateTimeScaleOptions.LabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) 属性以自定义方式格式化 _X_ 轴的标签。
 
 ![chart-views-rangeAreaSeriesView-example](../../../images/chart-views-rangeAreaSeriesView-example.png)
 
@@ -142,41 +142,41 @@ public partial class SeriesViewModel : ObservableObject
 }
 ```
 
-## Range Area Series View 的数据
+## Range Area Series View 的数据 {#data-for-the-range-area-series-view}
 
 您可以使用以下数据适配器为 Range Area Series View 提供数据。这些数据适配器允许您为每个参数指定两个 Y 值。
 
 数值型 _X_ 值：
 
-- `NumericRangeDataAdapter`
+- [`NumericRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/NumericRangeDataAdapter.md)
 
 日期时间型 _X_ 值：
 
-- `DateTimeRangeDataAdapter`
-- `TimeSpanRangeDataAdapter`
+- [`DateTimeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeRangeDataAdapter.md)
+- [`TimeSpanRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/TimeSpanRangeDataAdapter.md)
 
 定性 _X_ 值：
 
-- `QualitativeRangeDataAdapter` 
+- [`QualitativeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeRangeDataAdapter.md) 
 
-## Range Area Series View 设置
+## Range Area Series View 设置 {#range-area-series-view-settings}
 
-- `Color` — 指定用于填充两条线之间区域的颜色。使用 `Transparency` 选项控制填充区域的透明度级别。
-- `Color1` — 指定用于绘制第一条线的颜色。
-- `Color2` — 指定用于绘制第二条线的颜色。
-- `CrosshairMode` — 指定十字线的图表标签是捕捉到最近的数据点，还是显示插值结果。参见 [在十字线图表标签中显示精确值或插值](../crosshair.md#show-an-exact-or-interpolated-value-in-crosshair-series-labels)。
-- `Marker1Image` — 允许您指定用作第一条线点标记的 SVG 格式图像。
-- `Marker1ImageCss` — 指定 CSS 代码，用于自定义指定 SVG 图像（`Marker1Image`）中元素的颜色。
-- `Marker1Size` — 指定第一条线的点标记大小。
-- `Marker2Image` — 允许您指定用作第二条线点标记的 SVG 格式图像。
-- `Marker2ImageCss` — 指定 CSS 代码，用于自定义指定 SVG 图像（`Marker2Image`）中元素的颜色。
-- `Marker2Size` — 指定第二条线的点标记大小。
-- `ShowInCrosshair` — 指定当前系列的十字线图表标签的可见性。参见 [自定义十字线的图表标签](../crosshair.md#hide-a-series-in-the-crosshair)。
-- `ShowMarkers1` — 启用或禁用第一条线的点标记。
-- `ShowMarkers2` — 启用或禁用第二条线的点标记。
+- [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color.md) — 指定用于填充两条线之间区域的颜色。使用 [`Transparency`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Transparency.md) 选项控制填充区域的透明度级别。
+- [`Color1`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color1.md) — 指定用于绘制第一条线的颜色。
+- [`Color2`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color2.md) — 指定用于绘制第二条线的颜色。
+- [`CrosshairMode`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/CrosshairMode.md) — 指定十字线的图表标签是捕捉到最近的数据点，还是显示插值结果。参见 [在十字线图表标签中显示精确值或插值](../crosshair.md#show-an-exact-or-interpolated-value-in-crosshair-series-labels)。
+- [`Marker1Image`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker1Image.md) — 允许您指定用作第一条线点标记的 SVG 格式图像。
+- [`Marker1ImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker1ImageCss.md) — 指定 CSS 代码，用于自定义指定 SVG 图像（[`Marker1Image`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker1Image.md)）中元素的颜色。
+- [`Marker1Size`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker1Size.md) — 指定第一条线的点标记大小。
+- [`Marker2Image`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker2Image.md) — 允许您指定用作第二条线点标记的 SVG 格式图像。
+- [`Marker2ImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker2ImageCss.md) — 指定 CSS 代码，用于自定义指定 SVG 图像（[`Marker2Image`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker2Image.md)）中元素的颜色。
+- [`Marker2Size`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker2Size.md) — 指定第二条线的点标记大小。
+- [`ShowInCrosshair`](../../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) — 指定当前系列的十字线图表标签的可见性。参见 [自定义十字线的图表标签](../crosshair.md#hide-a-series-in-the-crosshair)。
+- [`ShowMarkers1`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/ShowMarkers1.md) — 启用或禁用第一条线的点标记。
+- [`ShowMarkers2`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/ShowMarkers2.md) — 启用或禁用第二条线的点标记。
 - `Thickness1` — 指定第一条线的粗细。
 - `Thickness2` — 指定第二条线的粗细。
-- `Transparency` — 获取或设置填充区域的透明度级别，取值范围为 `0`（完全透明）到 `1`（完全不透明）。
+- [`Transparency`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Transparency.md) — 获取或设置填充区域的透明度级别，取值范围为 `0`（完全透明）到 `1`（完全不透明）。
 
 <br>
 <br>

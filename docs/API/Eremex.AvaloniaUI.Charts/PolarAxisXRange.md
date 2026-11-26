@@ -12,7 +12,7 @@ Represents the range of PolarAxisX, which always covers a full turn from 0 to 36
 public class PolarAxisXRange : PredefinedRange
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

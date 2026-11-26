@@ -14,17 +14,17 @@ DataGrid поддерживает связанные (bound) и несвязан
 
 ## Create Columns
 
-Класс `GridColumn` представляет колонку в `DataGridControl`. Классы `GridColumn` и `TreeListColumn` (колонка в `TreeListControl`) являются наследниками класса `ColumnBase`. Таким образом, колонки в DataGrid и TreeList имеют много общих членов API.
+Класс [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) представляет колонку в [`DataGridControl`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md). Классы [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) и [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md) (колонка в [`TreeListControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md)) являются наследниками класса [`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md). Таким образом, колонки в DataGrid и TreeList имеют много общих членов API.
 
-Чтобы получить доступ к коллекции колонок таблицы, используйте свойство `DataGridControl.Columns`.
+Чтобы получить доступ к коллекции колонок таблицы, используйте свойство [`DataGridControl.Columns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Columns.md).
 
 DataGrid не создаёт колонки автоматически при привязке контрола к источнику данных. Существуют четыре подхода к созданию колонок:
 
 - **Ручное создание колонок**
 
-    Вы можете вручную определить все колонки DataGrid в коллекции `DataGridControl.Columns` (в XAML или code-behind). При таком подходе у вас есть доступ к созданным объектам колонок по имени в коде. 
+    Вы можете вручную определить все колонки DataGrid в коллекции [`DataGridControl.Columns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Columns.md) (в XAML или code-behind). При таком подходе у вас есть доступ к созданным объектам колонок по имени в коде. 
 
-    Следующий пример создаёт две колонки DataGrid и настраивает формат отображения значений второй колонки:
+    Этот пример создаёт две колонки DataGrid и настраивает формат отображения значений второй колонки:
 
     ``` xml
     xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -44,28 +44,28 @@ DataGrid не создаёт колонки автоматически при п
 
 - **Автоматическая генерация колонок**
 
-    Включите опцию `DataGridControl.AutoGenerateColumns`, чтобы автоматически создавать отсутствующие колонки при привязке контрола к источнику данных. Вы можете применять специальные атрибуты (из пространств имён `System.ComponentModel` и `System.ComponentModel.DataAnnotations`) к свойствам бизнес-объекта, чтобы управлять автоматической генерацией колонок и настраивать параметры автоматически созданных колонок (например, отображаемое имя и порядок колонки).
+    Включите опцию [`DataGridControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md), чтобы автоматически создавать отсутствующие колонки при привязке контрола к источнику данных. Вы можете применять специальные атрибуты (из пространств имён `System.ComponentModel` и `System.ComponentModel.DataAnnotations`) к свойствам бизнес-объекта, чтобы управлять автоматической генерацией колонок и настраивать параметры автоматически созданных колонок (например, отображаемое имя и порядок колонки).
 
 - **Сочетание ручного создания колонок и автоматической генерации**
 
-    Вы можете сочетать два описанных выше подхода: вручную создать необходимые колонки в коллекции `DataGridControl.Columns`, а затем включить опцию `DataGridControl.AutoGenerateColumns`, чтобы делегировать генерацию остальных колонок DataGrid.
+    Вы можете сочетать два описанных выше подхода: вручную создать необходимые колонки в коллекции [`DataGridControl.Columns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Columns.md), а затем включить опцию [`DataGridControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md), чтобы делегировать генерацию остальных колонок DataGrid.
 
 - **Генерация колонок из View Model**
 
-    DataGrid может создавать колонки из источника колонок, определённого в View Model. В этом сценарии используйте свойства `ColumnsSource` и `ColumnTemplate`. Смотрите [Генерация колонок из View Model](#generate-columns-from-a-view-model).
+    DataGrid может создавать колонки из источника колонок, определённого в View Model. В этом сценарии используйте свойства `ColumnsSource` и [`ColumnTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnTemplate.md). Смотрите [Генерация колонок из View Model](#generate-columns-from-a-view-model).
 
 
 Информацию об автоматически создаваемых колонках смотрите в разделе [Автоматическая генерация колонок](#automatic-column-generation).
 
 ## Bind Columns to Data
 
-Свойство `GridColumn.FieldName` позволяет привязать колонку к полю в исходной таблице данных или к публичному свойству бизнес-объекта. После привязки колонка получает значения из источника данных.
+Свойство [`GridColumn.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) позволяет привязать колонку к полю в исходной таблице данных или к публичному свойству бизнес-объекта. После привязки колонка получает значения из источника данных.
 
-DataGrid также позволяет создавать несвязанные колонки, значения которых необходимо предоставлять вручную с помощью события `DataGridControl.CustomUnboundColumnData`. Дополнительную информацию смотрите в разделе [Несвязанные колонки](data-binding/unbound-columns.md).
+DataGrid также позволяет создавать несвязанные колонки, значения которых необходимо предоставлять вручную с помощью события [`DataGridControl.CustomUnboundColumnData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md). Дополнительную информацию смотрите в разделе [Несвязанные колонки](data-binding/unbound-columns.md).
 
 Не рекомендуется привязывать несколько колонок DataGrid к одному и тому же полю/свойству данных.
 
-Следующий пример создаёт колонки DataGrid и привязывает их к данным.
+Этот пример создаёт колонки DataGrid и привязывает их к данным.
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -92,11 +92,11 @@ dataGrid1.Columns.Add(colFirstName);
 
 ## Automatic Column Generation
 
-Установите свойство `AutoGenerateColumns` в значение `true` (значение по умолчанию — `false`), чтобы включить автоматическую генерацию колонок для свойств источника данных. Когда `AutoGenerateColumns` установлено в `true`, DataGrid получает публичные свойства из источника данных, создаёт колонки и привязывает их к этим свойствам. Если коллекция `Columns` контрола уже содержит колонку, привязанную к конкретному свойству/полю, дополнительная колонка, привязанная к тому же свойству/полю, автоматически не создаётся.
+Установите свойство [`AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md) в значение `true` (значение по умолчанию — `false`), чтобы включить автоматическую генерацию колонок для свойств источника данных. Когда [`AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md) установлено в `true`, DataGrid получает публичные свойства из источника данных, создаёт колонки и привязывает их к этим свойствам. Если коллекция [`Columns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Columns.md) контрола уже содержит колонку, привязанную к конкретному свойству/полю, дополнительная колонка, привязанная к тому же свойству/полю, автоматически не создаётся.
 
-События `AutoGeneratingColumn` и `AutoGeneratedColumns` позволяют настраивать автоматически создаваемые колонки. Событие `AutoGeneratingColumn` возникает, когда автоматически создаваемая колонка должна быть добавлена в коллекцию `Columns`. Установите параметр события `e.Cancel` в значение `true`, чтобы предотвратить добавление колонки в коллекцию. 
+События [`AutoGeneratingColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGeneratingColumn.md) и [`AutoGeneratedColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGeneratedColumns.md) позволяют настраивать автоматически создаваемые колонки. Событие [`AutoGeneratingColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGeneratingColumn.md) возникает, когда автоматически создаваемая колонка должна быть добавлена в коллекцию [`Columns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Columns.md). Установите параметр события `e.Cancel` в значение `true`, чтобы предотвратить добавление колонки в коллекцию. 
 
-Событие `AutoGeneratedColumns` возникает после того, как все колонки были автоматически созданы.
+Событие [`AutoGeneratedColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGeneratedColumns.md) возникает после того, как все колонки были автоматически созданы.
 
 Когда вы назначаете контролу другой источник данных, DataGrid сначала удаляет колонки, которые были ранее созданы автоматически, а затем автоматически создаёт колонки для нового источника данных.
 
@@ -127,16 +127,16 @@ public partial class MyBusinessObject : ObservableObject
 
 - `AutoGenerateField` — определяет, следует ли автоматически создавать соответствующую колонку.
 
-- `Order` — определяет видимую позицию автоматически создаваемой колонки (`ColumnBase.VisibleIndex`). 
+- `Order` — определяет видимую позицию автоматически создаваемой колонки ([`ColumnBase.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md)). 
 
-- `Name` — определяет заголовок автоматически создаваемой колонки (`ColumnBase.Header`).
+- `Name` — определяет заголовок автоматически создаваемой колонки ([`ColumnBase.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md)).
 
 - `ShortName` — эквивалентен параметру `Name`.
 
 - `GroupName` — определяет имя группы, с которой связывается автоматически создаваемая колонка. 
-Значение этого атрибута используется для инициализации свойства `GridColumn.BandName`, если опция `DataGridControl.AutoGenerateBands` имеет значение `true` (по умолчанию).
+Значение этого атрибута используется для инициализации свойства [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md), если опция [`DataGridControl.AutoGenerateBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateBands.md) имеет значение `true` (по умолчанию).
 
-    Когда DataGrid встречает `DisplayAttribute.GroupName`, он проверяет наличие существующей группы с совпадающим именем (`GridBand.BandName`). Если такой группы не существует, контрол автоматически создаёт её и инициализирует свойство `GridBand.BandName` значением `DisplayAttribute.GroupName`.
+    Когда DataGrid встречает `DisplayAttribute.GroupName`, он проверяет наличие существующей группы с совпадающим именем ([`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)). Если такой группы не существует, контрол автоматически создаёт её и инициализирует свойство [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) значением `DisplayAttribute.GroupName`.
 
     Параметр `DisplayAttribute.GroupName` также поддерживает вложенные группы. Используйте символ '/' для разделения родительской и дочерней группы (например, «ParentBandName/ChildBandName»). 
     Чтобы использовать '/' как обычный символ, применяйте "//".
@@ -164,7 +164,7 @@ public partial class MyBusinessObject : ObservableObject
 
 #### Атрибут `DisplayName`
 
-Атрибут `System.ComponentModel.DisplayNameAttribute` позволяет инициализировать заголовок автоматически создаваемой колонки (`ColumnBase.Header`).
+Атрибут `System.ComponentModel.DisplayNameAttribute` позволяет инициализировать заголовок автоматически создаваемой колонки ([`ColumnBase.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md)).
 
 ``` csharp
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -215,15 +215,15 @@ public partial class MyBusinessObject : ObservableObject
 ## Generate Columns from a View Model
 
 
-Вы можете заполнять DataGrid колонками из источника колонок, определённого в View Model. Источник колонок — это коллекция бизнес-объектов, на основе которой создаются объекты `GridColumn` согласно указанному шаблону. Генерацию колонок из View Model обеспечивают следующие члены API:
+Вы можете заполнять DataGrid колонками из источника колонок, определённого в View Model. Источник колонок — это коллекция бизнес-объектов, на основе которой создаются объекты [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) согласно указанному шаблону. Генерацию колонок из View Model обеспечивают следующие члены API:
 
-- `DataGridControl.ColumnsSource` — коллекция бизнес-объектов, используемая для создания колонок таблицы согласно шаблону `ColumnTemplate`. 
+- [`DataGridControl.ColumnsSource`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnsSource.md) — коллекция бизнес-объектов, используемая для создания колонок таблицы согласно шаблону [`ColumnTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnTemplate.md). 
 
-- `DataGridControl.ColumnTemplate` — шаблон, инициализирующий объект `GridColumn` на основе бизнес-объектов, хранящихся в источнике колонок.
+- [`DataGridControl.ColumnTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnTemplate.md) — шаблон, инициализирующий объект [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) на основе бизнес-объектов, хранящихся в источнике колонок.
 
 ### Пример - Генерация колонок из источника колонок
 
-Следующий фрагмент кода из демонстрации «Large Data» показывает, как можно создавать и инициализировать колонки DataGrid из источника колонок (`DataGridControl.ColumnsSource`).
+Следующий фрагмент кода из демонстрации «Large Data» показывает, как можно создавать и инициализировать колонки DataGrid из источника колонок ([`DataGridControl.ColumnsSource`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnsSource.md)).
 
 ``` xml
 <mxdg:DataGridControl ItemsSource="{Binding Items}" ColumnsSource="{Binding Columns}" AutoGenerateColumns="True" BorderThickness="0,0,1,0"
@@ -263,23 +263,23 @@ public class DataGridLargeDataViewColumnTemplate : ITemplate<object, GridColumn>
 
 ## Move Columns
 
-Используйте свойство `GridColumn.VisibleIndex`, чтобы указать позицию отображения колонки. Чтобы скрыть колонку, установите её свойство `GridColumn.VisibleIndex` в значение **-1** или установите свойство `IsVisible` в значение `false`.
+Используйте свойство [`GridColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md), чтобы указать позицию отображения колонки. Чтобы скрыть колонку, установите её свойство [`GridColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) в значение **-1** или установите свойство [`IsVisible`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/IsVisible.md) в значение `false`.
 
 Поведение контрола по умолчанию позволяет пользователю переупорядочивать колонки. Используйте следующие свойства, чтобы запретить перемещение колонок:
 
-- `DataGridControl.AllowColumnMoving` — определяет, может ли пользователь перемещать любую колонку.
-- `GridColumn.AllowMoving` — определяет, может ли пользователь перемещать конкретную колонку.
+- [`DataGridControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnMoving.md) — определяет, может ли пользователь перемещать любую колонку.
+- [`GridColumn.AllowMoving`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowMoving.md) — определяет, может ли пользователь перемещать конкретную колонку.
 
 ## Resize Columns
 
 Вы можете использовать следующие свойства для управления шириной колонок в DataGrid:
 
-- `GridColumn.Width` — ширина колонки, задаваемая значением типа `GridLength`. 
-- `GridColumn.MinWidth` — минимальная ширина колонки.
-- `GridColumn.MaxWidth` — максимальная ширина колонки.
+- [`GridColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md) — ширина колонки, задаваемая значением типа `GridLength`. 
+- [`GridColumn.MinWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MinWidth.md) — минимальная ширина колонки.
+- [`GridColumn.MaxWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MaxWidth.md) — максимальная ширина колонки.
 
 
-Свойство `Width` имеет тип `GridLength`. Оно позволяет задать ширину колонки следующими способами:
+Свойство [`Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md) имеет тип `GridLength`. Оно позволяет задать ширину колонки следующими способами:
 
 - Фиксированная ширина (число пикселей).
 - Взвешенная пропорция доступного пространства (нотация _star_).
@@ -299,8 +299,8 @@ xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
 
 Следующие свойства управляют операциями изменения размера колонок, выполняемыми пользователями.
 
-- `DataGridControl.AllowColumnResizing` — определяет, может ли пользователь изменять размер любой колонки.
-- `GridColumn.AllowResizing` — определяет, может ли пользователь изменять размер конкретной колонки.
+- [`DataGridControl.AllowColumnResizing`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnResizing.md) — определяет, может ли пользователь изменять размер любой колонки.
+- [`GridColumn.AllowResizing`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowResizing.md) — определяет, может ли пользователь изменять размер конкретной колонки.
 
 ## Best Fit
 
@@ -308,7 +308,7 @@ xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
 
 ![bestfit-feature](../../images/bestfit-feature.png)
 
-Best Fit вычисляет оптимальную ширину колонок **в пикселях** и присваивает эти значения свойствам `TreeListColumn.Width`, заменяя любую ранее заданную ширину. 
+Best Fit вычисляет оптимальную ширину колонок **в пикселях** и присваивает эти значения свойствам [`TreeListColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md), заменяя любую ранее заданную ширину. 
 
 !!! Note
 
@@ -332,12 +332,12 @@ Best Fit вычисляет оптимальную ширину колонок *
 
 Функция Best Fit включена по умолчанию. Вы можете использовать следующие свойства для управления операциями Best Fit для всех колонок и отдельных колонок.
 
-- `DataGridControl.AllowBestFit` (значение по умолчанию — `true`) — определяет, включены ли операции Best Fit для всех колонок таблицы. Вы можете переопределить эту глобальную настройку для отдельных колонок с помощью свойства `GridColumn.AllowBestFit`.
-- `GridColumn.AllowBestFit` (значение по умолчанию — `null`) — определяет, включены ли операции Best Fit для конкретной колонки. Если свойство `GridColumn.AllowBestFit` установлено в значение `null`, фактическая настройка определяется глобальным свойством `DataGridControl.AllowBestFit`.
+- [`DataGridControl.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowBestFit.md) (значение по умолчанию — `true`) — определяет, включены ли операции Best Fit для всех колонок таблицы. Вы можете переопределить эту глобальную настройку для отдельных колонок с помощью свойства [`GridColumn.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md).
+- [`GridColumn.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md) (значение по умолчанию — `null`) — определяет, включены ли операции Best Fit для конкретной колонки. Если свойство [`GridColumn.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md) установлено в значение `null`, фактическая настройка определяется глобальным свойством [`DataGridControl.AllowBestFit`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowBestFit.md).
 
 ### Best Fit Mode
 
-Вы можете использовать свойства `DataGridControl.BestFitMode` и `GridColumn.BestFitMode`, чтобы управлять областью обрабатываемых значений строк для операций Best Fit.
+Вы можете использовать свойства [`DataGridControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitMode.md) и [`GridColumn.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md), чтобы управлять областью обрабатываемых значений строк для операций Best Fit.
 
 ``` xaml
 <mxdg:DataGridControl BestFitMode="Full" >
@@ -345,40 +345,40 @@ Best Fit вычисляет оптимальную ширину колонок *
 
 #### Доступные режимы вычисления Best Fit
 
-- Режим `BestFitMode.Fast` — измеряет ширину уникальных значений строк, что значительно повышает производительность Best Fit в большинстве сценариев. 
+- Режим [`BestFitMode.Fast`](../../API/Eremex.AvaloniaUI.Controls.DataControl/BestFitMode.md) — измеряет ширину уникальных значений строк, что значительно повышает производительность Best Fit в большинстве сценариев. 
 
     !!! Note
 
         - Режим `Fast` неприменим, если отображаемый текст целевых ячеек зависит от других ячеек. В этом случае необходимо переключиться на режим `Full`.
 
-        - Режим `Fast` может некорректно вычислять ширину колонок, если для назначения пользовательских редакторов используются шаблоны ячеек (`GridColumn.CellTemplate`) или если ячейки отображают ошибки валидации, инициируемые источником данных (смотрите `ShowItemsSourceErrors`).
+        - Режим `Fast` может некорректно вычислять ширину колонок, если для назначения пользовательских редакторов используются шаблоны ячеек ([`GridColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md)) или если ячейки отображают ошибки валидации, инициируемые источником данных (смотрите [`ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md)).
 
-- Режим `BestFitMode.Full` — измеряет ширину всех значений строк, включая дубликаты. Хотя этот режим медленнее, чем `Fast`, он корректно вычисляет ширину колонок при использовании шаблонов ячеек или ошибок валидации.
+- Режим [`BestFitMode.Full`](../../API/Eremex.AvaloniaUI.Controls.DataControl/BestFitMode.md) — измеряет ширину всех значений строк, включая дубликаты. Хотя этот режим медленнее, чем `Fast`, он корректно вычисляет ширину колонок при использовании шаблонов ячеек или ошибок валидации.
 
 #### Automatic (Default) Best Fit Calculation Mode
 
 - `Fast` является режимом по умолчанию в большинстве случаев.
 - `Full` автоматически активируется как режим по умолчанию в следующих сценариях:
-    - Для назначения редакторов колонкам используются шаблоны ячеек (`GridColumn.CellTemplate`).
-    - Свойство контрола `DataControlBase.ShowItemsSourceErrors` установлено в значение `true`, и к колонкам применяются ошибки валидации на уровне источника данных (с помощью атрибутов валидации, интерфейса `IDataErrorInfo` или интерфейса `INotifyDataErrorInfo`).
+    - Для назначения редакторов колонкам используются шаблоны ячеек ([`GridColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md)).
+    - Свойство контрола [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) установлено в значение `true`, и к колонкам применяются ошибки валидации на уровне источника данных (с помощью атрибутов валидации, интерфейса `IDataErrorInfo` или интерфейса `INotifyDataErrorInfo`).
 
 #### Choose Best Fit Calculation Mode
 
 Используйте следующие свойства, чтобы задать режим вычисления Best Fit для всех или отдельных колонок:
 
-- `DataGridControl.BestFitMode` — определяет глобальный режим вычисления Best Fit для всех колонок таблицы.
-Когда `DataGridControl.BestFitMode` установлено в значение `null` (исходное значение), режим вычисления Best Fit определяется [автоматически](#automatic-default-best-fit-calculation-mode). Используйте свойство `GridColumn.BestFitMode`, чтобы переопределить эту глобальную настройку для конкретных колонок.
+- [`DataGridControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitMode.md) — определяет глобальный режим вычисления Best Fit для всех колонок таблицы.
+Когда [`DataGridControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitMode.md) установлено в значение `null` (исходное значение), режим вычисления Best Fit определяется [автоматически](#automatic-default-best-fit-calculation-mode). Используйте свойство [`GridColumn.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md), чтобы переопределить эту глобальную настройку для конкретных колонок.
 
-- `GridColumn.BestFitMode` — позволяет задать режим вычисления Best Fit для отдельных колонок, переопределяя свойство `DataGridControl.BestFitMode`. Если свойство `GridColumn.BestFitMode` имеет значение `null` (исходное значение), фактическая настройка определяется свойством контрола `DataGridControl.BestFitMode`.
+- [`GridColumn.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md) — позволяет задать режим вычисления Best Fit для отдельных колонок, переопределяя свойство [`DataGridControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitMode.md). Если свойство [`GridColumn.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md) имеет значение `null` (исходное значение), фактическая настройка определяется свойством контрола [`DataGridControl.BestFitMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitMode.md).
 
 ### Call Best Fit Operations in Code
 
 Используйте следующие методы, чтобы изменить размер колонок таблицы до их оптимальной ширины:
 
-- `DataGridControl.BestFit(GridColumn column)` — изменяет размер указанной колонки до ширины, необходимой для полного отображения её содержимого.
-- `DataGridControl.BestFitAllColumns()` — изменяет размер всех колонок до ширины, необходимой для полного отображения их содержимого.
+- [`DataGridControl.BestFit(GridColumn column)`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFit.md) — изменяет размер указанной колонки до ширины, необходимой для полного отображения её содержимого.
+- [`DataGridControl.BestFitAllColumns()`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitAllColumns.md) — изменяет размер всех колонок до ширины, необходимой для полного отображения их содержимого.
 
-Чтобы выполнить операции Best Fit при инициализации DataGrid, вызовите метод `BestFit` или `BestFitAllColumns` в обработчике события `DataGridControl.AttachedToVisualTree`.
+Чтобы выполнить операции Best Fit при инициализации DataGrid, вызовите метод [`BestFit`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFit.md) или [`BestFitAllColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitAllColumns.md) в обработчике события `DataGridControl.AttachedToVisualTree`.
 
 ## Reset Column Width User Modifications
 
@@ -388,20 +388,20 @@ Best Fit вычисляет оптимальную ширину колонок *
 
 ### Связанный API
 
-- `DataGridControl.AllowResetColumnWidth` (значение по умолчанию — `true`) — определяет, доступна ли команда _Reset Column Width_ в контекстных меню колонок. Если это свойство отключено, пользователи не могут отменить операции изменения ширины колонок через пользовательский интерфейс. Свойство `DataGridControl.AllowResetColumnWidth` не влияет на сброс ширины колонки с помощью метода `DataGridControl.ResetColumnWidth`.
-- Метод `DataGridControl.ResetColumnWidth` — изменяет размер колонок до их исходной ширины, заданной в XAML или code-behind до каких-либо пользовательских изменений.
+- [`DataGridControl.AllowResetColumnWidth`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowResetColumnWidth.md) (значение по умолчанию — `true`) — определяет, доступна ли команда _Reset Column Width_ в контекстных меню колонок. Если это свойство отключено, пользователи не могут отменить операции изменения ширины колонок через пользовательский интерфейс. Свойство [`DataGridControl.AllowResetColumnWidth`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowResetColumnWidth.md) не влияет на сброс ширины колонки с помощью метода [`DataGridControl.ResetColumnWidth`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ResetColumnWidth.md).
+- Метод [`DataGridControl.ResetColumnWidth`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ResetColumnWidth.md) — изменяет размер колонок до их исходной ширины, заданной в XAML или code-behind до каких-либо пользовательских изменений.
 
 ## Column Headers
 
-Заголовки колонок DataGrid отображаются на панели заголовков. Вы можете скрыть эту панель с помощью свойства `DataGridControl.ShowColumnHeaders`. 
+Заголовки колонок DataGrid отображаются на панели заголовков. Вы можете скрыть эту панель с помощью свойства [`DataGridControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowColumnHeaders.md). 
 
-Высота панели автоматически подстраивается под содержимое заголовков колонок. Используйте свойство `HeaderPanelMinHeight`, чтобы ограничить минимальную высоту панели.
+Высота панели автоматически подстраивается под содержимое заголовков колонок. Используйте свойство [`HeaderPanelMinHeight`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/HeaderPanelMinHeight.md), чтобы ограничить минимальную высоту панели.
 
-Заголовок колонки изначально отображает подпись (текстовую метку), которая является текстовым представлением свойства `ColumnBase.Header`. Если свойство `ColumnBase.Header` не задано, подпись колонки формируется из имени поля колонки (`ColumnBase.FieldName`).
+Заголовок колонки изначально отображает подпись (текстовую метку), которая является текстовым представлением свойства [`ColumnBase.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md). Если свойство [`ColumnBase.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) не задано, подпись колонки формируется из имени поля колонки ([`ColumnBase.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md)).
 
-Используйте свойство `ColumnBase.HeaderTemplate`, чтобы задать шаблон, используемый для отрисовки заголовка колонки. Шаблон позволяет отображать изображения и пользовательские контролы, а также произвольно оформлять текст.
+Используйте свойство [`ColumnBase.HeaderTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderTemplate.md), чтобы задать шаблон, используемый для отрисовки заголовка колонки. Шаблон позволяет отображать изображения и пользовательские контролы, а также произвольно оформлять текст.
 
-Следующий код отображает изображение перед подписью колонки. Выражение `<TextBlock Text="{Binding}">` отображает содержимое свойства `Header` колонки:
+Следующий код отображает изображение перед подписью колонки. Выражение `<TextBlock Text="{Binding}">` отображает содержимое свойства [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) колонки:
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -420,7 +420,7 @@ xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
 </mxdg:DataGridControl>
 ```
 
-Используйте свойства `ColumnBase.HeaderHorizontalAlignment` и `ColumnBase.HeaderVerticalAlignment`, чтобы выровнять содержимое заголовка колонки по горизонтали и вертикали. 
+Используйте свойства [`ColumnBase.HeaderHorizontalAlignment`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderHorizontalAlignment.md) и [`ColumnBase.HeaderVerticalAlignment`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderVerticalAlignment.md), чтобы выровнять содержимое заголовка колонки по горизонтали и вертикали. 
 
 ## Column Sorting 
 
@@ -436,7 +436,7 @@ xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
 
 ## Column Header Tooltips
 
-Используйте свойство `HeaderToolTip`, чтобы задать пользовательские подсказки для заголовков колонок. Пользовательские подсказки отображаются при наведении на заголовок колонки независимо от того, обрезан текст заголовка или нет.
+Используйте свойство [`HeaderToolTip`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderToolTip.md), чтобы задать пользовательские подсказки для заголовков колонок. Пользовательские подсказки отображаются при наведении на заголовок колонки независимо от того, обрезан текст заголовка или нет.
 
 ``` xml
 <mxdg:GridColumn FieldName="Position" HeaderToolTip="The job title or role of the employee"/>
@@ -456,9 +456,9 @@ xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
 
 !!! tip
 
-    Суммарная ширина колонок вычисляется как сумма ширины отдельных колонок (смотрите `GridColumn.Width`). Чтобы активировать горизонтальную полосу прокрутки, задайте ширину отдельных колонок так, чтобы их сумма превышала ширину области просмотра. Не используйте звёздную нотацию ("*") для ширины колонок при использовании закреплённых колонок.
+    Суммарная ширина колонок вычисляется как сумма ширины отдельных колонок (смотрите [`GridColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md)). Чтобы активировать горизонтальную полосу прокрутки, задайте ширину отдельных колонок так, чтобы их сумма превышала ширину области просмотра. Не используйте звёздную нотацию ("*") для ширины колонок при использовании закреплённых колонок.
 
-Чтобы закрепить колонку или вернуть её в обычное состояние, установите свойство `GridColumn.FixedMode` в одно из следующих значений:
+Чтобы закрепить колонку или вернуть её в обычное состояние, установите свойство [`GridColumn.FixedMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FixedMode.md) в одно из следующих значений:
 
 - `Left` — закрепляет колонку у левого края. 
 - `Right` — закрепляет колонку у правого края. 
@@ -471,13 +471,13 @@ xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
 
 ### Подменю _Fixed_
 
-Пользователи могут закреплять колонку во время работы с помощью встроенного подменю _Fixed_, доступного из контекстного меню колонки. Установите свойство контрола `ShowColumnMenuFixedItem` в значение `true`, чтобы включить это подменю _Fixed_:
+Пользователи могут закреплять колонку во время работы с помощью встроенного подменю _Fixed_, доступного из контекстного меню колонки. Установите свойство контрола [`ShowColumnMenuFixedItem`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowColumnMenuFixedItem.md) в значение `true`, чтобы включить это подменю _Fixed_:
 
 ![column-columnmenu-fixed](../../images/column-columnmenu-fixed.png)
 
 ### Fixed Column Position
 
-Когда колонка закрепляется (пиннится) или возвращается в обычное состояние, её видимая позиция (синхронизированная со свойством `GridColumn.VisibleIndex`) обновляется автоматически.
+Когда колонка закрепляется (пиннится) или возвращается в обычное состояние, её видимая позиция (синхронизированная со свойством [`GridColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md)) обновляется автоматически.
 
 - Закрепление слева: колонка размещается после существующих колонок, закреплённых слева.
 - Закрепление справа: колонка размещается перед существующими колонками, закреплёнными справа.
@@ -486,20 +486,20 @@ xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
 
 ### Fixed Column Width
 
-Чтобы изменить ширину закреплённой колонки, установите свойство `GridColumn.Width` в абсолютное значение в пикселях или в `Auto` для автоматического вычисления на основе содержимого ячеек. Закреплённые колонки не поддерживают звёздную нотацию (пропорциональное задание размера) для ширины колонки. 
+Чтобы изменить ширину закреплённой колонки, установите свойство [`GridColumn.Width`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/Width.md) в абсолютное значение в пикселях или в `Auto` для автоматического вычисления на основе содержимого ячеек. Закреплённые колонки не поддерживают звёздную нотацию (пропорциональное задание размера) для ширины колонки. 
 
 Когда колонка со звёздной шириной закрепляется, её ширина автоматически сбрасывается на 120 пикселей.
 
 ### Horizontal Scrollbar Display Mode
 
-По умолчанию горизонтальная полоса прокрутки отображается только для прокручиваемых колонок. Включите свойство `ExtendScrollbarToFixedColumns`, чтобы отображать горизонтальную полосу прокрутки для всех колонок, включая закреплённые.
+По умолчанию горизонтальная полоса прокрутки отображается только для прокручиваемых колонок. Включите свойство [`ExtendScrollbarToFixedColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExtendScrollbarToFixedColumns.md), чтобы отображать горизонтальную полосу прокрутки для всех колонок, включая закреплённые.
 
 ![fixedcolumns-scrollbar-extendtofixedcolumns](../../images/fixedcolumns-scrollbar-extendtofixedcolumns.png)
 
 
 ### Связанный API
 
-- `DataGridControl.FixedColumnSeparatorWidth` — определяет ширину разделителей, отделяющих закреплённые колонки от прокручиваемых.
+- [`DataGridControl.FixedColumnSeparatorWidth`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FixedColumnSeparatorWidth.md) — определяет ширину разделителей, отделяющих закреплённые колонки от прокручиваемых.
 
 ## Смотрите также
 

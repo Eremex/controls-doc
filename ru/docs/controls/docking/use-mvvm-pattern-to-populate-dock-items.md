@@ -6,15 +6,15 @@ seealso: []
 
 # Использование паттерна MVVM для заполнения элементами закрепления
 
-Контрол `DockManager` позволяет использовать паттерн проектирования MVVM, чтобы заполнять контрол элементами докинга (например, объектами `DocumentPane` и `DockPane`). При таком подходе вы назначаете коллекцию элементов докинга компоненту `DockManager` и задаёте шаблон, используемый для их отрисовки.
+Контрол [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) позволяет использовать паттерн проектирования MVVM, чтобы заполнять контрол элементами докинга (например, объектами [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) и [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md)). При таком подходе вы назначаете коллекцию элементов докинга компоненту [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) и задаёте шаблон, используемый для их отрисовки.
 
 ## Заполнение DockManager элементами из источника элементов
 
-Используйте свойство `DockManager.ItemsSource`, чтобы привязать `DockManager` к коллекции объектов, которые нужно отрисовать как элементы докинга. Способ преобразования этих объектов в элементы докинга задаётся свойством `DockManager.ItemTemplate`.
+Используйте свойство [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md), чтобы привязать [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) к коллекции объектов, которые нужно отрисовать как элементы докинга. Способ преобразования этих объектов в элементы докинга задаётся свойством [`DockManager.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemTemplate.md).
 
-Чтобы задать шаблон для отрисовки содержимого элементов докинга, созданных из коллекции `DockManager.ItemsSource`, используйте свойство `DockManager.ItemContentTemplate`.
+Чтобы задать шаблон для отрисовки содержимого элементов докинга, созданных из коллекции [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md), используйте свойство [`DockManager.ItemContentTemplate`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemContentTemplate.md).
 
-Следующий пример из демонстрационного примера _IDE Layout_ использует свойство `DockManager.ItemsSource`, чтобы привязать контрол к коллекции _Documents_, определённой в главной модели представления. Элементы этой коллекции (объекты _IdeLayoutDocumentViewModel_) отрисовываются как объекты `DocumentPane`.
+Этот пример из демонстрационного примера _IDE Layout_ использует свойство [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md), чтобы привязать контрол к коллекции _Documents_, определённой в главной модели представления. Элементы этой коллекции (объекты _IdeLayoutDocumentViewModel_) отрисовываются как объекты [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md).
 
 ``` xml
 <mxd:DockManager Grid.Column="0" Grid.Row="1"
@@ -62,23 +62,23 @@ public class IdeLayoutDocumentContentTemplate : MarkupExtension, IDataTemplate
 
 !!! note
  
-    Когда объекты `DocumentPane` создаются из коллекции `DockManager.ItemsSource`, они автоматически отображаются как вкладки в первом контейнере `DocumentGroup`. Убедитесь, что `DockManager` содержит как минимум один контейнер `DocumentGroup`. Вы можете реализовать **адаптер элементов** (`DockManager.ItemAdapter`), чтобы размещать созданные элементы докинга (например, объекты `DocumentPane`) в конкретном контейнере докинга. Подробнее смотрите в следующем разделе.
+    Когда объекты [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) создаются из коллекции [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md), они автоматически отображаются как вкладки в первом контейнере [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md). Убедитесь, что [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) содержит как минимум один контейнер [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md). Вы можете реализовать **адаптер элементов** ([`DockManager.ItemAdapter`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemAdapter.md)), чтобы размещать созданные элементы докинга (например, объекты [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md)) в конкретном контейнере докинга. Подробнее смотрите в следующем разделе.
 
 
 ## Создание элементов докинга разных типов из источника элементов
 
-Вам может понадобиться привязать свойство `DockManager.ItemsSource` к коллекции объектов, которые должны отрисовываться как dock-панели, document-панели, автоскрытые панели и/или плавающие панели. Чтобы решить эту задачу, используйте следующий подход:
+Вам может понадобиться привязать свойство [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md) к коллекции объектов, которые должны отрисовываться как dock-панели, document-панели, автоскрытые панели и/или плавающие панели. Чтобы решить эту задачу, используйте следующий подход:
 
-1. Реализуйте **селектор шаблонов**, который создаёт конкретные элементы докинга из объектов коллекции `DockManager.ItemsSource`.
-2. Добавьте в компонент `DockManager` контейнеры докинга, которые должны размещать созданные элементы докинга.
+1. Реализуйте **селектор шаблонов**, который создаёт конкретные элементы докинга из объектов коллекции [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md).
+2. Добавьте в компонент [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) контейнеры докинга, которые должны размещать созданные элементы докинга.
 3. Создайте **адаптер элементов**, который размещает созданные элементы докинга в конкретных контейнерах докинга. 
 
 ### Пример
 
 1. Определите коллекцию _Panes_ в главной модели представления. Эта коллекция будет содержать следующие элементы:
 
-- Объекты _DockPaneViewModel_ — эти объекты нужно отрисовать как [dock-панели](dock-panes-and-containers.md) (`DockPane`).
-- Объекты _DocumentPaneViewModel_ — эти объекты нужно отрисовать как [document-панели](document-panes.md) (`DocumentPane`).
+- Объекты _DockPaneViewModel_ — эти объекты нужно отрисовать как [dock-панели](dock-panes-and-containers.md) ([`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md)).
+- Объекты _DocumentPaneViewModel_ — эти объекты нужно отрисовать как [document-панели](document-panes.md) ([`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md)).
 
 ``` cs
 namespace EremexAvaloniaApplication1;
@@ -122,10 +122,10 @@ public partial class MainWindow : MxWindow
 }
 ```
 
-3. Определите компонент `DockManager` в главном окне. Привяжите его к коллекции _MainViewModel.Panes_ и создайте два контейнера докинга:
+3. Определите компонент [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) в главном окне. Привяжите его к коллекции _MainViewModel.Panes_ и создайте два контейнера докинга:
 
-- _paneHost_ — контейнер `DockGroup`, который должен отображать dock-панели, созданные из объектов _DockPaneViewModel_.
-- _documentHost_ — контейнер `DocumentGroup`, который должен отображать document-панели, созданные из объектов _DocumentPaneViewModel_.
+- _paneHost_ — контейнер [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md), который должен отображать dock-панели, созданные из объектов _DockPaneViewModel_.
+- _documentHost_ — контейнер [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md), который должен отображать document-панели, созданные из объектов _DocumentPaneViewModel_.
 
 ``` xml
 <mx:MxWindow xmlns="https://github.com/avaloniaui"
@@ -149,7 +149,7 @@ public partial class MainWindow : MxWindow
 </mx:MxWindow>
 ```
 
-4. Реализуйте **селектор шаблонов**, который создаёт объекты `DockPane` из элементов _DockPaneViewModel_ и объекты `DocumentPane` из элементов _DocumentPaneViewModel_. Назначьте этот селектор шаблонов свойству `DockManager.ItemTemplate`.
+4. Реализуйте **селектор шаблонов**, который создаёт объекты [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) из элементов _DockPaneViewModel_ и объекты [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) из элементов _DocumentPaneViewModel_. Назначьте этот селектор шаблонов свойству [`DockManager.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemTemplate.md).
 
 ``` cs
 namespace EremexAvaloniaApplication1;
@@ -196,11 +196,11 @@ public class PaneTemplateSelector : MarkupExtension, IDataTemplate
 </mxd:DockManager>
 ```
 
-5. Создайте **адаптер элементов**, который размещает созданные объекты `DockPane` и `DocumentPane` в соответствующих контейнерах докинга. 
+5. Создайте **адаптер элементов**, который размещает созданные объекты [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) и [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) в соответствующих контейнерах докинга. 
 
-Адаптер элементов — это класс, реализующий интерфейс `IDockManagerItemAdapter`. Метод `IDockManagerItemAdapter.Adapt` вызывается для каждого элемента докинга, созданного из коллекции `DockManager.ItemsSource`. Этот метод должен размещать элемент докинга в конкретном контейнере докинга.
+Адаптер элементов — это класс, реализующий интерфейс `IDockManagerItemAdapter`. Метод `IDockManagerItemAdapter.Adapt` вызывается для каждого элемента докинга, созданного из коллекции [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md). Этот метод должен размещать элемент докинга в конкретном контейнере докинга.
 
-Используйте свойство `DockManager.ItemAdapter`, чтобы задать адаптер элементов.
+Используйте свойство [`DockManager.ItemAdapter`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemAdapter.md), чтобы задать адаптер элементов.
 
 ``` cs
 namespace EremexAvaloniaApplication1;
@@ -225,7 +225,7 @@ public class PaneAdapter : MarkupExtension, IDockManagerItemAdapter
 <!-- ... -->
 ```
 
-6. Запустите приложение, чтобы увидеть компонент `DockManager`, заполненный элементами докинга из коллекции _Panes_.
+6. Запустите приложение, чтобы увидеть компонент [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md), заполненный элементами докинга из коллекции _Panes_.
 
 ![dockmanager-mvvm-itemadapter-example](../../images/dockmanager-mvvm-itemadapter-example.png)
 

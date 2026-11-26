@@ -12,11 +12,16 @@ Provides data for the AutoGeneratingColumn event.
 public class DataGridControlAutoGeneratingColumnEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridControlAutoGeneratingColumnEventArgs](DataGridControlAutoGeneratingColumnEventArgs/DataGridControlAutoGeneratingColumnEventArgs.md)(…) | Initializes a new instance of the DataGridControlAutoGeneratingColumnEventArgs class with the specified column. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Cancel](DataGridControlAutoGeneratingColumnEventArgs/Cancel.md) { get; set; } | Gets or sets whether the column's generation is canceled. |
 | [Column](DataGridControlAutoGeneratingColumnEventArgs/Column.md) { get; } | Gets the column being generated. |
 

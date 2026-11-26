@@ -31,7 +31,7 @@ ListView поддерживает паттерн проектирования MV
 
 ### Пример 
 
-Следующий пример заполняет ListView элементами из коллекции _SvgIconsBrowserViewModel.Categories_ и определяет шаблон для отрисовки элементов. Полный код этого примера смотрите в модуле _SVG Icons Browser_.
+Этот пример заполняет ListView элементами из коллекции _SvgIconsBrowserViewModel.Categories_ и определяет шаблон для отрисовки элементов. Полный код этого примера смотрите в модуле _SVG Icons Browser_.
 
 ![ListView-svgbrowser-categories-example](../../images/ListView-svgbrowser-categories-example.png)
 
@@ -102,7 +102,7 @@ public partial class SvgIconCategoryViewModel : ObservableObject, IComparable<Sv
 
 ### Пример — сортировка элементов
 
-Следующий пример сортирует элементы по их свойствам _ShipCountry_ и _Date_. Контрол сначала сортирует элементы по свойству _ShipCountry_ в порядке возрастания, организуя их в подмножества с одинаковой страной доставки. Затем контрол сортирует элементы внутри каждого подмножества по свойству _Date_ в порядке убывания.
+Этот пример сортирует элементы по их свойствам _ShipCountry_ и _Date_. Контрол сначала сортирует элементы по свойству _ShipCountry_ в порядке возрастания, организуя их в подмножества с одинаковой страной доставки. Затем контрол сортирует элементы внутри каждого подмножества по свойству _Date_ в порядке убывания.
 
 ![listivew-sort-by-two-fields-example](../../images/listivew-sort-by-two-fields-example.png)
 
@@ -208,7 +208,7 @@ public partial class ItemViewModel : ObservableObject
 
 #### Пример — пользовательский шаблон групповой строки
 
-Следующий пример определяет пользовательский шаблон групповой строки с помощью свойства `ListViewControl.GroupTemplate`. Шаблон состоит из текстового блока, отображающего значение группы, и контрола Image, отображающего SVG-изображение, связанное с групповой строкой.
+Этот пример определяет пользовательский шаблон групповой строки с помощью свойства `ListViewControl.GroupTemplate`. Шаблон состоит из текстового блока, отображающего значение группы, и контрола Image, отображающего SVG-изображение, связанное с групповой строкой.
 
 ![listview-custom-group-row-template-example](../../images/listview-custom-group-row-template-example.png)
 
@@ -305,7 +305,7 @@ string GroupClass/ItemClass -->
 
 ### Пример
 
-Следующий пример из модуля _SVG Icons Browser_ скрывает элементы согласно определённому условию.
+Этот пример из модуля _SVG Icons Browser_ скрывает элементы согласно определённому условию.
 
 ``` xml
 <mxlv:ListViewControl x:Name="IconsListControl" 
@@ -438,7 +438,7 @@ if(groupRowindex != ListViewControl.InvalidItemIndex)
 
 ### Пример — реакция на фокусировку элемента 
 
-Следующий пример привязывает свойство `ListViewControl.FocusedItem` к свойству _MainWindowViewModel.FocusedItem_. Вы можете реагировать на изменения сфокусированного элемента в сеттере свойства _MainWindowViewModel.FocusedItem_.
+Этот пример привязывает свойство `ListViewControl.FocusedItem` к свойству _MainWindowViewModel.FocusedItem_. Вы можете реагировать на изменения сфокусированного элемента в сеттере свойства _MainWindowViewModel.FocusedItem_.
 
 ``` xml
 xmlns:mxlv="https://schemas.eremexcontrols.net/avalonia/listview"

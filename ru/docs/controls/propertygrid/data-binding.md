@@ -10,11 +10,11 @@ seealso: []
 
 ## Привязка к одному объекту
 
-Используйте свойство `PropertyGridControl.SelectedObject`, чтобы привязать контрол к одному объекту. После привязки контрол автоматически отображает свойства объекта.
+Используйте свойство [`PropertyGridControl.SelectedObject`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/SelectedObject.md), чтобы привязать контрол к одному объекту. После привязки контрол автоматически отображает свойства объекта.
 
 ### Пример
 
-Следующий пример привязывает PropertyGrid к объекту _MyBusinessObject_, определённому во ViewModel.
+Этот пример привязывает PropertyGrid к объекту _MyBusinessObject_, определённому во ViewModel.
 
 ![propertygrid-sample](../../images/propertygrid-sample.png)
 
@@ -30,7 +30,6 @@ xmlns:local="using:PropertyGridTest"
     Name="propertyGridControl1"
     SelectedObject="{Binding MyBusinessObject}"
     BorderThickness="1"
-    UseModernAppearance="True" 
     Margin="5"/>
 ```
 
@@ -86,7 +85,7 @@ public class ViewModelBase : ObservableObject
 
 ## Привязка к нескольким объектам
 
-`PropertyGridControl` может отображать и редактировать свойства, общие для двух или более объектов. Назначьте список этих объектов свойству `PropertyGridControl.SelectedObjects`. Это заставляет контрол отображать только совпадающие свойства (те, что имеют одинаковое имя и тип данных).
+[`PropertyGridControl`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl.md) может отображать и редактировать свойства, общие для двух или более объектов. Назначьте список этих объектов свойству [`PropertyGridControl.SelectedObjects`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/SelectedObjects.md). Это заставляет контрол отображать только совпадающие свойства (те, что имеют одинаковое имя и тип данных).
 
 ``` xml
 xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
@@ -110,17 +109,17 @@ public class MyList : List<object>
 
 После привязки PropertyGrid к объекту (объектам) поведение контрола по умолчанию — автоматически генерировать строки для отображения и редактирования свойств привязанного объекта (объектов). Контрол автоматически генерирует следующие типы строк во время инициализации:
 
-- Строки данных (объекты `PropertyGridRow`) генерируются для всех публичных свойств. Эти строки отображают имена и значения привязанных свойств.
+- Строки данных (объекты [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md)) генерируются для всех публичных свойств. Эти строки отображают имена и значения привязанных свойств.
   
   ![data-rows](../../images/data-rows.png)
 
-- Категориальные строки (объекты `PropertyGridCategoryRow`) генерируются из атрибутов `System.ComponentModel.CategoryAttribute`, применённых к базовым публичным свойствам. Соответствующие строки данных группируются внутри этих категориальных строк.
+- Категориальные строки (объекты [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md)) генерируются из атрибутов `System.ComponentModel.CategoryAttribute`, применённых к базовым публичным свойствам. Соответствующие строки данных группируются внутри этих категориальных строк.
 
   ![category-rows](../../images/category-rows.png)
 
 PropertyGrid предоставляет следующие возможности настройки строк:
 
-- Отключение автоматической генерации строк с помощью свойства `PropertyGridControl.AutoGenerateRows`.
+- Отключение автоматической генерации строк с помощью свойства [`PropertyGridControl.AutoGenerateRows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/AutoGenerateRows.md).
 - Ручное создание строк.
 - Использование атрибутов Annotation для настройки параметров строк.
 - Задание шаблонов данных для отрисовки отдельных строк.

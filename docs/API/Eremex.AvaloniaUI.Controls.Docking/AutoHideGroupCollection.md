@@ -12,7 +12,7 @@ Represents the collection of auto-hide groups in a dock manager.
 public class AutoHideGroupCollection : BaseGroupCollection<AutoHideGroup>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

@@ -6,15 +6,15 @@ seealso: []
 
 # Lollipop Series View
 
-Lollipop Series View (`CartesianLollipopSeriesView`) визуализирует данные с помощью тонких линий с маркерами на конце. Маркеры обозначают отдельные точки данных, а линии соединяют маркеры с базовой линией (горизонтальной или вертикальной осью). По умолчанию диаграмма Lollipop использует квадратные маркеры, но также поддерживает пользовательские маркеры в формате SVG. На следующем изображении показано Lollipop Series View с круглыми маркерами, загруженными из SVG-файла.
+Lollipop Series View ([`CartesianLollipopSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianLollipopSeriesView.md)) визуализирует данные с помощью тонких линий с маркерами на конце. Маркеры обозначают отдельные точки данных, а линии соединяют маркеры с базовой линией (горизонтальной или вертикальной осью). По умолчанию диаграмма Lollipop использует квадратные маркеры, но также поддерживает пользовательские маркеры в формате SVG. На следующем изображении показано Lollipop Series View с круглыми маркерами, загруженными из SVG-файла.
 
 ![chart-views-lollipop-series-view](../../../images/chart-views-lollipop-series-view.png)
 
 ## Создание Lollipop Series View
 
-Чтобы создать Lollipop Series View, добавьте объект `CartesianSeries` в коллекцию `CartesianChart.Series` и инициализируйте свойство `CartesianSeries.View` экземпляром `CartesianLollipopSeriesView`.
+Чтобы создать Lollipop Series View, добавьте объект [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) в коллекцию [`CartesianChart.Series`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) и инициализируйте свойство [`CartesianSeries.View`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md) экземпляром [`CartesianLollipopSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianLollipopSeriesView.md).
 
-Используйте свойство `CartesianSeries.DataAdapter`, чтобы предоставить данные для серии.
+Используйте свойство [`CartesianSeries.DataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/Series/DataAdapter.md), чтобы предоставить данные для серии.
 
 В следующем коде показано, как создать Lollipop Series View в XAML и code-behind.
 
@@ -26,9 +26,11 @@ xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
     <mxc:CartesianSeries DataAdapter="{Binding DataAdapter}">
         <mxc:CartesianLollipopSeriesView Color="YellowGreen"
                                             LineColor="Green"
-                                            Thickness="2"
                                             MarkerSize="8"
-                                            Orientation="Vertical">
+                                            LineOrientation="Vertical">
+            <mxc:CartesianLollipopSeriesView.LineStyle>
+                <mxc:LineStyle Thickness="2" />
+            </mxc:CartesianLollipopSeriesView.LineStyle>
         </mxc:CartesianLollipopSeriesView>
     </mxc:CartesianSeries>
 </mxc:CartesianChart>
@@ -47,21 +49,21 @@ series.View = new CartesianLollipopSeriesView()
     LineColor = Avalonia.Media.Colors.Green,
     Color = Avalonia.Media.Colors.YellowGreen,
     MarkerSize = 8,
-    Thickness = 2,
-    Orientation = CartesianLollipopOrientation.Horizontal
+    LineStyle = new LineStyle() { Thickness = 2 },
+    LineOrientation = CartesianLollipopOrientation.Horizontal
 };
 ```
 
 ## Пример - Создание Lollipop Series View и использование пользовательских SVG-маркеров точек данных
 
-Следующий пример создаёт Lollipop Series View для визуализации примерных данных, предоставленных объектом `FormulaDataAdapter`. Пример показывает, как использовать SVG-изображение в качестве пользовательских маркеров точек данных и динамически настраивать цвета SVG-элементов так, чтобы они соответствовали цвету серии данных.
+Этот пример создаёт Lollipop Series View для визуализации примерных данных, предоставленных объектом [`FormulaDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/FormulaDataAdapter.md). Пример показывает, как использовать SVG-изображение в качестве пользовательских маркеров точек данных и динамически настраивать цвета SVG-элементов так, чтобы они соответствовали цвету серии данных.
 
 ![create-a-lollipop-series-view-and-use-custom-svg-markers-example-result](../../../images/create-a-lollipop-series-view-and-use-custom-svg-markers-example-result.png)
 
 
 1. Указание SVG-изображения в качестве маркеров точек
 
-    Используйте свойство `MarkerImage`, чтобы назначить SVG-изображение в качестве маркеров точек данных. Свойство `MarkerImage` определено с атрибутом `[Content]`, что позволяет указать SVG-изображение как содержимое тега &lt;CartesianLollipopSeriesView&gt;:
+    Используйте свойство [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md), чтобы назначить SVG-изображение в качестве маркеров точек данных. Свойство [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) определено с атрибутом `[Content]`, что позволяет указать SVG-изображение как содержимое тега &lt;CartesianLollipopSeriesView&gt;:
 
     ``` xml
     <mxc:CartesianLollipopSeriesView ...>
@@ -85,7 +87,7 @@ series.View = new CartesianLollipopSeriesView()
 2. Применение цвета серии к SVG-элементам 
 
     Lollipop Series View (как и любой потомок [Point Series View](point-series-view.md)) 
-    поддерживает свойство `MarkerImageCss`, которое включает [CSS-стилизацию SVG на основе стилей](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style). Это свойство позволяет настраивать стили отдельных SVG-элементов во время выполнения. Например, CSS-код может применить цвет серии к отдельным SVG-элементам.
+    поддерживает свойство [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md), которое включает [CSS-стилизацию SVG на основе стилей](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style). Это свойство позволяет настраивать стили отдельных SVG-элементов во время выполнения. Например, CSS-код может применить цвет серии к отдельным SVG-элементам.
 
     ``` xml
     <mxc:CartesianLollipopSeriesView 
@@ -96,7 +98,7 @@ series.View = new CartesianLollipopSeriesView()
 
     Приведённый выше CSS-код настраивает стиль SVG-объекта `circle`. Новый стиль закрашивает границу цветом Dark Red, а заливает круг цветом серии данных. 
      
-     - Заполнитель `{0}` — Вставляет значение свойства `CartesianLollipopSeriesView.Color`.
+     - Заполнитель `{0}` — Вставляет значение свойства [`CartesianLollipopSeriesView.Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md).
 
     Результат показан ниже:
 
@@ -105,7 +107,7 @@ series.View = new CartesianLollipopSeriesView()
     
 3. Установка размера маркеров точек
 
-    Используйте свойство `MarkerSize`, чтобы настроить размер маркеров точек.
+    Используйте свойство [`MarkerSize`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerSize.md), чтобы настроить размер маркеров точек.
 
 Полный код:
 
@@ -138,10 +140,12 @@ series.View = new CartesianLollipopSeriesView()
                                  >
                 <mxc:CartesianLollipopSeriesView Color="Orange"
                                                  LineColor="Dimgray"
-                                                 LineThickness="3"
                                                  MarkerSize="10"
                                                  MarkerImageCss="circle {{fill:{0};stroke:darkred;}}"
                                                  >
+                    <mxc:CartesianLollipopSeriesView.LineStyle>
+                        <mxc:LineStyle Thickness="3" />
+                    </mxc:CartesianLollipopSeriesView.LineStyle>
                     <SvgImage Source="avares://ChartLollipopSeriesView/Assets/circle.svg" />
                 </mxc:CartesianLollipopSeriesView>
             </mxc:CartesianSeries>
@@ -209,27 +213,27 @@ namespace ChartLollipopSeriesView.ViewModels
 
 Числовые значения _X_:
 
-- `FormulaDataAdapter`
-- `ScatterDataAdapter`
-- `SortedNumericDataAdapter`
+- [`FormulaDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/FormulaDataAdapter.md)
+- [`ScatterDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/ScatterDataAdapter.md)
+- [`SortedNumericDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md)
 
 Значения даты и времени _X_:
 
-- `SortedDateTimeDataAdapter`
-- `SortedTimeSpanDataAdapter`
+- [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md)
+- [`SortedTimeSpanDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedTimeSpanDataAdapter.md)
 
 
 Качественные значения _X_:
 
-- `QualitativeDataAdapter`
+- [`QualitativeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeDataAdapter.md)
 
 ## Параметры Lollipop Series View
 
 
-- `Color` — Задаёт цвет, используемый для закраски маркеров точек.
-- `LineColor` — Задаёт цвет, используемый для закраски линий.
+- [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) — Задаёт цвет, используемый для закраски маркеров точек.
+- [`LineColor`](../../../API/Eremex.AvaloniaUI.Charts/CartesianLollipopSeriesView/LineColor.md) — Задаёт цвет, используемый для закраски линий.
 - `LineThickness` — Задаёт толщину линии.
-- `LineOrientation` — Задаёт направление линий.
+- [`LineOrientation`](../../../API/Eremex.AvaloniaUI.Charts/CartesianLollipopSeriesView/LineOrientation.md) — Задаёт направление линий.
 
     - `Vertical` — Линии продлеваются вертикально от маркеров точек к оси _X_.
 
@@ -241,9 +245,9 @@ namespace ChartLollipopSeriesView.ViewModels
         ![chart-lollipop-horz-orientation](../../../images/chart-lollipop-horz-orientation.png)
 
 
-- `MarkerImage` — Получает или задаёт изображение, используемое в качестве пользовательских маркеров точек. Если изображение не указано, отображаются стандартные маркеры в форме квадрата. Вы можете использовать экземпляр класса `SvgImage`, чтобы задать SVG-изображение.
+- [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) — Получает или задаёт изображение, используемое в качестве пользовательских маркеров точек. Если изображение не указано, отображаются стандартные маркеры в форме квадрата. Вы можете использовать экземпляр класса `SvgImage`, чтобы задать SVG-изображение.
 
-    Свойство `MarkerImage` объявлено с атрибутом `[Content]`, что позволяет определить изображение непосредственно между тегами &lt;CartesianLollipopSeriesView&gt;.
+    Свойство [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) объявлено с атрибутом `[Content]`, что позволяет определить изображение непосредственно между тегами &lt;CartesianLollipopSeriesView&gt;.
 
     ``` xml
     <mxc:CartesianLollipopSeriesView>
@@ -254,11 +258,11 @@ namespace ChartLollipopSeriesView.ViewModels
     SVG-файлы содержат предопределённые цвета для SVG-элементов. Чтобы эти цвета соответствовали цвету вашей серии данных, вы можете:
     
     - Вручную отредактировать исходный SVG-файл заранее
-    - Использовать свойство `MarkerImageCss`, чтобы динамически настраивать [стили](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) для SVG-элементов. Стили применяются при отрисовке маркеров точек.
+    - Использовать свойство [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md), чтобы динамически настраивать [стили](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) для SVG-элементов. Стили применяются при отрисовке маркеров точек.
 
-- `MarkerImageCss` — Задаёт [CSS-стили](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) для настройки SVG-изображения, заданного свойством `CartesianLollipopSeriesView.MarkerImage`, во время выполнения. Основной сценарий использования — замена цветов SVG-элементов на цвет серии (`CartesianLollipopSeriesView.Color`). Включите заполнитель `{0}`, чтобы вставить значение свойства `CartesianLollipopSeriesView.Color` в CSS-код. 
+- [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) — Задаёт [CSS-стили](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) для настройки SVG-изображения, заданного свойством [`CartesianLollipopSeriesView.MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md), во время выполнения. Основной сценарий использования — замена цветов SVG-элементов на цвет серии ([`CartesianLollipopSeriesView.Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md)). Включите заполнитель `{0}`, чтобы вставить значение свойства [`CartesianLollipopSeriesView.Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) в CSS-код. 
 
-    Например, когда свойство `MarkerImage` содержит SVG-изображение с элементом circle, следующий CSS-код стилизует `circle` заливкой Orange (используя цвет серии) и границей Dark Red:
+    Например, когда свойство [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) содержит SVG-изображение с элементом circle, следующий CSS-код стилизует `circle` заливкой Orange (используя цвет серии) и границей Dark Red:
 
     ``` xml
     <mxc:CartesianLollipopSeriesView Color="orange" MarkerImageCss="circle {{fill:{0};stroke:darkred;}}">
@@ -270,8 +274,8 @@ namespace ChartLollipopSeriesView.ViewModels
 
     **Полный код**: [Пример - Создание Lollipop Series View и использование пользовательских SVG-маркеров](#пример---создание-lollipop-series-view-и-использование-пользовательских-svg-маркеров-точек-данных).
 
-- `MarkerSize` — Задаёт размер маркеров точек в пикселях.
-- `ShowInCrosshair` — Задаёт видимость подписи перекрестия для текущей серии. См. [Настройка подписей перекрестия](../crosshair.md#скрытие-серии-в-crosshair).
+- [`MarkerSize`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerSize.md) — Задаёт размер маркеров точек в пикселях.
+- [`ShowInCrosshair`](../../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) — Задаёт видимость подписи перекрестия для текущей серии. См. [Настройка подписей перекрестия](../crosshair.md#скрытие-серии-в-crosshair).
 
 <br>
 <br>

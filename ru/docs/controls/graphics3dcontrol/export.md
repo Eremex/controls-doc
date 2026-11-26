@@ -6,9 +6,9 @@ seealso: []
 
 # Экспорт
 
-Вы можете использовать метод `Graphics3DControl.Export`, чтобы захватить отрисовку контрола и вернуть её в виде объекта `Bitmap`. Размер растрового изображения соответствует размеру отображения контрола (`Graphics3DControl.Bounds.Size`).
+Вы можете использовать метод [`Graphics3DControl.Export`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Export.md), чтобы захватить отрисовку контрола и вернуть её в виде объекта `Bitmap`. Размер растрового изображения соответствует размеру отображения контрола (`Graphics3DControl.Bounds.Size`).
 
-Следующий пример сохраняет отрисовку `Graphics3DControl` в файл изображения.
+Этот пример сохраняет отрисовку [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) в файл изображения.
 
 ``` cs
 Bitmap bitmap = g3DControl.Export();

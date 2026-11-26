@@ -12,11 +12,16 @@ Provides the color of a heatmap cell by mapping the cell value to a shade of gra
 public sealed class HeatmapGrayscaleColorProvider : AvaloniaObject, IHeatmapColorProvider
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [HeatmapGrayscaleColorProvider](HeatmapGrayscaleColorProvider/HeatmapGrayscaleColorProvider.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [GetColor](HeatmapGrayscaleColorProvider/GetColor.md)(…) | Returns a shade of gray that corresponds to the position of the specified value within the range. The minimum value maps to black, and the maximum value maps to white. |
 
 ## See Also

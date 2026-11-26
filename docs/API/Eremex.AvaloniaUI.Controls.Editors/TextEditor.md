@@ -12,11 +12,16 @@ Represents an editor that allows users to enter and edit text.
 public class TextEditor : BaseEditor
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TextEditor](TextEditor/TextEditor.md)() | Initializes a new instance of the TextEditor class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AcceptsReturn](TextEditor/AcceptsReturn.md) { get; set; } | Gets or sets whether the user can insert line breaks by pressing Enter. |
 | [HighlightedText](TextEditor/HighlightedText.md) { get; } | Gets the text highlighted in the editor. |
 | [Mask](TextEditor/Mask.md) { get; set; } | Gets or sets the mask pattern applied to the editor's input. |
@@ -28,6 +33,11 @@ public class TextEditor : BaseEditor
 | [TextWrapping](TextEditor/TextWrapping.md) { get; set; } | Gets or sets how the editor's text wraps. |
 | [ValidateOnInput](TextEditor/ValidateOnInput.md) { get; set; } | Gets or sets whether the editor validates its value as the user types. |
 | [Watermark](TextEditor/Watermark.md) { get; set; } | Gets or sets the prompt text displayed when the editor's value is empty. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | override [ClearSelection](TextEditor/ClearSelection.md)() | Clears the text selection in the editor. |
 | override [Render](TextEditor/Render.md)(…) | Renders the editor's visual appearance. |
 | override [SelectAll](TextEditor/SelectAll.md)() | Selects all the editor's text. |

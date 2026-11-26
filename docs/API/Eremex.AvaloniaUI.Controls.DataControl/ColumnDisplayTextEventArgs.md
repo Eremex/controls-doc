@@ -12,11 +12,16 @@ Provides data for the ColumnDisplayText event.
 public class ColumnDisplayTextEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ColumnDisplayTextEventArgs](ColumnDisplayTextEventArgs/ColumnDisplayTextEventArgs.md)(…) | Initializes a new instance of the ColumnDisplayTextEventArgs class with the specified data row and column. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Column](ColumnDisplayTextEventArgs/Column.md) { get; set; } | Gets the field name of the column whose cell is being exported. |
 | [DataRow](ColumnDisplayTextEventArgs/DataRow.md) { get; set; } | Gets the data item whose cell is being exported. |
 | [DisplayText](ColumnDisplayTextEventArgs/DisplayText.md) { get; set; } | Gets or sets the display text written to the exported document for the cell. |

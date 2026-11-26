@@ -12,11 +12,16 @@ Represents a single value displayed by a crosshair series label.
 public class CrosshairSeriesLabelValue
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CrosshairSeriesLabelValue](CrosshairSeriesLabelValue/CrosshairSeriesLabelValue.md)(…) | Initializes a new instance of the CrosshairSeriesLabelValue class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Color](CrosshairSeriesLabelValue/Color.md) { get; } | Gets the color used to draw the crosshair marker and label of the value. |
 | [Position](CrosshairSeriesLabelValue/Position.md) { get; } | Gets the position of the label relative to the point. |
 | [RefinedValue](CrosshairSeriesLabelValue/RefinedValue.md) { get; } | Gets the value converted to the internal scale units. |

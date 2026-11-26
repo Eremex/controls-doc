@@ -25,13 +25,13 @@ DataGrid позволяет отображать значения ячеек с 
 Редакторы Eremex позволяют использовать [маски](../editors/masks/index.md) для ограничения ввода данных и форматирования числовых и дата-временных значений. Маски поддерживаются как для отдельных редакторов, так и для редакторов, встроенных в контролы-контейнеры (DataGrid, TreeList, PropertyGrid и т. д.).
 
 
-*Применимо к*: ячейкам в режиме отображения и редактирования. Чтобы маски не применялись в режиме отображения (когда редактирование ячейки неактивно), отключите свойство редактора `MaskUseAsDisplayFormat`.
+*Применимо к*: ячейкам в режиме отображения и редактирования. Чтобы маски не применялись в режиме отображения (когда редактирование ячейки неактивно), отключите свойство редактора [`MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/MaskUseAsDisplayFormat.md).
 
 *Шаги*:
 
 1. Назначьте колонке [встроенный редактор](data-editing/index.md) Eremex. 
-2. Установите свойство редактора `MaskType` в значение `MaskType.Numeric` или `MaskType.DateTime`, чтобы применить маску к числовым или дата-временным значениям соответственно.
-3. Установите свойство редактора `Mask` в требуемую маску. Информацию о спецификаторах масок смотрите в следующих разделах:
+2. Установите свойство редактора [`MaskType`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) в значение [`MaskType.Numeric`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) или [`MaskType.DateTime`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md), чтобы применить маску к числовым или дата-временным значениям соответственно.
+3. Установите свойство редактора [`Mask`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/Mask.md) в требуемую маску. Информацию о спецификаторах масок смотрите в следующих разделах:
 
     - [Числовые маски](../editors/masks/numeric-masks.md)
     - [Маски даты и времени](../editors/masks/date-time-masks.md)
@@ -39,7 +39,7 @@ DataGrid позволяет отображать значения ячеек с 
 
 #### Пример - Пользовательское форматирование значений даты и времени с помощью масок
 
-Следующий пример назначает колонке редактор DateEditor и применяет пользовательскую маску даты-времени ("MMMM dd, yyyy"). Эта маска форматирует значения ячеек в режимах редактирования и отображения, как показано на изображении ниже:
+Этот пример назначает колонке редактор DateEditor и применяет пользовательскую маску даты-времени ("MMMM dd, yyyy"). Эта маска форматирует значения ячеек в режимах редактирования и отображения, как показано на изображении ниже:
 
 ![cells-formatting-masks-customdatetime](../../images/cells-formatting-masks-customdatetime.png)
 
@@ -64,8 +64,8 @@ DataGrid позволяет отображать значения ячеек с 
 *Шаги*:
 
 1. Назначьте колонке [встроенный редактор](data-editing/index.md) Eremex. 
-2. Задайте формат отображения редактора с помощью его свойства `DisplayFormatString`.
-3. Для редакторов, использующих маски для форматирования отображаемого значения, отключите свойство редактора `MaskUseAsDisplayFormat`. Например, DateEditor и SpinEditor по умолчанию используют маски для форматирования значений в режиме отображения. Поэтому для применения формата отображения, заданного свойством `DisplayFormatString`, для этих редакторов необходимо отключить свойство `MaskUseAsDisplayFormat`.
+2. Задайте формат отображения редактора с помощью его свойства [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md).
+3. Для редакторов, использующих маски для форматирования отображаемого значения, отключите свойство редактора [`MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/MaskUseAsDisplayFormat.md). Например, DateEditor и SpinEditor по умолчанию используют маски для форматирования значений в режиме отображения. Поэтому для применения формата отображения, заданного свойством [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md), для этих редакторов необходимо отключить свойство [`MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/MaskUseAsDisplayFormat.md).
 
     Описание всех форматов отображения можно найти в документации .NET:
 
@@ -76,10 +76,10 @@ DataGrid позволяет отображать значения ячеек с 
 
 #### Пример - Различное форматирование значений даты и времени в режимах отображения и редактирования
 
-Следующий пример назначает колонке встроенный редактор DateEditor и использует его настройки для применения разного форматирования значений в режимах отображения и редактирования:
+Этот пример назначает колонке встроенный редактор DateEditor и использует его настройки для применения разного форматирования значений в режимах отображения и редактирования:
 
-- Свойство `DisplayFormatString` установлено в значение 'd'. Эта настройка применяет краткий формат даты к значениям в режиме отображения. Чтобы свойство `DisplayFormatString` вступило в силу, свойство `MaskUseAsDisplayFormat` отключено.
-- Свойство `Mask` установлено в значение 'g'. Этот формат включает полный формат даты-времени с длинным временем в режиме редактирования.
+- Свойство [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) установлено в значение 'd'. Эта настройка применяет краткий формат даты к значениям в режиме отображения. Чтобы свойство [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) вступило в силу, свойство [`MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/MaskUseAsDisplayFormat.md) отключено.
+- Свойство [`Mask`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/Mask.md) установлено в значение 'g'. Этот формат включает полный формат даты-времени с длинным временем в режиме редактирования.
 
 ![cells-formatting-displayformat-dateeditors-example](../../images/cells-formatting-displayformat-dateeditors-example.png)
 
@@ -93,7 +93,7 @@ DataGrid позволяет отображать значения ячеек с 
 
 #### Пример - Форматирование значений как валюты
 
-Следующий пример назначает колонке встроенный редактор TextEditor и устанавливает свойство редактора `DisplayFormatString` в строку "c". Этот формат отображает значения ячеек как валюту, когда ячейки находятся в режиме отображения:
+Этот пример назначает колонке встроенный редактор TextEditor и устанавливает свойство редактора [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) в строку "c". Этот формат отображает значения ячеек как валюту, когда ячейки находятся в режиме отображения:
 
 ![cells-formatting-currencyexample](../../images/cells-formatting-currencyexample.png)
 
@@ -107,7 +107,7 @@ DataGrid позволяет отображать значения ячеек с 
 
 #### Пример - Пользовательское форматирование дробных значений 
 
-Приведённый ниже код назначает колонке встроенный редактор TextEditor и устанавливает свойство `DisplayFormatString` в строку "{}{0:F1} kW". Этот формат отображает дробные значения с одним знаком после запятой и добавляет суффикс "kW" к результату. Когда ячейка находится в режиме редактирования, формат отображения не применяется. Строка "{}" является экранирующим токеном, который позволяет XAML-парсеру трактовать строку, начинающуюся с открывающей фигурной скобки ("{"), как обычный текст, а не как расширение разметки.
+Приведённый ниже код назначает колонке встроенный редактор TextEditor и устанавливает свойство [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) в строку "{}{0:F1} kW". Этот формат отображает дробные значения с одним знаком после запятой и добавляет суффикс "kW" к результату. Когда ячейка находится в режиме редактирования, формат отображения не применяется. Строка "{}" является экранирующим токеном, который позволяет XAML-парсеру трактовать строку, начинающуюся с открывающей фигурной скобки ("{"), как обычный текст, а не как расширение разметки.
 
 ![cells-formatting-float-customformatting](../../images/cells-formatting-float-customformatting.png)
 
@@ -125,13 +125,13 @@ DataGrid позволяет отображать значения ячеек с 
 
 *Применимо к*: ячейкам в режиме отображения
 
-Если ни один формат отображения, ни маска не отвечают вашим требованиям, вы можете обработать событие `CustomColumnDisplayText`, чтобы форматировать значения ячеек произвольным образом. Это событие позволяет заменить стандартное текстовое представление значений в ячейках и [фильтрах колонок](filter-and-search.md#фильтры-колонок). Чтобы предоставить пользовательский отображаемый текст для строк группировки, обработайте событие `DataGridControl.CustomGroupValueDisplayText`.
+Если ни один формат отображения, ни маска не отвечают вашим требованиям, вы можете обработать событие [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md), чтобы форматировать значения ячеек произвольным образом. Это событие позволяет заменить стандартное текстовое представление значений в ячейках и [фильтрах колонок](filter-and-search.md#фильтры-колонок). Чтобы предоставить пользовательский отображаемый текст для строк группировки, обработайте событие [`DataGridControl.CustomGroupValueDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomGroupValueDisplayText.md).
 
 При изменении отображаемого текста ячейки исходные значения ячейки не изменяются.
 
 #### Пример - Пользовательское форматирование значений ячеек с помощью события CustomColumnDisplayText
 
-Следующий обработчик события `CustomColumnDisplayText` добавляет строку "pcs" после значений ячеек в колонке "Stock". Пользовательские значения отображения, предоставленные с помощью этого события, игнорируются, когда ячейки редактируются.
+Следующий обработчик события [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) добавляет строку "pcs" после значений ячеек в колонке "Stock". Пользовательские значения отображения, предоставленные с помощью этого события, игнорируются, когда ячейки редактируются.
 
 ![cells-formatting-customcolumndisplaytext-example](../../images/cells-formatting-customcolumndisplaytext-example.png)
 
@@ -158,12 +158,12 @@ private void DataGrid_CustomColumnDisplayText(object sender, DataGridCustomColum
 Чтобы настроить выравнивание значений в ячейках по горизонтали или вертикали, выполните следующие действия:
 
 1. Назначьте колонке [встроенный редактор](data-editing/index.md) Eremex. 
-2. Используйте свойство редактора `HorizontalContentAlignment`, чтобы задать горизонтальное выравнивание.
-2. Используйте свойство редактора `VerticalContentAlignment`, чтобы задать вертикальное выравнивание.
+2. Используйте свойство редактора [`HorizontalContentAlignment`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/HorizontalContentAlignment.md), чтобы задать горизонтальное выравнивание.
+2. Используйте свойство редактора [`VerticalContentAlignment`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/VerticalContentAlignment.md), чтобы задать вертикальное выравнивание.
 
 ### Пример - Выравнивание значений и заголовка колонки по центру
 
-Следующий код выравнивает по центру значения и заголовок колонки _Hire Date_. Чтобы выровнять значения ячеек, код назначает этой колонке встроенный редактор `DateEditor` и устанавливает свойство редактора `HorizontalContentAlignment` в значение `Center`.
+Следующий код выравнивает по центру значения и заголовок колонки _Hire Date_. Чтобы выровнять значения ячеек, код назначает этой колонке встроенный редактор [`DateEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md) и устанавливает свойство редактора [`HorizontalContentAlignment`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/HorizontalContentAlignment.md) в значение `Center`.
 Для выравнивания содержимого заголовка колонки используется свойство колонки `HorizontalContentAlignment`.
 
 ![cells-value-alignment-example](../../images/cells-value-alignment-example.png)
@@ -181,7 +181,7 @@ private void DataGrid_CustomColumnDisplayText(object sender, DataGridCustomColum
 Чтобы отображать многострочный текст в ячейках, выполните следующие действия:
 
 1. Назначьте колонке [встроенный редактор](data-editing/index.md) TextEditor (или его наследника). 
-2. Используйте свойство редактора `TextWrapping`, чтобы включить перенос текста.
+2. Используйте свойство редактора [`TextWrapping`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/TextWrapping.md), чтобы включить перенос текста.
 
 Когда перенос текста включён, высота строк автоматически подстраивается, чтобы полностью отобразить содержимое ячеек.
 
@@ -205,17 +205,17 @@ private void DataGrid_CustomColumnDisplayText(object sender, DataGridCustomColum
 
 Ячейки в DataGrid принадлежат либо связанным (bound), либо несвязанным (unbound) колонкам. 
 
-[Связанные колонки](data-binding/index.md) привязаны к полям (свойствам) исходного источника данных контрола. Свойство `GridColumn.FieldName` таких колонок устанавливается в имя поля, существующего в источнике данных.
+[Связанные колонки](data-binding/index.md) привязаны к полям (свойствам) исходного источника данных контрола. Свойство [`GridColumn.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) таких колонок устанавливается в имя поля, существующего в источнике данных.
 Ячейки связанных колонок получают значения из соответствующих полей источника данных.
 
-[Несвязанные колонки](data-binding/unbound-columns.md) (также называемые вычисляемыми колонками) позволяют отображать (и при необходимости редактировать) значения, отсутствующие в источнике данных. Например, вы можете создать доступную только для чтения несвязанную колонку, отображающую значения, вычисленные на основе нескольких других полей. Значения для несвязанных колонок предоставляются с помощью события `CustomUnboundColumnData`. Вы также можете создавать редактируемые несвязанные колонки. В этом случае обработчик события `CustomUnboundColumnData` также должен сохранять данные, введённые пользователями (например, вы можете сохранить их в кэше или в источнике данных).
+[Несвязанные колонки](data-binding/unbound-columns.md) (также называемые вычисляемыми колонками) позволяют отображать (и при необходимости редактировать) значения, отсутствующие в источнике данных. Например, вы можете создать доступную только для чтения несвязанную колонку, отображающую значения, вычисленные на основе нескольких других полей. Значения для несвязанных колонок предоставляются с помощью события [`CustomUnboundColumnData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md). Вы также можете создавать редактируемые несвязанные колонки. В этом случае обработчик события [`CustomUnboundColumnData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) также должен сохранять данные, введённые пользователями (например, вы можете сохранить их в кэше или в источнике данных).
  
 Несвязанные колонки можно использовать для настройки отображаемого текста ячеек. Информацию о других способах настройки отображаемого текста смотрите в разделе [Настройка отображаемого текста ячеек](#customize-display-text-of-cells).
 
 
 ### Пример — Создание вычисляемой колонки 
 
-Следующий пример создаёт несвязанную колонку _Year Total_. Обработчик события `CustomUnboundColumnData` вычисляет значения этой колонки как сумму полей Quarter1, Quarter2, Quarter3 и Quarter4.
+Этот пример создаёт несвязанную колонку _Year Total_. Обработчик события [`CustomUnboundColumnData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) вычисляет значения этой колонки как сумму полей Quarter1, Quarter2, Quarter3 и Quarter4.
 
 ![cells-unbound-columns-revenue-example](../../images/cells-unbound-columns-revenue-example.png)
 
@@ -318,21 +318,21 @@ public partial class RevenueViewModel : ObservableObject
 
 ## Customize Display Text of Cells
 
-Вы можете обработать событие `CustomColumnDisplayText`, чтобы настроить отображаемый текст конкретных ячеек. Это событие влияет только на отображаемый текст, но не на значения редактирования ячейки. 
+Вы можете обработать событие [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md), чтобы настроить отображаемый текст конкретных ячеек. Это событие влияет только на отображаемый текст, но не на значения редактирования ячейки. 
 
-Событие `CustomColumnDisplayText` также позволяет изменять текстовое представление значений ячеек в фильтрах колонок и на панели фильтра. Когда событие `CustomColumnDisplayText` возникает для значений на панели фильтра, параметр события `SourceItemIndex` возвращает `-1`. Чтобы предоставить пользовательский отображаемый текст для строк группировки, обработайте событие `DataGridControl.CustomGroupValueDisplayText`.
+Событие [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) также позволяет изменять текстовое представление значений ячеек в фильтрах колонок и на панели фильтра. Когда событие [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) возникает для значений на панели фильтра, параметр события [`SourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomColumnDisplayTextEventArgs/SourceItemIndex.md) возвращает `-1`. Чтобы предоставить пользовательский отображаемый текст для строк группировки, обработайте событие [`DataGridControl.CustomGroupValueDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomGroupValueDisplayText.md).
 
-Если отображаемый текст ячейки зависит от значений других полей/свойств источника данных, вы можете получить эти значения полей с помощью методов DataGridControl (`DataGridControl.GetSourceItem` и `DataGridControl.GetSourceItemValue`) и методов вашего источника данных.
+Если отображаемый текст ячейки зависит от значений других полей/свойств источника данных, вы можете получить эти значения полей с помощью методов DataGridControl ([`DataGridControl.GetSourceItem`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItem.md) и [`DataGridControl.GetSourceItemValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemValue.md)) и методов вашего источника данных.
 
 ### Пример - Изменение отображаемого текста ячеек с помощью события
 
-Следующий пример обрабатывает событие `CustomColumnDisplayText`, чтобы изменить отображаемый текст значений колонки _HireDate_.
+Этот пример обрабатывает событие [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md), чтобы изменить отображаемый текст значений колонки _HireDate_.
 
 Таблица в текущем примере отображает коллекцию объектов _EmployeeInfo_. Поле _EmployeeInfo.HireDate_ указывает дату приёма сотрудника на работу. Поле _EmployeeInfo.Experience_ указывает общее количество лет стажа сотрудника. Исходный макет показан ниже:
 
 ![cells-grid-customcolumndisplaytext-example-initial-layout](../../images/cells-grid-customcolumndisplaytext-example-initial-layout.png)
 
-Обработчик события `CustomColumnDisplayText` предоставляет пользовательский отображаемый текст для значений _HireDate_. Вместо значений даты-времени колонка _HireDate_ будет отображать количество лет работы от даты приёма до сегодняшнего дня, за которым следует общее количество лет стажа (значение колонки _Experience_). Заголовки колонок _HireDate_ и _Experience_ заменяются на "Company Work Experience" и "Total Work Experience" соответственно.
+Обработчик события [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) предоставляет пользовательский отображаемый текст для значений _HireDate_. Вместо значений даты-времени колонка _HireDate_ будет отображать количество лет работы от даты приёма до сегодняшнего дня, за которым следует общее количество лет стажа (значение колонки _Experience_). Заголовки колонок _HireDate_ и _Experience_ заменяются на "Company Work Experience" и "Total Work Experience" соответственно.
 
 ![cells-grid-customcolumndisplaytext-example-final-layout](../../images/cells-grid-customcolumndisplaytext-example-final-layout.png)
 
@@ -444,9 +444,9 @@ DataGrid предоставляет методы для получения и у
 
 | Метод | Описание |
 |--------|-------------|
-| `GetCellValue` | Возвращает значение редактирования (исходное значение), хранящееся в конкретной ячейке. |
-| `SetCellValue` | Устанавливает новое значение в конкретной ячейке. |
-| `GetCellDisplayText` | Возвращает отформатированный отображаемый текст ячейки, который может отличаться от значения редактирования из-за форматирования колонки или пользовательского обработчика события `CustomColumnDisplayText`. |
+| [`GetCellValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetCellValue.md) | Возвращает значение редактирования (исходное значение), хранящееся в конкретной ячейке. |
+| [`SetCellValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SetCellValue.md) | Устанавливает новое значение в конкретной ячейке. |
+| [`GetCellDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetCellDisplayText.md) | Возвращает отформатированный отображаемый текст ячейки, который может отличаться от значения редактирования из-за форматирования колонки или пользовательского обработчика события [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md). |
 
 **Примеры:**
 
@@ -467,11 +467,11 @@ DataGrid включает методы, позволяющие получить 
 
 | Член | Описание |
 |--------|-------------|
-| `DataControlBase.FocusedItem` | Возвращает исходный объект для текущей сфокусированной строки. |
-| `GetSourceItem` | Возвращает исходный объект по его индексу в источнике данных. |
-| `GetSourceItemValue` | Возвращает значение конкретного поля в источнике данных по указанному индексу. |
-| `GetSourceItemByRowIndex` | Возвращает исходный объект по индексу строки. |
-| `GetSourceItemByVisibleRowIndex` | Возвращает исходный объект по видимому индексу строки. |
+| [`DataControlBase.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) | Возвращает исходный объект для текущей сфокусированной строки. |
+| [`GetSourceItem`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItem.md) | Возвращает исходный объект по его индексу в источнике данных. |
+| [`GetSourceItemValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemValue.md) | Возвращает значение конкретного поля в источнике данных по указанному индексу. |
+| [`GetSourceItemByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByRowIndex.md) | Возвращает исходный объект по индексу строки. |
+| [`GetSourceItemByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByVisibleRowIndex.md) | Возвращает исходный объект по видимому индексу строки. |
 
 Пояснения о разных типах индексов строк смотрите в разделе [Идентификация и получение строк](rows.md#идентификация-и-получение-строк).
 
@@ -503,41 +503,41 @@ if (item != null)
 
 ![cells-editors](../../images/cells-editors.png)
 
-По умолчанию DataGrid использует редакторы EMX для отображения и редактирования значений распространённых типов данных. Например, значения типа double отображаются с помощью встроенного редактора `SpinEditor`, логические значения — с помощью контрола `CheckEditor` и т. д.
+По умолчанию DataGrid использует редакторы EMX для отображения и редактирования значений распространённых типов данных. Например, значения типа double отображаются с помощью встроенного редактора [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md), логические значения — с помощью контрола [`CheckEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/CheckEditor.md) и т. д.
 
 Вы можете явно назначать редакторы колонкам/ячейкам, используя следующие подходы:
 
-1. Указание редакторов EMX с помощью свойства `GridColumn.EditorProperties`.
-2. Указание редакторов EMX с помощью свойства `GridColumn.CellTemplate`.
-3. Указание пользовательских редакторов с помощью свойства `GridColumn.CellTemplate`.
+1. Указание редакторов EMX с помощью свойства [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md).
+2. Указание редакторов EMX с помощью свойства [`GridColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md).
+3. Указание пользовательских редакторов с помощью свойства [`GridColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md).
 
-Первый подход (`GridColumn.EditorProperties`) является предпочтительным, так как он предоставляет следующие преимущества:
+Первый подход ([`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md)) является предпочтительным, так как он предоставляет следующие преимущества:
 
 - Встроенные редакторы EMX и DataGrid используют одну и ту же визуальную тему, обеспечивая синхронизированные настройки внешнего вида.
 - DataGrid может корректно получать отображаемый текст из ячеек и экспортировать его в различные форматы (XLSX, PDF, изображения и т. д.). При использовании шаблонов ячеек ячейки экспортируются пустыми.
 - Высокая производительность при инициализации, отображении и прокрутке. Контрол имитирует внешний вид редактора в режиме отображения; фактический редактор создаётся только при начале редактирования и уничтожается по его завершении.
 
 
-Чтобы указать встроенный редактор EMX с помощью свойства `GridColumn.EditorProperties`, выполните следующие действия:
+Чтобы указать встроенный редактор EMX с помощью свойства [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md), выполните следующие действия:
 
-1. Установите свойство `GridColumn.EditorProperties` в один из следующих наследников класса `BaseEditorProperties`, соответствующий требуемому типу редактора:
+1. Установите свойство [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) в один из следующих наследников класса [`BaseEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties.md), соответствующий требуемому типу редактора:
 
-    - `ButtonEditorProperties` — соответствует контролу `ButtonEditor` и содержит специфичные для него настройки.
-    - `CheckEditorProperties` — соответствует контролу `CheckEditor` и содержит специфичные для него настройки.
-    - `ComboBoxEditorProperties` — соответствует контролу `ComboBoxEditor` и содержит специфичные для него настройки.
-    - `DateEditorProperties` — соответствует контролу `DateEditor` и содержит специфичные для него настройки.
-    - `HyperlinkEditorProperties` — соответствует контролу `HyperlinkEditor` и содержит специфичные для него настройки.
-    - `MemoEditorProperties` — соответствует контролу `MemoEditor` и содержит специфичные для него настройки.
-    - `PopupColorEditorProperties` — соответствует контролу `PopupColorEditor` и содержит специфичные для него настройки.
-    - `SegmentedEditorProperties` — соответствует контролу `SegmentedEditor` и содержит специфичные для него настройки.
-    - `SpinEditorProperties` — соответствует контролу `SpinEditor` и содержит специфичные для него настройки.
-    - `TextEditorProperties` — соответствует контролу `TextEditor` и содержит специфичные для него настройки.
+    - [`ButtonEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditorProperties.md) — соответствует контролу [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) и содержит специфичные для него настройки.
+    - [`CheckEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/CheckEditorProperties.md) — соответствует контролу [`CheckEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/CheckEditor.md) и содержит специфичные для него настройки.
+    - [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md) — соответствует контролу [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) и содержит специфичные для него настройки.
+    - [`DateEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditorProperties.md) — соответствует контролу [`DateEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md) и содержит специфичные для него настройки.
+    - [`HyperlinkEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/HyperlinkEditorProperties.md) — соответствует контролу [`HyperlinkEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/HyperlinkEditor.md) и содержит специфичные для него настройки.
+    - [`MemoEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/MemoEditorProperties.md) — соответствует контролу [`MemoEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/MemoEditor.md) и содержит специфичные для него настройки.
+    - [`PopupColorEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditorProperties.md) — соответствует контролу [`PopupColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) и содержит специфичные для него настройки.
+    - [`SegmentedEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditorProperties.md) — соответствует контролу [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) и содержит специфичные для него настройки.
+    - [`SpinEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditorProperties.md) — соответствует контролу [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md) и содержит специфичные для него настройки.
+    - [`TextEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties.md) — соответствует контролу [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) и содержит специфичные для него настройки.
 
-2. Измените настройки указанного объекта-наследника `BaseEditorProperties`.
+2. Измените настройки указанного объекта-наследника [`BaseEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties.md).
 
 ### Пример - Назначение контрола ComboBoxEditor колонке
 
-Следующий пример назначает колонке редактор `ComboBoxEditor`, устанавливая свойство `GridColumn.EditorProperties` в объект `ComboBoxEditorProperties`. Свойство `ComboBoxEditorProperties.ItemsSource` задаёт источник элементов, отображаемых в выпадающем списке редактора combobox.
+Этот пример назначает колонке редактор [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md), устанавливая свойство [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) в объект [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md). Свойство [`ComboBoxEditorProperties.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties/ItemsSource.md) задаёт источник элементов, отображаемых в выпадающем списке редактора combobox.
 
 ![cells-editors-comboboxexample](../../images/cells-editors-comboboxexample.png)
 
@@ -556,8 +556,8 @@ if (item != null)
 
 Вы можете сделать ячейки колонки доступными только для чтения, при этом разрешив пользователям копировать значения ячеек. Для этого:
 
-- Установите свойство колонки `ReadOnly` в значение `true`.
-- Оставьте свойство колонки `AllowEditing` со значением `true` (по умолчанию).
+- Установите свойство колонки [`ReadOnly`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ReadOnly.md) в значение `true`.
+- Оставьте свойство колонки [`AllowEditing`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowEditing.md) со значением `true` (по умолчанию).
 
 ``` xml
 <mxdg:GridColumn FieldName="FirstName" ReadOnly="True"/>
@@ -571,7 +571,7 @@ if (item != null)
 
 ### Entire Grid
 
-Чтобы сделать всю таблицу нередактируемой, установите свойство контрола `AllowEditing` в значение `false`.
+Чтобы сделать всю таблицу нередактируемой, установите свойство контрола [`AllowEditing`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/AllowEditing.md) в значение `false`.
 
 ``` xml
 <mxdg:DataGridControl x:Name="dataGrid" AllowEditing="False">
@@ -589,11 +589,11 @@ if (item != null)
 
     ![cells-noneditable](../../images/cells-noneditable.png)
 
-- Установите свойство колонки `AllowFocus` в значение `false`. Эта настройка запрещает колонке получать фокус.
+- Установите свойство колонки [`AllowFocus`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowFocus.md) в значение `false`. Эта настройка запрещает колонке получать фокус.
 
 ### Specific Cells
 
-Чтобы сделать отдельные ячейки нередактируемыми, обработайте событие `ShowingEditor`. Это событие возникает, когда редактор ячейки собирается активироваться. Установите параметр события `Cancel` в значение `true`, чтобы предотвратить активацию редактора ячейки.
+Чтобы сделать отдельные ячейки нередактируемыми, обработайте событие [`ShowingEditor`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowingEditor.md). Это событие возникает, когда редактор ячейки собирается активироваться. Установите параметр события [`Cancel`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridShowingEditorEventArgs/Cancel.md) в значение `true`, чтобы предотвратить активацию редактора ячейки.
 
 ``` cs
 private void DataGrid_ShowingEditor(object sender, DataGridShowingEditorEventArgs e)

@@ -12,7 +12,7 @@ Provides data for the event raised before a docking operation starts.
 public class DockOperationStartingEventArgs : DockOperationBaseEventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

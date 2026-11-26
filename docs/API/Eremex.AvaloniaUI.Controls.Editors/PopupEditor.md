@@ -12,11 +12,16 @@ Serves as the base class for editors that display a dropdown.
 public class PopupEditor : ButtonEditor, IResizeablePopupOwner
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PopupEditor](PopupEditor/PopupEditor.md)() | Initializes a new instance of the PopupEditor class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ActualPopupFooterButtons](PopupEditor/ActualPopupFooterButtons.md) { get; } | Gets the buttons currently displayed in the popup's footer. |
 | [ActualSizeGripLocation](PopupEditor/ActualSizeGripLocation.md) { get; } | Gets the actual location of the popup's size grip. |
 | [ClosePopupCommand](PopupEditor/ClosePopupCommand.md) { get; } | Gets the command that closes the editor's popup. |
@@ -39,6 +44,11 @@ public class PopupEditor : ButtonEditor, IResizeablePopupOwner
 | [ShowPopupIfReadOnly](PopupEditor/ShowPopupIfReadOnly.md) { get; set; } | Gets or sets whether the popup opens when the editor is read-only. |
 | [ShowSizeGrip](PopupEditor/ShowSizeGrip.md) { get; set; } | Gets or sets whether the popup displays a size grip. |
 | [StaysPopupOpen](PopupEditor/StaysPopupOpen.md) { get; set; } | Gets or sets whether the popup remains open when the editor loses focus. |
+
+## Events
+
+| name | description |
+| --- | --- |
 | event [PopupClosed](PopupEditor/PopupClosed.md) | Occurs when the editor's popup is closed. |
 | event [PopupClosing](PopupEditor/PopupClosing.md) | Occurs when the editor's popup is about to close. Cancel the event to prevent the popup from closing. |
 | event [PopupOpened](PopupEditor/PopupOpened.md) | Occurs when the editor's popup is opened. |

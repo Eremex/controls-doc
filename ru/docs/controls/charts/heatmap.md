@@ -6,10 +6,10 @@ seealso: []
 
 # Heatmap
 
-Контрол Heatmap (`Eremex.AvaloniaUI.Charts.Heatmap`) позволяет создавать двумерную [тепловую карту](https://en.wikipedia.org/wiki/Heat_map) — диаграмму, которая визуализирует данные с помощью цвета. 
+Контрол Heatmap ([`Eremex.AvaloniaUI.Charts.Heatmap`](../../API/Eremex.AvaloniaUI.Charts/Heatmap.md)) позволяет создавать двумерную [тепловую карту](https://en.wikipedia.org/wiki/Heat_map) — диаграмму, которая визуализирует данные с помощью цвета. 
 Контрол закрашивает каждую точку данных внутри двумерной "карты" цветом, соответствующим значению в этой точке.
 
-Контрол Heatmap является потомком `Eremex.AvaloniaUI.Charts.ChartControl` — базового класса для всех контролов диаграмм, включая `CartersianChart` и `PolarChart`. Таким образом, он наследует специфичную функциональность, общую для всех контролов диаграмм. Возможности контрола Heatmap включают:
+Контрол Heatmap является потомком [`Eremex.AvaloniaUI.Charts.ChartControl`](../../API/Eremex.AvaloniaUI.Charts/ChartControl.md) — базового класса для всех контролов диаграмм, включая `CartersianChart` и [`PolarChart`](../../API/Eremex.AvaloniaUI.Charts/PolarChart.md). Таким образом, он наследует специфичную функциональность, общую для всех контролов диаграмм. Возможности контрола Heatmap включают:
 
 - Пользовательское кодирование цвета
 - Раскраску в оттенках серого
@@ -37,8 +37,8 @@ seealso: []
 
 ## Предоставление данных
 
-Установите свойство `Heatmap.DataAdapter` в объект `Eremex.AvaloniaUI.Charts.HeatmapDataAdapter`, чтобы предоставить данные контролу Heatmap. 
-Класс `HeatmapDataAdapter` содержит следующие основные свойства, которые необходимо инициализировать:
+Установите свойство [`Heatmap.DataAdapter`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/DataAdapter.md) в объект [`Eremex.AvaloniaUI.Charts.HeatmapDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter.md), чтобы предоставить данные контролу Heatmap. 
+Класс [`HeatmapDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter.md) содержит следующие основные свойства, которые необходимо инициализировать:
 
 ``` cs
 public class HeatmapDataAdapter : ISeriesDataAdapter
@@ -50,29 +50,29 @@ public class HeatmapDataAdapter : ISeriesDataAdapter
 }
 ```
 
-- `XArguments` — Список строк, задающих аргументы оси _X_. Аргументы _X_ должны быть уникальными.
-- `YArguments` — Список строк, задающих аргументы оси _Y_. Аргументы _Y_ должны быть уникальными.
-- `Values` — Двумерный массив значений типа Double. 
+- [`XArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/XArguments.md) — Список строк, задающих аргументы оси _X_. Аргументы _X_ должны быть уникальными.
+- [`YArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/YArguments.md) — Список строк, задающих аргументы оси _Y_. Аргументы _Y_ должны быть уникальными.
+- [`Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md) — Двумерный массив значений типа Double. 
     
-    Ширина и высота массива `Values` должны соответствовать количеству элементов в списках `XArguments` и `YArguments` соответственно.
+    Ширина и высота массива [`Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md) должны соответствовать количеству элементов в списках [`XArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/XArguments.md) и [`YArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/YArguments.md) соответственно.
     
-    Массив `Values` может содержать значение `Double.NaN` для отдельных точек. Такие точки не отрисовываются контролом Heatmap, и пользователь видит фон контрола через эти точки.
+    Массив [`Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md) может содержать значение `Double.NaN` для отдельных точек. Такие точки не отрисовываются контролом Heatmap, и пользователь видит фон контрола через эти точки.
 
-    Строки массива `Values` отрисовываются контролом Heatmap снизу вверх.
-    Первая строка массива `Values` отрисовывается внизу, а последняя строка — вверху. Подробности см. в примере ниже.
+    Строки массива [`Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md) отрисовываются контролом Heatmap снизу вверх.
+    Первая строка массива [`Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md) отрисовывается внизу, а последняя строка — вверху. Подробности см. в примере ниже.
 
 Используйте следующие методы, чтобы обновить данные контрола Heatmap во время выполнения:
 
-- `HeatmapDataAdapter.UpdateValues(double[,] newValues)` — Обновляет текущие значения (`HeatmapDataAdapter.Values`) значениями, указанными параметром `newValues` метода. Количество столбцов и строк в массиве `newValues` должно соответствовать количеству столбцов и строк в массиве `HeatmapDataAdapter.Values`.
-- `HeatmapDataAdapter.UpdateXArguments(IList<string> newArguments)` — Обновляет текущие аргументы _X_ (`HeatmapDataAdapter.XArguments`) новыми аргументами. Количество элементов в списке `newArguments` должно соответствовать количеству элементов в списке `HeatmapDataAdapter.XArguments`. Аргументы _X_ должны быть уникальными.
-- `HeatmapDataAdapter.UpdateYArguments(IList<string> newArguments)` — Обновляет текущие аргументы _Y_ (`HeatmapDataAdapter.YArguments`) новыми аргументами. Количество элементов в списке `newArguments` должно соответствовать количеству элементов в списке `HeatmapDataAdapter.YArguments`. Аргументы _Y_ должны быть уникальными.
+- [`HeatmapDataAdapter.UpdateValues(double[,] newValues)`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/UpdateValues.md) — Обновляет текущие значения ([`HeatmapDataAdapter.Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md)) значениями, указанными параметром `newValues` метода. Количество столбцов и строк в массиве `newValues` должно соответствовать количеству столбцов и строк в массиве [`HeatmapDataAdapter.Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md).
+- [`HeatmapDataAdapter.UpdateXArguments(IList<string> newArguments)`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/UpdateXArguments.md) — Обновляет текущие аргументы _X_ ([`HeatmapDataAdapter.XArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/XArguments.md)) новыми аргументами. Количество элементов в списке `newArguments` должно соответствовать количеству элементов в списке [`HeatmapDataAdapter.XArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/XArguments.md). Аргументы _X_ должны быть уникальными.
+- [`HeatmapDataAdapter.UpdateYArguments(IList<string> newArguments)`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/UpdateYArguments.md) — Обновляет текущие аргументы _Y_ ([`HeatmapDataAdapter.YArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/YArguments.md)) новыми аргументами. Количество элементов в списке `newArguments` должно соответствовать количеству элементов в списке [`HeatmapDataAdapter.YArguments`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/YArguments.md). Аргументы _Y_ должны быть уникальными.
 
 ### Пример - Предоставление данных и использование отрисовки по умолчанию
 
-Следующий пример предоставляет примерные данные контролу Heatmap. 
+Этот пример предоставляет примерные данные контролу Heatmap. 
 Данные представляют собой двумерный массив, состоящий из трёх строк и пяти столбцов.
 
-Поставщик цвета контрола по умолчанию (`HeatmapGrayscaleColorProvider`) представляет минимальное значение чёрным цветом, а максимальное значение — белым. Остальные значения окрашиваются в пропорциональные оттенки серого.
+Поставщик цвета контрола по умолчанию ([`HeatmapGrayscaleColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapGrayscaleColorProvider.md)) представляет минимальное значение чёрным цветом, а максимальное значение — белым. Остальные значения окрашиваются в пропорциональные оттенки серого.
 
 ![heatmap-grayscale-example](../../images/heatmap-grayscale-example.png)
 
@@ -94,25 +94,25 @@ heatMap1.DataAdapter = dataAdapter;
 
 ## Раскраска значений точек данных
 
-Поставщики цвета используются для раскраски точек данных в контроле Heatmap. Для каждой точки данных контрол запрашивает у поставщика цвета (свойство `Heatmap.ColorProvider`) цвет для конкретного значения.
+Поставщики цвета используются для раскраски точек данных в контроле Heatmap. Для каждой точки данных контрол запрашивает у поставщика цвета (свойство [`Heatmap.ColorProvider`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/ColorProvider.md)) цвет для конкретного значения.
 
 Доступны следующие поставщики цвета:
 
-- `HeatmapGrayscaleColorProvider` (по умолчанию) — Позволяет раскрашивать значения в оттенках серого.
-- `HeatmapRangeColorProvider` — Позволяет раскрашивать точки данных пользовательским способом, связывая пользовательские цвета с конкретными значениями.
+- [`HeatmapGrayscaleColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapGrayscaleColorProvider.md) (по умолчанию) — Позволяет раскрашивать значения в оттенках серого.
+- [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) — Позволяет раскрашивать точки данных пользовательским способом, связывая пользовательские цвета с конкретными значениями.
 
 
-При необходимости вы можете создать собственный поставщик цвета, реализовав интерфейс `IHeatmapColorProvider`.
+При необходимости вы можете создать собственный поставщик цвета, реализовав интерфейс [`IHeatmapColorProvider`](../../API/Eremex.AvaloniaUI.Charts/IHeatmapColorProvider.md).
 
 ## Раскраска в оттенках серого
 
-Контрол Heatmap по умолчанию использует раскраску точек данных в оттенках серого. Раскраска в оттенках серого реализована классом `HeatmapGrayscaleColorProvider`. Чтобы использовать этот поставщик цвета, вы можете оставить свойство `Heatmap.ColorProvider` неназначенным, либо явно установить свойство `Heatmap.ColorProvider` в объект `HeatmapGrayscaleColorProvider`.
+Контрол Heatmap по умолчанию использует раскраску точек данных в оттенках серого. Раскраска в оттенках серого реализована классом [`HeatmapGrayscaleColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapGrayscaleColorProvider.md). Чтобы использовать этот поставщик цвета, вы можете оставить свойство [`Heatmap.ColorProvider`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/ColorProvider.md) неназначенным, либо явно установить свойство [`Heatmap.ColorProvider`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/ColorProvider.md) в объект [`HeatmapGrayscaleColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapGrayscaleColorProvider.md).
 
-Объект `HeatmapGrayscaleColorProvider` отрисовывает минимальное значение среди всех точек данных чёрным цветом, а максимальное значение — белым. Остальные значения, лежащие между минимальным и максимальным значениями, отрисовываются в пропорциональных оттенках серого.
+Объект [`HeatmapGrayscaleColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapGrayscaleColorProvider.md) отрисовывает минимальное значение среди всех точек данных чёрным цветом, а максимальное значение — белым. Остальные значения, лежащие между минимальным и максимальным значениями, отрисовываются в пропорциональных оттенках серого.
 
 ### Пример - Раскраска в оттенках серого
 
-Следующий пример привязывает контрол Heatmap к примерным данным и отрисовывает точки данных с помощью поставщика цвета по умолчанию (`HeatmapGrayscaleColorProvider`). Код также показывает, как изменить заголовки осей.
+Этот пример привязывает контрол Heatmap к примерным данным и отрисовывает точки данных с помощью поставщика цвета по умолчанию ([`HeatmapGrayscaleColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapGrayscaleColorProvider.md)). Код также показывает, как изменить заголовки осей.
 
 ![heatmap-grayscale-gradient-spot-example](../../images/heatmap-grayscale-gradient-spot-example.png)
 
@@ -160,11 +160,11 @@ public partial class MainWindowViewModel : ViewModelBase
 
 ## Пользовательская раскраска
 
-Чтобы раскрашивать точки данных в контроле Heatmap пользовательским способом, назначьте объект `HeatmapRangeColorProvider` свойству `Heatmap.ColorProvider`. `HeatmapRangeColorProvider` позволяет связывать пользовательские цвета с конкретными значениями (переходными значениями). Для вычисления цветов значений, лежащих между двумя переходными значениями, `HeatmapRangeColorProvider` использует градиент между цветами, назначенными этим переходным значениям.
+Чтобы раскрашивать точки данных в контроле Heatmap пользовательским способом, назначьте объект [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) свойству [`Heatmap.ColorProvider`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/ColorProvider.md). [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) позволяет связывать пользовательские цвета с конкретными значениями (переходными значениями). Для вычисления цветов значений, лежащих между двумя переходными значениями, [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) использует градиент между цветами, назначенными этим переходным значениям.
 
 При указании переходных значений вы можете задавать абсолютные или нормализованные величины.
 
-На следующем изображении показано, как `HeatmapRangeColorProvider` строит цветовые градиенты между примерными абсолютными переходными значениями. В этом примере определены три переходных значения:
+На следующем изображении показано, как [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) строит цветовые градиенты между примерными абсолютными переходными значениями. В этом примере определены три переходных значения:
 
 - Значение 1 связано с цветом Teal
 - Значение 6 связано с цветом Yellow
@@ -174,7 +174,7 @@ public partial class MainWindowViewModel : ViewModelBase
 
 ### Пример - Пользовательская раскраска
 
-Следующий пример использует `HeatmapRangeColorProvider`, чтобы раскрасить точки данных контрола Heatmap согласно пользовательским правилам раскраски. Код задаёт цвета для представления абсолютных переходных значений: 95, 110, 150, 210 и 233.
+Этот пример использует [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md), чтобы раскрасить точки данных контрола Heatmap согласно пользовательским правилам раскраски. Код задаёт цвета для представления абсолютных переходных значений: 95, 110, 150, 210 и 233.
 Цвета для остальных значений вычисляются согласно градиенту между цветами, назначенными соседним переходным значениям.
 
 
@@ -236,21 +236,21 @@ public partial class MainWindowViewModel : ViewModelBase
 
 ### Цвета для значений за пределами граничных переходных значений
 
-Как правило, объект `HeatmapRangeColorProvider` должен включать цвета для минимального и максимального значений всего диапазона значений. Это гарантирует, что цветовые градиенты, построенные объектом `HeatmapRangeColorProvider`, охватывают все значения, предоставленные контролу Heatmap.
+Как правило, объект [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) должен включать цвета для минимального и максимального значений всего диапазона значений. Это гарантирует, что цветовые градиенты, построенные объектом [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md), охватывают все значения, предоставленные контролу Heatmap.
 В противном случае значения за пределами граничных переходных значений окрашиваются теми же цветами, что и граничные переходные значения.
 
-На следующем изображении показано, как `HeatmapRangeColorProvider` вычисляет цвета, когда определённые значения выходят за пределы минимального и максимального переходных значений.
+На следующем изображении показано, как [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) вычисляет цвета, когда определённые значения выходят за пределы минимального и максимального переходных значений.
 
 ![heatmap-transitionvalues-beyond-gradient](../../images/heatmap-transitionvalues-beyond-gradient.png)
 
 ### Нормализованные переходные значения
 
-Если вы не знаете минимальное и максимальное абсолютные значения всего диапазона данных, вы можете задать переходные значения с помощью нормализованных величин. Установите свойство `HeatmapRangeColorProvider.IsNormalizedValues` в `true`, чтобы включить нормализацию значений для объекта `HeatmapRangeColorProvider`. В этом режиме указывайте переходные значения в диапазоне от `0` до `1`, где `0` и `1` представляют минимальное и максимальное значения соответственно. Нормализованное значение `0.5` представляет абсолютное значение в середине диапазона данных (`minimum + (maximum-minimum)/2`).
+Если вы не знаете минимальное и максимальное абсолютные значения всего диапазона данных, вы можете задать переходные значения с помощью нормализованных величин. Установите свойство [`HeatmapRangeColorProvider.IsNormalizedValues`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider/IsNormalizedValues.md) в `true`, чтобы включить нормализацию значений для объекта [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md). В этом режиме указывайте переходные значения в диапазоне от `0` до `1`, где `0` и `1` представляют минимальное и максимальное значения соответственно. Нормализованное значение `0.5` представляет абсолютное значение в середине диапазона данных (`minimum + (maximum-minimum)/2`).
 
 
 #### Пример - Раскраска точек данных, если минимальное и максимальное значения заранее неизвестны
 
-Следующий пример использует объект `HeatmapRangeColorProvider` для раскраски точек данных с помощью нормализованных переходных значений. Свойство `HeatmapRangeColorProvider.IsNormalizedValues` установлено в `true`, чтобы включить нормализацию значений. Переходные значения указаны в нормализованных величинах: 0, 0.3, 0.7 и 1, где значения 0 и 1 представляют минимальное и максимальное значения диапазона данных.
+Этот пример использует объект [`HeatmapRangeColorProvider`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider.md) для раскраски точек данных с помощью нормализованных переходных значений. Свойство [`HeatmapRangeColorProvider.IsNormalizedValues`](../../API/Eremex.AvaloniaUI.Charts/HeatmapRangeColorProvider/IsNormalizedValues.md) установлено в `true`, чтобы включить нормализацию значений. Переходные значения указаны в нормализованных величинах: 0, 0.3, 0.7 и 1, где значения 0 и 1 представляют минимальное и максимальное значения диапазона данных.
 
 ![heatmap-normalizedvalues-example](../../images/heatmap-normalizedvalues-example.png)
 
@@ -288,7 +288,7 @@ heatmap.DataAdapter = new HeatmapDataAdapter(xArgs, yArgs, values);
 
 ## Оси
 
-Контрол Heatmap содержит две оси, _X_ и _Y_. Аргументы для этих осей предоставляются при вызове конструктора `HeatmapDataAdapter`, параметрами `xArguments` и `yArguments`.
+Контрол Heatmap содержит две оси, _X_ и _Y_. Аргументы для этих осей предоставляются при вызове конструктора [`HeatmapDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter.md), параметрами `xArguments` и `yArguments`.
 
 ``` cs
 double[,] values = new double[,] 
@@ -305,10 +305,10 @@ heatmap.DataAdapter = dataAdapter;
 ```
 
 - Оси контрола являются качественными, что означает, что их значения имеют строковый тип.
-- Количество элементов в списке `yArguments` должно соответствовать количеству строк в двумерном массиве данных (`HeatmapDataAdapter.Values`).
-- Количество элементов в списке `xArguments` должно соответствовать количеству столбцов в двумерном массиве данных (`HeatmapDataAdapter.Values`).
+- Количество элементов в списке `yArguments` должно соответствовать количеству строк в двумерном массиве данных ([`HeatmapDataAdapter.Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md)).
+- Количество элементов в списке `xArguments` должно соответствовать количеству столбцов в двумерном массиве данных ([`HeatmapDataAdapter.Values`](../../API/Eremex.AvaloniaUI.Charts/HeatmapDataAdapter/Values.md)).
 
-Вы можете настроить параметры осей, указав объекты `Heatmap.AxisX` и `Heatmap.AxisY`.
+Вы можете настроить параметры осей, указав объекты [`Heatmap.AxisX`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/AxisX.md) и [`Heatmap.AxisY`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/AxisY.md).
 
 Следующий код задаёт заголовки для осей.
 
@@ -331,9 +331,9 @@ xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
 
 ### Шкала оси
 
-Вы можете использовать свойства `AxisX.ScaleOptions` и `AxisY.ScaleOptions`, чтобы настроить параметры отображения осей. Эти свойства имеют тип `QualitativeScaleOptions`.
+Вы можете использовать свойства [`AxisX.ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/AxisX/ScaleOptions.md) и [`AxisY.ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/AxisY/ScaleOptions.md), чтобы настроить параметры отображения осей. Эти свойства имеют тип [`QualitativeScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/QualitativeScaleOptions.md).
 
-Следующий пример устанавливает параметр шкалы `GridSpacing` в 2, чтобы отображать каждую вторую подпись и основную отметку, пропуская подписи и отметки между ними.
+Этот пример устанавливает параметр шкалы [`GridSpacing`](../../API/Eremex.AvaloniaUI.Charts/QualitativeScaleOptions/GridSpacing.md) в 2, чтобы отображать каждую вторую подпись и основную отметку, пропуская подписи и отметки между ними.
 
 ![heatmap-scale-gridspacing-example](../../images/heatmap-scale-gridspacing-example.png)
 
@@ -349,9 +349,9 @@ xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
 
 #### Форматирование подписей осей
 
-Свойство `ScaleOptions.LabelFormatter` позволяет указать объект, который форматирует отображаемые значения оси пользовательским способом. Вы можете реализовать пользовательский форматтер подписей на основе функции/выражения с помощью объекта `Eremex.AvaloniaUI.Charts.FuncLabelFormatter`.
+Свойство [`ScaleOptions.LabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) позволяет указать объект, который форматирует отображаемые значения оси пользовательским способом. Вы можете реализовать пользовательский форматтер подписей на основе функции/выражения с помощью объекта [`Eremex.AvaloniaUI.Charts.FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md).
 
-Следующий пример реализует пользовательский форматтер подписей для значений оси.
+Этот пример реализует пользовательский форматтер подписей для значений оси.
 
 ![heatmap-custom-label-formatter](../../images/heatmap-custom-label-formatter.png)
 
@@ -380,28 +380,28 @@ public partial class MainWindowViewModel : ViewModelBase
 
 Следующий список суммирует параметры отображения и поведения осей контрола Heatmap:
 
-- `ConstantLines` и `ConstantLinesSource` — Позволяют закрашивать постоянные линии для конкретных значений. См. [Постоянные линии и полосы](#постоянные-линии-и-полосы).
-- `EnableZooming` —  Позволяет пользователю масштабировать ось с помощью колеса мыши и клавиатуры.
-- `EnableScrolling` —  Позволяет пользователю прокручивать ось с помощью перетаскивания мышью и сочетаний клавиш.
-- `InterlacingColor` - Цвет, используемый для закраски чередующихся полос (когда включён параметр `ShowInterlacing`).
-- `MinorCount` — Задаёт количество вспомогательных отметок и линий сетки.
-- `Position` — Задаёт положение оси. Доступные варианты: `Near` (ось X отображается внизу, а ось Y — у левого края диаграммы) и `Far` (ось X отображается вверху, а ось Y — у правого края диаграммы).
-- `ShowAxisLine` — Задаёт видимость линии оси.
-- `ShowInterlacing` — Задаёт, закрашивать ли чередующиеся полосы между основными линиями сетки. Подробнее см. `ShowMajorGridlines`.
-- `ShowLabels` — Задаёт видимость подписей, соответствующих основным отметкам.
-- `ShowMajorGridlines` — Задаёт видимость линий сетки, соответствующих основным отметкам. Основные и вспомогательные линии сетки отображаются позади закрашенных точек данных. Линии сетки видны в следующих случаях:
+- [`ConstantLines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLines.md) и [`ConstantLinesSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLinesSource.md) — Позволяют закрашивать постоянные линии для конкретных значений. См. [Постоянные линии и полосы](#постоянные-линии-и-полосы).
+- [`EnableZooming`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableZooming.md) —  Позволяет пользователю масштабировать ось с помощью колеса мыши и клавиатуры.
+- [`EnableScrolling`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableScrolling.md) —  Позволяет пользователю прокручивать ось с помощью перетаскивания мышью и сочетаний клавиш.
+- [`InterlacingColor`](../../API/Eremex.AvaloniaUI.Charts/Axis/InterlacingColor.md) - Цвет, используемый для закраски чередующихся полос (когда включён параметр [`ShowInterlacing`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowInterlacing.md)).
+- [`MinorCount`](../../API/Eremex.AvaloniaUI.Charts/Axis/MinorCount.md) — Задаёт количество вспомогательных отметок и линий сетки.
+- [`Position`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/Position.md) — Задаёт положение оси. Доступные варианты: `Near` (ось X отображается внизу, а ось Y — у левого края диаграммы) и `Far` (ось X отображается вверху, а ось Y — у правого края диаграммы).
+- [`ShowAxisLine`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowAxisLine.md) — Задаёт видимость линии оси.
+- [`ShowInterlacing`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowInterlacing.md) — Задаёт, закрашивать ли чередующиеся полосы между основными линиями сетки. Подробнее см. [`ShowMajorGridlines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMajorGridlines.md).
+- [`ShowLabels`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowLabels.md) — Задаёт видимость подписей, соответствующих основным отметкам.
+- [`ShowMajorGridlines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMajorGridlines.md) — Задаёт видимость линий сетки, соответствующих основным отметкам. Основные и вспомогательные линии сетки отображаются позади закрашенных точек данных. Линии сетки видны в следующих случаях:
     
     - в позициях, где точки данных отрисовываются полупрозрачными цветами.
     - в позициях, где точки данных не отрисовываются (например, когда значение точки данных равно `Double.NaN`).
     
-- `ShowMajorTickmarks` — Задаёт видимость основных отметок.
-- `ShowMinorGridlines` — Задаёт видимость линий сетки, соответствующих вспомогательным отметкам. Подробнее см. `ShowMajorGridlines`.
-- `ShowMinorTickmarks` — Задаёт видимость вспомогательных отметок.
-- `ShowTitle` — Задаёт видимость заголовка оси (свойство `Title`).
-- `Strips` и `StripsSource` — Позволяют закрашивать диапазоны между конкретными значениями. См. [Постоянные линии и полосы](#постоянные-линии-и-полосы).
-- `Thickness` — Толщина линии оси.
-- `Title` — Получает или задаёт заголовок оси.
-- `TitlePosition` — Получает или задаёт положение заголовка оси.
+- [`ShowMajorTickmarks`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMajorTickmarks.md) — Задаёт видимость основных отметок.
+- [`ShowMinorGridlines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMinorGridlines.md) — Задаёт видимость линий сетки, соответствующих вспомогательным отметкам. Подробнее см. [`ShowMajorGridlines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMajorGridlines.md).
+- [`ShowMinorTickmarks`](../../API/Eremex.AvaloniaUI.Charts/Axis/ShowMinorTickmarks.md) — Задаёт видимость вспомогательных отметок.
+- [`ShowTitle`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/ShowTitle.md) — Задаёт видимость заголовка оси (свойство [`Title`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/Title.md)).
+- [`Strips`](../../API/Eremex.AvaloniaUI.Charts/Axis/Strips.md) и [`StripsSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/StripsSource.md) — Позволяют закрашивать диапазоны между конкретными значениями. См. [Постоянные линии и полосы](#постоянные-линии-и-полосы).
+- [`Thickness`](../../API/Eremex.AvaloniaUI.Charts/Axis/Thickness.md) — Толщина линии оси.
+- [`Title`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/Title.md) — Получает или задаёт заголовок оси.
+- [`TitlePosition`](../../API/Eremex.AvaloniaUI.Charts/CartesianAxis/TitlePosition.md) — Получает или задаёт положение заголовка оси.
 
 
 
@@ -412,11 +412,11 @@ public partial class MainWindowViewModel : ViewModelBase
 
 ![chart-crosshair-heatmap](../../images/chart-crosshair-heatmap.png)
 
-Используйте свойство `Heatmap.CrosshairOptions`, чтобы настроить параметры отображения перекрестия или отключить эту функцию. 
+Используйте свойство [`Heatmap.CrosshairOptions`](../../API/Eremex.AvaloniaUI.Charts/ChartControl/CrosshairOptions.md), чтобы настроить параметры отображения перекрестия или отключить эту функцию. 
 
 ### Отключение перекрестия
 
-Свойство `CrosshairOptions.ShowCrosshair` позволяет отключить перекрестие.
+Свойство [`CrosshairOptions.ShowCrosshair`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ShowCrosshair.md) позволяет отключить перекрестие.
 
 ``` xml
 <mxc:Heatmap x:Name="heatmap1" >
@@ -433,9 +433,9 @@ public partial class MainWindowViewModel : ViewModelBase
 
 ### Постоянные линии
 
-Постоянная линия — это линия, проведённая перпендикулярно оси, которая обозначает конкретное значение оси. Чтобы создать постоянные линии, используйте коллекцию `ConstantLines` или источник `ConstantLinesSource` объектов `HeatmapAxisX` и `HeatmapAxisY`.
+Постоянная линия — это линия, проведённая перпендикулярно оси, которая обозначает конкретное значение оси. Чтобы создать постоянные линии, используйте коллекцию [`ConstantLines`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLines.md) или источник [`ConstantLinesSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/ConstantLinesSource.md) объектов [`HeatmapAxisX`](../../API/Eremex.AvaloniaUI.Charts/HeatmapAxisX.md) и [`HeatmapAxisY`](../../API/Eremex.AvaloniaUI.Charts/HeatmapAxisY.md).
 
-Следующий пример создаёт постоянные линии для осей _X_ и _Y_, чтобы обозначить значения осей "H" и "V" соответственно.
+Этот пример создаёт постоянные линии для осей _X_ и _Y_, чтобы обозначить значения осей "H" и "V" соответственно.
 
 ![heatmap-constantline-example](../../images/heatmap-constantline-example.png)
 
@@ -458,7 +458,7 @@ public partial class MainWindowViewModel : ViewModelBase
 </mxc:Heatmap>
 ```
 
-Установите параметр `ConstantLine.ShowBehind` в `false`, чтобы рисовать постоянные линии поверх закрашенных точек данных. В противном случае они рисуются позади точек данных и видны в следующих случаях:
+Установите параметр [`ConstantLine.ShowBehind`](../../API/Eremex.AvaloniaUI.Charts/ConstantLine/ShowBehind.md) в `false`, чтобы рисовать постоянные линии поверх закрашенных точек данных. В противном случае они рисуются позади точек данных и видны в следующих случаях:
     
 - в позициях, где точки данных отрисовываются полупрозрачными цветами.
 - в позициях, где точки данных не отрисовываются (например, когда значение точки данных равно `Double.NaN`).
@@ -467,7 +467,7 @@ public partial class MainWindowViewModel : ViewModelBase
 
 Полоса — это расширение постоянной линии. Полосы используются для выделения диапазонов значений оси. Они всегда отображаются позади закрашенных точек данных.
 
-Чтобы создать полосы, используйте коллекцию `Strips` или источник `StripsSource` объектов `HeatmapAxisX` и `HeatmapAxisY`.
+Чтобы создать полосы, используйте коллекцию [`Strips`](../../API/Eremex.AvaloniaUI.Charts/Axis/Strips.md) или источник [`StripsSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/StripsSource.md) объектов [`HeatmapAxisX`](../../API/Eremex.AvaloniaUI.Charts/HeatmapAxisX.md) и [`HeatmapAxisY`](../../API/Eremex.AvaloniaUI.Charts/HeatmapAxisY.md).
 
 ``` xml
 <mxc:Heatmap.AxisY>
@@ -491,8 +491,8 @@ public partial class MainWindowViewModel : ViewModelBase
 
 Операции прокрутки и масштабирования включены по умолчанию. Следующие параметры позволяют отключить эти операции для осей _X_ и/или _Y_:
 
-- `Axis.EnableZooming`
-- `Axis.EnableScrolling`
+- [`Axis.EnableZooming`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableZooming.md)
+- [`Axis.EnableScrolling`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableScrolling.md)
 
 ``` xml
 <!-- Disable scroll and zoom operations for the X axis -->
@@ -553,9 +553,9 @@ Make animations for scrolling and zooming features, like in Charts
 
 ### Экспорт
 
-Вы можете использовать метод `Heatmap.Export`, чтобы экспортировать отрисовку контрола в объект `WriteableBitmap`. Результирующее растровое изображение содержит закрашенные точки данных. Размер изображения соответствует размеру данных контрола Heatmap, заданному массивом `Heatmap.DataAdapter.Values`.
+Вы можете использовать метод [`Heatmap.Export`](../../API/Eremex.AvaloniaUI.Charts/Heatmap/Export.md), чтобы экспортировать отрисовку контрола в объект `WriteableBitmap`. Результирующее растровое изображение содержит закрашенные точки данных. Размер изображения соответствует размеру данных контрола Heatmap, заданному массивом `Heatmap.DataAdapter.Values`.
 
-Следующий пример сохраняет отрисовку контрола Heatmap в файл изображения.
+Этот пример сохраняет отрисовку контрола Heatmap в файл изображения.
 
 ``` cs
 WriteableBitmap bitmap = heatmap.Export();

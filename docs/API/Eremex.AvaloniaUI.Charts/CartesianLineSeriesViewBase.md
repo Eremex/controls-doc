@@ -12,7 +12,7 @@ Serves as the base class for Cartesian series views that connect the data points
 public abstract class CartesianLineSeriesViewBase : CartesianPointSeriesView, ILineSeriesView
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

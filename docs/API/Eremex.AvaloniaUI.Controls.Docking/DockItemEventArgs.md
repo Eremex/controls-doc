@@ -12,7 +12,7 @@ Provides data for an event associated with a docking item.
 public class DockItemEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

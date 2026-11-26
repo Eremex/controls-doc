@@ -12,7 +12,7 @@ Represents a single series value displayed by a crosshair label.
 public class CrosshairSeriesLabelSeriesValueItem : ViewModelBase
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |
@@ -20,7 +20,7 @@ public class CrosshairSeriesLabelSeriesValueItem : ViewModelBase
 | [FormattedValue](CrosshairSeriesLabelSeriesValueItem/FormattedValue.md) { get; set; } |  |
 | [ShowMarker](CrosshairSeriesLabelSeriesValueItem/ShowMarker.md) { get; set; } |  |
 | [Value](CrosshairSeriesLabelSeriesValueItem/Value.md) { get; set; } |  |
-| [ValuePrefix](CrosshairSeriesLabelSeriesValueItem/ValuePrefix.md) { get; } | Gets the localized prefix that precedes the value text. |
+| [ValuePrefix](CrosshairSeriesLabelSeriesValueItem/ValuePrefix.md) { get; set; } |  |
 | [ValueType](CrosshairSeriesLabelSeriesValueItem/ValueType.md) { get; set; } |  |
 
 ## See Also

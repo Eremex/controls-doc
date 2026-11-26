@@ -12,11 +12,16 @@ Provides data for the CustomColumnSort event.
 public class TreeListCustomColumnSortEventArgs : TreeViewCustomSortEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListCustomColumnSortEventArgs](TreeListCustomColumnSortEventArgs/TreeListCustomColumnSortEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Column](TreeListCustomColumnSortEventArgs/Column.md) { get; } | Gets the column being sorted. |
 
 ## See Also

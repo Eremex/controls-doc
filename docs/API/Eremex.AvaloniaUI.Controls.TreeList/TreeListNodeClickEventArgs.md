@@ -12,11 +12,16 @@ Provides data for the NodeClick event.
 public class TreeListNodeClickEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListNodeClickEventArgs](TreeListNodeClickEventArgs/TreeListNodeClickEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ClickCount](TreeListNodeClickEventArgs/ClickCount.md) { get; } | Gets the number of consecutive clicks. |
 | [IsLeftButtonPressed](TreeListNodeClickEventArgs/IsLeftButtonPressed.md) { get; } | Gets whether the left mouse button was pressed. |
 | [Node](TreeListNodeClickEventArgs/Node.md) { get; } | Gets the clicked node. |

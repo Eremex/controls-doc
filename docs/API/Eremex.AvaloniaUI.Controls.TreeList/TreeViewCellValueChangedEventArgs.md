@@ -12,11 +12,16 @@ Provides data for the CellValueChanging and CellValueChanged events.
 public class TreeViewCellValueChangedEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeViewCellValueChangedEventArgs](TreeViewCellValueChangedEventArgs/TreeViewCellValueChangedEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Node](TreeViewCellValueChangedEventArgs/Node.md) { get; } | Gets the node whose value is changed. |
 | [OldValue](TreeViewCellValueChangedEventArgs/OldValue.md) { get; } | Gets the node's previous value. |
 | [Value](TreeViewCellValueChangedEventArgs/Value.md) { get; } | Gets the node's current value. |

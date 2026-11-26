@@ -12,7 +12,7 @@ Shows application dialogs from view model code, so that a view model can ask the
 public interface IDialogService
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

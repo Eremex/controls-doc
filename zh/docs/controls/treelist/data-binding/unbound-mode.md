@@ -4,19 +4,19 @@ order: 80000
 seealso: []
 ---
 
-# 未绑定模式
+# 未绑定模式 {#unbound-mode}
 
 TreeList 和 TreeView 控件支持非绑定模式，您可以手动创建节点层次结构。
 
 不要初始化该控件的 `ItemSource` 属性。否则，该控件会切换到绑定模式，从而禁止您手动添加节点。
 
-使用 `TreeListControlBase.Nodes` 属性将根节点添加到控件。对于每个节点，您可以使用 `TreeListNode.Nodes` 属性来添加子节点。
+使用 [`TreeListControlBase.Nodes`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/Nodes.md) 属性将根节点添加到控件。对于每个节点，您可以使用 [`TreeListNode.Nodes`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Nodes.md) 属性来添加子节点。
 
-TreeList 和 TreeView 控件中的节点由 `TreeListNode` 对象封装。它的 `TreeListNode.Content` 属性允许您指定节点的内容。您可以将 `TreeListNode.Content` 属性设置为一个业务对象，该对象的公共属性为控件的列提供数据。对于 TreeView 控件，您可以将 `TreeListNode.Content` 属性设置为 String 对象。
+TreeList 和 TreeView 控件中的节点由 [`TreeListNode`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode.md) 对象封装。它的 [`TreeListNode.Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) 属性允许您指定节点的内容。您可以将 [`TreeListNode.Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) 属性设置为一个业务对象，该对象的公共属性为控件的列提供数据。对于 TreeView 控件，您可以将 [`TreeListNode.Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) 属性设置为 String 对象。
 
-如果您使用 TreeList 控件，请确保该控件的 `TreeListControl.Columns` 集合具有绑定到特定字段名称的列。
+如果您使用 TreeList 控件，请确保该控件的 [`TreeListControl.Columns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Columns.md) 集合具有绑定到特定字段名称的列。
 
-以下 XAML 代码在 `TreeListControl.Nodes` 集合中创建分层节点结构。每个节点的 `Content` 属性均使用代码隐藏中定义的 _Person_ 对象进行初始化。
+以下 XAML 代码在 [`TreeListControl.Nodes`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/Nodes.md) 集合中创建分层节点结构。每个节点的 [`Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) 属性均使用代码隐藏中定义的 _Person_ 对象进行初始化。
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -124,9 +124,9 @@ node11.Nodes.Add(node111);
 node1.Nodes.Add(node12);
 ```
 
-### TreeView 详细信息
+### TreeView 详细信息 {#treeview-specifics}
 
-您可以将 TreeView 节点的 `Content` 属性设置为业务对象或简单字符串。
+您可以将 TreeView 节点的 [`Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) 属性设置为业务对象或简单字符串。
 
 以下代码显示如何使用简单字符串填充 TreeView 节点。
 
@@ -156,7 +156,7 @@ node1.Nodes.Add(node12);
 </mxtl:TreeViewControl>
 ```
 
-如果将业务对象分配给 `Content` 属性，请将 `TreeViewControl.DataFieldName` 成员设置为为该控件提供显示值的业务对象属性的名称，如下例所示。
+如果将业务对象分配给 [`Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) 属性，请将 [`TreeViewControl.DataFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) 成员设置为为该控件提供显示值的业务对象属性的名称，如下例所示。
 
 ``` cs
 TreeListNode node1 = new TreeListNode() 

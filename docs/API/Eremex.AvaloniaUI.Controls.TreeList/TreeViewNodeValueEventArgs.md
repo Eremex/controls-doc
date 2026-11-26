@@ -12,7 +12,7 @@ Serves as the base class for classes that provide data for node value events.
 public abstract class TreeViewNodeValueEventArgs : EventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

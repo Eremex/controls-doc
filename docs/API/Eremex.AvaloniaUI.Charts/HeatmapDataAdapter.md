@@ -12,16 +12,26 @@ Provides the two-dimensional table of values that the heatmap series draws.
 public class HeatmapDataAdapter : ISeriesDataAdapter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [HeatmapDataAdapter](HeatmapDataAdapter/HeatmapDataAdapter.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CrosshairValueFormatter](HeatmapDataAdapter/CrosshairValueFormatter.md) { get; set; } | Gets or sets the function that converts a value into the text displayed by the crosshair label. |
 | [ValueRange](HeatmapDataAdapter/ValueRange.md) { get; } | Gets the minimum and maximum finite values found in the value table. |
 | [Values](HeatmapDataAdapter/Values.md) { get; } | Gets the value table, where the first index is a row and the second index is a column. |
 | [XArguments](HeatmapDataAdapter/XArguments.md) { get; } | Gets the labels of the columns of the value table. |
 | [YArguments](HeatmapDataAdapter/YArguments.md) { get; } | Gets the labels of the rows of the value table. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [UpdateValues](HeatmapDataAdapter/UpdateValues.md)(…) |  |
 | [UpdateXArguments](HeatmapDataAdapter/UpdateXArguments.md)(…) | Replaces the labels of the columns of the value table. |
 | [UpdateYArguments](HeatmapDataAdapter/UpdateYArguments.md)(…) | Replaces the labels of the rows of the value table. |

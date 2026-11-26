@@ -8,16 +8,15 @@ seealso: []
 
 The TreeList control supports multiple columns of data, while TreeView displays values in a single column.
 
-![treelist-treeview-columns](../../images/treelist-treeview-columns.png)
+[![treelist-treeview-columns](../../images/treelist-treeview-columns.png)](../../images/treelist-treeview-columns-large.png)
 
-
-## Column in TreeView Control
+## TreeView Column
 
 The TreeView control displays data in a single column. This column cannot be deleted. Values displayed in the TreeView column are retrieved from the field/property specified by the [`TreeViewControl.DataFieldName`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) member.
 
 The [`TreeViewControl.CellWidth`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) property allows you to customize the width of this column. See the following link for more information: [Column Width](#column-width).
 
-## Create TreeList Columns
+## TreeList Columns
 
 TreeList columns are encapsulated by the [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md) class, which is a [`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md) class descendant. The [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) class (a column in the [`DataGridControl`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md)) is also derrived from [`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md). Thus, columns in the DataGrid and TreeList controls share many API members.
 

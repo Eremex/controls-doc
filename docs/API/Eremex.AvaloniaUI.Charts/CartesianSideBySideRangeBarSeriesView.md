@@ -12,7 +12,7 @@ Displays several Cartesian series as side-by-side bars that span the range betwe
 public class CartesianSideBySideRangeBarSeriesView : CartesianSideBySideBarSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

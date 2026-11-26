@@ -12,17 +12,27 @@ The default IAppearanceService implementation, driving the appearance of the run
 public class AppearanceService : IAppearanceService
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [AppearanceService](AppearanceService/AppearanceService.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Densities](AppearanceService/Densities.md) { get; } |  |
 | [Palettes](AppearanceService/Palettes.md) { get; } |  |
 | [SelectedDensity](AppearanceService/SelectedDensity.md) { get; set; } |  |
 | [SelectedPalette](AppearanceService/SelectedPalette.md) { get; set; } |  |
 | [SelectedThemeVariant](AppearanceService/SelectedThemeVariant.md) { get; set; } |  |
 | [ThemeVariants](AppearanceService/ThemeVariants.md) { get; } |  |
+
+## Events
+
+| name | description |
+| --- | --- |
 | event [PropertyChanged](AppearanceService/PropertyChanged.md) |  |
 
 ## Remarks

@@ -12,7 +12,7 @@ Displays document panes as tabs in a document host.
 public class DocumentGroup : TabbedGroup
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

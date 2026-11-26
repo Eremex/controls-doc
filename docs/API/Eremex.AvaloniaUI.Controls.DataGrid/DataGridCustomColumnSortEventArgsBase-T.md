@@ -12,7 +12,7 @@ Serves as the base class for classes that provide data for custom sort and group
 public abstract class DataGridCustomColumnSortEventArgsBase<T> : EventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

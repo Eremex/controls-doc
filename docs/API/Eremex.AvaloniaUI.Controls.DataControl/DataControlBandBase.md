@@ -12,11 +12,16 @@ Serves as the base class for data control bands.
 public abstract class DataControlBandBase : DataControlColumnBase, IBandsOwner
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataControlBandBase](DataControlBandBase/DataControlBandBase.md)() | Initializes a new instance of the DataControlBandBase class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [BandName](DataControlBandBase/BandName.md) { get; set; } | Gets or sets the name of the band. |
 
 ## See Also

@@ -12,7 +12,7 @@ Serves as the base class for lights that illuminate a scene.
 public abstract class Light : Control
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

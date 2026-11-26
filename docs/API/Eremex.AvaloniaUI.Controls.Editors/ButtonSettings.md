@@ -12,11 +12,16 @@ Provides appearance and behavior settings for an editor button.
 public class ButtonSettings : Control
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ButtonSettings](ButtonSettings/ButtonSettings.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Background](ButtonSettings/Background.md) { get; set; } | Gets or sets the button's background. |
 | [BorderBrush](ButtonSettings/BorderBrush.md) { get; set; } | Gets or sets the brush that paints the button's border. |
 | [BorderThickness](ButtonSettings/BorderThickness.md) { get; set; } | Gets or sets the button's border thickness. |
@@ -30,6 +35,11 @@ public class ButtonSettings : Control
 | [GlyphSize](ButtonSettings/GlyphSize.md) { get; set; } | Gets or sets the size of the button's glyph. |
 | [IsChecked](ButtonSettings/IsChecked.md) { get; set; } | Gets or sets whether the button is checked. |
 | [IsLeft](ButtonSettings/IsLeft.md) { get; set; } | Gets or sets whether the button is displayed on the editor's left side. |
+
+## Events
+
+| name | description |
+| --- | --- |
 | event [Click](ButtonSettings/Click.md) | Occurs when the button is clicked. |
 
 ## See Also

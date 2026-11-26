@@ -6,7 +6,7 @@ seealso: []
 
 # SegmentedEditor
 
-`SegmentedEditor` представляет набор элементов (вариантов) в виде горизонтально расположенных сегментов. Пользователь может щёлкнуть по одному из сегментов, чтобы выбрать соответствующий вариант, или CTRL+щёлкнуть по выбранному сегменту, чтобы очистить выбор.
+[`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) представляет набор элементов (вариантов) в виде горизонтально расположенных сегментов. Пользователь может щёлкнуть по одному из сегментов, чтобы выбрать соответствующий вариант, или CTRL+щёлкнуть по выбранному сегменту, чтобы очистить выбор.
 
 ![segmentededitor](../../images/segmentededitor.png)
 
@@ -18,14 +18,14 @@ seealso: []
 
 ## Источник объектов
 
-Используйте свойство `SegmentedEditor.ItemsSource`, чтобы задать источник элементов, используемый для создания сегментов контрола. Вы можете привязать редактор к списку строк, списку бизнес-объектов или типу перечисления.
+Используйте свойство [`SegmentedEditor.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ItemsSource.md), чтобы задать источник элементов, используемый для создания сегментов контрола. Вы можете привязать редактор к списку строк, списку бизнес-объектов или типу перечисления.
 
 ## Привязка к списку строк
 
 Простейший источник элементов — список строк.
 
 ### Пример - как привязать к списку строк
-Следующий пример заполняет контрол `SegmentedEditor` списком строк.
+Этот пример заполняет контрол [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) списком строк.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -46,19 +46,19 @@ xmlns:col="using:System.Collections"
 
 ## Привязка к списку бизнес-объектов
 
-Вы можете привязать контрол `SegmentedEditor` к списку бизнес-объектов. В этом случае поведение контрола по умолчанию следующее:
+Вы можете привязать контрол [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) к списку бизнес-объектов. В этом случае поведение контрола по умолчанию следующее:
 
 - Метод `ToString` бизнес-объекта задаёт текстовое представление элементов по умолчанию.
-- Когда вы выбираете элемент, значение редактора (`SegmentedEditor.EditorValue`) устанавливается в соответствующий бизнес-объект.
+- Когда вы выбираете элемент, значение редактора ([`SegmentedEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)) устанавливается в соответствующий бизнес-объект.
 
 Типичный бизнес-объект имеет несколько свойств. Вы можете задать, какие свойства бизнес-объекта предоставляют отображаемый текст элемента и значения редактирования. Используйте для этого следующие члены API:
 
-- `SegmentedEditor.DisplayMember` — возвращает или задаёт имя свойства бизнес-объекта, задающего отображаемый текст элемента. 
-- `SegmentedEditor.ValueMember` — возвращает или задаёт имя свойства бизнес-объекта, задающего значения элементов. Когда вы выбираете элемент, значение редактора (`SegmentedEditor.EditorValue`) устанавливается в значение свойства `ValueMember` элемента. 
+- [`SegmentedEditor.DisplayMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/DisplayMember.md) — возвращает или задаёт имя свойства бизнес-объекта, задающего отображаемый текст элемента. 
+- [`SegmentedEditor.ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) — возвращает или задаёт имя свойства бизнес-объекта, задающего значения элементов. Когда вы выбираете элемент, значение редактора ([`SegmentedEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)) устанавливается в значение свойства [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) элемента. 
 
 ### Пример - как привязать к списку бизнес-объектов
 
-Следующий пример привязывает контрол SegmentedEditor к списку бизнес-объектов _Product_. Свойство _Product.ProductName_ задаёт отображаемый текст элемента. Свойство _Product.ProductID_ задаёт значения элементов.
+Этот пример привязывает контрол SegmentedEditor к списку бизнес-объектов _Product_. Свойство _Product.ProductName_ задаёт отображаемый текст элемента. Свойство _Product.ProductID_ задаёт значения элементов.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -111,7 +111,7 @@ public partial class Product :ObservableObject
 
 ## Привязка к перечислению
 
-`SegmentedEditor` может заполнять свои сегменты значениями типа перечисления. 
+[`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) может заполнять свои сегменты значениями типа перечисления. 
 
 Вспомогательный класс `Eremex.AvaloniaUI.Controls.Common.EnumItemsSource` облегчает привязку к перечислению. Его основные возможности:
 
@@ -121,7 +121,7 @@ public partial class Product :ObservableObject
 
 Используйте следующие свойства `EnumItemsSource`, чтобы настроить привязку к типу перечисления:
 
-- `EnumItemsSource.EnumType` — задаёт тип перечисления, значения которого отображаются в контроле `SegmentedEditor`.
+- `EnumItemsSource.EnumType` — задаёт тип перечисления, значения которого отображаются в контроле [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md).
 - `EnumItemsSource.ShowImages` — задаёт, отображать ли изображения для членов перечисления. Вы можете предоставить изображения с помощью атрибута `Eremex.AvaloniaUI.Controls.Common.ImageAttribute`.
 - `EnumItemsSource.ShowNames` — задаёт, отображать ли текст элемента. Установите `ShowNames` в `false`, а `ShowImages` в `true`, чтобы отрисовывать члены перечисления с помощью изображений без текста.
 - `EnumItemsSource.ImageSize` — задаёт размер отображения изображений, назначенных членам перечисления.
@@ -130,7 +130,7 @@ public partial class Product :ObservableObject
 
 ### Пример - как отобразить значения перечисления и использовать атрибуты для предоставления отображаемого текста и изображений для членов перечисления.
 
-Следующий пример отображает значения перечисления _ProductCategoryEnum_ в `SegmentedEditor`. Он использует класс `EnumItemsSource` для привязки данных.
+Этот пример отображает значения перечисления _ProductCategoryEnum_ в [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md). Он использует класс `EnumItemsSource` для привязки данных.
 
 Атрибуты `System.ComponentModel.DataAnnotations.DisplayAttribute` и `Eremex.AvaloniaUI.Controls.Common.ImageAttribute` задают пользовательский отображаемый текст, описания (всплывающие подсказки) и изображения для членов перечисления.
 
@@ -172,7 +172,7 @@ public enum ProductCategoryEnum
 
 ### Пример - как отобразить значения перечисления и использовать пользовательские конвертеры для предоставления отображаемого текста для членов перечисления.
 
-Следующий пример использует класс `EnumItemsSource`, чтобы отобразить значения типа перечисления в контроле `SegmentedEditor`. Объекты `EnumItemsSource.NameToDisplayTextConverter` и `EnumItemsSource.NameToDescriptionConverter` предоставляют пользовательский отображаемый текст и описания (всплывающие подсказки) для членов перечисления.
+Этот пример использует класс `EnumItemsSource`, чтобы отобразить значения типа перечисления в контроле [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md). Объекты `EnumItemsSource.NameToDisplayTextConverter` и `EnumItemsSource.NameToDescriptionConverter` предоставляют пользовательский отображаемый текст и описания (всплывающие подсказки) для членов перечисления.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -269,21 +269,21 @@ public abstract class BaseEnumConverter : MarkupExtension, IValueConverter
 
 ## Получение и установка выбранного элемента и задание значения редактора
 
-Когда пользователь выбирает сегмент или снимает с него выбор с помощью Ctrl+щелчка, свойства `SegmentedEditor.SelectedItem` и `SegmentedEditor.EditorValue` изменяются соответственно.
+Когда пользователь выбирает сегмент или снимает с него выбор с помощью Ctrl+щелчка, свойства [`SegmentedEditor.SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) и [`SegmentedEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) изменяются соответственно.
 Вы можете использовать любое из этих свойств, чтобы получить и задать выбранное значение редактора.
 
-Свойство `SegmentedEditor.SelectedItem` задаёт базовый объект данных выбранного сегмента.
+Свойство [`SegmentedEditor.SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) задаёт базовый объект данных выбранного сегмента.
 
-Свойство `SegmentedEditor.EditorValue` имеет следующие значения:
+Свойство [`SegmentedEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) имеет следующие значения:
 
-- Если свойство `ValueMember` пусто, свойства `EditorValue` и `SelectedItem` эквивалентны.
-- В противном случае свойство `EditorValue` синхронизировано со значением свойства `ValueMember` выбранного базового объекта данных.
+- Если свойство [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) пусто, свойства [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) и [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) эквивалентны.
+- В противном случае свойство [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) синхронизировано со значением свойства [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) выбранного базового объекта данных.
 
-Чтобы очистить выбор, установите свойство `SegmentedEditor.SelectedItem` в `null`.
+Чтобы очистить выбор, установите свойство [`SegmentedEditor.SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) в `null`.
  
 ### Пример - как выбрать элемент, когда SegmentedEditor привязан к списку строк
 
-Следующий пример показывает, как использовать свойство `SelectedItem` или `EditorValue`, чтобы выбрать элемент в контроле `SegmentedEditor`, привязанном к списку строк.
+Этот пример показывает, как использовать свойство [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/SelectedItem.md) или [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md), чтобы выбрать элемент в контроле [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md), привязанном к списку строк.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -310,7 +310,7 @@ segmEditorStrings.EditorValue = "Santiago";
 
 ### Пример - как выбрать элемент, когда SegmentedEditor привязан к списку бизнес-объектов
 
-В следующем примере контрол `SegmentedEditor` привязан к списку объектов _Product_. Свойство `ValueMember` ссылается на член _Product.ProductID_. Таким образом, идентификаторы продуктов служат значениями элементов. Когда пользователь выбирает сегмент, свойство `EditorValue` устанавливается в соответствующий идентификатор продукта. Пример использует свойство `EditorValue`, чтобы выбрать элемент в коде.
+В этом примере контрол [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) привязан к списку объектов _Product_. Свойство [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) ссылается на член _Product.ProductID_. Таким образом, идентификаторы продуктов служат значениями элементов. Когда пользователь выбирает сегмент, свойство [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) устанавливается в соответствующий идентификатор продукта. Пример использует свойство [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md), чтобы выбрать элемент в коде.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -378,21 +378,21 @@ public partial class Product :ObservableObject
 
 ## Шаблоны элементов
 
-Когда `SegmentedEditor` привязан к списку строк или бизнес-объектов, сегменты контрола отображают текстовое представление элементов по умолчанию. Отображаемый текст элемента по умолчанию определяется следующим образом:
+Когда [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) привязан к списку строк или бизнес-объектов, сегменты контрола отображают текстовое представление элементов по умолчанию. Отображаемый текст элемента по умолчанию определяется следующим образом:
 
-- Значение, возвращаемое методом `ToString` базового объекта данных, если свойство `ValueMember` не задано.
-- В противном случае текстовое представление значения, хранящегося в свойстве `ValueMember` объекта данных.
+- Значение, возвращаемое методом `ToString` базового объекта данных, если свойство [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) не задано.
+- В противном случае текстовое представление значения, хранящегося в свойстве [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) объекта данных.
 
-Шаблоны элементов дают вам гибкость в задании того, что отображать в сегментах редактора. Они позволяют отображать изображения и значения нескольких свойств в сегментах. Используйте свойство `SegmentedEditor.ItemTemplate`, чтобы задать шаблон элемента.
+Шаблоны элементов дают вам гибкость в задании того, что отображать в сегментах редактора. Они позволяют отображать изображения и значения нескольких свойств в сегментах. Используйте свойство [`SegmentedEditor.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ItemTemplate.md), чтобы задать шаблон элемента.
 
 ### Пример - как отобразить изображение и текст для элементов SegmentedEditor
 
-Следующий пример показывает, как создать шаблон элемента, отображающий изображения и текст в сегментах контрола `SegmentedEditor`.
+Этот пример показывает, как создать шаблон элемента, отображающий изображения и текст в сегментах контрола [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md).
 
-В примере контрол `SegmentedEditor` привязан к коллекции объектов _CapitalInfo_, которые хранят информацию о странах, их столицах и национальных флагах. 
-Созданный шаблон элемента (свойство `SegmentedEditor.ItemTemplate`) отображает флаг страны, за которым следует название столицы страны.
+В примере контрол [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) привязан к коллекции объектов _CapitalInfo_, которые хранят информацию о странах, их столицах и национальных флагах. 
+Созданный шаблон элемента (свойство [`SegmentedEditor.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ItemTemplate.md)) отображает флаг страны, за которым следует название столицы страны.
 
-Свойство `SegmentedEditor.ValueMember` ссылается на свойство _CapitalInfo.Capital_. Когда пользователь выбирает сегмент, свойство редактора `EditorValue` устанавливается в название столицы соответствующей страны.
+Свойство [`SegmentedEditor.ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor/ValueMember.md) ссылается на свойство _CapitalInfo.Capital_. Когда пользователь выбирает сегмент, свойство редактора [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) устанавливается в название столицы соответствующей страны.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"

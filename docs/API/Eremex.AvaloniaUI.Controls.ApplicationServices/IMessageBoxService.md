@@ -12,7 +12,7 @@ Shows standard message boxes — a short piece of text, an icon and a fixed set 
 public interface IMessageBoxService
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

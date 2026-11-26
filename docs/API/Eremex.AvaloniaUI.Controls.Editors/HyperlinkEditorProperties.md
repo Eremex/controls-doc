@@ -12,17 +12,27 @@ Provides settings for the hyperlink editor.
 public class HyperlinkEditorProperties : BaseEditorProperties
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [HyperlinkEditorProperties](HyperlinkEditorProperties/HyperlinkEditorProperties.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowAutoNavigate](HyperlinkEditorProperties/AllowAutoNavigate.md) { get; set; } | Gets or sets whether the editor automatically navigates to the hyperlink's URL. |
 | [DisplayMember](HyperlinkEditorProperties/DisplayMember.md) { get; set; } | Gets or sets the data field that provides the editor's display text. |
 | [NavigationUrlFormat](HyperlinkEditorProperties/NavigationUrlFormat.md) { get; set; } | Gets or sets the format string used to compose the hyperlink's URL. |
 | [NavigationUrlMember](HyperlinkEditorProperties/NavigationUrlMember.md) { get; set; } | Gets or sets the data field that provides the hyperlink's URL. |
 | [TextTrimming](HyperlinkEditorProperties/TextTrimming.md) { get; set; } | Gets or sets the text trimming applied to the hyperlink's text. |
 | [TextWrapping](HyperlinkEditorProperties/TextWrapping.md) { get; set; } | Gets or sets how the hyperlink's text is wrapped. |
+
+## Events
+
+| name | description |
+| --- | --- |
 | event [RequestNavigation](HyperlinkEditorProperties/RequestNavigation.md) | Occurs when navigation to the hyperlink is requested. |
 
 ## See Also

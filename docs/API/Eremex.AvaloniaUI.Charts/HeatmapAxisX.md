@@ -12,7 +12,7 @@ Represents the angular axis of a heatmap. It displays the angular sweep of heatm
 public class HeatmapAxisX : HeatmapAxis
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

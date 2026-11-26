@@ -198,10 +198,10 @@ public class EmploymentTypeToFontStyleConverter : IValueConverter
 
 Объект `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData`. Основные свойства, предоставляемые объектом `CellData`:
 
-- `Column` — колонка (объект `GridColumn`), отображающая ячейку.
-- `DataControl` — текущий объект `DataGridControl`.
+- `Column` — колонка (объект [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md)), отображающая ячейку.
+- `DataControl` — текущий объект [`DataGridControl`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md).
 - `Row` — объект данных (бизнес-объект) строки.
-- `ValidationInfo` — объект, содержащий информацию о валидации ячейки.
+- [`ValidationInfo`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationInfo.md) — объект, содержащий информацию о валидации ячейки.
 - `Value` — значение ячейки.
 
 ### Пользовательские псевдоклассы
@@ -331,7 +331,7 @@ xmlns:mxdgvis="clr-namespace:Eremex.AvaloniaUI.Controls.DataGrid.Visuals;assembl
 
 ### DataContext
 
-`GridColumn`
+[`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md)
 
 ### Пользовательские псевдоклассы
 

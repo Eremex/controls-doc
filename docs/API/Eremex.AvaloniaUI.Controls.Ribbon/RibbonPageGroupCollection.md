@@ -12,7 +12,7 @@ Stores the groups of a ribbon page.
 public class RibbonPageGroupCollection : ObservableCollection<RibbonPageGroup>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

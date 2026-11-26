@@ -6,7 +6,7 @@ seealso: []
 
 # TextEditor
 
-Контрол `TextEditor` предоставляет базовые возможности редактирования текста. Он поддерживает маски, которые позволяют ограничивать ввод пользователя и форматировать значения.
+Контрол [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) предоставляет базовые возможности редактирования текста. Он поддерживает маски, которые позволяют ограничивать ввод пользователя и форматировать значения.
 
 ![texteditor](../../images/texteditor.png)
 
@@ -21,17 +21,17 @@ seealso: []
 
 ## Задание текста и настройка параметров текста
 
-Свойство `TextEditor.EditorValue` задаёт текст редактора. Если текст содержит символы _NewLine_, редактор отображает текст на нескольких строках. 
+Свойство [`TextEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) задаёт текст редактора. Если текст содержит символы _NewLine_, редактор отображает текст на нескольких строках. 
 
 ### Перенос текста
 
-Свойство `TextEditor.TextWrapping` позволяет активировать автоматический перенос текста у правого края редактора. Установите это свойство в значение `Avalonia.Media.TextWrapping.Wrap`, чтобы включить обычный режим переноса текста.
+Свойство [`TextEditor.TextWrapping`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/TextWrapping.md) позволяет активировать автоматический перенос текста у правого края редактора. Установите это свойство в значение `Avalonia.Media.TextWrapping.Wrap`, чтобы включить обычный режим переноса текста.
 
 ### Приём клавиш _Tab_ и _Enter_ при вводе
 
 Пользователи могут нажимать клавиши _Tab_ и _Enter_, чтобы вставлять символы _Tab_ и _Return_ в текст. Вы можете использовать следующие опции, чтобы изменить это поведение:
 
-- `TextEditor.AcceptsReturn` — задаёт, вставляется ли символ _NewLine_ при нажатии клавиши _Enter_. Если это свойство отключено, редактор игнорирует клавишу _Enter_.
+- [`TextEditor.AcceptsReturn`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/AcceptsReturn.md) — задаёт, вставляется ли символ _NewLine_ при нажатии клавиши _Enter_. Если это свойство отключено, редактор игнорирует клавишу _Enter_.
 - `TextEditor.AcceptsTab` — задаёт, вставляется ли символ табуляции при нажатии клавиши _Tab_. Если это свойство отключено, фокус перемещается на следующий контрол в порядке табуляции при нажатии клавиши _Tab_.
 
 ## Маски
@@ -40,20 +40,20 @@ seealso: []
 
 Чтобы включить ввод с маской, сделайте следующее:
 
-- Установите свойство `TextEditor.MaskType` в тип маски.
-- Установите свойство `TextEditor.Mask` в маску.
+- Установите свойство [`TextEditor.MaskType`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskType.md) в тип маски.
+- Установите свойство [`TextEditor.Mask`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Mask.md) в маску.
 
 ### Тип маски 
 
-Свойство `TextEditor.MaskType` позволяет выбрать режим маски из следующих опций:
+Свойство [`TextEditor.MaskType`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskType.md) позволяет выбрать режим маски из следующих опций:
 
-- `MaskType.Numeric` — режим маски, предназначенный для приёма числовых значений.
-- `MaskType.DateTime` — режим маски, предназначенный для приёма значений даты-времени.
-- `MaskType.None` — ввод с маской отключён.
+- [`MaskType.Numeric`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) — режим маски, предназначенный для приёма числовых значений.
+- [`MaskType.DateTime`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) — режим маски, предназначенный для приёма значений даты-времени.
+- [`MaskType.None`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) — ввод с маской отключён.
 
 ### Строки маски
 
-Используйте свойство `TextEditor.Mask`, чтобы задать строку, определяющую маску. Маска составляется из спецификаторов маски, специфичных для выбранного типа маски.
+Используйте свойство [`TextEditor.Mask`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Mask.md), чтобы задать строку, определяющую маску. Маска составляется из спецификаторов маски, специфичных для выбранного типа маски.
 
 Дополнительную информацию смотрите в следующих разделах:
 
@@ -76,13 +76,13 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 
 ### Использование маски как формата отображения
 
-Маску, заданную свойством `TextEditor.Mask`, можно использовать для форматирования значения редактора в режиме отображения (когда редактирование текста не активно). Эту настройку задаёт свойство `TextEditor.MaskUseAsDisplayFormat`. Значение свойства по умолчанию — `true`.
+Маску, заданную свойством [`TextEditor.Mask`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Mask.md), можно использовать для форматирования значения редактора в режиме отображения (когда редактирование текста не активно). Эту настройку задаёт свойство [`TextEditor.MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskUseAsDisplayFormat.md). Значение свойства по умолчанию — `true`.
 
 ### Настройки культуры маски
 
 Многие маски зависят от текущей культуры. Например, десятичный разделитель для числовых масок различается в разных культурах. Значения даты-времени форматируются с использованием специфичных для культуры шаблонов и локализованных названий дней недели и месяцев.
 
-Свойство `TextEditor.MaskCulture` позволяет задать культуру, используемую маской. Если это свойство не задано, используется культура приложения по умолчанию.
+Свойство [`TextEditor.MaskCulture`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskCulture.md) позволяет задать культуру, используемую маской. Если это свойство не задано, используется культура приложения по умолчанию.
 
 #### Пример 
 
@@ -103,18 +103,18 @@ textEditor1.Mask = "c";
 
 Чтобы выделить часть текста и очистить выделение в коде, используйте следующий API:
 
-- `TextEditor.SelectionStart` — индекс (начиная с нуля) начального символа выделения текста.
-- `TextEditor.SelectionEnd` — индекс (начиная с нуля) конечного символа выделения текста.
-- `TextEditor.SelectAll` — выделяет весь текст.
-- `TextEditor.ClearSelection` — снимает выделение с выделенного текста.
+- [`TextEditor.SelectionStart`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/SelectionStart.md) — индекс (начиная с нуля) начального символа выделения текста.
+- [`TextEditor.SelectionEnd`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/SelectionEnd.md) — индекс (начиная с нуля) конечного символа выделения текста.
+- [`TextEditor.SelectAll`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/SelectAll.md) — выделяет весь текст.
+- [`TextEditor.ClearSelection`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/ClearSelection.md) — снимает выделение с выделенного текста.
 
 ## Водяные знаки
 
-Контрол `TextEditor` и его потомки поддерживают водяные знаки. Водяной знак — это серая подсказка, отображаемая, когда значение редактора пусто или равно null.
+Контрол [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) и его потомки поддерживают водяные знаки. Водяной знак — это серая подсказка, отображаемая, когда значение редактора пусто или равно null.
 
 ![texteditor-watermark](../../images/texteditor-watermark.png)
 
-Используйте свойство `TextEditor.Watermark`, чтобы задать водяной знак.
+Используйте свойство [`TextEditor.Watermark`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Watermark.md), чтобы задать водяной знак.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"

@@ -12,12 +12,17 @@ Serves as the base class for the lightweight chart elements that are not rendere
 public abstract class ChartElementBase : AvaloniaObject, IChartElement
 ```
 
-## Public Members
+## Methods
+
+| name | description |
+| --- | --- |
+| [RaiseChartElementChanged](ChartElementBase/RaiseChartElementChanged.md)(…) | Notifies subscribers that this element has changed. |
+
+## Events
 
 | name | description |
 | --- | --- |
 | event [ChartElementChanged](ChartElementBase/ChartElementChanged.md) | Occurs when a property of this element, or of any element nested inside it, has changed. |
-| [RaiseChartElementChanged](ChartElementBase/RaiseChartElementChanged.md)(…) | Notifies subscribers that this element has changed. |
 
 ## See Also
 

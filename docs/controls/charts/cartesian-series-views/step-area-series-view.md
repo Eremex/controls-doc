@@ -56,9 +56,9 @@ Qualitative _X_ Values:
     For example, when the [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) property contains an SVG image with a circle element, the following CSS code styles the `circle` with an Orange fill (using the series color) and Dark Red border:
 
     ``` xml
-    <mxc:___222___ Color="orange" MarkerImageCss="circle {{fill:{0};stroke:darkred;}}">
+    <mxc:CartesianStepAreaSeriesView Color="orange" MarkerImageCss="circle {{fill:{0};stroke:darkred;}}">
         <SvgImage Source="avares://Demo/Assets/circle.svg" />
-    </mxc:___222___>
+    </mxc:CartesianStepAreaSeriesView>
     ```
     
     See also: [Example - Create a Lollipop Series View and Use Custom SVG Markers](lollipop-series-view.md#example-create-a-lollipop-series-view-and-use-custom-svg-data-point-markers).

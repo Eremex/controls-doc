@@ -30,7 +30,6 @@ xmlns:local="using:PropertyGridTest"
     Name="propertyGridControl1"
     SelectedObject="{Binding MyBusinessObject}"
     BorderThickness="1"
-    UseModernAppearance="True" 
     Margin="5"/>
 ```
 

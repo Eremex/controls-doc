@@ -12,11 +12,16 @@ Provides data for the CustomRowFilter event.
 public class DataGridCustomRowFilterEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridCustomRowFilterEventArgs](DataGridCustomRowFilterEventArgs/DataGridCustomRowFilterEventArgs.md)(…) | Initializes a new instance of the DataGridCustomRowFilterEventArgs class with the specified source item index and visibility. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [SourceItemIndex](DataGridCustomRowFilterEventArgs/SourceItemIndex.md) { get; } | Gets the index of the filtered data source item. |
 | [Visible](DataGridCustomRowFilterEventArgs/Visible.md) { get; set; } | Gets or sets whether the row remains visible. |
 

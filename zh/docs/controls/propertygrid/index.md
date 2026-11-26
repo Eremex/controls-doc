@@ -4,9 +4,9 @@ order: 58000
 seealso: []
 ---
 
-# PropertyGrid
+# PropertyGrid {#propertygrid}
 
-`PropertyGridControl` 控件允许用户浏览单个或多个对象的属性。该控件以垂直列表的形式显示绑定对象的公共属性及其值，并允许用户编辑属性值。
+[`PropertyGridControl`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl.md) 控件允许用户浏览单个或多个对象的属性。该控件以垂直列表的形式显示绑定对象的公共属性及其值，并允许用户编辑属性值。
 
 ![propertygrid](../../images/propertygrid.png)
 

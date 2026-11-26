@@ -12,7 +12,7 @@ Lists the appearance choices an application offers and applies the chosen one.
 public interface IAppearanceService : INotifyPropertyChanged
 ```
 
-## Members
+## Properties
 
 | name | description |
 | --- | --- |

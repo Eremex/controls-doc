@@ -12,11 +12,16 @@ Configures the open file dialog shown by [`IOpenFileDialogService`](./IOpenFileD
 public class OpenFileDialogOptions
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [OpenFileDialogOptions](OpenFileDialogOptions/OpenFileDialogOptions.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowMultiple](OpenFileDialogOptions/AllowMultiple.md) { get; set; } | `true` to let the user select several files at once. Defaults to a single selection. |
 | [DefaultFolder](OpenFileDialogOptions/DefaultFolder.md) { get; set; } | The full path of the folder the dialog opens in. |
 | [Filter](OpenFileDialogOptions/Filter.md) { get; set; } | The file type filters, written as display name and patterns alternating and separated by `|`, where several patterns for one type are separated by `;` and each pattern is a glob such as `*.png` — for example `"Images|*.png;*.jpg|All files|*.*"`. When left unset, all files are shown. |

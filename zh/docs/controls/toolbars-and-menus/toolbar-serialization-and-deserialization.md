@@ -4,14 +4,14 @@ order: 10000
 seealso: []
 ---
 
-# 工具栏序列化和反序列化
+# 工具栏序列化和反序列化 {#toolbar-serialization-and-deserialization}
 
-用户可以在运行时自定义工具栏的layout。参见 [Runtime Toolbar Customization](toolbars.md#runtime-toolbar-customization)。
+用户可以在运行时自定义工具栏的布局。参见 [运行时自定义工具栏](toolbars.md#runtime-toolbar-customization)。
 
-工具栏的 layout（包括工具栏命令的 layout）可以保存到流中，并在以后（例如，应用程序下次运行时）从中加载。为此，请使用以下 layout 序列化和反序列化方法：
+工具栏的布局（包括工具栏命令的布局）可以保存到流中，并在以后（例如，应用程序下次运行时）从中加载。为此，请使用以下布局序列化和反序列化方法：
 
-- `ToolbarManager.SaveLayout` — 将工具栏 layout 保存到流中。
-- `ToolbarManager.RestoreLayout` — 从流中加载之前保存的 layout。
+- [`ToolbarManager.SaveLayout`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/SaveLayout.md) — 将工具栏布局保存到流中。
+- [`ToolbarManager.RestoreLayout`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/RestoreLayout.md) — 从流中加载之前保存的布局。
 
 !!!笔记
 
@@ -23,7 +23,7 @@ seealso: []
 <mxb:ToolbarButtonItem Name="btnNew" .../>
 ```
 
-以下示例显示如何将工具栏 layout 保存到文件或从文件恢复。
+以下示例显示如何将工具栏布局保存到文件或从文件恢复。
 
 ``` cs
 string fileName = "bars_layout.xml";

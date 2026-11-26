@@ -4,12 +4,21 @@ order: 13
 seealso: []
 ---
 
-# 版本 1.3
+# 版本 1.3 {#version-13}
+
+## 1.3.69 {#1369}
+
+### 图表 {#charts}
+
+#### 已修复的问题 {#fixed-issues}
+
+- 当图表在 _Y_ 轴上显示 `DateTime` 值且 `AlwaysShowZeroLevel` 选项设置为 `true` 时，会引发异常。
+- PolarChart 和 SmithChart — [`CrosshairSeriesLabelMode.None`](../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md) 选项不起作用。
 
 
-## 1.3.62
+## 1.3.62 {#1362}
 
-### DataGrid、TreeList 和 TreeView
+### DataGrid、TreeList 和 TreeView {#datagrid-treelist-and-treeview}
 
 - DataGrid — 新增了 `GetSourceItem` 和 `GetSourceItemValue` 方法。它们允许您通过数据源项索引获取数据源项及其值。
 
@@ -39,11 +48,11 @@ seealso: []
     }
     ```
 
-- 已修复问题：DataGrid — 当列的 `ColumnFilterMode` 属性设置为 `DisplayText` 时，为筛选面板中显示的值触发了 `CustomColumnDisplayText` 事件。在这种情况下不应触发该事件。
+- 已修复问题：DataGrid — 当列的 [`ColumnFilterMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnFilterMode.md) 属性设置为 `DisplayText` 时，为筛选面板中显示的值触发了 `CustomColumnDisplayText` 事件。在这种情况下不应触发该事件。
 
 - 已修复问题：DataGrid 和 TreeList — 当用户修改其他行单元格时，未触发 `CustomUnboundColumnData` 事件。
 
-- 已修复问题：DataGrid 和 TreeList — 当固定列同时设置了 'Auto' 宽度和 `MinWidth` 时，出现 "Layout cycle detected" 错误。
+- 已修复问题：DataGrid 和 TreeList — 当固定列同时设置了 'Auto' 宽度和 [`MinWidth`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MinWidth.md) 时，出现 "Layout cycle detected" 错误。
 
 - 已修复问题：DataGrid 和 TreeList — 滚动控件时发生内存泄漏。
 
@@ -55,29 +64,29 @@ seealso: []
 
 - 已修复问题：TreeList — 如果 `ExpandNodesOnFiltering` 设置为 `true`，当数据源触发不影响筛选的更改时，控件会展开节点。
 
-### 图表
+### 图表 {#charts_1}
 
 - 已修复问题：Stacked Area Series Views — 当十字线标签合并所有系列（`OneForAllSeries` 模式）时，标签中系列名称的可视顺序被颠倒——与填充区域的可视顺序不一致。
 
-### PropertyGrid
+### PropertyGrid {#propertygrid}
 
-- 已修复问题：在内置 `PopupColorEditor` 中选择值时会引发异常。
-
-
-### Docking 界面
-
-- 已修复问题：在特定情况下，反序列化带有自动隐藏面板的 `DockManager` 时会引发异常。
-
-### Graphics3D Control
-
-- 已修复问题：使用 `SelectionMode` 属性禁用选择时，已选中的元素会被隐藏。
+- 已修复问题：在内置 [`PopupColorEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) 中选择值时会引发异常。
 
 
-## 1.3.49
+### Docking 界面 {#docking-ui}
 
-### DataGrid 和 TreeList
+- 已修复问题：在特定情况下，反序列化带有自动隐藏面板的 [`DockManager`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) 时会引发异常。
 
-#### 固定列
+### Graphics3D Control {#graphics3d-control}
+
+- 已修复问题：使用 [`SelectionMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectionMode.md) 属性禁用选择时，已选中的元素会被隐藏。
+
+
+## 1.3.49 {#1349}
+
+### DataGrid 和 TreeList {#datagrid-and-treelist}
+
+#### 固定列 {#fixed-columns}
 
 借助固定列功能，您可以将 DataGrid 和 TreeList 控件中的列固定在左边缘或右边缘，使这些列始终保持可见。这些列在水平滚动期间保持不动，而其他列则正常移动。
 
@@ -89,10 +98,10 @@ seealso: []
 
 相关 API：
 
-- `ColumnBase.FixedMode`
-- `DataGridControl.ShowColumnMenuFixedItem` 和 `TreeListControl.ShowColumnMenuFixedItem`
-- `DataGridControl.ExtendScrollbarToFixedColumns` 和 `TreeListControl.ExtendScrollbarToFixedColumns`
-- `DataGridControl.FixedColumnSeparatorWidth` 和 `TreeListControl.FixedColumnSeparatorWidth`
+- [`ColumnBase.FixedMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FixedMode.md)
+- [`DataGridControl.ShowColumnMenuFixedItem`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowColumnMenuFixedItem.md) 和 [`TreeListControl.ShowColumnMenuFixedItem`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnMenuFixedItem.md)
+- [`DataGridControl.ExtendScrollbarToFixedColumns`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExtendScrollbarToFixedColumns.md) 和 [`TreeListControl.ExtendScrollbarToFixedColumns`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ExtendScrollbarToFixedColumns.md)
+- [`DataGridControl.FixedColumnSeparatorWidth`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FixedColumnSeparatorWidth.md) 和 [`TreeListControl.FixedColumnSeparatorWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/FixedColumnSeparatorWidth.md)
 
 了解更多：
 
@@ -100,7 +109,7 @@ seealso: []
 - [Tree List - 固定列](../controls/treelist/columns.md#fixed-columns)
 
 
-#### 在自动筛选行中显示条件运算符
+#### 在自动筛选行中显示条件运算符 {#show-condition-operators-in-the-auto-filter-row}
 
 自动筛选行已得到增强，支持在各个单元格中运行时选择筛选运算符。启用此功能后，每个自动筛选行单元格中都会出现一个筛选运算符图标。用户可以点击此图标打开下拉菜单并选择所需的运算符。
 
@@ -108,16 +117,16 @@ seealso: []
 
 相关 API：
 
-- `DataGridControl.ShowConditionInAutoFilterRow`
-- `TreeListControl.ShowConditionInAutoFilterRow` 
-- `ColumnBase.ShowConditionInAutoFilterRow`
+- [`DataGridControl.ShowConditionInAutoFilterRow`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowConditionInAutoFilterRow.md)
+- [`TreeListControl.ShowConditionInAutoFilterRow`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowConditionInAutoFilterRow.md) 
+- [`ColumnBase.ShowConditionInAutoFilterRow`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ShowConditionInAutoFilterRow.md)
 
 了解更多：
 
 - [Data Grid - 启用运行时筛选运算符选择器](../controls/datagrid/filter-and-search.md#enable-runtime-filter-operator-selectors)
 - [Tree List - 启用运行时筛选运算符选择器](../controls/treelist/filter-and-search.md#enable-runtime-filter-operator-selectors)
 
-#### 列筛选菜单 — 带复选框的列表模式
+#### 列筛选菜单 — 带复选框的列表模式 {#column-filter-menus-checked-list-mode}
 
 列筛选菜单现在允许您以带复选框的列表形式展示其项目。在带复选框的列表模式下，使用内置复选框可同时选择多个筛选值。
 
@@ -125,8 +134,8 @@ seealso: []
 
 您可以使用以下属性为所有列或单个列启用带复选框的列表显示模式：
 
-- `DataGridControl.ColumnFilterPopupMode` 和 `TreeListControl.ColumnFilterPopupMode`
-- `GridColumn.FilterPopupMode` 和 `TreeListColumn.FilterPopupMode`
+- [`DataGridControl.ColumnFilterPopupMode`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnFilterPopupMode.md) 和 [`TreeListControl.ColumnFilterPopupMode`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnFilterPopupMode.md)
+- [`GridColumn.FilterPopupMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) 和 [`TreeListColumn.FilterPopupMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md)
 
 了解更多：
 
@@ -134,7 +143,7 @@ seealso: []
 - [Tree List - 带复选框的列表筛选模式](../controls/treelist/filter-and-search.md#list-and-checked-list-display-modes)
 
 
-#### 导出为图像
+#### 导出为图像 {#export-to-image}
 
 DataGrid 和 TreeList 控件现在支持将数据导出为图像格式（PNG、JPEG、SVG 和 WebP），并支持分页。
 
@@ -147,20 +156,20 @@ DataGrid 和 TreeList 控件现在支持将数据导出为图像格式（PNG、J
 - [Data Grid - 导出为图像格式](../controls/datagrid/export.md#export-to-image-formats)
 - [Tree List - 导出为图像格式](../controls/treelist/export.md#export-to-image-formats)
 
-#### 导出为 CSV
+#### 导出为 CSV {#export-to-csv}
 
-DataGrid、TreeList 和 TreeView 控件支持将数据导出为 CSV 格式。CSV 是一种文本格式，其中行值由特定分隔符（默认为逗号）分隔。使用 `ExportToCsv` 方法导出控件的数据。此方法的参数允许您自定义值导出模式、分隔符字符等。
+DataGrid、TreeList 和 TreeView 控件支持将数据导出为 CSV 格式。CSV 是一种文本格式，其中行值由特定分隔符（默认为逗号）分隔。使用 [`ExportToCsv`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ExportToCsv.md) 方法导出控件的数据。此方法的参数允许您自定义值导出模式、分隔符字符等。
 
 - [Data Grid - 导出为 CSV](../controls/datagrid/export.md#export-to-csv-format)
 - [Tree List - 导出为 CSV](../controls/treelist/export.md#export-to-csv-format)
 
-#### 字母数字排序
+#### 字母数字排序 {#alphanumeric-sort}
 
 除默认的字母排序外，DataGrid、TreeList 和 TreeView 控件现在还支持字母数字排序。当列包含文本和数字混合内容时，此算法非常有用。它通过按数值大小比较数字，以人类友好、逻辑清晰的顺序排列字符串。
 
 ![grid-sorting-textsortmode-example2](../images/grid-sorting-textsortmode-example2.png)
 
-使用 DataGrid、TreeList 和 TreeView 控件公开的 `DataControlBase.TextSortMode` 属性来启用字母数字排序。此属性会影响所有显示文本值的列的排序。
+使用 DataGrid、TreeList 和 TreeView 控件公开的 [`DataControlBase.TextSortMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/TextSortMode.md) 属性来启用字母数字排序。此属性会影响所有显示文本值的列的排序。
 
 了解更多：
 
@@ -168,9 +177,9 @@ DataGrid、TreeList 和 TreeView 控件支持将数据导出为 CSV 格式。CSV
 - [TreeList - 排序](../controls/treelist/sorting.md#alphanumeric-sorting)
 
 
-### 图表
+### 图表 {#charts_2}
 
-#### Stacked Area 视图
+#### Stacked Area 视图 {#stacked-area-views}
 
 此版本为 CartesianChart 控件新增了两个视图：
 
@@ -184,13 +193,13 @@ DataGrid、TreeList 和 TreeView 控件支持将数据导出为 CSV 格式。CSV
 
 了解更多：
 
-- [Stacked Area Series View](../controls/charts/cartesian-series-views/stacked-area-series-view.md)
-- [Full-Stacked Area Series View](../controls/charts/cartesian-series-views/full-stacked-area-series-view.md)
+- [堆积面积系列视图](../controls/charts/cartesian-series-views/stacked-area-series-view.md)
+- [百分比堆积面积系列视图](../controls/charts/cartesian-series-views/full-stacked-area-series-view.md)
 
 
-#### 交换 X 轴和 Y 轴
+#### 交换 X 轴和 Y 轴 {#swapping-x-and-y-axes}
 
-新的 `CartesianChart.SwapAxes` 属性允许您转置 _X_ 轴和 _Y_ 轴。将其设置为 `true`，即可垂直显示 _X_ 轴，水平显示 _Y_ 轴。
+新的 [`CartesianChart.SwapAxes`](../API/Eremex.AvaloniaUI.Charts/CartesianChart/SwapAxes.md) 属性允许您转置 _X_ 轴和 _Y_ 轴。将其设置为 `true`，即可垂直显示 _X_ 轴，水平显示 _Y_ 轴。
 
 ![chart-swap-axes-linear-chart](../images/chart-swap-axes-linear-chart.png)
 
@@ -200,7 +209,7 @@ DataGrid、TreeList 和 TreeView 控件支持将数据导出为 CSV 格式。CSV
 
 - [交换 X 轴和 Y 轴](../controls/charts/cartesian-chart.md#swap-the-x-and-y-axes)
 
-#### 反转坐标轴方向
+#### 反转坐标轴方向 {#inverting-the-axis-direction}
 
 CartesianChart 控件现在包含 `Axis.Reverse` 属性，用于更改任意坐标轴的方向。当它设置为 `true` 时，坐标轴数值的顺序将被反转：
 
@@ -214,7 +223,7 @@ CartesianChart 控件现在包含 `Axis.Reverse` 属性，用于更改任意坐�
 - [反转坐标轴方向](../controls/charts/cartesian-chart.md#reverse-the-axis-direction)
 
 
-#### 空数据点
+#### 空数据点 {#empty-points}
 
 CartesianChart 和 PolarChart 现在支持空数据点（值未定义的数据点）。图表控件在遇到空数据点时会在系列中留下可见的间隙。
 
@@ -226,9 +235,9 @@ CartesianChart 和 PolarChart 现在支持空数据点（值未定义的数据�
 
 - [空数据点（间隙）](../controls/charts/cartesian-chart.md#empty-points-gaps)
 
-### Graphics3DControl
+### Graphics3DControl {#graphics3dcontrol}
 
-#### 新 API
+#### 新 API {#new-api}
 
 新的 `LookCameraAtScene` 方法允许您定位相机并调整其方向，使其从指定方向看向 3D 场景的中心。
 
@@ -244,19 +253,19 @@ from a specific angle???
 cameraPosition - это точка?
  -->
 
-#### 在 Gizmo 中显示轴名称
+#### 在 Gizmo 中显示轴名称 {#displaying-axis-names-in-the-gizmo}
 
 Graphics3DControl 的 Gizmo 现在会显示 _X_、_Y_ 和 _Z_ 轴的名称。
 
 ![graphics3dControl-gizmo-axis-names](../images/graphics3dControl-gizmo-axis-names.png)
 
-为渲染轴名称，`Gizmo` 中新增了三个分别表示字母 "X"、"Y" 和 "Z" 的模型。
-新的 `Gizmo.Models` 和 `Gizmo.ModelsSource` 属性允许您指定用于自定义渲染 Gizmo 的 3D 模型。这些属性取代了现已废弃的旧属性 `Gizmo.Model`。
+为渲染轴名称，[`Gizmo`](../API/Eremex.AvaloniaUI.Controls3D/Gizmo.md) 中新增了三个分别表示字母 "X"、"Y" 和 "Z" 的模型。
+新的 [`Gizmo.Models`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Models.md) 和 [`Gizmo.ModelsSource`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/ModelsSource.md) 属性允许您指定用于自定义渲染 Gizmo 的 3D 模型。这些属性取代了现已废弃的旧属性 `Gizmo.Model`。
 
-#### 重大更改 — 渲染 Graphics3DControl 现在需要配色主题
+#### 重大更改 — 渲染 Graphics3DControl 现在需要配色主题 {#breaking-change-paint-theme-is-now-required-to-render-graphics3dcontrol}
 
-从 1.3 版本开始，`Graphics3DControl` 和 `Gizmo` 类继承自 `Graphics3DControlBase`，该类是 `TemplatedControl` 类的派生类。
-这些控件的通用外观设置现在由 `Controls3D` 配色主题指定。为确保 `Graphics3DControl` 正确渲染，您必须在 _App.xaml_ 文件中注册该主题：
+从 1.3 版本开始，[`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 和 [`Gizmo`](../API/Eremex.AvaloniaUI.Controls3D/Gizmo.md) 类继承自 [`Graphics3DControlBase`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase.md)，该类是 `TemplatedControl` 类的派生类。
+这些控件的通用外观设置现在由 `Controls3D` 配色主题指定。为确保 [`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 正确渲染，您必须在 _App.xaml_ 文件中注册该主题：
 
 ``` xml
 <!-- App.xaml file -->
@@ -270,31 +279,31 @@ Graphics3DControl 的 Gizmo 现在会显示 _X_、_Y_ 和 _Z_ 轴的名称。
 </Application>
 ```
 
-如果未注册 `Controls3D` 配色主题，则 `Graphics3DControl` 将显示为空白。
+如果未注册 `Controls3D` 配色主题，则 [`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 将显示为空白。
 
-### Docking
+### Docking {#docking}
 
-现在，您可以使用 `MinWidth`、`MinHeight`、`MaxWidth` 和 `MaxHeight` 属性对 dock 项应用调整大小的约束。
+现在，您可以使用 [`MinWidth`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MinWidth.md)、`MinHeight`、[`MaxWidth`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/MaxWidth.md) 和 `MaxHeight` 属性对停靠项应用调整大小的约束。
 
-### SplitContainerControl - 面板大小约束
+### SplitContainerControl - 面板大小约束 {#splitcontainercontrol-panel-size-constraints}
 
-新的 `Panel1MinLength`、`Panel1MaxLength`、`Panel2MinLength` 和 `Panel2MaxLength` 属性允许您为 `SplitContainerControl` 中的面板设置调整大小的约束。用户无法将面板大小调整到超出这些限制。
+新的 `Panel1MinLength`、`Panel1MaxLength`、`Panel2MinLength` 和 `Panel2MaxLength` 属性允许您为 [`SplitContainerControl`](../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl.md) 中的面板设置调整大小的约束。用户无法将面板大小调整到超出这些限制。
 
-### MxWindow
+### MxWindow {#mxwindow}
 
-新的 `Header` 和 `HeaderTemplate` 属性允许您在窗口标题中显示自定义内容。
+新的 [`Header`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) 和 [`HeaderTemplate`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderTemplate.md) 属性允许您在窗口标题中显示自定义内容。
 
-### 已修复的问题
+### 已修复的问题 {#fixed-issues_1}
 
 - 工具栏和菜单 — 如果某个栏目项关联的下拉菜单先前是从栏目的溢出菜单中打开的，则该下拉菜单无法显示。
 - Docking — 隐藏自动隐藏项时，该项的标题仍然可见。
 - Docking — 当选项卡数量较多时，选项卡面板标题区域的高度计算不正确。
 
-### 重大更改
+### 重大更改 {#breaking-changes}
 
-- Graphics3DControl — `Gizmo.Model` 属性已弃用。请改用新的 `Gizmo.Models` 和 `Gizmo.ModelsSource` 属性。
+- Graphics3DControl — `Gizmo.Model` 属性已弃用。请改用新的 [`Gizmo.Models`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Models.md) 和 [`Gizmo.ModelsSource`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/ModelsSource.md) 属性。
 - Editors — `IsClearTextButtonVisible` 属性已重命名为 `IsNullValueButtonVisible`。
-- Editors — `ClearTextCommand` 命令已重命名为 `SetNullValueCommand`，并从 `PopupEditor` 类移动到 `ButtonEditor` 类。
+- Editors — `ClearTextCommand` 命令已重命名为 `SetNullValueCommand`，并从 [`PopupEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor.md) 类移动到 [`ButtonEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) 类。
 
 
 <br>

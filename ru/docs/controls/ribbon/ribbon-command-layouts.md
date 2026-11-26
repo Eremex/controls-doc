@@ -16,7 +16,7 @@ seealso: []
 - Заголовки групп страниц видимы
 - Группы не могут быть частично свёрнуты при изменении размера Ribbon
 - Поддержка встроенных галерей
-- Размер маленьких значков по умолчанию — `16x16`. Вы можете использовать свойство `RibbonControl.SmallGlyphSize`, чтобы изменить размер маленьких значков. Большие значки вдвое больше маленьких.
+- Размер маленьких значков по умолчанию — `16x16`. Вы можете использовать свойство [`RibbonControl.SmallGlyphSize`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/SmallGlyphSize.md), чтобы изменить размер маленьких значков. Большие значки вдвое больше маленьких.
 - При изменении размера Ribbon [функция адаптивной компоновки](ribbon-items.md#адаптивный-размер-глифа-в-классической-компоновке-команд) подстраивает размер значков — от больших к маленьким с текстом и к маленьким глифам, и обратно.
 
   ![ribbon-adaptive-layout-change-size-of-icons](../../images/ribbon-adaptive-layout-change-size-of-icons.png)
@@ -29,7 +29,7 @@ seealso: []
 - Заголовки групп страниц скрыты
 - Группы могут быть частично свёрнуты при изменении размера Ribbon. Свёрнутые кнопки доступны из выпадающего меню группы.
 - Галереи отображаются в выпадающих меню
-- Размер значков по умолчанию в упрощённой компоновке команд — `22x22`. Используйте свойство `RibbonControl.GlyphSizeInSimplifiedLayout`, чтобы задать пользовательский размер значков.
+- Размер значков по умолчанию в упрощённой компоновке команд — `22x22`. Используйте свойство [`RibbonControl.GlyphSizeInSimplifiedLayout`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/GlyphSizeInSimplifiedLayout.md), чтобы задать пользовательский размер значков.
 
     ``` xml
     <mxr:RibbonControl GlyphSizeInSimplifiedLayout="32">
@@ -43,9 +43,9 @@ seealso: []
 
 ![ribbon-view-selection-button-command](../../images/ribbon-view-selection-button-command.png)
 
-Установите опцию `RibbonControl.IsCommandLayoutSelectionButtonVisible` в `false`, чтобы скрыть эту кнопку.
+Установите опцию [`RibbonControl.IsCommandLayoutSelectionButtonVisible`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/IsCommandLayoutSelectionButtonVisible.md) в `false`, чтобы скрыть эту кнопку.
 
-Свойство `RibbonControl.CommandLayout` позволяет задать компоновку команд в коде.
+Свойство [`RibbonControl.CommandLayout`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/CommandLayout.md) позволяет задать компоновку команд в коде.
 
 ``` xml
 <mxr:RibbonControl Name="ribbon" CommandLayout="Simplified">

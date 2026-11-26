@@ -12,11 +12,16 @@ Displays the data of a Cartesian series as lollipops. Each data point is drawn a
 public class CartesianLollipopSeriesView : CartesianPointSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CartesianLollipopSeriesView](CartesianLollipopSeriesView/CartesianLollipopSeriesView.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [LineColor](CartesianLollipopSeriesView/LineColor.md) { get; set; } | Gets or sets the color of the stems. |
 | [LineOrientation](CartesianLollipopSeriesView/LineOrientation.md) { get; set; } | Gets or sets whether the stems are drawn vertically or horizontally. |
 | [LineStyle](CartesianLollipopSeriesView/LineStyle.md) { get; set; } | Gets or sets the style of the stems. When no style is set, a default line style is used. |

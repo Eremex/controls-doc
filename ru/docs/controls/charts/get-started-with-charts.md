@@ -6,7 +6,7 @@ seealso: []
 
 # Начало работы с диаграммами
 
-Этот учебник показывает, как отобразить три серии данных в контроле `CartesianChart`, используя представления Bar и Line series views.
+Этот учебник показывает, как отобразить три серии данных в контроле [`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md), используя представления Bar и Line series views.
 
 ![charts-get-started](../../images/charts-get-started.png)
 
@@ -33,8 +33,8 @@ public partial class SeriesViewModel : ObservableObject
 Данные для серий контрола диаграммы предоставляются с помощью объектов _Data Adapter_. 
 Eremex Charts поддерживают несколько адаптеров данных для различных типов данных (числовых, дата-время и качественных). В этом учебнике мы будем использовать два адаптера данных:
 
-- `SortedNumericDataAdapter` — предоставляет пары (числовое значение X, числовое значение Y), отсортированные по значениям X.
-- `SortedDateTimeDataAdapter` — предоставляет пары (значение X типа DateTime, числовое значение Y), отсортированные по значениям X.
+- [`SortedNumericDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md) — предоставляет пары (числовое значение X, числовое значение Y), отсортированные по значениям X.
+- [`SortedDateTimeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) — предоставляет пары (значение X типа DateTime, числовое значение Y), отсортированные по значениям X.
 
 Эти адаптеры данных инициализируются в главной View Model.
 
@@ -98,9 +98,9 @@ public partial class MainWindowViewModel : ViewModelBase
 
 Адаптеры данных заполняются случайными данными:
 
-- Объекты `SortedDateTimeDataAdapter` заполняются 12 точками, соответствующими 12 месяцам года. Значения _X_ объектов `SortedDateTimeDataAdapter` имеют тип `DateTime`.
+- Объекты [`SortedDateTimeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) заполняются 12 точками, соответствующими 12 месяцам года. Значения _X_ объектов [`SortedDateTimeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) имеют тип `DateTime`.
 
-- Объект `SortedNumericDataAdapter` заполняется 365 точками, соответствующими дням года. Значения _X_ объекта `SortedNumericDataAdapter` являются числовыми.
+- Объект [`SortedNumericDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md) заполняется 365 точками, соответствующими дням года. Значения _X_ объекта [`SortedNumericDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md) являются числовыми.
 
 
 ## Создание контрола Cartesian Chart
@@ -124,13 +124,13 @@ xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
 </mxc:CartesianChart>
 ```
 
-Этот код добавляет две серии (объекты `CartesianSeries`) в коллекцию `CartesianChart.Series` и привязывает их к соответствующим адаптерам данных в главной View Model.
+Этот код добавляет две серии (объекты [`CartesianSeries`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md)) в коллекцию [`CartesianChart.Series`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) и привязывает их к соответствующим адаптерам данных в главной View Model.
 
 ### Задание представления серии (Series View)
 
 **Представление серии (series view)** определяет визуальное отображение и настройки серии. Cartesian Chart поддерживает несколько представлений серий: Line, Scatter Line, Range Area, Bar, Range Bar и т.д. Подробнее см. в разделе [Cartesian Chart](cartesian-chart.md).
 
-Применим представление Bar к серии. Для этого определите объект `CartesianSideBySideBarSeriesView` в качестве содержимого объекта `CartesianSeries`. 
+Применим представление Bar к серии. Для этого определите объект [`CartesianSideBySideBarSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md) в качестве содержимого объекта [`CartesianSeries`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md). 
 
 ``` xml
 <mxc:CartesianChart>
@@ -145,18 +145,18 @@ xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
 </mxc:CartesianChart>
 ```
 
-`CartesianSideBySideBarSeriesView` отображает точки в виде прямоугольных столбцов:
+[`CartesianSideBySideBarSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md) отображает точки в виде прямоугольных столбцов:
 
 ![chart-CartesianSideBySideBarSeriesView-oneseries](../../images/chart-CartesianSideBySideBarSeriesView-oneseries.png)
 
-Настройка `Color` представления серии позволяет указать цвет отрисовки соответствующей серии.
+Настройка [`Color`](../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/Color.md) представления серии позволяет указать цвет отрисовки соответствующей серии.
 
 
 ## Создание и настройка осей по умолчанию
 
 Cartesian Chart может автоматически создавать оси для базовых данных. Может потребоваться вручную определить оси _X_ и _Y_, если вы хотите настроить параметры осей (например, задать заголовок и параметры масштаба). 
 
-Чтобы определить оси, добавьте объекты `AxisX` и/или `AxisY` в коллекции `CartesianChart.AxesX`/`CartesianChart.AxesY`:
+Чтобы определить оси, добавьте объекты [`AxisX`](../../API/Eremex.AvaloniaUI.Charts/AxisX.md) и/или [`AxisY`](../../API/Eremex.AvaloniaUI.Charts/AxisY.md) в коллекции [`CartesianChart.AxesX`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesX.md)/[`CartesianChart.AxesY`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesY.md):
 
 ``` xml
 <mxc:CartesianChart>
@@ -177,7 +177,7 @@ Cartesian Chart может автоматически создавать оси 
 
 Приведённый выше код создаёт оси _X_ и _Y_ и задаёт для них заголовки. 
 
-Поскольку исходные точки данных представляют значения для отдельных месяцев, к горизонтальной оси дата-время применяется единица времени `Month` (с помощью свойства `AxisX.ScaleOptions`). 
+Поскольку исходные точки данных представляют значения для отдельных месяцев, к горизонтальной оси дата-время применяется единица времени `Month` (с помощью свойства [`AxisX.ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/AxisX/ScaleOptions.md)). 
 
 Если вы запустите приложение сейчас, вы увидите следующий результат:
 
@@ -190,7 +190,7 @@ Cartesian Chart может автоматически создавать оси 
 
 Добавим Line Series и ось для неё в диаграмму. 
 
-Сначала создайте новый объект `CartesianSeries` в коллекции `CartesianChart.Series` и привяжите его к объекту _LineSeries.DataAdapter_, определённому в View Model.
+Сначала создайте новый объект [`CartesianSeries`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) в коллекции [`CartesianChart.Series`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) и привяжите его к объекту _LineSeries.DataAdapter_, определённому в View Model.
 
 ``` xml
 <mxc:CartesianChart>
@@ -204,7 +204,7 @@ Cartesian Chart может автоматически создавать оси 
 
 ### Задание представления Line Series View
 
-Чтобы применить представление Line Series View к этой серии, определите объект `CartesianLineSeriesView` в качестве содержимого серии:
+Чтобы применить представление Line Series View к этой серии, определите объект [`CartesianLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesView.md) в качестве содержимого серии:
 
 ``` xml
 <mxc:CartesianSeries Name="lineSeries" DataAdapter="{Binding LineSeries.DataAdapter}" >
@@ -212,17 +212,17 @@ Cartesian Chart может автоматически создавать оси 
 </mxc:CartesianSeries> 
 ```
 
-`CartesianLineSeriesView` — это представление серии, соединяющее точки линиями:
+[`CartesianLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesView.md) — это представление серии, соединяющее точки линиями:
 
 ![chart-CartesianLineSeriesView-one-series](../../images/chart-CartesianLineSeriesView-one-series.png)
 
-Как и для любого представления серии, вы можете использовать свойство `CartesianLineSeriesView.Color`, чтобы задать цвет отрисовки серии.
+Как и для любого представления серии, вы можете использовать свойство [`CartesianLineSeriesView.Color`](../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md), чтобы задать цвет отрисовки серии.
 
 ### Задание собственной оси для Line Series
 
 Значения _X_ серии Line имеют числовой тип, в то время как существующая горизонтальная ось отображает значения `DateTime`. Таким образом, для серии Line требуется дополнительная числовая ось. 
 
-Определите новую числовую ось _X_ в коллекции `CartesianChart.AxesX`.
+Определите новую числовую ось _X_ в коллекции [`CartesianChart.AxesX`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesX.md).
 
 ``` xml
 <mxc:CartesianChart.AxesX>
@@ -238,7 +238,7 @@ Cartesian Chart может автоматически создавать оси 
 
 Свойство `Position` оси установлено в значение `Far`, чтобы отобразить ось у края, противоположного положению по умолчанию. Для горизонтальной оси значение `Far` соответствует верхнему краю диаграммы. Для вертикальной оси значение `Far` размещает ось у правого края диаграммы.
 
-Теперь нужно связать серию Line с её осью. Это достигается указанием идентификатора оси (уникального строкового значения). Задайте одно и то же значение свойству `Key` оси и свойству `CartesianSeries.AxisXKey`/`CartesianSeries.AxisYKey` серии. 
+Теперь нужно связать серию Line с её осью. Это достигается указанием идентификатора оси (уникального строкового значения). Задайте одно и то же значение свойству `Key` оси и свойству [`CartesianSeries.AxisXKey`](../../API/Eremex.AvaloniaUI.Charts/Series/AxisXKey.md)/[`CartesianSeries.AxisYKey`](../../API/Eremex.AvaloniaUI.Charts/Series/AxisYKey.md) серии. 
 
 В этом учебнике укажите идентификатор _"lineSeriesAxis"_ для серии и оси следующим образом:
 
@@ -267,13 +267,13 @@ Cartesian Chart может автоматически создавать оси 
 
 ## Создание пользовательского форматирования меток
 
-`CartesianChart` форматирует метки для основных отметок (tickmarks) на основе параметров масштабирования оси. На следующем изображении показано форматирование меток, когда к оси _X_ применена единица времени `Month`:
+[`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) форматирует метки для основных отметок (tickmarks) на основе параметров масштабирования оси. На следующем изображении показано форматирование меток, когда к оси _X_ применена единица времени `Month`:
 
 ![chart-get-started-label-formatting-month-default](../../images/chart-get-started-label-formatting-month-default.png)
 
-Свойство `ScaleOptions.LabelFormatter` оси позволяет изменить формат отображения меток. Вы можете использовать класс `Eremex.AvaloniaUI.Charts.FuncLabelFormatter` в качестве форматтера меток, либо создать собственный форматтер, реализовав интерфейс `IAxisLabelFormatter`.
+Свойство [`ScaleOptions.LabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) оси позволяет изменить формат отображения меток. Вы можете использовать класс [`Eremex.AvaloniaUI.Charts.FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md) в качестве форматтера меток, либо создать собственный форматтер, реализовав интерфейс [`IAxisLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/IAxisLabelFormatter.md).
 
-Мы используем класс `FuncLabelFormatter`, чтобы создать короткие метки для значений дата-время оси _X_. В главной View Model реализуйте свойство типа `FuncLabelFormatter`, которое форматирует метки определённым образом. В XAML привяжите параметр `ScaleOptions.LabelFormatter` оси к этому форматтеру.
+Мы используем класс [`FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md), чтобы создать короткие метки для значений дата-время оси _X_. В главной View Model реализуйте свойство типа [`FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md), которое форматирует метки определённым образом. В XAML привяжите параметр [`ScaleOptions.LabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) оси к этому форматтеру.
 
 ![chart-get-started-label-formatting-month-custom](../../images/chart-get-started-label-formatting-month-custom.png)
 
@@ -295,7 +295,7 @@ public partial class MainWindowViewModel : ViewModelBase
 
 ## Результат
 
-Теперь вы можете запустить приложение, чтобы увидеть результат этого учебника. Контрол `CartesianChart` отображает три серии данных с использованием представлений Bar и Line series views. Серия Line связана с собственной осью _X_, отображаемой в верхней части диаграммы. 
+Теперь вы можете запустить приложение, чтобы увидеть результат этого учебника. Контрол [`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) отображает три серии данных с использованием представлений Bar и Line series views. Серия Line связана с собственной осью _X_, отображаемой в верхней части диаграммы. 
 
 ![charts-get-started](../../images/charts-get-started.png)
 

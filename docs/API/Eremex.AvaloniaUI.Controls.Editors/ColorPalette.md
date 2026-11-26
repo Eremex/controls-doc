@@ -12,11 +12,16 @@ Represents a color palette.
 public abstract class ColorPalette
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ColorPalette](ColorPalette/ColorPalette.md)(…) | Initializes a new instance of the ColorPalette class with the specified name and colors. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Colors](ColorPalette/Colors.md) { get; } | Gets the palette's colors. |
 | [Name](ColorPalette/Name.md) { get; set; } | Gets the palette's name. |
 

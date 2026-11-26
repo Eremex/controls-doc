@@ -4,15 +4,15 @@ order: 100
 seealso: []
 ---
 
-# 修改控件主题
+# 修改控件主题 {#modify-control-themes}
 
 Avalonia UI 中的控件主题（control theme）是一组样式、[控件主题](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes)和资源的集合，用于定义控件的模板和外观设置。
 
 本主题介绍了如何为项目中单个 Eremex 控件或所有 Eremex 控件修改主题设置和样式。
 
-## 默认主题
+## 默认主题 {#default-theme}
 
-_Eremex.Avalonia.Themes.DeltaDesign_ 主题目前是 Eremex 控件的默认主题。要使用 Eremex Controls 库，您需要在项目中包含此主题，并在 _App.axaml_ 文件中[注册](register-an-eremex-paint-theme.md)它。否则，Eremex 控件将显示为空白。
+`Eremex.Avalonia.Themes.DeltaDesign` 主题目前是 Eremex 控件的默认主题。要使用 Eremex Controls 库，您需要在项目中包含此主题，并在 _App.axaml_ 文件中[注册](register-an-eremex-paint-theme.md)它。否则，Eremex 控件将显示为空白。
 
 要修改特定的主题设置（例如控件元素的颜色或模板），请参阅主题的源代码。您可以在 GitHub 上找到并下载它：[Eremex Controls Themes](https://github.com/Eremex/controlthemes)。
 
@@ -23,11 +23,11 @@ _Eremex.Avalonia.Themes.DeltaDesign_ 主题目前是 Eremex 控件的默认主�
 
 <!-- To override a resource in your application, you must know the key of this resource. -->
 
-## 概念：定位目标样式、资源或模板
+## 概念：定位目标样式、资源或模板 {#concepts-locate-a-target-style-resource-or-template}
 
 您可以浏览主题的源代码，以确定要修改的主题设置。
 
-下图展示了 _DeltaDesign_ 主题源代码的结构：
+下图展示了 `DeltaDesign` 主题源代码的结构：
 
 ![deltadesigntheme-structure](../../images/deltadesigntheme-structure.png)
 
@@ -37,7 +37,7 @@ _Eremex.Avalonia.Themes.DeltaDesign_ 主题目前是 Eremex 控件的默认主�
 
 在这些文件中，主题设置（模板、颜色、边距等）被定义为动态资源或静态资源。
 
-### 在 Eremex 视觉主题中声明动态资源
+### 在 Eremex 视觉主题中声明动态资源 {#declaration-of-dynamic-resources-in-the-eremex-paint-theme}
 
 依赖于主题变体（Light 或 Dark）的主题设置被定义为动态资源（`DynamicResource`）。这些主题设置包括 Eremex 控件的大多数颜色。
 
@@ -72,7 +72,7 @@ _Eremex.Avalonia.Themes.DeltaDesign_ 主题目前是 Eremex 控件的默认主�
 
 要在项目中为特定主题变体覆盖动态资源，您必须知道其对应字典的键（"Default" 或 "Dark"）。
 
-### 在 Eremex 视觉主题中声明静态资源
+### 在 Eremex 视觉主题中声明静态资源 {#declaration-of-static-resources-in-the-eremex-paint-theme}
 
 许多主题设置在 Light 和 Dark 主题变体中是相同的。这些设置被定义为静态资源（`StaticResource`）。它们包括：
 
@@ -96,9 +96,9 @@ _Eremex.Avalonia.Themes.DeltaDesign_ 主题目前是 Eremex 控件的默认主�
 </Styles>
 ```
 
-### 使用样式类进行样式设置
+### 使用样式类进行样式设置 {#styling-with-style-classes}
 
-_DeltaDesign_ 主题包含[控件主题](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes)和样式选择器，它们针对 Eremex 控件和标准 Avalonia 控件的特定[样式类](https://docs.avaloniaui.net/docs/basics/user-interface/styling/style-classes)。
+`DeltaDesign` 主题包含[控件主题](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes)和样式选择器，它们针对 Eremex 控件和标准 Avalonia 控件的特定[样式类](https://docs.avaloniaui.net/docs/basics/user-interface/styling/style-classes)。
 当您为控件指定特定的_样式类_（使用控件的 `Classes` 属性）时，主题会应用相应的样式选择器。
  
 例如，要用不同的边框颜色突出显示 CheckBox，请应用 `warning` _样式类_：
@@ -109,7 +109,7 @@ _DeltaDesign_ 主题包含[控件主题](https://docs.avaloniaui.net/docs/basics
 
 ![themes-checkbox-styleclass-warning](../../images/themes-checkbox-styleclass-warning.png)
 
-在 _DeltaDesign_ 主题中，带有 `warning` _样式类_的 CheckBox 的样式选择器定义如下：
+在 `DeltaDesign` 主题中，带有 `warning` _样式类_的 CheckBox 的样式选择器定义如下：
 
 ``` xml
 <!-- Eremex.Avalonia.Themes.DeltaDesign\Controls\StandardControls\CheckBox.axaml -->
@@ -123,7 +123,7 @@ _DeltaDesign_ 主题包含[控件主题](https://docs.avaloniaui.net/docs/basics
 </ControlTheme>
 ```
 
-以下是 _DeltaDesign_ 主题自定义的主要_样式类_：
+以下是 `DeltaDesign` 主题自定义的主要_样式类_：
 
 - `accent` — 强调外观设置。
 
@@ -151,13 +151,13 @@ _DeltaDesign_ 主题包含[控件主题](https://docs.avaloniaui.net/docs/basics
 
 
 
-## 修改共享动态资源
+## 修改共享动态资源 {#modify-a-shared-dynamic-resource}
 
 多个控件可以使用同一个动态资源。
 要为整个应用程序中的所有目标控件修改共享资源，请使用 `Application.Resources` 属性在应用程序级别覆盖该资源。
 要仅在特定窗口内应用更改，请改用 `Window.Resources` 属性。
 
-### 示例 — 为应用程序中 Light 和 Dark 主题变体修改控件的聚焦行边框画刷
+### 示例 — 为应用程序中 Light 和 Dark 主题变体修改控件的聚焦行边框画刷 {#example-modify-the-focused-rows-border-brush-for-controls-in-your-application-for-the-light-and-dark-theme-variants}
 
 假设您需要修改整个应用程序中用于绘制 DataGrid、TreeList 和 ListView 控件中聚焦行边框的画刷。新画刷在 Light 和 Dark 主题变体中应具有不同的值。
 
@@ -273,16 +273,16 @@ Update the declaration of style selectors above when DataGrid moves to ControlTh
 ![themes-example-modify-focusedrowborder-dark](../../images/themes-example-modify-focusedrowborder-dark.png)
 
 
-## 为特定控件修改主题资源
+## 为特定控件修改主题资源 {#modify-theme-resources-for-a-specific-control}
 
 您可以使用控件的 `Resources` 属性来仅为该控件更改特定资源。
 此修改不会影响其他控件。
 
-### 示例 — 修改单个 Button 在按下和聚焦状态下的颜色
+### 示例 — 修改单个 Button 在按下和聚焦状态下的颜色 {#example-modify-an-individual-buttons-color-in-the-pressed-and-focused-states}
 
-_DeltaDesign_ 主题包含[控件主题](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes)和样式选择器，用于调整标准 Avalonia UI 控件的颜色，使其在与 Eremex 控件位于同一窗口时外观保持一致。
+`DeltaDesign` 主题包含[控件主题](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes)和样式选择器，用于调整标准 Avalonia UI 控件的颜色，使其在与 Eremex 控件位于同一窗口时外观保持一致。
 
-下图展示了标准 Button 控件在按下状态下由 _DeltaDesign_ 主题绘制的默认外观：
+下图展示了标准 Button 控件在按下状态下由 `DeltaDesign` 主题绘制的默认外观：
 
 ![theme-button-default-appearance](../../images/theme-button-default-appearance.png)
 
@@ -325,13 +325,13 @@ _DeltaDesign_ 主题包含[控件主题](https://docs.avaloniaui.net/docs/basics
 ```
 
 
-## 为窗口内的控件修改主题资源
+## 为窗口内的控件修改主题资源 {#modify-theme-resources-for-controls-within-a-window}
 
 您可以从 `Window.Resources` 属性修改主题资源，以将主题修改应用于该窗口内的相应控件。
 
-### 示例 — 为窗口内 Light 和 Dark 主题变体修改强调按钮
+### 示例 — 为窗口内 Light 和 Dark 主题变体修改强调按钮 {#example-modify-accented-buttons-within-a-window-for-the-light-and-dark-theme-variants}
 
-_DeltaDesign_ 主题包含特定的样式选择器，当您为标准 Avalonia Button 控件设置 `accent` 和/或 `warning` 样式类时会应用这些选择器。此示例展示了如何为 Light 和 Dark 主题变体覆盖窗口中强调按钮的外观设置。
+`DeltaDesign` 主题包含特定的样式选择器，当您为标准 Avalonia Button 控件设置 `accent` 和/或 `warning` 样式类时会应用这些选择器。此示例展示了如何为 Light 和 Dark 主题变体覆盖窗口中强调按钮的外观设置。
 
 您可以应用 `accent` 和 `warning` 样式类来突出显示按钮：
 
@@ -395,9 +395,9 @@ _DeltaDesign_ 主题包含特定的样式选择器，当您为标准 Avalonia Bu
 
 
 
-## 修改 Eremex 视觉主题中定义的控件样式
+## 修改 Eremex 视觉主题中定义的控件样式 {#modify-control-styles-defined-in-the-eremex-paint-theme}
 
-当您浏览 _DeltaDesign_ 视觉主题源代码时，会发现不仅改变颜色和画刷，还会改变控件其他外观设置的样式选择器。这些包括内部元素的大小以及定义布局和内容的控件模板。
+当您浏览 `DeltaDesign` 视觉主题源代码时，会发现不仅改变颜色和画刷，还会改变控件其他外观设置的样式选择器。这些包括内部元素的大小以及定义布局和内容的控件模板。
 
 您可以使用以下属性在应用程序中覆盖这些样式选择器：
 
@@ -407,13 +407,13 @@ _DeltaDesign_ 主题包含特定的样式选择器，当您为标准 Avalonia Bu
 
 
 
-### 示例 — 在应用程序级别修改 ColorEditor 控件中颜色切换按钮的样式
+### 示例 — 在应用程序级别修改 ColorEditor 控件中颜色切换按钮的样式 {#example-modify-a-style-for-a-color-toggle-button-in-a-coloreditor-control-at-the-application-level}
 
-此示例展示了如何更改 `ColorEditor` 和 [PopupColorEditor](../editors/popupcoloreditor.md) 控件中颜色切换按钮的外观和模板。新样式将应用于应用程序中所有 `ColorEditor` 和 `PopupColorEditor` 控件。
+此示例展示了如何更改 [`ColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorEditor.md) 和 [PopupColorEditor](../editors/popupcoloreditor.md) 控件中颜色切换按钮的外观和模板。新样式将应用于应用程序中所有 [`ColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorEditor.md) 和 [`PopupColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) 控件。
 
 ![theme-coloreditor-colorcheckbutton](../../images/theme-coloreditor-colorcheckbutton.png)
 
-首先，在 _DeltaDesign_ 主题源代码中找到颜色切换按钮的默认样式。
+首先，在 `DeltaDesign` 主题源代码中找到颜色切换按钮的默认样式。
 
 ``` xml
 <!-- Eremex.Avalonia.Themes.DeltaDesign\Controls\Editors\ColorEditor.axaml -->

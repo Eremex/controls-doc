@@ -12,11 +12,16 @@ Represents a band in a data grid that combines columns under a common header.
 public class GridBand : DataControlBandBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [GridBand](GridBand/GridBand.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Bands](GridBand/Bands.md) { get; } | Gets the collection of child bands. |
 | [BandsSource](GridBand/BandsSource.md) { get; set; } | Gets or sets the collection whose items are used to generate child bands. |
 

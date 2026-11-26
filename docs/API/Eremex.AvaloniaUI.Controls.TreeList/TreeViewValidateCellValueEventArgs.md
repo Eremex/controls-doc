@@ -12,11 +12,16 @@ Provides data for the ValidateCellValue event.
 public class TreeViewValidateCellValueEventArgs : TreeViewNodeValueEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeViewValidateCellValueEventArgs](TreeViewValidateCellValueEventArgs/TreeViewValidateCellValueEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ErrorContent](TreeViewValidateCellValueEventArgs/ErrorContent.md) { get; set; } | Gets or sets an object that describes the validation error. |
 
 ## See Also

@@ -12,7 +12,7 @@ Serves as the base class for lights that emit in every direction from a single p
 public abstract class PointLightBase : Light
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

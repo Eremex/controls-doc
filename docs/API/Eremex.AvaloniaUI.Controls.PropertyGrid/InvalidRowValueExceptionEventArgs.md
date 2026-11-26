@@ -12,11 +12,16 @@ Provides data for the InvalidRowValueException event.
 public class InvalidRowValueExceptionEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [InvalidRowValueExceptionEventArgs](InvalidRowValueExceptionEventArgs/InvalidRowValueExceptionEventArgs.md)(…) | Initializes a new instance of the InvalidRowValueExceptionEventArgs class with the specified value, exception, and error content. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ErrorContent](InvalidRowValueExceptionEventArgs/ErrorContent.md) { get; set; } | Gets or sets the error description displayed for the row. |
 | [Exception](InvalidRowValueExceptionEventArgs/Exception.md) { get; } | Gets the exception that was thrown. |
 | [Value](InvalidRowValueExceptionEventArgs/Value.md) { get; } | Gets the value whose assignment threw the exception. |

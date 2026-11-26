@@ -12,13 +12,23 @@ Converts numeric arguments and values into series data points. The arguments mus
 public class SortedNumericDataAdapter : ISeriesDataAdapter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SortedNumericDataAdapter](SortedNumericDataAdapter/SortedNumericDataAdapter.md)() | Initializes a new instance of the SortedNumericDataAdapter class that contains no data points. |
 | [SortedNumericDataAdapter](SortedNumericDataAdapter/SortedNumericDataAdapter.md)(…) | Initializes a new instance of the SortedNumericDataAdapter class with the specified arguments and values. (2 constructors) |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ItemCount](SortedNumericDataAdapter/ItemCount.md) { get; } | Gets the number of data points stored in the adapter. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Add](SortedNumericDataAdapter/Add.md)(…) | Adds a data point to the end of the adapter. (2 methods) |
 | [AddRange](SortedNumericDataAdapter/AddRange.md)(…) | Adds several data points to the end of the adapter. |
 | [Clear](SortedNumericDataAdapter/Clear.md)() | Removes all data points from the adapter. |

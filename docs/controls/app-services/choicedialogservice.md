@@ -8,10 +8,7 @@ seealso: []
 
 [`IChoiceDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService.md) provides a platform-agnostic way to show a modal dialog with an arbitrary set of buttons and return the result of the pressed one. The dialog result can be a `string`, `bool`, enumeration value, or any other type. From your ViewModel, you can use [`IChoiceDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService.md) to display a dialog and receive a strongly typed answer, without referencing any window type.
 
-<!-- TODO
-image
-app-services-ichoicedialogservice
--->
+![app-services-ichoicedialogservice](../../images/app-services-ichoicedialogservice.png)
 
 Main features include:
 
@@ -43,7 +40,7 @@ public interface IChoiceDialogService
 **Returns:** 
 
 - `T` — the result associated with the clicked choice button
-- `default(T)` if the dialog was closed without a choice by clicking the dialog's caption 'x' button. `default(T)` is `null` for reference types (including `string`), `false` for the `bool` type, `0` for an enum without an explicit zero member.
+- `default(T)` if the dialog was closed without a choice by clicking the dialog's close ('x') button. `default(T)` is `null` for reference types (including `string`), `false` for the `bool` type, `0` for an enum without an explicit zero member.
 - Pressing ENTER — If the dialog contains a choice button with `IsDefault = true`, pressing ENTER returns that button's `Result` value. If no choice button has `IsDefault = true`, pressing ENTER does nothing, and the dialog remains open.
 - Pressing ESC — If the dialog contains a choice button with `IsCancel = true`, pressing Escape returns that button's `Result` value. If no choice button has `IsCancel = true`, pressing Escape does nothing, and the dialog remains open.
 
@@ -304,13 +301,13 @@ private void ShowDialogWithCustomButtonPlacement()
 
 ## Handle a Dismissed Dialog
 
-When the user dismisses the dialog by clicking the caption 'x' button, the [`Show`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService/Show.md) method returns `default(T)`:
+When the user dismisses the dialog by clicking the close ('x') button, the [`Show`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IChoiceDialogService/Show.md) method returns `default(T)`:
 
 - For reference types (`string`, etc.), the result is `null`.
-- For value types (`bool`, enums, etc.), the result is the default value of the type (`false` for a Boolean type, `0` for an enumeration, etc.)
+- For value types (`bool`, enums, etc.), the result is the default value of the type (`false` for the Boolean type, `0` for an enumeration, etc.)
 
 
-If the dialog contains a cancel button (a choice button whose [`IsCancel`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T/IsCancel.md) property is `true`), clicking it or pressing Escape closes the dialog with that button's result. The caption 'x' button still closes the dialog with the `default(T)` result.
+If the dialog contains a cancel button (a choice button whose [`IsCancel`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogChoice-T/IsCancel.md) property is `true`), clicking it or pressing Escape closes the dialog with that button's result. The close ('x') button still closes the dialog with the `default(T)` result.
 
 ### Example — Handle a Dialog's Dismissal
 

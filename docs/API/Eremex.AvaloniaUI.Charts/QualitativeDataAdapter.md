@@ -12,13 +12,23 @@ Converts category names and numeric values into series data points. The argument
 public class QualitativeDataAdapter : ISeriesDataAdapter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [QualitativeDataAdapter](QualitativeDataAdapter/QualitativeDataAdapter.md)() | Initializes a new instance of the QualitativeDataAdapter class that contains no data points. |
 | [QualitativeDataAdapter](QualitativeDataAdapter/QualitativeDataAdapter.md)(…) | Initializes a new instance of the QualitativeDataAdapter class with the specified arguments and values. (2 constructors) |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ItemCount](QualitativeDataAdapter/ItemCount.md) { get; } | Gets the number of data points stored in the adapter. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Add](QualitativeDataAdapter/Add.md)(…) | Adds a data point to the end of the adapter. (2 methods) |
 | [AddRange](QualitativeDataAdapter/AddRange.md)(…) | Adds several data points to the end of the adapter. |
 | [Clear](QualitativeDataAdapter/Clear.md)() | Removes all data points from the adapter. |

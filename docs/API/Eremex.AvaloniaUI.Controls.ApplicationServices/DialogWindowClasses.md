@@ -12,11 +12,12 @@ Names of the style classes a dialog window recognises. Pass them to [`ViewLocato
 public static class DialogWindowClasses
 ```
 
-## Public Members
+## Fields
 
 | name | description |
 | --- | --- |
 | const [MaxSize](DialogWindowClasses/MaxSize.md) | Sizes the dialog to the largest of the predefined widths. |
+| const [Message](DialogWindowClasses/Message.md) | Lays a view out as a message: the content is padded, wraps its text, is capped in width and scrolls when it is too tall. Plain (non-control) content always gets this layout; a view otherwise fills the window as it is, the way a full dialog view expects. |
 | const [MinSize](DialogWindowClasses/MinSize.md) | Sizes the dialog to the smallest of the predefined widths, for short confirmations and prompts. |
 | const [StandardSize](DialogWindowClasses/StandardSize.md) | Sizes the dialog to the default width used by most dialogs. |
 | const [WithFooter](DialogWindowClasses/WithFooter.md) | Moves the dialog buttons into a separate footer bar with its own background, and widens them, instead of placing them directly under the content. |

@@ -13,11 +13,16 @@ Applied to a view model to declare which view renders it and how the hosting win
 public class ViewLocatorAttribute : Attribute
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ViewLocatorAttribute](ViewLocatorAttribute/ViewLocatorAttribute.md)(…) | Declares the view for the annotated view model, leaving the hosting window with its default style classes. (2 constructors) |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [StyleClasses](ViewLocatorAttribute/StyleClasses.md) { get; set; } | The style classes applied to the hosting window, as a single space-separated string. Defaults to `"DefaultDialogWindow"`, and is `null` when the classes were supplied as an array instead. See [`DialogWindowClasses`](./DialogWindowClasses.md) for the recognised names. |
 | [StyleClassesArray](ViewLocatorAttribute/StyleClassesArray.md) { get; } | The style classes applied to the hosting window, one per element. Set only by the constructor that takes them separately; otherwise `null`. |
 | [ViewType](ViewLocatorAttribute/ViewType.md) { get; } | The type of the view created for the annotated view model. It must have a parameterless constructor. |

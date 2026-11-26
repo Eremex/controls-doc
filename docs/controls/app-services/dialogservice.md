@@ -7,22 +7,18 @@ seealso: []
 
 # IDialogService
 
-[`IDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IDialogService.md) provides a platform-agnostic way to show modal dialogs. From your ViewModels, you can open and handle modal dialogs using dedicated _dialog ViewModels_. This keeps your ViewModels completely decoupled from Avalonia window types.
+[`IDialogService`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IDialogService.md) provides a platform-agnostic way to show modal dialogs. From your ViewModels, you can open and handle modal dialogs driven by dedicated _dialog ViewModels_. This keeps your ViewModels completely decoupled from Avalonia window types.
 
+![app-services-idialogservice](../../images/app-services-idialogservice.png) 
 
-<!-- TODO
-image
-app-services-idialogservice 
--->
-
-Main features include:
+Main features:
 
 - ViewModel-driven dialogs — A dialog is defined entirely by a ViewModel. The ViewModel supplies the dialog title, content, and buttons.
 - Simple dialogs — No need to define a dialog View if you only want to display plain text with a button set. Just create a dialog ViewModel by deriving it from [`OkCancelDialogAwareViewModel`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/OkCancelDialogAwareViewModel.md) and assign a string to the ViewModel's [`Content`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/WindowAwareViewModel/Content.md) property.
-- Custom dialog Views — You can create a custom dialog View to render it as the dialog's inner content. This View is located automatically through the [`ViewLocatorAttribute`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ViewLocatorAttribute.md) applied to the dialog ViewModel. 
+- Custom dialog Views — You can create a custom dialog View and render it as the dialog's inner content. This View is located automatically through the [`ViewLocatorAttribute`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ViewLocatorAttribute.md) applied to the dialog ViewModel. 
 - Customizable button sets — The base dialog ViewModel class provides standard OK/Cancel buttons, but you can override `CreateButtons` to define any set of buttons with custom captions and placement.
 - Validation support — Override the [`CanOk`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/OkCancelDialogAwareViewModel/CanOk.md) method in your dialog ViewModel to disable the default button until the input is valid.
-- Nested modals — A dialog can open another modal dialog on top of itself. The nested dialog blocks its parent, not the whole application.
+- Nested modals — A dialog can open another modal dialog on top of itself. 
 - Dialog result — After the dialog is closed, it returns the result specified by the [`DialogResult`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogResult.md) enumeration.
 
 ## Interface Definition
@@ -240,7 +236,7 @@ var result = Service<IDialogService>().ShowDialog(new DialogServiceYesNoCancelVi
 
 ### Custom Captions and Placement
 
-You can create custom buttons by overriding the `DialogAwareViewModel.CreateButtons` method and using the static [`DialogButtonViewModel.CreateCustom`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogButtonViewModel/CreateCustom.md) method within it. The [`CreateCustom`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogButtonViewModel/CreateCustom.md) method allows you specify a button caption and placement. 
+You can create custom buttons by overriding the `DialogAwareViewModel.CreateButtons` method and using the static [`DialogButtonViewModel.CreateCustom`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogButtonViewModel/CreateCustom.md) method within it. The [`CreateCustom`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogButtonViewModel/CreateCustom.md) method allows you to specify a button caption and placement. 
 
 The following example shows a dialog with the Yes, No, and Cancel buttons. The Yes and No buttons are placed to the left of the Cancel button using the _dockType_ parameter.
 
@@ -301,9 +297,9 @@ When the [`ViewLocatorAttribute`](../../API/Eremex.AvaloniaUI.Controls.Applicati
 
     You can also manually set the [`Content`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/WindowAwareViewModel/Content.md) property for the dialog ViewModel, without using the [`ViewLocatorAttribute`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ViewLocatorAttribute.md).
 
-3. (Optional) Control the availability of the dialog's OK button
+3. (Optional) Control the availability of the dialog's OK button.
 
-    You can override the dialog ViewModel's CanOk method to disable/enable the OK button according to your requirements.
+    You can override the dialog ViewModel's [`CanOk`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/OkCancelDialogAwareViewModel/CanOk.md) method to disable/enable the OK button according to your requirements.
 
 #### Example
 
@@ -320,16 +316,7 @@ using Eremex.AvaloniaUI.Controls.ApplicationServices;
 
 namespace DemoCenter.ViewModels.ApplicationServices;
 
-/// <summary>
-/// IDialogService with validation: Ok stays disabled until the field is filled in.
-/// The view is picked by <see cref="ViewLocatorAttribute"/>, so the view model does not
-/// need to know how it is displayed.
-/// </summary>
-/// <remarks>
-/// The property is written by hand: dialog view models derive from the Eremex base class
-/// rather than the CommunityToolkit ObservableObject, so the [ObservableProperty] generator
-/// does not apply to them.
-/// </remarks>
+// The Ok button stays disabled until the UserName field is filled in.
 [ViewLocator(typeof(DialogServiceValidationView))]
 public class DialogServiceValidationViewModel : OkCancelDialogAwareViewModel
 {
@@ -465,7 +452,7 @@ In the following example, the Yes button is accented. The button's [`IsDefault`]
 app-services-idialogservice
  -->
 
-``` cs
+```csharp
     protected override IDialogButtonViewModel[] CreateButtons()
     {
         var buttons = new IDialogButtonViewModel[]

@@ -12,11 +12,16 @@ Provides data for the InvalidCellValueException event.
 public class InvalidCellValueExceptionEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [InvalidCellValueExceptionEventArgs](InvalidCellValueExceptionEventArgs/InvalidCellValueExceptionEventArgs.md)(…) | Initializes a new instance of the InvalidCellValueExceptionEventArgs class with the specified value, exception, and error content. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ErrorContent](InvalidCellValueExceptionEventArgs/ErrorContent.md) { get; set; } | Gets or sets the content that describes the error. |
 | [Exception](InvalidCellValueExceptionEventArgs/Exception.md) { get; } | Gets the exception that occurred when the cell value was processed. |
 | [Value](InvalidCellValueExceptionEventArgs/Value.md) { get; } | Gets the invalid cell value. |

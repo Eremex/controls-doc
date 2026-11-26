@@ -12,7 +12,7 @@ Provides navigation between inplace editors in a host control.
 public interface IInplaceEditorNavigationHandler
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

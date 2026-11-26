@@ -12,12 +12,17 @@ IChoiceDialogService implementation built on top of IDialogService.
 public class ChoiceDialogService : IChoiceDialogService
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ChoiceDialogService](ChoiceDialogService/ChoiceDialogService.md)() | Legacy bridge for code that creates the service directly, without a container. Requires an initialized [`Current`](./ApplicationServicesContext/Current.md). |
 | [ChoiceDialogService](ChoiceDialogService/ChoiceDialogService.md)(…) | Primary constructor. Dependencies are passed explicitly, so the service can be created by any DI container and substituted in tests. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Show&lt;T&gt;](ChoiceDialogService/Show.md)(…) |  |
 
 ## See Also

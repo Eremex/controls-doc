@@ -12,11 +12,16 @@ Provides data for the RowClick event.
 public class DataGridRowClickEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridRowClickEventArgs](DataGridRowClickEventArgs/DataGridRowClickEventArgs.md)(…) | Initializes a new instance of the DataGridRowClickEventArgs class with the specified row index, click count, and mouse button. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ClickCount](DataGridRowClickEventArgs/ClickCount.md) { get; } | Gets the number of consecutive clicks. |
 | [IsLeftButtonPressed](DataGridRowClickEventArgs/IsLeftButtonPressed.md) { get; } | Gets whether the left mouse button was pressed. |
 | [RowIndex](DataGridRowClickEventArgs/RowIndex.md) { get; } | Gets the index of the clicked row. |

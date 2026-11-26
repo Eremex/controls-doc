@@ -12,11 +12,16 @@ Provides settings for the button editor.
 public class ButtonEditorProperties : TextEditorProperties
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ButtonEditorProperties](ButtonEditorProperties/ButtonEditorProperties.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Buttons](ButtonEditorProperties/Buttons.md) { get; set; } | Gets or sets the collection of custom buttons displayed in the editor. |
 | [IsTextEditable](ButtonEditorProperties/IsTextEditable.md) { get; set; } | Gets or sets whether users can edit the editor's text. |
 | [ShowText](ButtonEditorProperties/ShowText.md) { get; set; } | Gets or sets whether the editor displays its text. |

@@ -12,11 +12,16 @@ Displays an editor within a toolbar, menu, or ribbon.
 public class ToolbarEditorItem : ToolbarItem
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ToolbarEditorItem](ToolbarEditorItem/ToolbarEditorItem.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowImmediateEditorValuePosting](ToolbarEditorItem/AllowImmediateEditorValuePosting.md) { get; set; } | Gets or sets whether editor values are posted immediately, or null to use the editor's default behavior. |
 | [EditorAlignment](ToolbarEditorItem/EditorAlignment.md) { get; set; } | Gets or sets the position of the editor relative to the item header. |
 | [EditorHeight](ToolbarEditorItem/EditorHeight.md) { get; set; } | Gets or sets the height of the item's editor. |
@@ -26,8 +31,18 @@ public class ToolbarEditorItem : ToolbarItem
 | [EditorWidth](ToolbarEditorItem/EditorWidth.md) { get; set; } | Gets or sets the width of the item's editor. |
 | [ReadOnly](ToolbarEditorItem/ReadOnly.md) { get; set; } | Gets or sets whether the editor prevents users from changing its value. |
 | [SizeMode](ToolbarEditorItem/SizeMode.md) { get; set; } | Gets or sets how the editor item uses the available space. |
-| event [EditorValueChanged](ToolbarEditorItem/EditorValueChanged.md) | Occurs when the editor's value changes. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [PostEditor](ToolbarEditorItem/PostEditor.md)() | Posts the active editor's value. |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [EditorValueChanged](ToolbarEditorItem/EditorValueChanged.md) | Occurs when the editor's value changes. |
 
 ## See Also
 

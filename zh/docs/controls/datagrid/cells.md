@@ -1,14 +1,14 @@
 ---
-title: Cells
+title: 单元格
 order: 86000
 seealso: []
 ---
 
-# Cells
+# 单元格 {#cells}
 
-网格单元格用于显示和编辑行的值。单元格由[行](rows.md)和[列](columns.md)相交而成。虽然单元格用于呈现数据,但其行为和外观(例如内嵌编辑器和格式化设置)通常由其父列的属性定义。本主题概括介绍了如何管理和获取单元格内容,以及如何自定义单元格外观。
+网格单元格用于显示和编辑行的值。单元格由[行](rows.md)和[列](columns.md)相交而成。虽然单元格用于呈现数据,但其行为和外观(例如就地编辑器和格式化设置)通常由其父列的属性定义。本主题概括介绍了如何管理和获取单元格内容,以及如何自定义单元格外观。
 
-## Format Cell Values
+## Format Cell Values {#format-cell-values}
 
 DataGrid 控件允许您使用常见格式和自定义格式来呈现单元格值。例如,您可以将数值格式化为货币、百分比、整数或浮点数等。DateTime 值可以按短日期格式、长日期格式、仅时间格式等方式呈现。
 
@@ -20,24 +20,24 @@ DataGrid 控件允许您使用常见格式和自定义格式来呈现单元格�
 - [通过事件自定义单元格的显示文本](#customize-display-text-of-cells)
 
 
-### Use Masked Input
+### Use Masked Input {#use-masked-input}
 
 Eremex 编辑器允许您使用[掩码](../../controls/editors/masks/index.md)来限制数据输入,并格式化数值和日期时间值。独立编辑器以及嵌入到容器控件(DataGrid、TreeList、PropertyGrid 等)中的编辑器都支持掩码功能。
 
 
-*适用对象*:处于显示模式和编辑模式的单元格。要防止在显示模式下应用掩码(即单元格未处于编辑状态时),请禁用编辑器的 `MaskUseAsDisplayFormat` 属性。
+*适用对象*:处于显示模式和编辑模式的单元格。要防止在显示模式下应用掩码(即单元格未处于编辑状态时),请禁用编辑器的 [`MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/MaskUseAsDisplayFormat.md) 属性。
 
 *步骤*:
 
-1. 为列指定一个 Eremex [内嵌编辑器](data-editing/index.md)。
-2. 将编辑器的 `MaskType` 属性设置为 `MaskType.Numeric` 或 `MaskType.DateTime`,以分别对数值或日期时间值应用掩码。
-3. 将编辑器的 `Mask` 属性设置为所需的掩码。有关掩码说明符的信息,请参见以下主题:
+1. 为列指定一个 Eremex [就地编辑器](data-editing/index.md)。
+2. 将编辑器的 [`MaskType`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) 属性设置为 [`MaskType.Numeric`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md) 或 [`MaskType.DateTime`](../../API/Eremex.AvaloniaUI.Controls.Editors/MaskType.md),以分别对数值或日期时间值应用掩码。
+3. 将编辑器的 [`Mask`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/Mask.md) 属性设置为所需的掩码。有关掩码说明符的信息,请参见以下主题:
 
     - [数值掩码](../../controls/editors/masks/numeric-masks.md)
     - [日期时间掩码](../../controls/editors/masks/date-time-masks.md)
 
 
-#### Example - Custom Format Date-time Values Using Masks
+#### Example - Custom Format Date-time Values Using Masks {#example-custom-format-date-time-values-using-masks}
 
 以下示例为列指定了一个 DateEditor,并应用了自定义日期时间掩码("MMMM dd, yyyy")。此掩码会在编辑模式和显示模式下格式化单元格值,如下图所示:
 
@@ -53,7 +53,7 @@ Eremex 编辑器允许您使用[掩码](../../controls/editors/masks/index.md)�
 
 
 
-### Set a Display Format
+### Set a Display Format {#set-a-display-format}
 
 您可以使用标准和自定义格式说明符,在显示模式下格式化单元格值。
 
@@ -63,9 +63,9 @@ Eremex 编辑器允许您使用[掩码](../../controls/editors/masks/index.md)�
 
 *步骤*:
 
-1. 为列指定一个 Eremex [内嵌编辑器](data-editing/index.md)。
-2. 使用编辑器的 `DisplayFormatString` 属性设置显示格式。
-3. 对于使用掩码来格式化显示值的编辑器,请禁用编辑器的 `MaskUseAsDisplayFormat` 属性。例如,DateEditor 和 SpinEditor 默认在显示模式下使用掩码来格式化数值。因此,要让这些编辑器应用 `DisplayFormatString` 属性指定的显示格式,必须禁用 `MaskUseAsDisplayFormat` 属性。
+1. 为列指定一个 Eremex [就地编辑器](data-editing/index.md)。
+2. 使用编辑器的 [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) 属性设置显示格式。
+3. 对于使用掩码来格式化显示值的编辑器,请禁用编辑器的 [`MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/MaskUseAsDisplayFormat.md) 属性。例如,DateEditor 和 SpinEditor 默认在显示模式下使用掩码来格式化数值。因此,要让这些编辑器应用 [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) 属性指定的显示格式,必须禁用 [`MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/MaskUseAsDisplayFormat.md) 属性。
 
     您可以在 .NET 文档中找到所有显示格式的说明:
 
@@ -74,12 +74,12 @@ Eremex 编辑器允许您使用[掩码](../../controls/editors/masks/index.md)�
     - [标准日期和时间格式字符串](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
     - [自定义日期和时间格式字符串](https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
 
-#### Example - Format Date-Time Values Differently in Display and Edit Modes
+#### Example - Format Date-Time Values Differently in Display and Edit Modes {#example-format-date-time-values-differently-in-display-and-edit-modes}
 
-以下示例为列指定了一个 DateEditor 内嵌编辑器,并利用其设置在显示模式和编辑模式下分别应用不同的格式化方式:
+以下示例为列指定了一个 DateEditor 就地编辑器,并利用其设置在显示模式和编辑模式下分别应用不同的格式化方式:
 
-- `DisplayFormatString` 属性设置为 'd'。此设置会在显示模式下对值应用短日期格式。要使 `DisplayFormatString` 属性生效,需要禁用 `MaskUseAsDisplayFormat` 属性。
-- `Mask` 属性设置为 'g'。此格式会在编辑模式下启用带长时间的完整日期时间格式。
+- [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) 属性设置为 'd'。此设置会在显示模式下对值应用短日期格式。要使 [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) 属性生效,需要禁用 [`MaskUseAsDisplayFormat`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/MaskUseAsDisplayFormat.md) 属性。
+- [`Mask`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/Mask.md) 属性设置为 'g'。此格式会在编辑模式下启用带长时间的完整日期时间格式。
 
 ![cells-formatting-displayformat-dateeditors-example](../../images/cells-formatting-displayformat-dateeditors-example.png)
 
@@ -91,9 +91,9 @@ Eremex 编辑器允许您使用[掩码](../../controls/editors/masks/index.md)�
 </mxdg:GridColumn>
 ```
 
-#### Example - Format Values as Currency
+#### Example - Format Values as Currency {#example-format-values-as-currency}
 
-以下示例为列指定了一个 TextEditor 内嵌编辑器,并将该编辑器的 `DisplayFormatString` 属性设置为字符串 "c"。当单元格处于显示模式时,此格式会将单元格值显示为货币:
+以下示例为列指定了一个 TextEditor 就地编辑器,并将该编辑器的 [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) 属性设置为字符串 "c"。当单元格处于显示模式时,此格式会将单元格值显示为货币:
 
 ![cells-formatting-currencyexample](../../images/cells-formatting-currencyexample.png)
 
@@ -105,9 +105,9 @@ Eremex 编辑器允许您使用[掩码](../../controls/editors/masks/index.md)�
 </mxdg:GridColumn>
 ```
 
-#### Example - Custom Format Float Values 
+#### Example - Custom Format Float Values {#example-custom-format-float-values}
 
-以下代码为列指定了一个 TextEditor 内嵌编辑器,并将 `DisplayFormatString` 属性设置为字符串 "{}{0:F1} kW"。此格式会以保留一位小数的方式显示浮点值,并在输出结果后添加 "kW" 后缀。当单元格处于编辑模式时,不会应用该显示格式。"{}" 字符串是一个转义标记,它使 XAML 解析器将以左花括号("{")开头的字符串当作普通文本处理,而不是当作标记扩展处理。
+以下代码为列指定了一个 TextEditor 就地编辑器,并将 [`DisplayFormatString`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/DisplayFormatString.md) 属性设置为字符串 "{}{0:F1} kW"。此格式会以保留一位小数的方式显示浮点值,并在输出结果后添加 "kW" 后缀。当单元格处于编辑模式时,不会应用该显示格式。"{}" 字符串是一个转义标记,它使 XAML 解析器将以左花括号("{")开头的字符串当作普通文本处理,而不是当作标记扩展处理。
 
 ![cells-formatting-float-customformatting](../../images/cells-formatting-float-customformatting.png)
 
@@ -121,17 +121,17 @@ Eremex 编辑器允许您使用[掩码](../../controls/editors/masks/index.md)�
 
 
 
-### Format Display Values Using an Event
+### Format Display Values Using an Event {#format-display-values-using-an-event}
 
 *适用对象*:处于显示模式的单元格
 
-如果现有的显示格式或掩码都无法满足您的需求,您可以处理 `CustomColumnDisplayText` 事件,以自定义方式格式化单元格值。此事件允许您替换单元格和[列过滤器](filter-and-search.md#column-filters)中值的默认文本表示形式。要为分组行提供自定义的显示文本,请处理 `DataGridControl.CustomGroupValueDisplayText` 事件。
+如果现有的显示格式或掩码都无法满足您的需求,您可以处理 [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) 事件,以自定义方式格式化单元格值。此事件允许您替换单元格和[列过滤器](filter-and-search.md#column-filters)中值的默认文本表示形式。要为分组行提供自定义的显示文本,请处理 [`DataGridControl.CustomGroupValueDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomGroupValueDisplayText.md) 事件。
 
 更改单元格的显示文本时,不会修改底层的单元格值。
 
-#### Example - Custom Format Cell Values Using the CustomColumnDisplayText Event
+#### Example - Custom Format Cell Values Using the CustomColumnDisplayText Event {#example-custom-format-cell-values-using-the-customcolumndisplaytext-event}
 
-以下 `CustomColumnDisplayText` 事件处理程序会在 "Stock" 列的单元格值后面显示字符串 "pcs"。当单元格正在被编辑时,通过该事件提供的自定义显示值会被忽略。
+以下 [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) 事件处理程序会在 "Stock" 列的单元格值后面显示字符串 "pcs"。当单元格正在被编辑时,通过该事件提供的自定义显示值会被忽略。
 
 ![cells-formatting-customcolumndisplaytext-example](../../images/cells-formatting-customcolumndisplaytext-example.png)
 
@@ -145,7 +145,7 @@ private void DataGrid_CustomColumnDisplayText(object sender, DataGridCustomColum
 }
 ```
 
-## Value Alignment
+## Value Alignment {#value-alignment}
 
 单元格内容的默认水平对齐方式因单元格数据类型而异:
 
@@ -157,13 +157,13 @@ private void DataGrid_CustomColumnDisplayText(object sender, DataGridCustomColum
 
 要自定义单元格中值的水平或垂直对齐方式,请执行以下操作:
 
-1. 为列指定一个 Eremex [内嵌编辑器](data-editing/index.md)。
-2. 使用编辑器的 `HorizontalContentAlignment` 属性设置水平对齐方式。
-2. 使用编辑器的 `VerticalContentAlignment` 属性设置垂直对齐方式。
+1. 为列指定一个 Eremex [就地编辑器](data-editing/index.md)。
+2. 使用编辑器的 [`HorizontalContentAlignment`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/HorizontalContentAlignment.md) 属性设置水平对齐方式。
+2. 使用编辑器的 [`VerticalContentAlignment`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties/VerticalContentAlignment.md) 属性设置垂直对齐方式。
 
-### Example - Center Column Values and Header
+### Example - Center Column Values and Header {#example-center-column-values-and-header}
 
-以下代码将 _Hire Date_ 列中的值和标题居中对齐。为了对齐单元格值,代码为该列指定了一个 `DateEditor` 内嵌编辑器,并将该编辑器的 `HorizontalContentAlignment` 属性设置为 `Center`。
+以下代码将 _Hire Date_ 列中的值和标题居中对齐。为了对齐单元格值,代码为该列指定了一个 [`DateEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md) 就地编辑器,并将该编辑器的 [`HorizontalContentAlignment`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/HorizontalContentAlignment.md) 属性设置为 `Center`。
 要对齐列标题的内容,则使用该列的 `HorizontalContentAlignment` 属性。
 
 ![cells-value-alignment-example](../../images/cells-value-alignment-example.png)
@@ -176,16 +176,16 @@ private void DataGrid_CustomColumnDisplayText(object sender, DataGridCustomColum
 </mxdg:GridColumn>
 ```
 
-## Multi-line Text and Text Wrapping in Cells
+## Multi-line Text and Text Wrapping in Cells {#multi-line-text-and-text-wrapping-in-cells}
 
 要在单元格中显示多行文本,请执行以下操作:
 
-1. 为列指定一个 TextEditor [内嵌编辑器](data-editing/index.md)(或其派生类)。
-2. 使用编辑器的 `TextWrapping` 属性启用文本换行。
+1. 为列指定一个 TextEditor [就地编辑器](data-editing/index.md)(或其派生类)。
+2. 使用编辑器的 [`TextWrapping`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/TextWrapping.md) 属性启用文本换行。
 
 启用文本换行后,行高会自动调整,以完整显示单元格内容。
 
-### Example - Enable Text Wrapping in Cells
+### Example - Enable Text Wrapping in Cells {#example-enable-text-wrapping-in-cells}
 
 以下代码为列指定了一个文本编辑器,并为该编辑器启用了文本换行。
 
@@ -201,21 +201,21 @@ private void DataGrid_CustomColumnDisplayText(object sender, DataGridCustomColum
 
  
 
-## Provide Data for Cells
+## Provide Data for Cells {#provide-data-for-cells}
 
 DataGrid 控件中的单元格属于绑定列或非绑定列。
 
-[绑定列](data-binding/index.md)与控件底层数据源中的字段(属性)相关联。这些列的 `GridColumn.FieldName` 属性会被设置为数据源中存在的字段名称。
+[绑定列](data-binding/index.md)与控件底层数据源中的字段(属性)相关联。这些列的 [`GridColumn.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) 属性会被设置为数据源中存在的字段名称。
 绑定列的单元格从相应的数据源字段获取其值。
 
-[非绑定列](data-binding/unbound-columns.md)(也称为计算列)允许您显示(并可选择性地编辑)数据源中不存在的值。例如,您可以创建一个只读的非绑定列,用于显示根据多个其他字段计算得出的值。非绑定列的值通过 `CustomUnboundColumnData` 事件提供。您也可以创建可编辑的非绑定列,此时,您的 `CustomUnboundColumnData` 事件处理程序还必须保存用户输入的数据(例如,您可以将其保存到缓存或数据源中)。
+[非绑定列](data-binding/unbound-columns.md)(也称为计算列)允许您显示(并可选择性地编辑)数据源中不存在的值。例如,您可以创建一个只读的非绑定列,用于显示根据多个其他字段计算得出的值。非绑定列的值通过 [`CustomUnboundColumnData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) 事件提供。您也可以创建可编辑的非绑定列,此时,您的 [`CustomUnboundColumnData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) 事件处理程序还必须保存用户输入的数据(例如,您可以将其保存到缓存或数据源中)。
 
 非绑定列可用于自定义单元格的显示文本。有关显示文本自定义的其他方法,请参见[自定义单元格的显示文本](#customize-display-text-of-cells)。
 
 
-### Example — Create a Calculated Column 
+### Example — Create a Calculated Column {#example-create-a-calculated-column}
 
-以下示例创建了一个名为 _Year Total_ 的非绑定列。`CustomUnboundColumnData` 事件处理程序将该列的值计算为 Quarter1、Quarter2、Quarter3 和 Quarter4 字段之和。
+以下示例创建了一个名为 _Year Total_ 的非绑定列。[`CustomUnboundColumnData`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) 事件处理程序将该列的值计算为 Quarter1、Quarter2、Quarter3 和 Quarter4 字段之和。
 
 ![cells-unbound-columns-revenue-example](../../images/cells-unbound-columns-revenue-example.png)
 
@@ -316,23 +316,23 @@ public partial class RevenueViewModel : ObservableObject
 
 
 
-## Customize Display Text of Cells
+## Customize Display Text of Cells {#customize-display-text-of-cells}
 
-您可以处理 `CustomColumnDisplayText` 事件,自定义特定单元格的显示文本。此事件只影响显示文本,不影响单元格的编辑值。
+您可以处理 [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) 事件,自定义特定单元格的显示文本。此事件只影响显示文本,不影响单元格的编辑值。
 
-`CustomColumnDisplayText` 事件还允许您修改列过滤器和过滤面板中单元格值的文本表示形式。当 `CustomColumnDisplayText` 事件针对过滤面板中的值触发时,该事件的 `SourceItemIndex` 参数会返回 `-1`。要为分组行提供自定义的显示文本,请处理 `DataGridControl.CustomGroupValueDisplayText` 事件。
+[`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) 事件还允许您修改列过滤器和过滤面板中单元格值的文本表示形式。当 [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) 事件针对过滤面板中的值触发时,该事件的 [`SourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridCustomColumnDisplayTextEventArgs/SourceItemIndex.md) 参数会返回 `-1`。要为分组行提供自定义的显示文本,请处理 [`DataGridControl.CustomGroupValueDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomGroupValueDisplayText.md) 事件。
 
-如果单元格的显示文本依赖于数据源中其他字段/属性的值,您可以使用 DataGridControl 的方法(`DataGridControl.GetSourceItem` 和 `DataGridControl.GetSourceItemValue`)以及数据源自身的方法来获取这些字段值。
+如果单元格的显示文本依赖于数据源中其他字段/属性的值,您可以使用 DataGridControl 的方法([`DataGridControl.GetSourceItem`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItem.md) 和 [`DataGridControl.GetSourceItemValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemValue.md))以及数据源自身的方法来获取这些字段值。
 
-### Example - Modify Cell Display Text Using an Event
+### Example - Modify Cell Display Text Using an Event {#example-modify-cell-display-text-using-an-event}
 
-以下示例处理 `CustomColumnDisplayText` 事件,修改 _HireDate_ 列值的显示文本。
+以下示例处理 [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) 事件,修改 _HireDate_ 列值的显示文本。
 
 本示例中的网格显示了一组 _EmployeeInfo_ 对象。_EmployeeInfo.HireDate_ 字段表示某人的入职日期。_EmployeeInfo.Experience_ 字段表示该员工的总工作年限。初始布局如下所示:
 
 ![cells-grid-customcolumndisplaytext-example-initial-layout](../../images/cells-grid-customcolumndisplaytext-example-initial-layout.png)
 
-`CustomColumnDisplayText` 事件处理程序为 _HireDate_ 值提供了自定义显示文本。_HireDate_ 列将不再显示日期时间值,而是显示从入职日期到今天的工作年数,并在其后附加员工的总工作年限(即 _Experience_ 列的值)。_HireDate_ 和 _Experience_ 列的标题分别被替换为 "Company Work Experience" 和 "Total Work Experience"。
+[`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) 事件处理程序为 _HireDate_ 值提供了自定义显示文本。_HireDate_ 列将不再显示日期时间值,而是显示从入职日期到今天的工作年数,并在其后附加员工的总工作年限(即 _Experience_ 列的值)。_HireDate_ 和 _Experience_ 列的标题分别被替换为 "Company Work Experience" 和 "Total Work Experience"。
 
 ![cells-grid-customcolumndisplaytext-example-final-layout](../../images/cells-grid-customcolumndisplaytext-example-final-layout.png)
 
@@ -430,12 +430,12 @@ public partial class EmployeeInfo : ObservableObject
 }
 ```
 
-## Get and Set Row Values in Code
+## Get and Set Row Values in Code {#get-and-set-row-values-in-code}
 
 
 DataGrid 控件提供了一些方法,用于获取和设置单个单元格的值,以及处理底层数据对象。
 
-### Work with Cell Values
+### Work with Cell Values {#work-with-cell-values}
 
 以下方法可对通过行和列(或字段名称)寻址的单元格进行操作。
 这些方法使用行索引来标识行。行索引反映了行在控件中的排列顺序,
@@ -444,9 +444,9 @@ DataGrid 控件提供了一些方法,用于获取和设置单个单元格的值,
 
 | 方法 | 说明 |
 |--------|-------------|
-| `GetCellValue` | 返回存储在特定单元格中的编辑(原始)值。 |
-| `SetCellValue` | 在特定单元格中设置新值。 |
-| `GetCellDisplayText` | 返回单元格格式化后的显示文本,该文本可能因列的格式化设置或自定义的 `CustomColumnDisplayText` 事件处理程序而与编辑值不同。 |
+| [`GetCellValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetCellValue.md) | 返回存储在特定单元格中的编辑(原始)值。 |
+| [`SetCellValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SetCellValue.md) | 在特定单元格中设置新值。 |
+| [`GetCellDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetCellDisplayText.md) | 返回单元格格式化后的显示文本,该文本可能因列的格式化设置或自定义的 [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md) 事件处理程序而与编辑值不同。 |
 
 **示例:**
 
@@ -461,21 +461,21 @@ dataGrid.SetCellValue(dataGrid.FocusedRowIndex, "Status", "Approved");
 string displayPrice = dataGrid.GetCellDisplayText(0, "Price");
 ```
 
-### Work with Underlying Data Objects
+### Work with Underlying Data Objects {#work-with-underlying-data-objects}
 
 DataGrid 控件包含一些方法,可用于获取某一行的源对象(业务对象)并修改其属性。使用以下成员获取源项:
 
 | 成员 | 说明 |
 |--------|-------------|
-| `DataControlBase.FocusedItem` | 获取当前获得焦点的行对应的源对象。 |
-| `GetSourceItem` | 根据数据源中的索引返回源对象。 |
-| `GetSourceItemValue` | 返回数据源中指定索引处某个字段的值。 |
-| `GetSourceItemByRowIndex` | 根据行索引返回源对象。 |
-| `GetSourceItemByVisibleRowIndex` | 根据行的可见索引返回源对象。 |
+| [`DataControlBase.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) | 获取当前获得焦点的行对应的源对象。 |
+| [`GetSourceItem`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItem.md) | 根据数据源中的索引返回源对象。 |
+| [`GetSourceItemValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemValue.md) | 返回数据源中指定索引处某个字段的值。 |
+| [`GetSourceItemByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByRowIndex.md) | 根据行索引返回源对象。 |
+| [`GetSourceItemByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByVisibleRowIndex.md) | 根据行的可见索引返回源对象。 |
 
 有关不同行索引类型的说明,请参见[标识和获取行](rows.md#identify-and-get-rows)。
 
-#### Examples
+#### Examples {#examples}
 
 ```csharp
 // Example 1: Update the focused item's property
@@ -494,50 +494,50 @@ if (item != null)
 ```
 
 
-## Cell In-place Editors
+## Cell In-place Editors {#cell-in-place-editors}
 
-单元格内嵌编辑器有两个用途:
+单元格就地编辑器有两个用途:
 
 - 控制未处于编辑状态时的值显示,包括[格式化设置](#format-cell-values)和[值对齐方式](#value-alignment)。
 - 提供在编辑模式下修改值的手段。
 
 ![cells-editors](../../images/cells-editors.png)
 
-默认情况下,DataGrid 使用 EMX 编辑器来呈现和编辑常见数据类型的值。例如,double 类型的值默认使用 `SpinEditor` 内嵌编辑器呈现,布尔值默认使用 `CheckEditor` 控件呈现,等等。
+默认情况下,DataGrid 使用 EMX 编辑器来呈现和编辑常见数据类型的值。例如,double 类型的值默认使用 [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md) 就地编辑器呈现,布尔值默认使用 [`CheckEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/CheckEditor.md) 控件呈现,等等。
 
 您可以使用以下方法,显式地为列/单元格指定编辑器:
 
-1. 通过 `GridColumn.EditorProperties` 属性指定 EMX 编辑器。
-2. 通过 `GridColumn.CellTemplate` 属性指定 EMX 编辑器。
-3. 通过 `GridColumn.CellTemplate` 属性指定自定义编辑器。
+1. 通过 [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) 属性指定 EMX 编辑器。
+2. 通过 [`GridColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) 属性指定 EMX 编辑器。
+3. 通过 [`GridColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) 属性指定自定义编辑器。
 
-第一种方法(`GridColumn.EditorProperties`)是首选方法,因为它具有以下优势:
+第一种方法([`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md))是首选方法,因为它具有以下优势:
 
 - 内嵌 EMX 编辑器与 DataGrid 使用相同的绘制主题,可确保外观设置保持同步。
 - DataGrid 能够正确地从单元格获取显示文本,并将其导出为多种格式(XLSX、PDF、图像等)。如果使用单元格模板,导出时单元格将为空白。
 - 在初始化、显示和滚动过程中具有较高的性能。控件会在显示模式下模拟编辑器的外观;实际的编辑器仅在开始编辑时创建,编辑结束后即被销毁。
 
 
-要通过 `GridColumn.EditorProperties` 属性指定内嵌 EMX 编辑器,请执行以下操作:
+要通过 [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) 属性指定内嵌 EMX 编辑器,请执行以下操作:
 
-1. 将 `GridColumn.EditorProperties` 属性设置为下列 `BaseEditorProperties` 派生类之一,以对应所需的编辑器类型:
+1. 将 [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) 属性设置为下列 [`BaseEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties.md) 派生类之一,以对应所需的编辑器类型:
 
-    - `ButtonEditorProperties` — 对应 `ButtonEditor` 控件,并包含该控件特有的设置。
-    - `CheckEditorProperties` — 对应 `CheckEditor` 控件,并包含该控件特有的设置。
-    - `ComboBoxEditorProperties` — 对应 `ComboBoxEditor` 控件,并包含该控件特有的设置。
-    - `DateEditorProperties` — 对应 `DateEditor` 控件,并包含该控件特有的设置。
-    - `HyperlinkEditorProperties` — 对应 `HyperlinkEditor` 控件,并包含该控件特有的设置。
-    - `MemoEditorProperties` — 对应 `MemoEditor` 控件,并包含该控件特有的设置。
-    - `PopupColorEditorProperties` — 对应 `PopupColorEditor` 控件,并包含该控件特有的设置。
-    - `SegmentedEditorProperties` — 对应 `SegmentedEditor` 控件,并包含该控件特有的设置。
-    - `SpinEditorProperties` — 对应 `SpinEditor` 控件,并包含该控件特有的设置。
-    - `TextEditorProperties` — 对应 `TextEditor` 控件,并包含该控件特有的设置。
+    - [`ButtonEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditorProperties.md) — 对应 [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md) 控件,并包含该控件特有的设置。
+    - [`CheckEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/CheckEditorProperties.md) — 对应 [`CheckEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/CheckEditor.md) 控件,并包含该控件特有的设置。
+    - [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md) — 对应 [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) 控件,并包含该控件特有的设置。
+    - [`DateEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditorProperties.md) — 对应 [`DateEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/DateEditor.md) 控件,并包含该控件特有的设置。
+    - [`HyperlinkEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/HyperlinkEditorProperties.md) — 对应 [`HyperlinkEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/HyperlinkEditor.md) 控件,并包含该控件特有的设置。
+    - [`MemoEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/MemoEditorProperties.md) — 对应 [`MemoEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/MemoEditor.md) 控件,并包含该控件特有的设置。
+    - [`PopupColorEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditorProperties.md) — 对应 [`PopupColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) 控件,并包含该控件特有的设置。
+    - [`SegmentedEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditorProperties.md) — 对应 [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md) 控件,并包含该控件特有的设置。
+    - [`SpinEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditorProperties.md) — 对应 [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md) 控件,并包含该控件特有的设置。
+    - [`TextEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties.md) — 对应 [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) 控件,并包含该控件特有的设置。
 
-2. 修改指定的 `BaseEditorProperties` 派生对象的设置。
+2. 修改指定的 [`BaseEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditorProperties.md) 派生对象的设置。
 
-### Example - Assign a ComboBoxEditor Control to a Column
+### Example - Assign a ComboBoxEditor Control to a Column {#example-assign-a-comboboxeditor-control-to-a-column}
 
-以下示例通过将 `GridColumn.EditorProperties` 属性设置为一个 `ComboBoxEditorProperties` 对象,为列指定了一个 `ComboBoxEditor` 编辑器。`ComboBoxEditorProperties.ItemsSource` 属性用于指定要在 combobox 编辑器下拉列表中显示的项的来源。
+以下示例通过将 [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) 属性设置为一个 [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md) 对象,为列指定了一个 [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) 编辑器。[`ComboBoxEditorProperties.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties/ItemsSource.md) 属性用于指定要在组合框编辑器下拉列表中显示的项的来源。
 
 ![cells-editors-comboboxexample](../../images/cells-editors-comboboxexample.png)
 
@@ -552,12 +552,12 @@ if (item != null)
 有关详细信息,请参见以下主题: [数据编辑](data-editing/index.md)。
 
 
-## Make Cells Read-Only (Copyable)
+## Make Cells Read-Only (Copyable) {#make-cells-read-only-copyable}
 
 您可以将列的单元格设置为只读,同时仍允许用户复制单元格值。为此:
 
-- 将列的 `ReadOnly` 属性设置为 `true`。
-- 保持列的 `AllowEditing` 属性为 `true`(默认值)。
+- 将列的 [`ReadOnly`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ReadOnly.md) 属性设置为 `true`。
+- 保持列的 [`AllowEditing`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowEditing.md) 属性为 `true`(默认值)。
 
 ``` xml
 <mxdg:GridColumn FieldName="FirstName" ReadOnly="True"/>
@@ -566,18 +566,18 @@ if (item != null)
 ![cells-readonly](../../images/cells-readonly.png)
 
 
-## Make Cells Non-Editable (Prevent Copying)
+## Make Cells Non-Editable (Prevent Copying) {#make-cells-non-editable-prevent-copying}
 
 
-### Entire Grid
+### Entire Grid {#entire-grid}
 
-要将整个网格设置为不可编辑,请将控件的 `AllowEditing` 属性设置为 `false`。
+要将整个网格设置为不可编辑,请将控件的 [`AllowEditing`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/AllowEditing.md) 属性设置为 `false`。
 
 ``` xml
 <mxdg:DataGridControl x:Name="dataGrid" AllowEditing="False">
 ```
 
-### Specific Columns
+### Specific Columns {#specific-columns}
 
 要将特定列中的所有单元格设置为不可编辑,请使用以下方法之一:
 
@@ -589,11 +589,11 @@ if (item != null)
 
     ![cells-noneditable](../../images/cells-noneditable.png)
 
-- 将该列的 `AllowFocus` 属性设置为 `false`。此设置会阻止该列获得焦点。
+- 将该列的 [`AllowFocus`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowFocus.md) 属性设置为 `false`。此设置会阻止该列获得焦点。
 
-### Specific Cells
+### Specific Cells {#specific-cells}
 
-要将单个单元格设置为不可编辑,请处理 `ShowingEditor` 事件。该事件会在单元格编辑器即将被激活时触发。将事件的 `Cancel` 参数设置为 `true`,即可阻止单元格编辑器被激活。
+要将单个单元格设置为不可编辑,请处理 [`ShowingEditor`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowingEditor.md) 事件。该事件会在单元格编辑器即将被激活时触发。将事件的 [`Cancel`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridShowingEditorEventArgs/Cancel.md) 参数设置为 `true`,即可阻止单元格编辑器被激活。
 
 ``` cs
 private void DataGrid_ShowingEditor(object sender, DataGridShowingEditorEventArgs e)

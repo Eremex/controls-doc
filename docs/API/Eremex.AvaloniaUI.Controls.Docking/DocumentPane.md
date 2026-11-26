@@ -12,7 +12,7 @@ Displays document content in a docking layout.
 public class DocumentPane : DockPane
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

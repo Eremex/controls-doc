@@ -12,11 +12,16 @@ Provides data for the CustomCellDisplayText event.
 public class TreeViewCustomCellDisplayTextEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeViewCustomCellDisplayTextEventArgs](TreeViewCustomCellDisplayTextEventArgs/TreeViewCustomCellDisplayTextEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [DisplayText](TreeViewCustomCellDisplayTextEventArgs/DisplayText.md) { get; set; } | Gets or sets the node's display text. |
 | [Node](TreeViewCustomCellDisplayTextEventArgs/Node.md) { get; } | Gets the node whose display text is required. |
 | [Value](TreeViewCustomCellDisplayTextEventArgs/Value.md) { get; } | Gets the node's value. |

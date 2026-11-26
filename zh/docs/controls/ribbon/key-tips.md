@@ -1,10 +1,10 @@
 ---
-title: Key Tips
+title: 按键提示
 order: 500
 seealso: []
 ---
 
-# Key Tips
+# 按键提示 {#key-tips}
 
 您可以按 ALT 键将焦点移动到 Ribbon 控件，然后使用键盘上的方向键在 Ribbon 界面中导航。
 
@@ -18,7 +18,7 @@ seealso: []
 
 
 - 按下分配给某个命令的可见 Key Tip 会激活该命令。
-- 按下分配给某个内嵌编辑器的可见 Key Tip 会将焦点移动到该编辑器。
+- 按下分配给某个就地编辑器的可见 Key Tip 会将焦点移动到该编辑器。
 - 按下分配给 [Application Button](application-button-and-main-menu.md) 的可见 Key Tip 会调用关联的[应用程序菜单/下拉控件](application-button-and-main-menu.md)。
 - 按下分配给某个页面的可见 Key Tip，会显示该页面中各命令的 Key Tips。
 
@@ -31,15 +31,15 @@ seealso: []
 - 按下当前不可见的 Key Tip 不会产生任何效果。
 
     !!! tip
-        您可以使用 `HotKey` 属性为 Ribbon 命令分配键盘快捷键（例如 CTRL+O、CTRL+B 等）。只要焦点位于快捷键的作用范围内（默认的快捷键作用范围由 `ToolbarManager` 组件的边界定义），这些快捷键就允许用户激活命令。有关详细信息，请参阅 [Ribbon 项 - 快捷键](ribbon-items.md#hot-keys)。
+        您可以使用 `HotKey` 属性为 Ribbon 命令分配键盘快捷键（例如 CTRL+O、CTRL+B 等）。只要焦点位于快捷键的作用范围内（默认的快捷键作用范围由 [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) 组件的边界定义），这些快捷键就允许用户激活命令。有关详细信息，请参阅 [Ribbon 项 - 快捷键](ribbon-items.md#hot-keys)。
 
-## 在键盘导航期间返回上一步
+## 在键盘导航期间返回上一步 {#go-back-during-keyboard-navigation}
 
 要返回上一步并查看之前的 Key Tips，请按 Esc 键。
 
 如果按错了字符，请按退格键将其删除。
 
-## 取消键盘导航
+## 取消键盘导航 {#cancel-keyboard-navigation}
 
 - 反复按 ESC 键，直到 Key Tips 消失。
 
@@ -47,13 +47,13 @@ seealso: []
 
 - 将焦点移出 Ribbon 控件（例如，点击另一个控件）。
 
-## 指定 Key Tips
+## 指定 Key Tips {#specify-key-tips}
 
 以下属性允许您为 Ribbon 元素分配 Key Tips：
 
-- `ToolbarItem.KeyTip`
-- `RibbonPage.KeyTip`
-- `RibbonControl.ApplicationButtonKeyTip`
+- [`ToolbarItem.KeyTip`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/KeyTip.md)
+- [`RibbonPage.KeyTip`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/KeyTip.md)
+- [`RibbonControl.ApplicationButtonKeyTip`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/ApplicationButtonKeyTip.md)
 
 ``` xml
 <!-- Specify a Key Tip for the Application Menu-->

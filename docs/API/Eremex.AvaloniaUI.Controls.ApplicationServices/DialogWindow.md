@@ -9,15 +9,31 @@ The window that hosts a view model shown through IDialogService or IWindowServic
 ## Declaration
 
 ```csharp
-public class DialogWindow : MxWindow, IActionWindow
+public class DialogWindow : MxWindow, IDialogResultWindow
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DialogWindow](DialogWindow/DialogWindow.md)() | Initializes a new instance of the [`DialogWindow`](./DialogWindow.md) class and loads its XAML. |
+
+## Properties
+
+| name | description |
+| --- | --- |
+| [Result](DialogWindow/Result.md) { get; } | The result the dialog was last closed with through [`CloseWithResult`](./DialogWindow/CloseWithResult.md). Used by the non-modal startup path, where the modal `ShowDialog` return value is not available. |
+
+## Methods
+
+| name | description |
+| --- | --- |
+| [CloseWithResult](DialogWindow/CloseWithResult.md)(…) | Closes the dialog, recording *result* in [`Result`](./DialogWindow/Result.md) so it can be read after a non-modal show as well as returned from a modal one. |
 | [InitializeComponent](DialogWindow/InitializeComponent.md)(…) | Wires up the controls and optionally loads XAML markup and attaches dev tools (if Avalonia.Diagnostics package is referenced). |
+
+## Remarks
+
+The body has two layouts. Plain content, or any content when the window carries the Message class, is laid out as a message: padded, with wrapped text, capped in width and scrolled when too tall. A view (any Control content) otherwise fills the body as it is, with the window Padding as its margin and without scrolling, wrapping or a width cap, the way a full dialog view with its own layout expects.
 
 ## See Also
 

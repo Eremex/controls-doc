@@ -10,7 +10,7 @@ seealso: []
 ## Режимы навигации по ячейкам и строкам
 
 Поведение DataGrid по умолчанию позволяет пользователям перемещаться между ячейками с помощью клавиатуры или устанавливать на них фокус с помощью мыши.
-Используйте свойство `DataGridControl.NavigationMode` для переключения между режимами навигации по ячейкам (Cell Navigation) и по строкам (Row Navigation).
+Используйте свойство [`DataGridControl.NavigationMode`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/NavigationMode.md) для переключения между режимами навигации по ячейкам (Cell Navigation) и по строкам (Row Navigation).
 
 **Навигация по ячейкам** (по умолчанию)
 
@@ -32,7 +32,7 @@ seealso: []
 
 ## Колонка в фокусе
 
-Используйте свойство `DataGridControl.FocusedColumn`, чтобы получить колонку, находящуюся в фокусе. Чтобы переместить фокус на определённую колонку, присвойте свойству `FocusedColumn` соответствующий объект `GridColumn`.
+Используйте свойство [`DataGridControl.FocusedColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedColumn.md), чтобы получить колонку, находящуюся в фокусе. Чтобы переместить фокус на определённую колонку, присвойте свойству [`FocusedColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedColumn.md) соответствующий объект [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md).
 
 !!! note
 
@@ -40,9 +40,9 @@ seealso: []
 
 ## Строка в фокусе
 
-Используйте свойство `DataGridControl.FocusedRowIndex`, чтобы получить [индекс](rows.md#идентификация-и-получение-строк) строки, находящейся в фокусе. Свойство `DataGridControl.FocusedItem` позволяет получить объект данных, соответствующий строке в фокусе.
+Используйте свойство [`DataGridControl.FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md), чтобы получить [индекс](rows.md#идентификация-и-получение-строк) строки, находящейся в фокусе. Свойство [`DataGridControl.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) позволяет получить объект данных, соответствующий строке в фокусе.
 
-Чтобы переместить фокус на определённую строку, вы можете присвоить индекс этой строки свойству `DataGridControl.FocusedRowIndex`.
+Чтобы переместить фокус на определённую строку, вы можете присвоить индекс этой строки свойству [`DataGridControl.FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md).
 
 ## Ячейка в фокусе
 

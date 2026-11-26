@@ -121,13 +121,24 @@ public partial class Product :ObservableObject
 
 A ComboBoxEditor can display values of an enumeration type in the dropdown. 
 
-The `Eremex.AvaloniaUI.Controls.Common.EnumItemsSource` helper class facilitates binding to an enumeration. Its main features include:
+Use the `Eremex.AvaloniaUI.Controls.Common.EnumItemsSource` class to bind to an enumeration. `EnumItemsSource` allows for the following features:
 
-- Images for enumeration members in the dropdown. Apply the `Eremex.AvaloniaUI.Controls.Common.ImageAttribute` attribute to the target enumeration members to specify images.
-- Custom display names for enumeration members. Use the `System.ComponentModel.DataAnnotations.DisplayAttribute` attribute or custom converter to change the default item display text.
-- Tooltips for dropdown items. A tooltip contains a target item's description that you can supply with the `System.ComponentModel.DataAnnotations.DisplayAttribute` attribute or custom converter.
+- Display custom images for enumeration members in the dropdown. You can specify these images using one of the two approaches:
 
-Use the following `EnumItemsSource` properties to set up binding to an enumeration type:
+    - Apply the `Eremex.AvaloniaUI.Controls.Common.ImageAttribute` attribute to the target enumeration members.
+    - Implement a `EnumItemsSource.NameToImageConverter` converter to specify images based on enumeration member names.
+
+- Supply custom display names for enumeration members. You can specify these names using one of the two approaches:
+
+    - Apply the `System.ComponentModel.DataAnnotations.DisplayAttribute` attribute to the target enumeration members.
+    - Implement a `EnumItemsSource.NameToDisplayTextConverter` converter.
+
+- Show tooltips for dropdown items. A tooltip contains a target item's description that you can supply using these approaches:
+
+    - Apply the `System.ComponentModel.DataAnnotations.DisplayAttribute` attribute to the target enumeration members.
+    - Implement a `EnumItemsSource.NameToDescriptionConverter` converter.
+
+### EnumItemsSource Data Binding API
 
 - `EnumItemsSource.EnumType` — Specifies the enumeration type whose values are displayed in the ComboBoxEditor.
 - `EnumItemsSource.ShowImages` — Specifies whether to display images for enumeration members in the dropdown. You can supply images using the `Eremex.AvaloniaUI.Controls.Common.ImageAttribute` attribute.
@@ -135,9 +146,30 @@ Use the following `EnumItemsSource` properties to set up binding to an enumerati
 - `EnumItemsSource.ImageSize` — Specifies the display size of images assigned to enumeration members.
 - `EnumItemsSource.NameToDisplayTextConverter` — Allows you to assign a converter that retrieves custom display text for enumeration members.
 - `EnumItemsSource.NameToDescriptionConverter` — Allows you to assign a converter that retrieves enumeration member descriptions, which are displayed as tooltips when a user hovers the mouse over dropdown items.
-- `EnumItemsSource.NameToImageConverter` — Allows you to assign a converter that retrieves images associated with enumeration members. See an example of using `NameToImageConverter` in the [Controls Demo](../../index.md#demo-application) application.
+- `EnumItemsSource.NameToImageConverter` — Allows you to assign a converter that retrieves images associated with enumeration members. See an [example](#example-how-to-display-enumeration-members-in-the-comboboxeditor-control-and-use-a-custom-converter-to-assign-images-to-the-items).
 
-### Example - How to display enumeration values, and use attributes to supply display text and images for enumeration members.
+
+When [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) is bound to an `EnumItemsSource`, the editor's items are `EnumMemberInfo` objects. The `EnumMemberInfo` class is the target type when overriding a template for combobox items. The partial definition of the `EnumMemberInfo` class is shown below for your reference:
+
+``` cs
+public class EnumMemberInfo
+{
+    // An item's display name.
+    public string? Name { get; private set; }
+    // An item's Desctiption, shown as a tooltip, by default.
+    public string? Description { get; private set; }
+    //An item's image
+    public IImage? Image { get { return image.Value; } }
+}
+```
+
+See an [example of overriding the combobox item template when binding to an enumeration type](#example-how-to-display-enumeration-members-in-the-comboboxeditor-control-and-use-a-custom-converter-to-assign-images-to-the-items).
+
+
+
+
+
+### Example - How to display enumeration members in the ComboBoxEditor control, and use attributes to supply display text and images for the items
 
 The following example displays values of a _ProductCategoryEnum_ enumeration in a ComboBoxEditor. It uses the `EnumItemsSource` class for data binding.
 
@@ -182,7 +214,7 @@ public enum ProductCategoryEnum
 }
 ```
 
-### Example - How to display enumeration values, and use custom converters to supply display text for enumeration members.
+### Example - How to display enumeration members in the ComboBoxEditor control, and use custom converters to supply display text for the items
 
 The following example uses the `EnumItemsSource` class to display values of an enumeration type in a ComboBoxEditor. The `EnumItemsSource.NameToDisplayTextConverter` and `EnumItemsSource.NameToDescriptionConverter` objects supply custom display text and descriptions (tooltips) for enumeration members.
 
@@ -276,6 +308,58 @@ public abstract class BaseEnumConverter : MarkupExtension, IValueConverter
      System.Globalization.CultureInfo culture)
     {
         return null;
+    }
+}
+```
+
+### Example - How to display enumeration members in the ComboBoxEditor control, and use a custom converter to assign images to the items
+
+In the following code, the [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) control displays values of the `Eremex.AvaloniaUI.Themes.DeltaDesign.Density` enumeration with custom images supplied using a `EnumItemsSource.NameToImageConverter` converter.
+
+The XAML code overrides the template for combobox items to display the supplied images next to item names. The images and names are obtained through data binding to the `EnumMemberInfo.Image` and `EnumMemberInfo.Name` properties.
+
+![comboboxeditor-enum-example-custom-images-through-converter](../../images/comboboxeditor-enum-example-custom-images-through-converter.png)
+
+
+```xml
+<mxe:ComboBoxEditor x:Name="densityComboBox"
+                    ItemsSource="{mxc:EnumItemsSource EnumType=ddt:Density, ShowImages=True, NameToImageConverter={views:DensityToIconConverter}}"
+                    EditorValueChanged="DensityComboBoxEditor_EditorValueChanged"
+                    IsTextEditable="False"
+                    Margin="0,0,10,0">
+    <mxe:ComboBoxEditor.ItemTemplate>
+        <DataTemplate x:DataType="mxc:EnumMemberInfo">
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <Image Source="{Binding Image}" Stretch="None" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+    </mxe:ComboBoxEditor.ItemTemplate>
+</mxe:ComboBoxEditor>
+```
+
+```cs
+using Eremex.AvaloniaUI.Icons;
+
+public class DensityToIconConverter : MarkupExtension, IValueConverter
+{
+    public override object ProvideValue(IServiceProvider serviceProvider)
+    {
+        return this;
+    }
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return value switch
+        {
+            Density.Compact => Basic.Density_Compact,
+            Density.Spacious => Basic.Density_Spacious,
+            Density.Standard => Basic.Density_Standard,
+            _ => null,
+        };
+    }
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return BindingOperations.DoNothing;
     }
 }
 ```

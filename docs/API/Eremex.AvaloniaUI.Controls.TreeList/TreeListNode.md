@@ -12,11 +12,16 @@ Represents a node of the tree list control.
 public class TreeListNode
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListNode](TreeListNode/TreeListNode.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Content](TreeListNode/Content.md) { get; set; } | Gets or sets the data item the node represents. |
 | [HasChildren](TreeListNode/HasChildren.md) { get; set; } | Gets or sets whether the node has child nodes. |
 | [Id](TreeListNode/Id.md) { get; } | Gets the node's unique identifier. |
@@ -30,6 +35,11 @@ public class TreeListNode
 | [ParentNode](TreeListNode/ParentNode.md) { get; } | Gets the node's parent node. |
 | [Tag](TreeListNode/Tag.md) { get; set; } | Gets or sets custom data associated with the node. |
 | [TreeList](TreeListNode/TreeList.md) { get; } | Gets the tree list control that owns the node. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [HasAsParent](TreeListNode/HasAsParent.md)(…) | Gets whether the specified node is the node's ancestor. |
 
 ## See Also

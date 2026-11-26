@@ -1,10 +1,10 @@
 ---
-title: Full-Stacked Area Series View
+title: 百分比堆积面积系列视图
 order: 680
 seealso: []
 ---
 
-# Full-Stacked Area Series View
+# 百分比堆积面积系列视图 {#full-stacked-area-series-view}
 
 Full-Stacked Area Series View（100% 堆叠面积图）用于显示两个或多个数据系列之间的比例关系。每个 Full-Stacked Area 系列都渲染为堆叠在前一个 Full-Stacked Area 系列之上的填充区域。系列的厚度由其在总量中所占的百分比决定。顶部线条始终对应 `100%`。
 
@@ -17,23 +17,23 @@ Full-Stacked Area Series View（100% 堆叠面积图）用于显示两个或多�
 - 使用 Full-Stacked Area Series View 可以在同一个图表控件中仅显示正值数据或仅显示负值数据。
 - 如果某个 Full-Stacked Area 系列同时包含正值和负值，则所有负值都会被视为零。
 
-Full-Stacked Area Series View 由 `CartesianFullStackedAreaSeriesView` 类封装。
+Full-Stacked Area Series View 由 [`CartesianFullStackedAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianFullStackedAreaSeriesView.md) 类封装。
 
-## 创建 Full-Stacked Area Series View
+## 创建 Full-Stacked Area Series View {#create-full-stacked-area-series-views}
 
 通常使用 Full-Stacked Area 视图来显示两个或多个数据系列之间的比例关系。创建 Full-Stacked Area 图表的步骤包括：
 
-1. 为每个数据系列创建一个 `CartesianSeries` 对象，并将其添加到 `CartesianChart.Series` 集合中。
-2. 将 `CartesianSeries.View` 属性设置为一个 `CartesianFullStackedAreaSeriesView` 对象。
-3. 使用 `CartesianSeries.DataAdapter` 属性为该系列提供数据。
+1. 为每个数据系列创建一个 [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) 对象，并将其添加到 [`CartesianChart.Series`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) 集合中。
+2. 将 [`CartesianSeries.View`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md) 属性设置为一个 [`CartesianFullStackedAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianFullStackedAreaSeriesView.md) 对象。
+3. 使用 [`CartesianSeries.DataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/Series/DataAdapter.md) 属性为该系列提供数据。
 4. 通过自定义 Y 轴的刻度选项，将 Y 轴值格式化为百分比。
 
-    在 Full-Stacked Area Series View 中，计算得到的 Y 轴值（及其标签）位于 0 到 1 之间的范围内。要沿 Y 轴以及在十字线标签中将这些值显示为百分比（0%-100%），请将 `ScaleOptions.LabelFormatter` 和 `ScaleOptions.CrosshairLabelFormatter` 属性设置为一个 `PercentLabelFormatter` 对象（或自定义的 `IAxisLabelFormatter` 对象）。参见下面的示例。
+    在 Full-Stacked Area Series View 中，计算得到的 Y 轴值（及其标签）位于 0 到 1 之间的范围内。要沿 Y 轴以及在十字线标签中将这些值显示为百分比（0%-100%），请将 [`ScaleOptions.LabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) 和 [`ScaleOptions.CrosshairLabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/CrosshairLabelFormatter.md) 属性设置为一个 [`PercentLabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/PercentLabelFormatter.md) 对象（或自定义的 [`IAxisLabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/IAxisLabelFormatter.md) 对象）。参见下面的示例。
 
     ![chart-views-full-stacked-area-labels-percents](../../../images/chart-views-full-stacked-area-labels-percents.png)
 
 
-以下代码片段展示了如何用 XAML 和 code-behind 创建由三个数据系列组成的 Full-Stacked Area 图表。
+以下代码片段展示了如何用 XAML 和代码隐藏创建由三个数据系列组成的 Full-Stacked Area 图表。
 
 ``` xml
 xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
@@ -127,15 +127,15 @@ chartControl.Series.Add(series3);
 
 
 
-### 示例 - 使用 MVVM 设计模式创建 Full-Stacked Area 图表
+### 示例 - 使用 MVVM 设计模式创建 Full-Stacked Area 图表 {#example-create-a-full-stacked-area-chart-using-the-mvvm-design-pattern}
 
 以下示例通过视图模型创建了三个 Full-Stacked Area 类型的系列。
 
-- `CartesianChart.SeriesSource` 属性绑定到视图模型中的 _SeriesCollection_ 属性。该集合是 _SeriesViewModel_ 对象的数据源，用于初始化图表控件中的各个系列。
+- [`CartesianChart.SeriesSource`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/SeriesSource.md) 属性绑定到视图模型中的 _SeriesCollection_ 属性。该集合是 _SeriesViewModel_ 对象的数据源，用于初始化图表控件中的各个系列。
 
-- `CartesianChart.SeriesTemplate` 属性被设置为一个模板，该模板根据每个 _SeriesViewModel_ 对象创建一个 Full-Stacked Area 类型的系列（`CartesianSeries` 对象）。系列数据、标题和颜色分别由 _SeriesViewModel.DataAdapter_、_SeriesViewModel.Title_ 和 _SeriesViewModel.Color_ 属性确定。
+- [`CartesianChart.SeriesTemplate`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/SeriesTemplate.md) 属性被设置为一个模板，该模板根据每个 _SeriesViewModel_ 对象创建一个 Full-Stacked Area 类型的系列（[`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) 对象）。系列数据、标题和颜色分别由 _SeriesViewModel.DataAdapter_、_SeriesViewModel.Title_ 和 _SeriesViewModel.Color_ 属性确定。
 
-- `ScaleOptions.LabelFormatter` 和 `ScaleOptions.CrosshairLabelFormatter` 属性被设置为一个 `PercentLabelFormatter` 对象，以将 Y 轴值格式化为百分比。
+- [`ScaleOptions.LabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) 和 [`ScaleOptions.CrosshairLabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/CrosshairLabelFormatter.md) 属性被设置为一个 [`PercentLabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/PercentLabelFormatter.md) 对象，以将 Y 轴值格式化为百分比。
 
 ![chart-views-full-stacked-area-series-view-vm-example](../../../images/chart-views-full-stacked-area-series-view-vm-example.png)
 
@@ -166,8 +166,7 @@ chartControl.Series.Add(series3);
                         Color="{Binding Color}"
                         Transparency="0.5"
                         ShowMarkers="True"
-                        MarkerSize="3"
-                        Thickness="1" />
+                        MarkerSize="3"/>
                     </mxc:CartesianSeries>
                 </DataTemplate>
             </mxc:CartesianChart.SeriesTemplate>
@@ -254,34 +253,34 @@ public partial class SeriesViewModel : ObservableObject
 }
 ```
 
-## Full-Stacked Area Series View 的数据
+## Full-Stacked Area Series View 的数据 {#data-for-the-full-stacked-area-series-view}
 
 您可以使用以下数据适配器为 Full-Stacked Area Series View 提供数据：
 
 数值型 _X_ 值：
 
-- `SortedNumericDataAdapter`
-- `FormulaDataAdapter`
+- [`SortedNumericDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md)
+- [`FormulaDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/FormulaDataAdapter.md)
 
 
 日期时间型 _X_ 值：
 
-- `SortedDateTimeDataAdapter`
-- `SortedTimeSpanDataAdapter`
+- [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md)
+- [`SortedTimeSpanDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedTimeSpanDataAdapter.md)
 
 定性 _X_ 值：
 
-- `QualitativeDataAdapter`
+- [`QualitativeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeDataAdapter.md)
 
 
-## Full-Stacked Area Series View 设置
+## Full-Stacked Area Series View 设置 {#full-stacked-area-series-view-settings}
 
 
-- `Color` — 指定用于绘制该系列的颜色。
-- `CrosshairMode` — 指定十字线的图表标签是捕捉到最近的数据点，还是显示插值结果。参见 [在十字线图表标签中显示精确值或插值](../crosshair.md#show-an-exact-or-interpolated-value-in-crosshair-series-labels)。
-- `MarkerImage` — 获取或设置用作自定义点标记的图像。如果未指定图像，则显示默认的方形标记。您可以使用 `SvgImage` 类实例来指定 SVG 图像。
+- [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) — 指定用于绘制该系列的颜色。
+- [`CrosshairMode`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSortedLineSeriesView/CrosshairMode.md) — 指定十字线的图表标签是捕捉到最近的数据点，还是显示插值结果。参见 [在十字线图表标签中显示精确值或插值](../crosshair.md#show-an-exact-or-interpolated-value-in-crosshair-series-labels)。
+- [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) — 获取或设置用作自定义点标记的图像。如果未指定图像，则显示默认的方形标记。您可以使用 `SvgImage` 类实例来指定 SVG 图像。
 
-    `MarkerImage` 属性使用 `[Content]` 特性声明，这使您可以直接在 &lt;CartesianFullStackedAreaSeriesView&gt; 标签之间定义图像。
+    [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) 属性使用 `[Content]` 特性声明，这使您可以直接在 &lt;CartesianFullStackedAreaSeriesView&gt; 标签之间定义图像。
 
     ``` xml
     <mxc:CartesianFullStackedAreaSeriesView>
@@ -292,14 +291,14 @@ public partial class SeriesViewModel : ObservableObject
     SVG 文件包含 SVG 元素的预定义颜色。要使这些颜色与您的数据系列颜色相匹配，您可以：
     
     - 提前手动编辑源 SVG 图像文件
-    - 使用 `MarkerImageCss` 属性动态自定义 SVG 元素的[样式](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style)。这些样式会在渲染点标记时应用。
+    - 使用 [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) 属性动态自定义 SVG 元素的[样式](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style)。这些样式会在渲染点标记时应用。
 
 
 
 
-- `MarkerImageCss` — 指定用于在运行时自定义由 `MarkerImage` 属性定义的 SVG 图像的 [CSS 样式](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style)。主要用途是将 SVG 元素的颜色替换为系列颜色（`Color`）。在 CSS 代码中包含 `{0}` 占位符，以插入 `Color` 属性的值。
+- [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) — 指定用于在运行时自定义由 [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) 属性定义的 SVG 图像的 [CSS 样式](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style)。主要用途是将 SVG 元素的颜色替换为系列颜色（[`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md)）。在 CSS 代码中包含 `{0}` 占位符，以插入 [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) 属性的值。
 
-    例如，当 `MarkerImage` 属性包含带有 circle 元素的 SVG 图像时，以下 CSS 代码会将 `circle` 样式设置为橙色填充（使用系列颜色）和深红色边框：
+    例如，当 [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) 属性包含带有 circle 元素的 SVG 图像时，以下 CSS 代码会将 `circle` 样式设置为橙色填充（使用系列颜色）和深红色边框：
 
     ``` xml
     <mxc:CartesianFullStackedAreaSeriesView Color="orange" MarkerImageCss="circle {{fill:{0};stroke:darkred;}}">
@@ -310,11 +309,11 @@ public partial class SeriesViewModel : ObservableObject
     另请参阅：[示例 - 创建 Lollipop Series View 并使用自定义 SVG 标记](lollipop-series-view.md#example-create-a-lollipop-series-view-and-use-custom-svg-data-point-markers)。
 
 
-- `MarkerSize` — 指定点标记的大小。
-- `ShowInCrosshair` — 指定当前系列的十字线图表标签的可见性。参见 [自定义十字线的图表标签](../crosshair.md#hide-a-series-in-the-crosshair)。
-- `ShowMarkers` — 启用或禁用点标记。
+- [`MarkerSize`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerSize.md) — 指定点标记的大小。
+- [`ShowInCrosshair`](../../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) — 指定当前系列的十字线图表标签的可见性。参见 [自定义十字线的图表标签](../crosshair.md#hide-a-series-in-the-crosshair)。
+- [`ShowMarkers`](../../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesViewBase/ShowMarkers.md) — 启用或禁用点标记。
 - `Thickness` — 指定线条的粗细。
-- `Transparency` — 一个介于 `0` 和 `1` 之间的值，指定填充区域的透明度级别：
+- [`Transparency`](../../../API/Eremex.AvaloniaUI.Charts/CartesianAreaSeriesView/Transparency.md) — 一个介于 `0` 和 `1` 之间的值，指定填充区域的透明度级别：
     - `0` 表示完全不透明
     - `1` 表示完全透明
 

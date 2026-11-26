@@ -2,19 +2,22 @@
 title: 天空盒
 order: 80
 seealso: []
+image: /images/g3dControl-skybox-custom-example.png
 ---
 
-# 天空盒
+# 天空盒 {#skybox}
 
-`Graphics3DControl` 支持天空盒。天空盒是一种用于在 3D 场景周围创建沉浸式背景的技术。
+## 什么是天空盒？ {#what-is-a-skybox}
+
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 支持天空盒。天空盒是一种用于在 3D 场景周围创建沉浸式背景的技术。
 
 天空盒由一个围绕整个场景的大立方体组成，具有六个纹理面（前、后、左、右、上、下）。这些纹理被映射到立方体的内侧，给人一种遥远的天空、地平线或其他背景的错觉。纹理的设计使其边缘完美匹配，确保从立方体内部观看时无缝的视觉连续性。
 
 默认情况下，天空盒是隐藏的。但是，如果模型使用金属材质，天空盒可能会出现在其反射中。
 
-## 启用天空盒
+## 启用天空盒 {#enable-a-skybox}
 
-要使天空盒可见，请使用 `Skybox` 对象初始化 `Graphics3DControl.Skybox` 属性，并将 `Skybox.IsVisible` 属性设置为 `true`。
+要使天空盒可见，请使用 [`Skybox`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox.md) 对象初始化 [`Graphics3DControl.Skybox`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Skybox.md) 属性，并将 [`Skybox.IsVisible`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/IsVisible.md) 属性设置为 `true`。
 
 ``` xml
 xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/controls3d"
@@ -26,7 +29,7 @@ xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/controls3d"
 </mx3d:Graphics3DControl>
 ```
 
-## 指定自定义天空盒纹理
+## 指定自定义天空盒纹理 {#specify-custom-skybox-textures}
 
 要创建自定义天空盒，您需要指定六个单独的纹理（位图），它们将映射到天空盒立方体的前、后、左、右、顶和底面。
 
@@ -35,17 +38,17 @@ xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/controls3d"
 - 所有天空盒纹理必须具有相同的大小。
 - 每个纹理都应具有方形纵横比 (1:1)，以防止映射到立方体面时变形。
 
-使用 `Skybox` 对象的以下属性为立方体面提供天空盒纹理：
+使用 [`Skybox`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox.md) 对象的以下属性为立方体面提供天空盒纹理：
 
-- `Skybox.Top`
- - `Skybox.Bottom`
- - `Skybox.Left`
- - `Skybox.Right`
- - `Skybox.Front`
- - `Skybox.Rear`
+- [`Skybox.Top`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Top.md)
+ - [`Skybox.Bottom`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Bottom.md)
+ - [`Skybox.Left`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Left.md)
+ - [`Skybox.Right`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Right.md)
+ - [`Skybox.Front`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Front.md)
+ - [`Skybox.Rear`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Rear.md)
 
 
-### 例子
+### 例子 {#example}
 
 以下代码演示了如何在 XAML 中指定自定义天空盒纹理。纹理存储在项目的 _G3dControlSample/Resources/Textures_ 文件夹中，并且它们的 `Build Action` 属性设置为 `AvaloniaResource`。
 
@@ -75,11 +78,11 @@ xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/controls3d"
 
 ![g3dControl-skybox-custom-example-result](../../images/g3dControl-skybox-custom-example-result.png)
 
-## 示例 - 禁用金属材质的反射
+## 示例 - 禁用金属材质的反射 {#example-disable-reflections-for-metallic-materials}
 
 当 3D 模型使用金属材质时，表面会反射默认的灯光和天空盒。要防止金属材料发生这些反射，请执行以下操作：
 
-- 使用 `Graphics3DControl.AllowDefaultLight` 属性禁用默认灯光。
+- 使用 [`Graphics3DControl.AllowDefaultLight`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/AllowDefaultLight.md) 属性禁用默认灯光。
 - 将白色位图应用于所有天空盒立方体面。
 
 ![g3dControl-skybox-all-white-example](../../images/g3dControl-skybox-all-white-example.png)

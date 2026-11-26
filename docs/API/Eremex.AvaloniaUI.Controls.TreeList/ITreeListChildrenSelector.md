@@ -12,7 +12,7 @@ Provides child items for tree list nodes.
 public interface ITreeListChildrenSelector
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

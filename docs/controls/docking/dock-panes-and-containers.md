@@ -16,6 +16,8 @@ Dock Panes and [Document Panes](document-panes.md) are basic elements of the Doc
 
 At runtime, users can rearrange the layout of panels using drag-and-drop operations and context menus: panels can be docked side by side, auto-hidden, displayed as tabs, or in floating windows. All these runtime actions reorganize the internal structure of dock items.
 
+See also: [Wayland Limitations](wayland-limitations.md).
+
 When you define a layout of panels in XAML or code-behind, you typically need to use special dock containers to combine panels, and present them in a specific manner.
 
 ![docking-ui-dockpanes-and-documentpanes-v3](../../images/docking-ui-dockpanes-and-documentpanes-v3.png)
@@ -227,6 +229,8 @@ A user can drag a panel with the mouse from its docked state to make the panel f
 
 ![docking-create-floating-panels](../../images/docking-create-floating-panels.gif)
 
+See also: [Wayland Limitations](wayland-limitations.md).
+
 ### Access a Floating Window 
 
 When a panel is made floating, a floating window (container) is created that hosts this panel. Floating windows are encapsulated by [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md) objects. You can access a panel's parent floating window with the panel's [`DockItemBase.FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/FloatGroup.md) property. This property returns **null** if the panel is not in the floating state.
@@ -434,8 +438,8 @@ Closed panels can be accessed from the [`DockManager.ClosedPanes`](../../API/Ere
 - [`TabbedGroup.SelectTabOnClose`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/SelectTabOnClose.md) — Specifies which tab is selected when you close a tab: the recently opened tab, the following tab, or preceding tab.
 - [`TabbedGroup.SelectedIndex`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/SelectedIndex.md) — Specifies the zero-based index of the selected tab in the current tab container. You can use the [`SelectedIndex`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/SelectedIndex.md) property to select a specific tab.
 - [`TabbedGroup.ShowTabStripForSingleChild`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/ShowTabStripForSingleChild.md) — Specifies whether to display the tab strip when the tab container contains one child. If this property is set to `true`, the tab strip is only displayed if the container owns two or more children.
-- [`TabbedGroup.TabHeaderOrientation`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/TabHeaderOrientation.md) — Specifies whether to arrange tabs horizontally or vertically. In `TabHeaderOrientation.Auto` mode, tabs are arranged horizontally if the [`TabbedGroup.TabStripPlacement`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/TabStripPlacement.md) property is set to `Top` or `Bottom`. The tabs are arranged vertically, if the [`TabbedGroup.TabStripPlacement`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/TabStripPlacement.md) property is set to `Left` or `Right`.
-- [`TabbedGroup.TabStripLayoutType`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/TabStripLayoutType.md) — Specifies how tabs are displayed. `TabStripLayoutType.Scroll` - Tab headers are wide enough to display tab headers' contents. Scroll buttons appear in the tab header region if there is not enough space to display all tab headers in their entirety. `TabStripLayoutType.Stretch` - All tab headers are arranged in a line, stretching to fit the control's width. They have the same width or height depending on the tab strip position (see [`TabbedGroup.TabStripPlacement`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/TabStripPlacement.md)). `TabStripLayoutType.MultiLine` - Tab headers are arranged in multiple lines if there is not enough space to display them in a single line.
+- [`TabbedGroup.TabHeaderOrientation`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/TabHeaderOrientation.md) — Specifies whether to arrange tabs horizontally or vertically. In [`TabHeaderOrientation.Auto`](../../API/Eremex.AvaloniaUI.Controls/TabHeaderOrientation.md) mode, tabs are arranged horizontally if the [`TabbedGroup.TabStripPlacement`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/TabStripPlacement.md) property is set to `Top` or `Bottom`. The tabs are arranged vertically, if the [`TabbedGroup.TabStripPlacement`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/TabStripPlacement.md) property is set to `Left` or `Right`.
+- [`TabbedGroup.TabStripLayoutType`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/TabStripLayoutType.md) — Specifies how tabs are displayed. [`TabStripLayoutType.Scroll`](../../API/Eremex.AvaloniaUI.Controls/TabStripLayoutType.md) - Tab headers are wide enough to display tab headers' contents. Scroll buttons appear in the tab header region if there is not enough space to display all tab headers in their entirety. [`TabStripLayoutType.Stretch`](../../API/Eremex.AvaloniaUI.Controls/TabStripLayoutType.md) - All tab headers are arranged in a line, stretching to fit the control's width. They have the same width or height depending on the tab strip position (see [`TabbedGroup.TabStripPlacement`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/TabStripPlacement.md)). [`TabStripLayoutType.MultiLine`](../../API/Eremex.AvaloniaUI.Controls/TabStripLayoutType.md) - Tab headers are arranged in multiple lines if there is not enough space to display them in a single line.
 - [`TabbedGroup.TabStripPlacement`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/TabStripPlacement.md) — Specifies the edge along which tabs are displayed.
 
 ## Auto-Hide Panels

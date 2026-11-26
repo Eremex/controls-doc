@@ -12,7 +12,7 @@ Serves as the base class for data control columns.
 public abstract class ColumnBase : DataControlColumnBase, IDataFieldInfo
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |
@@ -61,6 +61,7 @@ public abstract class ColumnBase : DataControlColumnBase, IDataFieldInfo
 | [SortDirection](ColumnBase/SortDirection.md) { get; set; } | Gets or sets the column's sort direction. |
 | [SortIndex](ColumnBase/SortIndex.md) { get; set; } | Gets or sets the column's position among sorted columns. |
 | [SortMode](ColumnBase/SortMode.md) { get; set; } | Gets or sets how the column's values are compared when sorting. |
+| [SummaryAutoWidth](ColumnBase/SummaryAutoWidth.md) { get; } | Gets the measured width of the column's summary content. |
 | [TextExportMode](ColumnBase/TextExportMode.md) { get; set; } | Gets or sets whether the column's values are exported as values or display text. |
 | [UnboundDataType](ColumnBase/UnboundDataType.md) { get; set; } | Gets or sets the value type of the unbound column. |
 | [VisibleIndex](ColumnBase/VisibleIndex.md) { get; set; } | Gets or sets the column's position among visible columns. |

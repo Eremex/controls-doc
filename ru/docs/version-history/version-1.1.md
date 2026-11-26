@@ -10,7 +10,7 @@ seealso: []
 
 ### Докинг
 
-- Новый параметр `DockPane.AllowAutoHide` позволяет запретить пользователю включать режим автоскрытия для конкретной панели. Этот параметр скрывает кнопку «Pin» и пункт контекстного меню «Auto Hide» для панели. 
+- Новый параметр [`DockPane.AllowAutoHide`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/AllowAutoHide.md) позволяет запретить пользователю включать режим автоскрытия для конкретной панели. Этот параметр скрывает кнопку «Pin» и пункт контекстного меню «Auto Hide» для панели. 
 
 ### Ribbon и панели инструментов
 
@@ -19,7 +19,7 @@ seealso: []
 
 ### Диаграммы
 
-- Исправлено: невозможно изменить видимый диапазон в коде с помощью свойств `AxisRange.VisualMin` и `AxisRange.VisualMax`.
+- Исправлено: невозможно изменить видимый диапазон в коде с помощью свойств [`AxisRange.VisualMin`](../API/Eremex.AvaloniaUI.Charts/AxisRange/VisualMin.md) и [`AxisRange.VisualMax`](../API/Eremex.AvaloniaUI.Charts/AxisRange/VisualMax.md).
 - Исправлено: событие `PointerPressed` контрола CartesianChart не возникает, когда операции прокрутки и масштабирования отключены.
 
 
@@ -36,15 +36,15 @@ seealso: []
 - Некорректная сортировка и фильтрация для колонок, использующих встроенные редакторы, чей отображаемый текст форматируется пользовательским образом. Конкретные случаи включают:
 
     * Редакторы с масками — когда редактор использует маску и свойство `UseMaskAsDisplayText` установлено в `true`.
-    * `PopupColorEditor` — когда редактор отображает значение выбранного цвета.
-    * `ComboBoxEditor` — когда отображаемый текст элемента не совпадает со значением, возвращаемым методом `ToString` элемента (например, при использовании объекта `EnumItemsSource` в качестве источника элементов).
+    * [`PopupColorEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) — когда редактор отображает значение выбранного цвета.
+    * [`ComboBoxEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) — когда отображаемый текст элемента не совпадает со значением, возвращаемым методом `ToString` элемента (например, при использовании объекта `EnumItemsSource` в качестве источника элементов).
 
 
 - DataGrid/TreeList вызывает исключение при изменении размера окна, если свойство `CellTemplate` используется для назначения колонке встроенного редактора, и для свойства `IsVisible` редактора задана привязка.
 
 ### Редакторы
 
-Исправлено: некорректный выбор значения в `SpinEditor` при двойном и тройном щелчке.
+Исправлено: некорректный выбор значения в [`SpinEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md) при двойном и тройном щелчке.
 
 ### PropertyGrid
 
@@ -56,16 +56,16 @@ seealso: []
 
 ### Ribbon
 
-Исправлено: возникает NullReferenceException при изменении размера Ribbon, если свойство `RibbonPageGroup.IsVisible` установлено в `false`.
+Исправлено: возникает NullReferenceException при изменении размера Ribbon, если свойство [`RibbonPageGroup.IsVisible`](../API/Eremex.AvaloniaUI.Controls.Bars/IToolbarItemsHolder/IsVisible.md) установлено в `false`.
 
 ## 1.1.130
 
 ### Graphics3DControl
 
-- Значение экспозиции по умолчанию (`Graphics3DControl.Exposure`) было изменено на 4.5.
-- Свойство `Graphics3DControl.EnableMultisampling` было заменено на `Graphics3DControl.MultisamplingMode`. Параметр `MultisamplingMode` позволяет выбрать уровень качества сглаживания (MSAA).
-- Graphics3DControl теперь позволяет задавать пользовательские источники света. Используйте свойство `Lights` или `LightsSource` для создания источников света. Поддерживаемые типы света: Point, Directional, CameraPoint и CameraDirectional.
-- Вы можете использовать свойство `AllowDefaultLight`, чтобы отключить свет по умолчанию.
+- Значение экспозиции по умолчанию ([`Graphics3DControl.Exposure`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Exposure.md)) было изменено на 4.5.
+- Свойство `Graphics3DControl.EnableMultisampling` было заменено на [`Graphics3DControl.MultisamplingMode`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/MultisamplingMode.md). Параметр [`MultisamplingMode`](../API/Eremex.AvaloniaUI.Controls3D/MultisamplingMode.md) позволяет выбрать уровень качества сглаживания (MSAA).
+- Graphics3DControl теперь позволяет задавать пользовательские источники света. Используйте свойство [`Lights`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Lights.md) или [`LightsSource`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/LightsSource.md) для создания источников света. Поддерживаемые типы света: Point, Directional, CameraPoint и CameraDirectional.
+- Вы можете использовать свойство [`AllowDefaultLight`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/AllowDefaultLight.md), чтобы отключить свет по умолчанию.
 - Добавлена поддержка пользовательских [скайбоксов](../controls/graphics3dcontrol/skybox.md).
 - Скайбокс по умолчанию был обновлён для улучшения визуальной отрисовки.
 - Оптимизированы расстояния по умолчанию до ближней и дальней плоскостей отсечения.
@@ -88,18 +88,18 @@ seealso: []
 
 Были добавлены следующие свойства:
 
-- `DockManager.OwnsFloatingDockPanes` 
-- `DockManager.OwnsFloatingDocuments`
+- [`DockManager.OwnsFloatingDockPanes`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/OwnsFloatingDockPanes.md) 
+- [`DockManager.OwnsFloatingDocuments`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/OwnsFloatingDocuments.md)
 
-Эти свойства задают, устанавливает ли `DockManager` автоматически себя владельцем плавающих dock-панелей и документов.
-Если свойство `OwnsFloatingDockPanes`/`OwnsFloatingDocuments` равно `false`, плавающие dock-панели/документы появляются позади главного окна, когда главное окно получает фокус.
+Эти свойства задают, устанавливает ли [`DockManager`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) автоматически себя владельцем плавающих dock-панелей и документов.
+Если свойство [`OwnsFloatingDockPanes`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/OwnsFloatingDockPanes.md)/[`OwnsFloatingDocuments`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/OwnsFloatingDocuments.md) равно `false`, плавающие dock-панели/документы появляются позади главного окна, когда главное окно получает фокус.
 
 ### Graphics3DControl
 
 - Исправлена проблема, когда операция перетаскивания не останавливалась при вызове контекстного меню.
-- Свойства `Graphics3DControl.Gamma` и `Graphics3DControl.Exposure` теперь принимают значение 0.
-- `Graphics3DControl.CoordinateSystem` теперь корректно возвращает `RightHanded`, что соответствует системе координат по умолчанию, используемой в `Graphics3DControl`.
-- Свойство `Graphics3DControl.ZoomFactor` было переименовано в `Graphics3DControl.ZoomRate`.
+- Свойства [`Graphics3DControl.Gamma`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Gamma.md) и [`Graphics3DControl.Exposure`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Exposure.md) теперь принимают значение 0.
+- [`Graphics3DControl.CoordinateSystem`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/CoordinateSystem.md) теперь корректно возвращает `RightHanded`, что соответствует системе координат по умолчанию, используемой в [`Graphics3DControl`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md).
+- Свойство `Graphics3DControl.ZoomFactor` было переименовано в [`Graphics3DControl.ZoomRate`](../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/ZoomRate.md).
 - Улучшен алгоритм, вычисляющий положения по умолчанию ближней и дальней плоскостей отсечения.
 - Добавлена функция скайбокса.
 - Добавлены функции выбора и подсветки объектов.
@@ -119,11 +119,11 @@ seealso: []
 
 ### Ribbon и панели инструментов
 
-Новые свойства были добавлены к объекту `ToolbarCheckItem` (кнопка-флажок). Эти свойства задают, как кнопки-флажки отрисовываются в контроле Ribbon и на панелях инструментов:
+Новые свойства были добавлены к объекту [`ToolbarCheckItem`](../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem.md) (кнопка-флажок). Эти свойства задают, как кнопки-флажки отрисовываются в контроле Ribbon и на панелях инструментов:
 
 - [`ToolbarCheckItem.CheckBoxStyle`](../controls/ribbon/ribbon-items.md#кнопки-флажки-toolbarcheckitem) — задаёт, отрисовывать ли флажок как обычную кнопку-флажок, кнопку-переключатель или радиокнопку.
 
-- `ToolbarCheckItem.CheckBoxAlignment` — задаёт, отображать ли флажок до или после текста и глифа.
+- [`ToolbarCheckItem.CheckBoxAlignment`](../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem/CheckBoxAlignment.md) — задаёт, отображать ли флажок до или после текста и глифа.
 
 
 <!-- The new `RibbonPageGroup.ItemLayoutDirectionInParent` attached property allows you to override the default layout mechanism for items in a Ribbon page group. -->
@@ -233,7 +233,7 @@ seealso: []
 
 #### Редакторы
 
-- ComboBoxEditor — новое событие `FilterItem` можно обработать для пользовательской фильтрации элементов. Механизм фильтрации элементов вызывается, когда пользователь вводит текст в редакторе, при условии, что функция автозавершения отключена. См. [ComboBoxEditor — Автофильтр](../controls/editors/comboboxeditor.md#автофильтр).
+- ComboBoxEditor — новое событие [`FilterItem`](../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/FilterItem.md) можно обработать для пользовательской фильтрации элементов. Механизм фильтрации элементов вызывается, когда пользователь вводит текст в редакторе, при условии, что функция автозавершения отключена. См. [ComboBoxEditor — Автофильтр](../controls/editors/comboboxeditor.md#автофильтр).
 
 
 <br>

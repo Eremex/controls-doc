@@ -12,11 +12,16 @@ Represents a container that splits its content with a movable splitter.
 public class SplitContainerControl : TemplatedControl
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SplitContainerControl](SplitContainerControl/SplitContainerControl.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CollapsePanel](SplitContainerControl/CollapsePanel.md) { get; set; } | Gets or sets the panel that users can collapse. |
 | [IsCollapsed](SplitContainerControl/IsCollapsed.md) { get; set; } | Gets or sets whether the collapsible panel is collapsed. |
 | [IsSplitterVisible](SplitContainerControl/IsSplitterVisible.md) { get; set; } | Gets or sets whether the splitter is visible. |

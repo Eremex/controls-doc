@@ -4,7 +4,7 @@ order: 65000
 seealso: []
 ---
 
-# Docking 界面
+# Docking 界面 {#docking-ui}
 
 **Dock Manager** 组件是 Eremex Avalonia UI Controls 库的一部分,可用于实现在众多流行 IDE 中常见的经典 Docking 界面。您可以创建支持停靠(dock)、自动隐藏(auto-hide)和浮动(float)操作的工具面板。特殊的 Document 容器用于显示窗口的主要内容。您可以创建多个 Document,并将它们组织为带选项卡的界面。
 

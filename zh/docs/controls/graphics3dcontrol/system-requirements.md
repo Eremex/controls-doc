@@ -4,11 +4,11 @@ order: 5
 seealso: []
 ---
 
-# 系统要求
+# 系统要求 {#system-requirements}
 
-`Graphics3DControl` 基于 Vulkan SDK 1.1 构建。当硬件支持时，Vulkan 采用 GPU 加速渲染。与基于软件的渲染相比，这种方法可提供显着更高的性能。
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 基于 Vulkan SDK 1.1 构建。当硬件支持时，Vulkan 采用 GPU 加速渲染。与基于软件的渲染相比，这种方法可提供显着更高的性能。
 
-## GPU 要求
+## GPU 要求 {#gpu-requirements}
 
 要使用 GPU 加速渲染，您的系统必须满足以下要求：
 
@@ -27,7 +27,7 @@ seealso: []
 
 更多详情请参阅以下文章：[Checking For Vulkan Support](https://docs.vulkan.org/guide/latest/checking_for_support.html)
 
-## 软件渲染实现
+## 软件渲染实现 {#software-rendering-implementation}
 
 如果 GPU 渲染不可用（例如在虚拟机中），您可以使用 Vulkan API 的[软件实现](https://docs.vulkan.org/guide/latest/checking_for_support.html#_software_implementation)。软件渲染的性能明显较低，因为它依赖于 CPU 处理而不是 GPU 加速。
 

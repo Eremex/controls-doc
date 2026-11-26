@@ -12,11 +12,16 @@ Represents the radial axis of a polar chart. It displays the distance from the c
 public class PolarAxisY : LinearAxis
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PolarAxisY](PolarAxisY/PolarAxisY.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [MaxZoomFactor](PolarAxisY/MaxZoomFactor.md) { get; set; } | Gets or sets the largest ratio between the whole range length and the visible range length that zooming can reach. The default value is 10000. |
 | [Range](PolarAxisY/Range.md) { get; set; } | Gets or sets the range of distances displayed by the axis. |
 | [ScaleOptions](PolarAxisY/ScaleOptions.md) { get; set; } | Gets or sets the options that define how distance values are scaled and labeled. |

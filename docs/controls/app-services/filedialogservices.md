@@ -13,7 +13,7 @@ seealso: []
 ![app-services-isavefiledialogservice](../../images/app-services-isavefiledialogservice.png)
 
 
-Main features include:
+Main features:
 
 - Platform Open File and Save File dialogs — The services show the file pickers provided by the operating system.
 - Synchronous and asynchronous variants — Each service exposes a synchronous `Show` method and an asynchronous `ShowAsync` method. 

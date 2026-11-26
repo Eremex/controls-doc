@@ -6,6 +6,31 @@ seealso: []
 
 # Версия 1.4
 
+## 1.4.38
+
+### DataGrid и TreeList
+
+#### Исправленные проблемы
+
+- Возникает исключение, если операция перетаскивания отменяется в обработчике события `StartDrag`.
+- Объект, присвоенный `e.Data.DataTransfer` в обработчике события `StartDrag`, недоступен в обработчике события `DragOver`.
+- В режиме `CheckedList` фильтр колонки не отображает подпись элемента "(Select All)".
+
+### Диаграммы
+
+#### Исправленные проблемы
+
+- Если отображается перекрестие (crosshair), возникает исключение, когда серия содержит только точки со значениями `NaN`.
+- PolarChart — внутренняя область не заливается, если начальная и конечная точки совпадают.
+- Возникает исключение, если диаграмма отображает значения `DateTime` по оси _Y_ и параметр `AlwaysShowZeroLevel` установлен в `true`.
+- PolarChart и SmithChart — параметр [`CrosshairSeriesLabelMode.None`](../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md) не действует.
+
+### Окна и окна сообщений
+
+#### Исправленные проблемы
+
+- `MxMessageBox` — отображается неверная иконка, если параметр [`MessageBoxIcon`](../API/Eremex.AvaloniaUI.Controls/MessageBoxIcon.md) имеет значение, отличное от `None`, `Question` или `Warning`.
+
 
 ## 1.4.34
 
@@ -47,10 +72,10 @@ DataGrid и TreeList теперь показывают превью строк �
 
 ###### Связанный API
 
-- `DataGridControl.RowDragMode`
-- `DataGridControl.RowIndicatorWidth`
-- `TreeListControl.RowDragMode`
-- `TreeListControl.RowIndicatorWidth`
+- [`DataGridControl.RowDragMode`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowDragMode.md)
+- [`DataGridControl.RowIndicatorWidth`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowIndicatorWidth.md)
+- [`TreeListControl.RowDragMode`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/RowDragMode.md)
+- [`TreeListControl.RowIndicatorWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/RowIndicatorWidth.md)
 
 ##### Критическое изменение — перетаскивание строк между приложениями
 
@@ -83,7 +108,7 @@ DataGrid и TreeList теперь показывают превью строк �
 
 ![bestfit-feature-bestfitall](../images/bestfit-feature-bestfitall.png)
 
-Контролы включают свойства `BestFitMode`, которые задают, какие значения строк измеряются во время операций Best Fit:
+Контролы включают свойства [`BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/BestFitMode.md), которые задают, какие значения строк измеряются во время операций Best Fit:
 
 - Режим `Fast` — измеряет ширину уникальных значений строк. Это улучшает производительность Best Fit в большинстве стандартных сценариев.
 
@@ -91,22 +116,22 @@ DataGrid и TreeList теперь показывают превью строк �
 
 ##### Связанный API
 
-- `DataGridControl.AllowBestFit`
-- `DataGridControl.BestFitMode`
-- `DataGridControl.BestFitMode`
-- `DataGridControl.BestFit`
-- `DataGridControl.BestFitAllColumns`
-- `GridColumn.AllowBestFit`
-- `GridColumn.BestFitMode`
-- `GridColumn.BestFitMode`
-- `TreeListControl.AllowBestFit`
-- `TreeListControl.BestFitMode`
-- `TreeListControl.BestFitMode`
-- `TreeListControl.BestFit`
-- `TreeListControl.BestFitAllColumns`
-- `TreeListColumn.AllowBestFit`
-- `TreeListColumn.BestFitMode`
-- `TreeListColumn.BestFitMode`
+- [`DataGridControl.AllowBestFit`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowBestFit.md)
+- [`DataGridControl.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitMode.md)
+- [`DataGridControl.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitMode.md)
+- [`DataGridControl.BestFit`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFit.md)
+- [`DataGridControl.BestFitAllColumns`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BestFitAllColumns.md)
+- [`GridColumn.AllowBestFit`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md)
+- [`GridColumn.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md)
+- [`GridColumn.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md)
+- [`TreeListControl.AllowBestFit`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowBestFit.md)
+- [`TreeListControl.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md)
+- [`TreeListControl.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitMode.md)
+- [`TreeListControl.BestFit`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFit.md)
+- [`TreeListControl.BestFitAllColumns`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BestFitAllColumns.md)
+- [`TreeListColumn.AllowBestFit`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowBestFit.md)
+- [`TreeListColumn.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md)
+- [`TreeListColumn.BestFitMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BestFitMode.md)
 
 ##### Документация
 
@@ -121,14 +146,14 @@ DataGrid и TreeList теперь показывают превью строк �
 
 ##### Связанный API
 
-- `DataGridControl.AllowResetColumnWidth`
-- `DataGridControl.ResetColumnWidth`
-- `TreeListControl.AllowResetColumnWidth`
-- `TreeListControl.ResetColumnWidth`
+- [`DataGridControl.AllowResetColumnWidth`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowResetColumnWidth.md)
+- [`DataGridControl.ResetColumnWidth`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ResetColumnWidth.md)
+- [`TreeListControl.AllowResetColumnWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowResetColumnWidth.md)
+- [`TreeListControl.ResetColumnWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ResetColumnWidth.md)
 
 #### Исправленные проблемы
 
-- TreeList — возникает `StackOverflowException` при фильтрации данных, если `ExpandNodesOnFiltering` равно `true`.
+- TreeList — возникает `StackOverflowException` при фильтрации данных, если [`ExpandNodesOnFiltering`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ExpandNodesOnFiltering.md) равно `true`.
 - TreeList — активный редактор в строке автофильтра закрывается при изменении коллекции узлов.
 - DataGrid и TreeList — сочетание клавиш `Cmd+A` не работает на Mac.
 
@@ -138,7 +163,7 @@ DataGrid и TreeList теперь показывают превью строк �
 
 #### Новый режим отображения меток перекрестия
 
-Свойство `CrosshairOptions.SeriesLabelMode` задаёт, объединяются ли несколько меток перекрестия и как именно. Значение этого свойства по умолчанию теперь `Smart`:
+Свойство [`CrosshairOptions.SeriesLabelMode`](../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelMode.md) задаёт, объединяются ли несколько меток перекрестия и как именно. Значение этого свойства по умолчанию теперь `Smart`:
 
 - Режим `Smart` — каждая серия отображает собственную метку перекрестия. Когда метки перекрываются, они объединяются в одну метку.
   
@@ -146,9 +171,9 @@ DataGrid и TreeList теперь показывают превью строк �
 
 #### Сортировка серий в перекрестии
 
-Когда несколько серий объединены в одну метку перекрестия, вы можете использовать новое свойство `CrosshairOptions.SeriesLabelItemSortMode`, чтобы задать порядок отображения серий в метке:
+Когда несколько серий объединены в одну метку перекрестия, вы можете использовать новое свойство [`CrosshairOptions.SeriesLabelItemSortMode`](../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelItemSortMode.md), чтобы задать порядок отображения серий в метке:
 
-- Порядок `By Series` — сортирует серии по порядку, в котором эти серии добавлены в коллекцию `CartesianChart.Series`.
+- Порядок `By Series` — сортирует серии по порядку, в котором эти серии добавлены в коллекцию [`CartesianChart.Series`](../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md).
 
     ![chart-CrosshairSeriesLabelItemSortMode-BySeries](../images/chart-CrosshairSeriesLabelItemSortMode-BySeries.png)
 
@@ -160,19 +185,19 @@ DataGrid и TreeList теперь показывают превью строк �
 
 Следующее свойство позволяет показывать метки перекрестия только для точек данных вблизи курсора.
 
-- `CrosshairOptions.MaxPickDistance` — задаёт диапазон, в пределах которого выполняется поиск точек данных для включения в метки перекрестия.
+- [`CrosshairOptions.MaxPickDistance`](../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/MaxPickDistance.md) — задаёт диапазон, в пределах которого выполняется поиск точек данных для включения в метки перекрестия.
 
     ![chart-Crosshair-MaxPickDistance](../images/chart-Crosshair-MaxPickDistance.png)
 
 #### Задержка показа перекрестия
 
-- `CrosshairOptions.SeriesLabelShowDelay` — задаёт задержку (в миллисекундах) перед отображением метки серии перекрестия.
+- [`CrosshairOptions.SeriesLabelShowDelay`](../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelShowDelay.md) — задаёт задержку (в миллисекундах) перед отображением метки серии перекрестия.
 
 
 #### API показа и скрытия перекрестия
 
 - `ShowCrosshair(Point position)`
-- `HideCrosshair()`
+- [`HideCrosshair()`](../API/Eremex.AvaloniaUI.Charts/CartesianChart/HideCrosshair.md)
 
 #### Обновлённый шаблон перекрестия
 
@@ -182,11 +207,11 @@ DataGrid и TreeList теперь показывают превью строк �
 
 Изменения шаблона включают:
 
-- Класс `CrosshairAllSeriesLabelControlData` теперь содержит коллекцию `ObservableCollection<CrosshairSeriesLabelItem> SeriesItems` вместо коллекции `CrosshairAllSeriesLabelGroup`.
+- Класс [`CrosshairAllSeriesLabelControlData`](../API/Eremex.AvaloniaUI.Charts/CrosshairAllSeriesLabelControlData.md) теперь содержит коллекцию `ObservableCollection<CrosshairSeriesLabelItem> SeriesItems` вместо коллекции `CrosshairAllSeriesLabelGroup`.
 - Класс `CrosshairAllSeriesLabelGroup` был удалён.
-- Класс `CrosshairAllSeriesLabelSeriesItem` был переименован в `CrosshairSeriesLabelItem`. Этот класс содержит информацию об аргументе серии и префиксе аргумента.
-- Класс `CrosshairAllSeriesLabelSeriesValueItem` был переименован в `CrosshairSeriesLabelSeriesValueItem`.
-- Класс `CrosshairSingleSeriesLabelControlData` больше не наследуется от `CrosshairAllSeriesLabelSeriesValueItem`. `CrosshairSingleSeriesLabelControlData` теперь предоставляет свойство `SeriesItem` типа `CrosshairSeriesLabelItem`.
+- Класс `CrosshairAllSeriesLabelSeriesItem` был переименован в [`CrosshairSeriesLabelItem`](../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelItem.md). Этот класс содержит информацию об аргументе серии и префиксе аргумента.
+- Класс `CrosshairAllSeriesLabelSeriesValueItem` был переименован в [`CrosshairSeriesLabelSeriesValueItem`](../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelSeriesValueItem.md).
+- Класс [`CrosshairSingleSeriesLabelControlData`](../API/Eremex.AvaloniaUI.Charts/CrosshairSingleSeriesLabelControlData.md) больше не наследуется от `CrosshairAllSeriesLabelSeriesValueItem`. [`CrosshairSingleSeriesLabelControlData`](../API/Eremex.AvaloniaUI.Charts/CrosshairSingleSeriesLabelControlData.md) теперь предоставляет свойство [`SeriesItem`](../API/Eremex.AvaloniaUI.Charts/CrosshairSingleSeriesLabelControlData/SeriesItem.md) типа [`CrosshairSeriesLabelItem`](../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelItem.md).
 
 #### Документация
 
@@ -203,7 +228,7 @@ DataGrid и TreeList теперь показывают превью строк �
 ### Критические изменения
 
 - Зависимость от пакета `CommunityToolkit.Mvvm` была удалена. Если вашему проекту требуется этот пакет, добавьте ссылку на `CommunityToolkit.Mvvm` явно.
-- `DataControlCommands`, `DataGridControlCommands`, `TreeListCommands` и команды редакторов теперь содержат `ICommand` вместо `IRelayCommand` из CommunityToolkit.
+- [`DataControlCommands`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlCommands.md), [`DataGridControlCommands`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataGridControlCommands.md), [`TreeListCommands`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListCommands.md) и команды редакторов теперь содержат `ICommand` вместо `IRelayCommand` из CommunityToolkit.
 
 
 <br>

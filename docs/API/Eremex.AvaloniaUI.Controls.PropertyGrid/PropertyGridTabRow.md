@@ -12,11 +12,16 @@ Represents a property grid row that displays tabs, each containing its own set o
 public class PropertyGridTabRow : PropertyGridRowBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PropertyGridTabRow](PropertyGridTabRow/PropertyGridTabRow.md)() | Initializes a new instance of the PropertyGridTabRow class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Items](PropertyGridTabRow/Items.md) { get; } | Gets the collection of tab items. |
 | [ItemsSource](PropertyGridTabRow/ItemsSource.md) { get; set; } | Gets or sets the collection whose items are used to generate tab items. |
 | [SelectedItem](PropertyGridTabRow/SelectedItem.md) { get; set; } | Gets or sets the selected tab item whose rows are displayed. |

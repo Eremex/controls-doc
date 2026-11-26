@@ -12,7 +12,7 @@ Serves as the base class for polar series views that connect the data points wit
 public abstract class PolarLineSeriesViewBase : PolarPointSeriesView, ILineSeriesView
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

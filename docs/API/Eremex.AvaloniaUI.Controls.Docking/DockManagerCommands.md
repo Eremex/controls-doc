@@ -12,7 +12,7 @@ Provides commands for interacting with docking panes, groups, and floating windo
 public class DockManagerCommands
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

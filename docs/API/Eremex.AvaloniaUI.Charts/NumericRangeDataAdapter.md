@@ -12,13 +12,23 @@ Converts numeric arguments and pairs of numeric values into series data points. 
 public class NumericRangeDataAdapter : ISeriesDataAdapter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [NumericRangeDataAdapter](NumericRangeDataAdapter/NumericRangeDataAdapter.md)() | Initializes a new instance of the NumericRangeDataAdapter class that contains no data points. |
 | [NumericRangeDataAdapter](NumericRangeDataAdapter/NumericRangeDataAdapter.md)(…) | Initializes a new instance of the NumericRangeDataAdapter class with the specified arguments and values. (2 constructors) |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ItemCount](NumericRangeDataAdapter/ItemCount.md) { get; } | Gets the number of data points stored in the adapter. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Add](NumericRangeDataAdapter/Add.md)(…) | Adds a data point to the end of the adapter. (2 methods) |
 | [AddRange](NumericRangeDataAdapter/AddRange.md)(…) | Adds several data points to the end of the adapter. |
 | [Clear](NumericRangeDataAdapter/Clear.md)() | Removes all data points from the adapter. |

@@ -12,7 +12,7 @@ Displays several Cartesian series as stacked areas whose values are normalized t
 public class CartesianFullStackedAreaSeriesView : CartesianStackedAreaSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

@@ -28,6 +28,7 @@ The Excel export engine is data-aware, meaning it preserves the control's data s
 - Node hierarchy
 - Value formatting
 - Data sorting
+- Summaries
 
 <!-- TODO
  - Data filtering settings 
@@ -50,16 +51,15 @@ Use the following methods to export the control's data to XLSX format:
 
 The optional `options` parameter (of type [`XlsxExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions.md)) allows you to customize export settings. The [`XlsxExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions.md) class exposes the following members:
 
+**Export Progress**
+
 - [`ExportProgress`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ExportProgress.md) event — Fires repeatedly during data export. The event's [`ExportProgressEventArgs.ProgressPercentage`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportProgressEventArgs/ProgressPercentage.md) parameter indicates the progress as a percentage (0 to 100). You can use this event to display export progress to users in a customized way.
+
+
+
+**Column and Band Headers**
+
 - [`AllowFixedColumnHeaderPanel`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowFixedColumnHeaderPanel.md) property (default is `true`) — Specifies whether the column header panel remains fixed at the top in the exported document. 
-
-- [`ApplyFormattingToEntireColumn`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ApplyFormattingToEntireColumn.md) — Specifies whether cell formatting is applied to entire columns or individual cells in the output document.
-
-- [`AllowGrouping`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowGrouping.md) property (default is `true`) — Specifies whether the node hierarchy is exported. If [`AllowGrouping`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowGrouping.md) is `false`, the node hierarchy is not stored in the output document.
-
-- [`DocumentCulture`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/DocumentCulture.md) — A custom `CultureInfo` object that determines formatting rules for numeric and date-time values in the output document.
-
-    If the [`DocumentCulture`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/DocumentCulture.md) property is not specified, the export engine uses the application's current culture.
 
 - [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowBands.md) property (default is `null`) — Specifies whether the control's [bands](bands.md) are included in the export. 
 
@@ -69,9 +69,38 @@ The optional `options` parameter (of type [`XlsxExportOptions`](../../API/Eremex
 
     If `ShowColumnHeaders` is `null`, the setting is specified by the control's [`TreeListControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnHeaders.md) property. 
 
+
+**Node Hierarchy**
+
+- [`AllowGrouping`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowGrouping.md) property (default is `true`) — Specifies whether the node hierarchy is exported. If [`AllowGrouping`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowGrouping.md) is `false`, the node hierarchy is not stored in the output document.
+
+
+**Summaries**
+
+
+<!-- - [`ShowGroupSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowGroupSummaries.md) — Gets or sets whether group summaries are exported. -->
+
+- [`ShowTotalSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowTotalSummaries.md) — Gets or sets whether [summaries](summaries.md) are exported.
+
+- [`SummaryCountBlankCells`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/SummaryCountBlankCells.md) — Gets or sets whether Count summary formulas account for blank cells.
+
+- [`ShowSummaryLabels`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowSummaryLabels.md) — Gets or sets whether summary labels are included in exported summary cells.
+
+
+**Cell Lines**
+
 - [`ShowHorizontalLines`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowHorizontalLines.md) — Specifies whether horizontal lines between cells are visible in the output document.
 
 - [`ShowVerticalLines`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowVerticalLines.md) — Specifies whether vertical lines between cells are visible in the output document.
+
+
+**Culture and Cell Formatting**
+
+- [`ApplyFormattingToEntireColumn`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ApplyFormattingToEntireColumn.md) — Specifies whether cell formatting is applied to entire columns or individual cells in the output document.
+
+- [`DocumentCulture`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/DocumentCulture.md) — A custom `CultureInfo` object that determines formatting rules for numeric and date-time values in the output document.
+
+    If the [`DocumentCulture`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/DocumentCulture.md) property is not specified, the export engine uses the application's current culture.
 
 - [`TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) property — The **default** export mode of cell values. 
 
@@ -113,7 +142,11 @@ Use the following methods to export the control's data to PDF format:
 
 The optional `options` parameter (of type [`PageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions.md)) allows you to customize export settings. The [`PageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions.md) class exposes the following members:
 
+**Export Progress**
+
 - [`PageExportOptions.ExportProgress`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ExportProgress.md) event — Fires repeatedly during data export. The event's [`ExportProgressEventArgs.ProgressPercentage`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportProgressEventArgs/ProgressPercentage.md) parameter indicates the progress as a percentage (0 to 100). You can use this event to display export progress to users in a customized way.
+
+**Page**
 
 - [`PageExportOptions.FitToPageWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/FitToPageWidth.md) (default is `false`) — Specifies whether treelist columns are stretched to fit the paper width.
 
@@ -131,6 +164,9 @@ The optional `options` parameter (of type [`PageExportOptions`](../../API/Eremex
 
 - [`PageExportOptions.PaperKind`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PaperKind.md) (default is `A4`) — The paper size.
 
+
+**Column and Band Headers**
+
 - [`PageExportOptions.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) property (default is `null`) — Specifies whether the control's [bands](bands.md) are included in the export. 
 
     If [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) is `null`, the setting is specified by the control's [`TreeListControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBands.md) property. 
@@ -138,7 +174,14 @@ The optional `options` parameter (of type [`PageExportOptions`](../../API/Eremex
 - [`PageExportOptions.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) property (default is `null`) — Specifies whether the column header panel is included in the export. 
 
     If `ShowColumnHeaders` is `null`, the setting is specified by the control's [`TreeListControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnHeaders.md) property.  
-    
+
+**Summaries**
+
+- [`ShowTotalSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowTotalSummaries.md) — Gets or sets whether [summaries](summaries.md) are exported.
+
+**Custom Cell Text**
+
+- [`ColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ColumnDisplayText.md) event — Fires repeatedly when a cell's display text is formed during export. Handle this event to supply custom cell display text.
 
 ## Export to CSV Format
 
@@ -209,22 +252,16 @@ Use the [`ExportToImages`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeLis
     
 The optional `options` parameter (of type [`ImageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions.md)) allows you to customize export settings. The [`ImageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions.md) class exposes the following members:
 
+**Output Image Format**
+
 - [`ImageExportOptions.Format`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/Format.md) — The output image format (PNG, JPEG, SVG, or WebP).
 
-- [`ImageExportOptions.PageBorderColor`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/PageBorderColor.md) — The color of the border drawn around each page.
-- [`ImageExportOptions.PageBorderWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/PageBorderWidth.md)  — The width of the border drawn around each page.
 
+**Export Progress**
 
 - [`PageExportOptions.ExportProgress`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ExportProgress.md) event — Fires repeatedly during data export. The event's [`ExportProgressEventArgs.ProgressPercentage`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportProgressEventArgs/ProgressPercentage.md) parameter indicates the progress as a percentage (0 to 100). You can use this event to display export progress to users in a customized way.
 
-
-- [`PageExportOptions.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) property (default is `null`) — Specifies whether the control's [bands](bands.md) are included in the export. 
-
-    If [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) is `null`, the setting is specified by the control's [`TreeListControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBands.md) property. 
-
-- [`PageExportOptions.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) property (default is `null`) — Specifies whether the column header panel is included in the export. 
-
-    If `ShowColumnHeaders` is `null`, the setting is specified by the control's [`TreeListControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnHeaders.md) property.  
+**Page**
 
 - [`PageExportOptions.FitToPageWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/FitToPageWidth.md) (default is `false`) — Specifies whether treelist columns are stretched to fit the paper width.
 
@@ -232,6 +269,9 @@ The optional `options` parameter (of type [`ImageExportOptions`](../../API/Ereme
 
 - [`PageExportOptions.Margins`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Margins.md) (default is `72,72,72,72`) — The page margins, in points. 1 point = 1/72 inch.
 
+- [`ImageExportOptions.PageBorderColor`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/PageBorderColor.md) — The color of the border drawn around each page.
+
+- [`ImageExportOptions.PageBorderWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/PageBorderWidth.md)  — The width of the border drawn around each page.
 
 - [`PageExportOptions.PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) — A string that specifies the range of pages to be exported. You can use the following notations to specify the output page range:
 
@@ -242,3 +282,22 @@ The optional `options` parameter (of type [`ImageExportOptions`](../../API/Ereme
     The default value of the [`PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) property is an empty string, which exports all pages.
 
 - [`PageExportOptions.PaperKind`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PaperKind.md) (default is `A4`) — The paper size.
+
+**Column and Band Headers**
+
+- [`PageExportOptions.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) property (default is `null`) — Specifies whether the control's [bands](bands.md) are included in the export. 
+
+    If [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) is `null`, the setting is specified by the control's [`TreeListControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBands.md) property. 
+
+- [`PageExportOptions.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) property (default is `null`) — Specifies whether the column header panel is included in the export. 
+
+    If `ShowColumnHeaders` is `null`, the setting is specified by the control's [`TreeListControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnHeaders.md) property.  
+
+
+**Summaries**
+
+- [`ShowTotalSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowTotalSummaries.md) — Gets or sets whether [summaries](summaries.md) are exported.
+
+**Custom Cell Text**
+
+- [`ColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ColumnDisplayText.md) — Fires repeatedly when a cell's display text is formed during export. Handle this event to supply custom cell display text.

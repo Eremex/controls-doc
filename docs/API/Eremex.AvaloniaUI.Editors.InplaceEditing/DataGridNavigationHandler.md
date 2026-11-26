@@ -12,11 +12,16 @@ Provides keyboard navigation between inplace editors in a data grid.
 public class DataGridNavigationHandler : IInplaceEditorNavigationHandler
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridNavigationHandler](DataGridNavigationHandler/DataGridNavigationHandler.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [NeedsKey](DataGridNavigationHandler/NeedsKey.md)(…) | Determines whether the data control processes the specified key. |
 
 ## See Also

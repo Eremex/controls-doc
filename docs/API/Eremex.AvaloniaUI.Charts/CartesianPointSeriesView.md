@@ -12,11 +12,16 @@ Displays the data of a Cartesian series as a set of markers that are not connect
 public class CartesianPointSeriesView : CartesianSeriesView, IMarkerSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CartesianPointSeriesView](CartesianPointSeriesView/CartesianPointSeriesView.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Color](CartesianPointSeriesView/Color.md) { get; set; } | Gets or sets the color of the markers. |
 | [MarkerImage](CartesianPointSeriesView/MarkerImage.md) { get; set; } | Gets or sets the image that is drawn at each data point instead of a filled rectangle. |
 | [MarkerImageCss](CartesianPointSeriesView/MarkerImageCss.md) { get; set; } | Gets or sets the CSS applied to the marker image when the image is an SVG image. The text is treated as a format string, where {0} is replaced with the marker color in the #RRGGBB format. |

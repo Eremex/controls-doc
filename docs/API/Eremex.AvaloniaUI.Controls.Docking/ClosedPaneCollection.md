@@ -12,7 +12,7 @@ Represents the collection of closed panes in a dock manager.
 public class ClosedPaneCollection : BaseItemCollection<DockPane>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

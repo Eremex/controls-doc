@@ -12,11 +12,16 @@ Provides data for the HiddenEditor event.
 public class EditorEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [EditorEventArgs](EditorEventArgs/EditorEventArgs.md)(…) | Initializes a new instance of the EditorEventArgs class with the specified row and editor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Editor](EditorEventArgs/Editor.md) { get; } | Gets the editor that was hidden. |
 | [Row](EditorEventArgs/Row.md) { get; } | Gets the row whose editor was hidden. |
 

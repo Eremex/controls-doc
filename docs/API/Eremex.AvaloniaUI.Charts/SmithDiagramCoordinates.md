@@ -12,7 +12,7 @@ Represents a point of a [`SmithChart`](./SmithChart.md) expressed as an argument
 public sealed class SmithDiagramCoordinates
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

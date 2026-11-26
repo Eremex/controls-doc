@@ -12,13 +12,23 @@ Converts date and time arguments and pairs of numeric values into series data po
 public class DateTimeRangeDataAdapter : ISeriesDataAdapter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DateTimeRangeDataAdapter](DateTimeRangeDataAdapter/DateTimeRangeDataAdapter.md)() | Initializes a new instance of the DateTimeRangeDataAdapter class that contains no data points. |
 | [DateTimeRangeDataAdapter](DateTimeRangeDataAdapter/DateTimeRangeDataAdapter.md)(…) | Initializes a new instance of the DateTimeRangeDataAdapter class with the specified arguments and values. (2 constructors) |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ItemCount](DateTimeRangeDataAdapter/ItemCount.md) { get; } | Gets the number of data points stored in the adapter. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Add](DateTimeRangeDataAdapter/Add.md)(…) | Adds a data point to the end of the adapter. (2 methods) |
 | [AddRange](DateTimeRangeDataAdapter/AddRange.md)(…) | Adds several data points to the end of the adapter. |
 | [Clear](DateTimeRangeDataAdapter/Clear.md)() | Removes all data points from the adapter. |

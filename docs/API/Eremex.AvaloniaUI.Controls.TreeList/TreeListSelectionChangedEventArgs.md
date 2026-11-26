@@ -12,11 +12,16 @@ Provides data for the SelectionChanged event.
 public class TreeListSelectionChangedEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListSelectionChangedEventArgs](TreeListSelectionChangedEventArgs/TreeListSelectionChangedEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ChangeType](TreeListSelectionChangedEventArgs/ChangeType.md) { get; } | Gets the type of the selection change. |
 | [Node](TreeListSelectionChangedEventArgs/Node.md) { get; } | Gets the node whose selection is changed. |
 

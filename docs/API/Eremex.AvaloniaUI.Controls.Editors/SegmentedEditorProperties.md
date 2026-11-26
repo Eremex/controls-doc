@@ -12,11 +12,16 @@ Provides settings for the segmented editor.
 public class SegmentedEditorProperties : BaseEditorProperties
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SegmentedEditorProperties](SegmentedEditorProperties/SegmentedEditorProperties.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [DisplayMember](SegmentedEditorProperties/DisplayMember.md) { get; set; } | Gets or sets the name of the property used to display items. |
 | [ItemsSource](SegmentedEditorProperties/ItemsSource.md) { get; set; } | Gets or sets the collection of the editor's items. |
 | [ItemTemplate](SegmentedEditorProperties/ItemTemplate.md) { get; set; } | Gets or sets the template used to display the editor's items. |

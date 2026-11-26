@@ -12,11 +12,16 @@ Defines a scale that places tickmarks at a fixed number of categories rather tha
 public class QualitativeScaleOptions : ScaleOptions
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [QualitativeScaleOptions](QualitativeScaleOptions/QualitativeScaleOptions.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [GridSpacing](QualitativeScaleOptions/GridSpacing.md) { get; set; } | Gets or sets the number of categories between two major gridlines. If the value is null, the spacing is calculated automatically. |
 
 ## See Also

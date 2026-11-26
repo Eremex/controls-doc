@@ -12,11 +12,16 @@ Represents a band of the tree list control.
 public class TreeListBand : DataControlBandBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListBand](TreeListBand/TreeListBand.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Bands](TreeListBand/Bands.md) { get; } | Gets the band's child band collection. |
 | [BandsSource](TreeListBand/BandsSource.md) { get; set; } | Gets or sets the collection whose items are used to generate child bands. |
 

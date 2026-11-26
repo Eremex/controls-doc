@@ -12,11 +12,16 @@ Represents a value on a specific Y axis.
 public struct AxisYCoordinate
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [AxisYCoordinate](AxisYCoordinate/AxisYCoordinate.md)(…) | Initializes a new instance of the [`AxisYCoordinate`](./AxisYCoordinate.md) struct. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Axis](AxisYCoordinate/Axis.md) { get; } | Gets the axis the value belongs to. |
 | [Value](AxisYCoordinate/Value.md) { get; } | Gets the value on the axis, expressed in the scale of that axis. |
 

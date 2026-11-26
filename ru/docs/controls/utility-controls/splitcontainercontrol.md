@@ -6,7 +6,7 @@ seealso: []
 
 # SplitContainerControl
 
-`SplitContainerControl` — это составной контрол, отображающий две панели, разделённые подвижным разделителем. Пользователи могут перетаскивать разделитель, чтобы изменять размер панелей. Они также могут щёлкнуть по разделителю, чтобы свернуть выбранную панель, а затем щёлкнуть по разделителю ещё раз, чтобы восстановить панель.
+[`SplitContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl.md) — это составной контрол, отображающий две панели, разделённые подвижным разделителем. Пользователи могут перетаскивать разделитель, чтобы изменять размер панелей. Они также могут щёлкнуть по разделителю, чтобы свернуть выбранную панель, а затем щёлкнуть по разделителю ещё раз, чтобы восстановить панель.
 
 ![SplitContainerControl](../../images/SplitContainerControl.png)
 
@@ -20,10 +20,10 @@ seealso: []
 
 ## Содержимое для панелей
 
-Используйте свойства `SplitContainerControl.Panel1` и `SplitContainerControl.Panel2`, чтобы разместить содержимое на панелях контрола. Поддерживаются два сценария использования:
+Используйте свойства [`SplitContainerControl.Panel1`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel1.md) и [`SplitContainerControl.Panel2`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel2.md), чтобы разместить содержимое на панелях контрола. Поддерживаются два сценария использования:
 
 - Инициализируйте эти свойства контролами, которые будут отображаться на панелях. 
-- Инициализируйте эти свойства пользовательскими объектами. В этом случае используйте свойства `SplitContainerControl.Panel1Template` и `SplitContainerControl.Panel2Template`, чтобы задать DataTemplate, которые будут отрисовывать пользовательские объекты.
+- Инициализируйте эти свойства пользовательскими объектами. В этом случае используйте свойства [`SplitContainerControl.Panel1Template`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel1Template.md) и [`SplitContainerControl.Panel2Template`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel2Template.md), чтобы задать DataTemplate, которые будут отрисовывать пользовательские объекты.
 
 ``` xml
 <mxe:SplitContainerControl Name="splitContainer"
@@ -40,16 +40,16 @@ seealso: []
 
 ## Настройка размера и направления панели
 
-Используйте свойство `SplitContainerControl.Orientation`, чтобы выбрать между горизонтальным (по умолчанию) и вертикальным расположением панелей.
+Используйте свойство [`SplitContainerControl.Orientation`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Orientation.md), чтобы выбрать между горизонтальным (по умолчанию) и вертикальным расположением панелей.
 
 ![splitcontainercontrol-orientation](../../images/splitcontainercontrol-orientation.png)
 
-Чтобы задать размер панелей контейнера, используйте свойства `SplitContainerControl.Panel1Length` или `SplitContainerControl.Panel2Length`.
+Чтобы задать размер панелей контейнера, используйте свойства [`SplitContainerControl.Panel1Length`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel1Length.md) или [`SplitContainerControl.Panel2Length`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel2Length.md).
 
 - В горизонтальной ориентации эти свойства задают ширину панелей.
 - В вертикальной ориентации они задают высоту панелей.
 
-Свойства `Panel1MinLength`, `Panel1MaxLength`, `Panel2MinLength` и `Panel2MaxLength` позволяют задавать ограничения на изменение размера панелей. Пользователи не могут изменять размер панелей за пределами этих лимитов. 
+Свойства [`Panel1MinLength`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel1MinLength.md), [`Panel1MaxLength`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel1MaxLength.md), [`Panel2MinLength`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel2MinLength.md) и [`Panel2MaxLength`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/Panel2MaxLength.md) позволяют задавать ограничения на изменение размера панелей. Пользователи не могут изменять размер панелей за пределами этих лимитов. 
 
 ## Сворачивание и восстановление панели
 
@@ -57,17 +57,17 @@ seealso: []
 
 ![SplitContainerControl](../../images/splitcontainercontrol-collapse.gif)
 
-Свойство `SplitContainerControl.CollapsePanel` позволяет задать сворачиваемую панель. Значение свойства по умолчанию — _Panel2_.
+Свойство [`SplitContainerControl.CollapsePanel`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/CollapsePanel.md) позволяет задать сворачиваемую панель. Значение свойства по умолчанию — _Panel2_.
 
-Чтобы свернуть и восстановить панель в коде, используйте свойство `IsCollapsed`.
+Чтобы свернуть и восстановить панель в коде, используйте свойство [`IsCollapsed`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/IsCollapsed.md).
 
 ## Отключение сворачивания панели
 
-Установите свойство `SplitContainerControl.CollapsePanel` в `None`, чтобы отключить функцию сворачивания панели. В этом режиме разделитель не отображает значки стрелок.
+Установите свойство [`SplitContainerControl.CollapsePanel`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/CollapsePanel.md) в `None`, чтобы отключить функцию сворачивания панели. В этом режиме разделитель не отображает значки стрелок.
 
 ## Скрытие разделителя
 
-Установите свойство `SplitContainerControl.IsSplitterVisible` в `false`, чтобы скрыть разделитель в определённых случаях. Это не позволяет пользователю выполнять операции изменения размера и сворачивания/восстановления панелей.
+Установите свойство [`SplitContainerControl.IsSplitterVisible`](../../API/Eremex.AvaloniaUI.Controls.Editors/SplitContainerControl/IsSplitterVisible.md) в `false`, чтобы скрыть разделитель в определённых случаях. Это не позволяет пользователю выполнять операции изменения размера и сворачивания/восстановления панелей.
 
 
 <br>

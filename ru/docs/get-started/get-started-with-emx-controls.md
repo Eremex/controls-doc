@@ -40,7 +40,7 @@ dotnet new install Eremex.Avalonia.Templates
     
     - **Eremex.Avalonia.Controls** — содержит контролы и библиотеки Eremex.
     - **Eremex.Avalonia.Themes.DeltaDesign** — содержит визуальную тему `DeltaDesign` для контролов Eremex.
-- Использует класс `MxWindow` в качестве главного окна проекта. `MxWindow` обеспечивает поддержку визуальных тем Eremex.
+- Использует класс [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) в качестве главного окна проекта. [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) обеспечивает поддержку визуальных тем Eremex.
 - Регистрирует визуальную тему Eremex `DeltaDesign`. 
 
     !!! note
@@ -54,7 +54,7 @@ dotnet new install Eremex.Avalonia.Templates
 
 #### eremex.avalonia.window
 
-Шаблон, создающий новое окно Avalonia на основе `MxWindow`. Этот шаблон создаёт только два файла, определяющих окно: _Window.axaml_ и _Window.axaml.cs_.
+Шаблон, создающий новое окно Avalonia на основе [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md). Этот шаблон создаёт только два файла, определяющих окно: _Window.axaml_ и _Window.axaml.cs_.
 
 ### 1.2 Создание нового проекта
 
@@ -98,7 +98,7 @@ dotnet new eremex.avalonia.mvvm -n AvaloniaApplication1
 
 <br>
 
-В разделах ниже мы добавим контрол Eremex `DataGridControl` в View и привяжем его к коллекции _Employees_, определённой во View Model.
+В разделах ниже мы добавим контрол Eremex [`DataGridControl`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md) в View и привяжем его к коллекции _Employees_, определённой во View Model.
 
 ## 2. Определение данных для Data Grid
 
@@ -147,7 +147,7 @@ public partial class EmployeeInfo : ObservableObject
 
 ## 3. Добавление пространств имён контролов Eremex Avalonia в XAML
 
-Прежде чем определять контролы Eremex Avalonia в XAML, сначала объявите пространства имён, содержащие эти контролы. Чтобы использовать `DataGridControl` в главном окне, добавьте следующее пространство имён в файл _MainWindow.axaml_:
+Прежде чем определять контролы Eremex Avalonia в XAML, сначала объявите пространства имён, содержащие эти контролы. Чтобы использовать [`DataGridControl`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md) в главном окне, добавьте следующее пространство имён в файл _MainWindow.axaml_:
 
 ``` xml
 <mx:MxWindow 
@@ -175,7 +175,7 @@ Graphics3DControl | `xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/con
 
 ## 4. Добавление Data Grid в XAML
 
-В файле _MainWindow.axaml_ определите `DataGridControl` и привяжите его к коллекции _Employees_.
+В файле _MainWindow.axaml_ определите [`DataGridControl`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md) и привяжите его к коллекции _Employees_.
 
 ``` xml
 <mx:MxWindow xmlns="https://github.com/avaloniaui"
@@ -204,9 +204,9 @@ Graphics3DControl | `xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/con
 </mx:MxWindow>
 ```
 
-Параметр `DataGridControl.AutoGenerateColumns` включён, чтобы автоматически генерировать колонки из публичных свойств привязанного источника элементов. 
+Параметр [`DataGridControl.AutoGenerateColumns`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md) включён, чтобы автоматически генерировать колонки из публичных свойств привязанного источника элементов. 
 
-Свойство `DataGridControl.SearchPanelDisplayMode` задаёт видимость поля поиска, которое позволяет пользователю быстро находить строки грида по содержащимся в них значениям.
+Свойство [`DataGridControl.SearchPanelDisplayMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchPanelDisplayMode.md) задаёт видимость поля поиска, которое позволяет пользователю быстро находить строки грида по содержащимся в них значениям.
 
 ## 5. Запуск приложения
 

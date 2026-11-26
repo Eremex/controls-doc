@@ -12,7 +12,7 @@ Provides images for tree list nodes.
 public interface ITreeListNodeImageSelector
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

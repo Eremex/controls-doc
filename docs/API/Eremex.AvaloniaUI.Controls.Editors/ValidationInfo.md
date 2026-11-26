@@ -12,12 +12,17 @@ Represents information about a validation error.
 public class ValidationInfo
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ValidationInfo](ValidationInfo/ValidationInfo.md)() | Initializes a new instance of the ValidationInfo class. |
 | [ValidationInfo](ValidationInfo/ValidationInfo.md)(…) | Initializes a new instance of the ValidationInfo class with the specified error content. (2 constructors) |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ErrorContent](ValidationInfo/ErrorContent.md) { get; } | Gets the content that describes the validation error. |
 | [Exception](ValidationInfo/Exception.md) { get; } | Gets the exception that caused the validation error. |
 

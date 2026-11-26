@@ -12,7 +12,7 @@ Provides a base class for data controls that display a collection of items as ro
 public abstract class DataControlBase : TemplatedControl, IBandsOwner, ISortedInfoCollectionOwner
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |
@@ -42,10 +42,11 @@ public abstract class DataControlBase : TemplatedControl, IBandsOwner, ISortedIn
 | [ShowSearchPanelCloseButton](DataControlBase/ShowSearchPanelCloseButton.md) { get; set; } | Gets or sets whether the search panel shows a close button. |
 | [TextSortMode](DataControlBase/TextSortMode.md) { get; set; } | Gets or sets how text values are compared when sorting. |
 | [ValidateCellValuesOnShowAndUpdate](DataControlBase/ValidateCellValuesOnShowAndUpdate.md) { get; set; } | Gets or sets whether cell values are validated when shown and updated. |
-| event [EndSorting](DataControlBase/EndSorting.md) | Occurs after data sorting is completed. |
-| event [FilterChanged](DataControlBase/FilterChanged.md) | Occurs when the data filter is changed. |
-| event [InvalidCellValueException](DataControlBase/InvalidCellValueException.md) | Occurs when an exception is thrown while posting an invalid cell value. |
-| event [StartSorting](DataControlBase/StartSorting.md) | Occurs before data sorting is started. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | virtual [BeginDataUpdate](DataControlBase/BeginDataUpdate.md)() | Prevents the control from updating its data until EndDataUpdate or CancelDataUpdate is called. |
 | [BeginSelection](DataControlBase/BeginSelection.md)() | Prevents selection updates until EndSelection is called. |
 | [CancelDataUpdate](DataControlBase/CancelDataUpdate.md)() | Resumes data updates after BeginDataUpdate without refreshing the control's data. |
@@ -68,8 +69,22 @@ public abstract class DataControlBase : TemplatedControl, IBandsOwner, ISortedIn
 | [SelectAll](DataControlBase/SelectAll.md)() | Selects all rows. |
 | [ShowColumnChooser](DataControlBase/ShowColumnChooser.md)() | Displays the column chooser. |
 | [ShowEditor](DataControlBase/ShowEditor.md)() | Activates the in-place editor for the focused cell and selects its content. |
-| const [AutoFilterRowIndex](DataControlBase/AutoFilterRowIndex.md) | Represents the visible index that identifies the auto-filter row. |
 | static [GetIsFocusWithin](DataControlBase/GetIsFocusWithin.md)(…) | Gets whether keyboard focus is within the specified element. |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [EndSorting](DataControlBase/EndSorting.md) | Occurs after data sorting is completed. |
+| event [FilterChanged](DataControlBase/FilterChanged.md) | Occurs when the data filter is changed. |
+| event [InvalidCellValueException](DataControlBase/InvalidCellValueException.md) | Occurs when an exception is thrown while posting an invalid cell value. |
+| event [StartSorting](DataControlBase/StartSorting.md) | Occurs before data sorting is started. |
+
+## Fields
+
+| name | description |
+| --- | --- |
+| const [AutoFilterRowIndex](DataControlBase/AutoFilterRowIndex.md) | Represents the visible index that identifies the auto-filter row. |
 
 ## See Also
 

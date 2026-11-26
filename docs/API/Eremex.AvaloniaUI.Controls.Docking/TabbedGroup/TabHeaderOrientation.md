@@ -14,6 +14,7 @@ public TabHeaderOrientation TabHeaderOrientation { get; set; }
 
 ## See Also
 
+* enum [TabHeaderOrientation](../../Eremex.AvaloniaUI.Controls/TabHeaderOrientation.md)
 * class [TabbedGroup](../TabbedGroup.md)
 * namespace [Eremex.AvaloniaUI.Controls.Docking](../index.md)
 

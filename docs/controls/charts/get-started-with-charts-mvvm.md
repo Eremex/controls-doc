@@ -85,8 +85,11 @@ In XAML, create a [`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/Cartesia
             <mxc:CartesianSeries DataAdapter="{Binding DataAdapter}">
                 <mxc:CartesianLineSeriesView Color="{Binding Color}"
                                              ShowMarkers="True"
-                                             MarkerSize="4"
-                                             Thickness="2"/>
+                                             MarkerSize="4">
+                    <mxc:CartesianLineSeriesView.LineStyle>
+                        <mxc:LineStyle Thickness="2" />
+                    </mxc:CartesianLineSeriesView.LineStyle>
+                </mxc:CartesianLineSeriesView>
             </mxc:CartesianSeries>
         </DataTemplate>
     </mxc:CartesianChart.SeriesTemplate>
@@ -106,8 +109,11 @@ The [`CartesianSeries.View`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/
 <mxc:CartesianSeries DataAdapter="{Binding DataAdapter}">
     <mxc:CartesianLineSeriesView Color="{Binding Color}"
                                     ShowMarkers="True"
-                                    MarkerSize="4"
-                                    Thickness="2"/>
+                                    MarkerSize="4">
+        <mxc:CartesianLineSeriesView.LineStyle>
+            <mxc:LineStyle Thickness="2" />
+        </mxc:CartesianLineSeriesView.LineStyle>
+    </mxc:CartesianLineSeriesView>
 </mxc:CartesianSeries>
 ```
 
@@ -125,8 +131,11 @@ A series view contains settings that allow you to change the display style of th
 ``` xml
 <mxc:CartesianLineSeriesView Color="{Binding Color}"
                              ShowMarkers="True"
-                             MarkerSize="4"
-                             Thickness="2"/>
+                             MarkerSize="4">
+    <mxc:CartesianLineSeriesView.LineStyle>
+        <mxc:LineStyle Thickness="2" />
+    </mxc:CartesianLineSeriesView.LineStyle>
+</mxc:CartesianLineSeriesView>                             
 ```
 
 For instance, the [`CartesianLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesView.md) class exposes the following properties:
@@ -138,7 +147,7 @@ For instance, the [`CartesianLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts
 - [`MarkerImageCss`](../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) — The CSS code that allows you to customize colors of elements in the specified SVG image ([`MarkerImage`](../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md)).
 - [`ShowInCrosshair`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) — Specifies whether to display the chart's _Y_ value at the intersection of the vertical crosshair line with the graph.
 - [`ShowMarkers`](../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesViewBase/ShowMarkers.md) — Enables or disables point markers.
-- `Thickness` — Specifies the line thickness.
+- [`LineStyle`](../../API/Eremex.AvaloniaUI.Charts/LineStyle.md) — Specifies the line style (line thickness, dash pattern, and so on).
 
 <!-- TODO
 Desribe MarkerImage and MarkerImageCss in greater detail.

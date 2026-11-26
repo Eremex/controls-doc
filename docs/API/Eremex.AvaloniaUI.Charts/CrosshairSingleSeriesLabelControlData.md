@@ -12,7 +12,7 @@ Provides the content of a crosshair label that displays the values of a single s
 public class CrosshairSingleSeriesLabelControlData : ViewModelBase
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

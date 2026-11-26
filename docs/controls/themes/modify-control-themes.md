@@ -12,7 +12,7 @@ This topic explains how to modify theme settings and styles for individual Ereme
 
 ## Default Theme
 
-The _Eremex.Avalonia.Themes.DeltaDesign_ theme is currently the default for Eremex Controls. To use the Eremex Controls library, you need to include this theme in your project and [register](register-an-eremex-paint-theme.md) it in the _App.axaml_ file. Otherwise, the Eremex controls will appear blank.
+The `Eremex.Avalonia.Themes.DeltaDesign` theme is currently the default for Eremex Controls. To use the Eremex Controls library, you need to include this theme in your project and [register](register-an-eremex-paint-theme.md) it in the _App.axaml_ file. Otherwise, the Eremex controls will appear blank.
 
 To modify specific theme settings (for instance, colors or templates of control elements), refer to the theme's source code. You can find and download it from GitHub at: [Eremex Controls Themes](https://github.com/Eremex/controlthemes).
 
@@ -27,7 +27,7 @@ Modification of theme settings involves two steps:
 
 You can explore the theme's source code to identify the theme settings you want to modify.
 
-The image below demonstrates the structure of the _DeltaDesign_ theme source code:
+The image below demonstrates the structure of the `DeltaDesign` theme source code:
 
 ![deltadesigntheme-structure](../../images/deltadesigntheme-structure.png)
 
@@ -98,7 +98,7 @@ For example, the _Eremex.Avalonia.Themes.DeltaDesign\Controls\TreeListControl.ax
 
 ### Styling with Style Classes
 
-The _DeltaDesign_ theme includes [control themes](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes) and style selectors that target specific [style classes](https://docs.avaloniaui.net/docs/basics/user-interface/styling/style-classes) for Eremex and standard Avalonia controls.
+The `DeltaDesign` theme includes [control themes](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes) and style selectors that target specific [style classes](https://docs.avaloniaui.net/docs/basics/user-interface/styling/style-classes) for Eremex and standard Avalonia controls.
 When you assign a specific _style class_ to a control (using the control's `Classes` property), the theme applies a corresponding style selector(s).
  
 For example, to emphasize a CheckBox with a distinct border color, apply the `warning` _style class_:
@@ -109,7 +109,7 @@ For example, to emphasize a CheckBox with a distinct border color, apply the `wa
 
 ![themes-checkbox-styleclass-warning](../../images/themes-checkbox-styleclass-warning.png)
 
-In the _DeltaDesign_ theme, the style selector for the CheckBox with the `warning` _style class_ is defined as follows:
+In the `DeltaDesign` theme, the style selector for the CheckBox with the `warning` _style class_ is defined as follows:
 
 ``` xml
 <!-- Eremex.Avalonia.Themes.DeltaDesign\Controls\StandardControls\CheckBox.axaml -->
@@ -123,7 +123,7 @@ In the _DeltaDesign_ theme, the style selector for the CheckBox with the `warnin
 </ControlTheme>
 ```
 
-Below are main _style classes_ customized by the _DeltaDesign_ theme:
+Below are main _style classes_ customized by the `DeltaDesign` theme:
 
 - `accent` —  Accented appearance settings. 
 
@@ -280,9 +280,9 @@ This modification does not affect other controls.
 
 ### Example - Modify an individual Button's color in the pressed and focused states
 
-The _DeltaDesign_ theme includes [control themes](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes) and style selectors that adjust the colors of standard Avalonia UI controls to match the appearance of Eremex controls when placed on the same window.
+The `DeltaDesign` theme includes [control themes](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes) and style selectors that adjust the colors of standard Avalonia UI controls to match the appearance of Eremex controls when placed on the same window.
 
-The following image shows the default appearance of the standard Button control in the pressed state painted by the _DeltaDesign_ theme:
+The following image shows the default appearance of the standard Button control in the pressed state painted by the `DeltaDesign` theme:
 
 ![theme-button-default-appearance](../../images/theme-button-default-appearance.png)
 
@@ -331,7 +331,7 @@ You can change theme resources from the `Window.Resources` property to apply the
 
 ### Example - Modify accented buttons within a Window for the Light and Dark theme variants
 
-The _DeltaDesign_ theme contains specific style selectors applied when you set the `accent` and/or `warning` style classes for the standard Avalonia Button control. This example shows how to override the appearances settings of accented buttons in a Window for the Light and Dark theme variants.
+The `DeltaDesign` theme contains specific style selectors applied when you set the `accent` and/or `warning` style classes for the standard Avalonia Button control. This example shows how to override the appearances settings of accented buttons in a Window for the Light and Dark theme variants.
 
 You can apply the `accent` and `warning` style classes to emphasize a button:
 
@@ -397,7 +397,7 @@ You can also modify the brushes for other button states:
 
 ## Modify Control Styles Defined in the Eremex Paint Theme
 
-When you explore the _DeltaDesign_ paint theme source code, you'll find style selectors that change not only the colors and brushes, but also other appearance settings of controls. These include the size of inner elements and the control templates that define layout and content.
+When you explore the `DeltaDesign` paint theme source code, you'll find style selectors that change not only the colors and brushes, but also other appearance settings of controls. These include the size of inner elements and the control templates that define layout and content.
 
 You can override these style selectors in your application using the following properties:
 
@@ -413,7 +413,7 @@ This example shows how to change the appearance and template of color toggle but
 
 ![theme-coloreditor-colorcheckbutton](../../images/theme-coloreditor-colorcheckbutton.png)
 
-First, locate the default style for color toggle buttons in the _DeltaDesign_ theme source code. 
+First, locate the default style for color toggle buttons in the `DeltaDesign` theme source code. 
 
 ``` xml
 <!-- Eremex.Avalonia.Themes.DeltaDesign\Controls\Editors\ColorEditor.axaml -->

@@ -12,7 +12,7 @@ Base class for the storage picker dialogs used by the file dialog services. It c
 public abstract class AvaloniaStorageDialogBase
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

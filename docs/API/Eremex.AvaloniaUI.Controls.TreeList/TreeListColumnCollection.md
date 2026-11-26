@@ -12,7 +12,7 @@ Represents a collection of tree list columns.
 public class TreeListColumnCollection : ColumnCollectionBase<TreeListColumn>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

@@ -12,7 +12,7 @@ Represents the collection of floating groups in a dock manager.
 public class FloatGroupCollection : BaseGroupCollection<FloatGroup>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

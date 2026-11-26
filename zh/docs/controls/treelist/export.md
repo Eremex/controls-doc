@@ -4,7 +4,7 @@ order: 1500
 seealso: []
 ---
 
-# 导出
+# 导出 {#export}
 
 
 TreeList 可以将数据导出为以下格式:
@@ -21,13 +21,14 @@ TreeView 仅支持将数据导出为 CSV 格式。
     数据导出为 XLSX、PDF 和图像格式的功能是在 **Eremex.DocumentProcessing** 库中实现的。请确保您的项目中包含此库,才能使用导出功能。
 
 
-## 导出为 XLSX 格式
+## 导出为 XLSX 格式 {#export-to-xlsx-format}
 
 Excel 导出引擎具有数据感知能力,这意味着它会在输出的 XLSX 文档中保留控件的数据整形选项,包括:
 
 - 节点层次结构
 - 值格式
 - 数据排序
+- 汇总
 
 <!-- TODO
  - Data filtering settings 
@@ -40,7 +41,7 @@ Excel 导出引擎具有数据感知能力,这意味着它会在输出的 XLSX �
 
 !!! note
 
-    使用单元格模板(`TreeListColumn.CellTemplate`)实现的单元格格式不会被导出。
+    使用单元格模板([`TreeListColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md))实现的单元格格式不会被导出。
 
 使用以下方法将控件的数据导出为 XLSX 格式:
 
@@ -48,43 +49,71 @@ Excel 导出引擎具有数据感知能力,这意味着它会在输出的 XLSX �
 
 - <code>TreeListControl.ExportToXlsx(Stream stream, XlsxExportOptions? options = null)</code> — 将数据导出到流。
 
-可选的 `options` 参数(类型为 `XlsxExportOptions`)允许您自定义导出设置。`XlsxExportOptions` 类公开以下成员:
+可选的 `options` 参数(类型为 [`XlsxExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions.md))允许您自定义导出设置。[`XlsxExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions.md) 类公开以下成员:
 
-- `ExportProgress` 事件 — 在数据导出期间反复触发。该事件的 `ExportProgressEventArgs.ProgressPercentage` 参数以百分比形式(0 到 100)指示进度。您可以使用此事件以自定义方式向用户显示导出进度。
-- `AllowFixedColumnHeaderPanel` 属性(默认为 `true`)— 指定在导出的文档中,列标题面板是否保持固定在顶部。
+**导出进度**
 
-- `ApplyFormattingToEntireColumn` — 指定单元格格式是应用于输出文档中的整列,还是仅应用于单个单元格。
+- [`ExportProgress`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ExportProgress.md) 事件 — 在数据导出期间反复触发。该事件的 [`ExportProgressEventArgs.ProgressPercentage`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportProgressEventArgs/ProgressPercentage.md) 参数以百分比形式(0 到 100)指示进度。您可以使用此事件以自定义方式向用户显示导出进度。
 
-- `AllowGrouping` 属性(默认为 `true`)— 指定是否导出节点层次结构。如果 `AllowGrouping` 为 `false`,则输出文档中不会保存节点层次结构。
 
-- `DocumentCulture` — 一个自定义的 `CultureInfo` 对象,用于确定输出文档中数值和日期时间值的格式化规则。
 
-    如果未指定 `DocumentCulture` 属性,导出引擎将使用应用程序当前的区域性设置。
+**列标题和带区标题**
 
-- `ShowBands` 属性(默认为 `null`)— 指定控件的[波段(bands)](bands.md)是否包含在导出结果中。
+- [`AllowFixedColumnHeaderPanel`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowFixedColumnHeaderPanel.md) 属性(默认为 `true`)— 指定在导出的文档中,列标题面板是否保持固定在顶部。
 
-    如果 `ShowBands` 为 `null`,则该设置由控件的 `TreeListControl.ShowBands` 属性指定。
+- [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowBands.md) 属性(默认为 `null`)— 指定控件的[波段(bands)](bands.md)是否包含在导出结果中。
 
-- `ShowColumnHeaders` 属性(默认为 `null`)— 指定列标题面板是否包含在导出结果中。
+    如果 [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowBands.md) 为 `null`,则该设置由控件的 [`TreeListControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBands.md) 属性指定。
 
-    如果 `ShowColumnHeaders` 为 `null`,则该设置由控件的 `TreeListControl.ShowColumnHeaders` 属性指定。
+- [`ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) 属性(默认为 `null`)— 指定列标题面板是否包含在导出结果中。
 
-- `ShowHorizontalLines` — 指定输出文档中单元格之间的水平线是否可见。
+    如果 [`ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) 为 `null`,则该设置由控件的 [`TreeListControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnHeaders.md) 属性指定。
 
-- `ShowVerticalLines` — 指定输出文档中单元格之间的垂直线是否可见。
 
-- `TextExportMode` 属性 — 单元格值的**默认**导出模式。
+**节点层次结构**
+
+- [`AllowGrouping`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowGrouping.md) 属性(默认为 `true`)— 指定是否导出节点层次结构。如果 [`AllowGrouping`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowGrouping.md) 为 `false`,则输出文档中不会保存节点层次结构。
+
+
+**汇总**
+
+
+<!-- - [`ShowGroupSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowGroupSummaries.md) — Gets or sets whether group summaries are exported. -->
+
+- [`ShowTotalSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowTotalSummaries.md) — 获取或设置是否导出[汇总](summaries.md)。
+
+- [`SummaryCountBlankCells`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/SummaryCountBlankCells.md) — 获取或设置 Count 汇总公式是否计入空白单元格。
+
+- [`ShowSummaryLabels`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowSummaryLabels.md) — 获取或设置导出的汇总单元格中是否包含汇总标签。
+
+
+**单元格线**
+
+- [`ShowHorizontalLines`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowHorizontalLines.md) — 指定输出文档中单元格之间的水平线是否可见。
+
+- [`ShowVerticalLines`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowVerticalLines.md) — 指定输出文档中单元格之间的垂直线是否可见。
+
+
+**区域性和单元格格式**
+
+- [`ApplyFormattingToEntireColumn`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ApplyFormattingToEntireColumn.md) — 指定单元格格式是应用于输出文档中的整列,还是仅应用于单个单元格。
+
+- [`DocumentCulture`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/DocumentCulture.md) — 一个自定义的 `CultureInfo` 对象,用于确定输出文档中数值和日期时间值的格式化规则。
+
+    如果未指定 [`DocumentCulture`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/DocumentCulture.md) 属性,导出引擎将使用应用程序当前的区域性设置。
+
+- [`TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) 属性 — 单元格值的**默认**导出模式。
 
     可用选项包括:
 
-    - `TextExportMode.Value` — 导出单元格值。如果单元格值在 TreeList 中经过格式化,导出引擎会尝试将匹配的格式应用于输出文档中导出的值。
-    - `TextExportMode.Text` — 导出单元格的显示文本。如果单元格值在 TreeList 中经过格式化,则导出其格式化后的字符串表示形式。
+    - [`TextExportMode.Value`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — 导出单元格值。如果单元格值在 TreeList 中经过格式化,导出引擎会尝试将匹配的格式应用于输出文档中导出的值。
+    - [`TextExportMode.Text`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — 导出单元格的显示文本。如果单元格值在 TreeList 中经过格式化,则导出其格式化后的字符串表示形式。
 
-    您可以使用 `TreeListColumn.TextExportMode` 属性为各个列覆盖 `XlsxExportOptions.TextExportMode` 设置。
+    您可以使用 [`TreeListColumn.TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/TextExportMode.md) 属性为各个列覆盖 [`XlsxExportOptions.TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/TextExportMode.md) 设置。
 
     !!! note
 
-        导出引擎仅考虑通过 `TreeListColumn.EditorProperties` 属性应用的单元格格式。例如:
+        导出引擎仅考虑通过 [`TreeListColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) 属性应用的单元格格式。例如:
 
         ```
         <mxtl:TreeListColumn Width="*" FieldName="Salary">
@@ -94,10 +123,10 @@ Excel 导出引擎具有数据感知能力,这意味着它会在输出的 XLSX �
         </mxtl:TreeListColumn>
         ```
 
-        通过其他方式(例如使用 `TreeListColumn.CellTemplate`)应用的单元格格式在数据导出期间会被忽略。
+        通过其他方式(例如使用 [`TreeListColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md))应用的单元格格式在数据导出期间会被忽略。
 
 
-## 导出为 PDF 格式
+## 导出为 PDF 格式 {#export-to-pdf-format}
 
 PDF 渲染引擎遵循所见即所得(WYSIWYG)理念,在输出文档中保留 TreeList 元素的布局。
 
@@ -111,40 +140,55 @@ PDF 渲染引擎遵循所见即所得(WYSIWYG)理念,在输出文档中保留 Tr
 
 - <code>TreeListControl.ExportToPdf(Stream stream, PageExportOptions? options = null)</code> — 将数据导出到流。
 
-可选的 `options` 参数(类型为 `PageExportOptions`)允许您自定义导出设置。`PageExportOptions` 类公开以下成员:
+可选的 `options` 参数(类型为 [`PageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions.md))允许您自定义导出设置。[`PageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions.md) 类公开以下成员:
 
-- `PageExportOptions.ExportProgress` 事件 — 在数据导出期间反复触发。该事件的 `ExportProgressEventArgs.ProgressPercentage` 参数以百分比形式(0 到 100)指示进度。您可以使用此事件以自定义方式向用户显示导出进度。
+**导出进度**
 
-- `PageExportOptions.FitToPageWidth`(默认为 `false`)— 指定 TreeList 的列是否被拉伸以适应纸张宽度。
+- [`PageExportOptions.ExportProgress`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ExportProgress.md) 事件 — 在数据导出期间反复触发。该事件的 [`ExportProgressEventArgs.ProgressPercentage`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportProgressEventArgs/ProgressPercentage.md) 参数以百分比形式(0 到 100)指示进度。您可以使用此事件以自定义方式向用户显示导出进度。
 
-- `PageExportOptions.Landscape`(默认为 `false`)— 指定页面方向是水平(`Landscape`)还是垂直(`Portrait`)。
+**页面**
 
-- `PageExportOptions.Margins`(默认为 `72,72,72,72`)— 页边距,以磅为单位。1 磅 = 1/72 英寸。
+- [`PageExportOptions.FitToPageWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/FitToPageWidth.md)(默认为 `false`)— 指定 TreeList 的列是否被拉伸以适应纸张宽度。
 
-- `PageExportOptions.PageRange` — 一个字符串,用于指定要导出的页面范围。您可以使用以下表示法来指定输出页面范围:
+- [`PageExportOptions.Landscape`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Landscape.md)(默认为 `false`)— 指定页面方向是水平([`Landscape`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Landscape.md))还是垂直(`Portrait`)。
+
+- [`PageExportOptions.Margins`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Margins.md)(默认为 `72,72,72,72`)— 页边距,以磅为单位。1 磅 = 1/72 英寸。
+
+- [`PageExportOptions.PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) — 一个字符串,用于指定要导出的页面范围。您可以使用以下表示法来指定输出页面范围:
 
     - "1" — 导出第 1 页。
     - "1, 4, 8-10" — 导出第 1、4 页以及第 8 到 10 页。
     <!-- - "7-" — Exports from page 7 to the end. -->
 
-    `PageRange` 属性的默认值为空字符串,表示导出所有页面。
+    [`PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) 属性的默认值为空字符串,表示导出所有页面。
 
-- `PageExportOptions.PaperKind`(默认为 `A4`)— 纸张大小。
+- [`PageExportOptions.PaperKind`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PaperKind.md)(默认为 `A4`)— 纸张大小。
 
-- `PageExportOptions.ShowBands` 属性(默认为 `null`)— 指定控件的[波段(bands)](bands.md)是否包含在导出结果中。
 
-    如果 `ShowBands` 为 `null`,则该设置由控件的 `TreeListControl.ShowBands` 属性指定。
+**列标题和带区标题**
 
-- `PageExportOptions.ShowColumnHeaders` 属性(默认为 `null`)— 指定列标题面板是否包含在导出结果中。
+- [`PageExportOptions.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) 属性(默认为 `null`)— 指定控件的[波段(bands)](bands.md)是否包含在导出结果中。
 
-    如果 `ShowColumnHeaders` 为 `null`,则该设置由控件的 `TreeListControl.ShowColumnHeaders` 属性指定。
+    如果 [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) 为 `null`,则该设置由控件的 [`TreeListControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBands.md) 属性指定。
+
+- [`PageExportOptions.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) 属性(默认为 `null`)— 指定列标题面板是否包含在导出结果中。
+
+    如果 [`ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) 为 `null`,则该设置由控件的 [`TreeListControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnHeaders.md) 属性指定。
+
+**汇总**
+
+- [`ShowTotalSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowTotalSummaries.md) — 获取或设置是否导出[汇总](summaries.md)。
+
+**自定义单元格文本**
+
+- [`ColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ColumnDisplayText.md) 事件 — 在导出期间形成单元格显示文本时反复触发。处理此事件可提供自定义的单元格显示文本。
     
 
-## 导出为 CSV 格式
+## 导出为 CSV 格式 {#export-to-csv-format}
 
-TreeList 和 TreeView 提供 `ExportToCsv` 方法,用于将数据导出为 CSV 格式。CSV(逗号分隔值)是一种用于存储表格数据的纯文本数据格式。每条记录都会导出为一行文本,其中的值由分隔符(通常是逗号)分隔。
+TreeList 和 TreeView 提供 [`ExportToCsv`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ExportToCsv.md) 方法,用于将数据导出为 CSV 格式。CSV(逗号分隔值)是一种用于存储表格数据的纯文本数据格式。每条记录都会导出为一行文本,其中的值由分隔符(通常是逗号)分隔。
 
-提供以下 `ExportToCsv` 方法重载:
+提供以下 [`ExportToCsv`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ExportToCsv.md) 方法重载:
 
 - <code>DataControlBase.ExportToCsv(string filePath, TextExportMode textExportNode = TextExportMode.Text, string separator = ",", bool quoteStringsWithSeparators = true)</code> — 将数据导出到文件。
 
@@ -156,14 +200,14 @@ TreeList 和 TreeView 提供 `ExportToCsv` 方法,用于将数据导出为 CSV �
 
     可用选项包括:
 
-    - `TextExportMode.Value` — 导出单元格值。不会导出应用于单元格值的数据格式。
-    - `TextExportMode.Text` — 导出单元格的显示文本。如果单元格值在控件中经过格式化,则导出其格式化后的字符串表示形式。
+    - [`TextExportMode.Value`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — 导出单元格值。不会导出应用于单元格值的数据格式。
+    - [`TextExportMode.Text`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — 导出单元格的显示文本。如果单元格值在控件中经过格式化,则导出其格式化后的字符串表示形式。
 
         !!! note
 
-            导出引擎仅考虑通过 `EditorProperties` 属性(`TreeListColumn.EditorProperties` 和 `TreeViewControl.EditorProperties`)应用的单元格格式。
+            导出引擎仅考虑通过 [`EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) 属性([`TreeListColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md) 和 [`TreeViewControl.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/EditorProperties.md))应用的单元格格式。
 
-    对于 TreeList,您可以使用 `TreeListColumn.TextExportMode` 属性为各个列覆盖方法的 `textExportMode` 参数。
+    对于 TreeList,您可以使用 [`TreeListColumn.TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/TextExportMode.md) 属性为各个列覆盖方法的 `textExportMode` 参数。
 
 
 - `separator` — 一个字符串,用于指定输出文档中分隔单元格值所使用的分隔符。默认分隔符为逗号(",")。
@@ -172,13 +216,13 @@ TreeList 和 TreeView 提供 `ExportToCsv` 方法,用于将数据导出为 CSV �
 
 
 
-## 导出为图像格式
+## 导出为图像格式 {#export-to-image-formats}
 
-TreeList 的 `ExportToImages` 方法执行分页导出,导出为图像格式(PNG、JPEG、SVG 或 WebP)。如果控件的内容过大,无法容纳在单个页面中,该方法会对数据进行分页(将其拆分为多个页面),并将每个页面导出为一张单独的图像。
+TreeList 的 [`ExportToImages`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ExportToImages.md) 方法执行分页导出,导出为图像格式(PNG、JPEG、SVG 或 WebP)。如果控件的内容过大,无法容纳在单个页面中,该方法会对数据进行分页(将其拆分为多个页面),并将每个页面导出为一张单独的图像。
 
 ![treelist-export-to-images](../../images/treelist-export-to-images.png)
 
-目标页面的格式和大小由传递给该方法的参数定义。`ExportToImages` 方法使用与 `ExportToPdf` 方法相同的分页机制。
+目标页面的格式和大小由传递给该方法的参数定义。[`ExportToImages`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ExportToImages.md) 方法使用与 [`ExportToPdf`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ExportToPdf.md) 方法相同的分页机制。
 
 - <code>TreeListControl.ExportToImages(string directory, string fileNameFormat, ImageExportOptions? options = null)</code>
 
@@ -196,7 +240,7 @@ treeList.ExportToImages(@"c:\images\", "img{0}.svg", options);
 ```
 
 
-使用 `ExportToImages` 方法的参数来自定义页面设置、输出图像格式和文件名模式。
+使用 [`ExportToImages`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ExportToImages.md) 方法的参数来自定义页面设置、输出图像格式和文件名模式。
 
 - `directory` — 指定用于保存图像文件的目录。如果指定的目录不存在,将引发异常。
 
@@ -207,41 +251,57 @@ treeList.ExportToImages(@"c:\images\", "img{0}.svg", options);
     - "image{0}.png" — 生成诸如 "image1.png"、"image2.png" 等文件。
     - "image{0:D3}.svg"  — 生成诸如 "image001.svg"、"image002.svg" 等文件。
     
-可选的 `options` 参数(类型为 `ImageExportOptions`)允许您自定义导出设置。`ImageExportOptions` 类公开以下成员:
+可选的 `options` 参数(类型为 [`ImageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions.md))允许您自定义导出设置。[`ImageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions.md) 类公开以下成员:
 
-- `ImageExportOptions.Format` — 输出图像格式(PNG、JPEG、SVG 或 WebP)。
+**输出图像格式**
 
-- `ImageExportOptions.PageBorderColor` — 在每个页面周围绘制的边框颜色。
-- `ImageExportOptions.PageBorderWidth`  — 在每个页面周围绘制的边框宽度。
-
-
-- `PageExportOptions.ExportProgress` 事件 — 在数据导出期间反复触发。该事件的 `ExportProgressEventArgs.ProgressPercentage` 参数以百分比形式(0 到 100)指示进度。您可以使用此事件以自定义方式向用户显示导出进度。
+- [`ImageExportOptions.Format`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/Format.md) — 输出图像格式(PNG、JPEG、SVG 或 WebP)。
 
 
-- `PageExportOptions.ShowBands` 属性(默认为 `null`)— 指定控件的[波段(bands)](bands.md)是否包含在导出结果中。
+**导出进度**
 
-    如果 `ShowBands` 为 `null`,则该设置由控件的 `TreeListControl.ShowBands` 属性指定。
+- [`PageExportOptions.ExportProgress`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ExportProgress.md) 事件 — 在数据导出期间反复触发。该事件的 [`ExportProgressEventArgs.ProgressPercentage`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportProgressEventArgs/ProgressPercentage.md) 参数以百分比形式(0 到 100)指示进度。您可以使用此事件以自定义方式向用户显示导出进度。
 
-- `PageExportOptions.ShowColumnHeaders` 属性(默认为 `null`)— 指定列标题面板是否包含在导出结果中。
+**页面**
 
-    如果 `ShowColumnHeaders` 为 `null`,则该设置由控件的 `TreeListControl.ShowColumnHeaders` 属性指定。
+- [`PageExportOptions.FitToPageWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/FitToPageWidth.md)(默认为 `false`)— 指定 TreeList 的列是否被拉伸以适应纸张宽度。
 
-- `PageExportOptions.FitToPageWidth`(默认为 `false`)— 指定 TreeList 的列是否被拉伸以适应纸张宽度。
+- [`PageExportOptions.Landscape`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Landscape.md)(默认为 `false`)— 指定页面方向是水平([`Landscape`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Landscape.md))还是垂直(`Portrait`)。
 
-- `PageExportOptions.Landscape`(默认为 `false`)— 指定页面方向是水平(`Landscape`)还是垂直(`Portrait`)。
+- [`PageExportOptions.Margins`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Margins.md)(默认为 `72,72,72,72`)— 页边距,以磅为单位。1 磅 = 1/72 英寸。
 
-- `PageExportOptions.Margins`(默认为 `72,72,72,72`)— 页边距,以磅为单位。1 磅 = 1/72 英寸。
+- [`ImageExportOptions.PageBorderColor`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/PageBorderColor.md) — 在每个页面周围绘制的边框颜色。
 
+- [`ImageExportOptions.PageBorderWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/PageBorderWidth.md)  — 在每个页面周围绘制的边框宽度。
 
-- `PageExportOptions.PageRange` — 一个字符串,用于指定要导出的页面范围。您可以使用以下表示法来指定输出页面范围:
+- [`PageExportOptions.PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) — 一个字符串,用于指定要导出的页面范围。您可以使用以下表示法来指定输出页面范围:
 
     - "1" — 导出第 1 页。
     - "1, 4, 8-10" — 导出第 1、4 页以及第 8 到 10 页。
     - "7-" — 从第 7 页导出到末尾。
 
-    `PageRange` 属性的默认值为空字符串,表示导出所有页面。
+    [`PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) 属性的默认值为空字符串,表示导出所有页面。
 
-- `PageExportOptions.PaperKind`(默认为 `A4`)— 纸张大小。
+- [`PageExportOptions.PaperKind`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PaperKind.md)(默认为 `A4`)— 纸张大小。
+
+**列标题和带区标题**
+
+- [`PageExportOptions.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) 属性(默认为 `null`)— 指定控件的[波段(bands)](bands.md)是否包含在导出结果中。
+
+    如果 [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) 为 `null`,则该设置由控件的 [`TreeListControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBands.md) 属性指定。
+
+- [`PageExportOptions.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) 属性(默认为 `null`)— 指定列标题面板是否包含在导出结果中。
+
+    如果 [`ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) 为 `null`,则该设置由控件的 [`TreeListControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowColumnHeaders.md) 属性指定。
+
+
+**汇总**
+
+- [`ShowTotalSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowTotalSummaries.md) — 获取或设置是否导出[汇总](summaries.md)。
+
+**自定义单元格文本**
+
+- [`ColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ColumnDisplayText.md) 事件 — 在导出期间形成单元格显示文本时反复触发。处理此事件可提供自定义的单元格显示文本。
 
 <br>
 <br>

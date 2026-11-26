@@ -12,7 +12,7 @@ Supplies the positions of the gridlines and tickmarks drawn on a numeric axis.
 public interface INumericAxisGridCalculator
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

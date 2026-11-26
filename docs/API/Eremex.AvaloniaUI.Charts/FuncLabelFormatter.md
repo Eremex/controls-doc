@@ -12,11 +12,16 @@ Formats axis labels by calling a user-supplied function.
 public class FuncLabelFormatter : IAxisLabelFormatter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [FuncLabelFormatter](FuncLabelFormatter/FuncLabelFormatter.md)(…) | Initializes a new instance of the FuncLabelFormatter class with the specified formatting function. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Format](FuncLabelFormatter/Format.md)(…) | Converts an axis value into label text using the formatting function passed to the constructor. |
 
 ## See Also

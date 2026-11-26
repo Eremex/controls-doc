@@ -12,7 +12,7 @@ Represents a point of a [`PolarChart`](./PolarChart.md) expressed as an angle an
 public sealed class PolarDiagramCoordinates
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

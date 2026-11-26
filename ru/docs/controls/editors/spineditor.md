@@ -6,7 +6,7 @@ seealso: []
 
 # SpinEditor
 
-`SpinEditor` — это редактор числовых значений со встроенными кнопками прокрутки, используемыми для увеличения и уменьшения числа на определённое значение (приращение). Пользователь может увеличивать и уменьшать число, щёлкая по этим кнопкам или нажимая клавиши со стрелками «Вверх» и «Вниз» на клавиатуре.
+[`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md) — это редактор числовых значений со встроенными кнопками прокрутки, используемыми для увеличения и уменьшения числа на определённое значение (приращение). Пользователь может увеличивать и уменьшать число, щёлкая по этим кнопкам или нажимая клавиши со стрелками «Вверх» и «Вниз» на клавиатуре.
 
 ![spineditor](../../images/spineditor.png)
 
@@ -19,22 +19,27 @@ seealso: []
 
 ## Получение и установка значения редактора
 
-Используйте свойство `SpinEditor.Value`, чтобы вернуть и задать числовое значение редактора. Вы также можете использовать для той же цели свойство `EditorValue`. Эти свойства синхронизированы. Они различаются типом значения: свойство `Value` имеет тип decimal, тогда как свойство `EditorValue` имеет тип `object`, как во всех редакторах Eremex.
+Используйте свойство [`SpinEditor.Value`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Value.md), чтобы вернуть и задать числовое значение редактора. Вы также можете использовать для той же цели свойство [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md). Эти свойства синхронизированы. Они различаются типом значения: свойство [`Value`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Value.md) имеет тип decimal, тогда как свойство [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) имеет тип `object`, как во всех редакторах Eremex.
 
 Смотрите также: [Увеличение и уменьшение значения в коде](#увеличение-и-уменьшение-значения-в-коде).
 
 ## Настройка
 
-Следующие основные свойства помогают настроить контрол `SpinEditor`:
+Следующие основные свойства помогают настроить контрол [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md):
 
-- `SpinEditor.Minimum` — минимальное значение для редактора.
-- `SpinEditor.Maximum` — максимальное значение для редактора.
-- `SpinEditor.Increment` — значение, на которое увеличивается или уменьшается значение редактора, когда пользователь щёлкает по кнопкам прокрутки или нажимает клавиши со стрелками «Вверх» и «Вниз».
-- `SpinEditor.ShowEditorButtons` — задаёт, отображать ли встроенные кнопки прокрутки.
+- [`SpinEditor.Minimum`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Minimum.md) — минимальное значение для редактора.
+- [`SpinEditor.Maximum`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Maximum.md) — максимальное значение для редактора.
+- [`SpinEditor.Increment`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Increment.md) — значение, на которое увеличивается или уменьшается значение редактора, когда пользователь щёлкает по кнопкам прокрутки или нажимает клавиши со стрелками «Вверх» и «Вниз».
+- [`SpinEditor.ShowEditorButtons`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ShowEditorButtons.md) — возвращает или задаёт, отображать ли встроенные кнопки прокрутки.
+- [`SpinEditor.AllowRoundOutOfRangeValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/AllowRoundOutOfRangeValue.md) — возвращает или задаёт, округляются ли автоматически введённые пользователем значения вне диапазона до [`SpinEditor.Minimum`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Minimum.md) или [`SpinEditor.Maximum`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Maximum.md).
+
+    !!! Note
+
+        При использовании [`AllowRoundOutOfRangeValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/AllowRoundOutOfRangeValue.md) может также понадобиться установить свойство редактора [`ValidateOnInput`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/ValidateOnInput.md) в `false`. Тогда данные не проверяются при каждом нажатии клавиши: введённое значение проверяется, когда пользователь нажимает ENTER или переводит фокус с контрола [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md).
 
 ### Пример - как создать SpinEditor
 
-Следующий пример инициализирует контрол SpinEditor.
+Этот пример инициализирует контрол SpinEditor.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -50,11 +55,11 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 
 ## Префикс и суффикс отображаемого значения
 
-Используйте свойства `SpinEditor.Prefix` и `SpinEditor.Suffix`, чтобы задать текст, отображаемый до и после числового значения. Пользователи не могут редактировать этот текст.
+Используйте свойства [`SpinEditor.Prefix`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Prefix.md) и [`SpinEditor.Suffix`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Suffix.md), чтобы задать текст, отображаемый до и после числового значения. Пользователи не могут редактировать этот текст.
 
 ### Пример - как задать префикс и суффикс для значения SpinEditor
 
-Следующий пример использует свойства `SpinEditor.Prefix` и `SpinEditor.Suffix`, чтобы отобразить текст до и после значения редактора.
+Этот пример использует свойства [`SpinEditor.Prefix`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Prefix.md) и [`SpinEditor.Suffix`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Suffix.md), чтобы отобразить текст до и после значения редактора.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -70,14 +75,14 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 
 ## Увеличение и уменьшение значения в коде
 
-Команды `SpinEditor.IncreaseCommand` и `SpinEditor.DecreaseCommand` увеличивают и уменьшают значение редактора на величину приращения (`SpinEditor.Increment`).
+Команды [`SpinEditor.IncreaseCommand`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/IncreaseCommand.md) и [`SpinEditor.DecreaseCommand`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/DecreaseCommand.md) увеличивают и уменьшают значение редактора на величину приращения ([`SpinEditor.Increment`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Increment.md)).
 
 <!--TODO
 Check:
-The `SpinEditor.IncreaseCommand` and `SpinEditor.DecreaseCommand` commands increase and decrease the editor's value by the increment value (`SpinEditor.Increment`).
+The [`SpinEditor.IncreaseCommand`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/IncreaseCommand.md) and [`SpinEditor.DecreaseCommand`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/DecreaseCommand.md) commands increase and decrease the editor's value by the increment value ([`SpinEditor.Increment`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Increment.md)).
 -->
 
-Вы также можете изменить значение редактора напрямую с помощью свойства `SpinEditor.Value`.
+Вы также можете изменить значение редактора напрямую с помощью свойства [`SpinEditor.Value`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Value.md).
 
 
 <br>

@@ -12,7 +12,7 @@ Translates between the framework free IWindow contract and the Avalonia window.
 public static class WindowInterop
 ```
 
-## Public Members
+## Methods
 
 | name | description |
 | --- | --- |

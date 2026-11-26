@@ -40,7 +40,7 @@ This application template creates an empty Avalonia UI project that references t
     
     - **Eremex.Avalonia.Controls** - Contains the Eremex controls and libraries.
     - **Eremex.Avalonia.Themes.DeltaDesign** - Contains the `DeltaDesign` paint theme for the Eremex controls.
-- Uses the `MxWindow` class as the project's main window. `MxWindow` provides support for the Eremex paint themes.
+- Uses the [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) class as the project's main window. [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) provides support for the Eremex paint themes.
 - Registers the Eremex `DeltaDesign` paint theme. 
 
     !!! note
@@ -54,7 +54,7 @@ The rest of the features of this template are the same as the `eremex.avalonia.a
 
 #### eremex.avalonia.window
 
-A template that creates a new `MxWindow`-based Avalonia window. This template only creates two files that define the window: _Window.axaml_ and _Window.axaml.cs_.
+A template that creates a new [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md)-based Avalonia window. This template only creates two files that define the window: _Window.axaml_ and _Window.axaml.cs_.
 
 ### 1.2 Create a New Project
 

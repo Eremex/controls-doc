@@ -8,7 +8,7 @@ seealso: []
 
 The data validation mechanism allows you to check cell values and show errors in cells that contain invalid data. 
 
-The TreeList and TreeView controls perform data validation when a user modifies a cell value and then tries to save (post) the value. The controls also invoke the validation mechanism for newly displayed cells, and cells updated in code even if a user has not modified cell values.
+The TreeList and TreeView controls perform data validation when a user modifies a cell value and then tries to save (post) this value. The controls also invoke the validation mechanism for newly displayed cells, and cells updated in code even if a user has not modified cell values.
 
 ## Validate Values when User Modifies Cell Data
 
@@ -16,26 +16,42 @@ The TreeList and TreeView controls activate the cell value validation mechanism 
 
 ![TreeList - Validation Diagram](../../images/treelist-validation-diagram.png)
 
-1. A cell's in-place editor performs initial value validation during data input. For instance, a [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md), which accepts only numeric values, shows errors if a user tries to type a letter.
+1. **Editor Validation**
 
-    A user cannot leave a cell until a valid value is entered, or the ESC key is pressed, which reverts to the previous value.
+    A cell's in-place editor validates data immediately during input. For instance, a [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md), which accepts only numeric values, shows errors if a user tries to type a letter.
 
-1. The TreeList/TreeView control checks whether [DataAnnotations attributes](#dataannotations-attributes) are applied to the data source's business object, and then validates data according to these rules. This validation stage is enabled if the [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) property is set to `true` (the default value). 
+    *Invalid value found*: A user cannot leave a cell until a valid value is entered, or the ESC key is pressed, which reverts to the previous value.
+
+1. **Checking DataAnnotation Attributes**
+
+    The TreeList/TreeView control checks whether [DataAnnotations attributes](#dataannotations-attributes) are applied to the data source's business object, and then validates data according to these rules. 
+
+    *Applies when*: The [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) property is set to `true`(default). 
     
-    A user cannot leave a cell until a valid value is entered, or the ESC key is pressed, which reverts to the previous value.
+    *Invalid value found*: If the [`IgnoreValidationAttributesOnCommit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IgnoreValidationAttributesOnCommit.md) property is `false` (default), a user cannot leave a cell until a valid value is entered, or the ESC key is pressed, which reverts to the previous value.
+
+    If the [`IgnoreValidationAttributesOnCommit`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IgnoreValidationAttributesOnCommit.md) property is `true`, the control allows the user to move focus away from the cell and commit the value, even if it violates the DataAnnotation attributes.
     
 
-1. The control fires the [`DataControlBase.ValidateCellValue` event](#controls-validatecellvalue-event), which you can handle to implement custom value validation.
+1. **ValidateCellValue Event**
 
-    A user cannot leave a cell until a valid value is entered, or the ESC key is pressed, which reverts to the previous value.
+    The control fires the [`DataControlBase.ValidateCellValue` event](#controls-validatecellvalue-event), which you can handle to implement custom value validation.
 
-1. The control posts the cell value. At this step, the data source may raise exceptions if the posted data is invalid. The control shows an error in the cell if any exception is caught.
+    *Invalid value found*: A user cannot leave a cell until a valid value is entered, or the ESC key is pressed, which reverts to the previous value.
 
-    A user cannot leave a cell until a valid value is entered, or the ESC key is pressed, which reverts to the previous value.
+1. **Value Posting**
 
-1. The TreeList/TreeView control checks whether the business object implements the [IDataErrorInfo](#idataerrorinfo-interface) or [INotifyDataErrorInfo interface](#inotifydataerrorinfo-interface), and uses these interfaces to fetch cell errors, if any. This validation stage is enabled if the [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) property is set to `true` (the default value).
+    The control posts the cell value. At this step, the data source may raise exceptions if the posted data is invalid. The control shows an error in the cell if any exception is caught.
+
+    *Invalid value found*: A user cannot leave a cell until a valid value is entered, or the ESC key is pressed, which reverts to the previous value.
+
+1. **Checking IDataErrorInfo and INotifyDataErrorInfo Interfaces to Fetch Errors**
+
+    The TreeList/TreeView control checks whether the business object implements the [IDataErrorInfo](#idataerrorinfo-interface) or [INotifyDataErrorInfo interface](#inotifydataerrorinfo-interface), and uses these interfaces to fetch cell errors, if any. 
     
-    The control allows a user to leave a cell when the cell value is invalid, because the value has already been posted.
+    *Applies when*: The [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) property is set to `true` (default).
+    
+    *Invalid value found*: The control allows a user to leave a cell when the cell value is invalid, because the value has already been posted.
 
 
 ## Validate Values of Newly Displayed Cells and Cells Updated in Code
@@ -50,11 +66,23 @@ The following diagram shows the validation mechanism stages in these scenarios:
 
 ![TreeList - Validation Diagram](../../images/treelist-validation-diagram-When-ShowAndUpdate.png)
 
-1. The TreeList/TreeView control checks whether [DataAnnotations attributes](#dataannotations-attributes) are applied to the data source's business object, and then validates data according to these rules. This validation stage is enabled if the [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) property is `true` (the default value).
+1. **Checking DataAnnotation Attributes**
 
-1. The TreeList/TreeView control checks whether the business object implements the [IDataErrorInfo](#idataerrorinfo-interface) or [INotifyDataErrorInfo interface](#inotifydataerrorinfo-interface), and uses these interfaces to fetch cell errors, if any.  This validation stage is enabled if the [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) property is set to `true` (the default value).
+    The TreeList/TreeView control checks whether [DataAnnotations attributes](#dataannotations-attributes) are applied to the data source's business object, and then validates data according to these rules. 
+    
+    *Applies when*: The [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) property is `true` (default).
 
-1. The control fires the [`DataControlBase.ValidateCellValue` event](#controls-validatecellvalue-event), which you can handle to implement custom value validation. This validation stage is enabled if the [`DataControlBase.ValidateCellValuesOnShowAndUpdate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ValidateCellValuesOnShowAndUpdate.md) property is `true` (the default value is `false`).
+1. **Checking IDataErrorInfo and INotifyDataErrorInfo Interfaces to Fetch Errors**
+
+    The TreeList/TreeView control checks whether the business object implements the [IDataErrorInfo](#idataerrorinfo-interface) or [INotifyDataErrorInfo interface](#inotifydataerrorinfo-interface), and uses these interfaces to fetch cell errors, if any.  
+
+    *Applies when*: The [`DataControlBase.ShowItemsSourceErrors`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowItemsSourceErrors.md) property is `true` (default).
+
+1. **ValidateCellValue Event**
+
+    The control fires the [`DataControlBase.ValidateCellValue` event](#controls-validatecellvalue-event), which you can handle to implement custom value validation. 
+    
+    *Applies when*: The [`DataControlBase.ValidateCellValuesOnShowAndUpdate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ValidateCellValuesOnShowAndUpdate.md) property is `true` (the default value is `false`).
 
 
 

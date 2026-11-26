@@ -12,7 +12,7 @@ Provides data for the CustomColumnSort event.
 public class DataGridCustomColumnSortEventArgs : DataGridCustomColumnSortEventArgsBase<int?>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

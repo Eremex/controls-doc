@@ -12,11 +12,16 @@ Provides keyboard navigation for the segmented editor.
 public class SegmentedEditorStrategy
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SegmentedEditorStrategy](SegmentedEditorStrategy/SegmentedEditorStrategy.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | static [LeftRightNavigate](SegmentedEditorStrategy/LeftRightNavigate.md)(…) | Moves focus to the previous or next item when the left or right arrow key is pressed. |
 
 ## See Also

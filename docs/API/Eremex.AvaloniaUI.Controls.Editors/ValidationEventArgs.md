@@ -12,11 +12,16 @@ Provides data for the Validate event.
 public class ValidationEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ValidationEventArgs](ValidationEventArgs/ValidationEventArgs.md)(…) | Initializes a new instance of the ValidationEventArgs class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ErrorContent](ValidationEventArgs/ErrorContent.md) { get; set; } | Gets or sets the content that describes the validation error. |
 | [Value](ValidationEventArgs/Value.md) { get; } | Gets the editor's value being validated. |
 

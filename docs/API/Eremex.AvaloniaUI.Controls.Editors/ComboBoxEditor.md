@@ -12,11 +12,16 @@ Represents an editor that displays a dropdown with items.
 public class ComboBoxEditor : PopupEditor
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ComboBoxEditor](ComboBoxEditor/ComboBoxEditor.md)() | Initializes a new instance of the ComboBoxEditor class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ApplyItemTemplateToEditBox](ComboBoxEditor/ApplyItemTemplateToEditBox.md) { get; set; } | Gets or sets whether the item template is applied to the edit box. |
 | [AutoComplete](ComboBoxEditor/AutoComplete.md) { get; set; } | Gets or sets whether the editor automatically completes typed text. |
 | [AutoSearchText](ComboBoxEditor/AutoSearchText.md) { get; } | Gets the search text used to filter dropdown items. |
@@ -32,11 +37,21 @@ public class ComboBoxEditor : PopupEditor
 | [SeparatorString](ComboBoxEditor/SeparatorString.md) { get; set; } | Gets or sets the string that separates selected items in the display text. |
 | [ShowPredefinedSelectItem](ComboBoxEditor/ShowPredefinedSelectItem.md) { get; set; } | Gets or sets whether predefined items are displayed in the dropdown. |
 | [ValueMember](ComboBoxEditor/ValueMember.md) { get; set; } | Gets or sets the name of the data field that provides item values. |
-| event [FilterItem](ComboBoxEditor/FilterItem.md) | Occurs when the editor filters a dropdown item. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | override [ResetInvalidUserInput](ComboBoxEditor/ResetInvalidUserInput.md)() |  |
 | [ScrollIntoView](ComboBoxEditor/ScrollIntoView.md)(…) | Scrolls the specified dropdown item into view. |
 | [SelectItem](ComboBoxEditor/SelectItem.md)(…) | Selects the specified item in the dropdown. |
 | [UnselectItem](ComboBoxEditor/UnselectItem.md)(…) | Unselects the specified item in the dropdown. |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [FilterItem](ComboBoxEditor/FilterItem.md) | Occurs when the editor filters a dropdown item. |
 
 ## See Also
 

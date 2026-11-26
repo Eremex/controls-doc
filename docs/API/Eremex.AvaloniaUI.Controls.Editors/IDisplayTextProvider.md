@@ -12,7 +12,7 @@ Provides custom display text for editor values.
 public interface IDisplayTextProvider
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

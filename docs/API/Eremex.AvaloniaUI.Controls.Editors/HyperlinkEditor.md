@@ -12,11 +12,16 @@ Represents an editor that displays a hyperlink.
 public class HyperlinkEditor : BaseEditor
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [HyperlinkEditor](HyperlinkEditor/HyperlinkEditor.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowAutoNavigate](HyperlinkEditor/AllowAutoNavigate.md) { get; set; } | Gets or sets whether the editor automatically navigates to the hyperlink's URL. |
 | [Command](HyperlinkEditor/Command.md) { get; set; } | Gets or sets the command invoked when the hyperlink is activated. |
 | [CommandParameter](HyperlinkEditor/CommandParameter.md) { get; set; } | Gets or sets the parameter passed to the Command. |
@@ -29,6 +34,11 @@ public class HyperlinkEditor : BaseEditor
 | [Text](HyperlinkEditor/Text.md) { get; set; } | Gets or sets the hyperlink's display text. |
 | [TextTrimming](HyperlinkEditor/TextTrimming.md) { get; set; } | Gets or sets the text trimming applied to the hyperlink's text. |
 | [TextWrapping](HyperlinkEditor/TextWrapping.md) { get; set; } | Gets or sets how the hyperlink's text is wrapped. |
+
+## Events
+
+| name | description |
+| --- | --- |
 | event [RequestNavigation](HyperlinkEditor/RequestNavigation.md) | Occurs when navigation to the hyperlink is requested. |
 
 ## See Also

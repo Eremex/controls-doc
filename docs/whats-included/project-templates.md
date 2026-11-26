@@ -26,7 +26,7 @@ dotnet new install Eremex.Avalonia.Templates
 
 ## Included Project Templates
 
-All project templates listed below add the required Eremex NuGet packages to the created projects, derive the main window from `MxWindow` for theme support, and register the `DeltaDesign` paint theme.
+All project templates listed below add the required Eremex NuGet packages to the created projects, derive the main window from [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) for theme support, and register the `DeltaDesign` paint theme.
 
 ### Eremex Avalonia .NET App 
 
@@ -99,7 +99,7 @@ This template creates an MVVM application with the [`DockManager`](../API/Eremex
 
 ### Eremex Avalonia Window
 
-An empty `MxWindow` (a window that supports Eremex visual themes).
+An empty [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) (a window that supports Eremex visual themes).
 
 ![project-item-template-window](../images/project-item-template-window.png)
 
@@ -109,4 +109,4 @@ An empty `MxWindow` (a window that supports Eremex visual themes).
 dotnet new emx.window -n Window2 
 </code>
 
-This project item template creates a new `MxWindow`-based Avalonia window. The template only creates two files that define the window: _Window.axaml_ and _Window.axaml.cs_.
+This project item template creates a new [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md)-based Avalonia window. The template only creates two files that define the window: _Window.axaml_ and _Window.axaml.cs_.

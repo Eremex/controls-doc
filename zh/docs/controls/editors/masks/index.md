@@ -1,17 +1,17 @@
 ---
-title: Masks
+title: 掩码
 order: 1000
 seealso: []
 ---
 
-# Masks
+# 掩码 {#masks}
 
 掩码允许您限制文本编辑器中的数据输入。它们还可以用于在显示模式下格式化编辑器值（当编辑器没有焦点时）。
 
 要启用屏蔽输入，请执行以下操作：
 
-- 将编辑器的 `TextEditor.MaskType` 属性设置为掩码类型。
-- 将编辑器的 `TextEditor.Mask` 属性设置为特定掩码。
+- 将编辑器的 [`TextEditor.MaskType`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskType.md) 属性设置为掩码类型。
+- 将编辑器的 [`TextEditor.Mask`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Mask.md) 属性设置为特定掩码。
 
 支持以下掩码类型：
 
@@ -20,20 +20,20 @@ seealso: []
 
 以下主题为您提供有关支持的遮罩模式和遮罩的更多详细信息：
 
-- [Numeric Masks](numeric-masks.md)
-- [Date-Time Masks](date-time-masks.md)
+- [数字掩码](numeric-masks.md)
+- [日期时间掩码](date-time-masks.md)
 
-## 使用遮罩作为显示格式
+## 使用遮罩作为显示格式 {#using-the-mask-as-a-display-format}
 
-`TextEditor.Mask` 属性指定的掩码可用于在显示模式下格式化编辑器的值（当文本编辑未激活时）。 `TextEditor.MaskUseAsDisplayFormat` 属性指定此设置。该属性的默认值为 `true`。
+[`TextEditor.Mask`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/Mask.md) 属性指定的掩码可用于在显示模式下格式化编辑器的值（当文本编辑未激活时）。 [`TextEditor.MaskUseAsDisplayFormat`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskUseAsDisplayFormat.md) 属性指定此设置。该属性的默认值为 `true`。
 
-## 掩模文化设置
+## 掩模文化设置 {#mask-culture-settings}
 
 许多面具都依赖于当前的文化。例如，数字掩码的小数分隔符在不同的文化中是不同的。日期时间值使用特定于文化的模式以及星期几和月份的本地化名称进行格式化。
 
-`TextEditor.MaskCulture` 属性允许您设置掩码使用的区域性。如果未设置此属性，则使用应用程序的默认区域性。
+[`TextEditor.MaskCulture`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/MaskCulture.md) 属性允许您设置掩码使用的区域性。如果未设置此属性，则使用应用程序的默认区域性。
 
-### 例子
+### 例子 {#example}
 
 以下代码设置“c”数字掩码以在文本编辑器中输入货币值，并将_中文（简体）_ 区域性应用于该掩码。
 

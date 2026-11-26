@@ -12,12 +12,22 @@ Enumerates nodes in a tree hierarchy.
 public class TreeListNodeIterator : IEnumerable<TreeListNode>, IEnumerator<TreeListNode>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListNodeIterator](TreeListNodeIterator/TreeListNodeIterator.md)(…) | Initializes a new instance of the TreeListNodeIterator class with the specified root node. (2 constructors) |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Current](TreeListNodeIterator/Current.md) { get; } | Gets the node at the current position of the enumerator. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [MoveNext](TreeListNodeIterator/MoveNext.md)() | Advances the enumerator to the next node. |
 | [Reset](TreeListNodeIterator/Reset.md)() | Resets the enumerator to its initial position. |
 

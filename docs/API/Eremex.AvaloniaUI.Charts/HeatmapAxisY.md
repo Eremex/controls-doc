@@ -12,7 +12,7 @@ Represents the radial axis of a heatmap. It displays the distance from the cente
 public class HeatmapAxisY : HeatmapAxis
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

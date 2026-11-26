@@ -12,7 +12,7 @@ Provides methods for finding docking items and optimizing a docking layout.
 public static class DockManagerExtensions
 ```
 
-## Public Members
+## Methods
 
 | name | description |
 | --- | --- |

@@ -37,6 +37,7 @@ theme:
     - navigation.instant.progress
     - navigation.top
     - navigation.tracking
+    - navigation.prune
     - search.highlight
     - toc.autohide
     - toc.follow

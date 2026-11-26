@@ -12,7 +12,7 @@ A light/dark variant offered by [`AppearanceService`](./AppearanceService.md).
 public sealed class ThemeOption : IAppearanceOption
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

@@ -12,11 +12,16 @@ Provides data for the CellValueChanging and CellValueChanged events.
 public class CellValueChangedEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CellValueChangedEventArgs](CellValueChangedEventArgs/CellValueChangedEventArgs.md)(…) | Initializes a new instance of the CellValueChangedEventArgs class with the specified row, values, and field name. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [FieldName](CellValueChangedEventArgs/FieldName.md) { get; } | Gets the name of the property bound to the row. |
 | [OldValue](CellValueChangedEventArgs/OldValue.md) { get; } | Gets the row's previous value. |
 | [Row](CellValueChangedEventArgs/Row.md) { get; } | Gets the row whose value changed. |

@@ -12,11 +12,16 @@ Defines the appearance and the behavior of the crosshair that tracks the pointer
 public class CrosshairOptions : ChartElement, ICrosshairOptions
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CrosshairOptions](CrosshairOptions/CrosshairOptions.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ArgumentColor](CrosshairOptions/ArgumentColor.md) { get; set; } | Gets or sets the color of the argument lines and labels. |
 | [ArgumentLineThickness](CrosshairOptions/ArgumentLineThickness.md) { get; set; } | Gets or sets the width of the argument lines, in device-independent units. |
 | [ArgumentTextColor](CrosshairOptions/ArgumentTextColor.md) { get; set; } | Gets or sets the color of the text in the argument labels. |

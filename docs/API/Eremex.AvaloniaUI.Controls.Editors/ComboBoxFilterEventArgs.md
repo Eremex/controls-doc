@@ -12,11 +12,16 @@ Provides data for the FilterItem event.
 public class ComboBoxFilterEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ComboBoxFilterEventArgs](ComboBoxFilterEventArgs/ComboBoxFilterEventArgs.md)(…) | Initializes a new instance of the ComboBoxFilterEventArgs class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [IsVisible](ComboBoxFilterEventArgs/IsVisible.md) { get; set; } | Gets or sets whether the item is visible in the dropdown. |
 | [Item](ComboBoxFilterEventArgs/Item.md) { get; } | Gets the item being filtered. |
 | [SearchText](ComboBoxFilterEventArgs/SearchText.md) { get; } | Gets the text used to filter the item. |

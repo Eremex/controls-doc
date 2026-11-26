@@ -12,11 +12,16 @@ Represents a ribbon page containing groups of commands.
 public class RibbonPage : TemplatedControl, INavigationItem
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [RibbonPage](RibbonPage/RibbonPage.md)() | Initializes a new instance of the RibbonPage class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Glyph](RibbonPage/Glyph.md) { get; set; } | Gets or sets the image displayed for the item. |
 | [Groups](RibbonPage/Groups.md) { get; } | Gets the collection of groups on the ribbon page. |
 | [GroupsSource](RibbonPage/GroupsSource.md) { get; set; } | Gets or sets the collection whose items are used to generate ribbon page groups. |
@@ -24,6 +29,11 @@ public class RibbonPage : TemplatedControl, INavigationItem
 | [IsSelected](RibbonPage/IsSelected.md) { get; set; } | Gets or sets whether the item is selected. |
 | [KeyTip](RibbonPage/KeyTip.md) { get; set; } | Gets or sets the key sequence displayed to activate this item during key tip navigation. |
 | [Ribbon](RibbonPage/Ribbon.md) { get; set; } | Gets or sets the ribbon control that contains this object. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | override [ToString](RibbonPage/ToString.md)() |  |
 
 ## See Also

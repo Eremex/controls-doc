@@ -10,9 +10,9 @@ seealso: []
 
 ![app-services-imessageboxservice](../../images/app-services-imessageboxservice.png)
 
-Main features include:
+Main features:
 
-- Fixed button sets — Message boxes can display fixed button sets defined by the [`MessageBoxButtons`](../../API/Eremex.AvaloniaUI.Controls/MessageBoxButtons.md) enumeration (such as, Ok, Ok&vert;Cancel, Yes&vert;No&vert;Cancel, Yes&vert;No, Abort&vert;Retry&vert;Ignore, and Retry&vert;Cancel)
+- Fixed button sets — Message boxes can display fixed button sets defined by the [`MessageBoxButtons`](../../API/Eremex.AvaloniaUI.Controls/MessageBoxButtons.md) enumeration (such as Ok, Ok&vert;Cancel, Yes&vert;No&vert;Cancel, Yes&vert;No, Abort&vert;Retry&vert;Ignore, and Retry&vert;Cancel).
 - Automatic owner resolving — The service can automatically resolve the owner window through the [`IWindowsManager`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/IWindowsManager.md) service. You can also explicitly specify an owner for message boxes, when required.
 - Get the message box result — After the message box is closed, it returns the result specified by the [`DialogResult`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DialogResult.md) enumeration.
 
@@ -51,7 +51,7 @@ There are two ways to access an [`IMessageBoxService`](../../API/Eremex.Avalonia
 
 Implement a helper `Service<T>()` method in your ViewModel to return a requested service using the static `ApplicationServicesContext.GetRequiredService<T>()` method.
 
-``` cs
+```csharp
 using Eremex.AvaloniaUI.Controls.ApplicationServices;
 using CommunityToolkit.Mvvm.Input;
 
@@ -75,7 +75,7 @@ public partial class MyViewModel : ObservableObject
 
 In the App.axaml.cs file, ensure that Eremex application services are registered using [`SimpleServiceProvider`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/SimpleServiceProvider.md) and [`ApplicationServicesContext`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/ApplicationServicesContext.md) as follows:
 
-``` cs
+```csharp
 public class App : Application
 {
     public override void OnFrameworkInitializationCompleted()

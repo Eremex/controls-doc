@@ -12,11 +12,16 @@ Generates series data points from a formula. The arguments are evenly spaced, st
 public class FormulaDataAdapter : ISeriesDataAdapter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [FormulaDataAdapter](FormulaDataAdapter/FormulaDataAdapter.md)(…) | Initializes a new instance of the FormulaDataAdapter class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ArgumentStep](FormulaDataAdapter/ArgumentStep.md) { get; set; } | Gets or sets the distance between the arguments of two neighboring data points. |
 | [ItemCount](FormulaDataAdapter/ItemCount.md) { get; set; } | Gets or sets the number of generated data points. |
 | [StartArgument](FormulaDataAdapter/StartArgument.md) { get; set; } | Gets or sets the argument of the first data point. |

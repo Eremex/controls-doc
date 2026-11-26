@@ -12,11 +12,16 @@ Displays hierarchical data as a simple tree without columns.
 public class TreeViewControl : TreeListControlBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeViewControl](TreeViewControl/TreeViewControl.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CellTemplate](TreeViewControl/CellTemplate.md) { get; set; } | Gets or sets the template used to display cell content. |
 | [CellWidth](TreeViewControl/CellWidth.md) { get; set; } | Gets or sets the width of the tree cell. |
 | [DataFieldName](TreeViewControl/DataFieldName.md) { get; set; } | Gets or sets the field whose values are displayed as node text. |
@@ -24,6 +29,19 @@ public class TreeViewControl : TreeListControlBase
 | [SortDirection](TreeViewControl/SortDirection.md) { get; set; } | Gets or sets the direction in which nodes are sorted. |
 | [SortMode](TreeViewControl/SortMode.md) { get; set; } | Gets or sets how node values are compared when sorting. |
 | [UseSvgPalettesForNodeImages](TreeViewControl/UseSvgPalettesForNodeImages.md) { get; set; } | Gets or sets whether SVG node images are painted using palette colors. |
+
+## Methods
+
+| name | description |
+| --- | --- |
+| [GetCellDisplayText](TreeViewControl/GetCellDisplayText.md)(…) | Returns the display text of the specified node. |
+| [GetCellValue](TreeViewControl/GetCellValue.md)(…) | Returns the value of the specified node. |
+| [SetCellValue](TreeViewControl/SetCellValue.md)(…) | Sets the value of the specified node. |
+
+## Events
+
+| name | description |
+| --- | --- |
 | event [CellValueChanged](TreeViewControl/CellValueChanged.md) | Occurs when a node value has been changed. |
 | event [CellValueChanging](TreeViewControl/CellValueChanging.md) | Occurs while a node value is being changed before it is posted to the data source. |
 | event [CustomCellDisplayText](TreeViewControl/CustomCellDisplayText.md) | Occurs when the display text of a node is required. |
@@ -32,9 +50,6 @@ public class TreeViewControl : TreeListControlBase
 | event [ShowingEditor](TreeViewControl/ShowingEditor.md) | Occurs before an in-place editor is activated. |
 | event [ShownEditor](TreeViewControl/ShownEditor.md) | Occurs after an in-place editor is activated. |
 | event [ValidateCellValue](TreeViewControl/ValidateCellValue.md) | Occurs when a node value is validated. |
-| [GetCellDisplayText](TreeViewControl/GetCellDisplayText.md)(…) | Returns the display text of the specified node. |
-| [GetCellValue](TreeViewControl/GetCellValue.md)(…) | Returns the value of the specified node. |
-| [SetCellValue](TreeViewControl/SetCellValue.md)(…) | Sets the value of the specified node. |
 
 ## See Also
 

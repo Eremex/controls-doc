@@ -6,13 +6,13 @@ seealso: []
 
 # Point Series View
 
-Point Series View (`CartesianPointSeriesView`) отображает отдельные точки. Каждая точка задаётся значениями X и Y. На следующем изображении показан пример `CartesianPointSeriesView`, отображающего две серии рассеянных точек, каждая из которых закрашена своим цветом.
+Point Series View ([`CartesianPointSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView.md)) отображает отдельные точки. Каждая точка задаётся значениями X и Y. На следующем изображении показан пример [`CartesianPointSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView.md), отображающего две серии рассеянных точек, каждая из которых закрашена своим цветом.
 
 ![chart-views-point-series-view](../../../images/chart-views-point-series-view.png)
 
 ## Создание Point Series View
 
-Чтобы создать Point Series View, добавьте объект `CartesianSeries` в коллекцию `CartesianChart.Series` и инициализируйте `CartesianSeries.View` экземпляром `CartesianPointSeriesView`.
+Чтобы создать Point Series View, добавьте объект [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) в коллекцию [`CartesianChart.Series`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) и инициализируйте [`CartesianSeries.View`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md) экземпляром [`CartesianPointSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView.md).
 
 В следующем коде показано, как создать Point Series View в XAML и code-behind.
 
@@ -42,7 +42,7 @@ series.View = new CartesianPointSeriesView()
 
 ## Пример - Использование Point Series View для отображения кластера точек
 
-В этом примере Point Series View используется для отображения точек, случайно рассеянных вдоль числовых осей X и Y. Точки в исходной серии данных не отсортированы по координате _X_. Чтобы предоставить неотсортированные точки для представления серии, используется адаптер `ScatterDataAdapter`. 
+В этом примере Point Series View используется для отображения точек, случайно рассеянных вдоль числовых осей X и Y. Точки в исходной серии данных не отсортированы по координате _X_. Чтобы предоставить неотсортированные точки для представления серии, используется адаптер [`ScatterDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/ScatterDataAdapter.md). 
 
 ![chart-views-pointSeriesView-example](../../../images/chart-views-pointSeriesView-example.png)
 
@@ -143,27 +143,27 @@ public partial class SeriesViewModel : ObservableObject
 
 Числовые значения _X_:
 
-- `FormulaDataAdapter`
-- `ScatterDataAdapter`
-- `SortedNumericDataAdapter`
+- [`FormulaDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/FormulaDataAdapter.md)
+- [`ScatterDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/ScatterDataAdapter.md)
+- [`SortedNumericDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md)
 
 Значения даты и времени _X_:
 
-- `SortedDateTimeDataAdapter`
-- `SortedTimeSpanDataAdapter`
+- [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md)
+- [`SortedTimeSpanDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedTimeSpanDataAdapter.md)
 
 
 Качественные значения _X_:
 
-- `QualitativeDataAdapter`
+- [`QualitativeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeDataAdapter.md)
 
 
 ## Параметры Point Series View
 
-- `Color` — Задаёт цвет, используемый для закраски серии.
-- `MarkerImage` — Получает или задаёт изображение, используемое в качестве пользовательских маркеров точек. Если изображение не указано, отображаются стандартные маркеры в форме квадрата. Вы можете использовать экземпляр класса `SvgImage`, чтобы задать SVG-изображение.
+- [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) — Задаёт цвет, используемый для закраски серии.
+- [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) — Получает или задаёт изображение, используемое в качестве пользовательских маркеров точек. Если изображение не указано, отображаются стандартные маркеры в форме квадрата. Вы можете использовать экземпляр класса `SvgImage`, чтобы задать SVG-изображение.
 
-    Свойство `MarkerImage` объявлено с атрибутом `[Content]`, что позволяет определить изображение непосредственно между тегами &lt;CartesianPointSeriesView&gt;.
+    Свойство [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) объявлено с атрибутом `[Content]`, что позволяет определить изображение непосредственно между тегами &lt;CartesianPointSeriesView&gt;.
 
     ``` xml
     <mxc:CartesianPointSeriesView>
@@ -174,11 +174,11 @@ public partial class SeriesViewModel : ObservableObject
     SVG-файлы содержат предопределённые цвета для SVG-элементов. Чтобы эти цвета соответствовали цвету вашей серии данных, вы можете:
     
     - Вручную отредактировать исходный SVG-файл заранее
-    - Использовать свойство `MarkerImageCss`, чтобы динамически настраивать [стили](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) для SVG-элементов. Стили применяются при отрисовке маркеров точек.
+    - Использовать свойство [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md), чтобы динамически настраивать [стили](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) для SVG-элементов. Стили применяются при отрисовке маркеров точек.
 
-- `MarkerImageCss` — Задаёт [CSS-стили](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) для настройки SVG-изображения, заданного свойством `MarkerImage`, во время выполнения. Основной сценарий использования — замена цветов SVG-элементов на цвет серии (`Color`). Включите заполнитель `{0}`, чтобы вставить значение свойства `Color` в CSS-код. 
+- [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) — Задаёт [CSS-стили](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) для настройки SVG-изображения, заданного свойством [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md), во время выполнения. Основной сценарий использования — замена цветов SVG-элементов на цвет серии ([`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md)). Включите заполнитель `{0}`, чтобы вставить значение свойства [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) в CSS-код. 
 
-    Например, когда свойство `MarkerImage` содержит SVG-изображение с элементом circle, следующий CSS-код стилизует `circle` заливкой Orange (используя цвет серии) и границей Dark Red:
+    Например, когда свойство [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) содержит SVG-изображение с элементом circle, следующий CSS-код стилизует `circle` заливкой Orange (используя цвет серии) и границей Dark Red:
 
     ``` xml
     <mxc:CartesianPointSeriesView Color="orange" MarkerImageCss="circle {{fill:{0};stroke:darkred;}}">
@@ -188,8 +188,8 @@ public partial class SeriesViewModel : ObservableObject
     
     Смотрите также: [Пример - Создание Lollipop Series View и использование пользовательских SVG-маркеров](lollipop-series-view.md#пример---создание-lollipop-series-view-и-использование-пользовательских-svg-маркеров-точек-данных).
 
-- `MarkerSize` — Задаёт размер маркеров точек.
-- `ShowInCrosshair` — Задаёт видимость подписи перекрестия для текущей серии. См. [Настройка подписей перекрестия](../crosshair.md#скрытие-серии-в-crosshair).
+- [`MarkerSize`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerSize.md) — Задаёт размер маркеров точек.
+- [`ShowInCrosshair`](../../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) — Задаёт видимость подписи перекрестия для текущей серии. См. [Настройка подписей перекрестия](../crosshair.md#скрытие-серии-в-crosshair).
 
 <br>
 <br>

@@ -13,11 +13,16 @@ public class DataGridCustomGroupValueDisplayTextEventArgs :
     DataGridCustomColumnDisplayTextEventArgsBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridCustomGroupValueDisplayTextEventArgs](DataGridCustomGroupValueDisplayTextEventArgs/DataGridCustomGroupValueDisplayTextEventArgs.md)(…) | Initializes a new instance of the DataGridCustomGroupValueDisplayTextEventArgs class with the specified row index, column, value, and display text. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [RowIndex](DataGridCustomGroupValueDisplayTextEventArgs/RowIndex.md) { get; } | Gets the index of the group row. |
 
 ## See Also

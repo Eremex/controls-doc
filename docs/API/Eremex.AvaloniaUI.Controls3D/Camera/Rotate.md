@@ -1,4 +1,4 @@
-# Camera.Rotate method
+# Camera.Rotate method (1 of 2)
 
 Orbits the camera around its target, keeping the distance to the target unchanged.
 
@@ -18,6 +18,35 @@ public void Rotate(float xRad, float yRad)
 | --- | --- | --- |
 | xRad | `float` | The angle of the rotation around the camera's rightward axis, in radians. |
 | yRad | `float` | The angle of the rotation around the camera's upward axis, in radians. |
+
+## See Also
+
+* class [Camera](../Camera.md)
+* namespace [Eremex.AvaloniaUI.Controls3D](../index.md)
+
+---
+
+# Camera.Rotate method (2 of 2)
+
+Orbits the camera around a specified point, keeping that point on the same place of the screen.
+
+**Namespace:** [`Eremex.AvaloniaUI.Controls3D`](../index.md)  
+**Assembly:** `Eremex.Avalonia.Controls3D.dll`  
+**NuGet Package:** [Eremex.Avalonia.Controls3D](https://www.nuget.org/packages/Eremex.Avalonia.Controls3D)
+
+## Declaration
+
+```csharp
+public void Rotate(float xRad, float yRad, Vector3 rotateTarget)
+```
+
+## Parameters
+
+| name | type | description |
+| --- | --- | --- |
+| xRad | `float` | The angle of the rotation around the camera's rightward axis, in radians. |
+| yRad | `float` | The angle of the rotation around the camera's upward axis, in radians. |
+| rotateTarget | `Vector3` | The point to keep on the same place of the screen (for example, the point hit by the mouse). |
 
 ## See Also
 

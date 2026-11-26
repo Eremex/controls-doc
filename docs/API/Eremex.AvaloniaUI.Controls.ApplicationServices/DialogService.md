@@ -12,12 +12,17 @@ The default IDialogService implementation. It hosts the view model in a [`Dialog
 public class DialogService : IDialogService
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DialogService](DialogService/DialogService.md)() | Legacy bridge for code that creates the service directly, without a container. Requires an initialized [`Current`](./ApplicationServicesContext/Current.md). |
 | [DialogService](DialogService/DialogService.md)(…) | Primary constructor. Dependencies are passed explicitly, so the service can be created by any DI container and substituted in tests. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [ShowDialog&lt;T&gt;](DialogService/ShowDialog.md)(…) |  (2 methods) |
 
 ## See Also

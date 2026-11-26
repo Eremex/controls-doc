@@ -12,11 +12,16 @@ Represents a column in a data grid.
 public class GridColumn : ColumnBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [GridColumn](GridColumn/GridColumn.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowGrouping](GridColumn/AllowGrouping.md) { get; set; } | Gets or sets whether users can group data by the column. A null value inherits the owner grid's setting. |
 
 ## See Also

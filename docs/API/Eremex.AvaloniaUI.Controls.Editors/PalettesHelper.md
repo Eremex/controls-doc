@@ -12,7 +12,7 @@ Provides methods for retrieving color names.
 public static class PalettesHelper
 ```
 
-## Public Members
+## Methods
 
 | name | description |
 | --- | --- |

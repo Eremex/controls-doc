@@ -12,7 +12,7 @@ Provides data for the StartDrag event.
 public class TreeListStartDragEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

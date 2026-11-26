@@ -12,11 +12,16 @@ Formats axis labels as percentages. A value of 0.5 is displayed as 50.00 percent
 public class PercentLabelFormatter : IAxisLabelFormatter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PercentLabelFormatter](PercentLabelFormatter/PercentLabelFormatter.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Format](PercentLabelFormatter/Format.md)(…) | Converts an axis value into label text formatted as a percentage. |
 
 ## See Also

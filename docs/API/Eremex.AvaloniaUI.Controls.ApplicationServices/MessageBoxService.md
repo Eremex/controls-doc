@@ -12,12 +12,17 @@ The default IMessageBoxService implementation. It resolves the owner window thro
 public class MessageBoxService : IMessageBoxService
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [MessageBoxService](MessageBoxService/MessageBoxService.md)() | Legacy bridge for code that creates the service directly, without a container. Requires an initialized [`Current`](./ApplicationServicesContext/Current.md). |
 | [MessageBoxService](MessageBoxService/MessageBoxService.md)(…) | Primary constructor. Dependencies are passed explicitly, so the service can be created by any DI container and substituted in tests. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Show](MessageBoxService/Show.md)(…) |  (2 methods) |
 
 ## See Also

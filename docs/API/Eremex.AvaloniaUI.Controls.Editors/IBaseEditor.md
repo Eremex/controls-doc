@@ -12,7 +12,7 @@ Provides the base functionality for editors.
 public interface IBaseEditor
 ```
 
-## Members
+## Properties
 
 | name | description |
 | --- | --- |
@@ -20,8 +20,18 @@ public interface IBaseEditor
 | [EditorValue](IBaseEditor/EditorValue.md) { get; set; } | Gets or sets the editor's value. |
 | [ReadOnly](IBaseEditor/ReadOnly.md) { get; set; } | Gets or sets whether the editor is read-only. |
 | [ValidationInfo](IBaseEditor/ValidationInfo.md) { get; set; } | Gets or sets information about a validation error. |
-| event [EditorValueChanged](IBaseEditor/EditorValueChanged.md) | Occurs when the editor's value changes. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [SelectAll](IBaseEditor/SelectAll.md)() | Selects all the editor's text. |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [EditorValueChanged](IBaseEditor/EditorValueChanged.md) | Occurs when the editor's value changes. |
 
 ## See Also
 

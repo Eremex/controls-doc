@@ -12,7 +12,7 @@ Provides the base data for events associated with a docking operation.
 public abstract class DockOperationBaseEventArgs : DockItemEventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

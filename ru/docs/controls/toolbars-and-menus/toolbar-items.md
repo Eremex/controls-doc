@@ -12,9 +12,9 @@ seealso: []
 
 ## Добавление элементов панели в панель и контекстное меню
 
-Используйте коллекции `Toolbar.Items` и `PopupMenu.Items`, чтобы заполнять панели и меню элементами. В XAML вы можете определять элементы непосредственно между открывающим и закрывающим тегами `<Toolbar>`/`<PopupMenu>`.
+Используйте коллекции [`Toolbar.Items`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/Items.md) и [`PopupMenu.Items`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Items.md), чтобы заполнять панели и меню элементами. В XAML вы можете определять элементы непосредственно между открывающим и закрывающим тегами `<Toolbar>`/`<PopupMenu>`.
 
-Следующий пример отображает три элемента в панели.
+Этот пример отображает три элемента в панели.
 
 ``` xml
 xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
@@ -36,29 +36,29 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 ```
 ## Типы элементов панели инструментов
 
-Библиотека панелей поддерживает несколько типов элементов. Все они являются потомками класса `ToolbarItem`, содержащего настройки, общие для всех элементов панели.
+Библиотека панелей поддерживает несколько типов элементов. Все они являются потомками класса [`ToolbarItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem.md), содержащего настройки, общие для всех элементов панели.
 
 ### Общие свойства элементов панели инструментов
 
-- `Alignment` — выравнивание элемента внутри панели.
-- `Category` — категория, к которой относится элемент. Категории используются для организации элементов в логические группы в окне настройки. Дополнительную информацию смотрите в следующем разделе: [Категории элементов панели инструментов](#категории-элементов-панели-инструментов).
-- `Command` — команда, выполняемая при щелчке по кнопке.
-- `CommandParameter` — параметр команды, передаваемый заданной команде.
-- `DisplayMode` — возвращает или задаёт, отображать ли только глиф, только заголовок или оба.
-- `Glyph` — изображение элемента.
-- `GlyphAlignment` — выравнивание глифа относительно заголовка элемента.
-- `GlyphSize` — размер отображения глифа.
-- `Header` — отображаемый текст элемента.
-- `ShowSeparator` — возвращает или задаёт, отображать ли разделитель перед элементом. Вы также можете использовать элемент `ToolbarSeparatorItem`, чтобы вставить разделитель.
+- [`Alignment`](../../API/Eremex.AvaloniaUI.Controls.Bars/Alignment.md) — выравнивание элемента внутри панели.
+- [`Category`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Category.md) — категория, к которой относится элемент. Категории используются для организации элементов в логические группы в окне настройки. Дополнительную информацию смотрите в следующем разделе: [Категории элементов панели инструментов](#категории-элементов-панели-инструментов).
+- [`Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md) — команда, выполняемая при щелчке по кнопке.
+- [`CommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/CommandParameter.md) — параметр команды, передаваемый заданной команде.
+- [`DisplayMode`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/DisplayMode.md) — возвращает или задаёт, отображать ли только глиф, только заголовок или оба.
+- [`Glyph`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Glyph.md) — изображение элемента.
+- [`GlyphAlignment`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/GlyphAlignment.md) — выравнивание глифа относительно заголовка элемента.
+- [`GlyphSize`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/GlyphSize.md) — размер отображения глифа.
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) — отображаемый текст элемента.
+- [`ShowSeparator`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/ShowSeparator.md) — возвращает или задаёт, отображать ли разделитель перед элементом. Вы также можете использовать элемент [`ToolbarSeparatorItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarSeparatorItem.md), чтобы вставить разделитель.
 
 **События**
 
-- `Click` — возникает при щелчке левой кнопкой мыши по элементу (после нажатия и отпускания левой кнопки мыши).
-- `Press` — возникает при нажатии любой кнопки мыши над элементом.
+- [`Click`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Click.md) — возникает при щелчке левой кнопкой мыши по элементу (после нажатия и отпускания левой кнопки мыши).
+- [`Press`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Press.md) — возникает при нажатии любой кнопки мыши над элементом.
 
 ### Обычные кнопки и кнопки с выпадающим списком (ToolbarButtonItem)
 
-Используйте `ToolbarButtonItem` для создания обычных кнопок. Щелчок по обычной кнопке вызывает связанную команду (`Command`) и события (`Click` и `Press`). 
+Используйте [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md) для создания обычных кнопок. Щелчок по обычной кнопке вызывает связанную команду ([`Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md)) и события ([`Click`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Click.md) и [`Press`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Press.md)). 
 
 ![toolbarbuttonitem](../../images/toolbarbuttonitem.png)
 
@@ -70,7 +70,7 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
  Category="File" Command="{Binding OpenFileCommand}"/>
 ```
 
-Вы можете связать выпадающий контрол или меню с объектом `ToolbarButtonItem`. В этом случае `ToolbarButtonItem` может действовать как кнопка с выпадающим списком, вызывая заданный выпадающий контрол/меню при щелчке по элементу или по встроенной стрелке вниз.
+Вы можете связать выпадающий контрол или меню с объектом [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md). В этом случае [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md) может действовать как кнопка с выпадающим списком, вызывая заданный выпадающий контрол/меню при щелчке по элементу или по встроенной стрелке вниз.
 
 ![toolbarbuttonitem-dropdowncontrol](../../images/toolbarbuttonitem-dropdowncontrol.png)
 
@@ -97,33 +97,33 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 #### Основные свойства ToolbarButtonItem
 
-- `DropDownControl` — возвращает или задаёт выпадающий контрол (объект `Eremex.AvaloniaUI.Controls.Bars.IPopup`), связанный с элементом. Контрол всплывает, когда пользователь щёлкает по элементу или по встроенной кнопке-стрелке вниз (см. `DropDownArrowVisibility`). Следующие объекты реализуют интерфейс `Eremex.AvaloniaUI.Controls.Bars.IPopup` и потому могут отображаться как выпадающие контролы:
+- [`DropDownControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem/DropDownControl.md) — возвращает или задаёт выпадающий контрол (объект [`Eremex.AvaloniaUI.Controls.Bars.IPopup`](../../API/Eremex.AvaloniaUI.Controls.Bars/IPopup.md)), связанный с элементом. Контрол всплывает, когда пользователь щёлкает по элементу или по встроенной кнопке-стрелке вниз (см. [`DropDownArrowVisibility`](../../API/Eremex.AvaloniaUI.Controls.Bars/DropDownArrowVisibility.md)). Следующие объекты реализуют интерфейс [`Eremex.AvaloniaUI.Controls.Bars.IPopup`](../../API/Eremex.AvaloniaUI.Controls.Bars/IPopup.md) и потому могут отображаться как выпадающие контролы:
 
-    - `Eremex.AvaloniaUI.Controls.Bars.PopupMenu` — [всплывающее меню](../toolbars-and-menus/popup-and-context-menus.md). Вы можете добавлять в меню все типы элементов панели, чтобы заполнить его содержимым.
-    - `Eremex.AvaloniaUI.Controls.Bars.PopupContainer` — контейнер контролов. Используйте `PopupContainer`, чтобы отображать пользовательские контролы в выпадающем списке.
+    - [`Eremex.AvaloniaUI.Controls.Bars.PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) — [всплывающее меню](../toolbars-and-menus/popup-and-context-menus.md). Вы можете добавлять в меню все типы элементов панели, чтобы заполнить его содержимым.
+    - [`Eremex.AvaloniaUI.Controls.Bars.PopupContainer`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupContainer.md) — контейнер контролов. Используйте [`PopupContainer`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupContainer.md), чтобы отображать пользовательские контролы в выпадающем списке.
     
-- `DropDownArrowVisibility` — возвращает или задаёт, отображает ли элемент стрелку выпадающего списка, используемую для вызова связанного выпадающего контрола. 
+- [`DropDownArrowVisibility`](../../API/Eremex.AvaloniaUI.Controls.Bars/DropDownArrowVisibility.md) — возвращает или задаёт, отображает ли элемент стрелку выпадающего списка, используемую для вызова связанного выпадающего контрола. 
 
     ![ribbon-items-button-dropdownarrowvisibility](../../images/ribbon-items-button-dropdownarrowvisibility.png)
 
     - `ShowArrow` — стрелка выпадающего списка видима. Элемент и стрелка действуют как единая кнопка. Щелчок по ним отображает связанный выпадающий контрол.
 
-    - `ShowSplitArrow` или `Default` — стрелка выпадающего списка видима. Она действует как отдельная кнопка, встроенная в элемент. Щелчок по элементу вызывает его команду (`Command`) и события (`Click` и `Press`). 
+    - `ShowSplitArrow` или `Default` — стрелка выпадающего списка видима. Она действует как отдельная кнопка, встроенная в элемент. Щелчок по элементу вызывает его команду ([`Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md)) и события ([`Click`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Click.md) и [`Press`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Press.md)). 
 
     - `Hide` — стрелка выпадающего списка скрыта. Щелчок по элементу вызывает выпадающий контрол.
 
-- `DropDownArrowAlignment` — возвращает или задаёт положение стрелки выпадающего списка.
-- `DropDownOpenMode` — возвращает или задаёт, вызывается ли выпадающий контрол и когда, при взаимодействии пользователя с элементом/стрелкой выпадающего списка. Поддерживаемые опции:
-    - `Press` или `Default` — выпадающий список отображается по событию нажатия мыши.
-    - `Click` — выпадающий список отображается после нажатия и отпускания мыши над элементом.
+- [`DropDownArrowAlignment`](../../API/Eremex.AvaloniaUI.Controls.Bars/DropDownArrowAlignment.md) — возвращает или задаёт положение стрелки выпадающего списка.
+- [`DropDownOpenMode`](../../API/Eremex.AvaloniaUI.Controls.Bars/DropDownOpenMode.md) — возвращает или задаёт, вызывается ли выпадающий контрол и когда, при взаимодействии пользователя с элементом/стрелкой выпадающего списка. Поддерживаемые опции:
+    - [`Press`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Press.md) или `Default` — выпадающий список отображается по событию нажатия мыши.
+    - [`Click`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Click.md) — выпадающий список отображается после нажатия и отпускания мыши над элементом.
     - `Never` — выпадающий список не отображается.
-- `DropDownPress` — событие, возникающее при нажатии стрелки выпадающего списка.
+- [`DropDownPress`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem/DropDownPress.md) — событие, возникающее при нажатии стрелки выпадающего списка.
 
 Смотрите также: [Общие свойства элементов панели инструментов](#общие-свойства-элементов-панели-инструментов).
 
 ### Кнопки-флажки (ToolbarCheckItem)
 
-`ToolbarCheckItem` инкапсулирует кнопку-флажок, поддерживающую два состояния — обычное и нажатое. 
+[`ToolbarCheckItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem.md) инкапсулирует кнопку-флажок, поддерживающую два состояния — обычное и нажатое. 
 
 ![toolbarcheckitem](../../images/toolbarcheckitem.png)
 
@@ -138,22 +138,22 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 #### Основные свойства и события кнопки-флажка
 
-- `IsChecked` — возвращает или задаёт состояние нажатия кнопки.
-- `CheckedChanged` — событие, возникающее при изменении состояния нажатия.
+- [`IsChecked`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem/IsChecked.md) — возвращает или задаёт состояние нажатия кнопки.
+- [`CheckedChanged`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem/CheckedChanged.md) — событие, возникающее при изменении состояния нажатия.
 
-- `CheckBoxStyle` — возвращает или задаёт режим отображения объекта `ToolbarCheckItem`. Доступные опции:
+- [`CheckBoxStyle`](../../API/Eremex.AvaloniaUI.Controls.Bars/CheckBoxStyle.md) — возвращает или задаёт режим отображения объекта [`ToolbarCheckItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem.md). Доступные опции:
 
-  - `CheckBoxStyle.CheckButton` — элемент отрисовывается как кнопка-флажок. Когда `IsChecked` равно `true`, кнопка отображается в нажатом состоянии.
+  - [`CheckBoxStyle.CheckButton`](../../API/Eremex.AvaloniaUI.Controls.Bars/CheckBoxStyle.md) — элемент отрисовывается как кнопка-флажок. Когда [`IsChecked`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem/IsChecked.md) равно `true`, кнопка отображается в нажатом состоянии.
 
     ![bars-checkboxstyle-checkbutton](../../images/bars-checkboxstyle-checkbutton.png)
 
-  - `CheckBoxStyle.CheckBox` — элемент отображает переключаемый флажок перед своим текстом и глифом. Когда `IsChecked` равно `true`, флажок имеет отметку.
+  - [`CheckBoxStyle.CheckBox`](../../API/Eremex.AvaloniaUI.Controls.Bars/CheckBoxStyle.md) — элемент отображает переключаемый флажок перед своим текстом и глифом. Когда [`IsChecked`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem/IsChecked.md) равно `true`, флажок имеет отметку.
 
     ![bars-checkboxstyle-checkbox](../../images/bars-checkboxstyle-checkbox.png)
     
-  - `CheckBoxStyle.RadioButton` — элемент отображает радиокнопку перед своим текстом и глифом. Когда `IsChecked` равно `true`, радиокнопка отрисовывается как заполненный круг.
+  - [`CheckBoxStyle.RadioButton`](../../API/Eremex.AvaloniaUI.Controls.Bars/CheckBoxStyle.md) — элемент отображает радиокнопку перед своим текстом и глифом. Когда [`IsChecked`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem/IsChecked.md) равно `true`, радиокнопка отрисовывается как заполненный круг.
 
-    Вы можете применить стиль RadioButton к объектам `ToolbarCheckItem`, объединённым в группу флажков (`ToolbarCheckItemGroup`). В этом случае группа выглядит как обычная радиогруппа.
+    Вы можете применить стиль RadioButton к объектам [`ToolbarCheckItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem.md), объединённым в группу флажков ([`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md)). В этом случае группа выглядит как обычная радиогруппа.
 
     ``` xml
     <mxb:ToolbarCheckItemGroup CheckType="Radio">
@@ -164,7 +164,7 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
     
     ![bars-checkboxstyle-radiobutton](../../images/bars-checkboxstyle-radiobutton.png)
 
-- `CheckBoxAlignment` — возвращает или задаёт, отображаются ли флажок (или радиокнопка) до или после глифа и текста элемента. Эта опция действует, когда свойство `CheckBoxStyle` установлено в `CheckBoxStyle.CheckBox` или `CheckBoxStyle.RadioButton`.
+- [`CheckBoxAlignment`](../../API/Eremex.AvaloniaUI.Controls.Bars/CheckBoxAlignment.md) — возвращает или задаёт, отображаются ли флажок (или радиокнопка) до или после глифа и текста элемента. Эта опция действует, когда свойство [`CheckBoxStyle`](../../API/Eremex.AvaloniaUI.Controls.Bars/CheckBoxStyle.md) установлено в [`CheckBoxStyle.CheckBox`](../../API/Eremex.AvaloniaUI.Controls.Bars/CheckBoxStyle.md) или [`CheckBoxStyle.RadioButton`](../../API/Eremex.AvaloniaUI.Controls.Bars/CheckBoxStyle.md).
 
     ```xml
     <mxb:ToolbarCheckItem Header="Status bar" CheckBoxAlignment="After"
@@ -179,11 +179,11 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ### Подменю (ToolbarMenuItem)
 
-`ToolbarMenuItem` — это элемент, отображающий подменю при щелчке. 
+[`ToolbarMenuItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarMenuItem.md) — это элемент, отображающий подменю при щелчке. 
 
 ![toolbarMenuItem](../../images/toolbarMenuItem.png)
 
-Чтобы задать содержимое подменю, определите элементы между открывающим и закрывающим тегами `<ToolbarMenuItem>` в XAML или добавьте элементы в коллекцию `ToolbarMenuItem.Items` в code-behind.
+Чтобы задать содержимое подменю, определите элементы между открывающим и закрывающим тегами `<ToolbarMenuItem>` в XAML или добавьте элементы в коллекцию [`ToolbarMenuItem.Items`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarMenuItem/Items.md) в code-behind.
 
 ``` xml
 xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
@@ -206,9 +206,9 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 #### Основные свойства и события подменю
 
-- `DropDownOpenMode` — возвращает или задаёт, вызывается ли подменю и как, при взаимодействии пользователя с элементом. Поддерживаемые опции:
-    - `Press` или `Default` — меню отображается по событию нажатия мыши.
-    - `Click` — меню отображается после нажатия и отпускания мыши над элементом.
+- [`DropDownOpenMode`](../../API/Eremex.AvaloniaUI.Controls.Bars/DropDownOpenMode.md) — возвращает или задаёт, вызывается ли подменю и как, при взаимодействии пользователя с элементом. Поддерживаемые опции:
+    - [`Press`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Press.md) или `Default` — меню отображается по событию нажатия мыши.
+    - [`Click`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Click.md) — меню отображается после нажатия и отпускания мыши над элементом.
     - `Never` — меню не отображается.
 - `Items` — коллекция элементов, отображаемых в подменю.
 - `ItemsSource` — коллекция бизнес-объектов во View Model, из которых создаются элементы подменю. Соответствующие шаблоны данных должны определять элементы панели и инициализировать их настройки из базовых бизнес-объектов.
@@ -224,25 +224,25 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ### Встроенные редакторы (ToolbarEditorItem)
 
-`ToolbarEditorItem` позволяет отображать встроенный редактор. 
+[`ToolbarEditorItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem.md) позволяет отображать встроенный редактор. 
 
 ![ToolbarEditorItem](../../images/ToolbarEditorItem.png)
 
-Чтобы задать тип и настройки встроенного редактора, используйте свойство `ToolbarEditorItem.EditorProperties`. Вы можете установить `ToolbarEditorItem.EditorProperties` в один из следующих объектов:
+Чтобы задать тип и настройки встроенного редактора, используйте свойство [`ToolbarEditorItem.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/EditorProperties.md). Вы можете установить [`ToolbarEditorItem.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/EditorProperties.md) в один из следующих объектов:
 
-- `ButtonEditorProperties` — соответствует встроенному редактору `ButtonEditor`.
-- `CheckEditorProperties` — соответствует встроенному редактору `CheckEditor`.
-- `ColorEditorProperties` — соответствует встроенному редактору `ColorEditor`.
-- `ComboBoxEditorProperties` — соответствует встроенному редактору `ComboBoxEditor`.
-- `HyperlinkEditorProperties` — соответствует встроенному редактору `HyperlinkEditor`.
-- `PopupColorEditorProperties` — соответствует встроенному редактору `PopupColorEditor`.
-- `PopupEditorProperties` — соответствует встроенному редактору `PopupEditor`.
-- `SegmentedEditorProperties` — соответствует встроенному редактору `SegmentedEditor`.
-- `SpinEditorProperties` — соответствует встроенному редактору `SpinEditor`.
-- `TextEditorProperties` — соответствует встроенному редактору `TextEditor`.
-- `MemoEditorProperties` — соответствует встроенному редактору `MemoEditor`.
+- [`ButtonEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditorProperties.md) — соответствует встроенному редактору [`ButtonEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor.md).
+- [`CheckEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/CheckEditorProperties.md) — соответствует встроенному редактору [`CheckEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/CheckEditor.md).
+- `ColorEditorProperties` — соответствует встроенному редактору [`ColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorEditor.md).
+- [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md) — соответствует встроенному редактору [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md).
+- [`HyperlinkEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/HyperlinkEditorProperties.md) — соответствует встроенному редактору [`HyperlinkEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/HyperlinkEditor.md).
+- [`PopupColorEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditorProperties.md) — соответствует встроенному редактору [`PopupColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md).
+- [`PopupEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditorProperties.md) — соответствует встроенному редактору [`PopupEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor.md).
+- [`SegmentedEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditorProperties.md) — соответствует встроенному редактору [`SegmentedEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SegmentedEditor.md).
+- [`SpinEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditorProperties.md) — соответствует встроенному редактору [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md).
+- [`TextEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties.md) — соответствует встроенному редактору [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md).
+- [`MemoEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/MemoEditorProperties.md) — соответствует встроенному редактору [`MemoEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/MemoEditor.md).
 
-В следующем примере объект _Font_ `ToolbarEditorItem` отображает список шрифтов с помощью встроенного редактора combobox. Свойство `ToolbarEditorItem.EditorProperties` установлено в `ComboBoxEditorProperties`, что соответствует контролу `ComboBoxEditor`.
+В этом примере объект _Font_ [`ToolbarEditorItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem.md) отображает список шрифтов с помощью встроенного редактора combobox. Свойство [`ToolbarEditorItem.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/EditorProperties.md) установлено в [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md), что соответствует контролу [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md).
 
 ``` xml
 <mxb:ToolbarEditorItem Header="Font:" EditorWidth="150" Category="Font" 
@@ -257,14 +257,14 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 #### Основные свойства и события встроенного редактора
 
-- `ToolbarEditorItem.EditorProperties` — возвращает или задаёт объект, определяющий тип и настройки встроенного редактора.
-- `ToolbarEditorItem.EditorValue` — возвращает или задаёт значение встроенного редактора. Используйте это свойство для привязки данных.
-- `ToolbarEditorItem.SizeMode` — возвращает или задаёт режим размера элемента. Это свойство позволяет растянуть элемент панели, чтобы он занял всё доступное пустое пространство в панели.
-- `ToolbarEditorItem.EditorWidth` — возвращает или задаёт ширину встроенного редактора.
-- `ToolbarEditorItem.EditorHeight` — возвращает или задаёт высоту встроенного редактора.
-- `ToolbarEditorItem.EditorAlignment` — возвращает или задаёт выравнивание редактора относительно заголовка элемента.
+- [`ToolbarEditorItem.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/EditorProperties.md) — возвращает или задаёт объект, определяющий тип и настройки встроенного редактора.
+- [`ToolbarEditorItem.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/EditorValue.md) — возвращает или задаёт значение встроенного редактора. Используйте это свойство для привязки данных.
+- [`ToolbarEditorItem.SizeMode`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/SizeMode.md) — возвращает или задаёт режим размера элемента. Это свойство позволяет растянуть элемент панели, чтобы он занял всё доступное пустое пространство в панели.
+- [`ToolbarEditorItem.EditorWidth`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/EditorWidth.md) — возвращает или задаёт ширину встроенного редактора.
+- [`ToolbarEditorItem.EditorHeight`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/EditorHeight.md) — возвращает или задаёт высоту встроенного редактора.
+- [`ToolbarEditorItem.EditorAlignment`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/EditorAlignment.md) — возвращает или задаёт выравнивание редактора относительно заголовка элемента.
 
-- `ToolbarEditorItem.EditorValueChanged` — событие, возникающее после изменения значения редактора.
+- [`ToolbarEditorItem.EditorValueChanged`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/EditorValueChanged.md) — событие, возникающее после изменения значения редактора.
 
 <!--TODO - `ToolbarEditorItem.Editor` -  
 
@@ -277,7 +277,7 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ### Текстовые надписи (ToolbarTextItem)
 
-`ToolbarTextItem` отображает текстовую надпись, заданную свойством `ToolbarTextItem.Header`. Используйте этот элемент для отрисовки текста, который не редактируется пользователями.
+[`ToolbarTextItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarTextItem.md) отображает текстовую надпись, заданную свойством [`ToolbarTextItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md). Используйте этот элемент для отрисовки текста, который не редактируется пользователями.
 
 ![ToolbarTextItem](../../images/ToolbarTextItem.png)
 
@@ -290,19 +290,19 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 #### Основные свойства и события текстовой надписи
 
-- `ToolbarTextItem.SizeMode` — возвращает или задаёт режим размера элемента. Это свойство позволяет растянуть элемент, чтобы он занял всё доступное пустое пространство в панели.
-- `ToolbarTextItem.ShowBorder` — возвращает или задаёт, видима ли рамка элемента. Вы можете использовать свойство `ToolbarTextItem.BorderTemplate`, чтобы задать пользовательский шаблон для отрисовки рамки.
-- `ToolbarTextItem.BorderTemplate` — возвращает или задаёт пользовательский шаблон для отрисовки рамки элемента. Этот шаблон действует, если включена опция `ToolbarTextItem.ShowBorder`.
+- [`ToolbarTextItem.SizeMode`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarTextItem/SizeMode.md) — возвращает или задаёт режим размера элемента. Это свойство позволяет растянуть элемент, чтобы он занял всё доступное пустое пространство в панели.
+- [`ToolbarTextItem.ShowBorder`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarTextItem/ShowBorder.md) — возвращает или задаёт, видима ли рамка элемента. Вы можете использовать свойство [`ToolbarTextItem.BorderTemplate`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarTextItem/BorderTemplate.md), чтобы задать пользовательский шаблон для отрисовки рамки.
+- [`ToolbarTextItem.BorderTemplate`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarTextItem/BorderTemplate.md) — возвращает или задаёт пользовательский шаблон для отрисовки рамки элемента. Этот шаблон действует, если включена опция [`ToolbarTextItem.ShowBorder`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarTextItem/ShowBorder.md).
 
 Смотрите также: [Общие свойства элементов панели инструментов](#общие-свойства-элементов-панели-инструментов).
 
 ### Неразрывные группы элементов (ToolbarItemGroup)
 
-Используйте `ToolbarItemGroup` для создания неразрывной группы элементов панели. Неразрывная группа — это контейнер элементов, действующий как единое целое при изменении размера родителя (содержимое группы не может быть частично скрыто; элементы всегда отображаются в одну линию и не поддерживают перенос).
+Используйте [`ToolbarItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup.md) для создания неразрывной группы элементов панели. Неразрывная группа — это контейнер элементов, действующий как единое целое при изменении размера родителя (содержимое группы не может быть частично скрыто; элементы всегда отображаются в одну линию и не поддерживают перенос).
 
 ![bars-ToolbarItemGroup](../../images/bars-ToolbarItemGroup.png)
 
-Чтобы задать содержимое группы, определите элементы между открывающим и закрывающим тегами `<ToolbarItemGroup>` или добавьте элементы в коллекцию `ToolbarItemGroup.Items` в code-behind.
+Чтобы задать содержимое группы, определите элементы между открывающим и закрывающим тегами `<ToolbarItemGroup>` или добавьте элементы в коллекцию [`ToolbarItemGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup/Items.md) в code-behind.
 
 ``` xml
 <mxb:ToolbarItemGroup CustomizationName="Clipboard" >
@@ -323,21 +323,21 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 #### Основные свойства и события группы
 
-- `ToolbarItemGroup.Items` — позволяет обращаться к дочерним элементам группы.
+- [`ToolbarItemGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup/Items.md) — позволяет обращаться к дочерним элементам группы.
 
 ### Неразрывные группы флажков (ToolbarCheckItemGroup)
 
-Используйте `ToolbarCheckItemGroup` для создания неразрывной группы флажков. Неразрывная группа — это контейнер элементов, действующий как единое целое при изменении размера родителя (содержимое группы не может быть частично скрыто; элементы всегда отображаются в одну линию и не поддерживают перенос).
+Используйте [`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md) для создания неразрывной группы флажков. Неразрывная группа — это контейнер элементов, действующий как единое целое при изменении размера родителя (содержимое группы не может быть частично скрыто; элементы всегда отображаются в одну линию и не поддерживают перенос).
 
 ![bars-ToolbarCheckItemGroup](../../images/bars-ToolbarCheckItemGroup.png)
 
-Контейнер `ToolbarCheckItemGroup` может управлять состоянием нажатия своих дочерних элементов ([объектов `ToolbarCheckItem`](#кнопки-флажки-toolbarcheckitem)). Вы можете использовать `ToolbarCheckItemGroup` для создания следующих типов групп:
+Контейнер [`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md) может управлять состоянием нажатия своих дочерних элементов ([объектов [`ToolbarCheckItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem.md)](#кнопки-флажки-toolbarcheckitem)). Вы можете использовать [`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md) для создания следующих типов групп:
 
 - Группа взаимоисключающих элементов (радиогруппа).
 - Группа, позволяющая отмечать несколько элементов одновременно.
 
 
-Чтобы задать содержимое группы, добавьте элементы `ToolbarCheckItem` между открывающим и закрывающим тегами `<ToolbarCheckItemGroup>` в XAML или добавьте элементы в коллекцию `ToolbarCheckItemGroup.Items` в code-behind.
+Чтобы задать содержимое группы, добавьте элементы [`ToolbarCheckItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem.md) между открывающим и закрывающим тегами `<ToolbarCheckItemGroup>` в XAML или добавьте элементы в коллекцию [`ToolbarCheckItemGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup/Items.md) в code-behind.
 
 ``` xml
 <mxb:ToolbarCheckItemGroup CustomizationName="Check group" CheckType="Radio" >
@@ -350,23 +350,23 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 </mxb:ToolbarCheckItemGroup>
 ```
 
-Объект `ToolbarCheckItemGroup` принимает дочерние элементы всех поддерживаемых типов элементов панели. Однако группа управляет только состояниями нажатия вложенных объектов `ToolbarCheckItem`.
+Объект [`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md) принимает дочерние элементы всех поддерживаемых типов элементов панели. Однако группа управляет только состояниями нажатия вложенных объектов [`ToolbarCheckItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem.md).
 
 #### Основные свойства и события группы флажков
 
-- `ToolbarCheckItemGroup.CheckType` — возвращает или задаёт, можно ли отмечать один или несколько элементов в группе одновременно. Поддерживаются следующие опции:
+- [`ToolbarCheckItemGroup.CheckType`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup/CheckType.md) — возвращает или задаёт, можно ли отмечать один или несколько элементов в группе одновременно. Поддерживаются следующие опции:
 
     - `Default` или `Multiple` — можно отмечать несколько элементов одновременно.
     - `Radio` — группа взаимоисключающих элементов. Пользователь не может снять отметку с элемента иначе как отметив другой.
     - `Single` — группа взаимоисключающих элементов. Пользователь может снять отметку со всех элементов в группе.
 
-- `ToolbarCheckItemGroup.Items` — позволяет обращаться к дочерним элементам группы.
+- [`ToolbarCheckItemGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup/Items.md) — позволяет обращаться к дочерним элементам группы.
 
 Смотрите также: [Общие свойства элементов панели инструментов](#общие-свойства-элементов-панели-инструментов).
 
 ### Разделители (ToolbarSeparatorItem)
 
-`ToolbarSeparatorItem` рисует разделитель.
+[`ToolbarSeparatorItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarSeparatorItem.md) рисует разделитель.
 
 ![bars-toolbarseparatoritem](../../images/bars-toolbarseparatoritem.png)
 
@@ -395,7 +395,7 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ![toolbars-customizationwindow-categories](../../images/toolbars-customizationwindow-categories.png)
 
-Используйте свойство `ToolbarItem.Category`, чтобы назначить элемент категории. Это свойство задаёт имя категории. Чтобы назначить группу элементов одной категории, установите их свойство `ToolbarItem.Category` в одно и то же имя категории.
+Используйте свойство [`ToolbarItem.Category`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Category.md), чтобы назначить элемент категории. Это свойство задаёт имя категории. Чтобы назначить группу элементов одной категории, установите их свойство [`ToolbarItem.Category`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Category.md) в одно и то же имя категории.
 
 ``` xml
 <mxb:ToolbarMenuItem Header="Edit" Category="Edit">
@@ -419,7 +419,7 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ## Горячие клавиши
 
-Вы можете использовать свойство `ToolbarItem.HotKey`, чтобы назначать элементам горячие клавиши. 
+Вы можете использовать свойство [`ToolbarItem.HotKey`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/HotKey.md), чтобы назначать элементам горячие клавиши. 
 
 ``` xml
 <mxb:ToolbarButtonItem 
@@ -427,9 +427,9 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
     Glyph="{SvgImage 'avares://bars_sample/Images/Toolbars/EditDelete.svg'}"/>
 ```
 
-Нажатие горячей клавиши активирует команду элемента при условии, что фокус находится в пределах области действия горячих клавиш. Область действия горячих клавиш по умолчанию — область UI в границах компонента `ToolbarManager`. Когда фокус ввода находится за пределами области действия горячих клавиш, `ToolbarManager` не может перехватывать горячие клавиши.
+Нажатие горячей клавиши активирует команду элемента при условии, что фокус находится в пределах области действия горячих клавиш. Область действия горячих клавиш по умолчанию — область UI в границах компонента [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md). Когда фокус ввода находится за пределами области действия горячих клавиш, [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) не может перехватывать горячие клавиши.
 
-Свойство `ToolbarManager.IsWindowManager` позволяет расширить область действия горячих клавиш на всё окно. Когда вы устанавливаете это свойство в `true`, компонент `ToolbarManager` регистрирует горячие клавиши элементов в окне. Он сможет перехватывать и обрабатывать горячие клавиши, даже если фокус находится за пределами его клиентской области.
+Свойство [`ToolbarManager.IsWindowManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/IsWindowManager.md) позволяет расширить область действия горячих клавиш на всё окно. Когда вы устанавливаете это свойство в `true`, компонент [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) регистрирует горячие клавиши элементов в окне. Он сможет перехватывать и обрабатывать горячие клавиши, даже если фокус находится за пределами его клиентской области.
 
 ### Отображение горячих клавиш
 
@@ -440,9 +440,9 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ![toolbaritem-hotkey-display-in-tooltip](../../images/toolbaritem-hotkey-display-in-tooltip.png)
 
-Вы можете использовать свойство `ToolbarItem.HotKeyDisplayString`, чтобы задать текст отображения горячей клавиши. Этот текст отображается, даже если элементу не назначена горячая клавиша. Это полезно, если целевая горячая клавиша уже зарегистрирована другим объектом для выполнения определённой операции, а вы хотите указать, что та же горячая клавиша связана с элементом панели.
+Вы можете использовать свойство [`ToolbarItem.HotKeyDisplayString`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/HotKeyDisplayString.md), чтобы задать текст отображения горячей клавиши. Этот текст отображается, даже если элементу не назначена горячая клавиша. Это полезно, если целевая горячая клавиша уже зарегистрирована другим объектом для выполнения определённой операции, а вы хотите указать, что та же горячая клавиша связана с элементом панели.
 
-Например, TextBox регистрирует сочетание _Ctrl+Z_ для выполнения операции отмены. Если элемент панели выполняет ту же операцию отмены над TextBox, не назначайте элементу горячую клавишу _Ctrl+Z_. Вместо этого установите `ToolbarItem.HotKeyDisplayString` элемента в "_Ctrl+Z_", чтобы отображать это сочетание пользователям во всплывающих подсказках и подменю/всплывающих меню.
+Например, TextBox регистрирует сочетание _Ctrl+Z_ для выполнения операции отмены. Если элемент панели выполняет ту же операцию отмены над TextBox, не назначайте элементу горячую клавишу _Ctrl+Z_. Вместо этого установите [`ToolbarItem.HotKeyDisplayString`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/HotKeyDisplayString.md) элемента в "_Ctrl+Z_", чтобы отображать это сочетание пользователям во всплывающих подсказках и подменю/всплывающих меню.
 
 ``` xml
 <mxb:ToolbarButtonItem Header="Undo" HotKeyDisplayString="Ctrl+Z" 

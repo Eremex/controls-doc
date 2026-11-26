@@ -4,17 +4,17 @@ order: 55000
 seealso: []
 ---
 
-# 使用 MVVM 模式填充停靠项
+# 使用 MVVM 模式填充停靠项 {#use-mvvm-pattern-to-populate-dock-items}
 
-`DockManager` 控件允许您使用 MVVM 设计模式，用停靠项（例如 `DocumentPane` 和 `DockPane` 对象）填充该控件。使用此方法时，您将一个停靠项集合分配给 `DockManager` 组件，并指定用于渲染这些停靠项的模板。
+[`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) 控件允许您使用 MVVM 设计模式，用停靠项（例如 [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) 和 [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) 对象）填充该控件。使用此方法时，您将一个停靠项集合分配给 [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) 组件，并指定用于渲染这些停靠项的模板。
 
-## 使用来自项源的项填充 DockManager
+## 使用来自项源的项填充 DockManager {#populate-the-dockmanager-with-items-from-an-item-source}
 
-使用 `DockManager.ItemsSource` 属性，将 `DockManager` 绑定到需要渲染为停靠项的对象集合。这些对象转换为停靠项的方式由 `DockManager.ItemTemplate` 属性指定。
+使用 [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md) 属性，将 [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) 绑定到需要渲染为停靠项的对象集合。这些对象转换为停靠项的方式由 [`DockManager.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemTemplate.md) 属性指定。
 
-要指定用于渲染由 `DockManager.ItemsSource` 集合创建的停靠项内容的模板，请使用 `DockManager.ItemContentTemplate` 属性。
+要指定用于渲染由 [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md) 集合创建的停靠项内容的模板，请使用 [`DockManager.ItemContentTemplate`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemContentTemplate.md) 属性。
 
-以下来自 _IDE Layout_ 演示的示例使用 `DockManager.ItemsSource` 属性，将控件绑定到主视图模型中定义的 _Documents_ 集合。该集合的元素（_IdeLayoutDocumentViewModel_ 对象）会被渲染为 `DocumentPane` 对象。
+以下来自 _IDE Layout_ 演示的示例使用 [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md) 属性，将控件绑定到主视图模型中定义的 _Documents_ 集合。该集合的元素（_IdeLayoutDocumentViewModel_ 对象）会被渲染为 [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) 对象。
 
 ``` xml
 <mxd:DockManager Grid.Column="0" Grid.Row="1"
@@ -62,23 +62,23 @@ public class IdeLayoutDocumentContentTemplate : MarkupExtension, IDataTemplate
 
 !!! note
  
-    当 `DocumentPane` 对象是从 `DockManager.ItemsSource` 集合创建时，它们会自动作为选项卡渲染在第一个 `DocumentGroup` 容器中。请确保 `DockManager` 至少包含一个 `DocumentGroup` 容器。您可以实现**项适配器**（`DockManager.ItemAdapter`），将创建的停靠项（例如 `DocumentPane` 对象）放置到特定的停靠容器中。有关更多详细信息，请参阅下一节。
+    当 [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) 对象是从 [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md) 集合创建时，它们会自动作为选项卡渲染在第一个 [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) 容器中。请确保 [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) 至少包含一个 [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) 容器。您可以实现**项适配器**（[`DockManager.ItemAdapter`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemAdapter.md)），将创建的停靠项（例如 [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) 对象）放置到特定的停靠容器中。有关更多详细信息，请参阅下一节。
 
 
-## 从项源创建多种类型的停靠项
+## 从项源创建多种类型的停靠项 {#create-various-dock-item-types-from-an-item-source}
 
-您可能需要将 `DockManager.ItemsSource` 属性绑定到一个对象集合，这些对象应该被渲染为停靠窗格、文档窗格、自动隐藏面板和/或浮动窗格。要完成此任务，请使用以下方法：
+您可能需要将 [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md) 属性绑定到一个对象集合，这些对象应该被渲染为停靠窗格、文档窗格、自动隐藏面板和/或浮动窗格。要完成此任务，请使用以下方法：
 
-1. 实现一个**模板选择器**，根据 `DockManager.ItemsSource` 集合中的对象创建特定的停靠项。
-2. 向 `DockManager` 组件中添加应承载所创建停靠项的停靠容器。
+1. 实现一个**模板选择器**，根据 [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md) 集合中的对象创建特定的停靠项。
+2. 向 [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) 组件中添加应承载所创建停靠项的停靠容器。
 3. 创建一个**项适配器**，将创建的停靠项放置到特定的停靠容器中。
 
-### 示例
+### 示例 {#example}
 
 1. 在主视图模型中定义 _Panes_ 集合。该集合将包含以下元素：
 
-- _DockPaneViewModel_ 对象 — 这些对象需要被渲染为[停靠窗格](dock-panes-and-containers.md)（`DockPane`）。
-- _DocumentPaneViewModel_ 对象 — 这些对象需要被渲染为[文档窗格](document-panes.md)（`DocumentPane`）。
+- _DockPaneViewModel_ 对象 — 这些对象需要被渲染为[停靠窗格](dock-panes-and-containers.md)（[`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md)）。
+- _DocumentPaneViewModel_ 对象 — 这些对象需要被渲染为[文档窗格](document-panes.md)（[`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md)）。
 
 ``` cs
 namespace EremexAvaloniaApplication1;
@@ -122,10 +122,10 @@ public partial class MainWindow : MxWindow
 }
 ```
 
-3. 在主窗口中定义一个 `DockManager` 组件。将其绑定到 _MainViewModel.Panes_ 集合，并创建两个停靠容器：
+3. 在主窗口中定义一个 [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) 组件。将其绑定到 _MainViewModel.Panes_ 集合，并创建两个停靠容器：
 
-- _paneHost_ — `DockGroup` 容器，用于显示由 _DockPaneViewModel_ 对象创建的停靠窗格。
-- _documentHost_ — `DocumentGroup` 容器，用于显示由 _DocumentPaneViewModel_ 对象创建的文档窗格。
+- _paneHost_ — [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) 容器，用于显示由 _DockPaneViewModel_ 对象创建的停靠窗格。
+- _documentHost_ — [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) 容器，用于显示由 _DocumentPaneViewModel_ 对象创建的文档窗格。
 
 ``` xml
 <mx:MxWindow xmlns="https://github.com/avaloniaui"
@@ -149,7 +149,7 @@ public partial class MainWindow : MxWindow
 </mx:MxWindow>
 ```
 
-4. 实现一个**模板选择器**，从 _DockPaneViewModel_ 元素创建 `DockPane` 对象，从 _DocumentPaneViewModel_ 元素创建 `DocumentPane` 对象。将该模板选择器赋值给 `DockManager.ItemTemplate` 属性。
+4. 实现一个**模板选择器**，从 _DockPaneViewModel_ 元素创建 [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) 对象，从 _DocumentPaneViewModel_ 元素创建 [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) 对象。将该模板选择器赋值给 [`DockManager.ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemTemplate.md) 属性。
 
 ``` cs
 namespace EremexAvaloniaApplication1;
@@ -196,11 +196,11 @@ public class PaneTemplateSelector : MarkupExtension, IDataTemplate
 </mxd:DockManager>
 ```
 
-5. 创建一个**项适配器**，将创建的 `DockPane` 和 `DocumentPane` 对象放置到对应的停靠容器中。
+5. 创建一个**项适配器**，将创建的 [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) 和 [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) 对象放置到对应的停靠容器中。
 
-项适配器是一个实现了 `IDockManagerItemAdapter` 接口的类。对于从 `DockManager.ItemsSource` 集合创建的每个停靠项，都会调用 `IDockManagerItemAdapter.Adapt` 方法。该方法应将某个停靠项放置到特定的停靠容器中。
+项适配器是一个实现了 `IDockManagerItemAdapter` 接口的类。对于从 [`DockManager.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemsSource.md) 集合创建的每个停靠项，都会调用 `IDockManagerItemAdapter.Adapt` 方法。该方法应将某个停靠项放置到特定的停靠容器中。
 
-使用 `DockManager.ItemAdapter` 属性来指定项适配器。
+使用 [`DockManager.ItemAdapter`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ItemAdapter.md) 属性来指定项适配器。
 
 ``` cs
 namespace EremexAvaloniaApplication1;
@@ -225,7 +225,7 @@ public class PaneAdapter : MarkupExtension, IDockManagerItemAdapter
 <!-- ... -->
 ```
 
-6. 运行应用程序，查看 `DockManager` 组件被 _Panes_ 集合中的停靠项填充的效果。
+6. 运行应用程序，查看 [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) 组件被 _Panes_ 集合中的停靠项填充的效果。
 
 ![dockmanager-mvvm-itemadapter-example](../../images/dockmanager-mvvm-itemadapter-example.png)
 

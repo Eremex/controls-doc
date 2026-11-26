@@ -12,16 +12,26 @@ Displays series on a circular plot area, where the X axis is an angle measured i
 public class PolarChart : ChartControl
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PolarChart](PolarChart/PolarChart.md)() | Initializes a new instance of the [`PolarChart`](./PolarChart.md) class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AxisX](PolarChart/AxisX.md) { get; set; } | Gets or sets the angular axis. When left unset, the chart creates a default axis. |
 | [AxisY](PolarChart/AxisY.md) { get; set; } | Gets or sets the radial axis. When left unset, the chart creates a default axis. |
 | [Series](PolarChart/Series.md) { get; } | Gets the series displayed by the chart. |
 | [SeriesSource](PolarChart/SeriesSource.md) { get; set; } | Gets or sets the collection of series definitions used to generate the items of [`Series`](./PolarChart/Series.md). Each source item is turned into a series by [`SeriesTemplate`](./PolarChart/SeriesTemplate.md). |
 | [SeriesTemplate](PolarChart/SeriesTemplate.md) { get; set; } | Gets or sets the template used to create a series for each item of [`SeriesSource`](./PolarChart/SeriesSource.md). |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [DiagramPointToScreenPoint](PolarChart/DiagramPointToScreenPoint.md)(…) | Converts an angle and a value to the corresponding position in control coordinates. |
 | [ResetZoom](PolarChart/ResetZoom.md)() | Restores the visible range of every axis to the full range of its data. |
 | [ScreenPointToDiagramPoint](PolarChart/ScreenPointToDiagramPoint.md)(…) | Converts a position in control coordinates to the corresponding angle and value. |

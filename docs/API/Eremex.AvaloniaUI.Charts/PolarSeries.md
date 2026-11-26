@@ -12,11 +12,16 @@ Represents a series of a polar chart. The series plots the data supplied by its 
 public class PolarSeries : Series
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PolarSeries](PolarSeries/PolarSeries.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [View](PolarSeries/View.md) { get; set; } | Gets or sets the series view that defines the appearance of the series. |
 
 ## See Also

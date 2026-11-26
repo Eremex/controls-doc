@@ -129,6 +129,22 @@ The [`Graphics3DControl.ShowGrid`](../../API/Eremex.AvaloniaUI.Controls3D/Graphi
 <mx3d:Graphics3DControl Name="g3DControl" ShowGrid="True"/>
 ```
 
+You can customize the visibility of individual grid planes (XY, XZ, and YZ) using the [`Graphics3DControl.GridPlane`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/GridPlane.md) property. This property is of the [`GridPlane`](../../API/Eremex.AvaloniaUI.Controls3D/GridPlane.md) type, which is a flag enumeration. You can exclude individual enumeration values to hide the corresponding planes.
+
+The following code enables only the XY and XZ planes.
+
+![g3d-grid-xy-xz-planes](../../images/g3d-grid-xy-xz-planes.png)
+
+``` xml
+<mx3d:Graphics3DControl x:Name="g3DControl1" ModelsSource="{Binding Models}"
+                        GridPlane="XY, XZ" >
+```
+
+```csharp
+g3DControl1.GridPlane = GridPlane.XY | GridPlane.XZ;
+```
+
+
 #### Related Options
 
 - [`Graphics3DControl.GridThickness`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/GridThickness.md) property — Specifies the thickness of grid lines.

@@ -12,7 +12,7 @@ Represents the range of a horizontal axis, such as AxisX or HeatmapAxisX.
 public class AxisXRange : AxisRange
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

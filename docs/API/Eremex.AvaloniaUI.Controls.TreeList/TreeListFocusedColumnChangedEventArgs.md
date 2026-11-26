@@ -12,11 +12,16 @@ Provides data for the FocusedColumnChanged event.
 public class TreeListFocusedColumnChangedEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListFocusedColumnChangedEventArgs](TreeListFocusedColumnChangedEventArgs/TreeListFocusedColumnChangedEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Column](TreeListFocusedColumnChangedEventArgs/Column.md) { get; } | Gets the focused column. |
 | [OldColumn](TreeListFocusedColumnChangedEventArgs/OldColumn.md) { get; } | Gets the previously focused column. |
 

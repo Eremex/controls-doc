@@ -20,17 +20,17 @@ seealso: []
 Чтобы привязать элемент управления TreeList/TreeView к Self-Referential источнику данных, выполните следующие действия:
 
 - Убедитесь, что записи источника данных имеют два публичных свойства, определяющих поле Key и поле _Parent key field_.
-- Установите свойство `TreeListControlBase.KeyFieldName` элемента управления в имя поля Key.
-- Установите свойство `TreeListControlBase.ParentFieldName` элемента управления в имя поля _Parent key field_.
-- Установите свойство `TreeListControlBase.RootValue` элемента управления в корневое значение, определённое для корневых записей в источнике данных.
+- Установите свойство [`TreeListControlBase.KeyFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/KeyFieldName.md) элемента управления в имя поля Key.
+- Установите свойство [`TreeListControlBase.ParentFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ParentFieldName.md) элемента управления в имя поля _Parent key field_.
+- Установите свойство [`TreeListControlBase.RootValue`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RootValue.md) элемента управления в корневое значение, определённое для корневых записей в источнике данных.
 
 ## Видимость служебных колонок
 
-По умолчанию TreeList не создаёт колонки, связанные со служебными полями ключей. Чтобы разрешить элементу управления автоматически создавать колонки, связанные с указанными полями _Key field_ и _Parent key field_, установите свойства `AutoGenerateColumns` и `AutoGenerateServiceColumns` в значение `true`.
+По умолчанию TreeList не создаёт колонки, связанные со служебными полями ключей. Чтобы разрешить элементу управления автоматически создавать колонки, связанные с указанными полями _Key field_ и _Parent key field_, установите свойства [`AutoGenerateColumns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md) и [`AutoGenerateServiceColumns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateServiceColumns.md) в значение `true`.
 
 ## Пример
 
-Следующий пример привязывает элемент управления TreeList к Self-Referential источнику данных (коллекции записей _Employee_). Класс Employee определяет два свойства (_ID_ и _ParentID_), которые задают поле _Key field_ и поле _Parent key field_ записи соответственно. Корневые записи имеют значение поля _Parent key field_, равное **-1**, поэтому свойство `RootValue` элемента управления устанавливается в это значение.
+Этот пример привязывает элемент управления TreeList к Self-Referential источнику данных (коллекции записей _Employee_). Класс Employee определяет два свойства (_ID_ и _ParentID_), которые задают поле _Key field_ и поле _Parent key field_ записи соответственно. Корневые записи имеют значение поля _Parent key field_, равное **-1**, поэтому свойство [`RootValue`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RootValue.md) элемента управления устанавливается в это значение.
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"

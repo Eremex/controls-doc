@@ -12,11 +12,16 @@ Displays a gallery of items in the ribbon or in a drop-down popup.
 public class RibbonGalleryItem : ToolbarButtonBaseItem, IGalleryItemsOwner
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [RibbonGalleryItem](RibbonGalleryItem/RibbonGalleryItem.md)() | Initializes a new instance of the RibbonGalleryItem class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ActualColumnCount](RibbonGalleryItem/ActualColumnCount.md) { get; } | Gets the number of columns currently displayed in the inline gallery. |
 | [ActualItemsSource](RibbonGalleryItem/ActualItemsSource.md) { get; } | Gets the collection currently used to populate the gallery. |
 | [ColumnCount](RibbonGalleryItem/ColumnCount.md) { get; set; } | Gets or sets the preferred number of columns in the inline gallery. |
@@ -38,6 +43,11 @@ public class RibbonGalleryItem : ToolbarButtonBaseItem, IGalleryItemsOwner
 | [MinColumnCount](RibbonGalleryItem/MinColumnCount.md) { get; set; } | Gets or sets the minimum number of columns in the inline gallery. |
 | [SelectedItems](RibbonGalleryItem/SelectedItems.md) { get; set; } | Gets or sets the collection of selected gallery items. |
 | [StretchItemVertically](RibbonGalleryItem/StretchItemVertically.md) { get; set; } | Gets or sets whether gallery items stretch vertically to fill the available space. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [ClosePopup](RibbonGalleryItem/ClosePopup.md)() | Closes the popup. |
 
 ## See Also

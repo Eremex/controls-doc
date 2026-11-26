@@ -20,6 +20,9 @@
 | abstract class [Graphics3DControlBase](./Graphics3DControlBase.md) | Serves as the base class for controls that render 3D models with the Vulkan API. It exposes the collections of models and materials that the renderer uploads to the graphics device. |
 | class [Graphics3DKeyBinding](./Graphics3DKeyBinding.md) | Binds a keyboard gesture to a camera navigation command or to a control command. |
 | class [Graphics3DKeyBindings](./Graphics3DKeyBindings.md) | Represents the set of keyboard bindings that drive the control's camera and other commands. |
+| class [Graphics3DSelectionChangingEventArgs](./Graphics3DSelectionChangingEventArgs.md) | Provides data for the SelectionChanging event, which the Graphics3DControl raises before it applies a selection. |
+| delegate [Graphics3DSelectionChangingEventHandler](./Graphics3DSelectionChangingEventHandler.md) | Represents the method that handles the SelectionChanging event of a Graphics3DControl. |
+| [Flags] enum [GridPlane](./GridPlane.md) | Lists values that specify the coordinate planes on which the grid is drawn. |
 | class [IsometricCamera](./IsometricCamera.md) | Represents a camera that projects the scene orthographically, as if the viewer were infinitely far away. Use it for isometric views and technical drawings. |
 | abstract class [Light](./Light.md) | Serves as the base class for lights that illuminate a scene. |
 | abstract class [Material](./Material.md) | Serves as the base class for materials that define how a mesh is shaded. |
@@ -30,6 +33,7 @@
 | class [PointLight](./PointLight.md) | Represents a point light that stays at a fixed position in the scene. |
 | abstract class [PointLightBase](./PointLightBase.md) | Serves as the base class for lights that emit in every direction from a single point. |
 | struct [RaycastHitTestResult](./RaycastHitTestResult.md) | Represents the scene element found by a ray cast, together with the distance from the ray's origin. |
+| enum [RotationMode](./RotationMode.md) | Lists values that specify the pivot the camera orbits around when the user rotates the scene. |
 | class [SelectableElement](./SelectableElement.md) | Serves as the base class for scene elements that the control can highlight and select with the pointer. |
 | class [SimplePbrMaterial](./SimplePbrMaterial.md) | Represents a material that is defined by a single base color and by scalar shading parameters, instead of by textures. |
 | class [Skybox](./Skybox.md) | Represents the cube map environment used for image-based lighting and as the background of a scene. The control converts the six face images into a prefiltered environment map. |

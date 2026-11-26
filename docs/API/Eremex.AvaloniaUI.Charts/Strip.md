@@ -12,11 +12,16 @@ Represents a shaded band drawn across the drawing area between two values of the
 public class Strip : ChartElement
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [Strip](Strip/Strip.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AxisValue1](Strip/AxisValue1.md) { get; set; } | Gets or sets the first axis value that bounds the band. |
 | [AxisValue2](Strip/AxisValue2.md) { get; set; } | Gets or sets the second axis value that bounds the band. |
 | [Color](Strip/Color.md) { get; set; } | Gets or sets the fill color of the band. |

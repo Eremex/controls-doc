@@ -12,11 +12,16 @@ Stores the toolbars registered with a toolbar manager.
 public class ToolbarCollection : ObservableCollection<Toolbar>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ToolbarCollection](ToolbarCollection/ToolbarCollection.md)(…) | Initializes a new instance of the ToolbarCollection class for the specified toolbar manager. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Manager](ToolbarCollection/Manager.md) { get; } | Gets the toolbar manager associated with this object. |
 
 ## See Also

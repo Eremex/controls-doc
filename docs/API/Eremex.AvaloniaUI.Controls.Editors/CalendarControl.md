@@ -12,11 +12,16 @@ Represents a calendar displayed in the date editor's popup.
 public class CalendarControl : Calendar
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CalendarControl](CalendarControl/CalendarControl.md)() | Initializes a new instance of the CalendarControl class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ReadOnly](CalendarControl/ReadOnly.md) { get; set; } | Gets or sets whether the calendar is read-only. |
 
 ## See Also

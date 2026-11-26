@@ -26,7 +26,11 @@ The following code shows how to create a Scatter Line Series View in XAML and co
         <mxc:CartesianSeries Name="scatterLineSeries1" DataAdapter="{Binding DataAdapter}" >
             <mxc:CartesianScatterLineSeriesView Color="Red" 
                                                 ShowMarkers="True"
-                                                MarkerSize="4" Thickness="2"/>
+                                                MarkerSize="4">
+                <mxc:CartesianScatterLineSeriesView.LineStyle>
+                    <mxc:LineStyle Thickness="2" />
+                </mxc:CartesianScatterLineSeriesView.LineStyle>
+            </mxc:CartesianScatterLineSeriesView>
         </mxc:CartesianSeries>
     </mxc:CartesianChart.Series>
 </mxc:CartesianChart>
@@ -74,7 +78,11 @@ In this example, the Scatter Line Series View connects points that form a square
             <mxc:CartesianSeries Name="scatterLineSeries1" DataAdapter="{Binding ScatterLineSeriesVM1.DataAdapter}" >
                 <mxc:CartesianScatterLineSeriesView Color="{Binding ScatterLineSeriesVM1.Color}" 
                                                     ShowMarkers="True"
-                                                    MarkerSize="4" Thickness="2"/>
+                                                    MarkerSize="4">
+                    <mxc:CartesianScatterLineSeriesView.LineStyle>
+                        <mxc:LineStyle Thickness="2" />
+                    </mxc:CartesianScatterLineSeriesView.LineStyle>
+                </mxc:CartesianScatterLineSeriesView>
             </mxc:CartesianSeries>
         </mxc:CartesianChart.Series>
         <mxc:CartesianChart.AxesX>

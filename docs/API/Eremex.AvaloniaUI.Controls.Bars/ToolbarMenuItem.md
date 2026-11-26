@@ -12,16 +12,26 @@ Represents a toolbar item that displays a submenu.
 public class ToolbarMenuItem : ToolbarButtonBaseItem, IToolbarItemsHolder
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ToolbarMenuItem](ToolbarMenuItem/ToolbarMenuItem.md)() | Initializes a new instance of the ToolbarMenuItem class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [DropDownOpenMode](ToolbarMenuItem/DropDownOpenMode.md) { get; set; } | Gets or sets the pointer action that opens the item's drop-down popup. |
 | [IsPopupOpen](ToolbarMenuItem/IsPopupOpen.md) { get; set; } | Gets or sets whether the item's popup is open. |
 | [ItemCount](ToolbarMenuItem/ItemCount.md) { get; } | Gets the number of item containers. |
 | [Items](ToolbarMenuItem/Items.md) { get; } | Gets the collection of toolbar items. |
 | [ItemsSource](ToolbarMenuItem/ItemsSource.md) { get; set; } | Gets or sets the collection whose items are used to generate toolbar items. |
+
+## Events
+
+| name | description |
+| --- | --- |
 | event [Closed](ToolbarMenuItem/Closed.md) | Occurs after the popup closes. |
 | event [Closing](ToolbarMenuItem/Closing.md) | Occurs before the popup closes. Cancel the event to prevent closing. |
 | event [Opened](ToolbarMenuItem/Opened.md) | Occurs after the popup opens. |

@@ -18,13 +18,13 @@ seealso: []
  
 ## Назначение редактора ячейке строки напрямую
  
-Используйте свойство `PropertyGridRow.CellTemplate`, чтобы назначить редактор конкретной строке. Для этого сделайте следующее:
+Используйте свойство [`PropertyGridRow.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/CellTemplate.md), чтобы назначить редактор конкретной строке. Для этого сделайте следующее:
  
 - Создайте объект DataTemplate с редактором, определённым внутри шаблона.
-- Назначьте DataTemplate свойству `PropertyGridRow.CellTemplate`.
+- Назначьте DataTemplate свойству [`PropertyGridRow.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/CellTemplate.md).
 - При необходимости привяжите редактор к привязанному полю строки явно. 
  
-Следующий пример показывает XAML-код, инициализирующий свойство `CellTemplate`:
+Этот пример показывает XAML-код, инициализирующий свойство [`CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/CellTemplate.md):
  
 ``` xml
 xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
@@ -67,7 +67,7 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
  
 Явная привязка данных требуется в следующих случаях:
 
-- Вы используете редактор, не являющийся редактором Eremex. Все редакторы Eremex наследуются от класса `Eremex.AvaloniaUI.Controls.Editors.BaseEditor`.
+- Вы используете редактор, не являющийся редактором Eremex. Все редакторы Eremex наследуются от класса [`Eremex.AvaloniaUI.Controls.Editors.BaseEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor.md).
 - Вам нужно задать пользовательский конвертер значений в выражении привязки данных.
  
 ```xml
@@ -79,9 +79,9 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
  
 ## Динамическое назначение редакторов на основе типа данных строки
  
-Контрол PropertyGrid может автоматически назначать шаблоны ячейкам строк на основе типа данных привязанного поля строки. Используйте для этого свойство `PropertyGridControl.CellTemplate`.
+Контрол PropertyGrid может автоматически назначать шаблоны ячейкам строк на основе типа данных привязанного поля строки. Используйте для этого свойство [`PropertyGridControl.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/CellTemplate.md).
  
-Следующий пример связывает TextEditor (окрашивает значения в зелёный) со строками, привязанными к полям Integer:
+Этот пример связывает TextEditor (окрашивает значения в зелёный) со строками, привязанными к полям Integer:
  
 ```xml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -119,12 +119,12 @@ xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
     ```
     
     !!! tip
-        Параметр _data_ метода `Match` задаёт значение целевого шаблона ячейки. Параметр _data_ по умолчанию содержит значение привязанного свойства. Вы можете обработать событие `CustomCellTemplateData`, чтобы предоставить пользовательский объект в качестве значения шаблона ячейки. Указанный пользовательский объект будет передан в метод `Match`.
+        Параметр _data_ метода `Match` задаёт значение целевого шаблона ячейки. Параметр _data_ по умолчанию содержит значение привязанного свойства. Вы можете обработать событие [`CustomCellTemplateData`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/CustomCellTemplateData.md), чтобы предоставить пользовательский объект в качестве значения шаблона ячейки. Указанный пользовательский объект будет передан в метод `Match`.
 
-- Инициализируйте свойство `PropertyGridControl.CellTemplate` объектом *CellTemplateLocator*.
+- Инициализируйте свойство [`PropertyGridControl.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/CellTemplate.md) объектом *CellTemplateLocator*.
 - Заполните объект *CellTemplateLocator* объектами DataTemplate, связанными с вашими типами данных.
  
-Следующий пример определяет два объекта DataTemplate, связанных с типами данных String и Integer соответственно.
+Этот пример определяет два объекта DataTemplate, связанных с типами данных String и Integer соответственно.
 
 ```xml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"

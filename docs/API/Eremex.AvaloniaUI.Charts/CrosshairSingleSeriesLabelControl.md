@@ -12,7 +12,7 @@ Displays the values of a single series at the position of the crosshair.
 public class CrosshairSingleSeriesLabelControl : TemplatedControl, IDrawingAreaElementControl
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

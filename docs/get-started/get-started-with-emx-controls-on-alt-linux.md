@@ -64,7 +64,7 @@ The generated project includes:
 
 - All necessary Eremex Controls package references
 - The _'DeltaDesign'_ [paint theme](../controls/themes/index.md) registered in `App.axaml`.
-- [MxWindow](../controls/windows-and-dialogs/mxwindow.md) used as the main application window. `MxWindow` is a dedicated window that paints its elements (background, border and title bar) according to the current Eremex paint theme. 
+- [MxWindow](../controls/windows-and-dialogs/mxwindow.md) used as the main application window. [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) is a dedicated window that paints its elements (background, border and title bar) according to the current Eremex paint theme. 
 
 ## 4. Open the Project in VS Code
 

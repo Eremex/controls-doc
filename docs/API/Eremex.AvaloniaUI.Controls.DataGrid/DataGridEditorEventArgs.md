@@ -12,11 +12,16 @@ Provides data for the ShownEditor and HiddenEditor events.
 public class DataGridEditorEventArgs : DataGridCellEventArgsBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridEditorEventArgs](DataGridEditorEventArgs/DataGridEditorEventArgs.md)(…) | Initializes a new instance of the DataGridEditorEventArgs class with the specified row index, column, and editor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Editor](DataGridEditorEventArgs/Editor.md) { get; } | Gets the editor being shown or hidden. |
 
 ## See Also

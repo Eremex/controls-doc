@@ -6,30 +6,30 @@ seealso: []
 
 # Несвязанные колонки (TreeList)
 
-Если вам нужно отобразить пользовательскую информацию в колонке TreeList, вы можете создать несвязанную колонку. Такая колонка не привязана к полю в базовом источнике данных. Данные для этой колонки необходимо предоставлять вручную, используя событие `TreeListControl.CustomUnboundColumnData`.
+Если вам нужно отобразить пользовательскую информацию в колонке TreeList, вы можете создать несвязанную колонку. Такая колонка не привязана к полю в базовом источнике данных. Данные для этой колонки необходимо предоставлять вручную, используя событие [`TreeListControl.CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomUnboundColumnData.md).
 
 Чтобы создать несвязанную колонку, выполните следующие действия:
 
-- Создайте объект `TreeListColumn`.
-- Установите свойство `UnboundDataType` колонки в тип данных, который предполагается отображать в этой колонке.
-- Установите свойство `FieldName` колонки в уникальное имя поля.
-- Добавьте колонку в коллекцию `TreeListControl.Columns` с помощью метода `Add` или `Insert`. Вы также можете задать положение колонки с помощью свойства `TreeListColumn.VisibleIndex`.
+- Создайте объект [`TreeListColumn`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md).
+- Установите свойство [`UnboundDataType`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/UnboundDataType.md) колонки в тип данных, который предполагается отображать в этой колонке.
+- Установите свойство [`FieldName`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) колонки в уникальное имя поля.
+- Добавьте колонку в коллекцию [`TreeListControl.Columns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Columns.md) с помощью метода `Add` или `Insert`. Вы также можете задать положение колонки с помощью свойства [`TreeListColumn.VisibleIndex`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md).
 
-Обратите внимание, что элемент управления не хранит и не кэширует данные для несвязанных колонок. Он вызывает событие `CustomUnboundColumnData`, которое необходимо обрабатывать для указания данных несвязанных колонок.
+Обратите внимание, что элемент управления не хранит и не кэширует данные для несвязанных колонок. Он вызывает событие [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomUnboundColumnData.md), которое необходимо обрабатывать для указания данных несвязанных колонок.
 
-Событие `CustomUnboundColumnData` возникает в следующих случаях:
+Событие [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomUnboundColumnData.md) возникает в следующих случаях:
 
-- Когда значение ячейки в несвязанной колонке должно быть отображено (например, при первоначальной загрузке элемента управления или при прокрутке). В этом случае параметр события `IsGettingData` возвращает `true`. Вам необходимо присвоить значение параметру события `Value`.
+- Когда значение ячейки в несвязанной колонке должно быть отображено (например, при первоначальной загрузке элемента управления или при прокрутке). В этом случае параметр события [`IsGettingData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListUnboundColumnDataEventArgs/IsGettingData.md) возвращает `true`. Вам необходимо присвоить значение параметру события [`Value`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListUnboundColumnDataEventArgs/Value.md).
 
-- Когда пользователь изменяет данные в ячейках несвязанных колонок. В этом случае параметр события `IsGettingData` возвращает `false`. Считайте параметр события `Value` и вручную сохраните его в своём хранилище для дальнейшего использования.
+- Когда пользователь изменяет данные в ячейках несвязанных колонок. В этом случае параметр события [`IsGettingData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListUnboundColumnDataEventArgs/IsGettingData.md) возвращает `false`. Считайте параметр события [`Value`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListUnboundColumnDataEventArgs/Value.md) и вручную сохраните его в своём хранилище для дальнейшего использования.
 
-Вы можете принудительно вызвать событие `CustomUnboundColumnData` с помощью следующих методов:
+Вы можете принудительно вызвать событие [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomUnboundColumnData.md) с помощью следующих методов:
 
 - `RefreshRow` — обновляет указанную строку.
-- `RefreshData` — заставляет сетку перезагрузить все данные.
+- [`RefreshData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RefreshData.md) — заставляет сетку перезагрузить все данные.
 
 ## Пример 1
-Следующий пример создаёт несвязанную колонку _Total_, доступную только для чтения, и обрабатывает событие _CustomUnboundColumnData_ для вычисления значений колонки на основе значений других полей по формуле: `Total=UnitPrice*Quantity`. Обработчик события проверяет параметр события `IsGettingData` и получает значения, когда этот параметр равен `true`.
+Этот пример создаёт несвязанную колонку _Total_, доступную только для чтения, и обрабатывает событие _CustomUnboundColumnData_ для вычисления значений колонки на основе значений других полей по формуле: `Total=UnitPrice*Quantity`. Обработчик события проверяет параметр события [`IsGettingData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListUnboundColumnDataEventArgs/IsGettingData.md) и получает значения, когда этот параметр равен `true`.
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -81,7 +81,7 @@ public partial class PurchaseRecord : ObservableObject
 
 ## Пример 2
 
-Следующий пример показывает, как можно кэшировать данные, введённые пользователями в несвязанных колонках. В примере создаётся колонка _Data_, а событие `CustomUnboundColumnData` обрабатывается для предоставления данных TreeList и сохранения данных, введённых пользователями.
+Этот пример показывает, как можно кэшировать данные, введённые пользователями в несвязанных колонках. В примере создаётся колонка _Data_, а событие [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomUnboundColumnData.md) обрабатывается для предоставления данных TreeList и сохранения данных, введённых пользователями.
 
 ``` cs
 treeList1.Columns.Add(new TreeListColumn() 

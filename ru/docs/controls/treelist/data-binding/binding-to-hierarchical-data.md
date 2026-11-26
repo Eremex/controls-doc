@@ -22,22 +22,22 @@ seealso: []
 
 При привязке к иерархическому источнику данных элементы управления TreeList и TreeView по умолчанию загружают узлы по требованию: дочерние узлы динамически загружаются при разворачивании родительского узла.
 
-Установите свойство `AllowDynamicDataLoading` в `false`, чтобы загружать все узлы одновременно после привязки элемента управления к источнику данных.
+Установите свойство [`AllowDynamicDataLoading`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/AllowDynamicDataLoading.md) в `false`, чтобы загружать все узлы одновременно после привязки элемента управления к источнику данных.
 
 Если вы используете динамическую загрузку узлов, элементы управления TreeList и TreeView не имеют доступа к узлам (и связанным с ними данным), которые ещё не были загружены. Это накладывает следующие ограничения на функциональность проверки узлов и фильтрации/поиска:
 
-- При установке отметки родительского узла в рекурсивном режиме (см. `AllowRecursiveNodeChecking`) элемент управления отмечает этот узел вместе с уже загруженными дочерними узлами. Дочерние узлы, которые ещё не были загружены, не отмечаются.
+- При установке отметки родительского узла в рекурсивном режиме (см. [`AllowRecursiveNodeChecking`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/AllowRecursiveNodeChecking.md)) элемент управления отмечает этот узел вместе с уже загруженными дочерними узлами. Дочерние узлы, которые ещё не были загружены, не отмечаются.
 
 - При поиске данных во встроенном поле поиска или фильтрации данных с помощью строки автофильтра элемент управления выполняет поиск только среди уже загруженных узлов.
 
 ## Указание пути к дочерним данным
 
-Один из подходов для предоставления дочерних данных элементу управления TreeList/TreeView заключается в указании имени свойства, которое хранит дочерние данные в бизнес-объекте. Для этого используйте свойство `ChildrenFieldName`. Например, если бизнес-объект хранит дочерние данные в коллекции `Items`, установите свойство `ChildrenFieldName` в значение "_Items_".
+Один из подходов для предоставления дочерних данных элементу управления TreeList/TreeView заключается в указании имени свойства, которое хранит дочерние данные в бизнес-объекте. Для этого используйте свойство [`ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md). Например, если бизнес-объект хранит дочерние данные в коллекции `Items`, установите свойство [`ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) в значение "_Items_".
 
-Вам также необходимо установить свойство `HasChildrenFieldName` в имя свойства, которое возвращает `true`, если бизнес-объект имеет дочерние данные, и `false` в противном случае. Эта информация требуется для отображения или скрытия кнопок разворачивания узлов.
-Если вы не укажете свойство `HasChildrenFieldName`, элемент управления будет отображать кнопки разворачивания для узлов без потомков до тех пор, пока пользователь не попытается развернуть эти узлы.
+Вам также необходимо установить свойство [`HasChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/HasChildrenFieldName.md) в имя свойства, которое возвращает `true`, если бизнес-объект имеет дочерние данные, и `false` в противном случае. Эта информация требуется для отображения или скрытия кнопок разворачивания узлов.
+Если вы не укажете свойство [`HasChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/HasChildrenFieldName.md), элемент управления будет отображать кнопки разворачивания для узлов без потомков до тех пор, пока пользователь не попытается развернуть эти узлы.
 
-Следующий пример демонстрирует, как привязать элемент управления TreeList к данным. Объект _Employee_ в примере имеет коллекцию _Subordinates_, содержащую дочерние элементы. Свойство `ChildrenFieldName` указывает имя свойства (строка "_Subordinates_"), которое хранит дочерние данные.
+Этот пример демонстрирует, как привязать элемент управления TreeList к данным. Объект _Employee_ в примере имеет коллекцию _Subordinates_, содержащую дочерние элементы. Свойство [`ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) указывает имя свойства (строка "_Subordinates_"), которое хранит дочерние данные.
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -90,11 +90,11 @@ public partial class Employee : ObservableObject
 Селектор дочерних элементов полезен в следующих сценариях:
 
 - Когда родительский и дочерний бизнес-объекты [имеют разные типы](#использование-селектора-дочерних-элементов-когда-родительский-и-дочерний-бизнес-объекты-различны)
-- Во всех остальных случаях, когда невозможно указать путь к дочерним элементам с помощью свойства `ChildrenFieldName`.
+- Во всех остальных случаях, когда невозможно указать путь к дочерним элементам с помощью свойства [`ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md).
 
 
 
-Используйте свойство `TreeListControlBase.ChildrenSelector`, чтобы назначить селектор элементу управления TreeList/TreeView. Селектор — это объект, реализующий интерфейс `ITreeListChildrenSelector`:
+Используйте свойство [`TreeListControlBase.ChildrenSelector`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenSelector.md), чтобы назначить селектор элементу управления TreeList/TreeView. Селектор — это объект, реализующий интерфейс [`ITreeListChildrenSelector`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/ITreeListChildrenSelector.md):
 
 ``` cs
 public interface ITreeListChildrenSelector
@@ -111,7 +111,7 @@ public interface ITreeListChildrenSelector
 
 ### Пример — реализация простого селектора дочерних элементов
 
-Следующий пример создаёт селектор (_MyTreeListChildrenSelector_), который предоставляет информацию о дочерних элементах для элемента управления TreeList.
+Этот пример создаёт селектор (_MyTreeListChildrenSelector_), который предоставляет информацию о дочерних элементах для элемента управления TreeList.
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -172,7 +172,7 @@ public partial class Employee : ObservableObject
 
 Следующие соображения применимы, когда родительский и дочерний бизнес-объекты относятся к разным типам.
 
-- TreeList отображает значения из полей, к которым привязаны колонки TreeList (см. `TreeListColumn.FieldName`). Родительский и дочерний бизнес-объекты должны предоставлять эти поля.
+- TreeList отображает значения из полей, к которым привязаны колонки TreeList (см. [`TreeListColumn.FieldName`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md)). Родительский и дочерний бизнес-объекты должны предоставлять эти поля.
 
 - Элемент управления TreeView отображает значения бизнес-объектов из поля, имя которого задано свойством `DataFieldName`. Убедитесь, что родительский и дочерний объекты данных имеют это поле.
 
@@ -183,7 +183,7 @@ public partial class Employee : ObservableObject
 ![treeview-hierarchical-different-bus-objects-example](../../../images/treeview-hierarchical-different-bus-objects-example.png)
 
 Приведённый ниже код показывает определения бизнес-объектов _City_, _Street_ и _Building_.
-Обратите внимание, что все эти объекты имеют свойство _Name_. Имя этого свойства будет присвоено свойству `TreeViewControl.DataFieldName` в XAML.
+Обратите внимание, что все эти объекты имеют свойство _Name_. Имя этого свойства будет присвоено свойству [`TreeViewControl.DataFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) в XAML.
 
 ``` cs
 public class City
@@ -213,7 +213,7 @@ public class Building
 }
 ```
 
-Элемент управления TreeView привязан к коллекции _Cities_, определённой во View Model. Свойство `TreeViewControl.DataFieldName` установлено в значение "Name". Это свойство определяет поле бизнес-объектов, значения которого должны отображаться в элементе управления TreeView.
+Элемент управления TreeView привязан к коллекции _Cities_, определённой во View Model. Свойство [`TreeViewControl.DataFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) установлено в значение "Name". Это свойство определяет поле бизнес-объектов, значения которого должны отображаться в элементе управления TreeView.
 
 ``` cs
 public partial class MainWindowViewModel : ViewModelBase
@@ -256,7 +256,7 @@ public class MyTreeListChildrenSelector : ITreeListChildrenSelector
 }
 ```
 
-Чтобы назначить селектор _MyTreeListChildrenSelector_ элементу управления TreeView, используйте свойство `TreeListControlBase.ChildrenSelector`.
+Чтобы назначить селектор _MyTreeListChildrenSelector_ элементу управления TreeView, используйте свойство [`TreeListControlBase.ChildrenSelector`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenSelector.md).
 
 ``` xml
 xmlns:local="clr-namespace:EremexAvaloniaApplication10.Views"

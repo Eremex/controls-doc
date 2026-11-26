@@ -12,14 +12,24 @@ Base class for a dialog with the usual OK and Cancel buttons already wired up: O
 public abstract class OkCancelDialogAwareViewModel : DialogAwareViewModel
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [OkCancelDialogAwareViewModel](OkCancelDialogAwareViewModel/OkCancelDialogAwareViewModel.md)() | Initializes a new instance of the [`OkCancelDialogAwareViewModel`](./OkCancelDialogAwareViewModel.md) class with an empty dialog caption. |
 | [OkCancelDialogAwareViewModel](OkCancelDialogAwareViewModel/OkCancelDialogAwareViewModel.md)(…) | Initializes a new instance of the [`OkCancelDialogAwareViewModel`](./OkCancelDialogAwareViewModel.md) class with the given dialog caption. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CancelCommand](OkCancelDialogAwareViewModel/CancelCommand.md) { get; } |  |
 | [OkCommand](OkCancelDialogAwareViewModel/OkCommand.md) { get; } |  |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | virtual [Cancel](OkCancelDialogAwareViewModel/Cancel.md)(…) | Handles the Cancel button. The base implementation closes the dialog with Cancel; override it to discard pending changes first. |
 | virtual [CanOk](OkCancelDialogAwareViewModel/CanOk.md)(…) | Decides whether the OK button is enabled. Override it to require valid input before the dialog can be confirmed. |
 | virtual [Ok](OkCancelDialogAwareViewModel/Ok.md)(…) | Handles the OK button. The base implementation closes the dialog with Ok; override it to commit the entered data first, and skip the base call to keep the dialog open. |

@@ -2,22 +2,25 @@
 title: 十字线
 order: 985
 seealso: []
+image: /images/chart-crosshair-one-series.png
 ---
 
-# 十字线
+# 十字线 {#crosshair}
+
+## 什么是十字线？ {#what-is-a-crosshair}
 
 
-Cartesian Chart control 包括一个十字准线，可让您在当前光标位置查看精确的系列值。十字线呈现为一对水平线和垂直线，当鼠标指针悬停在图表区域上时，十字准线会跟随鼠标指针。它显示一个系列标签（或多个系列的多个标签），该系列显示系列值，并突出显示轴上当前的 _X_ 和 _Y_ 坐标。
+Cartesian Chart 控件包括一个十字线，可让您在当前光标位置查看精确的系列值。十字线呈现为一对水平线和垂直线，当鼠标指针悬停在图表区域上时，十字线会跟随鼠标指针。它显示一个系列标签（或多个系列的多个标签），该系列显示系列值，并突出显示轴上当前的 _X_ 和 _Y_ 坐标。
 
 
 ![chart-crosshair-one-series](../../images/chart-crosshair-one-series.png)
 
-要自定义十字线的显示设置或禁用此功能，请使用 `Eremex.AvaloniaUI.Charts.CrosshairOptions` 类的实例初始化 `CartesianChart.CrosshairOptions` 属性。然后使用 `CrosshairOptions` 类公开的属性根据需要调整十字线设置。
+要自定义十字线的显示设置或禁用此功能，请使用 [`Eremex.AvaloniaUI.Charts.CrosshairOptions`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions.md) 类的实例初始化 [`CartesianChart.CrosshairOptions`](../../API/Eremex.AvaloniaUI.Charts/ChartControl/CrosshairOptions.md) 属性。然后使用 [`CrosshairOptions`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions.md) 类公开的属性根据需要调整十字线设置。
 
 
-## 禁用十字线
+## 禁用十字线 {#disable-the-crosshair}
 
-`CrosshairOptions.ShowCrosshair` 属性允许您禁用十字准线。
+[`CrosshairOptions.ShowCrosshair`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ShowCrosshair.md) 属性允许您禁用十字线。
 
 ``` xml
 <mxc:CartesianChart x:Name="chartControl1" >
@@ -28,11 +31,11 @@ Cartesian Chart control 包括一个十字准线，可让您在当前光标位�
 </mxc:CartesianChart>
 ```
 
-## 禁用十字准线的单独线条和轴标签
+## 禁用十字线的单独线条和轴标签 {#disable-individual-lines-and-axis-labels-of-the-crosshair}
 
-`CrosshairOptions.ShowArgumentLine` 和 `CrosshairOptions.ShowValueLine` 属性可分别用于隐藏十字线的垂直和水平线。要防止为 _X_ 和 _Y_ 轴显示十字准线标签，请使用 `CrosshairOptions.ShowArgumentLabel` 和 `CrosshairOptions.ShowValueLabel` 属性。
+[`CrosshairOptions.ShowArgumentLine`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ShowArgumentLine.md) 和 [`CrosshairOptions.ShowValueLine`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ShowValueLine.md) 属性可分别用于隐藏十字线的垂直和水平线。要防止为 _X_ 和 _Y_ 轴显示十字线标签，请使用 [`CrosshairOptions.ShowArgumentLabel`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ShowArgumentLabel.md) 和 [`CrosshairOptions.ShowValueLabel`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ShowValueLabel.md) 属性。
 
-以下示例隐藏 _X_ 轴的十字准线的垂直线和标签：
+以下示例隐藏 _X_ 轴的十字线的垂直线和标签：
 
 ![chart-crosshair-vertical-line-hidden](../../images/chart-crosshair-vertical-line-hidden.png)
 
@@ -45,13 +48,13 @@ Cartesian Chart control 包括一个十字准线，可让您在当前光标位�
 </mxc:CartesianChart>
 ```
 
-## 自定义十字线系列标签
+## 自定义十字线系列标签 {#customize-crosshair-series-labels}
 
 十字线系列标签显示系列的名称和当前值。
 
 ![chart-crosshair-chart-labels](../../images/chart-crosshair-chart-labels.png)
 
-### 设置十字准线系列标签中值的格式
+### 设置十字线系列标签中值的格式 {#format-values-in-crosshair-series-labels}
 
 十字线标签中显示的值最初使用默认格式：
 
@@ -59,7 +62,7 @@ Cartesian Chart control 包括一个十字准线，可让您在当前光标位�
 
 要以自定义方式格式化这些值，请创建一个格式化程序对象并将其分配给 `Axis.ScaleOptions.CrosshairLabelFormatter` 属性。类似地，轴值可以被[格式化](cartesian-chart.md#format-axis-labels)（请参阅 `Axis.ScaleOptions.LabelFormatter` 属性）。
 
-您可以使用 `Eremex.AvaloniaUI.Charts.FuncLabelFormatter` 对象基于函数/表达式来实现自定义标签格式化程序。
+您可以使用 [`Eremex.AvaloniaUI.Charts.FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md) 对象基于函数/表达式来实现自定义标签格式化程序。
 
 以下示例创建一个将数值格式化为货币的格式化程序对象。此格式化程序用于格式化 _Y_ 轴值和十字线系列标签中的值。
 
@@ -93,15 +96,15 @@ TODO
 -->
 
 
-### 在十字准线中隐藏系列
+### 在十字线中隐藏系列 {#hide-a-series-in-the-crosshair}
 
-系列视图的 `CrosshairSeriesViewBase.ShowInCrosshair` 属性指定该系列在十字线标签中的可见性。
+系列视图的 [`CrosshairSeriesViewBase.ShowInCrosshair`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) 属性指定该系列在十字线标签中的可见性。
 
 <!-- TODO
 Add an image of the crosshair chart label, as many other topics refer to this section
  -->
 
-以下代码定义了两个系列（_Interest_ 和 _Principal_）。对于第一个系列，`ShowInCrosshair` 属性设置为 `false` 以将其隐藏在十字准线中：
+以下代码定义了两个系列（_Interest_ 和 _Principal_）。对于第一个系列，[`ShowInCrosshair`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) 属性设置为 `false` 以将其隐藏在十字线中：
 
 
 ``` xml
@@ -120,9 +123,9 @@ Add an image of the crosshair chart label, as many other topics refer to this se
 
 ![chart-crosshair-showincrosshair-disabled](../../images/chart-crosshair-showincrosshair-disabled.png)
 
-### 十字线系列标签的水平缩进
+### 十字线系列标签的水平缩进 {#horizontal-indent-of-the-crosshair-series-label}
 
-`CrosshairOptions.SeriesLabelIndent` 属性允许您调整十字准线系列标签和十字准线垂直线之间的水平距离。该属性的默认值为 2。
+[`CrosshairOptions.SeriesLabelIndent`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelIndent.md) 属性允许您调整十字线系列标签和十字线垂直线之间的水平距离。该属性的默认值为 2。
 
 ![chart-crosshair-serieslabelindent](../../images/chart-crosshair-serieslabelindent.png)
 
@@ -133,54 +136,58 @@ Add an image of the crosshair chart label, as many other topics refer to this se
 ```
 
 
-### 在十字线系列标签中显示精确值或插值
+### 在十字线系列标签中显示精确值或插值 {#show-an-exact-or-interpolated-value-in-crosshair-series-labels}
 
-Cartesian Chart 支持由排序的离散数据点组成的系列。对于这些系列，十字准线并不总是与数据点相交，但最常显示在数据点之间。 
-您可以使用 `CartesianSortedLineSeriesView.CrosshairMode` 属性指定十字准线标签是否捕捉到最近的数据点，或显示插值。可以使用以下选项：
+Cartesian Chart 支持由排序的离散数据点组成的系列。对于这些系列，十字线并不总是与数据点相交，但最常显示在数据点之间。 
+您可以使用 [`CartesianSortedLineSeriesView.CrosshairMode`](../../API/Eremex.AvaloniaUI.Charts/CartesianSortedLineSeriesView/CrosshairMode.md) 属性指定十字线标签是否捕捉到最近的数据点，或显示插值。可以使用以下选项：
 
-- `CrosshairSeriesMode.Point` — 十字线标签捕捉到最近的数据点并显示其值。
+- [`CrosshairSeriesMode.Point`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesMode.md) — 十字线标签捕捉到最近的数据点并显示其值。
   
 ![chart-CrosshairSeriesMode-Point](../../images/chart-CrosshairSeriesMode-Point.png)
 
-- `CrosshairSeriesMode.Interpolate` — 十字线系列标签显示垂直十字线与图表相交处的点的插值。
+- [`CrosshairSeriesMode.Interpolate`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesMode.md) — 十字线系列标签显示垂直十字线与图表相交处的点的插值。
 
 ![chart-CrosshairSeriesMode-Interpolate](../../images/chart-CrosshairSeriesMode-Interpolate.png)
 
-以下代码展示了如何自定义 `CrosshairMode` 选项：
+以下代码展示了如何自定义 [`CrosshairMode`](../../API/Eremex.AvaloniaUI.Charts/CartesianSortedLineSeriesView/CrosshairMode.md) 选项：
 
 ``` xml
 <mxc:CartesianChart.Series>
     <mxc:CartesianSeries DataAdapter="{Binding Series.DataAdapter}">
-        <mxc:CartesianLineSeriesView Color="{Binding Series.Color}" Thickness="2" CrosshairMode="Interpolate"/>
+        <mxc:CartesianLineSeriesView Color="{Binding Series.Color}" CrosshairMode="Interpolate">
+            <mxc:CartesianLineSeriesView.LineStyle>
+                <mxc:LineStyle Thickness="2" />
+            </mxc:CartesianLineSeriesView.LineStyle>
+        </mxc:CartesianLineSeriesView>
     </mxc:CartesianSeries>
 </mxc:CartesianChart.Series>
 
 ```
 
-### 为多个系列自定义十字线标签
+### 为多个系列自定义十字线标签 {#customize-crosshair-labels-for-multiple-series}
 
-#### 标签显示模式
+#### 标签显示模式 {#label-display-mode}
 
-当 Cartesian Chart 包含多个系列时，十字准线显示每个系列的标签：
+当 Cartesian Chart 包含多个系列时，十字线显示每个系列的标签：
 
 ![chart-crosshair-two-series ](../../images/chart-crosshair-two-series.png)
 
-`CrosshairOptions.SeriesLabelMode` 属性指定是否以及如何组合多个系列标签。可以使用以下选项：
+[`CrosshairOptions.SeriesLabelMode`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelMode.md) 属性指定是否以及如何组合多个系列标签。可以使用以下选项：
 
-- `CrosshairSeriesLabelMode.Smart`（默认）— 每个系列显示自己的十字准线标签。当标签重叠时，它们会合并为一个标签。
+- [`CrosshairSeriesLabelMode.Smart`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md)（默认）— 每个系列显示自己的十字线标签。当标签重叠时，它们会合并为一个标签。
   
 ![chart-CrosshairSeriesLabelMode-smart](../../images/chart-CrosshairSeriesLabelMode-smart.png)
 
 
-- `CrosshairSeriesLabelMode.ForEachSeries` — 每个系列都显示自己的十字准线标签。在此模式下标签可能会重叠。
+- [`CrosshairSeriesLabelMode.ForEachSeries`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md) — 每个系列都显示自己的十字线标签。在此模式下标签可能会重叠。
   
 ![chart-CrosshairSeriesLabelMode-ForEachSeries](../../images/chart-CrosshairSeriesLabelMode-ForEachSeries.png)
 
-- `CrosshairSeriesLabelMode.ForNearestSeries` — 仅针对距离光标最近的系列显示十字准线标签。
+- [`CrosshairSeriesLabelMode.ForNearestSeries`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md) — 仅针对距离光标最近的系列显示十字线标签。
   
 ![chart-CrosshairSeriesLabelMode-ForNearestSeries](../../images/chart-CrosshairSeriesLabelMode-ForNearestSeries.png)
 
-- `CrosshairSeriesLabelMode.OneForAllSeries` — 十字准线显示单个标签，其中组合了所有系列的信息。
+- [`CrosshairSeriesLabelMode.OneForAllSeries`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelMode.md) — 十字线显示单个标签，其中组合了所有系列的信息。
 
 ![chart-CrosshairSeriesLabelMode-OneForAllSeries](../../images/chart-CrosshairSeriesLabelMode-OneForAllSeries.png)
 
@@ -192,54 +199,54 @@ Cartesian Chart 支持由排序的离散数据点组成的系列。对于这些�
 </mxc:CartesianChart.CrosshairOptions>
 ```
 
-#### 系列排序
+#### 系列排序 {#series-sorting}
 
-当多个系列组合在单个十字线 label 中时，您可以使用 `CrosshairOptions.SeriesLabelItemSortMode` 属性指定系列在标签中的显示顺序。该属性可以设置为以下值：
+当多个系列组合在单个十字线标签中时，您可以使用 [`CrosshairOptions.SeriesLabelItemSortMode`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelItemSortMode.md) 属性指定系列在标签中的显示顺序。该属性可以设置为以下值：
 
-- `CrosshairSeriesLabelItemSortMode.BySeries`（默认）— 按系列添加到 `CartesianChart.Series` 集合的顺序对系列进行排序。
+- [`CrosshairSeriesLabelItemSortMode.BySeries`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelItemSortMode.md)（默认）— 按系列添加到 [`CartesianChart.Series`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) 集合的顺序对系列进行排序。
 
 ![chart-CrosshairSeriesLabelItemSortMode-BySeries](../../images/chart-CrosshairSeriesLabelItemSortMode-BySeries.png)
 
-- `CrosshairSeriesLabelItemSortMode.ByValue` — 按 _Y_ 值对系列进行排序。
+- [`CrosshairSeriesLabelItemSortMode.ByValue`](../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesLabelItemSortMode.md) — 按 _Y_ 值对系列进行排序。
 
 ![chart-CrosshairSeriesLabelItemSortMode-ByValue](../../images/chart-CrosshairSeriesLabelItemSortMode-ByValue.png)
 
-## 显示延迟
+## 显示延迟 {#show-delay}
 
-使用 `CrosshairOptions.SeriesLabelShowDelay` 属性指定显示十字线系列标签之前的延迟（以毫秒为单位）。
+使用 [`CrosshairOptions.SeriesLabelShowDelay`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelShowDelay.md) 属性指定显示十字线系列标签之前的延迟（以毫秒为单位）。
 
-## 仅包含光标附近的系列
+## 仅包含光标附近的系列 {#include-only-series-near-the-cursor}
 
-默认情况下，线性图表显示所有在当前参数值处具有数据点的系列的十字准线标签。
+默认情况下，线性图表显示所有在当前参数值处具有数据点的系列的十字线标签。
 
 ![chart-Crosshair-MaxPickDistance-Disabled](../../images/chart-Crosshair-MaxPickDistance-Disabled.png)
 
-图表控件允许您将十字准线标签限制为光标附近的系列。使用 `CrosshairOptions.MaxPickDistance` 属性指定搜索要包含在十字准线标签中的数据点的范围。对于常规线性图表，`MaxPickDistance` 属性指定向上或向下的最大垂直距离（以像素为单位）。
+图表控件允许您将十字线标签限制为光标附近的系列。使用 [`CrosshairOptions.MaxPickDistance`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/MaxPickDistance.md) 属性指定搜索要包含在十字线标签中的数据点的范围。对于常规线性图表，[`MaxPickDistance`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/MaxPickDistance.md) 属性指定向上或向下的最大垂直距离（以像素为单位）。
 
 ![chart-Crosshair-MaxPickDistance](../../images/chart-Crosshair-MaxPickDistance.png)
 
-在上面的图像中，只有_系列 1_ 和_系列 3_ 的数据点位于自定义 `MaxPickDistance` 值限制的范围内。 _Series 2_（红色线条）的数据点超出此范围，因此未显示。
+在上面的图像中，只有_系列 1_ 和_系列 3_ 的数据点位于自定义 [`MaxPickDistance`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/MaxPickDistance.md) 值限制的范围内。 _Series 2_（红色线条）的数据点超出此范围，因此未显示。
 
 
 
-对于 [Scatter Line views](cartesian-series-views/scatter-line-series-view.md)，`MaxPickDistance` 属性指定光标周围的圆形区域的半径，在该区域内搜索数据点。
+对于 [Scatter Line views](cartesian-series-views/scatter-line-series-view.md)，[`MaxPickDistance`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/MaxPickDistance.md) 属性指定光标周围的圆形区域的半径，在该区域内搜索数据点。
 
 !!!提示
 
-要显示距离光标最近的单个系列的十字线标签，请将 `CrosshairOptions.SeriesLabelMode` 属性设置为 `ForNearestSeries`。参见 [Label Display Mode](#label-display-mode)。
+要显示距离光标最近的单个系列的十字线标签，请将 [`CrosshairOptions.SeriesLabelMode`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/SeriesLabelMode.md) 属性设置为 `ForNearestSeries`。参见 [标签显示模式](#label-display-mode)。
 
 
 
-## 自定义 _X_ 和 _Y_ 轴上的十字准线和标签
+## 自定义 _X_ 和 _Y_ 轴上的十字线和标签 {#customize-crosshair-lines-and-labels-on-the-x-and-y-axes}
 
-图表控件的 `CrosshairOptions` 对象包含一组属性，允许您更改十字线、_X_ 轴标签和 _Y_ 轴标签的视觉设置。
+图表控件的 [`CrosshairOptions`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions.md) 对象包含一组属性，允许您更改十字线、_X_ 轴标签和 _Y_ 轴标签的视觉设置。
 
-- `ArgumentColor` — 十字线 _X_ 轴标签的背景颜色。
-- `ArgumentLineThickness` — 十字线参数线的粗细。
-- `ArgumentTextColor` — 十字线 _X_ 轴标签的前景色（文本）颜色。
-- `ValueColor` — 十字线 _Y_ 轴标签的背景颜色。
-- `ValueLineThickness` — 十字准线值线的粗细。
-- `ValueTextColor` — 十字线 _Y_ 轴标签的前景色（文本）颜色。
+- [`ArgumentColor`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ArgumentColor.md) — 十字线 _X_ 轴标签的背景颜色。
+- [`ArgumentLineThickness`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ArgumentLineThickness.md) — 十字线参数线的粗细。
+- [`ArgumentTextColor`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ArgumentTextColor.md) — 十字线 _X_ 轴标签的前景色（文本）颜色。
+- [`ValueColor`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ValueColor.md) — 十字线 _Y_ 轴标签的背景颜色。
+- [`ValueLineThickness`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ValueLineThickness.md) — 十字线值线的粗细。
+- [`ValueTextColor`](../../API/Eremex.AvaloniaUI.Charts/CrosshairOptions/ValueTextColor.md) — 十字线 _Y_ 轴标签的前景色（文本）颜色。
 
 以下 XAML 代码演示了如何为示例图表控件自定义这些设置。十字线线条厚度设置为 3。十字线标签具有灰色背景，但文本颜色不同：_X_ 轴标签为黄色，_Y_ 轴标签为青色。
 

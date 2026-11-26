@@ -12,11 +12,16 @@ Serves as the base class for classes that provide data for custom display text e
 public class DataGridCustomColumnDisplayTextEventArgsBase : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridCustomColumnDisplayTextEventArgsBase](DataGridCustomColumnDisplayTextEventArgsBase/DataGridCustomColumnDisplayTextEventArgsBase.md)(…) | Initializes a new instance of the DataGridCustomColumnDisplayTextEventArgsBase class with the specified index, column, value, and display text. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Column](DataGridCustomColumnDisplayTextEventArgsBase/Column.md) { get; } | Gets the column that contains the cell. |
 | [DisplayText](DataGridCustomColumnDisplayTextEventArgsBase/DisplayText.md) { get; set; } | Gets or sets the cell's display text. |
 | [Value](DataGridCustomColumnDisplayTextEventArgsBase/Value.md) { get; } | Gets the cell's raw value. |

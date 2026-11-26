@@ -12,15 +12,25 @@ Represents a toolbar button with an optional drop-down control.
 public class ToolbarButtonItem : ToolbarButtonBaseItem
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ToolbarButtonItem](ToolbarButtonItem/ToolbarButtonItem.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [DropDownArrowVisibility](ToolbarButtonItem/DropDownArrowVisibility.md) { get; set; } | Gets or sets the visibility and split-button behavior of the drop-down arrow. |
 | [DropDownControl](ToolbarButtonItem/DropDownControl.md) { get; set; } | Gets or sets the popup control displayed by the button. |
 | [DropDownOpenMode](ToolbarButtonItem/DropDownOpenMode.md) { get; set; } | Gets or sets the pointer action that opens the item's drop-down popup. |
 | [IsPopupOpen](ToolbarButtonItem/IsPopupOpen.md) { get; set; } | Gets or sets whether the item's popup is open. |
+
+## Events
+
+| name | description |
+| --- | --- |
 | event [DropDownPress](ToolbarButtonItem/DropDownPress.md) | Occurs when the pointer button is pressed over the drop-down area. |
 
 ## See Also

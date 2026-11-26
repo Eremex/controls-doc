@@ -12,11 +12,16 @@ Provides data for the ValidateRowValue event.
 public class ValidateRowValueEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ValidateRowValueEventArgs](ValidateRowValueEventArgs/ValidateRowValueEventArgs.md)(…) | Initializes a new instance of the ValidateRowValueEventArgs class with the specified row, field name, and value. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ErrorContent](ValidateRowValueEventArgs/ErrorContent.md) { get; set; } | Gets or sets the error description. Set this property to indicate that validation failed. |
 | [FieldName](ValidateRowValueEventArgs/FieldName.md) { get; } | Gets the name of the property bound to the row. |
 | [Row](ValidateRowValueEventArgs/Row.md) { get; } | Gets the row whose value is validated. |

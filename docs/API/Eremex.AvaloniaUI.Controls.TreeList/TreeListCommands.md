@@ -12,11 +12,16 @@ Provides a set of commands for a tree list control.
 public class TreeListCommands : DataControlCommands
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListCommands](TreeListCommands/TreeListCommands.md)(…) | Initializes a new instance of the TreeListCommands class with the specified tree list control. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CheckAllNodes](TreeListCommands/CheckAllNodes.md) { get; } | Gets the command that checks all visible nodes. |
 | [CollapseAllNodes](TreeListCommands/CollapseAllNodes.md) { get; } | Gets the command that collapses all nodes. |
 | [ExpandAllNodes](TreeListCommands/ExpandAllNodes.md) { get; } | Gets the command that expands all nodes. |

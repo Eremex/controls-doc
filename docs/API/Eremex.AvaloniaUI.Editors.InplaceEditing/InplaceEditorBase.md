@@ -12,12 +12,22 @@ Serves as the base class for inplace editors embedded in host controls.
 public abstract class InplaceEditorBase : ContentPresenter, IDisplayTextProvider
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [InplaceEditorBase](InplaceEditorBase/InplaceEditorBase.md)() | Initializes a new instance of the InplaceEditorBase class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [IsActive](InplaceEditorBase/IsActive.md) { get; } | Gets whether the inplace editor is active. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [DeactivateEditor](InplaceEditorBase/DeactivateEditor.md)() | Deactivates the inplace editor. |
 | [HideEditor](InplaceEditorBase/HideEditor.md)() | Hides the inplace editor. |
 | [ShowEditor](InplaceEditorBase/ShowEditor.md)(…) | Shows the inplace editor and optionally sets focus to it. |

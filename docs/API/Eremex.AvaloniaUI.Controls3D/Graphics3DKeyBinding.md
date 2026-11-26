@@ -12,12 +12,17 @@ Binds a keyboard gesture to a camera navigation command or to a control command.
 public class Graphics3DKeyBinding : AvaloniaObject
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [Graphics3DKeyBinding](Graphics3DKeyBinding/Graphics3DKeyBinding.md)() | Initializes a new instance of the Graphics3DKeyBinding class that is not bound to any key. |
 | [Graphics3DKeyBinding](Graphics3DKeyBinding/Graphics3DKeyBinding.md)(…) | Initializes a new instance of the Graphics3DKeyBinding class with the specified keyboard modifiers and keys. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Keys](Graphics3DKeyBinding/Keys.md) { get; set; } | Gets or sets the keys that trigger the binding. Pressing any one of the keys is enough. |
 | [Modifiers](Graphics3DKeyBinding/Modifiers.md) { get; set; } | Gets or sets the keyboard modifiers that must be held down to trigger the binding. The pressed modifiers must match this value exactly. |
 

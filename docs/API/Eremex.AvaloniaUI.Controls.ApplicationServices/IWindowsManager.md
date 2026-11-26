@@ -12,7 +12,7 @@ Tracks the windows of the application so that the other services know which wind
 public interface IWindowsManager
 ```
 
-## Members
+## Properties
 
 | name | description |
 | --- | --- |

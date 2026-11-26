@@ -12,13 +12,17 @@ Defines a data source of a series. A data adapter converts the values of the bou
 public interface ISeriesDataAdapter
 ```
 
-## Members
+## Properties
 
 | name | description |
 | --- | --- |
 | [IsDataSorted](ISeriesDataAdapter/IsDataSorted.md) { get; } | Gets whether the arguments are sorted in ascending order. |
 | [ItemCount](ISeriesDataAdapter/ItemCount.md) { get; } | Gets the number of data points provided by the adapter. |
-| event [DataChanged](ISeriesDataAdapter/DataChanged.md) | Occurs when the data of the adapter is changed. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [GetDataMemberPrefix](ISeriesDataAdapter/GetDataMemberPrefix.md)(…) | Returns the localized prefix that precedes a data member value in the crosshair label. |
 | [GetDateTimeValue](ISeriesDataAdapter/GetDateTimeValue.md)(…) | Returns the date and time value of the specified data point member. |
 | [GetNumericalValue](ISeriesDataAdapter/GetNumericalValue.md)(…) | Returns the numerical value of the specified data point member. |
@@ -27,6 +31,12 @@ public interface ISeriesDataAdapter
 | [GetTimeSpanValue](ISeriesDataAdapter/GetTimeSpanValue.md)(…) | Returns the time span value of the specified data point member. |
 | [GetUnderlyingData](ISeriesDataAdapter/GetUnderlyingData.md)(…) | Returns the text that identifies the source object of the specified data point. |
 | [GetUnderlyingDataPrefix](ISeriesDataAdapter/GetUnderlyingDataPrefix.md)() | Returns the localized prefix that precedes the underlying data text in the crosshair label. |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [DataChanged](ISeriesDataAdapter/DataChanged.md) | Occurs when the data of the adapter is changed. |
 
 ## See Also
 

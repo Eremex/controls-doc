@@ -12,11 +12,16 @@ Provides settings for the check editor.
 public class CheckEditorProperties : BaseEditorProperties
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CheckEditorProperties](CheckEditorProperties/CheckEditorProperties.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CheckedGlyph](CheckEditorProperties/CheckedGlyph.md) { get; set; } | Gets or sets the image displayed when the editor is checked. |
 | [Content](CheckEditorProperties/Content.md) { get; set; } | Gets or sets the content displayed next to the check box. |
 | [IndeterminateGlyph](CheckEditorProperties/IndeterminateGlyph.md) { get; set; } | Gets or sets the image displayed when the editor is in the indeterminate state. |

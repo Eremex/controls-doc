@@ -12,11 +12,16 @@ Provides access to the data transferred in a drag-and-drop operation.
 public class DragDropData
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |
 | [DataTransfer](DragDropData/DataTransfer.md) { get; } | Gets the underlying data transfer object. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Contains](DragDropData/Contains.md)(…) | Gets whether the data contains an item in the specified format. |
 | [Get](DragDropData/Get.md)(…) | Returns the data in the specified format. |
 | [GetDataFormats](DragDropData/GetDataFormats.md)() | Returns the identifiers of the formats the data contains. |

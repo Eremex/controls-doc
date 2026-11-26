@@ -12,11 +12,16 @@ Provides data for the NodeChanged event.
 public class TreeListNodeChangedEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListNodeChangedEventArgs](TreeListNodeChangedEventArgs/TreeListNodeChangedEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ChangeType](TreeListNodeChangedEventArgs/ChangeType.md) { get; } | Gets the type of the node change. |
 | [Node](TreeListNodeChangedEventArgs/Node.md) { get; } | Gets the changed node. |
 

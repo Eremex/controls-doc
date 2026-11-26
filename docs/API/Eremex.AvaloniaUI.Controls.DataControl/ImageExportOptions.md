@@ -12,11 +12,16 @@ Provides options that define how a data control's data is exported to an image.
 public class ImageExportOptions : PageExportOptions
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ImageExportOptions](ImageExportOptions/ImageExportOptions.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Format](ImageExportOptions/Format.md) { get; set; } | Gets or sets the format of the exported image. |
 | [PageBorderColor](ImageExportOptions/PageBorderColor.md) { get; set; } | Gets or sets the color of the page border in the exported image. |
 | [PageBorderWidth](ImageExportOptions/PageBorderWidth.md) { get; set; } | Gets or sets the width of the page border in the exported image. |

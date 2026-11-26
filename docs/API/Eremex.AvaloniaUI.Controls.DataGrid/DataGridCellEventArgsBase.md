@@ -12,11 +12,16 @@ Serves as the base class for classes that provide data for cell-related data gri
 public abstract class DataGridCellEventArgsBase : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridCellEventArgsBase](DataGridCellEventArgsBase/DataGridCellEventArgsBase.md)(…) | Initializes a new instance of the DataGridCellEventArgsBase class with the specified row index and column. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Column](DataGridCellEventArgsBase/Column.md) { get; } | Gets the column that contains the cell. |
 | [RowIndex](DataGridCellEventArgsBase/RowIndex.md) { get; } | Gets the index of the row that contains the cell. |
 

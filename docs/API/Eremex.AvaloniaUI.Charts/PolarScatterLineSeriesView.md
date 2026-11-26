@@ -12,7 +12,7 @@ Displays the data of a polar series as a polyline that connects the points in th
 public class PolarScatterLineSeriesView : PolarLineSeriesViewBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

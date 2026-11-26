@@ -12,7 +12,7 @@ Represents a point of a [`CartesianChart`](./CartesianChart.md) expressed in the
 public sealed class CartesianDiagramCoordinates
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

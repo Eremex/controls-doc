@@ -12,11 +12,16 @@ Represents a camera that projects the scene in perspective, so that objects fart
 public sealed class PerspectiveCamera : Camera
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PerspectiveCamera](PerspectiveCamera/PerspectiveCamera.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [FieldOfView](PerspectiveCamera/FieldOfView.md) { get; set; } | Gets or sets the vertical angle of the camera's field of view, in radians. The default value is a quarter of pi, which is 45 degrees. |
 
 ## See Also

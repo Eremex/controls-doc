@@ -12,7 +12,7 @@ Defines an item that owns a popup and controls its placement and opening behavio
 public interface IPopupOwner
 ```
 
-## Members
+## Properties
 
 | name | description |
 | --- | --- |
@@ -31,6 +31,11 @@ public interface IPopupOwner
 | [PlacementTarget](IPopupOwner/PlacementTarget.md) { get; } | Gets the control relative to which the popup is positioned. |
 | [Popup](IPopupOwner/Popup.md) { get; } | Gets the underlying Avalonia popup. |
 | [VerticalOffset](IPopupOwner/VerticalOffset.md) { get; } | Gets the vertical offset applied when positioning the popup. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [ClosePopup](IPopupOwner/ClosePopup.md)() | Closes the popup. |
 | [OnPopupClosed](IPopupOwner/OnPopupClosed.md)() | Processes the owned popup's closed notification. |
 | [OnPopupOpened](IPopupOwner/OnPopupOpened.md)() | Processes the owned popup's opened notification. |

@@ -12,7 +12,7 @@ Provides the content of a crosshair label that displays the values of all series
 public class CrosshairAllSeriesLabelControlData
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

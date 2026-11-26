@@ -12,11 +12,16 @@ Displays a collection of toolbar items as a toolbar, main menu, or status bar.
 public class Toolbar : TemplatedControl, IMxMainMenu, INavigatable, IToolbarItemsHolder
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [Toolbar](Toolbar/Toolbar.md)() | Initializes a new instance of the Toolbar class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowDragToolbar](Toolbar/AllowDragToolbar.md) { get; set; } | Gets or sets whether users can drag the toolbar, or null to allow dragging only in the default display mode. |
 | [AllowShrinkToolbar](Toolbar/AllowShrinkToolbar.md) { get; set; } | Gets or sets whether the toolbar can shrink and move overflowing items into its customization popup. |
 | [AllowVisibilityCustomization](Toolbar/AllowVisibilityCustomization.md) { get; set; } | Gets or sets whether users can change the toolbar's visibility, or null to allow visibility changes for all display modes except the main menu. |
@@ -41,6 +46,11 @@ public class Toolbar : TemplatedControl, IMxMainMenu, INavigatable, IToolbarItem
 | [ToolbarName](Toolbar/ToolbarName.md) { get; set; } | Gets or sets the name used to identify the toolbar. |
 | [UserToolbar](Toolbar/UserToolbar.md) { get; set; } | Gets or sets whether the toolbar was created by the user. |
 | [WrapItems](Toolbar/WrapItems.md) { get; set; } | Gets or sets whether toolbar items wrap onto additional rows or columns. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [ClearGeneratedToolbar](Toolbar/ClearGeneratedToolbar.md)() | Clears the state associated with a generated toolbar. |
 | [GetAllowCustomization](Toolbar/GetAllowCustomization.md)() | Returns whether the toolbar allows customization based on its ShowCustomizationButton setting. |
 | override [ToString](Toolbar/ToString.md)() |  |

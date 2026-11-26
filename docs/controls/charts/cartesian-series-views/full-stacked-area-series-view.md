@@ -166,8 +166,7 @@ The following example creates three series of the Full-Stacked Area type from a 
                         Color="{Binding Color}"
                         Transparency="0.5"
                         ShowMarkers="True"
-                        MarkerSize="3"
-                        Thickness="1" />
+                        MarkerSize="3"/>
                     </mxc:CartesianSeries>
                 </DataTemplate>
             </mxc:CartesianChart.SeriesTemplate>

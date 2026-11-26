@@ -12,12 +12,17 @@ Base class for view models that are shown in a window of their own by IWindowSer
 public class WindowAwareViewModel : ViewModelBase, IWindowAwareViewModel
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [WindowAwareViewModel](WindowAwareViewModel/WindowAwareViewModel.md)() | Initializes a new instance of the [`WindowAwareViewModel`](./WindowAwareViewModel.md) class with an empty window caption. |
 | [WindowAwareViewModel](WindowAwareViewModel/WindowAwareViewModel.md)(…) | Initializes a new instance of the [`WindowAwareViewModel`](./WindowAwareViewModel.md) class with the given window caption. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Content](WindowAwareViewModel/Content.md) { get; set; } |  |
 | [IsVisible](WindowAwareViewModel/IsVisible.md) { get; } |  |
 | [Title](WindowAwareViewModel/Title.md) { get; set; } |  |

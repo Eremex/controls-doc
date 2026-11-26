@@ -13,12 +13,22 @@ public sealed class HeatmapRangeColorProvider : ObservableCollection<HeatmapRang
     IHeatmapColorProvider
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [HeatmapRangeColorProvider](HeatmapRangeColorProvider/HeatmapRangeColorProvider.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [IsNormalizedValues](HeatmapRangeColorProvider/IsNormalizedValues.md) { get; set; } | Gets or sets whether the values of the range stops are expressed as a fraction of the heatmap value range, where the minimum is zero and the maximum is one. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [GetColor](HeatmapRangeColorProvider/GetColor.md)(…) | Returns a color interpolated between the two range stops that surround the specified value. |
 
 ## See Also

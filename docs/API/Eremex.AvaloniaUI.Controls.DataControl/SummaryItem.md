@@ -12,15 +12,22 @@ Represents a summary calculated for a data field.
 public class SummaryItem
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SummaryItem](SummaryItem/SummaryItem.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [FieldName](SummaryItem/FieldName.md) { get; set; } | Gets or sets the name of the data field whose values the summary calculates. |
 | [Label](SummaryItem/Label.md) { get; set; } | Gets or sets the summary item's label. |
+| [Name](SummaryItem/Name.md) { get; set; } | Gets or sets the summary item's name. |
 | [ShowInColumn](SummaryItem/ShowInColumn.md) { get; set; } | Gets or sets the name of the column that displays the summary value. |
 | [SummaryType](SummaryItem/SummaryType.md) { get; set; } | Gets or sets the type of the aggregate function the summary calculates. |
+| [Tag](SummaryItem/Tag.md) { get; set; } | Gets or sets an arbitrary object that contains data associated with the summary item. |
 
 ## See Also
 

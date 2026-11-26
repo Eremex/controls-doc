@@ -12,11 +12,16 @@ Represents the argument axis of a Cartesian chart. It displays the arguments of 
 public class AxisX : CartesianAxis
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [AxisX](AxisX/AxisX.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Range](AxisX/Range.md) { get; set; } | Gets or sets the range of values displayed by the axis. |
 | [ScaleOptions](AxisX/ScaleOptions.md) { get; set; } | Gets or sets the options that define how argument values are scaled and labeled. |
 

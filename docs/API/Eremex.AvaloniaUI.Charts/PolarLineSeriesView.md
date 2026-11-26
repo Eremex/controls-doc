@@ -12,11 +12,16 @@ Displays the data of a polar series as a polyline that connects the points sorte
 public class PolarLineSeriesView : PolarLineSeriesViewBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PolarLineSeriesView](PolarLineSeriesView/PolarLineSeriesView.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CrosshairMode](PolarLineSeriesView/CrosshairMode.md) { get; set; } | Gets or sets whether the crosshair snaps to the nearest data point or to the line segment under the pointer. |
 
 ## See Also

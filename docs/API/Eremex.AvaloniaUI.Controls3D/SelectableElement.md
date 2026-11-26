@@ -12,11 +12,16 @@ Serves as the base class for scene elements that the control can highlight and s
 public class SelectableElement : Control
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SelectableElement](SelectableElement/SelectableElement.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowHighlight](SelectableElement/AllowHighlight.md) { get; set; } | Gets or sets whether the element is outlined when the pointer is over it. |
 | [AllowSelection](SelectableElement/AllowSelection.md) { get; set; } | Gets or sets whether the element can be selected by a mouse click. |
 | [Hint](SelectableElement/Hint.md) { get; set; } | Gets or sets the text that identifies the element in a hint tooltip and in the info panel. |

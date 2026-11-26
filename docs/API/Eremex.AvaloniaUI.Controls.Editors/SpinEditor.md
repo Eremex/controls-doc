@@ -12,11 +12,16 @@ Represents a spin editor that increments and decrements numeric values.
 public class SpinEditor : ButtonEditor
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SpinEditor](SpinEditor/SpinEditor.md)() | Initializes a new instance of the SpinEditor class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowRoundOutOfRangeValue](SpinEditor/AllowRoundOutOfRangeValue.md) { get; set; } | Gets or sets whether out-of-range values are rounded to the minimum or maximum. |
 | [DecreaseCommand](SpinEditor/DecreaseCommand.md) { get; } | Gets the command that decreases the editor's value. |
 | override [DefaultButtonImage](SpinEditor/DefaultButtonImage.md) { get; } |  |

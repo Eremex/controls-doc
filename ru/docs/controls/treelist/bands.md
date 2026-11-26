@@ -1,10 +1,10 @@
 ---
-title: Группы
+title: Группы колонок
 order: 6900
 seealso: []
 ---
 
-# Группы
+# Группы колонок
 
 Вы можете использовать группы, чтобы визуально объединять колонки. `TreeListControl` отображает группы как дополнительные заголовки над заголовками колонок. Как заголовки групп, так и заголовки колонок могут содержать текст, изображения или пользовательское содержимое. Вы также можете создавать иерархические группы с неограниченным количеством уровней вложенности.
 
@@ -23,9 +23,9 @@ seealso: []
 
 Выполните следующие шаги, чтобы вручную создать группы:
 
-1. Создайте объекты групп (экземпляры класса `TreeListBand`) и добавьте их в коллекцию `TreeListControl.Bands`.
+1. Создайте объекты групп (экземпляры класса [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md)) и добавьте их в коллекцию [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md).
 
-    Присвойте созданным группам уникальные имена с помощью свойства `TreeListBand.BandName`.
+    Присвойте созданным группам уникальные имена с помощью свойства [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md).
 
     ``` xml
     <mxtl:TreeListControl.Bands>
@@ -36,8 +36,8 @@ seealso: []
 
     Вы можете создать иерархическую структуру групп. Чтобы создать вложенные группы:
         
-    - В code-behind: добавьте группы в коллекцию `TreeListBand.Bands`.
-    - В XAML: определите вложенные группы непосредственно между открывающим и закрывающим тегами `TreeListBand`.
+    - В code-behind: добавьте группы в коллекцию [`TreeListBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/Bands.md).
+    - В XAML: определите вложенные группы непосредственно между открывающим и закрывающим тегами [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md).
 
 
     ``` xml
@@ -47,9 +47,9 @@ seealso: []
     </mxtl:TreeListBand>
     ```
 
-    Свойство `TreeListBand.Header` позволяет задать пользовательское содержимое (например, пользовательский текст) для группы. Если это свойство не задано, заголовок группы отображает значение свойства `TreeListBand.BandName`.
+    Свойство [`TreeListBand.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) позволяет задать пользовательское содержимое (например, пользовательский текст) для группы. Если это свойство не задано, заголовок группы отображает значение свойства [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md).
 
-2. Свяжите колонки с определёнными группами, установив свойство `TreeListColumn.BandName` каждой колонки в соответствующее имя группы (`TreeListBand.BandName`).
+2. Свяжите колонки с определёнными группами, установив свойство [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) каждой колонки в соответствующее имя группы ([`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)).
 
     ``` xml
     <mxtl:TreeListControl.Columns>
@@ -60,7 +60,7 @@ seealso: []
     </mxtl:TreeListControl.Columns>
     ```
 
-Колонки располагаются в `TreeListControl` согласно их свойствам `TreeListColumn.VisibleIndex`. Контрол не переупорядочивает колонки автоматически, чтобы сгруппировать их по группам.
+Колонки располагаются в `TreeListControl` согласно их свойствам [`TreeListColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md). Контрол не переупорядочивает колонки автоматически, чтобы сгруппировать их по группам.
 
 <!-- TODO
 
@@ -72,24 +72,24 @@ image
 
 ### Связанный API
 
-- Класс `TreeListBand` — Инкапсулирует группу колонок.
-- `TreeListBand.BandName` — Уникальное имя, используемое для идентификации группы и её связи с колонками.
-- `TreeListColumn.BandName` — Имя группы, связанной с колонкой. Это значение совпадает со значением свойства `TreeListBand.BandName`.
-- `TreeListControl.Bands` — Коллекция корневых групп.
-- `TreeListBand.Bands` — Коллекция дочерних групп для этой группы.
+- Класс [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) — Инкапсулирует группу колонок.
+- [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) — Уникальное имя, используемое для идентификации группы и её связи с колонками.
+- [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) — Имя группы, связанной с колонкой. Это значение совпадает со значением свойства [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md).
+- [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) — Коллекция корневых групп.
+- [`TreeListBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/Bands.md) — Коллекция дочерних групп для этой группы.
 
 ### Пример - Создание групп колонок в контроле TreeList
 
-Следующий пример создаёт группы и назначает их колонкам TreeList, как показано на изображении ниже:
+Этот пример создаёт группы и назначает их колонкам TreeList, как показано на изображении ниже:
 
 [![Thumbnail](../../images/treelist-bands-example800.png)](../../images/treelist-bands-example.png)
 
 - Группы "Employee", "Job", "Personal", "Address" и "Contact" связаны с колонками TreeList.
 - Группа "Details" содержит две вложенные группы ("Address" и "Contact"). Эта группа напрямую не связана с колонками.
 
-Каждой группе присваивается уникальное имя с помощью свойства `TreeListBand.BandName`. Чтобы связать колонки с определённой группой, свойству `TreeListColumn.BandName` присваивается значение `BandName` целевой группы.
+Каждой группе присваивается уникальное имя с помощью свойства [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md). Чтобы связать колонки с определённой группой, свойству [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) присваивается значение `BandName` целевой группы.
 
-Свойство `TreeListControl.Bands` определяет структуру групп. Чтобы создать вложенные группы, определите их как дочерние элементы родительской группы.
+Свойство [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) определяет структуру групп. Чтобы создать вложенные группы, определите их как дочерние элементы родительской группы.
 
 ``` xml
 <!-- MainWindow.axaml file -->
@@ -295,19 +295,19 @@ public static class EmployeeDataGenerator
 
 ## Создание групп из источника групп
 
-Вы можете заполнить группы колонок из источника групп, определённого во View Model. Используйте свойства `TreeListControl.BandsSource` и `TreeListControl.BandTemplate`, чтобы создавать группы из коллекции бизнес-объектов.
+Вы можете заполнить группы колонок из источника групп, определённого во View Model. Используйте свойства [`TreeListControl.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandsSource.md) и [`TreeListControl.BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandTemplate.md), чтобы создавать группы из коллекции бизнес-объектов.
 
-В качестве альтернативы указанию свойства `BandTemplate` вы можете использовать свойство `Styles`, чтобы инициализировать объекты `TreeListBand` из бизнес-объектов. Смотрите пример в разделе [Инициализация групп с помощью стиля](#инициализация-групп-с-помощью-стиля).
+В качестве альтернативы указанию свойства [`BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandTemplate.md) вы можете использовать свойство `Styles`, чтобы инициализировать объекты [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) из бизнес-объектов. Смотрите пример в разделе [Инициализация групп с помощью стиля](#инициализация-групп-с-помощью-стиля).
 
-Чтобы связать колонки с группами, установите свойство `TreeListColumn.BandName` каждой колонки в соответствующее имя группы (`TreeListBand.BandName`).
+Чтобы связать колонки с группами, установите свойство [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) каждой колонки в соответствующее имя группы ([`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)).
 
 ### Связанный API
 
-- `TreeListControl.BandsSource` — Коллекция бизнес-объектов, используемая для создания корневых групп.
-- `TreeListControl.BandTemplate` — Шаблон, создающий экземпляры `TreeListBand` из бизнес-объектов.
-- `TreeListBand.BandsSource` — Коллекция бизнес-объектов, используемая для создания дочерних групп.
-- `TreeListBand.BandName` — Уникальное имя, используемое для идентификации группы и её связи с колонками.
-- `TreeListColumn.BandName` — Имя группы, связанной с колонкой. Это значение совпадает со значением свойства `TreeListBand.BandName`.
+- [`TreeListControl.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandsSource.md) — Коллекция бизнес-объектов, используемая для создания корневых групп.
+- [`TreeListControl.BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandTemplate.md) — Шаблон, создающий экземпляры [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) из бизнес-объектов.
+- [`TreeListBand.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/BandsSource.md) — Коллекция бизнес-объектов, используемая для создания дочерних групп.
+- [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) — Уникальное имя, используемое для идентификации группы и её связи с колонками.
+- [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) — Имя группы, связанной с колонкой. Это значение совпадает со значением свойства [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md).
 
 <!-- TODO
 Example
@@ -315,7 +315,7 @@ Example
 
 ### Инициализация групп с помощью стиля
 
-В качестве альтернативы указанию свойства `BandTemplate` вы можете использовать свойство `Styles`, чтобы инициализировать объекты `TreeListBand` из бизнес-объектов.
+В качестве альтернативы указанию свойства [`BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandTemplate.md) вы можете использовать свойство `Styles`, чтобы инициализировать объекты [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) из бизнес-объектов.
 
 ``` xml
 <mxtl:TreeListControl.Styles>
@@ -333,7 +333,7 @@ Example
 
 Этот подход позволяет использовать атрибуты для связи [автоматически создаваемых колонок](columns.md#автоматическое-создание-колонок) с группами.
 
-Когда автоматическое создание колонок включено (см. `TreeListControl.AutoGenerateColumns`), контрол TreeList может инициализировать параметры колонок из [специальных атрибутов](columns.md#использование-атрибутов-для-настройки-параметров-автоматически-создаваемых-колонок), применённых к свойствам бизнес-объекта.
+Когда автоматическое создание колонок включено (см. [`TreeListControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md)), контрол TreeList может инициализировать параметры колонок из [специальных атрибутов](columns.md#использование-атрибутов-для-настройки-параметров-автоматически-создаваемых-колонок), применённых к свойствам бизнес-объекта.
 Атрибут `System.ComponentModel.DataAnnotations.DisplayAttribute` позволяет связывать автоматически создаваемые колонки с группами. Укажите параметр `DisplayAttribute.GroupName`, чтобы определить имя группы для соответствующей колонки.
 
 ``` cs
@@ -346,11 +346,11 @@ public partial class Order : ObservableObject
 }
 ```
 
-Когда TreeList встречает `DisplayAttribute.GroupName`, он проверяет наличие существующей группы с совпадающим именем (`TreeListBand.BandName`). Если такая группа не найдена, она создаётся и инициализируется следующим образом:
+Когда TreeList встречает `DisplayAttribute.GroupName`, он проверяет наличие существующей группы с совпадающим именем ([`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)). Если такая группа не найдена, она создаётся и инициализируется следующим образом:
 
-- Контрол автоматически создаёт группу и устанавливает её свойство `TreeListBand.BandName` в значение `DisplayAttribute.GroupName`.
-- Группа добавляется в коллекцию `TreeListControl.Bands` контрола. Вложенные группы добавляются в соответствующие коллекции `TreeListBand.Bands`.
-- Созданная группа связывается с автоматически создаваемой колонкой с помощью свойства `TreeListColumn.BandName`.
+- Контрол автоматически создаёт группу и устанавливает её свойство [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) в значение `DisplayAttribute.GroupName`.
+- Группа добавляется в коллекцию [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) контрола. Вложенные группы добавляются в соответствующие коллекции [`TreeListBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/Bands.md).
+- Созданная группа связывается с автоматически создаваемой колонкой с помощью свойства [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md).
 
 Параметр `DisplayAttribute.GroupName` поддерживает вложенные группы. Используйте символ '/' для разделения родительской и дочерней групп (например, "ParentBandName/ChildBandName"). Чтобы включить '/' как буквальный символ, используйте нотацию двойной косой черты ("//").
 
@@ -370,11 +370,11 @@ public partial class Order : ObservableObject
 
 ### Связанный API
 
-- `TreeListControl.AutoGenerateBands` (по умолчанию `true`) — Получает или задаёт, следует ли автоматически создавать группы из атрибутов `DisplayAttribute.GroupName`, применённых к свойствам базового бизнес-объекта. Эти группы затем автоматически связываются с соответствующими автоматически создаваемыми колонками.
+- [`TreeListControl.AutoGenerateBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateBands.md) (по умолчанию `true`) — Получает или задаёт, следует ли автоматически создавать группы из атрибутов `DisplayAttribute.GroupName`, применённых к свойствам базового бизнес-объекта. Эти группы затем автоматически связываются с соответствующими автоматически создаваемыми колонками.
 
-    Автоматическое создание групп (и их связывание с автоматически создаваемыми колонками) принудительно отключается, если `TreeListControl.AutoGenerateColumns` установлено в `false`.
+    Автоматическое создание групп (и их связывание с автоматически создаваемыми колонками) принудительно отключается, если [`TreeListControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md) установлено в `false`.
 
-- `TreeListControl.Bands` и `TreeListBand.Bands` — Вы можете использовать эти коллекции для доступа к автоматически созданным группам.
+- [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) и [`TreeListBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/Bands.md) — Вы можете использовать эти коллекции для доступа к автоматически созданным группам.
 
 <!-- TODO
 Example - Generate bands based on the DisplayAttribute.GroupName parameter
@@ -382,7 +382,7 @@ Example - Generate bands based on the DisplayAttribute.GroupName parameter
 
 ### Порядок колонок и групп
 
-`TreeListControl` располагает колонки согласно их свойствам `TreeListColumn.VisibleIndex`.
+`TreeListControl` располагает колонки согласно их свойствам [`TreeListColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md).
 
 Порядок заголовков групп определяется визуальным порядком колонок.
 Если колонки, связанные с одной и той же группой, расположены рядом друг с другом, их заголовки групп объединяются.
@@ -419,11 +419,11 @@ Example - Generate bands based on the DisplayAttribute.GroupName parameter
 
 ### Перетаскивание колонок
 
-Пользователи могут свободно перетаскивать колонки в пределах контрола, если `TreeListControl.AllowColumnMoving` установлено в `true` (по умолчанию). Если они перетаскивают колонку в другую группу, контрол отрисовывает соответствующий заголовок группы (`TreeListColumn.BandHeader`) над этой колонкой на её новой позиции. Смотрите [Порядок колонок и групп](#порядок-колонок-и-групп).
+Пользователи могут свободно перетаскивать колонки в пределах контрола, если [`TreeListControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnMoving.md) установлено в `true` (по умолчанию). Если они перетаскивают колонку в другую группу, контрол отрисовывает соответствующий заголовок группы (`TreeListColumn.BandHeader`) над этой колонкой на её новой позиции. Смотрите [Порядок колонок и групп](#порядок-колонок-и-групп).
 
 #### Связанный API
 
-- `TreeListControl.AllowColumnMoving` — Получает или задаёт, включены ли операции перетаскивания колонок.
+- [`TreeListControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnMoving.md) — Получает или задаёт, включены ли операции перетаскивания колонок.
 
 ### Перетаскивание групп
 
@@ -435,15 +435,15 @@ Example - Generate bands based on the DisplayAttribute.GroupName parameter
 
 Панель групп отображает заголовки групп. Панель видима, когда любая колонка связана с существующей группой. Используйте следующее свойство, чтобы принудительно скрыть панель групп, когда это необходимо:
 
-- `TreeListControl.ShowBands` — Получает или задаёт, видима ли панель групп.
+- [`TreeListControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBands.md) — Получает или задаёт, видима ли панель групп.
 
 ## Указание содержимого заголовка группы
 
-- `Header` — Получает или задаёт содержимое заголовка группы. Если это свойство не задано, группа отображает значение свойства `TreeListBand.BandName`.
-- `HeaderTemplate` — Получает или задаёт шаблон, используемый для отрисовки объекта `Header`. Шаблон позволяет отображать изображения и пользовательские контролы, а также отображать текст особым образом.
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) — Получает или задаёт содержимое заголовка группы. Если это свойство не задано, группа отображает значение свойства [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md).
+- [`HeaderTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderTemplate.md) — Получает или задаёт шаблон, используемый для отрисовки объекта [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md). Шаблон позволяет отображать изображения и пользовательские контролы, а также отображать текст особым образом.
 
 ### Пример - Отображение изображения в заголовке группы
-Следующий пример отображает SVG-изображение, за которым следует текстовая подпись, в заголовке группы. SVG-изображение (файл `address-location-icon.svg`) находится в папке `Assets` проекта, со свойством `Build Action`, установленным в значение `AvaloniaResource`.
+Этот пример отображает SVG-изображение, за которым следует текстовая подпись, в заголовке группы. SVG-изображение (файл `address-location-icon.svg`) находится в папке `Assets` проекта, со свойством `Build Action`, установленным в значение `AvaloniaResource`.
 
 ![treelist-bandheader-ImageAndText](../../images/treelist-bandheader-ImageAndText.png)
 
@@ -473,7 +473,7 @@ example + image
 
 ## Разделители групп
 
-- `TreeListControl.ShowBandSeparators` — Включает толстые разделители между соседними группами. Используйте это свойство, чтобы подчеркнуть разделение между группами. Если `ShowBandSeparators` отключено, TreeList отрисовывает обычные разделители колонок (тонкие линии) между группами.
+- [`TreeListControl.ShowBandSeparators`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBandSeparators.md) — Включает толстые разделители между соседними группами. Используйте это свойство, чтобы подчеркнуть разделение между группами. Если [`ShowBandSeparators`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBandSeparators.md) отключено, TreeList отрисовывает обычные разделители колонок (тонкие линии) между группами.
 
 <!-- TODO
 The following image demonstrates thick band separators.
@@ -491,7 +491,7 @@ image
 
 ## Всплывающие подсказки заголовков групп
 
-Используйте свойство `HeaderToolTip`, чтобы задать пользовательские всплывающие подсказки для заголовков групп. Пользовательские подсказки отображаются при наведении на заголовки групп независимо от того, обрезан ли текст заголовка группы.
+Используйте свойство [`HeaderToolTip`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderToolTip.md), чтобы задать пользовательские всплывающие подсказки для заголовков групп. Пользовательские подсказки отображаются при наведении на заголовки групп независимо от того, обрезан ли текст заголовка группы.
 
 ``` xml
 <mxtl:TreeListBand BandName="Details" HeaderHorizontalAlignment="Center" HeaderToolTip="Contact and location information">

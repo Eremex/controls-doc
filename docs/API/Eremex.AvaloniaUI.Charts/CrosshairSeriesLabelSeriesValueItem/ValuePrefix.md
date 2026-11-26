@@ -1,7 +1,5 @@
 # CrosshairSeriesLabelSeriesValueItem.ValuePrefix property
 
-Gets the localized prefix that precedes the value text.
-
 **Namespace:** [`Eremex.AvaloniaUI.Charts`](../index.md)  
 **Assembly:** `Eremex.Avalonia.Charts.dll`  
 **NuGet Package:** [Eremex.Avalonia.Controls](https://www.nuget.org/packages/Eremex.Avalonia.Controls)
@@ -9,7 +7,7 @@ Gets the localized prefix that precedes the value text.
 ## Declaration
 
 ```csharp
-public string ValuePrefix { get; }
+public string ValuePrefix { get; set; }
 ```
 
 ## See Also

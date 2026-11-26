@@ -12,7 +12,7 @@ Represents the radial axis of a Smith chart. It displays impedance or admittance
 public class SmithAxisY : Axis
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

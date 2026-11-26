@@ -7,15 +7,15 @@ seealso: []
 # Начало работы с Graphics3DControl
 
 
-Это руководство демонстрирует, как создать 3D-модель и отобразить её в контроле `Graphics3DControl`. Пример использует API, предоставляемый контролом, для определения сеток, вершин и материалов.
+Это руководство демонстрирует, как создать 3D-модель и отобразить её в контроле [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md). Пример использует API, предоставляемый контролом, для определения сеток, вершин и материалов.
 
-Вы можете одновременно отображать несколько 3D-моделей в `Graphics3DControl`. Это руководство создаёт одну 3D-модель. Она состоит из квадрата и двух треугольников, расположенных под прямым углом друг к другу. Каждая фигура отрисовывается с использованием своего материала.
+Вы можете одновременно отображать несколько 3D-моделей в [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md). Это руководство создаёт одну 3D-модель. Она состоит из квадрата и двух треугольников, расположенных под прямым углом друг к другу. Каждая фигура отрисовывается с использованием своего материала.
 
 ![g3d-get-started-result](../../images/g3d-get-started-result.png)
 
 ## Предварительные требования: регистрация визуальной темы для Graphics3DControl
 
-Начиная с версии 1.3, общие настройки внешнего вида для `Graphics3DControl` задаются визуальной темой `Controls3D`. Эти настройки включают выравнивание контрола, состояние фокусируемости, цвет фона и рамки, настройки гизмо и т. д. Визуальная тема `Controls3D` определена в той же сборке, что и сам контрол `Graphics3DControl`. Чтобы обеспечить корректную отрисовку `Graphics3DControl`, вам нужно зарегистрировать эту тему в файле _App.xaml_, как показано ниже:
+Начиная с версии 1.3, общие настройки внешнего вида для [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) задаются визуальной темой `Controls3D`. Эти настройки включают выравнивание контрола, состояние фокусируемости, цвет фона и рамки, настройки гизмо и т. д. Визуальная тема `Controls3D` определена в той же сборке, что и сам контрол [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md). Чтобы обеспечить корректную отрисовку [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md), вам нужно зарегистрировать эту тему в файле _App.xaml_, как показано ниже:
 
 - Откройте файл _App.xaml_ и добавьте следующее пространство имён в объект `Application`:
 
@@ -43,11 +43,11 @@ seealso: []
 
 !!! note
 
-    Если визуальная тема `Controls3D` не зарегистрирована, `Graphics3DControl` будет отображаться пустым.
+    Если визуальная тема `Controls3D` не зарегистрирована, [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) будет отображаться пустым.
 
 ## Создание Graphics3DControl
 
-Создайте контрол `Graphics3DControl` в XAML, используя следующий код:
+Создайте контрол [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) в XAML, используя следующий код:
 
 ``` xml
 xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/controls3d"
@@ -59,13 +59,13 @@ xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/controls3d"
 </mx3d:Graphics3DControl>
 ```
 
-Этот код отображает оси и включает изометрическую камеру для контрола `Graphics3DControl`. Вы также можете включить перспективную камеру. Для этого установите свойство `Graphics3DControl.Camera` в объект `PerspectiveCamera`.
+Этот код отображает оси и включает изометрическую камеру для контрола [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md). Вы также можете включить перспективную камеру. Для этого установите свойство [`Graphics3DControl.Camera`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Camera.md) в объект [`PerspectiveCamera`](../../API/Eremex.AvaloniaUI.Controls3D/PerspectiveCamera.md).
 
 
 
 ## Определение 3D-модели
 
-Класс `GeometryModel3D` инкапсулирует 3D-модель для `Graphics3DControl`. Чтобы добавить 3D-модели в контрол, добавьте один или несколько объектов `GeometryModel3D` в коллекцию `Graphics3DControl.Models`.
+Класс [`GeometryModel3D`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D.md) инкапсулирует 3D-модель для [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md). Чтобы добавить 3D-модели в контрол, добавьте один или несколько объектов [`GeometryModel3D`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D.md) в коллекцию [`Graphics3DControl.Models`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Models.md).
 
 ``` cs
 using Eremex.AvaloniaUI.Controls3D;
@@ -80,7 +80,7 @@ g3DControl.Models.Add(model);
 
 ### Добавление сеток
 
-Используйте коллекцию `GeometryModel3D.Meshes`, чтобы добавлять сетки. Каждая сетка инкапсулируется объектом `MeshGeometry3D`.
+Используйте коллекцию [`GeometryModel3D.Meshes`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Meshes.md), чтобы добавлять сетки. Каждая сетка инкапсулируется объектом [`MeshGeometry3D`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D.md).
 
 ``` cs
 using DynamicData;
@@ -92,21 +92,21 @@ MeshGeometry3D meshSquare = new MeshGeometry3D();
 model.Meshes.AddRange(new[] { meshTriangle1, meshTriangle2, meshSquare });
 ```
 
-`Graphics3DControl` поддерживает три типа сеток:
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) поддерживает три типа сеток:
 
-- Сетка, определяемая коллекцией треугольников (по умолчанию, или когда `MeshGeometry3D.FillType` установлено в `MeshFillType.Triangles`)
-- Сетка, определяемая коллекцией линий (когда `MeshGeometry3D.FillType` установлено в `MeshFillType.Lines`)
-- Сетка, определяемая коллекцией точек (когда `MeshGeometry3D.FillType` установлено в `MeshFillType.Points`)
+- Сетка, определяемая коллекцией треугольников (по умолчанию, или когда [`MeshGeometry3D.FillType`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/FillType.md) установлено в [`MeshFillType.Triangles`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md))
+- Сетка, определяемая коллекцией линий (когда [`MeshGeometry3D.FillType`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/FillType.md) установлено в [`MeshFillType.Lines`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md))
+- Сетка, определяемая коллекцией точек (когда [`MeshGeometry3D.FillType`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/FillType.md) установлено в [`MeshFillType.Points`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md))
 
 В текущем примере сетки создаются из треугольников. Для этого типа сетки вам нужно задать следующие свойства:
 
-- `MeshGeometry3D.Vertices` — массив всех вершин (объектов `Vertex3D`), составляющих сетку. Объект `Vertex3D` предоставляет следующие основные свойства:
+- [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) — массив всех вершин (объектов `Vertex3D`), составляющих сетку. Объект `Vertex3D` предоставляет следующие основные свойства:
 
     - `Vertex3D.Position` — объект `Vector3`, задающий координаты вершины.
     - `Vertex3D.Normal` — объект `Vector3`, задающий нормаль вершины. Нормали вершин — это направленные векторы, используемые для расчёта отражения света для вершин и треугольника.
     - `Vertex3D.TextureCoord` — объект `Vector2`, задающий координаты текстуры для текущей вершины.
 
-- `MeshGeometry3D.Indices` — массив индексов вершин в массиве `Vertices`, определяющих отдельные треугольники сетки. Этот массив содержит группы по три индекса каждая. Первые три индекса в массиве ссылаются на вершины первого треугольника сетки. Следующие три индекса ссылаются на вершины второго треугольника сетки, и так далее.
+- [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) — массив индексов вершин в массиве [`Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md), определяющих отдельные треугольники сетки. Этот массив содержит группы по три индекса каждая. Первые три индекса в массиве ссылаются на вершины первого треугольника сетки. Следующие три индекса ссылаются на вершины второго треугольника сетки, и так далее.
 Порядок индексов для каждого треугольника важен, поскольку он определяет нормаль поверхности. Нормаль поверхности, в свою очередь, определяет переднюю и заднюю стороны треугольника, что существенно для операций вроде отсечения задних и передних граней.
 
 
@@ -147,7 +147,7 @@ meshTriangle1.Vertices = meshTriangle1Vertices;
 meshTriangle1.Indices = meshTriangle1Indices;
 ```
 
-Здесь индексы 0, 1 и 2 ссылаются на первую, вторую и третью вершины в массиве `Vertices`.
+Здесь индексы 0, 1 и 2 ссылаются на первую, вторую и третью вершины в массиве [`Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md).
 
 Аналогично инициализируйте вершины и индексы для фигуры **Triangle 2**:
 
@@ -173,7 +173,7 @@ meshTriangle2.Indices = meshTriangle2Indices;
 ![g3d-get-started-square-triangulation](../../images/g3d-get-started-square-triangulation.png)
 
 
-Массив `Vertices` для сетки **Square** должен содержать четыре точки. Массив `Indices` должен содержать шесть индексов, определяющих два треугольника сетки. 
+Массив [`Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) для сетки **Square** должен содержать четыре точки. Массив [`Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) должен содержать шесть индексов, определяющих два треугольника сетки. 
 
 ``` cs
 Vertex3D[] meshSquareVertices = new Vertex3D[]
@@ -199,24 +199,24 @@ meshSquare.Indices = meshSquareIndices;
 
 ## Задание материалов
 
-Контрол `Graphics3DControl` поддерживает следующие материалы, производные от абстрактного класса `Eremex.AvaloniaUI.Controls3D.Material`:
+Контрол [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) поддерживает следующие материалы, производные от абстрактного класса [`Eremex.AvaloniaUI.Controls3D.Material`](../../API/Eremex.AvaloniaUI.Controls3D/Material.md):
 
-- `SimplePbrMaterial` — материал, описывающий визуальные свойства поверхности числовыми значениями:
+- [`SimplePbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial.md) — материал, описывающий визуальные свойства поверхности числовыми значениями:
 
-    - `Albedo` — базовый цвет
-    - `Alpha` — прозрачность
-    - `Emission` — интенсивность света, излучаемого поверхностью
-    - `AmbientOcclusion` — уровень затенения, вызванного объектами, блокирующими окружающий свет
-    - `Roughness` — гладкость поверхности
-    - `Metallic` — отражательная способность поверхности.
+    - [`Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Albedo.md) — базовый цвет
+    - [`Alpha`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Alpha.md) — прозрачность
+    - [`Emission`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Emission.md) — интенсивность света, излучаемого поверхностью
+    - [`AmbientOcclusion`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/AmbientOcclusion.md) — уровень затенения, вызванного объектами, блокирующими окружающий свет
+    - [`Roughness`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Roughness.md) — гладкость поверхности
+    - [`Metallic`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Metallic.md) — отражательная способность поверхности.
 
-- `TexturedPbrMaterial` — текстурированный материал в формате PBR. Этот материал позволяет задавать визуальные свойства (`Albedo`, `Alpha`, `Emission`, `AmbientOcclusion`, `Roughness`, `Metallic` и `Normal`) поверхности в виде растровых изображений.
+- [`TexturedPbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial.md) — текстурированный материал в формате PBR. Этот материал позволяет задавать визуальные свойства ([`Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Albedo.md), [`Alpha`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Alpha.md), [`Emission`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Emission.md), [`AmbientOcclusion`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/AmbientOcclusion.md), [`Roughness`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Roughness.md), [`Metallic`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Metallic.md) и [`Normal`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Normal.md)) поверхности в виде растровых изображений.
 
-Вам нужно назначить материалам уникальные ключи (строковые значения) с помощью свойства `Material.Key`. 
-Затем вы можете связать материал с сеткой через свойство `MeshGeometry3D.MaterialKey`.
+Вам нужно назначить материалам уникальные ключи (строковые значения) с помощью свойства [`Material.Key`](../../API/Eremex.AvaloniaUI.Controls3D/Material/Key.md). 
+Затем вы можете связать материал с сеткой через свойство [`MeshGeometry3D.MaterialKey`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/MaterialKey.md).
 
 
-Следующий код добавляет три материала (объекта `SimplePbrMaterial`) с определёнными базовыми цветами (`Albedo`). Созданные сетки связываются с материалами с помощью свойства `MaterialKey`.
+Следующий код добавляет три материала (объекта [`SimplePbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial.md)) с определёнными базовыми цветами ([`Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Albedo.md)). Созданные сетки связываются с материалами с помощью свойства [`MaterialKey`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/MaterialKey.md).
 
 ``` cs
 using DynamicData;

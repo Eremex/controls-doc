@@ -25,7 +25,11 @@ xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
 <mxc:CartesianChart x:Name="chartControl">
     <mxc:CartesianChart.Series>
         <mxc:CartesianSeries Name="lineSeries1" DataAdapter="{Binding DataAdapter}" >
-            <mxc:CartesianLineSeriesView Color="Red" MarkerSize="4" ShowMarkers="True" Thickness="2"/>
+            <mxc:CartesianLineSeriesView Color="Red" MarkerSize="4" ShowMarkers="True">
+                <mxc:CartesianLineSeriesView.LineStyle>
+                    <mxc:LineStyle Thickness="2" />
+                </mxc:CartesianLineSeriesView.LineStyle>
+            </mxc:CartesianLineSeriesView>
         </mxc:CartesianSeries>
     </mxc:CartesianChart.Series>
 </mxc:CartesianChart>
@@ -81,10 +85,18 @@ The _X_ and _Y_ axes are created in XAML to perform customization of their setti
     <mxc:CartesianChart x:Name="chartControl">
         <mxc:CartesianChart.Series>
             <mxc:CartesianSeries Name="lineSeries1" DataAdapter="{Binding LineSeries1.DataAdapter}" >
-                <mxc:CartesianLineSeriesView Color="{Binding LineSeries1.Color}" MarkerSize="4" ShowMarkers="True" Thickness="2"/>
+                <mxc:CartesianLineSeriesView Color="{Binding LineSeries1.Color}" MarkerSize="4" ShowMarkers="True">
+                    <mxc:CartesianLineSeriesView.LineStyle>
+                        <mxc:LineStyle Thickness="2" />
+                    </mxc:CartesianLineSeriesView.LineStyle>
+                </mxc:CartesianLineSeriesView>
             </mxc:CartesianSeries>
             <mxc:CartesianSeries Name="lineSeries2" DataAdapter="{Binding LineSeries2.DataAdapter}" >
-                <mxc:CartesianLineSeriesView Color="{Binding LineSeries2.Color}" MarkerSize="4" ShowMarkers="True" Thickness="2"/>
+                <mxc:CartesianLineSeriesView Color="{Binding LineSeries2.Color}" MarkerSize="4" ShowMarkers="True">
+                    <mxc:CartesianLineSeriesView.LineStyle>
+                        <mxc:LineStyle Thickness="2" />
+                    </mxc:CartesianLineSeriesView.LineStyle>
+                </mxc:CartesianLineSeriesView>
             </mxc:CartesianSeries>
         </mxc:CartesianChart.Series>
 

@@ -12,7 +12,7 @@ Defines a container of toolbar items.
 public interface IToolbarItemsHolder
 ```
 
-## Members
+## Properties
 
 | name | description |
 | --- | --- |
@@ -26,6 +26,11 @@ public interface IToolbarItemsHolder
 | [Ribbon](IToolbarItemsHolder/Ribbon.md) { get; } | Gets the ribbon control that contains this object. |
 | [ToolbarDisplayMode](IToolbarItemsHolder/ToolbarDisplayMode.md) { get; } | Gets the display mode of the toolbar item holder. |
 | [Type](IToolbarItemsHolder/Type.md) { get; } | Gets the type of toolbar item holder. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [OnItemAdded](IToolbarItemsHolder/OnItemAdded.md)(…) | Processes the addition of a toolbar item to the holder. |
 | [OnItemRemoved](IToolbarItemsHolder/OnItemRemoved.md)(…) | Processes the removal of a toolbar item from the holder. |
 | [ShowDropTarget](IToolbarItemsHolder/ShowDropTarget.md)(…) | Shows or hides the drop indicator for the specified target. (2 methods) |

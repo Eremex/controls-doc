@@ -17,9 +17,9 @@ seealso: []
 - Возможность: предоставить способность обрабатывать навигационные клавиши (клавиши со стрелками, Tab, Enter, F2, Esc, Home, End, PgUp и PgDown) во встроенных редакторах. 
     
     Контролы grid/treelist перехватывают определённые навигационные клавиши (клавиши со стрелками, Tab, Enter, F2, Esc, Home, End, PgUp и PgDown) для выполнения навигации между ячейками. Чтобы обрабатывать эти клавиши во встроенных редакторах, сделайте следующее:
-    - Создайте класс, реализующий интерфейс `IInplaceEditorNavigationHandler`. 
-    - Реализуйте метод `IInplaceEditorNavigationHandler.NeedsKey`. Метод должен возвращать `true` для клавиш, которые нужно обрабатывать во встроенном редакторе.
-    - Свяжите ваш объект `IInplaceEditorNavigationHandler` с конкретным типом встроенного редактора с помощью статического метода `EditorNavigationHandlers.RegisterHandler`. Например: `EditorNavigationHandlers.RegisterHandler<TextBox, MyTextBoxNavigationHandler>();`.
+    - Создайте класс, реализующий интерфейс [`IInplaceEditorNavigationHandler`](../API/Eremex.AvaloniaUI.Editors.InplaceEditing/IInplaceEditorNavigationHandler.md). 
+    - Реализуйте метод [`IInplaceEditorNavigationHandler.NeedsKey`](../API/Eremex.AvaloniaUI.Editors.InplaceEditing/IInplaceEditorNavigationHandler/NeedsKey.md). Метод должен возвращать `true` для клавиш, которые нужно обрабатывать во встроенном редакторе.
+    - Свяжите ваш объект [`IInplaceEditorNavigationHandler`](../API/Eremex.AvaloniaUI.Editors.InplaceEditing/IInplaceEditorNavigationHandler.md) с конкретным типом встроенного редактора с помощью статического метода [`EditorNavigationHandlers.RegisterHandler`](../API/Eremex.AvaloniaUI.Editors.InplaceEditing/EditorNavigationHandlers/RegisterHandler.md). Например: `EditorNavigationHandlers.RegisterHandler<TextBox, MyTextBoxNavigationHandler>();`.
 
 - Исправлено: когда редактирование ячейки отключено, контрол, помещённый в шаблон ячейки, активируется при щелчке.
 - Исправлено: обновление значения ячейки в отсортированной колонке грида приводит к изменению значений в других ячейках.
@@ -37,7 +37,7 @@ seealso: []
 
 #### Диаграммы
 - Исправлено: сбой перекрестия в некоторых случаях.
-- Исправлено: исключение при использовании `SortedDateTimeDataAdapter` с пустыми данными.
+- Исправлено: исключение при использовании [`SortedDateTimeDataAdapter`](../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) с пустыми данными.
 
 
 ## 1.0.93
@@ -64,7 +64,7 @@ seealso: []
 
 #### Диаграммы
 
-Контрол `PolarChart` — новый контрол диаграммы, который строит диаграмму в полярной системе координат.
+Контрол [`PolarChart`](../API/Eremex.AvaloniaUI.Charts/PolarChart.md) — новый контрол диаграммы, который строит диаграмму в полярной системе координат.
 
 - Перекрестие (Crosshair)
 - Полосы и постоянные линии
@@ -75,7 +75,7 @@ seealso: []
 - Area Series View
 - Range Area Series View
 
-Контрол `SmithChart` — новый контрол, который строит диаграмму Смита.
+Контрол [`SmithChart`](../API/Eremex.AvaloniaUI.Charts/SmithChart.md) — новый контрол, который строит диаграмму Смита.
 
 - Перекрестие (Crosshair)
 - Point Series View
@@ -101,27 +101,27 @@ seealso: []
 
 
 #### Докинг
-* Свойство `DockPane.ShowGlyphMode` — задаёт видимость и положение глифа в заголовке панели.
-* Свойство `DockPane.ShowTabGlyphMode` — задаёт видимость и положение глифа в заголовке панели (вкладке), когда панель размещена в составе группы вкладок.
-- Свойство `FloatGroup.ShowGlyphMode` — задаёт видимость и положение глифа в заголовке плавающего окна.
-- Свойство `DockItemBase.FloatGroup` — позволяет получить плавающее окно (`FloatGroup`), в котором размещён текущий элемент докинга (панель) в плавающем режиме.
-- Свойство `DockItemBase.AutoHideGroup` — позволяет получить контейнер автоскрытия (`AutoHideGroup`), в котором размещён текущий элемент докинга (панель) в режиме автоскрытия.
-- `DockManager.ExpandAutoHidePanel` — разворачивает свёрнутую автоскрытую панель.
-- `DockManager.CollapseAutoHidePanel` — сворачивает развёрнутую автоскрытую панель. 
-- Методы `DockManager.SaveLayout` и `DockManager.RestoreLayout` — позволяют сохранять и восстанавливать размещение контрола в поток и из потока.
+* Свойство [`DockPane.ShowGlyphMode`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/ShowGlyphMode.md) — задаёт видимость и положение глифа в заголовке панели.
+* Свойство [`DockPane.ShowTabGlyphMode`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/ShowTabGlyphMode.md) — задаёт видимость и положение глифа в заголовке панели (вкладке), когда панель размещена в составе группы вкладок.
+- Свойство [`FloatGroup.ShowGlyphMode`](../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/ShowGlyphMode.md) — задаёт видимость и положение глифа в заголовке плавающего окна.
+- Свойство [`DockItemBase.FloatGroup`](../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/FloatGroup.md) — позволяет получить плавающее окно ([`FloatGroup`](../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md)), в котором размещён текущий элемент докинга (панель) в плавающем режиме.
+- Свойство [`DockItemBase.AutoHideGroup`](../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/AutoHideGroup.md) — позволяет получить контейнер автоскрытия ([`AutoHideGroup`](../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md)), в котором размещён текущий элемент докинга (панель) в режиме автоскрытия.
+- [`DockManager.ExpandAutoHidePanel`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ExpandAutoHidePanel.md) — разворачивает свёрнутую автоскрытую панель.
+- [`DockManager.CollapseAutoHidePanel`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/CollapseAutoHidePanel.md) — сворачивает развёрнутую автоскрытую панель. 
+- Методы [`DockManager.SaveLayout`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/SaveLayout.md) и [`DockManager.RestoreLayout`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/RestoreLayout.md) — позволяют сохранять и восстанавливать размещение контрола в поток и из потока.
 
 #### DataGridControl и TreeListControl
 
-- Методы `SaveLayout` и `RestoreLayout` — позволяют сохранять и восстанавливать размещение контрола в поток и из потока.
+- Методы [`SaveLayout`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/SaveLayout.md) и [`RestoreLayout`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/RestoreLayout.md) — позволяют сохранять и восстанавливать размещение контрола в поток и из потока.
 
 #### TreeListControl и TreeViewControl
 
-- Режим фильтра `ShowBranchesWithMatches` — вы можете установить свойство `TreeListControlBase.FilterMode` в `ShowBranchesWithMatches`, чтобы отображать целые ветви, когда они содержат узлы, соответствующие критериям фильтра.
+- Режим фильтра `ShowBranchesWithMatches` — вы можете установить свойство [`TreeListControlBase.FilterMode`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/FilterMode.md) в `ShowBranchesWithMatches`, чтобы отображать целые ветви, когда они содержат узлы, соответствующие критериям фильтра.
 
 #### Редакторы
 
-* Событие `BaseEditor.Validate` — редакторы Eremex теперь поддерживают событие `Validate`, которое позволяет реализовывать пользовательские правила валидации.
-* Метод `BaseEditor.DoValidate` — позволяет принудительно вызвать валидацию.
+* Событие [`BaseEditor.Validate`](../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) — редакторы Eremex теперь поддерживают событие [`Validate`](../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md), которое позволяет реализовывать пользовательские правила валидации.
+* Метод [`BaseEditor.DoValidate`](../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/DoValidate.md) — позволяет принудительно вызвать валидацию.
 
 #### Общие классы
 
@@ -133,8 +133,8 @@ seealso: []
 
 #### DataGridControl и TreeListControl
 * Свойство `ColumnBase.HeaderContentTemplate` переименовано в `HeaderTemplate`
-* Свойство `ColumnBase.HeaderHorizontalContentAlignment` переименовано в `HeaderHorizontalAlignment`
-* Свойство `ColumnBase.HeaderVerticalContentAlignment` переименовано в `HeaderVerticalAlignment`
+* Свойство `ColumnBase.HeaderHorizontalContentAlignment` переименовано в [`HeaderHorizontalAlignment`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderHorizontalAlignment.md)
+* Свойство `ColumnBase.HeaderVerticalContentAlignment` переименовано в [`HeaderVerticalAlignment`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderVerticalAlignment.md)
 
 #### DataGridControl
 * Метод `GetRowIndexBySourceIndex` переименован в `GetRowIndexBySourceItemIndex`
@@ -149,12 +149,12 @@ seealso: []
 
 #### Докинг
 
-* Присоединённое свойство `TabbedGroup.TabHeader` заменено свойством `DockPane.TabHeader`
-* Присоединённое свойство `TabbedGroup.TabHeaderTemplate` заменено свойством `DockPane.TabHeaderTemplate`
-* Присоединённое свойство `TabbedGroup.TabGlyph` заменено свойством `DockPane.TabGlyph`
-* Присоединённое свойство `TabbedGroup.TabGlyphSize` заменено свойством `DockPane.TabGlyphSize`
-* `TabbedGroup.ShowTabPanelForSinglePage` переименовано в `ShowTabStripForSingleChild`
-* Метод `DockManager.Hide` переименован в `DockManager.AutoHide`
+* Присоединённое свойство `TabbedGroup.TabHeader` заменено свойством [`DockPane.TabHeader`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/TabHeader.md)
+* Присоединённое свойство `TabbedGroup.TabHeaderTemplate` заменено свойством [`DockPane.TabHeaderTemplate`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/TabHeaderTemplate.md)
+* Присоединённое свойство `TabbedGroup.TabGlyph` заменено свойством [`DockPane.TabGlyph`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/TabGlyph.md)
+* Присоединённое свойство `TabbedGroup.TabGlyphSize` заменено свойством [`DockPane.TabGlyphSize`](../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/TabGlyphSize.md)
+* `TabbedGroup.ShowTabPanelForSinglePage` переименовано в [`ShowTabStripForSingleChild`](../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup/ShowTabStripForSingleChild.md)
+* Метод `DockManager.Hide` переименован в [`DockManager.AutoHide`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHide.md)
 
 #### Общие классы
 * Класс `SerializationHelper` переименован в `SerializationManager`

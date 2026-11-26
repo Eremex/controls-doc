@@ -22,13 +22,13 @@ seealso: []
  
 ## Назначение пользовательского редактора колонке грида напрямую
  
-Вы можете указать встроенный редактор для колонки грида, назначив `DataTemplate` свойству `GridColumn.CellTemplate`.
+Вы можете указать встроенный редактор для колонки грида, назначив `DataTemplate` свойству [`GridColumn.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md).
 
 - Создайте объект `DataTemplate` с редактором, определённым внутри шаблона.
-- Назначьте `DataTemplate` свойству `CellTemplate`.
+- Назначьте `DataTemplate` свойству [`CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md).
 - При необходимости явно привяжите редактор к значению колонки.
  
-Следующий пример показывает XAML-код, который устанавливает свойство `CellTemplate` колонки грида в объект `TextBox`:
+Этот пример показывает XAML-код, который устанавливает свойство [`CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) колонки грида в объект `TextBox`:
  
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -46,7 +46,7 @@ xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
  
 Если вы используете редактор Eremex внутри `DataTemplate`, вы можете не указывать явную привязку данных к значению колонки для редактора.
 
-Установите свойство `x:Name` в значение **"PART_Editor"** для редактора Eremex, определённого в шаблоне. Это обеспечивает автоматическую привязку значения редактора (`BaseEditor.EditorValue`) к полю колонки. Кроме того, настройки внешнего вида редактора (видимость границы и цвета текста в активном и неактивном состояниях) будут управляться контролом DataGrid.
+Установите свойство `x:Name` в значение **"PART_Editor"** для редактора Eremex, определённого в шаблоне. Это обеспечивает автоматическую привязку значения редактора ([`BaseEditor.EditorValue`](../../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)) к полю колонки. Кроме того, настройки внешнего вида редактора (видимость границы и цвета текста в активном и неактивном состояниях) будут управляться контролом DataGrid.
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -73,7 +73,7 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 
     !!! tip
     
-        Редакторы Eremex — это контролы, производные от класса `Eremex.AvaloniaUI.Controls.Editors.BaseEditor`.
+        Редакторы Eremex — это контролы, производные от класса [`Eremex.AvaloniaUI.Controls.Editors.BaseEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor.md).
 
 - Вам нужно указать пользовательский конвертер значений в выражении привязки данных.
  
@@ -90,11 +90,11 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 
 - Определите редактор внутри `DataTemplate`.
 - Установите свойство `DataTemplate.DataType` равным целевому типу данных.
-- Назначьте созданный шаблон свойству `DataGridControl.CellTemplate`.
+- Назначьте созданный шаблон свойству [`DataGridControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CellTemplate.md).
 
 ### Пример - Как связать встроенный редактор с типом данных колонки
 
-Следующий пример связывает `TextEditor`, отображающий значения зелёным цветом, с колонками, привязанными к полям типа Integer:
+Этот пример связывает [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md), отображающий значения зелёным цветом, с колонками, привязанными к полям типа Integer:
  
 ```xml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -140,10 +140,10 @@ public class CellTemplateLocator : AvaloniaList<IDataTemplate>, IDataTemplate
 }
 ```
  
-- Инициализируйте свойство `DataGridControl.CellTemplate` объектом *CellTemplateLocator*.
+- Инициализируйте свойство [`DataGridControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CellTemplate.md) объектом *CellTemplateLocator*.
 - Заполните объект *CellTemplateLocator* объектами `DataTemplate`, связанными с вашими типами данных.
  
-Следующий пример определяет два объекта `DataTemplate` с редакторами, связанными с типами данных _String_ и _Integer_ соответственно.
+Этот пример определяет два объекта `DataTemplate` с редакторами, связанными с типами данных _String_ и _Integer_ соответственно.
 
 ```xml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"

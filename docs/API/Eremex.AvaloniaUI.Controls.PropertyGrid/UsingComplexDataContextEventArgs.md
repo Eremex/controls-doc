@@ -12,11 +12,16 @@ Provides data for the UsingComplexDataContext event.
 public class UsingComplexDataContextEventArgs : CancelEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [UsingComplexDataContextEventArgs](UsingComplexDataContextEventArgs/UsingComplexDataContextEventArgs.md)(…) | Initializes a new instance of the UsingComplexDataContextEventArgs class with the specified value. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Value](UsingComplexDataContextEventArgs/Value.md) { get; } | Gets the row value that is about to be used as the cell content's DataContext. |
 
 ## See Also

@@ -12,11 +12,16 @@ Represents an editor that allows users to select a date.
 public class DateEditor : PopupEditor
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DateEditor](DateEditor/DateEditor.md)() | Initializes a new instance of the DateEditor class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [DateTime](DateEditor/DateTime.md) { get; set; } | Gets or sets the selected date. |
 | override [DefaultButtonImage](DateEditor/DefaultButtonImage.md) { get; } | Gets the default image displayed in the editor's popup button. |
 | [FirstDayOfWeek](DateEditor/FirstDayOfWeek.md) { get; set; } | Gets or sets the first day of the week in the calendar. |

@@ -12,11 +12,16 @@ Defines a numeric scale that is linear by default and can be switched to a logar
 public class NumericScaleOptions : LinearNumericScaleOptions
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [NumericScaleOptions](NumericScaleOptions/NumericScaleOptions.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [GridCalculator](NumericScaleOptions/GridCalculator.md) { get; set; } | Gets or sets the calculator that supplies the positions of the axis gridlines and tickmarks. |
 | [LogarithmicBase](NumericScaleOptions/LogarithmicBase.md) { get; set; } | Gets or sets the base of the logarithmic scale. If the value is null, the scale is linear. |
 

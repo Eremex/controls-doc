@@ -1,10 +1,10 @@
 ---
-title: Bands
+title: 带区
 order: 6900
 seealso: []
 ---
 
-# Bands
+# 带区 {#bands}
 
 您可以使用列组（Column Band）在视觉上将列组合在一起。TreeListControl 会将列组显示为列标题上方的额外标题。列组标题和列标题都可以包含文本、图像或自定义内容。您还可以创建具有无限嵌套层级的分层列组。
 
@@ -19,13 +19,13 @@ seealso: []
 - [根据 DataAnnotation 特性创建列组（用于自动生成的列）](#generate-bands-based-on-dataannotation-attributes-for-auto-generated-columns)
 
 
-## 手动创建列组
+## 手动创建列组 {#create-bands-manually}
 
 请按照以下步骤手动创建列组：
 
-1. 创建列组对象（`TreeListBand` 类的实例）并将其添加到 `TreeListControl.Bands` 集合中。
+1. 创建列组对象（[`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) 类的实例）并将其添加到 [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) 集合中。
 
-    使用 `TreeListBand.BandName` 属性为创建的列组指定唯一名称。
+    使用 [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性为创建的列组指定唯一名称。
 
     ``` xml
     <mxtl:TreeListControl.Bands>
@@ -36,8 +36,8 @@ seealso: []
 
     您可以创建分层的列组结构。要创建嵌套列组：
 
-    - 在代码后置文件（code-behind）中：将列组添加到 `TreeListBand.Bands` 集合中。
-    - 在 XAML 中：在开始和结束 `TreeListBand` 标签之间直接定义嵌套列组。
+    - 在代码后置文件（code-behind）中：将列组添加到 [`TreeListBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/Bands.md) 集合中。
+    - 在 XAML 中：在开始和结束 [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) 标签之间直接定义嵌套列组。
 
 
     ``` xml
@@ -47,9 +47,9 @@ seealso: []
     </mxtl:TreeListBand>
     ```
 
-    `TreeListBand.Header` 属性允许您为列组指定自定义内容（例如自定义文本）。如果未设置此属性，列组标题将显示 `TreeListBand.BandName` 属性的值。
+    [`TreeListBand.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) 属性允许您为列组指定自定义内容（例如自定义文本）。如果未设置此属性，列组标题将显示 [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性的值。
 
-2. 通过将每个列的 `TreeListColumn.BandName` 属性设置为对应的列组名称（`TreeListBand.BandName`），将列与特定列组关联起来。
+2. 通过将每个列的 [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) 属性设置为对应的列组名称（[`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)），将列与特定列组关联起来。
 
     ``` xml
     <mxtl:TreeListControl.Columns>
@@ -60,7 +60,7 @@ seealso: []
     </mxtl:TreeListControl.Columns>
     ```
 
-TreeListControl 会根据列的 `TreeListColumn.VisibleIndex` 属性排列列。控件不会自动重新排列列以按列组分组。
+TreeListControl 会根据列的 [`TreeListColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) 属性排列列。控件不会自动重新排列列以按列组分组。
 
 <!-- TODO
 
@@ -70,15 +70,15 @@ image
 
 参阅[列和列组的顺序](#order-of-columns-and-bands)
 
-### 相关 API
+### 相关 API {#related-api}
 
-- `TreeListBand` 类 —— 封装一个列组。
-- `TreeListBand.BandName` —— 用于标识列组并将其与列关联的唯一名称。
-- `TreeListColumn.BandName` —— 与该列关联的列组名称。此值与 `TreeListBand.BandName` 属性的值相匹配。
-- `TreeListControl.Bands` —— 根列组的集合。
-- `TreeListBand.Bands` —— 此列组的子列组集合。
+- [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) 类 —— 封装一个列组。
+- [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) —— 用于标识列组并将其与列关联的唯一名称。
+- [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) —— 与该列关联的列组名称。此值与 [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性的值相匹配。
+- [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) —— 根列组的集合。
+- [`TreeListBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/Bands.md) —— 此列组的子列组集合。
 
-### 示例 - 在 TreeList 控件中创建列组
+### 示例 - 在 TreeList 控件中创建列组 {#example-create-column-bands-in-a-treelist-control}
 
 以下示例创建列组并将其分配给 TreeList 列，如下图所示：
 
@@ -87,9 +87,9 @@ image
 - "Employee"、"Job"、"Personal"、"Address" 和 "Contact" 列组与 TreeList 列相关联。
 - "Details" 列组拥有两个嵌套列组（"Address" 和 "Contact"）。此列组不直接与列关联。
 
-每个列组都通过 `TreeListBand.BandName` 属性分配了唯一名称。要将列链接到特定列组，需将 `TreeListColumn.BandName` 属性设置为目标列组的 `BandName` 值。
+每个列组都通过 [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性分配了唯一名称。要将列链接到特定列组，需将 [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) 属性设置为目标列组的 `BandName` 值。
 
-`TreeListControl.Bands` 属性定义了列组的结构。要创建嵌套列组，请将其定义为父列组的子元素。
+[`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) 属性定义了列组的结构。要创建嵌套列组，请将其定义为父列组的子元素。
 
 ``` xml
 <!-- MainWindow.axaml file -->
@@ -293,29 +293,29 @@ public static class EmployeeDataGenerator
 }
 ```
 
-## 根据列组数据源创建列组
+## 根据列组数据源创建列组 {#generate-bands-from-a-band-source}
 
-您可以从视图模型（View Model）中定义的列组数据源填充列组。使用 `TreeListControl.BandsSource` 和 `TreeListControl.BandTemplate` 属性从业务对象集合生成列组。
+您可以从视图模型（View Model）中定义的列组数据源填充列组。使用 [`TreeListControl.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandsSource.md) 和 [`TreeListControl.BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandTemplate.md) 属性从业务对象集合生成列组。
 
-除了指定 `BandTemplate` 属性外，您还可以使用 `Styles` 属性从业务对象初始化 `TreeListBand` 对象。相关示例请参阅[使用样式初始化列组](#initialize-bands-using-a-style)。
+除了指定 [`BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandTemplate.md) 属性外，您还可以使用 `Styles` 属性从业务对象初始化 [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) 对象。相关示例请参阅[使用样式初始化列组](#initialize-bands-using-a-style)。
 
-要将列与列组关联，请将每个列的 `TreeListColumn.BandName` 设置为对应的列组名称（`TreeListBand.BandName`）。
+要将列与列组关联，请将每个列的 [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) 设置为对应的列组名称（[`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)）。
 
-### 相关 API
+### 相关 API {#related-api_1}
 
-- `TreeListControl.BandsSource` —— 用于生成根列组的业务对象集合。
-- `TreeListControl.BandTemplate` —— 用于从业务对象创建 `TreeListBand` 实例的模板。
-- `TreeListBand.BandsSource` —— 用于生成子列组的业务对象集合。
-- `TreeListBand.BandName` —— 用于标识列组并将其与列关联的唯一名称。
-- `TreeListColumn.BandName` —— 与该列关联的列组名称。此值与 `TreeListBand.BandName` 属性的值相匹配。
+- [`TreeListControl.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandsSource.md) —— 用于生成根列组的业务对象集合。
+- [`TreeListControl.BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandTemplate.md) —— 用于从业务对象创建 [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) 实例的模板。
+- [`TreeListBand.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/BandsSource.md) —— 用于生成子列组的业务对象集合。
+- [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) —— 用于标识列组并将其与列关联的唯一名称。
+- [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) —— 与该列关联的列组名称。此值与 [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性的值相匹配。
 
 <!-- TODO
 Example
  -->
 
-### 使用样式初始化列组
+### 使用样式初始化列组 {#initialize-bands-using-a-style}
 
-除了指定 `BandTemplate` 属性外，您还可以使用 `Styles` 属性从业务对象初始化 `TreeListBand` 对象。
+除了指定 [`BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/BandTemplate.md) 属性外，您还可以使用 `Styles` 属性从业务对象初始化 [`TreeListBand`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand.md) 对象。
 
 ``` xml
 <mxtl:TreeListControl.Styles>
@@ -329,11 +329,11 @@ Example
 
 有关使用 `BandsSource` 和 `Styles` 属性的示例，请参阅 "Column Bands" 演示。
 
-## 根据 DataAnnotation 特性创建列组（用于自动生成的列）
+## 根据 DataAnnotation 特性创建列组（用于自动生成的列） {#generate-bands-based-on-dataannotation-attributes-for-auto-generated-columns}
 
 此方法允许您使用特性将[自动生成的列](columns.md#automatic-column-generation)与列组关联起来。
 
-启用列自动生成后（参阅 `TreeListControl.AutoGenerateColumns`），TreeList 控件可以从应用于业务对象属性的[专用特性](columns.md#use-attributes-to-customize-settings-of-auto-generated-columns)初始化列设置。
+启用列自动生成后（参阅 [`TreeListControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md)），TreeList 控件可以从应用于业务对象属性的[专用特性](columns.md#use-attributes-to-customize-settings-of-auto-generated-columns)初始化列设置。
 `System.ComponentModel.DataAnnotations.DisplayAttribute` 特性允许您将自动生成的列与列组关联。指定 `DisplayAttribute.GroupName` 参数以定义对应列的列组名称。
 
 ``` cs
@@ -346,11 +346,11 @@ public partial class Order : ObservableObject
 }
 ```
 
-当 TreeList 遇到 `DisplayAttribute.GroupName` 时，会检查是否存在名称匹配的列组（`TreeListBand.BandName`）。如果未找到这样的列组，将按以下方式创建并初始化该列组：
+当 TreeList 遇到 `DisplayAttribute.GroupName` 时，会检查是否存在名称匹配的列组（[`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)）。如果未找到这样的列组，将按以下方式创建并初始化该列组：
 
-- 控件会自动创建列组，并将其 `TreeListBand.BandName` 属性设置为 `DisplayAttribute.GroupName` 的值。
-- 该列组会被添加到控件的 `TreeListControl.Bands` 集合中。嵌套列组会被添加到相应的 `TreeListBand.Bands` 集合中。
-- 创建的列组会通过 `TreeListColumn.BandName` 属性与自动生成的列关联。
+- 控件会自动创建列组，并将其 [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性设置为 `DisplayAttribute.GroupName` 的值。
+- 该列组会被添加到控件的 [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) 集合中。嵌套列组会被添加到相应的 [`TreeListBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/Bands.md) 集合中。
+- 创建的列组会通过 [`TreeListColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) 属性与自动生成的列关联。
 
 `DisplayAttribute.GroupName` 参数支持嵌套列组。使用字符 '/' 分隔父列组和子列组（例如 "ParentBandName/ChildBandName"）。要将 '/' 作为字面字符使用，请使用双斜杠（"//"）表示法。
 
@@ -368,21 +368,21 @@ public partial class Order : ObservableObject
 }
 ```
 
-### 相关 API
+### 相关 API {#related-api_2}
 
-- `TreeListControl.AutoGenerateBands`（默认为 `true`）—— 获取或设置是否根据应用于底层业务对象属性的 `DisplayAttribute.GroupName` 特性自动生成列组。这些列组随后会自动链接到相应的自动生成列。
+- [`TreeListControl.AutoGenerateBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateBands.md)（默认为 `true`）—— 获取或设置是否根据应用于底层业务对象属性的 `DisplayAttribute.GroupName` 特性自动生成列组。这些列组随后会自动链接到相应的自动生成列。
 
-    如果 `TreeListControl.AutoGenerateColumns` 为 `false`，则自动列组生成（以及将列组链接到自动生成列）会被强制禁用。
+    如果 [`TreeListControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AutoGenerateColumns.md) 为 `false`，则自动列组生成（以及将列组链接到自动生成列）会被强制禁用。
 
-- `TreeListControl.Bands` 和 `TreeListBand.Bands` —— 您可以使用这些集合来访问自动生成的列组。
+- [`TreeListControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Bands.md) 和 [`TreeListBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListBand/Bands.md) —— 您可以使用这些集合来访问自动生成的列组。
 
 <!-- TODO
 Example - Generate bands based on the DisplayAttribute.GroupName parameter
  -->
 
-### 列和列组的顺序
+### 列和列组的顺序 {#order-of-columns-and-bands}
 
-TreeListControl 会根据列的 `TreeListColumn.VisibleIndex` 属性排列列。
+TreeListControl 会根据列的 [`TreeListColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) 属性排列列。
 
 列组标题的顺序由列的视觉顺序决定。
 如果链接到同一列组的列彼此相邻放置，它们的列组标题会被合并。
@@ -415,34 +415,34 @@ TreeListControl 会根据列的 `TreeListColumn.VisibleIndex` 属性排列列。
 
 
 
-## 拖放操作
+## 拖放操作 {#drag-and-drop-operations}
 
-### 列的拖放
+### 列的拖放 {#column-drag-and-drop}
 
-如果 `TreeListControl.AllowColumnMoving` 为 `true`（默认值），用户可以在控件内自由拖放列。如果用户将某列拖到不同的列组中，控件会在该列的新位置上方绘制相应的列组标题（`TreeListColumn.BandHeader`）。参阅[列和列组的顺序](#order-of-columns-and-bands)。
+如果 [`TreeListControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnMoving.md) 为 `true`（默认值），用户可以在控件内自由拖放列。如果用户将某列拖到不同的列组中，控件会在该列的新位置上方绘制相应的列组标题（`TreeListColumn.BandHeader`）。参阅[列和列组的顺序](#order-of-columns-and-bands)。
 
-#### 相关 API
+#### 相关 API {#related-api_3}
 
-- `TreeListControl.AllowColumnMoving` —— 获取或设置是否启用列的拖放操作。
+- [`TreeListControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnMoving.md) —— 获取或设置是否启用列的拖放操作。
 
-### 列组的拖放
+### 列组的拖放 {#band-drag-and-drop}
 
 TreeList 控件不支持对列组进行拖放操作。
 
 
 
-## 显示和隐藏列组面板
+## 显示和隐藏列组面板 {#show-and-hide-the-band-panel}
 
 列组面板用于显示列组标题。当任意一列与现有列组关联时，该面板即为可见。如需强制隐藏列组面板，请使用以下属性：
 
-- `TreeListControl.ShowBands` —— 获取或设置列组面板是否可见。
+- [`TreeListControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBands.md) —— 获取或设置列组面板是否可见。
 
-## 指定列组标题内容
+## 指定列组标题内容 {#specify-band-header-content}
 
-- `Header` —— 获取或设置列组标题的内容。如果未设置此属性，列组将显示 `TreeListBand.BandName` 属性的值。
-- `HeaderTemplate` —— 获取或设置用于渲染 `Header` 对象的模板。该模板允许您显示图像和自定义控件，并以自定义方式渲染文本。
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) —— 获取或设置列组标题的内容。如果未设置此属性，列组将显示 [`TreeListBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性的值。
+- [`HeaderTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderTemplate.md) —— 获取或设置用于渲染 [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) 对象的模板。该模板允许您显示图像和自定义控件，并以自定义方式渲染文本。
 
-### 示例 - 在列组标题中显示图像
+### 示例 - 在列组标题中显示图像 {#example-display-an-image-in-a-band-header}
 以下示例在列组标题中显示一个 SVG 图像，后面跟着一段文字说明。SVG 图像（`address-location-icon.svg` 文件）位于项目的 `Assets` 文件夹中，其 `Build Action` 属性设置为 `AvaloniaResource`。
 
 ![treelist-bandheader-ImageAndText](../../images/treelist-bandheader-ImageAndText.png)
@@ -463,7 +463,7 @@ xmlns:svg="using:Avalonia.Svg.Skia"
 </mxtl:TreeListControl.Bands>
 ```
 
-## 空白列组标题
+## 空白列组标题 {#blank-band-header}
 
 未与任何现有列组关联的列会显示在一个空白列组标题下方。
 
@@ -471,9 +471,9 @@ xmlns:svg="using:Avalonia.Svg.Skia"
 example + image
  -->
 
-## 列组分隔线
+## 列组分隔线 {#band-separators}
 
-- `TreeListControl.ShowBandSeparators` —— 在相邻列组之间启用粗分隔线。使用此属性可以强调列组之间的分隔。如果禁用 `ShowBandSeparators`，TreeList 会在列组之间绘制普通的列分隔线（细线）。
+- [`TreeListControl.ShowBandSeparators`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBandSeparators.md) —— 在相邻列组之间启用粗分隔线。使用此属性可以强调列组之间的分隔。如果禁用 [`ShowBandSeparators`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowBandSeparators.md)，TreeList 会在列组之间绘制普通的列分隔线（细线）。
 
 <!-- TODO
 The following image demonstrates thick band separators.
@@ -481,7 +481,7 @@ The following image demonstrates thick band separators.
 image
  -->
 
-## 隐藏列组
+## 隐藏列组 {#hide-bands}
 
 列组对象没有 'Visible' 属性。要隐藏某个列组，您应该隐藏与该列组关联的列。
 
@@ -489,9 +489,9 @@ image
 
 
 
-## 列组标题工具提示
+## 列组标题工具提示 {#band-header-tooltips}
 
-使用 `HeaderToolTip` 属性为列组标题指定自定义工具提示。无论列组标题文本是否被截断，鼠标悬停在列组标题上时都会显示自定义工具提示。
+使用 [`HeaderToolTip`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderToolTip.md) 属性为列组标题指定自定义工具提示。无论列组标题文本是否被截断，鼠标悬停在列组标题上时都会显示自定义工具提示。
 
 ``` xml
 <mxtl:TreeListBand BandName="Details" HeaderHorizontalAlignment="Center" HeaderToolTip="Contact and location information">

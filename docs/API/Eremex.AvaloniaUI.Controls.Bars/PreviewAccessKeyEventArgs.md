@@ -12,11 +12,16 @@ Provides data for the event raised before a toolbar access key is processed.
 public class PreviewAccessKeyEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PreviewAccessKeyEventArgs](PreviewAccessKeyEventArgs/PreviewAccessKeyEventArgs.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AccessKey](PreviewAccessKeyEventArgs/AccessKey.md) { get; set; } | Gets or sets the access key being processed. |
 | [KeyEventArgs](PreviewAccessKeyEventArgs/KeyEventArgs.md) { get; } | Gets the keyboard event associated with the access key. |
 

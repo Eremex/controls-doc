@@ -12,7 +12,7 @@ Serves as the base class for the numeric scale options that support linear and l
 public abstract class LinearNumericScaleOptions : ScaleOptions
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

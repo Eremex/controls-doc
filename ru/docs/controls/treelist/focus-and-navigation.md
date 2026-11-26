@@ -10,7 +10,7 @@ seealso: []
 ## Режимы навигации по ячейкам и строкам
 
 Поведение по умолчанию элемента управления TreeList позволяет пользователям перемещаться между ячейками с помощью клавиатуры или фокусировать их с помощью мыши.
-Используйте свойство `TreeListControl.NavigationMode`, чтобы переключаться между режимами навигации по ячейкам (Cell Navigation) и по строкам (Row Navigation).
+Используйте свойство [`TreeListControl.NavigationMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/NavigationMode.md), чтобы переключаться между режимами навигации по ячейкам (Cell Navigation) и по строкам (Row Navigation).
 
 **Навигация по ячейкам (Cell Navigation)** (по умолчанию)
 
@@ -32,7 +32,7 @@ seealso: []
 
 ## Фокусированная колонка
 
-Используйте свойство `TreeListControl.FocusedColumn`, чтобы получить фокусированную колонку. Чтобы переместить фокус на определённую колонку, присвойте свойству `FocusedColumn` соответствующий объект `TreeListColumn`.
+Используйте свойство [`TreeListControl.FocusedColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/FocusedColumn.md), чтобы получить фокусированную колонку. Чтобы переместить фокус на определённую колонку, присвойте свойству [`FocusedColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/FocusedColumn.md) соответствующий объект [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md).
 
 !!! note
 
@@ -40,9 +40,9 @@ seealso: []
 
 ## Фокусированный узел (строка)
 
-Используйте свойство `TreeListControlBase.FocusedNode`, чтобы получить доступ к текущему фокусированному узлу (узлу, который получает события клавиатуры). Чтобы получить данные (бизнес-объект) фокусированного узла, используйте унаследованное свойство `DataControlBase.FocusedItem`.
+Используйте свойство [`TreeListControlBase.FocusedNode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/FocusedNode.md), чтобы получить доступ к текущему фокусированному узлу (узлу, который получает события клавиатуры). Чтобы получить данные (бизнес-объект) фокусированного узла, используйте унаследованное свойство [`DataControlBase.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md).
 
-Событие `TreeListControlBase.FocusedNodeChanged` позволяет реагировать на перемещение фокуса между узлами.
+Событие [`TreeListControlBase.FocusedNodeChanged`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/FocusedNodeChanged.md) позволяет реагировать на перемещение фокуса между узлами.
 
 
 ## Фокусированная ячейка

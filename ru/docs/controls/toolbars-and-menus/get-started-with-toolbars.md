@@ -26,7 +26,7 @@ seealso: []
 
 ## 2. Добавление компонента ToolbarManager
 
-Начните с определения компонента `ToolbarManager` в XAML. 
+Начните с определения компонента [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) в XAML. 
 
 ``` xml
 <mx:MxWindow ...
@@ -53,16 +53,16 @@ seealso: []
 </mx:MxWindow>
 ```
 
-`ToolbarManager` — это основной компонент, управляющий панелями инструментов, контекстными меню и элементами меню. Компонент обрабатывает сочетания клавиш, вызывает команды, связанные с соответствующими элементами, поддерживает настройку панелей во время работы и выполняет сериализацию и десериализацию интерфейса панелей.
+[`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) — это основной компонент, управляющий панелями инструментов, контекстными меню и элементами меню. Компонент обрабатывает сочетания клавиш, вызывает команды, связанные с соответствующими элементами, поддерживает настройку панелей во время работы и выполняет сериализацию и десериализацию интерфейса панелей.
 
-Компонент `ToolbarManager` должен оборачивать клиентский контрол (контролы), для которого создаётся интерфейс панелей инструментов.
+Компонент [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) должен оборачивать клиентский контрол (контролы), для которого создаётся интерфейс панелей инструментов.
 
 
 ## 3. Создание контейнеров панелей инструментов
 
-Чтобы позволить закреплять панель инструментов в определённой позиции в окне/UserControl, сначала создайте контейнер панелей инструментов (`ToolbarContainerControl`). Контейнер панелей — это контрол, отображающий панели в закреплённом состоянии и поддерживающий операции перетаскивания панелей.
+Чтобы позволить закреплять панель инструментов в определённой позиции в окне/UserControl, сначала создайте контейнер панелей инструментов ([`ToolbarContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl.md)). Контейнер панелей — это контрол, отображающий панели в закреплённом состоянии и поддерживающий операции перетаскивания панелей.
 
-В XAML создайте четыре контейнера панелей (объекта `ToolbarContainerControl`) вдоль верхнего, нижнего, левого и правого краёв окна. После этого вы сможете закреплять панели в этих позициях.  
+В XAML создайте четыре контейнера панелей (объекта [`ToolbarContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl.md)) вдоль верхнего, нижнего, левого и правого краёв окна. После этого вы сможете закреплять панели в этих позициях.  
 
 ![toolbars-get-started-empty=toolbarcontainers](../../images/toolbars-get-started-empty=toolbarcontainers.png)
 
@@ -92,15 +92,15 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ### Опции контейнера панелей инструментов
 
-Основная настройка `ToolbarContainerControl` — `ToolbarContainerControl.DockType`, которая задаёт, как контейнер закрепляется к своему родителю. Вы можете установить свойство `DockType` в `Left`, `Right`, `Top`, `Bottom` и `Standalone`. 
+Основная настройка [`ToolbarContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl.md) — [`ToolbarContainerControl.DockType`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl/DockType.md), которая задаёт, как контейнер закрепляется к своему родителю. Вы можете установить свойство [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) в `Left`, `Right`, `Top`, `Bottom` и `Standalone`. 
 
-Настройка `DockType` определяет видимость рамки контейнера и выравнивание вложенных панелей по умолчанию. Например, если опция `DockType` контейнера — `Left`, контейнер рисует рамку у правого края и располагает вложенные панели вертикально. Изображение ниже демонстрирует контейнер панелей, у которого опция `DockType` установлена в `Left`. Дочерние панели ориентированы вертикально в соответствии с настройкой `DockType`.
+Настройка [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) определяет видимость рамки контейнера и выравнивание вложенных панелей по умолчанию. Например, если опция [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) контейнера — `Left`, контейнер рисует рамку у правого края и располагает вложенные панели вертикально. Изображение ниже демонстрирует контейнер панелей, у которого опция [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) установлена в `Left`. Дочерние панели ориентированы вертикально в соответствии с настройкой [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md).
 
 ![toolbars-get-started-toolbarcontainer-docktype-left](../../images/toolbars-get-started-toolbarcontainer-docktype-left.png)
 
 ## 4. Создание панелей инструментов
 
-Добавьте панели инструментов (объекты `Toolbar`) в нужные контейнеры панелей. 
+Добавьте панели инструментов (объекты [`Toolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar.md)) в нужные контейнеры панелей. 
 
 ![toolbars-get-started-empty-toolbars](../../images/toolbars-get-started-empty-toolbars.png)
 
@@ -149,7 +149,7 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ### Задание главного меню и строки состояния
 
-Чтобы указать, что панель является главным меню или строкой состояния, установите её свойство `Toolbar.DisplayMode` в `MainMenu` и `StatusBar` соответственно.
+Чтобы указать, что панель является главным меню или строкой состояния, установите её свойство [`Toolbar.DisplayMode`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/DisplayMode.md) в `MainMenu` и `StatusBar` соответственно.
 
 ``` xml
 <mxb:Toolbar x:Name="MainMenu" ToolbarName="Main Menu" DisplayMode="MainMenu">
@@ -162,34 +162,34 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ### Опции панели инструментов
 
-Объекты `Toolbar` предоставляют множество опций для настройки их отображения, компоновки и поведения. Некоторые из этих опций:
+Объекты [`Toolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar.md) предоставляют множество опций для настройки их отображения, компоновки и поведения. Некоторые из этих опций:
 
-- `ToolbarName` — отображаемое имя панели. Имена панелей отображаются в окне настройки, а также когда панель находится в плавающем состоянии.
+- [`ToolbarName`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/ToolbarName.md) — отображаемое имя панели. Имена панелей отображаются в окне настройки, а также когда панель находится в плавающем состоянии.
     
     ![toolbars-get-started-toolbarname](../../images/toolbars-get-started-toolbarname.png)
     
-- `ShowCustomizationButton` — задаёт видимость кнопки настройки, используемой для активации режима настройки и открытия окна настройки.
+- [`ShowCustomizationButton`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/ShowCustomizationButton.md) — задаёт видимость кнопки настройки, используемой для активации режима настройки и открытия окна настройки.
     
     ![toolbars-get-started-customization-button](../../images/toolbars-get-started-customization-button.png)
 
-- `AllowDragToolbar` — задаёт видимость маркера перетаскивания, позволяющего пользователям перетаскивать панель.
+- [`AllowDragToolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/AllowDragToolbar.md) — задаёт видимость маркера перетаскивания, позволяющего пользователям перетаскивать панель.
     
     ![toolbars-get-started-customization-drag-thumb](../../images/toolbars-get-started-customization-drag-thumb.png)
 
-- `DockType` — это свойство позволяет переместить панель в конкретный контейнер в code-behind или сделать панель плавающей.
-- `StretchToolbar` — включает растягивание панели. В этом режиме никакая другая панель не может отображаться в той же строке.
-- `WrapItems` — включает многострочную компоновку панели.
+- [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) — это свойство позволяет переместить панель в конкретный контейнер в code-behind или сделать панель плавающей.
+- [`StretchToolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/StretchToolbar.md) — включает растягивание панели. В этом режиме никакая другая панель не может отображаться в той же строке.
+- [`WrapItems`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/WrapItems.md) — включает многострочную компоновку панели.
 
 
 ## 5. Создание элементов панели инструментов
 
-Следующий шаг — заполнить панели элементами: обычными кнопками, кнопками-флажками, встроенными редакторами, подменю и текстовыми элементами. Элементы панели инкапсулируются классами, производными от класса `ToolbarItem`, который предоставляет общие опции элементов панели.
+Следующий шаг — заполнить панели элементами: обычными кнопками, кнопками-флажками, встроенными редакторами, подменю и текстовыми элементами. Элементы панели инкапсулируются классами, производными от класса [`ToolbarItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem.md), который предоставляет общие опции элементов панели.
 
 Это руководство создаёт следующие элементы панели:
 
 ### ToolbarButtonItem
 
-Обычная кнопка, вызывающая команду, заданную свойством `Command`. 
+Обычная кнопка, вызывающая команду, заданную свойством [`Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md). 
 
 ![toolbars-get-started-ToolbarButtonItem](../../images/toolbars-get-started-ToolbarButtonItem.png)
 
@@ -208,24 +208,24 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 #### Общие опции элементов панели инструментов
 
-Базовый класс `ToolbarItem` предоставляет общие опции, наследуемые всеми элементами панели. Некоторые из этих опций:
+Базовый класс [`ToolbarItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem.md) предоставляет общие опции, наследуемые всеми элементами панели. Некоторые из этих опций:
 
-- `Alignment` — выравнивание элемента внутри панели.        
-- `Category` — категория, к которой относится элемент. Категории используются для организации элементов в логические группы в окне настройки.
-- `Command` — команда, выполняемая при щелчке по кнопке.
-- `CommandParameter` — параметр команды, передаваемый заданной команде.
-- `DisplayMode` — возвращает, отображать ли только глиф, только заголовок или оба.
-- `Header` — отображаемый текст элемента. 
-- `Glyph` — изображение элемента.
-- `GlyphAlignment` — выравнивание глифа относительно заголовка элемента.
-- `GlyphSize` — размер отображения глифа.
-- `ShowSeparator` — позволяет отображать разделитель перед элементом.
+- [`Alignment`](../../API/Eremex.AvaloniaUI.Controls.Bars/Alignment.md) — выравнивание элемента внутри панели.        
+- [`Category`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Category.md) — категория, к которой относится элемент. Категории используются для организации элементов в логические группы в окне настройки.
+- [`Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md) — команда, выполняемая при щелчке по кнопке.
+- [`CommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/CommandParameter.md) — параметр команды, передаваемый заданной команде.
+- [`DisplayMode`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/DisplayMode.md) — возвращает, отображать ли только глиф, только заголовок или оба.
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) — отображаемый текст элемента. 
+- [`Glyph`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Glyph.md) — изображение элемента.
+- [`GlyphAlignment`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/GlyphAlignment.md) — выравнивание глифа относительно заголовка элемента.
+- [`GlyphSize`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/GlyphSize.md) — размер отображения глифа.
+- [`ShowSeparator`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/ShowSeparator.md) — позволяет отображать разделитель перед элементом.
 
 #### Назначение выпадающего контрола/меню элементу ToolbarButtonItem
 
-Вы можете связать выпадающий контрол/меню с объектом `ToolbarButtonItem`. Выпадающий элемент активируется щелчком по встроенной стрелке выпадающего списка или по самому элементу (подробнее см. опцию `DropDownArrowVisibility` ниже).
+Вы можете связать выпадающий контрол/меню с объектом [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md). Выпадающий элемент активируется щелчком по встроенной стрелке выпадающего списка или по самому элементу (подробнее см. опцию [`DropDownArrowVisibility`](../../API/Eremex.AvaloniaUI.Controls.Bars/DropDownArrowVisibility.md) ниже).
 
-Свяжем кнопку _Paste_ (`ToolbarButtonItem`) с выпадающим меню. Выпадающее меню будет отображать команды _Paste_ и _Paste As_.
+Свяжем кнопку _Paste_ ([`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)) с выпадающим меню. Выпадающее меню будет отображать команды _Paste_ и _Paste As_.
 
 ![toolbars-get-started-pastebutton-with-dropdown-menu](../../images/toolbars-get-started-pastebutton-with-dropdown-menu.png)
 
@@ -249,9 +249,9 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 Следующие свойства используются для задания выпадающего контрола и способа его отображения:
 
-- `DropDownControl` — возвращает или задаёт выпадающий контрол/меню, связанный с элементом. Это свойство принимает объекты `PopupContainer` и `PopupMenu`.
+- [`DropDownControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem/DropDownControl.md) — возвращает или задаёт выпадающий контрол/меню, связанный с элементом. Это свойство принимает объекты [`PopupContainer`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupContainer.md) и [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md).
 
-- `DropDownArrowVisibility` — задаёт, отображает ли элемент стрелку выпадающего списка, используемую для вызова связанного выпадающего контрола. Поддерживаемые опции:
+- [`DropDownArrowVisibility`](../../API/Eremex.AvaloniaUI.Controls.Bars/DropDownArrowVisibility.md) — задаёт, отображает ли элемент стрелку выпадающего списка, используемую для вызова связанного выпадающего контрола. Поддерживаемые опции:
     - `ShowArrow` — стрелка выпадающего списка видима. Элемент и стрелка действуют как единая кнопка. Щелчок по ним отображает связанный выпадающий контрол.
 
     - `ShowSplitArrow` или `Default` — стрелка выпадающего списка видима. Она действует как отдельная кнопка, встроенная в элемент. Щелчок по стрелке вызывает связанный выпадающий контрол. Щелчок по элементу вызывает его команду.
@@ -332,7 +332,7 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 #### Опции ToolbarEditorItem
 
 - `EditorValue` — позволяет задавать и читать значение встроенного редактора.
-- `EditorProperties` — задаёт тип редактора, встраиваемого в панель/меню. В приведённом выше фрагменте кода свойство `EditorProperties` установлено в объект `ComboBoxEditorProperties`. Этот объект содержит настройки, специфичные для контрола `ComboBoxEditor`. Панель автоматически создаст контрол `ComboBoxEditor` во время работы из заданного объекта `ComboBoxEditorProperties`.
+- `EditorProperties` — задаёт тип редактора, встраиваемого в панель/меню. В приведённом выше фрагменте кода свойство `EditorProperties` установлено в объект [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md). Этот объект содержит настройки, специфичные для контрола [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md). Панель автоматически создаст контрол [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) во время работы из заданного объекта [`ComboBoxEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditorProperties.md).
 
 ### ToolbarTextItem
 
@@ -359,8 +359,8 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 Библиотека панелей инструментов также поддерживает другие типы элементов, не продемонстрированные в этом руководстве:
 
-- `ToolbarItemGroup` — группа элементов панели.
-- `ToolbarCheckItemGroup` — группа кнопок-флажков. Используйте её для создания группы взаимоисключающих флажков или группы, поддерживающей выбор нескольких элементов одновременно.
+- [`ToolbarItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup.md) — группа элементов панели.
+- [`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md) — группа кнопок-флажков. Используйте её для создания группы взаимоисключающих флажков или группы, поддерживающей выбор нескольких элементов одновременно.
 
 Дополнительную информацию смотрите в следующем разделе: [Элементы панели инструментов](toolbar-items.md).
 
@@ -371,7 +371,7 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 ![toolbars-get-started-standalone-toolbar](../../images/toolbars-get-started-standalone-toolbar.png)
 
 Чтобы создать автономную панель, сделайте следующее:
-1. Создайте контейнер панелей (`ToolbarContainerControl`) в нужной позиции. Установите его свойство `DockType` в `Standalone`. 
+1. Создайте контейнер панелей ([`ToolbarContainerControl`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarContainerControl.md)) в нужной позиции. Установите его свойство [`DockType`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) в `Standalone`. 
    
    Автономные контейнеры панелей не имеют рамок.
 
@@ -406,7 +406,7 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ## 7. Назначение контекстного меню текстовому редактору
 
-Чтобы задать контекстное меню для контрола, создайте объект `PopupMenu` и назначьте его целевому контролу с помощью присоединённого свойства `ToolbarManager.ContextPopup`. Во всплывающие меню можно добавлять элементы панели любого типа.
+Чтобы задать контекстное меню для контрола, создайте объект [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) и назначьте его целевому контролу с помощью присоединённого свойства `ToolbarManager.ContextPopup`. Во всплывающие меню можно добавлять элементы панели любого типа.
 
 ![toolbars-get-started-context-menu](../../images/toolbars-get-started-context-menu.png)
 
@@ -435,20 +435,20 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ### Опции всплывающего меню
 
-- `ContentRightIndent` — задаёт ширину пустого пространства справа от текста элементов меню.
+- [`ContentRightIndent`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ContentRightIndent.md) — задаёт ширину пустого пространства справа от текста элементов меню.
 
   ![toolbars-popupmenu-contentrightindent](../../images/toolbars-popupmenu-contentrightindent.png)
 
-- `Header` — позволяет задать заголовок меню.
-- `ShowHeader` — возвращает или задаёт, виден ли заголовок меню.
-- `ShowIconStrip` — возвращает или задаёт, отображать ли вертикальную полосу значков для элементов меню. Значок элемента меню задаётся свойством элемента `Glyph`.
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Header.md) — позволяет задать заголовок меню.
+- [`ShowHeader`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ShowHeader.md) — возвращает или задаёт, виден ли заголовок меню.
+- [`ShowIconStrip`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ShowIconStrip.md) — возвращает или задаёт, отображать ли вертикальную полосу значков для элементов меню. Значок элемента меню задаётся свойством элемента [`Glyph`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Glyph.md).
 
 
 
 
 ## 8. Назначение горячих клавиш для элементов панели инструментов
 
-Используйте свойство `ToolbarItem.HotKey`, чтобы назначать элементам сочетания клавиш. 
+Используйте свойство [`ToolbarItem.HotKey`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/HotKey.md), чтобы назначать элементам сочетания клавиш. 
 
 ``` xml
 <mxb:ToolbarButtonItem
@@ -456,8 +456,8 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
     Glyph="{SvgImage 'avares://Bars-sample/Images/Toolbars/EditDelete.svg'}"  Category="Edit"/>
 ```
 
-Границы компонента `ToolbarManager` определяют область действия горячих клавиш по умолчанию. Если фокус находится в пределах области действия горячих клавиш, `ToolbarManager` может перехватывать и обрабатывать горячие клавиши. 
-Вы можете установить свойство `ToolbarManager.IsWindowManager` в `true`, чтобы расширить область действия горячих клавиш на всё окно. В этом случае `ToolbarManager` регистрирует горячие клавиши в окне и может обрабатывать их, даже если фокус находится за пределами границ `ToolbarManager`.
+Границы компонента [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) определяют область действия горячих клавиш по умолчанию. Если фокус находится в пределах области действия горячих клавиш, [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) может перехватывать и обрабатывать горячие клавиши. 
+Вы можете установить свойство [`ToolbarManager.IsWindowManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/IsWindowManager.md) в `true`, чтобы расширить область действия горячих клавиш на всё окно. В этом случае [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) регистрирует горячие клавиши в окне и может обрабатывать их, даже если фокус находится за пределами границ [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md).
 
 Дополнительную информацию смотрите в следующем разделе: [Горячие клавиши элементов панели инструментов](toolbar-items.md#горячие-клавиши).
 
@@ -480,14 +480,14 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ## 10. Плавающая панель инструментов
 
-Сделаем панель плавающей в code-behind. Убедитесь, что у целевой панели есть имя, чтобы к ней можно было обратиться. После получения объекта панели установите его свойство `Toolbar.DockType` в `Floating`. Используйте свойство `Toolbar.FloatingPosition`, чтобы задать местоположение плавающей панели.
+Сделаем панель плавающей в code-behind. Убедитесь, что у целевой панели есть имя, чтобы к ней можно было обратиться. После получения объекта панели установите его свойство [`Toolbar.DockType`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/DockType.md) в `Floating`. Используйте свойство [`Toolbar.FloatingPosition`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/FloatingPosition.md), чтобы задать местоположение плавающей панели.
 
 ``` csharp
 EditToolbar.DockType = Eremex.AvaloniaUI.Controls.Bars.MxToolbarDockType.Floating;
 EditToolbar.FloatingPosition = new PixelPoint(200, 200);
 ```
 
-Чтобы создать плавающую панель в XAML, определите объект `Toolbar` в коллекции `ToolbarManager.Toolbars` и установите свойство `Toolbar.DockType` в `Floating`. 
+Чтобы создать плавающую панель в XAML, определите объект [`Toolbar`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar.md) в коллекции [`ToolbarManager.Toolbars`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager/Toolbars.md) и установите свойство [`Toolbar.DockType`](../../API/Eremex.AvaloniaUI.Controls.Bars/Toolbar/DockType.md) в `Floating`. 
 
 Дополнительную информацию смотрите в следующем разделе: [Плавающие панели инструментов](toolbars.md#плавающие-панели-инструментов).
 

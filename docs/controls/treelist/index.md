@@ -37,7 +37,8 @@ The controls are derived from one ancestor, so they share multiple features:
 TreeList-specific features include:
 
 - [Unbound Columns](data-binding/unbound-columns.md) — You can add unbound columns (those that are not bound to data source fields) and populate them with data manually, using an event.
-- [Column Filter Menus](filter-and-search.md#column-filters-treelist) — You can filter data using dropdown menus that display unique column values. Click the filter button in any column header to access filtering options.
+- [Summaries](summaries.md) — TreeList can calculate total summaries for columns. These are aggregate functions computed over all rows.
+- [Filtering](filter-and-search.md#column-filters-treelist) — You can filter data using dropdown menus that display unique column values. Click the filter button in any column header to access filtering options.
 - [Auto Filter Row](filter-and-search.md#auto-filter-row-treelist) — A special row that allows a user to filter data against columns.
 - [Column Header Templates](columns.md#column-headers) – Allow you to display custom content in column headers, including images.
 - [Multiple Node Selection (Highlight)](nodes.md#multiple-node-selection-highlight) — You can enable multiple node selection mode to allow a user to select (highlight) multiple nodes at one time.

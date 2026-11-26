@@ -12,7 +12,7 @@ seealso: []
 
 ## Определение групп страниц Ribbon и доступ к ним
 
-Группы страниц Ribbon инкапсулируются объектами класса `RibbonPageGroup`. В code-behind вы можете создавать, получать доступ и изменять группы страниц с помощью коллекции `RibbonPage.Groups`. Чтобы определить группы страниц в XAML, добавьте объекты `RibbonPageGroup` между открывающим и закрывающим тегами **&lt;RibbonPage&gt;**.
+Группы страниц Ribbon инкапсулируются объектами класса [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md). В code-behind вы можете создавать, получать доступ и изменять группы страниц с помощью коллекции [`RibbonPage.Groups`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/Groups.md). Чтобы определить группы страниц в XAML, добавьте объекты [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md) между открывающим и закрывающим тегами **&lt;RibbonPage&gt;**.
 
 ``` xml
 <mxr:RibbonPage Header="Home" KeyTip="H" Name="pageHome">
@@ -29,7 +29,7 @@ seealso: []
 </mxr:RibbonPageGroup>
 ```
 
-Вы также можете использовать свойство `RibbonPage.GroupsSource`, чтобы создавать группы страниц из коллекции бизнес-объектов во View Model. Соответствующий шаблон данных должен определять объект `RibbonPageGroup` и инициализировать его настройки из бизнес-объекта.
+Вы также можете использовать свойство [`RibbonPage.GroupsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/GroupsSource.md), чтобы создавать группы страниц из коллекции бизнес-объектов во View Model. Соответствующий шаблон данных должен определять объект [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md) и инициализировать его настройки из бизнес-объекта.
 
 <!-- TODO
 GroupsSource example
@@ -38,19 +38,19 @@ GroupsSource example
 
 ## Заголовок группы страниц
 
-Когда применена [классическая компоновка команд](ribbon-command-layouts.md), группы страниц имеют заголовки внизу. Заголовок группы отображает подпись (`RibbonPageGroup.Header`) и кнопку заголовка.
+Когда применена [классическая компоновка команд](ribbon-command-layouts.md), группы страниц имеют заголовки внизу. Заголовок группы отображает подпись ([`RibbonPageGroup.Header`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/Header.md)) и кнопку заголовка.
 
 ![ribbon-page-group-header](../../images/ribbon-page-group-header.png)
 
 Щелчок по кнопке заголовка не имеет действия по умолчанию. Вы можете связать действие с кнопкой заголовка следующим образом:
 
-- Обработайте событие `RibbonPageGroup.HeaderButtonClick` или `RibbonPageGroup.HeaderButtonPress`. Например, ваш обработчик события может отобразить диалог или меню с дополнительными настройками, связанными с группой.
+- Обработайте событие [`RibbonPageGroup.HeaderButtonClick`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonClick.md) или [`RibbonPageGroup.HeaderButtonPress`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonPress.md). Например, ваш обработчик события может отобразить диалог или меню с дополнительными настройками, связанными с группой.
 
-  Событие `HeaderButtonClick` возникает после нажатия и отпускания левой кнопки мыши над кнопкой заголовка. Событие `HeaderButtonPress` возникает сразу после того, как пользователь нажимает любую кнопку мыши над кнопкой заголовка. 
+  Событие [`HeaderButtonClick`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonClick.md) возникает после нажатия и отпускания левой кнопки мыши над кнопкой заголовка. Событие [`HeaderButtonPress`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonPress.md) возникает сразу после того, как пользователь нажимает любую кнопку мыши над кнопкой заголовка. 
 
-- Назначьте команду свойству `RibbonPageGroup.HeaderButtonCommand`. Вы можете задать необязательный параметр команды с помощью свойства `RibbonPageGroup.HeaderButtonCommandParameter`.
+- Назначьте команду свойству [`RibbonPageGroup.HeaderButtonCommand`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonCommand.md). Вы можете задать необязательный параметр команды с помощью свойства [`RibbonPageGroup.HeaderButtonCommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonCommandParameter.md).
 
-Используйте свойство `RibbonPageGroup.IsHeaderButtonVisible`, чтобы скрыть кнопку заголовка.
+Используйте свойство [`RibbonPageGroup.IsHeaderButtonVisible`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/IsHeaderButtonVisible.md), чтобы скрыть кнопку заголовка.
 
 
 
@@ -59,7 +59,7 @@ GroupsSource example
 
 Группа страниц отображает набор тесно связанных элементов Ribbon. Элементы Ribbon — это кнопки, кнопки-флажки, группы кнопок, подменю, встроенные редакторы, галереи и другое. Дополнительную информацию смотрите в следующих разделах: [Элементы Ribbon](ribbon-items.md) и [Галереи](galleries.md)
 
-Чтобы заполнить группу страниц Ribbon элементами, используйте коллекцию `RibbonPageGroup.Items`. В XAML вы можете определять элементы между открывающим и закрывающим тегами **&lt;RibbonPageGroup&gt;**.
+Чтобы заполнить группу страниц Ribbon элементами, используйте коллекцию [`RibbonPageGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/Items.md). В XAML вы можете определять элементы между открывающим и закрывающим тегами **&lt;RibbonPageGroup&gt;**.
 
 
 
@@ -84,7 +84,7 @@ GroupsSource example
 </mxr:RibbonPage>
 ```
 
-Вы также можете использовать свойство `RibbonPageGroup.ItemsSource`, чтобы создавать элементы из коллекции бизнес-объектов во View Model. Соответствующие шаблоны данных должны определять элементы Ribbon и инициализировать их настройки из базовых бизнес-объектов.
+Вы также можете использовать свойство [`RibbonPageGroup.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/ItemsSource.md), чтобы создавать элементы из коллекции бизнес-объектов во View Model. Соответствующие шаблоны данных должны определять элементы Ribbon и инициализировать их настройки из базовых бизнес-объектов.
 
 <!-- TODO
 ItemsSource example
@@ -97,7 +97,7 @@ ItemsSource example
 
 ![page-group-collapsed](../../images/page-group-collapsed.png)
 
-Вы можете использовать свойство `RibbonPageGroup.Glyph`, чтобы отобразить изображение на кнопке свёрнутой группы:
+Вы можете использовать свойство [`RibbonPageGroup.Glyph`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/Glyph.md), чтобы отобразить изображение на кнопке свёрнутой группы:
 
 ![page-group-collapsed-with-glyph](../../images/page-group-collapsed-with-glyph.png)
 
@@ -175,7 +175,7 @@ xmlns:icons="https://schemas.eremexcontrols.net/avalonia/icons"
 - Совет: вы можете объединить два элемента Ribbon в отдельный [неразрывный контейнер](ribbon-items.md#неразрывные-группы-элементов-toolbaritemgroup), чтобы они действовали как единое целое.
 
 #### Пример - размещение элементов в столбец
-Следующий пример использует присоединённое свойство `RibbonPageGroup.ItemLayouMode`, чтобы разместить элементы в столбец.
+Этот пример использует присоединённое свойство `RibbonPageGroup.ItemLayouMode`, чтобы разместить элементы в столбец.
 
 ![ribbon-ItemLayoutDirectionInParent-example-result](../../images/ribbon-ItemLayoutDirectionInParent-example-result.png)
 
@@ -187,7 +187,7 @@ xmlns:icons="https://schemas.eremexcontrols.net/avalonia/icons"
     <mxb:ToolbarCheckItem Name="btnSort" Header="Sort Results Alphabetically" CheckBoxStyle="CheckBox"/>
     ```
 
-- Строка 2 отображает контейнер (`ToolbarItemGroup`), объединяющий текстовый редактор и кнопку. Группировка элементов в контейнер необходима, чтобы разместить элементы рядом друг с другом.
+- Строка 2 отображает контейнер ([`ToolbarItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup.md)), объединяющий текстовый редактор и кнопку. Группировка элементов в контейнер необходима, чтобы разместить элементы рядом друг с другом.
 
     ``` xml
     <mxb:ToolbarItemGroup Name="groupSearchBox">
@@ -203,7 +203,7 @@ xmlns:icons="https://schemas.eremexcontrols.net/avalonia/icons"
     </mxb:ToolbarItemGroup>
     ```
     
-- Строка 3 отображает контейнер (`ToolbarCheckItemGroup`), объединяющий три элемента-флажка:
+- Строка 3 отображает контейнер ([`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md)), объединяющий три элемента-флажка:
 
     ``` xml
     <mxb:ToolbarCheckItemGroup Name="groupSearchProperties"  >
@@ -222,7 +222,7 @@ xmlns:icons="https://schemas.eremexcontrols.net/avalonia/icons"
     </mxb:ToolbarCheckItemGroup>
     ```
 
-Поместите элементы _btnSort_, _groupSearchBox_ и _groupSearchProperties_ в `RibbonPageGroup`:
+Поместите элементы _btnSort_, _groupSearchBox_ и _groupSearchProperties_ в [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md):
 
 ``` xml
 <mxr:RibbonControl>
@@ -300,7 +300,7 @@ xmlns:icons="https://schemas.eremexcontrols.net/avalonia/icons"
 
 #### Пример - принудительное размещение контейнеров в две строки
 
-Рассмотрим `RibbonPageGroup`, содержащий четыре неразрывных контейнера (группы) элементов.
+Рассмотрим [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md), содержащий четыре неразрывных контейнера (группы) элементов.
 
 ![ItemGroupLayoutMode-example-indicate4groups](../../images/ItemGroupLayoutMode-example-indicate4groups.png)
 
@@ -341,7 +341,7 @@ xmlns:icons="https://schemas.eremexcontrols.net/avalonia/icons"
 
 ![ItemGroupLayoutMode-example-result-animation](../../images/ItemGroupLayoutMode-example-result-animation.gif)
 
-Если вам нужно, чтобы определённый элемент начинал новый столбец, поместите объект `ToolbarSeparatorItem` перед этим элементом.
+Если вам нужно, чтобы определённый элемент начинал новый столбец, поместите объект [`ToolbarSeparatorItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarSeparatorItem.md) перед этим элементом.
 
 ``` xml
 <mxr:RibbonPageGroup Header="Paragraph">

@@ -12,17 +12,27 @@ Provides page settings for exporting a data control's data.
 public class PageExportOptions : ExportOptions
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PageExportOptions](PageExportOptions/PageExportOptions.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [FitToPageWidth](PageExportOptions/FitToPageWidth.md) { get; set; } | Gets or sets whether the exported content is scaled to fit the page width. |
 | [Landscape](PageExportOptions/Landscape.md) { get; set; } | Gets or sets whether the exported pages have landscape orientation. |
 | [Margins](PageExportOptions/Margins.md) { get; set; } | Gets or sets the page margins of the exported document. |
 | [PageRange](PageExportOptions/PageRange.md) { get; set; } | Gets or sets the range of pages to export. |
 | [PaperKind](PageExportOptions/PaperKind.md) { get; set; } | Gets or sets the paper size of the exported pages. |
 | [ShowBands](PageExportOptions/ShowBands.md) { get; set; } | Gets or sets whether band headers are exported. |
+
+## Events
+
+| name | description |
+| --- | --- |
 | event [ColumnDisplayText](PageExportOptions/ColumnDisplayText.md) | Occurs when the display text of a cell value is formed during export. |
 
 ## See Also

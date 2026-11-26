@@ -14,6 +14,7 @@ public TabStripLayoutType TabStripLayoutType { get; set; }
 
 ## See Also
 
+* enum [TabStripLayoutType](../../Eremex.AvaloniaUI.Controls/TabStripLayoutType.md)
 * class [TabbedGroup](../TabbedGroup.md)
 * namespace [Eremex.AvaloniaUI.Controls.Docking](../index.md)
 

@@ -12,11 +12,16 @@ Provides data for the PopupClosing event.
 public class ClosingPopupEventArgs : ClosePopupEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ClosingPopupEventArgs](ClosingPopupEventArgs/ClosingPopupEventArgs.md)(…) | Initializes a new instance of the ClosingPopupEventArgs class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Cancel](ClosingPopupEventArgs/Cancel.md) { get; set; } | Gets or sets whether the popup closing is canceled. |
 
 ## See Also

@@ -12,11 +12,16 @@ Represents the cube map environment used for image-based lighting and as the bac
 public class Skybox : StyledElement
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [Skybox](Skybox/Skybox.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Bottom](Skybox/Bottom.md) { get; set; } | Gets or sets the image of the -Y face of the cube map. |
 | [Front](Skybox/Front.md) { get; set; } | Gets or sets the image of the +Z face of the cube map. |
 | [IsVisible](Skybox/IsVisible.md) { get; set; } | Gets or sets whether the skybox is drawn as the background behind the models. |

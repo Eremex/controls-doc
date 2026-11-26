@@ -12,11 +12,16 @@ Provides data for the CustomNodeFilter event.
 public class TreeListCustomNodeFilterEventArgs : TreeListNodeEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListCustomNodeFilterEventArgs](TreeListCustomNodeFilterEventArgs/TreeListCustomNodeFilterEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Visible](TreeListCustomNodeFilterEventArgs/Visible.md) { get; set; } | Gets or sets whether the node remains visible. |
 
 ## See Also

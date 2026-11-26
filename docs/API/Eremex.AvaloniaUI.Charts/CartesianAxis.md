@@ -12,7 +12,7 @@ Serves as the base class for the axes of a Cartesian chart. It adds a position, 
 public abstract class CartesianAxis : LinearAxis, IIndexedChartElement, INamedAxis
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

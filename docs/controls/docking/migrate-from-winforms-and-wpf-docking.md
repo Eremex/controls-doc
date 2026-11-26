@@ -21,7 +21,7 @@ This topic maps the concepts you already know to the building blocks of the libr
 | Panels side by side or stacked, separated by splitters | [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) (split container) - see [Split Panels](dock-panes-and-containers.md#split-panels) |
 | A panel that slides out from the window edge | Auto-hide - see [Auto-Hide Panels](dock-panes-and-containers.md#auto-hide-panels) |
 | A panel in its own window | [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md) - see [Floating Panels](dock-panes-and-containers.md#floating-panels) |
-| Drag-and-drop guides that show where a panel will dock | Dock hints - see [Dock Manager and Dock Items](dock-manager.md#dock-hints), and the [`DockManager.CustomizeDockGuide`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/CustomizeDockGuide.md) event (version 1.5) to hide specific guides |
+| Drag-and-drop guides that show where a panel will dock | Dock guides - see [Dock Manager and Dock Items](dock-manager.md#dock-guides), and the [`DockManager.CustomizeDockGuide`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/CustomizeDockGuide.md) event (version 1.5) to hide specific guides |
 | Ctrl+Tab window switching | [Document Switcher](document-switcher.md) |
 | Saving and restoring the layout between sessions | [Save and Restore the Layout of Panels](save-and-restore-layout.md) |
 | Building the layout from code (arrange, split, float, activate, close) | [Perform Dock Operations in Code](perform-dock-operations-in-code.md) |

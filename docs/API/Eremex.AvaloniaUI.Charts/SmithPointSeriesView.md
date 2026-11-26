@@ -12,11 +12,16 @@ Displays the data of a Smith series as a set of markers that are not connected t
 public class SmithPointSeriesView : SmithSeriesView, IMarkerSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SmithPointSeriesView](SmithPointSeriesView/SmithPointSeriesView.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Color](SmithPointSeriesView/Color.md) { get; set; } | Gets or sets the color of the markers. |
 | [MarkerImage](SmithPointSeriesView/MarkerImage.md) { get; set; } | Gets or sets the image that is drawn at each data point instead of a filled rectangle. |
 | [MarkerImageCss](SmithPointSeriesView/MarkerImageCss.md) { get; set; } | Gets or sets the CSS applied to the marker image when the image is an SVG image. The text is treated as a format string, where {0} is replaced with the marker color in the #RRGGBB format. |

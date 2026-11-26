@@ -12,11 +12,16 @@ Groups commands on a ribbon page and supports collapsing into a popup.
 public class RibbonPageGroup : TemplatedControl, IToolbarItemsHolder
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [RibbonPageGroup](RibbonPageGroup/RibbonPageGroup.md)() | Initializes a new instance of the RibbonPageGroup class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowCollapse](RibbonPageGroup/AllowCollapse.md) { get; set; } | Gets or sets whether the ribbon group can collapse into a popup when space is limited. |
 | [Glyph](RibbonPageGroup/Glyph.md) { get; set; } | Gets or sets the image displayed for the item. |
 | [Header](RibbonPageGroup/Header.md) { get; set; } | Gets or sets the item's header content. |
@@ -30,8 +35,11 @@ public class RibbonPageGroup : TemplatedControl, IToolbarItemsHolder
 | [KeyTip](RibbonPageGroup/KeyTip.md) { get; set; } | Gets or sets the key sequence displayed to activate this item during key tip navigation. |
 | [Page](RibbonPageGroup/Page.md) { get; } | Gets the ribbon page that contains the group. |
 | [RibbonCommandLayout](RibbonPageGroup/RibbonCommandLayout.md) { get; } | Gets the ribbon command layout used to display the item. |
-| event [HeaderButtonClick](RibbonPageGroup/HeaderButtonClick.md) | Occurs when the group header button is clicked. |
-| event [HeaderButtonPress](RibbonPageGroup/HeaderButtonPress.md) | Occurs when the pointer button is pressed over the group header button. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [InvalidateLayout](RibbonPageGroup/InvalidateLayout.md)() | Invalidates the ribbon group's layout so it is recalculated. |
 | virtual [ResetNavigation](RibbonPageGroup/ResetNavigation.md)() | Resets keyboard navigation within the ribbon. |
 | override [ToString](RibbonPageGroup/ToString.md)() |  |
@@ -40,6 +48,13 @@ public class RibbonPageGroup : TemplatedControl, IToolbarItemsHolder
 | static [GetItemLayoutMode](RibbonPageGroup/GetItemLayoutMode.md)(…) | Gets the layout direction for the specified ribbon item group. |
 | static [SetItemGroupLayoutMode](RibbonPageGroup/SetItemGroupLayoutMode.md)(…) | Sets the row layout mode for the specified ribbon group. |
 | static [SetItemLayoutMode](RibbonPageGroup/SetItemLayoutMode.md)(…) | Sets the layout direction for the specified ribbon item group. |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [HeaderButtonClick](RibbonPageGroup/HeaderButtonClick.md) | Occurs when the group header button is clicked. |
+| event [HeaderButtonPress](RibbonPageGroup/HeaderButtonPress.md) | Occurs when the pointer button is pressed over the group header button. |
 
 ## See Also
 

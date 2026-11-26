@@ -12,7 +12,7 @@ Provides the base functionality for panes and groups in a docking layout.
 public abstract class DockItemBase : TemplatedControl
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

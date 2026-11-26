@@ -12,7 +12,7 @@ Represents the auto-filter row's node.
 public sealed class TreeListAutoFilterNode : TreeListNode
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

@@ -1,24 +1,25 @@
 ---
 title: 如何创建 TreeView 并将其绑定到 Self-Referential 数据源
+order: 9900
 seealso: []
 ---
 
-# 如何创建 TreeView 并将其绑定到 Self-Referential 数据源
+# 如何创建 TreeView 并将其绑定到 Self-Referential 数据源 {#how-to-create-a-treeview-control-and-bind-it-to-a-self-referential-data-source}
 
-本示例创建一个 `TreeViewControl` 控件,用于显示 _Employee_ 对象的层次化集合。当前在 TreeView 中获得焦点的员工姓名会显示在一个文本编辑器中。
+本示例创建一个 [`TreeViewControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md) 控件,用于显示 _Employee_ 对象的层次化集合。当前在 TreeView 中获得焦点的员工姓名会显示在一个文本编辑器中。
 
 _Employee_ 类是一个 [Self-Referential 数据源](../data-binding/binding-to-self-referential-data-source.md)。它在两个服务属性(_ID_ 和 _ParentID_)中存储父子关系信息。
 
-在本示例中,以下主要属性用于设置 `TreeViewControl`:
+在本示例中,以下主要属性用于设置 [`TreeViewControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md):
 
-- `DataControlBase.ItemsSource` — 指定控件的数据源。
-- `TreeListControlBase.KeyFieldName` — 指定存储唯一记录标识符的 _Key field_(属性)名称。
-- `TreeListControlBase.ParentFieldName` — 指定父记录的 _Key field_(属性)名称。
-- `TreeListControlBase.RootValue` — 标识绑定集合中的根记录。`RootValue` 属性指定根记录在 _Parent key field_(属性)中所具有的值。
-- `TreeViewControl.DataFieldName` — 指定其数据显示在 `TreeViewControl` 中的字段(属性)名称。
+- [`DataControlBase.ItemsSource`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ItemsSource.md) — 指定控件的数据源。
+- [`TreeListControlBase.KeyFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/KeyFieldName.md) — 指定存储唯一记录标识符的 _Key field_(属性)名称。
+- [`TreeListControlBase.ParentFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ParentFieldName.md) — 指定父记录的 _Key field_(属性)名称。
+- [`TreeListControlBase.RootValue`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RootValue.md) — 标识绑定集合中的根记录。[`RootValue`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RootValue.md) 属性指定根记录在 _Parent key field_(属性)中所具有的值。
+- [`TreeViewControl.DataFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) — 指定其数据显示在 [`TreeViewControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md) 中的字段(属性)名称。
 
-当用户将焦点设置到某个节点时,您可以使用 TreeView 继承的 `DataControlBase.FocusedItem` 属性来获取获得焦点节点的底层数据对象。
-在本示例中,`DataControlBase.FocusedItem` 属性返回一个 _Employee_ 对象。获得焦点的 _Employee_ 对象的 _Name_ 值显示在 `TextEditor` 中。
+当用户将焦点设置到某个节点时,您可以使用 TreeView 继承的 [`DataControlBase.FocusedItem`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) 属性来获取获得焦点节点的底层数据对象。
+在本示例中,[`DataControlBase.FocusedItem`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) 属性返回一个 _Employee_ 对象。获得焦点的 _Employee_ 对象的 _Name_ 值显示在 [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) 中。
 
 ``` xml
 <Window xmlns="https://github.com/avaloniaui"

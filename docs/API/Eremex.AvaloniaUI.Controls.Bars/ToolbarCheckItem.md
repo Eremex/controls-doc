@@ -12,15 +12,25 @@ Represents a toolbar button with a checked state.
 public class ToolbarCheckItem : ToolbarButtonItem
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ToolbarCheckItem](ToolbarCheckItem/ToolbarCheckItem.md)() | Initializes a new instance of the ToolbarCheckItem class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CheckBoxAlignment](ToolbarCheckItem/CheckBoxAlignment.md) { get; set; } | Gets or sets the position of the check indicator relative to the item content. |
 | [CheckBoxStyle](ToolbarCheckItem/CheckBoxStyle.md) { get; set; } | Gets or sets the visual style of the check item. |
 | [GroupName](ToolbarCheckItem/GroupName.md) { get; set; } | Gets or sets the name of the group in which only one item can be checked. |
 | [IsChecked](ToolbarCheckItem/IsChecked.md) { get; set; } | Gets or sets whether the item is checked. |
+
+## Events
+
+| name | description |
+| --- | --- |
 | event [CheckedChanged](ToolbarCheckItem/CheckedChanged.md) | Occurs when the item's checked state changes. |
 
 ## See Also

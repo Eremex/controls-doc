@@ -12,11 +12,16 @@ Provides data for the NodeExpanding and NodeCollapsing events.
 public class TreeListNodeAllowEventArgs : TreeListNodeEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListNodeAllowEventArgs](TreeListNodeAllowEventArgs/TreeListNodeAllowEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Allow](TreeListNodeAllowEventArgs/Allow.md) { get; set; } | Gets or sets whether the operation is allowed. |
 
 ## See Also

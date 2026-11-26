@@ -12,11 +12,16 @@ Provides data for the EditorValueChanged event.
 public class EditorValueChangedEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [EditorValueChangedEventArgs](EditorValueChangedEventArgs/EditorValueChangedEventArgs.md)(…) | Initializes a new instance of the EditorValueChangedEventArgs class. (2 constructors) |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [NewValue](EditorValueChangedEventArgs/NewValue.md) { get; } | Gets the new editor value. |
 | [OldValue](EditorValueChangedEventArgs/OldValue.md) { get; } | Gets the previous editor value. |
 

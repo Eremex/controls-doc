@@ -12,11 +12,16 @@ Provides data for tree list node events.
 public class TreeListNodeEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListNodeEventArgs](TreeListNodeEventArgs/TreeListNodeEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Node](TreeListNodeEventArgs/Node.md) { get; } | Gets the node for which the event is raised. |
 
 ## See Also

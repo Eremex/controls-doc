@@ -12,7 +12,7 @@ Serves as the base class for Smith series views that connect the data points wit
 public abstract class SmithLineSeriesViewBase : SmithPointSeriesView, ILineSeriesView
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

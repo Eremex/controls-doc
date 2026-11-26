@@ -12,12 +12,17 @@ An application window, as the services here see it. A view model receives one fr
 public interface IWindow
 ```
 
-## Members
+## Properties
 
 | name | description |
 | --- | --- |
 | [IsActive](IWindow/IsActive.md) { get; } | Whether this is the window the user is currently working in. |
 | [Title](IWindow/Title.md) { get; } | The window caption. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Activate](IWindow/Activate.md)() | Brings the window to the front and gives it the input focus. |
 | [Close](IWindow/Close.md)() | Closes the window. |
 

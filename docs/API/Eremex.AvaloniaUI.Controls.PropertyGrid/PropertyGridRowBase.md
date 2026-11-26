@@ -12,7 +12,7 @@ Serves as the base class for property grid rows.
 public abstract class PropertyGridRowBase : Control
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

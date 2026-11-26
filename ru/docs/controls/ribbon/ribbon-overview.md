@@ -6,14 +6,14 @@ seealso: []
 
 # Обзор Ribbon
 
-Используйте `RibbonControl`, чтобы создать ленточное меню, подобное тому, что есть в приложениях Microsoft Office. `RibbonControl` — это панель инструментов, которая организует команды и другие элементы в серию страниц (вкладок). Страницы состоят из групп, которые, в свою очередь, отображают элементы Ribbon (команды, встроенные редакторы, надписи, галереи и так далее).
+Используйте [`RibbonControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl.md), чтобы создать меню Ribbon, подобное тому, что есть в приложениях Microsoft Office. [`RibbonControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl.md) — это панель инструментов, которая организует команды и другие элементы в серию страниц (вкладок). Страницы состоят из групп, которые, в свою очередь, отображают элементы Ribbon (команды, встроенные редакторы, надписи, галереи и так далее).
 
 
 ![ribbon-structure](../../images/ribbon-structure.png)
 
 ## Визуальные элементы Ribbon
 
-`RibbonControl` состоит из следующих элементов:
+[`RibbonControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl.md) состоит из следующих элементов:
 
 - [Страницы](pages.md) — страницы Ribbon позволяют создавать вкладки. Вы можете добавить столько страниц, сколько нужно. Как минимум одна страница должна быть создана. 
 
@@ -55,13 +55,13 @@ seealso: []
 
 ## Демо 
 
-Примеры, демонстрирующие возможности `RibbonControl` в действии, смотрите в приложении Eremex Controls Demo.
+Примеры, демонстрирующие возможности [`RibbonControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl.md) в действии, смотрите в приложении Eremex Controls Demo.
 
 ## Создание интерфейса Ribbon
 
 Вкратце, создание интерфейса Ribbon состоит из следующих этапов:
 
-1. Создайте `RibbonControl`.
+1. Создайте [`RibbonControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl.md).
 2. Добавьте страницы Ribbon (вкладки) в Ribbon.
 3. Добавьте группы страниц Ribbon на страницы.
 4. Добавьте элементы Ribbon (команды, галереи и т. д.) в группы страниц.
@@ -70,13 +70,13 @@ seealso: []
 
 ### Определение RibbonControl
 
-`RibbonControl` — это функционально насыщенная панель инструментов. Как и [традиционные панели инструментов](../toolbars-and-menus/index.md), `RibbonControl` управляется компонентом `ToolbarManager`. 
+[`RibbonControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl.md) — это функционально насыщенная панель инструментов. Как и [традиционные панели инструментов](../toolbars-and-menus/index.md), [`RibbonControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl.md) управляется компонентом [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md). 
 
 !!! tip
 
-    Компонент `ToolbarManager` может управлять не только `RibbonControl`. Вы можете использовать этот компонент для создания [традиционных панелей инструментов](../toolbars-and-menus/index.md) (например, строки состояния) и [контекстных меню](../toolbars-and-menus/popup-and-context-menus.md) для контролов.
+    Компонент [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) может управлять не только [`RibbonControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl.md). Вы можете использовать этот компонент для создания [традиционных панелей инструментов](../toolbars-and-menus/index.md) (например, строки состояния) и [контекстных меню](../toolbars-and-menus/popup-and-context-menus.md) для контролов.
 
-Чтобы создать `RibbonControl`, определите его внутри компонента `ToolbarManager`.
+Чтобы создать [`RibbonControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl.md), определите его внутри компонента [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md).
 
 ``` xml
 <mxb:ToolbarManager IsWindowManager="True">
@@ -88,9 +88,9 @@ seealso: []
 
 ### Определение страниц Ribbon и доступ к ним
 
-[Страницы](pages.md) Ribbon (вкладки) инкапсулируются классом `RibbonPage`.
+[Страницы](pages.md) Ribbon (вкладки) инкапсулируются классом [`RibbonPage`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage.md).
 
-Чтобы добавить страницы Ribbon в XAML, определите объекты **&lt;RibbonPage&gt;** как содержимое тега **&lt;RibbonControl&gt;**. Чтобы добавлять страницы Ribbon и получать к ним доступ в code-behind, используйте коллекцию `RibbonControl.Pages`. 
+Чтобы добавить страницы Ribbon в XAML, определите объекты **&lt;RibbonPage&gt;** как содержимое тега **&lt;RibbonControl&gt;**. Чтобы добавлять страницы Ribbon и получать к ним доступ в code-behind, используйте коллекцию [`RibbonControl.Pages`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/Pages.md). 
 
 ``` xml
 <mxb:ToolbarManager IsWindowManager="True">
@@ -112,9 +112,9 @@ seealso: []
 
 ### Определение групп страниц Ribbon и доступ к ним
 
-[Группы страниц](page-groups.md) Ribbon инкапсулируются классом `RibbonPageGroup`. Они являются дочерними элементами страниц Ribbon. 
+[Группы страниц](page-groups.md) Ribbon инкапсулируются классом [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md). Они являются дочерними элементами страниц Ribbon. 
 
-Чтобы создать группы страниц в XAML, определите объекты **&lt;RibbonPageGroup&gt;** как содержимое элементов **&lt;RibbonPage&gt;**. Чтобы добавлять группы страниц и получать к ним доступ в code-behind, используйте коллекцию `RibbonPage.Groups`. 
+Чтобы создать группы страниц в XAML, определите объекты **&lt;RibbonPageGroup&gt;** как содержимое элементов **&lt;RibbonPage&gt;**. Чтобы добавлять группы страниц и получать к ним доступ в code-behind, используйте коллекцию [`RibbonPage.Groups`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/Groups.md). 
 
 ``` xml
 <mxr:RibbonPage Header="Home" KeyTip="H" Name="pageHome">
@@ -134,9 +134,9 @@ seealso: []
 
 Элементы Ribbon — это базовые элементы, которые вы можете добавлять в интерфейс Ribbon (в группы страниц Ribbon, на панель быстрого доступа и в коллекцию элементов заголовка страницы). Они включают:
 
-- Кнопки (`ToolbarButtonItem`) — обычная кнопка или кнопка с выпадающим списком. 
+- Кнопки ([`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)) — обычная кнопка или кнопка с выпадающим списком. 
 
-  Обычная кнопка выполняет команду (`ToolbarButtonItem.Command`) и события (`Click` и `Press`) при щелчке. 
+  Обычная кнопка выполняет команду ([`ToolbarButtonItem.Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md)) и события ([`Click`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Click.md) и [`Press`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Press.md)) при щелчке. 
   
   ![ribbon-items-button](../../images/ribbon-items-button.png)
 
@@ -148,52 +148,52 @@ seealso: []
 
   ![ribboncontrol-displaymode-large](../../images/ribboncontrol-displaymode-large.png) ![ribboncontrol-displaymode-small](../../images/ribboncontrol-displaymode-small.png) ![ribboncontrol-displaymode-smallglyph](../../images/ribboncontrol-displaymode-smallglyph.png)
 
-- Кнопки-флажки (`ToolbarCheckItem`) — кнопка, поддерживающая два состояния — обычное и нажатое. Состояние кнопки задаётся свойством `ToolbarCheckItem.IsChecked`. Событие `ToolbarCheckItem.CheckedChanged` возникает при изменении состояния нажатия.
+- Кнопки-флажки ([`ToolbarCheckItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem.md)) — кнопка, поддерживающая два состояния — обычное и нажатое. Состояние кнопки задаётся свойством [`ToolbarCheckItem.IsChecked`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem/IsChecked.md). Событие [`ToolbarCheckItem.CheckedChanged`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem/CheckedChanged.md) возникает при изменении состояния нажатия.
 
   ![toolbarcheckitem](../../images/toolbarcheckitem.png)
 
-- Подменю (`ToolbarMenuItem`) — отображает подменю при щелчке. 
+- Подменю ([`ToolbarMenuItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarMenuItem.md)) — отображает подменю при щелчке. 
 
   ![ribbon-toolbarMenuItem](../../images/ribbon-toolbarMenuItem.png)
   
-- Встроенный редактор (`ToolbarEditorItem`) — отображает встроенный редактор, заданный свойством `ToolbarEditorItem.EditorProperties`. Например, вы можете встроить [SpinEditor](../editors/spineditor.md) или [TextEditor](../editors/texteditor.md) в интерфейс Ribbon.
+- Встроенный редактор ([`ToolbarEditorItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem.md)) — отображает встроенный редактор, заданный свойством [`ToolbarEditorItem.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem/EditorProperties.md). Например, вы можете встроить [SpinEditor](../editors/spineditor.md) или [TextEditor](../editors/texteditor.md) в интерфейс Ribbon.
 
   ![ribbon-toolbarEditorItem](../../images/ribbon-toolbarEditorItem.png)
 
-- Текстовая надпись (`ToolbarTextItem`) — отображает статический текст, заданный свойством `ToolbarTextItem.Header`.
+- Текстовая надпись ([`ToolbarTextItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarTextItem.md)) — отображает статический текст, заданный свойством [`ToolbarTextItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md).
 
   ![ribbon-ToolbarTextItem](../../images/ribbon-ToolbarTextItem.png)
 
-- Группа элементов (`ToolbarItemGroup`) — неразрывная группа элементов. 
+- Группа элементов ([`ToolbarItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup.md)) — неразрывная группа элементов. 
 
   ![ribbon-ToolbarItemGroup](../../images/ribbon-ToolbarItemGroup.png)
  
   Функция адаптивной компоновки Ribbon автоматически сворачивает и восстанавливает элементы при изменении размера контрола. Группы функционируют как единое целое. При изменении размера Ribbon может сворачиваться только вся группа целиком, а не отдельные её элементы.
 
-- Группа кнопок-флажков (`ToolbarCheckItemGroup`) — неразрывная группа кнопок-флажков (объектов `ToolbarCheckItem`). Класс `ToolbarCheckItemGroup` позволяет создать группу взаимоисключающих элементов (радиогруппу), а также группу, позволяющую отмечать несколько элементов одновременно.
+- Группа кнопок-флажков ([`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md)) — неразрывная группа кнопок-флажков (объектов [`ToolbarCheckItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem.md)). Класс [`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md) позволяет создать группу взаимоисключающих элементов (радиогруппу), а также группу, позволяющую отмечать несколько элементов одновременно.
 
   ![bars-ToolbarCheckItemGroup](../../images/bars-ToolbarCheckItemGroup.png)
 
-- Разделитель (`ToolbarSeparatorItem`) — отображает разделитель между элементами Ribbon.
+- Разделитель ([`ToolbarSeparatorItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarSeparatorItem.md)) — отображает разделитель между элементами Ribbon.
 
   ![bars-toolbarseparatoritem](../../images/bars-toolbarseparatoritem.png)
 
-- Галерея (`RibbonGalleryItem`) — галерея элементов. Используйте свойство `RibbonGalleryItem.ItemsSource`, чтобы задать список объектов для отрисовки в виде элементов галереи.
+- Галерея ([`RibbonGalleryItem`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem.md)) — галерея элементов. Используйте свойство [`RibbonGalleryItem.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/ItemsSource.md), чтобы задать список объектов для отрисовки в виде элементов галереи.
 
   ![ribbon-RibbonGalleryItem](../../images/ribbon-RibbonGalleryItem.png)
 
-  Встроенная в Ribbon галерея имеет кнопку выпадающего списка, которая активирует выпадающий вид галереи. Выпадающая галерея может отображать дополнительные команды внизу, заданные свойством `RibbonGalleryItem.DropDownItems`.
+  Встроенная в Ribbon галерея имеет кнопку выпадающего списка, которая активирует выпадающий вид галереи. Выпадающая галерея может отображать дополнительные команды внизу, заданные свойством [`RibbonGalleryItem.DropDownItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonGalleryItem/DropDownItems.md).
 
   ![ribbon-RibbonGalleryItem-dropdown](../../images/ribbon-RibbonGalleryItem-dropdown.png)
   
 
-Все перечисленные выше элементы Ribbon являются потомками класса `ToolbarItem`. 
+Все перечисленные выше элементы Ribbon являются потомками класса [`ToolbarItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem.md). 
 Их также можно добавлять на традиционные панели инструментов и в контекстные меню. 
 
 
-Чтобы добавить элементы в группы страниц Ribbon, определите соответствующие элементы Ribbon между открывающим и закрывающим тегами **&lt;RibbonPageGroup&gt;**. Чтобы добавлять элементы Ribbon и получать к ним доступ в code-behind, используйте коллекцию `RibbonPageGroup.Items`. 
+Чтобы добавить элементы в группы страниц Ribbon, определите соответствующие элементы Ribbon между открывающим и закрывающим тегами **&lt;RibbonPageGroup&gt;**. Чтобы добавлять элементы Ribbon и получать к ним доступ в code-behind, используйте коллекцию [`RibbonPageGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/Items.md). 
 
-Следующий фрагмент кода добавляет четыре обычные кнопки (объекты `ToolbarButtonItem`) в группу _Clipboard_. Полный код можно найти в демо _WordPad Example_.
+Следующий фрагмент кода добавляет четыре обычные кнопки (объекты [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)) в группу _Clipboard_. Полный код можно найти в демо _WordPad Example_.
 
 ![ribbon-pagegroup-additems-example](../../images/ribbon-pagegroup-additems-example.png)
 
@@ -233,12 +233,12 @@ seealso: []
 
 Контрол Ribbon поддерживает паттерн проектирования MVVM, позволяя создавать страницы, группы страниц и элементы (в группах страниц, на панели быстрого доступа и в области заголовков страниц) из коллекций бизнес-объектов, определённых во View Model. Следующие свойства поддерживают паттерн MVVM:
 
-- `RibbonControl.PagesSource` — коллекция бизнес-объектов, используемых для заполнения страниц контрола Ribbon. Соответствующие шаблоны данных должны определять объекты `RibbonPage`.
-- `RibbonPage.GroupsSource` — коллекция бизнес-объектов, используемых для заполнения групп на страницах Ribbon. Соответствующие шаблоны данных должны определять объекты `RibbonPageGroup`.
-- `RibbonPageGroup.ItemsSource` — коллекция бизнес-объектов, используемых для создания элементов Ribbon в группах страниц. Соответствующие шаблоны данных должны определять [элементы Ribbon](ribbon-items.md).
-- `RibbonControl.QuickAccessToolbarItemsSource` — коллекция бизнес-объектов, используемых для создания элементов Ribbon на [панели быстрого доступа](quick-access-toolbar.md). Соответствующие шаблоны данных должны определять [элементы Ribbon](ribbon-items.md).
-- `RibbonControl.PageHeaderItemsSource` — коллекция бизнес-объектов, используемых для создания [элементов заголовка страницы](page-header-items.md). Соответствующие шаблоны данных должны определять [элементы Ribbon](ribbon-items.md).
-- `ToolbarMenuItem.ItemsSource` — коллекция бизнес-объектов, используемых для заполнения подменю элементами. Соответствующие шаблоны данных должны определять элементы Ribbon.
+- [`RibbonControl.PagesSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/PagesSource.md) — коллекция бизнес-объектов, используемых для заполнения страниц контрола Ribbon. Соответствующие шаблоны данных должны определять объекты [`RibbonPage`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage.md).
+- [`RibbonPage.GroupsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/GroupsSource.md) — коллекция бизнес-объектов, используемых для заполнения групп на страницах Ribbon. Соответствующие шаблоны данных должны определять объекты [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md).
+- [`RibbonPageGroup.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/ItemsSource.md) — коллекция бизнес-объектов, используемых для создания элементов Ribbon в группах страниц. Соответствующие шаблоны данных должны определять [элементы Ribbon](ribbon-items.md).
+- [`RibbonControl.QuickAccessToolbarItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/QuickAccessToolbarItemsSource.md) — коллекция бизнес-объектов, используемых для создания элементов Ribbon на [панели быстрого доступа](quick-access-toolbar.md). Соответствующие шаблоны данных должны определять [элементы Ribbon](ribbon-items.md).
+- [`RibbonControl.PageHeaderItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/PageHeaderItemsSource.md) — коллекция бизнес-объектов, используемых для создания [элементов заголовка страницы](page-header-items.md). Соответствующие шаблоны данных должны определять [элементы Ribbon](ribbon-items.md).
+- [`ToolbarMenuItem.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarMenuItem/ItemsSource.md) — коллекция бизнес-объектов, используемых для заполнения подменю элементами. Соответствующие шаблоны данных должны определять элементы Ribbon.
 
 
 <br>

@@ -4,7 +4,7 @@ order: 100
 seealso: []
 ---
 
-# 示例
+# 示例 {#examples}
 
 - [如何为只读弹出式编辑器阻止打开弹出窗口](how-to-prevent-opening-popups-for-read-only-popup-editors.md)
 

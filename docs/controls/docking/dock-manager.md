@@ -13,6 +13,9 @@ The [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md)
 
 The Docking library supports runtime operations on dock items (panels and documents) by users and in code. Users can rearrange the layout of dock items and make them floating using drag-and-drop operations and context menus. Splitters between adjacent items allow runtime resizing operations. 'Pin' buttons in panel headers maintain the auto-hide feature, which lets a user to collapse and restore panels. 
 
+See also: [Wayland Limitations](wayland-limitations.md).
+
+
 With the Docking library, you can use the MVVM design pattern to populate the docking interface with Dock Panes and Document Panes, and provide content for the panes.
 
 
@@ -49,13 +52,59 @@ You can create two or more [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Control
 
 See the following topic to learn more: [Document Panes](document-panes.md)
 
-## Dock Hints
+## Dock Guides
 
-When a user drags a Dock Pane or Document Pane over another panel or container, the DockMager shows dock hints that help perform docking operations. Dropping an item over a specific hint docks the item at the corresponding position.
+When a user drags a Dock Pane or Document Pane over another panel or container, the DockManager displays dock guides. Dock guides are visual arrow overlays that assist users during dock operations. Dropping a panel or container over a specific guide docks the item at the corresponding position.
 
 ![docking-dock-hints](../../images/docking-dock-hints.png)
 
-If a user drops an item outside a dock hint, the item is made floating.
+If a user drops an item outside a dock guide, the item becomes floating.
+
+See also: [Wayland Limitations](wayland-limitations.md).
+
+### Customize Dock Guides
+
+The [`CustomizeDockGuide`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/CustomizeDockGuide.md) event allows you to hide specific dock guides and individual items within the `Center` guide. When a guide element is hidden, users cannot perform the corresponding dock operation.
+
+Use the following methods provided by the event arguments to hide guide elements:
+
+- [`HideGuide(DockGuideType guide)`](../../API/Eremex.AvaloniaUI.Controls.Docking/CustomizeDockGuideEventArgs/HideGuide.md) — Hides a dock guide specified by the `DockGuideType` enumeration.
+
+    The following image demonstrates the available dock guide types:
+
+    ![docking-guide-types](../../images/docking-guide-types.png)
+
+    - `SideLeft`, `SideRight`, `SideTop`, and `SideBottom` — A panel dropped over these guides is docked at the corresponding edge of the root container.
+    - `Center` — This guide consists of 9 inner items, each of which can be hidden using the [`HideItem`](../../API/Eremex.AvaloniaUI.Controls.Docking/CustomizeDockGuideEventArgs/HideItem.md) method.
+
+
+- [`HideItem(DockGuideItem item)`](../../API/Eremex.AvaloniaUI.Controls.Docking/CustomizeDockGuideEventArgs/HideItem.md) — Hides an item within the `Center` dock guide.
+
+    The following image demonstrates the available items in the `Center` dock guide:
+
+    ![docking-guide-item-types](../../images/docking-guide-item-types.png)
+
+    - `Center` — The dropped panel and the destination panel are combined into the same tabbed container.  
+    - `CenterLeft`, `CenterRight`, `CenterTop`, and `CenterBottom` — The dropped panel is placed at the corresponding edge of the destination panel, forming a split container. 
+    - `TabLeft`, `TabRight`, `TabTop`, and `TabBottom` — The dropped panel is wrapped in a new tabbed container, which is placed at the corresponding edge of the destination panel.
+
+#### Example - Hide Dock Guides
+
+The following code handles the [`CustomizeDockGuide`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/CustomizeDockGuide.md) event to hide the `TabTop` and `TabBottom` items from the `Center` guide.
+
+![docking-customizedockguide-example](../../images/docking-customizedockguide-example.png)
+
+```csharp
+private void DockManager1_CustomizeDockGuide(object sender, Eremex.AvaloniaUI.Controls.Docking.CustomizeDockGuideEventArgs e)
+{
+    DockGuideItem[] guideItems = new DockGuideItem[] { DockGuideItem.TabTop, DockGuideItem.TabBottom  };
+    foreach (var item in guideItems)
+    {
+        e.HideItem(item);
+    }
+}
+```
+
 
 ## Context Menus
 

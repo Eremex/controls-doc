@@ -4,10 +4,10 @@ order: 61000
 seealso: []
 ---
 
-# Ribbon
+# Ribbon {#ribbon}
 
 
-`RibbonControl` 允许您创建一个受 Microsoft Office 应用程序启发的 Ribbon 界面。该控件支持两种视图——经典视图和简化视图，分别将元素排列为三行和一行。用户可以通过专门的视图选择按钮在两者之间切换。
+[`RibbonControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl.md) 允许您创建一个受 Microsoft Office 应用程序启发的 Ribbon 界面。该控件支持两种视图——经典视图和简化视图，分别将元素排列为三行和一行。用户可以通过专门的视图选择按钮在两者之间切换。
 
 ![ribbon](../../images/ribbon.png)
 

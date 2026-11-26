@@ -12,11 +12,16 @@ Displays the data of a Cartesian series as candlesticks built from the open, hig
 public class CartesianCandlestickSeriesView : CartesianSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CartesianCandlestickSeriesView](CartesianCandlestickSeriesView/CartesianCandlestickSeriesView.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CandleWidth](CartesianCandlestickSeriesView/CandleWidth.md) { get; set; } | Gets or sets the width of a candlestick. |
 | [Color](CartesianCandlestickSeriesView/Color.md) { get; set; } | Gets or sets the color of candlesticks whose close value is greater than or equal to their open value. |
 | [ReductionColor](CartesianCandlestickSeriesView/ReductionColor.md) { get; set; } | Gets or sets the color of candlesticks whose close value is less than their open value. |

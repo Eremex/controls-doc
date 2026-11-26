@@ -12,7 +12,7 @@ Stores the items of a ribbon gallery.
 public class GalleryItemCollection : ObservableCollection<GalleryItem>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

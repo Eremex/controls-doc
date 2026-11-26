@@ -12,11 +12,16 @@ Provides data for the ShownEditor and HiddenEditor events.
 public class TreeViewEditorEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeViewEditorEventArgs](TreeViewEditorEventArgs/TreeViewEditorEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Editor](TreeViewEditorEventArgs/Editor.md) { get; } | Gets the in-place editor. |
 | [Node](TreeViewEditorEventArgs/Node.md) { get; } | Gets the node whose cell is being edited. |
 

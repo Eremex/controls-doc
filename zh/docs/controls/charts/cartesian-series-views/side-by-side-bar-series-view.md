@@ -1,22 +1,22 @@
 ---
-title: Side-by-side Bar Series View
+title: 并排条形系列视图
 order: 650
 seealso: []
 ---
 
-# Side-by-side Bar Series View
+# 并排条形系列视图 {#side-by-side-bar-series-view}
 
-Side-by-side Bar Series View（`CartesianSideBySideBarSeriesView`）允许您将数据可视化为一组矩形柱状图。如果您提供多个系列，数据将沿水平轴以并排排列的柱状图形式呈现。
+Side-by-side Bar Series View（[`CartesianSideBySideBarSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md)）允许您将数据可视化为一组矩形柱状图。如果您提供多个系列，数据将沿水平轴以并排排列的柱状图形式呈现。
 
 ![chart-views-barseriesview](../../../images/chart-views-barseriesview.png)
 
-## 创建 Side-by-side Bar Series View
+## 创建 Side-by-side Bar Series View {#create-a-side-by-side-bar-series-view}
 
-要创建 Side-by-side Bar Series View，请将一个 `CartesianSeries` 对象添加到 `CartesianChart.Series` 集合中，并使用一个 `CartesianSideBySideBarSeriesView` 对象初始化 `CartesianSeries.View` 属性。
+要创建 Side-by-side Bar Series View，请将一个 [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) 对象添加到 [`CartesianChart.Series`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) 集合中，并使用一个 [`CartesianSideBySideBarSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md) 对象初始化 [`CartesianSeries.View`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md) 属性。
 
-使用 `CartesianSeries.DataAdapter` 属性为该系列提供数据。
+使用 [`CartesianSeries.DataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/Series/DataAdapter.md) 属性为该系列提供数据。
 
-以下代码展示了如何在 XAML 和 code-behind 中创建 Bar Series View。
+以下代码展示了如何在 XAML 和代码隐藏中创建 Bar Series View。
 
 ``` xml
 xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
@@ -51,15 +51,15 @@ series.View = new CartesianSideBySideBarSeriesView()
 No bars are displayed without axis X
  -->
 
-### 示例 - 创建两个 Side-by-side Bar Series View
+### 示例 - 创建两个 Side-by-side Bar Series View {#example-create-two-side-by-side-bar-series-views}
 
-以下示例创建了一个包含两个 Side-by-side Bar Series View 的 `CartesianChart` 控件。柱状图系列视图的数据由在主视图模型中初始化的 `SortedDateTimeDataAdapter` 对象提供。此处假定窗口的数据上下文已设置为 _MainWindowViewModel_ 对象。
+以下示例创建了一个包含两个 Side-by-side Bar Series View 的 [`CartesianChart`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) 控件。柱状图系列视图的数据由在主视图模型中初始化的 [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) 对象提供。此处假定窗口的数据上下文已设置为 _MainWindowViewModel_ 对象。
 
-该示例展示了如何为 `CartesianSideBySideBarSeriesView` 对象初始化颜色、柱宽以及柱与柱之间的间距。
+该示例展示了如何为 [`CartesianSideBySideBarSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md) 对象初始化颜色、柱宽以及柱与柱之间的间距。
 
 _X_ 轴和 _Y_ 轴在 XAML 中创建，以便对其设置（包括标题和刻度选项）进行自定义。
 
-使用 `SortedDateTimeDataAdapter` 对象时，您需要指定 `MeasureUnit` 属性以定义轴的刻度方式。在此示例中，数据使用月度间隔，因此 `MeasureUnit` 属性设置为 `Month`。
+使用 [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) 对象时，您需要指定 `MeasureUnit` 属性以定义轴的刻度方式。在此示例中，数据使用月度间隔，因此 `MeasureUnit` 属性设置为 `Month`。
 
 ![chart-views-barseriesview-example](../../../images/chart-views-barseriesview-example.png)
 
@@ -148,34 +148,34 @@ public partial class SeriesViewModel : ObservableObject
 ```
 
 
-## Bar Series View 的数据
+## Bar Series View 的数据 {#data-for-the-bar-series-view}
 
 您可以使用以下数据适配器为 Side-by-side Bar Series View 提供数据：
 
 
 数值型 _X_ 值：
 
-- `SortedNumericDataAdapter`
-- `FormulaDataAdapter`
+- [`SortedNumericDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md)
+- [`FormulaDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/FormulaDataAdapter.md)
 
 日期时间型 _X_ 值：
 
-- `SortedDateTimeDataAdapter`
-- `SortedTimeSpanDataAdapter`
+- [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md)
+- [`SortedTimeSpanDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedTimeSpanDataAdapter.md)
 
 定性 _X_ 值：
 
-- `QualitativeDataAdapter`
+- [`QualitativeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeDataAdapter.md)
 
 
 
-## Bar Series View 设置
+## Bar Series View 设置 {#bar-series-view-settings}
 
-- `CartesianSideBySideBarSeriesView.BarDistanceFixed` — 当前 Bar Series View 所属柱状图右侧空白区域的宽度。`BarDistanceFixed` 属性允许您调整不同系列的柱状图之间的间距。
-- `CartesianSideBySideBarSeriesView.BarWidth` — 当前 Bar Series View 中柱状图的宽度。
-- `CartesianSideBySideBarSeriesView.BorderColor` — 柱状图的边框颜色。
-- `CartesianSideBySideBarSeriesView.BorderThickness` — 柱状图边框的粗细。
-- `CartesianSideBySideBarSeriesView.Color` — 柱状图的填充颜色。
+- [`CartesianSideBySideBarSeriesView.BarDistanceFixed`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BarDistanceFixed.md) — 当前 Bar Series View 所属柱状图右侧空白区域的宽度。[`BarDistanceFixed`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BarDistanceFixed.md) 属性允许您调整不同系列的柱状图之间的间距。
+- [`CartesianSideBySideBarSeriesView.BarWidth`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BarWidth.md) — 当前 Bar Series View 中柱状图的宽度。
+- [`CartesianSideBySideBarSeriesView.BorderColor`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BorderColor.md) — 柱状图的边框颜色。
+- [`CartesianSideBySideBarSeriesView.BorderThickness`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BorderThickness.md) — 柱状图边框的粗细。
+- [`CartesianSideBySideBarSeriesView.Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/Color.md) — 柱状图的填充颜色。
 
 <br>
 <br>

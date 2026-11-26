@@ -12,11 +12,12 @@ Represents the scene element found by a ray cast, together with the distance fro
 public struct RaycastHitTestResult
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |
 | [Geometry](RaycastHitTestResult/Geometry.md) { get; } | Gets the mesh that the ray has hit. |
+| [HitPoint](RaycastHitTestResult/HitPoint.md) { get; } | Gets the hit point that the ray has hit. |
 | [Model](RaycastHitTestResult/Model.md) { get; } | Gets the model that contains the hit mesh. |
 
 ## See Also

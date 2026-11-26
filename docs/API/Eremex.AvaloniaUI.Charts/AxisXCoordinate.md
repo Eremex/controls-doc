@@ -12,11 +12,16 @@ Represents a value on a specific X axis.
 public struct AxisXCoordinate
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [AxisXCoordinate](AxisXCoordinate/AxisXCoordinate.md)(…) | Initializes a new instance of the [`AxisXCoordinate`](./AxisXCoordinate.md) struct. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Axis](AxisXCoordinate/Axis.md) { get; } | Gets the axis the value belongs to. |
 | [Value](AxisXCoordinate/Value.md) { get; } | Gets the value on the axis, expressed in the scale of that axis. |
 

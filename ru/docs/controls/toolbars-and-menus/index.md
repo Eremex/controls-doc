@@ -6,7 +6,7 @@ seealso: []
 
 # Панели инструментов и меню
 
-Библиотека EMX Controls содержит компонент `ToolbarManager`, который позволяет создавать традиционные панели инструментов и меню или [Ribbon UI](../ribbon/index.md) в вашем приложении. `ToolbarManager` предлагает богатые возможности для размещения и управления традиционными панелями инструментов, создания контекстных меню, настройки параметров отображения и поведения панелей инструментов, а также настройки панелей во время работы.
+Библиотека EMX Controls содержит компонент [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md), который позволяет создавать традиционные панели инструментов и меню или [Ribbon UI](../ribbon/index.md) в вашем приложении. [`ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) предлагает богатые возможности для размещения и управления традиционными панелями инструментов, создания контекстных меню, настройки параметров отображения и поведения панелей инструментов, а также настройки панелей во время работы.
 
 ![toolbars](../../images/toolbars.png)
 
@@ -29,7 +29,7 @@ seealso: []
     - Опция показа/скрытия маркеров перетаскивания панелей.
     - Опция показа/скрытия кнопок настройки панелей.
     
-- Поддерживаемые элементы панелей: `ToolbarButtonItem`, `ToolbarCheckItem`, `ToolbarMenuItem`, `ToolbarEditorItem`, `ToolbarTextItem`, `ToolbarItemGroup` и `ToolbarCheckItemGroup`.
+- Поддерживаемые элементы панелей: [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md), [`ToolbarCheckItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItem.md), [`ToolbarMenuItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarMenuItem.md), [`ToolbarEditorItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarEditorItem.md), [`ToolbarTextItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarTextItem.md), [`ToolbarItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup.md) и [`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md).
 
 - Контекстные меню — вы можете создавать контекстные меню для внешних контролов. Настройки стиля контекстных меню согласованы со всеми компонентами библиотеки панелей инструментов и меню.
 

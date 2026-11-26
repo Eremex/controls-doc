@@ -12,11 +12,16 @@ Displays the data of a polar series as an area filled between the polyline and t
 public class PolarAreaSeriesView : PolarLineSeriesView, IAreaSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PolarAreaSeriesView](PolarAreaSeriesView/PolarAreaSeriesView.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Transparency](PolarAreaSeriesView/Transparency.md) { get; set; } | Gets or sets the transparency of the filled area. Zero makes the area opaque, and one makes it fully transparent. |
 
 ## See Also

@@ -12,11 +12,16 @@ Provides data for the PopupOpening event.
 public class OpeningPopupEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [OpeningPopupEventArgs](OpeningPopupEventArgs/OpeningPopupEventArgs.md)(…) | Initializes a new instance of the OpeningPopupEventArgs class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Cancel](OpeningPopupEventArgs/Cancel.md) { get; set; } | Gets or sets whether the popup opening is canceled. |
 
 ## See Also

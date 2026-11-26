@@ -14,7 +14,7 @@ seealso: []
 
 ## Определение страниц Ribbon и доступ к ним
 
-Страницы Ribbon инкапсулируются объектами класса `RibbonPage`. В code-behind вы можете создавать, получать доступ и изменять страницы Ribbon с помощью коллекции `RibbonControl.Pages`. Чтобы определить страницы Ribbon в XAML, добавьте объекты `RibbonPage` между открывающим и закрывающим тегами **&lt;RibbonControl&gt;**.
+Страницы Ribbon инкапсулируются объектами класса [`RibbonPage`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage.md). В code-behind вы можете создавать, получать доступ и изменять страницы Ribbon с помощью коллекции [`RibbonControl.Pages`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/Pages.md). Чтобы определить страницы Ribbon в XAML, добавьте объекты [`RibbonPage`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage.md) между открывающим и закрывающим тегами **&lt;RibbonControl&gt;**.
 
 ``` xml
 <mxb:ToolbarManager IsWindowManager="True">
@@ -33,11 +33,11 @@ seealso: []
 ```
 
 <!-- TODO
-Example of adding, hiding, positioning pages via `RibbonControl.Pages`.
+Example of adding, hiding, positioning pages via [`RibbonControl.Pages`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/Pages.md).
  -->
 
 
-Вы также можете использовать свойство `RibbonControl.PagesSource`, чтобы создавать страницы Ribbon из коллекции бизнес-объектов во View Model. Соответствующий шаблон данных должен определять объект `RibbonPage` и инициализировать его настройки из базового бизнес-объекта.
+Вы также можете использовать свойство [`RibbonControl.PagesSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/PagesSource.md), чтобы создавать страницы Ribbon из коллекции бизнес-объектов во View Model. Соответствующий шаблон данных должен определять объект [`RibbonPage`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage.md) и инициализировать его настройки из базового бизнес-объекта.
 
 <!-- TODO
 PagesSource example 
@@ -45,13 +45,13 @@ PagesSource example
 
 ## Заголовок и содержимое страницы
 
-Когда вы создаёте страницу, используйте свойство `RibbonPage.Header`, чтобы задать текст заголовка страницы.
+Когда вы создаёте страницу, используйте свойство [`RibbonPage.Header`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/Header.md), чтобы задать текст заголовка страницы.
 
 <!-- TODO
 There is a Glyph property in RibbonPage.  Doesn't work???
  -->
 
-Содержимым страниц Ribbon являются [группы страниц Ribbon](page-groups.md). Используйте коллекцию `RibbonPage.Groups`, чтобы создавать группы страниц Ribbon и получать к ним доступ. В XAML вы можете определять группы страниц между открывающим и закрывающим тегами **&lt;RibbonPage&gt;**.
+Содержимым страниц Ribbon являются [группы страниц Ribbon](page-groups.md). Используйте коллекцию [`RibbonPage.Groups`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/Groups.md), чтобы создавать группы страниц Ribbon и получать к ним доступ. В XAML вы можете определять группы страниц между открывающим и закрывающим тегами **&lt;RibbonPage&gt;**.
 
 ``` xml
  <mxr:RibbonPage Header="Home" KeyTip="H">
@@ -75,18 +75,18 @@ There is a Glyph property in RibbonPage.  Doesn't work???
 ```
 
 
-Вы также можете использовать свойство `RibbonPage.GroupsSource`, чтобы создавать группы страниц из коллекции бизнес-объектов во View Model. Соответствующий шаблон данных должен определять объект `RibbonPageGroup` и инициализировать его настройки из бизнес-объекта.
+Вы также можете использовать свойство [`RibbonPage.GroupsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/GroupsSource.md), чтобы создавать группы страниц из коллекции бизнес-объектов во View Model. Соответствующий шаблон данных должен определять объект [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md) и инициализировать его настройки из бизнес-объекта.
 
 ## Выбранная страница
 
 Содержимое страницы показывается пользователю, когда страница выбрана. Пользователь может выбрать страницу, щёлкнув по её заголовку. В коде вы можете выбрать страницу с помощью одного из следующих свойств:
 
-- `RibbonControl.SelectedPage`
-- `RibbonPage.IsSelected`
+- [`RibbonControl.SelectedPage`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/SelectedPage.md)
+- [`RibbonPage.IsSelected`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/IsSelected.md)
 
 ## Видимость страниц
 
-Используйте свойство `RibbonPage.IsVisible`, чтобы скрывать и отображать страницу. Позиция страницы задаётся её местом в коллекции `RibbonControl.Pages`.
+Используйте свойство `RibbonPage.IsVisible`, чтобы скрывать и отображать страницу. Позиция страницы задаётся её местом в коллекции [`RibbonControl.Pages`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/Pages.md).
 
 Следующий код отображает и активирует изначально скрытую страницу _Table_.
 

@@ -12,11 +12,16 @@ Hosts toolbars along a docking edge or in a standalone container.
 public class ToolbarContainerControl : ItemsControl
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ToolbarContainerControl](ToolbarContainerControl/ToolbarContainerControl.md)() | Initializes a new instance of the ToolbarContainerControl class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowCustomizationMenu](ToolbarContainerControl/AllowCustomizationMenu.md) { get; set; } | Gets or sets whether the container allows a customization menu, or null to use the manager's setting. |
 | [DockType](ToolbarContainerControl/DockType.md) { get; set; } | Gets or sets the docking edge of the toolbar container. |
 | [DrawBackground](ToolbarContainerControl/DrawBackground.md) { get; set; } | Gets or sets whether the toolbar container draws its background. |
@@ -24,6 +29,11 @@ public class ToolbarContainerControl : ItemsControl
 | [Manager](ToolbarContainerControl/Manager.md) { get; set; } | Gets or sets the toolbar manager associated with this object. |
 | [Orientation](ToolbarContainerControl/Orientation.md) { get; set; } | Gets or sets the orientation of toolbars in the container. |
 | [VerticalTextRotation](ToolbarContainerControl/VerticalTextRotation.md) { get; set; } | Gets or sets the direction in which text is rotated in vertical toolbars. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [AddToolbar](ToolbarContainerControl/AddToolbar.md)(…) | Adds the specified toolbar to the container and returns whether it was added. |
 | [RemoveToolbar](ToolbarContainerControl/RemoveToolbar.md)(…) | Removes the specified toolbar from the container and returns whether it was removed. |
 | [ShowCustomizationMenu](ToolbarContainerControl/ShowCustomizationMenu.md)() | Displays the toolbar container's customization menu. |

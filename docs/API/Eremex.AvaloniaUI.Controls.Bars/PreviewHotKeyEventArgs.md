@@ -12,11 +12,16 @@ Provides data for the event raised before a toolbar keyboard shortcut is process
 public class PreviewHotKeyEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PreviewHotKeyEventArgs](PreviewHotKeyEventArgs/PreviewHotKeyEventArgs.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Cancel](PreviewHotKeyEventArgs/Cancel.md) { get; set; } | Gets or sets whether to cancel processing the keyboard shortcut. |
 | [KeyBinding](PreviewHotKeyEventArgs/KeyBinding.md) { get; set; } | Gets or sets the key binding being processed. |
 

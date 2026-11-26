@@ -12,11 +12,16 @@ Provides data for a notification that the items of a chart element collection ha
 public class ChartElementCollectionChangedEventArgs : ChartElementChangedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ChartElementCollectionChangedEventArgs](ChartElementCollectionChangedEventArgs/ChartElementCollectionChangedEventArgs.md)(…) | Initializes a new instance of the [`ChartElementCollectionChangedEventArgs`](./ChartElementCollectionChangedEventArgs.md) class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Args](ChartElementCollectionChangedEventArgs/Args.md) { get; } | Gets the details of the change made to the collection. |
 | [CollectionProperty](ChartElementCollectionChangedEventArgs/CollectionProperty.md) { get; } | Gets the property that holds the collection, so the chart can tell which collection has changed. |
 

@@ -13,11 +13,16 @@ public class ToolbarItem : TemplatedControl, IBorderStateProvider, ICommandSourc
     IToolbarActionItem
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ToolbarItem](ToolbarItem/ToolbarItem.md)() | Initializes a new instance of the ToolbarItem class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Alignment](ToolbarItem/Alignment.md) { get; set; } | Gets or sets the alignment of the item within its toolbar. |
 | [Category](ToolbarItem/Category.md) { get; set; } | Gets or sets the category used to organize the item during customization. |
 | [CloseMenuOnClick](ToolbarItem/CloseMenuOnClick.md) { get; set; } | Gets or sets whether clicking the item closes its containing menu. |
@@ -52,8 +57,11 @@ public class ToolbarItem : TemplatedControl, IBorderStateProvider, ICommandSourc
 | [SerializationName](ToolbarItem/SerializationName.md) { get; set; } | Gets or sets the name used to identify this object during layout serialization. |
 | [ShowSeparator](ToolbarItem/ShowSeparator.md) { get; set; } | Gets or sets whether a separator is displayed before the item. |
 | [Toolbar](ToolbarItem/Toolbar.md) { get; } | Gets the toolbar that contains the item. |
-| event [Click](ToolbarItem/Click.md) | Occurs when the item is clicked. |
-| event [Press](ToolbarItem/Press.md) | Occurs when the pointer button is pressed over the item. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [GetRootHolder](ToolbarItem/GetRootHolder.md)() | Returns the outermost holder of the toolbar item. |
 | virtual [GetShortcutDisplayString](ToolbarItem/GetShortcutDisplayString.md)() | Returns the text used to display the item's keyboard shortcut. |
 | [OnDragLeave](ToolbarItem/OnDragLeave.md)() | Clears the item's drag-over state. |
@@ -61,6 +69,13 @@ public class ToolbarItem : TemplatedControl, IBorderStateProvider, ICommandSourc
 | [OnDropDownBorderLeave](ToolbarItem/OnDropDownBorderLeave.md)(…) | Processes the pointer leaving the item's drop-down area. |
 | [OnDropDownBorderReleased](ToolbarItem/OnDropDownBorderReleased.md)(…) | Processes a pointer release over the item's drop-down area. |
 | override [ToString](ToolbarItem/ToString.md)() |  |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [Click](ToolbarItem/Click.md) | Occurs when the item is clicked. |
+| event [Press](ToolbarItem/Press.md) | Occurs when the pointer button is pressed over the item. |
 
 ## See Also
 

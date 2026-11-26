@@ -12,13 +12,16 @@ Manages toolbars, toolbar items, popup menus, keyboard shortcuts, and customizat
 public class ToolbarManager : Border
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ToolbarManager](ToolbarManager/ToolbarManager.md)() | Initializes a new instance of the ToolbarManager class. |
-| static [FindManager](ToolbarManager/FindManager.md)(…) | Finds the toolbar manager for the specified control, optionally creating a window manager with the supplied factory. |
-| static [GetManager](ToolbarManager/GetManager.md)(…) | Gets the toolbar manager associated with the specified object. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowContainerCustomizationMenu](ToolbarManager/AllowContainerCustomizationMenu.md) { get; set; } | Gets or sets whether toolbar containers can display a customization menu. |
 | [AllowCustomization](ToolbarManager/AllowCustomization.md) { get; set; } | Gets or sets whether users can customize toolbars and toolbar items. |
 | [AllowDragItems](ToolbarManager/AllowDragItems.md) { get; set; } | Gets or sets whether users can drag toolbar items during customization. |
@@ -31,8 +34,13 @@ public class ToolbarManager : Border
 | [Popups](ToolbarManager/Popups.md) { get; } | Gets the collection of registered popups. |
 | [SerializationInfo](ToolbarManager/SerializationInfo.md) { get; } | Gets the layout information used during serialization or deserialization. |
 | [Toolbars](ToolbarManager/Toolbars.md) { get; } | Gets the collection of toolbars. |
-| event [PreviewAccessKey](ToolbarManager/PreviewAccessKey.md) | Occurs before a toolbar access key is processed. |
-| event [PreviewHotKey](ToolbarManager/PreviewHotKey.md) | Occurs before a toolbar keyboard shortcut is processed. Cancel the event to prevent processing. |
+
+## Methods
+
+| name | description |
+| --- | --- |
+| static [FindManager](ToolbarManager/FindManager.md)(…) | Finds the toolbar manager for the specified control, optionally creating a window manager with the supplied factory. |
+| static [GetManager](ToolbarManager/GetManager.md)(…) | Gets the toolbar manager associated with the specified object. |
 | [GetContainer](ToolbarManager/GetContainer.md)(…) | Returns the toolbar container for the specified docking location, or null if no container is registered. |
 | [GetToolbar](ToolbarManager/GetToolbar.md)(…) | Returns the toolbar with the specified name, or null if no matching toolbar is registered. |
 | [HideCustomizationWindow](ToolbarManager/HideCustomizationWindow.md)() | Closes the toolbar customization window. |
@@ -43,6 +51,13 @@ public class ToolbarManager : Border
 | static [GetContextPopup](ToolbarManager/GetContextPopup.md)(…) | Gets the context popup associated with the specified object. |
 | static [SetContextPopup](ToolbarManager/SetContextPopup.md)(…) | Sets the context popup associated with the specified object. |
 | static [SetManager](ToolbarManager/SetManager.md)(…) | Sets the toolbar manager associated with the specified object. |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [PreviewAccessKey](ToolbarManager/PreviewAccessKey.md) | Occurs before a toolbar access key is processed. |
+| event [PreviewHotKey](ToolbarManager/PreviewHotKey.md) | Occurs before a toolbar keyboard shortcut is processed. Cancel the event to prevent processing. |
 
 ## See Also
 

@@ -12,11 +12,16 @@ Stores the popups registered with a toolbar manager.
 public class PopupCollection : ObservableCollection<IPopup>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PopupCollection](PopupCollection/PopupCollection.md)(…) | Initializes a new instance of the PopupCollection class for the specified toolbar manager. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Manager](PopupCollection/Manager.md) { get; } | Gets the toolbar manager associated with this object. |
 
 ## See Also

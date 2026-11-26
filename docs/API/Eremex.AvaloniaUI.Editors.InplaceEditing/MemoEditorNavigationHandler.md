@@ -12,11 +12,16 @@ Provides keyboard navigation for the memo inplace editor.
 public class MemoEditorNavigationHandler : PopupEditorNavigationHandler
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [MemoEditorNavigationHandler](MemoEditorNavigationHandler/MemoEditorNavigationHandler.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | override [NeedsKey](MemoEditorNavigationHandler/NeedsKey.md)(…) | Determines whether the memo editor processes the specified key. |
 
 ## See Also

@@ -12,11 +12,16 @@ Provides a set of commands for a data control.
 public class DataControlCommands
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataControlCommands](DataControlCommands/DataControlCommands.md)(…) | Initializes a new instance of the DataControlCommands class with the specified data control. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [BestFitAllColumns](DataControlCommands/BestFitAllColumns.md) { get; } | Gets the command that applies best fit to all visible columns. |
 | [BestFitColumn](DataControlCommands/BestFitColumn.md) { get; } | Gets the command that applies best fit to a column. |
 | [ClearColumnSorting](DataControlCommands/ClearColumnSorting.md) { get; } | Gets the command that clears a column's sorting. |

@@ -12,11 +12,16 @@ Configures the save file dialog shown by [`ISaveFileDialogService`](./ISaveFileD
 public class SaveFileDialogOptions
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SaveFileDialogOptions](SaveFileDialogOptions/SaveFileDialogOptions.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [DefaultExtension](SaveFileDialogOptions/DefaultExtension.md) { get; set; } | The default file extension: the extension itself, without dots or wildcards. For XML files specify "xml", not "*.xml". |
 | [DefaultFolder](SaveFileDialogOptions/DefaultFolder.md) { get; set; } | The default folder. Use [`DefaultWellKnownFolder`](./SaveFileDialogOptions/DefaultWellKnownFolder.md) for well-known folders such as Documents or Pictures. |
 | [DefaultWellKnownFolder](SaveFileDialogOptions/DefaultWellKnownFolder.md) { get; set; } | The default folder, used when a well-known folder such as Documents or Pictures is needed. Ignored when [`DefaultFolder`](./SaveFileDialogOptions/DefaultFolder.md) is set. |

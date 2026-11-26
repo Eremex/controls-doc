@@ -12,13 +12,18 @@ Serves as the base class for the scale options that define how raw axis values m
 public abstract class ScaleOptions : ChartElementBase
 ```
 
-## Public Members
+## Properties
+
+| name | description |
+| --- | --- |
+| [CrosshairLabelFormatter](ScaleOptions/CrosshairLabelFormatter.md) { get; set; } | Gets or sets the formatter that converts axis values into crosshair label text. If the value is null, the default formatter is used. |
+| [LabelFormatter](ScaleOptions/LabelFormatter.md) { get; set; } | Gets or sets the formatter that converts axis values into axis label text. If the value is null, the default formatter is used. |
+
+## Methods
 
 | name | description |
 | --- | --- |
 | static [Create](ScaleOptions/Create.md)(…) | Creates scale options that match the specified scale type. |
-| [CrosshairLabelFormatter](ScaleOptions/CrosshairLabelFormatter.md) { get; set; } | Gets or sets the formatter that converts axis values into crosshair label text. If the value is null, the default formatter is used. |
-| [LabelFormatter](ScaleOptions/LabelFormatter.md) { get; set; } | Gets or sets the formatter that converts axis values into axis label text. If the value is null, the default formatter is used. |
 
 ## See Also
 

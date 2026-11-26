@@ -30,7 +30,13 @@ The following main properties help you set up a [`SpinEditor`](../../API/Eremex.
 - [`SpinEditor.Minimum`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Minimum.md) — The minimum value for the editor.
 - [`SpinEditor.Maximum`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Maximum.md) — The maximum value for the editor.
 - [`SpinEditor.Increment`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Increment.md) — The value by which the editor's value is increased or decreased when a user clicks spin buttons, or presses the Up and Down Arrow keys.
-- [`SpinEditor.ShowEditorButtons`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ShowEditorButtons.md) — Specifies whether to display built-in spin buttons.
+- [`SpinEditor.ShowEditorButtons`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ShowEditorButtons.md) — Gets or sets whether to display built-in spin buttons.
+- [`SpinEditor.AllowRoundOutOfRangeValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/AllowRoundOutOfRangeValue.md) — Gets or sets whether out-of-range values entered by users are automatically rounded to [`SpinEditor.Minimum`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Minimum.md) or [`SpinEditor.Maximum`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/Maximum.md).
+
+    !!! Note
+
+        When you use [`AllowRoundOutOfRangeValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor/AllowRoundOutOfRangeValue.md), you may also need to set the editor's [`ValidateOnInput`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor/ValidateOnInput.md) property to `false`. This setting skips data validation on each keypress. The entered value will be validated when you press ENTER or move focus away from the [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md) control.
+
 
 ### Example - How to create a SpinEditor
 

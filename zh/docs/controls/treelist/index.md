@@ -4,9 +4,9 @@ order: 90000
 seealso: []
 ---
 
-# TreeList 和 TreeView
+# TreeList 和 TreeView {#treelist-and-treeview}
 
-Eremex Controls 库包含两个用于以树形结构显示层次化数据的数据感知控件 — `TreeListControl` 和 `TreeViewControl`。它们将数据源中的项呈现为节点(行)。如果某个节点拥有子节点,您可以将其展开以显示下一层级的节点结构。
+Eremex Controls 库包含两个用于以树形结构显示层次化数据的数据感知控件 — [`TreeListControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md) 和 [`TreeViewControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md)。它们将数据源中的项呈现为节点(行)。如果某个节点拥有子节点,您可以将其展开以显示下一层级的节点结构。
 
 `TreeList` 支持多列显示:
 
@@ -37,7 +37,8 @@ Eremex Controls 库包含两个用于以树形结构显示层次化数据的数�
 TreeList 特有的功能包括:
 
 - [非绑定列](data-binding/unbound-columns.md) — 您可以添加非绑定列(未绑定到数据源字段的列),并通过事件手动为其填充数据。
-- [列过滤菜单](filter-and-search.md#column-filters-treelist) — 您可以使用显示列唯一值的下拉菜单来过滤数据。单击任意列标题中的过滤按钮即可访问过滤选项。
+- [汇总](summaries.md) — TreeList 可以针对列计算总计汇总。总计汇总是针对所有行计算的聚合函数。
+- [过滤](filter-and-search.md#column-filters-treelist) — 您可以使用显示列唯一值的下拉菜单来过滤数据。单击任意列标题中的过滤按钮即可访问过滤选项。
 - [自动筛选行](filter-and-search.md#auto-filter-row-treelist) — 一种特殊的行,允许用户按列过滤数据。
 - [列标题模板](columns.md#column-headers) — 允许在列标题中显示自定义内容,包括图像。
 - [多节点选择(高亮)](nodes.md#multiple-node-selection-highlight) — 您可以启用多节点选择模式,允许用户一次选择(高亮)多个节点。

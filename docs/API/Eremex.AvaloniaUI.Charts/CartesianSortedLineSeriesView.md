@@ -12,11 +12,16 @@ Connects the data points of a Cartesian series with a line, sorting the points b
 public class CartesianSortedLineSeriesView : CartesianLineSeriesViewBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CartesianSortedLineSeriesView](CartesianSortedLineSeriesView/CartesianSortedLineSeriesView.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CrosshairMode](CartesianSortedLineSeriesView/CrosshairMode.md) { get; set; } | Gets or sets whether the crosshair snaps to the nearest data point or to the line segment under the pointer. |
 
 ## See Also

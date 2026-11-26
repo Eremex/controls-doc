@@ -1,12 +1,12 @@
 ---
-title: Candlestick Series View
+title: K 线系列视图
 order: 450
 seealso: []
 ---
 
-# Candlestick Series View
+# K 线系列视图 {#candlestick-series-view}
 
-在 `CartesianChart` 控件中使用 Candlestick Series View（`CartesianCandlestickSeriesView`）可以创建显示资产价格走势的金融图表。数据点显示特定时期内证券的最高价、最低价、开盘价和收盘价。
+在 [`CartesianChart`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) 控件中使用 Candlestick Series View（[`CartesianCandlestickSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView.md)）可以创建显示资产价格走势的金融图表。数据点显示特定时期内证券的最高价、最低价、开盘价和收盘价。
 
 ![chart-views-candlestick](../../../images/chart-views-candlestick.png)
 
@@ -39,22 +39,22 @@ AxisYKey="Price"
 SeriesName="Price"
  -->
 
-## Candlestick Series View 的数据
+## Candlestick Series View 的数据 {#data-for-the-candlestick-series-view}
 
-任何 Cartesian Series View 的数据都是通过分配给 `CartesianSeries.DataAdapter` 属性的[数据适配器](../cartesian-chart.md#series-data)提供的。数据适配器为图表提供 _X_ 和 _Y_ 值。
+任何 Cartesian Series View 的数据都是通过分配给 [`CartesianSeries.DataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/Series/DataAdapter.md) 属性的[数据适配器](../cartesian-chart.md#series-data)提供的。数据适配器为图表提供 _X_ 和 _Y_ 值。
 
 Candlestick Series View 有两种可用的数据适配器：
 
-- `CandlestickDataAdapter`
-- `SummaryCandlestickDataAdapter`
+- [`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md)
+- [`SummaryCandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter.md)
 
 在这两种数据适配器中，_X_ 值均为 DateTime 类型。请根据您所拥有的 _Y_ 值类型选择其中一种数据适配器。
 
-### CandlestickDataAdapter
+### CandlestickDataAdapter {#candlestickdataadapter}
 
-使用 `CandlestickDataAdapter` 对象时，您需要提供四个 Double 类型的 _Y_ 值，分别指定每个 _X_ 参数对应的开盘价、收盘价、最高价和最低价。您可以使用 `CandlestickDataAdapter` 构造函数为适配器填充数据。
+使用 [`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) 对象时，您需要提供四个 Double 类型的 _Y_ 值，分别指定每个 _X_ 参数对应的开盘价、收盘价、最高价和最低价。您可以使用 [`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) 构造函数为适配器填充数据。
 
-以下代码取自“Candlestick”图表演示，演示了 `CandlestickDataAdapter` 对象的初始化。
+以下代码取自“Candlestick”图表演示，演示了 [`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) 对象的初始化。
 
 ``` cs
 [ObservableProperty] CandlestickDataAdapter stockData;
@@ -79,7 +79,7 @@ public CartesianCandlestickSeriesViewViewModel()
 }
 ```
 
-`CandlestickDataAdapter` 对象要求您使用 `DateTimeScaleOptions.MeasureUnit` 属性为 _X_ 轴设置时间单位（轴单位）。
+[`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) 对象要求您使用 [`DateTimeScaleOptions.MeasureUnit`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeScaleOptions/MeasureUnit.md) 属性为 _X_ 轴设置时间单位（轴单位）。
 
 在下面的代码片段中，轴单位设置为 `Day`。
 
@@ -94,19 +94,19 @@ public CartesianCandlestickSeriesViewViewModel()
 </mxc:CartesianChart.AxesX>
 ```
 
-提供给 `CandlestickDataAdapter` 数据适配器的 _X_ 参数应与该轴单位相对应。例如，当轴单位设置为 `Day` 时，_X_ 值应表示各个独立的日期。
+提供给 [`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) 数据适配器的 _X_ 参数应与该轴单位相对应。例如，当轴单位设置为 `Day` 时，_X_ 值应表示各个独立的日期。
 
-### SummaryCandlestickDataAdapter
+### SummaryCandlestickDataAdapter {#summarycandlestickdataadapter}
 
-`SummaryCandlestickDataAdapter` 适配器会汇总您提供的数据，并按指定的时间范围（时间单位）（例如按秒、分钟、小时、天、周等，或时间范围的倍数）自动计算开盘价、收盘价、最高价和最低价。例如，您可以提供以一秒为间隔的数据，并让 `SummaryCandlestickDataAdapter` 自动将这些数据按 5 秒、分钟或小时等间隔进行汇总。
+[`SummaryCandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter.md) 适配器会汇总您提供的数据，并按指定的时间范围（时间单位）（例如按秒、分钟、小时、天、周等，或时间范围的倍数）自动计算开盘价、收盘价、最高价和最低价。例如，您可以提供以一秒为间隔的数据，并让 [`SummaryCandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter.md) 自动将这些数据按 5 秒、分钟或小时等间隔进行汇总。
 
 _X_ 值指定各个独立的日期时间值。对于每个 _X_ 值，提供一个 Double 类型的 _Y_ 值。
 
 要指定聚合时间范围，请使用以下两个属性：
 
-- `SummaryCandlestickDataAdapter.MeasureUnit` — 指定数据适配器用于计算开盘价、收盘价、最高价和最低价的基本聚合时间范围（Millisecond、Second、Minute、Hour、Day、Week、Month、Quarter 或 Year）。
+- [`SummaryCandlestickDataAdapter.MeasureUnit`](../../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter/MeasureUnit.md) — 指定数据适配器用于计算开盘价、收盘价、最高价和最低价的基本聚合时间范围（Millisecond、Second、Minute、Hour、Day、Week、Month、Quarter 或 Year）。
 
-- `SummaryCandlestickDataAdapter.MeasureUnitFactor`（整数值，默认值为 `1`）— 指定用于计算实际时间范围的基本时间范围乘数。时间范围的实际长度按以下表达式计算：`MeasureUnit x MeasureUnitFactor`。
+- [`SummaryCandlestickDataAdapter.MeasureUnitFactor`](../../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter/MeasureUnitFactor.md)（整数值，默认值为 `1`）— 指定用于计算实际时间范围的基本时间范围乘数。时间范围的实际长度按以下表达式计算：`MeasureUnit x MeasureUnitFactor`。
 
 以下示例将时间范围设置为“2 秒”：
 
@@ -128,36 +128,36 @@ public CartesianSummaryCandlestickViewModel()
 ```
 
 
-`CandlestickDataAdapter` 和 `SummaryCandlestickDataAdapter` 类提供了用于删除和添加数据点的方法。当图表数据需要实时更新时，这些方法非常有用。
+[`CandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter.md) 和 [`SummaryCandlestickDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SummaryCandlestickDataAdapter.md) 类提供了用于删除和添加数据点的方法。当图表数据需要实时更新时，这些方法非常有用。
 
 - `Add` — 在数据数组末尾添加一个新数据点。
-- `UpdateValue` — 修改指定位置的数据点。
-- `RemoveFromStart` — 从数据起始处删除指定数量的数据点。
-- `Clear` — 清除所有数据。
+- [`UpdateValue`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter/UpdateValue.md) — 修改指定位置的数据点。
+- [`RemoveFromStart`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter/RemoveFromStart.md) — 从数据起始处删除指定数量的数据点。
+- [`Clear`](../../../API/Eremex.AvaloniaUI.Charts/CandlestickDataAdapter/Clear.md) — 清除所有数据。
 
-## 蜡烛的颜色和粗细
+## 蜡烛的颜色和粗细 {#candle-color-and-thickness}
 
-使用 `CartesianCandlestickSeriesView` 的 `Color` 和 `ReductionColor` 属性指定蜡烛颜色：
+使用 [`CartesianCandlestickSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView.md) 的 [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/Color.md) 和 [`ReductionColor`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/ReductionColor.md) 属性指定蜡烛颜色：
 
-- `CartesianCandlestickSeriesView.Color` — 指定用于绘制收盘价高于或等于开盘价的蜡烛的颜色。
-- `CartesianCandlestickSeriesView.ReductionColor` — 指定用于绘制收盘价低于开盘价的蜡烛的颜色。
+- [`CartesianCandlestickSeriesView.Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/Color.md) — 指定用于绘制收盘价高于或等于开盘价的蜡烛的颜色。
+- [`CartesianCandlestickSeriesView.ReductionColor`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/ReductionColor.md) — 指定用于绘制收盘价低于开盘价的蜡烛的颜色。
 
 
 ![chart-candlestick-colors](../../../images/chart-candlestick-colors.png)
 
 以下属性可用于自定义蜡烛的粗细：
 
-- `CandleWidth` — 一个 Double 值，指定蜡烛实心柱体的粗细。`CandleWidth` 属性值以轴单位度量。Candlestick Series View 使用日期时间轴，其轴单位由 `DateTimeScaleOptions.MeasureUnit` 属性决定。例如，如果 `MeasureUnit` 属性设置为 `Day`，则轴单位就是日期时间轴上相邻两天之间的距离。当 `CandleWidth` 属性设置为 `0.5` 时，蜡烛宽度即为相邻两天之间距离的一半。
+- [`CandleWidth`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/CandleWidth.md) — 一个 Double 值，指定蜡烛实心柱体的粗细。[`CandleWidth`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/CandleWidth.md) 属性值以轴单位度量。Candlestick Series View 使用日期时间轴，其轴单位由 [`DateTimeScaleOptions.MeasureUnit`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeScaleOptions/MeasureUnit.md) 属性决定。例如，如果 [`MeasureUnit`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeScaleOptions/MeasureUnit.md) 属性设置为 `Day`，则轴单位就是日期时间轴上相邻两天之间的距离。当 [`CandleWidth`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/CandleWidth.md) 属性设置为 `0.5` 时，蜡烛宽度即为相邻两天之间距离的一半。
 
-- `Thickness` — 一个 Double 值，指定蜡烛须线的粗细。该属性值以像素为单位度量。
+- [`Thickness`](../../../API/Eremex.AvaloniaUI.Charts/CartesianCandlestickSeriesView/Thickness.md) — 一个 Double 值，指定蜡烛须线的粗细。该属性值以像素为单位度量。
 
 ![chart-candlestick-widths](../../../images/chart-candlestick-widths.png)
 
-## 轴
+## 轴 {#axes}
 
-与其他系列视图一样，您可以使用 `CartesianChart.AxesX` 和 `CartesianChart.AxesY` 属性自定义 Candlestick 图表类型的轴。Candlestick 图表的 _X_ 轴显示日期时间值。要自定义 _X_ 轴的刻度设置，请将 `AxisX.ScaleOptions` 属性设置为一个 `DateTimeScaleOptions` 对象。
+与其他系列视图一样，您可以使用 [`CartesianChart.AxesX`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesX.md) 和 [`CartesianChart.AxesY`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesY.md) 属性自定义 Candlestick 图表类型的轴。Candlestick 图表的 _X_ 轴显示日期时间值。要自定义 _X_ 轴的刻度设置，请将 [`AxisX.ScaleOptions`](../../../API/Eremex.AvaloniaUI.Charts/AxisX/ScaleOptions.md) 属性设置为一个 [`DateTimeScaleOptions`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeScaleOptions.md) 对象。
 
-以下代码片段创建了一个带有 Candlestick Series View 的 `CartesianChart` 控件，并自定义了图表的轴。完整示例请参阅“Candlestick”图表演示。
+以下代码片段创建了一个带有 Candlestick Series View 的 [`CartesianChart`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) 控件，并自定义了图表的轴。完整示例请参阅“Candlestick”图表演示。
 
 ``` xml
 <mxc:CartesianChart Grid.Row="1" Classes="DemoChart" x:Name="DemoControl">
@@ -182,7 +182,7 @@ public CartesianSummaryCandlestickViewModel()
 </mxc:CartesianChart>
 ```
 
-有关自定义轴范围、刻度设置和标签的更多信息，请参阅以下主题：[Cartesian Chart - Axes](../cartesian-chart.md#axes)。
+有关自定义轴范围、刻度设置和标签的更多信息，请参阅以下主题：[坐标轴](../cartesian-chart.md#axes)。
 
 <br>
 <br>

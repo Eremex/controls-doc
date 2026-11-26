@@ -3,7 +3,7 @@ title: 如何在代码后台创建复杂的 Docking 布局
 seealso: []
 ---
 
-# 如何在代码后台创建复杂的 Docking 布局
+# 如何在代码后台创建复杂的 Docking 布局 {#how-to-create-a-complex-docking-layout-in-code-behind}
 
 此示例展示了如何在代码后台创建停靠的、浮动的和自动隐藏的面板，并按照下图所示的方式排列它们：
 

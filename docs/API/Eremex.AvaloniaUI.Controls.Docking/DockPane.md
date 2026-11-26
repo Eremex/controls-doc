@@ -12,11 +12,16 @@ Displays content in a pane that can be docked, floated, auto-hidden, or closed.
 public class DockPane : DockItemBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DockPane](DockPane/DockPane.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowAutoHide](DockPane/AllowAutoHide.md) { get; set; } | Gets or sets whether users can auto-hide the pane. |
 | [AllowClose](DockPane/AllowClose.md) { get; set; } | Gets or sets whether users can close the pane. |
 | [AllowFloat](DockPane/AllowFloat.md) { get; set; } | Gets or sets whether users can move the pane into a floating window. |
@@ -35,6 +40,7 @@ public class DockPane : DockItemBase
 | [IsActive](DockPane/IsActive.md) { get; set; } | Gets or sets whether the pane is active. |
 | [IsHeaderVisible](DockPane/IsHeaderVisible.md) { get; } | Gets whether the pane header is displayed. |
 | [ShowGlyphMode](DockPane/ShowGlyphMode.md) { get; set; } | Gets or sets whether the pane header image is hidden or displayed before or after the header text. |
+| [ShowHeader](DockPane/ShowHeader.md) { get; set; } | Gets or sets whether the pane header can be displayed. Headers are always hidden in document groups. |
 | [ShowInDocumentSwitcher](DockPane/ShowInDocumentSwitcher.md) { get; set; } | Gets or sets whether the pane is displayed in the document switcher. |
 | [ShowTabGlyphMode](DockPane/ShowTabGlyphMode.md) { get; set; } | Gets or sets whether the tab header image is hidden or displayed before or after the header text, or null to use ShowGlyphMode. |
 | [TabGlyph](DockPane/TabGlyph.md) { get; set; } | Gets or sets the image displayed in the pane's tab header. |

@@ -12,23 +12,38 @@ Represents a keyboard shortcut consisting of one or two key gestures.
 public class MxKeyGesture : IEquatable<MxKeyGesture>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [MxKeyGesture](MxKeyGesture/MxKeyGesture.md)(…) | Initializes a new instance of the MxKeyGesture class with the specified keys and modifiers. |
-| static [Parse](MxKeyGesture/Parse.md)(…) | Parses a one-key or comma-separated two-key shortcut, or returns null if the string cannot be parsed. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [HasSecondKey](MxKeyGesture/HasSecondKey.md) { get; } | Gets whether the shortcut contains a second key gesture. |
 | [Key](MxKeyGesture/Key.md) { get; } | Gets the key of the first gesture. |
 | [KeyModifiers](MxKeyGesture/KeyModifiers.md) { get; } | Gets the modifiers of the first gesture. |
 | [SecondKey](MxKeyGesture/SecondKey.md) { get; } | Gets the key of the second gesture, or Key.None if there is no second gesture. |
 | [SecondKeyModifiers](MxKeyGesture/SecondKeyModifiers.md) { get; } | Gets the modifiers of the second gesture, or KeyModifiers.None if there is no second gesture. |
+
+## Methods
+
+| name | description |
+| --- | --- |
+| static [Parse](MxKeyGesture/Parse.md)(…) | Parses a one-key or comma-separated two-key shortcut, or returns null if the string cannot be parsed. |
 | [Equals](MxKeyGesture/Equals.md)(…) | Returns whether this shortcut and the specified shortcut contain the same keys and modifiers. |
 | override [Equals](MxKeyGesture/Equals.md)(…) |  |
 | override [GetHashCode](MxKeyGesture/GetHashCode.md)() |  |
 | [Matches](MxKeyGesture/Matches.md)(…) | Returns whether the supplied keyboard event matches this single-gesture shortcut. (2 methods) |
 | [MatchesFirst](MxKeyGesture/MatchesFirst.md)(…) | Returns whether the keyboard event matches the first gesture of the shortcut. |
 | override [ToString](MxKeyGesture/ToString.md)() |  |
+
+## Operators
+
+| name | description |
+| --- | --- |
 | [operator ==](MxKeyGesture/op_Equality.md) | Returns whether the two shortcuts are equal. |
 | [operator !=](MxKeyGesture/op_Inequality.md) | Returns whether the two shortcuts are different. |
 

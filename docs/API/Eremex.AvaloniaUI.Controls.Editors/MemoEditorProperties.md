@@ -12,11 +12,16 @@ Provides settings for the memo editor.
 public class MemoEditorProperties : PopupEditorProperties
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [MemoEditorProperties](MemoEditorProperties/MemoEditorProperties.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [MemoAcceptsReturn](MemoEditorProperties/MemoAcceptsReturn.md) { get; set; } | Gets or sets whether users can enter new lines in the editor. |
 | [MemoAcceptsTab](MemoEditorProperties/MemoAcceptsTab.md) { get; set; } | Gets or sets whether users can enter tab characters in the editor. |
 | [MemoHorizontalScrollBarVisibility](MemoEditorProperties/MemoHorizontalScrollBarVisibility.md) { get; set; } | Gets or sets the visibility of the horizontal scroll bar. |

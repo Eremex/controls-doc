@@ -12,11 +12,16 @@ Represents the geometry of a single mesh, which consists of a vertex buffer and 
 public sealed class MeshGeometry3D : SelectableElement
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [MeshGeometry3D](MeshGeometry3D/MeshGeometry3D.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [BoundingBox](MeshGeometry3D/BoundingBox.md) { get; } | Gets the axis-aligned bounding box that encloses the vertices, or null if no vertices are set. |
 | [FillType](MeshGeometry3D/FillType.md) { get; set; } | Gets or sets the primitive type that defines how the indices are interpreted. The default value is MeshFillType.Triangles. |
 | [Indices](MeshGeometry3D/Indices.md) { get; set; } | Gets or sets the indices of the vertices that form the primitives. The indices are optional when FillType is set to Points. |

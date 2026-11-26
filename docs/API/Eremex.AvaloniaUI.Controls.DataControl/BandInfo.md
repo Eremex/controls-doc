@@ -12,11 +12,16 @@ Represents layout information about a data control band.
 public class BandInfo
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [BandInfo](BandInfo/BandInfo.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Band](BandInfo/Band.md) { get; set; } | Gets or sets the band the information belongs to. |
 | [Children](BandInfo/Children.md) { get; set; } | Gets or sets the list of the band's child bands. |
 | [Columns](BandInfo/Columns.md) { get; set; } | Gets or sets the list of columns that belong to the band. |

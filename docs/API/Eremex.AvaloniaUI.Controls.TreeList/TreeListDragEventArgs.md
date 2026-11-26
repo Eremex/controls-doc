@@ -12,7 +12,7 @@ Provides data for the DragOver and Drop events.
 public class TreeListDragEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

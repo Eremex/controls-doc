@@ -4,7 +4,7 @@ order: 2000
 seealso: []
 ---
 
-# 快速入门
+# 快速入门 {#get-started}
 
 以下教程演示了如何在 Avalonia UI 项目中开始使用 Eremex Controls。
 
@@ -13,7 +13,7 @@ seealso: []
 
 - [在 ALT Linux 上开始使用 EMX Controls](get-started-with-emx-controls-on-alt-linux.md)
 
-## 演示应用程序
+## 演示应用程序 {#demo-application}
 
 下载演示应用程序以测试 Eremex Controls 库的所有功能：
 

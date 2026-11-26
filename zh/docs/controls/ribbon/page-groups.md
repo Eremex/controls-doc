@@ -4,15 +4,15 @@ order: 850
 seealso: []
 ---
 
-# 页面分组
+# 页面分组 {#page-groups}
 
 [Ribbon 页面](pages.md)中的[项（命令）](ribbon-items.md)可以在逻辑上划分为若干分组。Ribbon 页面分组之间以竖直分隔线分隔。当应用[经典命令布局](ribbon-command-layouts.md)时，它们会在底部显示标题。下图展示了 _Home_ 页面中显示的 _File_、_Clipboard_、_Font_ 和 _Styles_ 页面分组：
 
 ![ribbon-page-groups](../../images/ribbon-page-groups.png)
 
-## 定义和访问 Ribbon 页面分组
+## 定义和访问 Ribbon 页面分组 {#define-and-access-ribbon-page-groups}
 
-Ribbon 页面分组由 `RibbonPageGroup` 类的对象封装。在后台代码中，您可以使用 `RibbonPage.Groups` 集合创建、访问和修改页面分组。要在 XAML 中定义页面分组，请在 **&lt;RibbonPage&gt;** 起始和结束标签之间添加 `RibbonPageGroup` 对象。
+Ribbon 页面分组由 [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md) 类的对象封装。在代码隐藏中，您可以使用 [`RibbonPage.Groups`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/Groups.md) 集合创建、访问和修改页面分组。要在 XAML 中定义页面分组，请在 **&lt;RibbonPage&gt;** 起始和结束标签之间添加 [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md) 对象。
 
 ``` xml
 <mxr:RibbonPage Header="Home" KeyTip="H" Name="pageHome">
@@ -29,37 +29,37 @@ Ribbon 页面分组由 `RibbonPageGroup` 类的对象封装。在后台代码中
 </mxr:RibbonPageGroup>
 ```
 
-您也可以使用 `RibbonPage.GroupsSource` 属性，从视图模型中的业务对象集合创建页面分组。相应的数据模板应定义一个 `RibbonPageGroup` 对象，并根据业务对象初始化其设置。
+您也可以使用 [`RibbonPage.GroupsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPage/GroupsSource.md) 属性，从视图模型中的业务对象集合创建页面分组。相应的数据模板应定义一个 [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md) 对象，并根据业务对象初始化其设置。
 
 <!-- TODO
 GroupsSource example
  -->
 
 
-## 页面分组标题
+## 页面分组标题 {#page-group-header}
 
-当应用[经典命令布局](ribbon-command-layouts.md)时，页面分组会在底部显示标题。分组标题显示一个标题文字（`RibbonPageGroup.Header`）和一个标题按钮。
+当应用[经典命令布局](ribbon-command-layouts.md)时，页面分组会在底部显示标题。分组标题显示一个标题文字（[`RibbonPageGroup.Header`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/Header.md)）和一个标题按钮。
 
 ![ribbon-page-group-header](../../images/ribbon-page-group-header.png)
 
 点击标题按钮默认没有任何动作。您可以按以下方式为标题按钮关联一个动作：
 
-- 处理 `RibbonPageGroup.HeaderButtonClick` 或 `RibbonPageGroup.HeaderButtonPress` 事件。例如，您的事件处理程序可以显示一个对话框或菜单，展示与该分组相关的更多设置。
+- 处理 [`RibbonPageGroup.HeaderButtonClick`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonClick.md) 或 [`RibbonPageGroup.HeaderButtonPress`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonPress.md) 事件。例如，您的事件处理程序可以显示一个对话框或菜单，展示与该分组相关的更多设置。
 
-  `HeaderButtonClick` 事件会在鼠标左键在标题按钮上按下并释放之后触发。`HeaderButtonPress` 事件则会在用户在标题按钮上按下任意鼠标按键后立即触发。
+  [`HeaderButtonClick`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonClick.md) 事件会在鼠标左键在标题按钮上按下并释放之后触发。[`HeaderButtonPress`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonPress.md) 事件则会在用户在标题按钮上按下任意鼠标按键后立即触发。
 
-- 将命令分配给 `RibbonPageGroup.HeaderButtonCommand` 属性。您可以使用 `RibbonPageGroup.HeaderButtonCommandParameter` 属性指定一个可选的命令参数。
+- 将命令分配给 [`RibbonPageGroup.HeaderButtonCommand`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonCommand.md) 属性。您可以使用 [`RibbonPageGroup.HeaderButtonCommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/HeaderButtonCommandParameter.md) 属性指定一个可选的命令参数。
 
-使用 `RibbonPageGroup.IsHeaderButtonVisible` 属性可以隐藏标题按钮。
-
-
-
-## 页面分组内容
+使用 [`RibbonPageGroup.IsHeaderButtonVisible`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/IsHeaderButtonVisible.md) 属性可以隐藏标题按钮。
 
 
-页面分组显示一组紧密相关的 Ribbon 项。Ribbon 项包括按钮、复选按钮、按钮组、子菜单、内嵌编辑器、画廊等。有关详细信息，请参阅以下主题：[Ribbon 项](ribbon-items.md) 和 [画廊](galleries.md)
 
-要为 Ribbon 页面分组填充项，请使用 `RibbonPageGroup.Items` 集合。在 XAML 中，您可以在 **&lt;RibbonPageGroup&gt;** 起始和结束标签之间定义各项。
+## 页面分组内容 {#page-group-content}
+
+
+页面分组显示一组紧密相关的 Ribbon 项。Ribbon 项包括按钮、复选按钮、按钮组、子菜单、就地编辑器、库等。有关详细信息，请参阅以下主题：[Ribbon 项](ribbon-items.md) 和 [库](galleries.md)
+
+要为 Ribbon 页面分组填充项，请使用 [`RibbonPageGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/Items.md) 集合。在 XAML 中，您可以在 **&lt;RibbonPageGroup&gt;** 起始和结束标签之间定义各项。
 
 
 
@@ -84,20 +84,20 @@ GroupsSource example
 </mxr:RibbonPage>
 ```
 
-您也可以使用 `RibbonPageGroup.ItemsSource` 属性，从视图模型中的业务对象集合创建各项。相应的数据模板应定义 Ribbon 项，并根据底层业务对象初始化其设置。
+您也可以使用 [`RibbonPageGroup.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/ItemsSource.md) 属性，从视图模型中的业务对象集合创建各项。相应的数据模板应定义 Ribbon 项，并根据底层业务对象初始化其设置。
 
 <!-- TODO
 ItemsSource example
  -->
 
 
-## 页面分组图像
+## 页面分组图像 {#page-group-image}
 
 当 Ribbon 控件被调整大小时，自适应布局功能可能会折叠特定的页面分组。在折叠状态下，分组的项会显示在一个下拉窗口中。
 
 ![page-group-collapsed](../../images/page-group-collapsed.png)
 
-您可以使用 `RibbonPageGroup.Glyph` 属性，在折叠分组的按钮上显示一张图像：
+您可以使用 [`RibbonPageGroup.Glyph`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup/Glyph.md) 属性，在折叠分组的按钮上显示一张图像：
 
 ![page-group-collapsed-with-glyph](../../images/page-group-collapsed-with-glyph.png)
 
@@ -107,22 +107,22 @@ xmlns:icons="https://schemas.eremexcontrols.net/avalonia/icons"
 ```
 
 
-## 页面分组中项的布局
+## 页面分组中项的布局 {#layout-of-items-in-page-groups}
 
-### 自适应布局
+### 自适应布局 {#adaptive-layout}
 
 Ribbon 控件支持自适应布局功能，该功能会在 Ribbon 控件被调整大小时，调整 Ribbon 页面分组中各项的布局。
 
 ![ribbon-adaptivelayout](../../images/ribbon-adaptivelayout.gif)
 
-#### 在分组中组合项
+#### 在分组中组合项 {#combining-items-in-groups}
 
 您可以使用 [ToolbarItemGroup](ribbon-items.md#non-breaking-groups-of-items-toolbaritemgroup) 和 [ToolbarCheckItemGroup](ribbon-items.md#non-breaking-groups-of-check-items-toolbarcheckitemgroup)，将若干组 [Ribbon 项](ribbon-items.md)分组到不可分割的容器（分组）中。
 这些容器可确保各项始终显示在同一行中，即使应用了自适应布局功能，这种布局也会得到保留。当 Ribbon 被调整大小时，只有整个容器可以被折叠，而不是容器内的单个项。
 
 例如，在上面的动画中，![ribbon-command-bold](../../images/ribbon-command-bold.png)、![ribbon-command-italic](../../images/ribbon-command-italic.png) 和 ![ribbon-command-underline](../../images/ribbon-command-underline.png) 这几个项被组合到一个不可分割的容器中。
 
-#### 项图像
+#### 项图像 {#item-images}
 
 当应用[经典命令布局](ribbon-command-layouts.md)时，自适应布局功能还会在您调整 Ribbon 大小时调整各项的显示尺寸——从带文字的大图标，到小图标，再反过来。
 
@@ -139,13 +139,13 @@ Ribbon 控件支持自适应布局功能，该功能会在 Ribbon 控件被调�
   有关详细信息，请参阅以下主题：[经典命令布局中的自适应图标大小](ribbon-items.md#adaptive-glyph-size-in-the-classic-command-layout)
 
 
-#### 相关 API
+#### 相关 API {#related-api}
 
 - `AllowCollapse` — 指定当 Ribbon 控件宽度缩小时，某个分组是否可以被折叠。
 - `IsCollapsed` — 返回当前分组是否处于折叠状态。
 
 
-### 自定义页面分组中的项布局
+### 自定义页面分组中的项布局 {#customize-item-layout-in-page-groups}
 
 Ribbon 控件为页面分组中的项支持两种布局模式：
 
@@ -174,7 +174,7 @@ Ribbon 控件为页面分组中的项支持两种布局模式：
 - 若要以 Column 或 Row 布局模式排列一组连续的项，请确保这些项都（显式或隐式地）应用了所需的布局模式。
 - 提示：您可以将两个 Ribbon 项组合到一个独立的[不可分割容器](ribbon-items.md#non-breaking-groups-of-items-toolbaritemgroup)中，使它们作为一个整体来处理。
 
-#### 示例 - 将项排列为一列
+#### 示例 - 将项排列为一列 {#example-arrange-items-in-a-column}
 以下示例使用 `RibbonPageGroup.ItemLayouMode` 附加属性将各项排列为一列。
 
 ![ribbon-ItemLayoutDirectionInParent-example-result](../../images/ribbon-ItemLayoutDirectionInParent-example-result.png)
@@ -187,7 +187,7 @@ Ribbon 控件为页面分组中的项支持两种布局模式：
     <mxb:ToolbarCheckItem Name="btnSort" Header="Sort Results Alphabetically" CheckBoxStyle="CheckBox"/>
     ```
 
-- 第 2 行显示一个容器（`ToolbarItemGroup`），组合了一个文本编辑器和一个按钮。将这些项分组到一个容器中，是为了让它们彼此相邻显示。
+- 第 2 行显示一个容器（[`ToolbarItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItemGroup.md)），组合了一个文本编辑器和一个按钮。将这些项分组到一个容器中，是为了让它们彼此相邻显示。
 
     ``` xml
     <mxb:ToolbarItemGroup Name="groupSearchBox">
@@ -203,7 +203,7 @@ Ribbon 控件为页面分组中的项支持两种布局模式：
     </mxb:ToolbarItemGroup>
     ```
     
-- 第 3 行显示一个容器（`ToolbarCheckItemGroup`），组合了三个复选项：
+- 第 3 行显示一个容器（[`ToolbarCheckItemGroup`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarCheckItemGroup.md)），组合了三个复选项：
 
     ``` xml
     <mxb:ToolbarCheckItemGroup Name="groupSearchProperties"  >
@@ -222,7 +222,7 @@ Ribbon 控件为页面分组中的项支持两种布局模式：
     </mxb:ToolbarCheckItemGroup>
     ```
 
-将 _btnSort_、_groupSearchBox_ 和 _groupSearchProperties_ 这几个项放置到一个 `RibbonPageGroup` 中：
+将 _btnSort_、_groupSearchBox_ 和 _groupSearchProperties_ 这几个项放置到一个 [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md) 中：
 
 ``` xml
 <mxr:RibbonControl>
@@ -289,7 +289,7 @@ Ribbon 控件为页面分组中的项支持两种布局模式：
 ![ribbon-ItemLayoutDirectionInParent-example-result](../../images/ribbon-ItemLayoutDirectionInParent-example-result.png) 
 
 
-### 将不可分割容器排列为两行或三行
+### 将不可分割容器排列为两行或三行 {#arrange-non-breaking-containers-in-two-or-three-rows}
 
 如果页面分组足够宽，组合在不可分割容器（[ToolbarItemGroup](ribbon-items.md#non-breaking-groups-of-items-toolbaritemgroup) 和 [ToolbarCheckItemGroup](ribbon-items.md#non-breaking-groups-of-check-items-toolbarcheckitemgroup)）中的项会被排列为两行。当页面分组的宽度减小时，容器会被排列为三行，以形成更紧凑的布局。
 
@@ -298,9 +298,9 @@ Ribbon 控件为页面分组中的项支持两种布局模式：
 在某些特定情况下，您可能需要强制将不可分割容器排列为两行或三行。
 为此，请将第一个不可分割容器的 `RibbonPageGroup.ItemGroupLayoutMode` 附加属性设置为 `Layout2Rows` 或 `Layout3Rows`（该属性的默认值为 `AdaptiveLayout`）。
 
-#### 示例 - 强制将容器排列为两行
+#### 示例 - 强制将容器排列为两行 {#example-forcibly-arrange-containers-in-two-rows}
 
-假设有一个 `RibbonPageGroup`，其中包含四个不可分割的项容器（分组）。
+假设有一个 [`RibbonPageGroup`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonPageGroup.md)，其中包含四个不可分割的项容器（分组）。
 
 ![ItemGroupLayoutMode-example-indicate4groups](../../images/ItemGroupLayoutMode-example-indicate4groups.png)
 
@@ -341,7 +341,7 @@ Ribbon 控件为页面分组中的项支持两种布局模式：
 
 ![ItemGroupLayoutMode-example-result-animation](../../images/ItemGroupLayoutMode-example-result-animation.gif)
 
-如果您需要让某个特定的项从新的一列开始，请在该项之前放置一个 `ToolbarSeparatorItem` 对象。
+如果您需要让某个特定的项从新的一列开始，请在该项之前放置一个 [`ToolbarSeparatorItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarSeparatorItem.md) 对象。
 
 ``` xml
 <mxr:RibbonPageGroup Header="Paragraph">

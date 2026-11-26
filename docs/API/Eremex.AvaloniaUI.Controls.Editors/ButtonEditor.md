@@ -12,11 +12,16 @@ Represents a button editor that displays custom buttons.
 public class ButtonEditor : TextEditor
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ButtonEditor](ButtonEditor/ButtonEditor.md)() | Initializes a new instance of the ButtonEditor class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Buttons](ButtonEditor/Buttons.md) { get; set; } | Gets or sets the collection of custom buttons displayed in the editor. |
 | virtual [DefaultButtonImage](ButtonEditor/DefaultButtonImage.md) { get; } | Gets the image displayed on the editor's default button. |
 | [HasButtons](ButtonEditor/HasButtons.md) { get; } | Gets whether the editor has buttons. |

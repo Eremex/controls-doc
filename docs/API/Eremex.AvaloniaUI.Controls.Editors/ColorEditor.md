@@ -12,11 +12,16 @@ Represents an editor that allows users to select a color.
 public class ColorEditor : TemplatedControl
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ColorEditor](ColorEditor/ColorEditor.md)() | Initializes a new instance of the ColorEditor class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ApplyCustomColorCommand](ColorEditor/ApplyCustomColorCommand.md) { get; } | Gets the command that applies the color selected in the color picker. |
 | [CloseCommand](ColorEditor/CloseCommand.md) { get; } | Gets the command that closes the editor's popup. |
 | [Color](ColorEditor/Color.md) { get; set; } | Gets or sets the currently selected color. |
@@ -29,6 +34,11 @@ public class ColorEditor : TemplatedControl
 | [ShowColorPickerCommand](ColorEditor/ShowColorPickerCommand.md) { get; } | Gets the command that shows or hides the color picker. |
 | [ShowConfirmationButtons](ColorEditor/ShowConfirmationButtons.md) { get; set; } | Gets or sets whether the color picker displays confirmation buttons. |
 | [ThemePalette](ColorEditor/ThemePalette.md) { get; set; } | Gets or sets the color palette displayed in the editor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [OnCustomColorsChanged](ColorEditor/OnCustomColorsChanged.md)(…) | Updates the custom color buttons displayed in the editor. |
 
 ## See Also

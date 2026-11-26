@@ -12,16 +12,26 @@ Represents an editor that allows users to select a color in a dropdown.
 public class PopupColorEditor : PopupEditor
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PopupColorEditor](PopupColorEditor/PopupColorEditor.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Color](PopupColorEditor/Color.md) { get; set; } | Gets or sets the color selected in the editor. |
 | [ColorsShowMode](PopupColorEditor/ColorsShowMode.md) { get; set; } | Gets or sets which color sets are displayed in the dropdown. |
 | [CustomColors](PopupColorEditor/CustomColors.md) { get; set; } | Gets or sets the collection of custom colors displayed in the dropdown. |
 | [ShowAlphaChannel](PopupColorEditor/ShowAlphaChannel.md) { get; set; } | Gets or sets whether users can edit the alpha channel. |
 | [ThemePalette](PopupColorEditor/ThemePalette.md) { get; set; } | Gets or sets the color palette displayed in the editor's dropdown. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | override [ResetInvalidUserInput](PopupColorEditor/ResetInvalidUserInput.md)() |  |
 
 ## See Also

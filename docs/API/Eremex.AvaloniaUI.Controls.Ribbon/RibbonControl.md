@@ -12,11 +12,16 @@ Displays commands organized into pages and groups, with an application button an
 public class RibbonControl : TemplatedControl, IMxMainMenu, INavigatable
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [RibbonControl](RibbonControl/RibbonControl.md)() | Initializes a new instance of the RibbonControl class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowQuickAccessToolbarCustomizationMenu](RibbonControl/AllowQuickAccessToolbarCustomizationMenu.md) { get; set; } | Gets or sets whether users can open the Quick Access Toolbar customization menu. |
 | [ApplicationButtonCommand](RibbonControl/ApplicationButtonCommand.md) { get; set; } | Gets or sets the command executed when the application button is activated. |
 | [ApplicationButtonCommandParameter](RibbonControl/ApplicationButtonCommandParameter.md) { get; set; } | Gets or sets the parameter passed to the application button's command. |
@@ -42,13 +47,23 @@ public class RibbonControl : TemplatedControl, IMxMainMenu, INavigatable
 | [SelectedPage](RibbonControl/SelectedPage.md) { get; set; } | Gets or sets the currently selected ribbon page. |
 | [SerializationInfo](RibbonControl/SerializationInfo.md) { get; } | Gets the layout information used during serialization or deserialization. |
 | [SmallGlyphSize](RibbonControl/SmallGlyphSize.md) { get; set; } | Gets or sets the size used to display small ribbon glyphs. |
-| event [ApplicationButtonClick](RibbonControl/ApplicationButtonClick.md) | Occurs when the application button is clicked. |
-| event [ApplicationButtonPress](RibbonControl/ApplicationButtonPress.md) | Occurs when the pointer button is pressed over the application button. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [ResetNavigation](RibbonControl/ResetNavigation.md)() | Resets keyboard navigation within the ribbon. |
 | [RestoreLayout](RibbonControl/RestoreLayout.md)(…) | Restores the layout from the specified stream using the default serialization settings. (2 methods) |
 | [SaveLayout](RibbonControl/SaveLayout.md)(…) | Saves the layout to the specified stream using the default serialization settings. (2 methods) |
 | static [GetDisplayMode](RibbonControl/GetDisplayMode.md)(…) | Gets the allowed ribbon display modes for the specified item. |
 | static [SetDisplayMode](RibbonControl/SetDisplayMode.md)(…) | Sets the allowed ribbon display modes for the specified item. |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [ApplicationButtonClick](RibbonControl/ApplicationButtonClick.md) | Occurs when the application button is clicked. |
+| event [ApplicationButtonPress](RibbonControl/ApplicationButtonPress.md) | Occurs when the pointer button is pressed over the application button. |
 
 ## See Also
 

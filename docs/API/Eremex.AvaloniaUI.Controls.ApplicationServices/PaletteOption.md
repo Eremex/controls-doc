@@ -12,7 +12,7 @@ A colour palette offered by [`AppearanceService`](./AppearanceService.md).
 public sealed class PaletteOption : IAppearanceOption
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

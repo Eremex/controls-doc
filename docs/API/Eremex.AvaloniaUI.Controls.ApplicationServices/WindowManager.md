@@ -12,12 +12,22 @@ The default IWindowsManager implementation. It follows window activation to know
 public class WindowManager : IDisposable, IWindowsManager
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [WindowManager](WindowManager/WindowManager.md)() | Initializes a new instance of the [`WindowManager`](./WindowManager.md) class and starts observing window opening, closing and activation across the application. Create a single instance at startup and keep it alive; call [`Dispose`](./WindowManager/Dispose.md) to stop observing. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ActiveWindow](WindowManager/ActiveWindow.md) { get; } | The window a new dialog should be shown on top of: the currently active window, falling back to the application main window. `null` when the application has no window yet. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Dispose](WindowManager/Dispose.md)() | Stops observing application windows and releases the event subscriptions taken by the constructor. |
 
 ## See Also

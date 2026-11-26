@@ -1,42 +1,42 @@
 ---
-title: ListView控制概述
+title: ListView 控件概述
 order: 1000
 seealso: []
 ---
 
-# ListView 控制概述
+# ListView 控件概述 {#listview-control-overview}
 
-`ListViewControl` 是一种高级控件，用于在单列或多列中显示项目列表。该控件支持各种项目排列布局、项目排序、分组、过滤和选择。
-您可以使用 ListView 模拟 Microsoft Windows 资源管理器右窗格的用户界面。
+`ListViewControl` 是一种高级控件，用于以单列或多列形式显示项列表。该控件支持多种项排列布局，以及项的排序、分组、筛选和选择。
+可以使用 ListView 模拟 Microsoft Windows 资源管理器右侧窗格的用户界面。
 
-ListView 支持 MVVM 设计模式来渲染项目。控件从绑定的项目源中检索项目，并使用指定的项目模板来呈现它们。您需要按照所需的方式定义用于绘制项目的模板。例如，模板可以让 ListView 将项目绘制为图标、带文本的图标或纯文本。
+ListView 支持使用 MVVM 设计模式呈现项。控件从所绑定的项源中检索项，并使用指定的项模板呈现它们。您需要定义一个模板，以所需的方式绘制项。例如，模板可以让 ListView 将项绘制为图标、带文本的图标或纯文本。
 
 ![ListView-svgbrowser](../../images/ListView-svgbrowser.png)
 
  
 
-## 开始使用
+## 入门 {#get-started}
 
 - [ListView 控件入门](get-started-with-listview.md)
 
-## 为 ListView 提供项目
+## 为 ListView 提供项 {#supply-items-to-listview}
 
-使用 `ListViewControl.ItemsSource` 属性将控件绑定到将呈现为 ListView 项的对象集合。
+使用 `ListViewControl.ItemsSource` 属性将控件绑定到对象集合，这些对象将呈现为 ListView 项。
 
-### 项目模板
+### 项模板 {#item-template}
 
-要以特定方式呈现项目，请指定具有 `ListViewControl.ItemTemplate` 属性的项目模板。如果没有此模板，ListView 不会呈现其项目。
+要以特定方式呈现项，请使用 `ListViewControl.ItemTemplate` 属性指定项模板。没有此模板，ListView 不会呈现其项。
 
-**ItemTemplate 的 DataContext**：`ListViewControl.ItemsSource` 集合中的项目对象。
+**ItemTemplate 的 DataContext**：`ListViewControl.ItemsSource` 集合中的项对象。
 
-### 例子
+### 示例 {#example}
 
-以下示例使用 _SvgIconsBrowserViewModel.Categories_ 集合中的项目填充 ListView，并定义用于呈现这些项目的模板。有关此示例的完整代码，请参阅 _SVG Icons Browser_ 模块。
+以下示例使用 _SvgIconsBrowserViewModel.Categories_ 集合中的项填充 ListView，并定义呈现这些项的模板。此示例的完整代码请参阅 _SVG Icons Browser_ 模块。
 
 ![ListView-svgbrowser-categories-example](../../images/ListView-svgbrowser-categories-example.png)
 
-下面代码中的 _SvgIconCategoryViewModel_ 类封装了绑定的项目集合中的项目。 
-ListView 项目模板由一个复选框和一个文本字段组成。复选框和文本框分别绑定到 _SvgIconCategoryViewModel.IsChecked_ 和 _SvgIconCategoryViewModel.DisplayName_ 属性。
+下面代码中的 _SvgIconCategoryViewModel_ 类封装了所绑定项集合中的项。
+ListView 项模板由一个复选框和其后的文本字段组成。复选框和文本框分别绑定到 _SvgIconCategoryViewModel.IsChecked_ 和 _SvgIconCategoryViewModel.DisplayName_ 属性。
 
 
 
@@ -69,40 +69,40 @@ public partial class SvgIconCategoryViewModel : ObservableObject, IComparable<Sv
 }
 ```
 
-## 项目排列
+## 项的排列 {#item-arrangement}
 
-ListView 控件支持两种项目排列模式：`Wrap`（默认）和 `Stack`。使用 `ListViewControl.ItemLayoutMode` 属性选择所需的布局。
+ListView 控件支持两种项排列模式：`Wrap`（默认）和 `Stack`。使用 `ListViewControl.ItemLayoutMode` 属性选择所需的布局。
 
-### _Wrap_ 布局
+### _Wrap_ 布局 {#wrap-layout}
 
-将 `ListViewControl.ItemLayoutMode` 属性设置为 `ListViewItemLayoutMode.Wrap`，可先横向排列项目，然后纵向排列。项目会在控件的右边缘自动换行，形成多行。
+将 `ListViewControl.ItemLayoutMode` 属性设置为 `ListViewItemLayoutMode.Wrap`，可先横向再纵向排列项。项会在控件右边缘自动换行，形成多行。
 
 
 ![listviewcontrol-itemlayoutmode-wrap](../../images/listviewcontrol-itemlayoutmode-wrap.png)
 
-所有项目的尺寸相同。默认的项目大小是根据指定模板（`ListViewControl.ItemTemplate`）依据第一个项目的数据计算得出的。
-您可以使用 `ListViewControl.ItemWidth` 和 `ListViewControl.ItemHeight` 属性来指定 ListView 的自定义项目大小。
+所有项的大小相同。默认项大小根据指定的模板（`ListViewControl.ItemTemplate`）由第一项的数据计算得出。
+可以使用 `ListViewControl.ItemWidth` 和 `ListViewControl.ItemHeight` 属性为 ListView 指定自定义项大小。
 
-### _Stack_ 布局
+### _Stack_ 布局 {#stack-layout}
 
-将 `ListViewControl.ItemLayoutMode` 属性设置为 `ListViewItemLayoutMode.Stack`，可将项目排列为垂直列表。项目会被拉伸以填满 LayoutView 的宽度。
+将 `ListViewControl.ItemLayoutMode` 属性设置为 `ListViewItemLayoutMode.Stack`，可将项排列成垂直列表。项会被拉伸以适应 ListView 的宽度。
 
 ![listviewcontrol-itemlayoutmode-stack](../../images/listviewcontrol-itemlayoutmode-stack.png)
 
-在 `Stack` 布局模式下，您可以使用 `ListViewControl.ItemHeight` 属性指定自定义项目高度。
+在 `Stack` 布局模式下，可以使用 `ListViewControl.ItemHeight` 属性指定自定义项高度。
 
-## 对项目进行排序
+## 对项进行排序 {#sort-items}
 
-您可以按一个或多个项目属性以升序或降序对 ListView 项目进行排序。要对项目进行排序，请将 `ListViewSortInfo` 对象添加到 `ListViewControl.SortInfo` 集合中。该集合还用于定义项目[分组](#group-items)。
+可以按一个或多个项属性对 ListView 项进行升序或降序排序。要对项进行排序，请将 `ListViewSortInfo` 对象添加到 `ListViewControl.SortInfo` 集合中。此集合还用于定义项的[分组](#group-items)。
 
-`ListViewSortInfo` 对象包含以下属性来自定义排序设置：
+`ListViewSortInfo` 对象包含以下用于自定义排序设置的属性：
 
-- `ListViewSortInfo.FieldName` — 指定项目的属性，ListView 项目将按该属性进行排序。
-- `ListViewSortInfo.SortDirection` — 指定 ListView 项目的排序顺序。默认排序顺序为升序。
+- `ListViewSortInfo.FieldName` — 指定用于对 ListView 项进行排序的项属性。
+- `ListViewSortInfo.SortDirection` — 指定 ListView 项的排序顺序。默认排序顺序为升序。
 
-### 示例 - 对项目进行排序
+### 示例 - 对项进行排序 {#example-sort-items}
 
-以下示例按项目的 _ShipCountry_ 和 _Date_ 属性对项目进行排序。该控件首先按 _ShipCountry_ 属性按升序对项目进行排序，将它们组织成具有相同运输国家/地区的子集。然后，该控件按 _Date_ 属性按降序对每个项目子集中的项目进行排序。
+以下示例按 _ShipCountry_ 和 _Date_ 属性对项进行排序。控件首先按 _ShipCountry_ 属性对项进行升序排序，将其整理为运输国家相同的子集。然后，控件在每个子集内按 _Date_ 属性对项进行降序排序。
 
 ![listivew-sort-by-two-fields-example](../../images/listivew-sort-by-two-fields-example.png)
 
@@ -134,30 +134,31 @@ public partial class ItemViewModel : ObservableObject
 
 
 
-## 组项目
+## 对项进行分组 {#group-items}
 
-分组允许您将具有相同值的项目组合到相同的可扩展组中。
+分组可将值相同的项合并到同一个可展开的组中。
 
-例如，如果项目对象包含 _ShipCountry_ 属性，您可以按此属性进行分组以获得以下结果：
+例如，如果项对象包含 _ShipCountry_ 属性，则可以按此属性分组，得到以下结果：
 
 ![listview-grouping-by-shipcountry](../../images/listview-grouping-by-shipcountry.png)
 
-每组项目之前有一个组行。组行显示组属性名称和值。用户可以单击组行的折叠/展开按钮来隐藏/显示组的内容。
+每组项之前都有一个分组行。分组行显示分组属性的名称和值。用户可以单击分组行的折叠/展开按钮来隐藏/显示组的内容。
 
-请注意，当您按属性分组时，组行会自动按组属性排序。在代码中，应用分组时，您可以选择组行按升序还是降序排列。
+请注意，按某个属性分组时，分组行会自动按该分组属性排序。在代码中应用分组时，可以选择分组行按升序还是降序排列。
 
-要按项目属性进行分组，请执行以下操作：
+要按一个或多个项属性分组，请执行以下操作：
 
-- 在 `ListViewControl.SortInfo` 集合的开头添加 `ListViewSortInfo` 对象。将 `ListViewSortInfo.FieldName` 设置为用于对项目进行分组的项目属性。（可选）使用 `ListViewSortInfo.SortDirection` 属性在升序和降序排序顺序之间选择，以确定组行的排列方式。
+- 在 `ListViewControl.SortInfo` 集合的开头添加 `ListViewSortInfo` 对象。
+将 `ListViewSortInfo.FieldName` 设置为用于对项进行分组的项属性。还可以使用 `ListViewSortInfo.SortDirection` 选择分组行的排列顺序（升序或降序）。
 
-- 将 `ListViewControl.GroupCount` 属性设置为组级别数（组属性）。 
-`ListViewControl.GroupCount` 指定从 `ListViewControl.SortInfo` 集合的开头开始使用多少个 `ListViewSortInfo` 对象来对数据进行分组。如果按单个项目属性进行分组，请将 `ListViewControl.GroupCount` 设置为 _1_。要按两个属性进行分组，请将 `ListViewControl.GroupCount` 设置为 2，依此类推。
+- 将 `ListViewControl.GroupCount` 属性设置为分组级别（分组属性）的数量。
+`ListViewControl.GroupCount` 指定从 `ListViewControl.SortInfo` 集合开头算起，有多少个 `ListViewSortInfo` 对象用于对数据进行分组。如果按单个项属性分组，请将 `ListViewControl.GroupCount` 设置为 _1_；要按两个属性分组，请将 `ListViewControl.GroupCount` 设置为 2，依此类推。
 
-`ListViewControl.SortInfo` 集合可能包含比 `ListViewControl.GroupCount` 更多的元素。编号由 `GroupCount` 指定的第一个元素用于对 ListView 项目进行分组。其余元素用于对 ListView 项目进行排序。
+`ListViewControl.SortInfo` 集合中的元素数可以多于 `ListViewControl.GroupCount`。前 `GroupCount` 个元素用于对 ListView 项进行分组，其余元素用于对 ListView 项进行排序。
 
-### 示例 - 分组项目
+### 示例 - 对项进行分组 {#example-group-items}
 
-假设项目对象包含 _ShipCountry_ 属性。要按此属性进行分组，需要将引用 _ShipCountry_ 属性的 `ListViewSortInfo` 对象放置在 `ListViewControl.SortInfo` 集合的开头。 `ListViewControl.GroupCount` 属性必须设置为 `1`。
+假设项对象包含 _ShipCountry_ 属性。要按此属性分组，需要将引用 _ShipCountry_ 属性的 `ListViewSortInfo` 对象放在 `ListViewControl.SortInfo` 集合的开头，并将 `ListViewControl.GroupCount` 属性设置为 `1`。
 
 ![listview-group-items-example](../../images/listview-group-items-example.png)
 
@@ -189,29 +190,29 @@ public partial class ItemViewModel : ObservableObject
 ```
 
 
-### 自定义组行模板
+### 自定义分组行模板 {#custom-group-row-template}
 
-如果默认的组行模板不能满足您的需求，您可以使用 `ListViewControl.GroupTemplate` 属性为组行指定自定义 DataTemplate。
+如果默认的分组行模板不能满足需要，可以使用 `ListViewControl.GroupTemplate` 属性指定用于绘制分组行的自定义 DataTemplate。
 
 **GroupTemplate 的 DataContext**：`Eremex.AvaloniaUI.Controls.ListView.Data.ListViewGroupData` 对象
 
-存储在模板的 DataContext 中的 `ListViewGroupData` 对象公开以下属性，以帮助您获取有关组行的信息并设置组行模板：
+模板的 DataContext 中存储的 `ListViewGroupData` 对象公开以下属性，可帮助您获取分组行的信息并设置分组行模板：
 
-- `ListViewGroupData.FieldName` — 组属性的名称。
-- `ListViewGroupData.GroupValue` — 组属性的值。
-- `ListViewGroupData.GroupValueDisplayText` — 组属性值的文本表示形式。您可以通过处理 `ListViewControl.CustomGroupValueDisplayText` 事件为组值提供自定义 display text。
+- `ListViewGroupData.FieldName` — 分组属性的名称。
+- `ListViewGroupData.GroupValue` — 分组属性的值。
+- `ListViewGroupData.GroupValueDisplayText` — 分组属性值的文本表示形式。可以通过处理 `ListViewControl.CustomGroupValueDisplayText` 事件为分组值提供自定义显示文本。
 - `ListViewGroupData.IsExpanded` — 指定组是展开还是折叠。
-- `ListViewGroupData.Level` — 组的组级别。对于根级别的组行，`ListViewGroupData.Level` 属性返回 `0`。对于第二层的组行，`ListViewGroupData.Level` 属性返回 `1`，依此类推。
+- `ListViewGroupData.Level` — 组的分组级别。对于根级别的分组行，`ListViewGroupData.Level` 属性返回 `0`；对于第二级的分组行，`ListViewGroupData.Level` 属性返回 `1`，依此类推。
 
-自定义模板可能需要不同的组行高。您可以使用 `ListViewControl.GroupHeight` 属性设置自定义组行高。
+自定义模板可能需要不同的分组行高度。可以使用 `ListViewControl.GroupHeight` 属性设置自定义分组行高度。
 
-#### 示例 - 自定义组行模板
+#### 示例 - 自定义分组行模板 {#example-custom-group-row-template}
 
-以下示例使用 `ListViewControl.GroupTemplate` 属性定义自定义组行模板。该模板由一个显示组值的文本块和一个显示带有组行的 SVG image associated 的 image control 组成。
+以下示例使用 `ListViewControl.GroupTemplate` 属性定义自定义分组行模板。该模板由一个显示分组值的文本块和一个显示与分组行关联的 SVG 图像的图像控件组成。
 
 ![listview-custom-group-row-template-example](../../images/listview-custom-group-row-template-example.png)
 
-该示例假设项目在 _Assets_ 文件夹中包含 _brazil-flag.svg_ 和 _china-flag.svg_ 图像。所有映像 should 的 _Build Action_ 属性均设置为 _AvaloniaResource_。要从文件中读取图像，下面的代码使用 `Eremex.AvaloniaUI.Controls.Utils.ImageLoader` 帮助程序类。
+该示例假定项目的 _Assets_ 文件夹中包含 _brazil-flag.svg_ 和 _china-flag.svg_ 图像。所有图像的 _Build Action_ 属性都应设置为 _AvaloniaResource_。为了从文件中读取图像，下面的代码使用了 `Eremex.AvaloniaUI.Controls.Utils.ImageLoader` 帮助器类。
 
 
 ``` xml
@@ -266,45 +267,45 @@ public class CountryNameToFlagConverter : MarkupExtension, IValueConverter
 ```
 
 
-### 自定义组值文本
+### 自定义分组值文本 {#custom-group-value-text}
 
-默认情况下，组行显示组值的文本表示形式。您可以处理 `ListViewControl.CustomGroupValueDisplayText` 事件来覆盖组值的 display text。对于每个组行重复触发此事件。
+默认情况下，分组行显示分组值的文本表示形式。可以处理 `ListViewControl.CustomGroupValueDisplayText` 事件来覆盖分组值的显示文本。此事件会针对每个分组行重复触发。
 
-### 识别组行
+### 识别分组行 {#identify-group-rows}
 
-ListView 项和组行可以通过 **索引** 来标识。组行被分配负索引，而项目具有非负索引。除了索引之外，您还可以通过组值来识别组行。
+ListView 项和分组行可以通过**索引**进行识别。分组行的索引为负数，而项的索引为非负数。除索引外，还可以通过分组值识别分组行。
 
 ![listview-grouprows-indexes](../../images/listview-grouprows-indexes.png)
 
-有关更多详细信息，请参阅以下部分：[Identify and Get Items and Group Rows](#identify-and-get-items-and-group-rows)。
+有关详细信息，请参阅以下部分：[识别和获取项与分组行](#identify-and-get-items-and-group-rows)。
 
 
-### 分组相关API
+### 分组相关 API {#grouping-related-api}
 
-- `ListViewControl.GroupHeight` — 指定组行高。
-- `ListViewControl.GroupLevelIndent` — 指定嵌套组行之前的缩进（第二层及更低级别）。
-- `ListViewControl.AutoExpandAllGroups` — 允许您禁用 control 负载上组行的自动扩展。
-- `ListViewControl.CollapseAllGroups` — 折叠所有组行。
-- `ListViewControl.CollapseGroup` — 折叠特定组行。
-- `ListViewControl.ExpandAllGroups` — 展开所有组行。
-- `ListViewControl.ExpandGroup` — 展开特定组行。
+- `ListViewControl.GroupHeight` — 指定分组行高度。
+- `ListViewControl.GroupLevelIndent` — 指定嵌套分组行（第二级及更低级别）之前的缩进。
+- `ListViewControl.AutoExpandAllGroups` — 可用于禁止在控件加载时自动展开分组行。
+- `ListViewControl.CollapseAllGroups` — 折叠所有分组行。
+- `ListViewControl.CollapseGroup` — 折叠特定分组行。
+- `ListViewControl.ExpandAllGroups` — 展开所有分组行。
+- `ListViewControl.ExpandGroup` — 展开特定分组行。
 - `ListViewControl.IsGroupExpanded` — 返回特定组是否已展开。
 
-另请参阅：[Methods to Traverse Through Group Rows and Their Children](#methods-to-traverse-through-group-rows-and-their-children)。
+另请参阅：[遍历分组行及其子项的方法](#methods-to-traverse-through-group-rows-and-their-children)。
 
 
 <!-- TODO
 string GroupClass/ItemClass -->
 
-## 过滤项目
+## 筛选项 {#filter-items}
 
-处理 `ListViewControl.FilterItem` 事件以动态自定义某些 ListView 项目的可见性。对于 `ListViewControl.ItemsSource` 集合中的每个 item，都会重复触发此事件。要隐藏特定的 item，请将 `e.Visible` 事件参数设置为 `false`。
+处理 `ListViewControl.FilterItem` 事件可动态控制特定 ListView 项的可见性。此事件会针对 `ListViewControl.ItemsSource` 集合中的每个项重复触发。要隐藏特定项，请将 `e.Visible` 事件参数设置为 `false`。
 
-如果您的应用程序中动态更改了 item 过滤规则，您可能需要强制重新调用 item 过滤机制，从而重新调用 `ListViewControl.FilterItem` 事件。为此，请调用 `ListViewControl.RefreshData` 方法。
+如果应用程序中的项筛选规则会动态变化，可能需要强制重新执行项筛选机制，从而重新触发 `ListViewControl.FilterItem` 事件。为此，请调用 `ListViewControl.RefreshData` 方法。
 
-### 例子
+### 示例 {#example_1}
 
-_SVG Icons Browser_ 模块中的以下示例根据特定条件隐藏项目。
+以下示例取自 _SVG Icons Browser_ 模块，它根据特定条件隐藏项。
 
 ``` xml
 <mxlv:ListViewControl x:Name="IconsListControl" 
@@ -327,39 +328,39 @@ public partial class SvgIconsBrowserViewModel : PageViewModelBase
 }
 ```
 
-## 识别并获取项目并对行进行分组
+## 识别和获取项与分组行 {#identify-and-get-items-and-group-rows}
 
-ListView 为 ListView 项目和组行分配**索引**以允许识别它们。
+ListView 为 ListView 项和分组行分配**索引**，以便对其进行识别。
 
 
-- 索引反映项目和组行的顺序。
-- 使用 zero-based 非负索引对项目进行编号。最上面的 item 的索引为 **0**，第二个 item 的索引为 **1**，依此类推。
-- 组行使用负索引进行编号。顶部组行的索引为 **-1**，第二组行的索引为 **-2**，依此类推。
-- 索引用于识别可见和隐藏（折叠组内）的项目。
-- 当项目的顺序发生变化时（例如，当数据排序或分组时），项目将根据其新位置获得新的索引。
-- 索引不会分配给因数据过滤而隐藏的项目。
+- 索引反映项和分组行的顺序。
+- 项使用从零开始的非负索引编号。最上面的项的索引为 **0**，第二项的索引为 **1**，依此类推。
+- 分组行使用负索引编号。最上面的分组行的索引为 **-1**，第二个分组行的索引为 **-2**，依此类推。
+- 索引用于识别可见项和隐藏项（位于已折叠组内的项）。
+- 当项的顺序发生变化时（例如对数据进行排序或分组时），项会根据其新位置获得新的索引。
+- 因数据筛选而隐藏的项不会被分配索引。
 
-当项目未分组时，索引与可见索引匹配：
+项未分组时，索引与可见索引相同：
 
 ![listview-indexes](../../images/listview-indexes.png)
 
-当项目分组时，索引和可见索引不匹配：
+项分组后，索引与可见索引不同：
 
 ![listview-indexes-when-grouped](../../images/listview-indexes-when-grouped.png)
 
-### 特殊索引
+### 特殊索引 {#special-indexes}
 
-ListView 保留以下预定义索引来识别无效项：
+ListView 保留以下预定义索引来标识无效项：
 
-- `ListViewControl.InvalidItemIndex` 常量 — 标识 ListView 控件中不存在的 item。该值可以由用于获取 item 索引的 ListView 方法返回。
+- `ListViewControl.InvalidItemIndex` 常量 — 标识 ListView 控件中不存在的项。用于获取项索引的 ListView 方法可能会返回此值。
 
-例如，根级别的项目没有父级。如果您尝试使用 `ListViewControl.GetParentItemIndex` method 获取根 item 的父级，则此 method 将返回 `ListViewControl.InvalidItemIndex` 常量。
+例如，根级别的项没有父级。如果尝试使用 `ListViewControl.GetParentItemIndex` 方法获取根项的父级，此方法将返回 `ListViewControl.InvalidItemIndex` 常量。
 
-### 源项目和源项目索引
+### 源项和源项索引 {#source-items-and-source-item-indexes}
 
-每个 ListView item 对应于绑定的 item source (`ListViewControl.ItemsSource`) 中的特定业务对象。 item source 中的 item 的 position 称为 **源 QZX​​0007Q 索引**。
+每个 ListView 项都对应于所绑定项源（`ListViewControl.ItemsSource`）中的特定业务对象。项在项源中的位置称为**源项索引**。
 
-您可以通过以下方法获取underlying源item和源item索引。
+可以使用以下方法获取基础源项和源项索引。
 
 - `ListViewControl.GetSourceItemIndexByItemIndex`
 - `ListViewControl.GetSourceItemIndexByVisibleItemIndex`
@@ -371,62 +372,62 @@ ListView 保留以下预定义索引来识别无效项：
 issue=MX-253
  -->
 
-要进行索引的相反转换，请参见以下方法：
+要执行相反的索引转换，请参阅以下方法：
 
 - `ListViewControl.GetItemIndexBySourceItemIndex`
 - `ListViewControl.GetVisibleItemIndexBySourceItemIndex`
 
 
-源 QZX​​0000Q 索引是从零开始的。当您对项目进行排序、分组或筛选时，其源 QZX​​0001Q 索引不会更改。
+源项索引从零开始。对项进行排序、分组或筛选时，其源项索引不会改变。
 
-组行在 item source 中没有对应的项目，因此无法使用源项目和源 QZX​​0001Q 索引对其进行寻址。
-
-
-### 相关API
-
-ListView 提供 API 成员通过索引检索项目，以及在 item 索引、可见 item 索引和源 QZX​​0003Q 索引之间进行转换。以下列表总结了这些信息：
-
-- `ListViewControl.FocusedItemIndex` — 指定聚焦的 item/组行的索引。此属性允许您聚焦特定的 item 或组行。
-- `ListViewControl.GetItemIndexBySourceItemIndex` — 按源 QZX​​0010Q 索引返回 item 的索引。
-- `ListViewControl.GetItemIndexByVisibleItemIndex` — 按 item 的可见索引返回 item 的索引。
-- `ListViewControl.GetSourceItemIndexByItemIndex` — 返回具有指定索引的 item 的源 QZX​​0013Q 索引。
-- `ListViewControl.GetSourceItemIndexByVisibleItemIndex` — 返回具有指定可见索引的 item 的源 QZX​​0015Q 索引。
-- `ListViewControl.GetVisibleItemIndexByItemIndex` — 按 item 的索引返回 item 的可见索引。
-- `ListViewControl.GetVisibleItemIndexBySourceItemIndex` — 按源 QZX​​0020Q 索引返回 item 的可见索引。
-
-#### 遍历组行及其子行的方法
+分组行在项源中没有对应的项，因此无法通过源项和源项索引来访问分组行。
 
 
-- `ListViewControl.GetGroupChildItemIndex(int childIndex)` — 返回特定根组行的索引。 `childIndex` 参数指定目标根组行在其同级中的 zero-based 顺序。该参数接受 `0` 和 `GetGroupChildrenCount() - 1` 之间的值。
-- `ListViewControl.GetGroupChildItemIndex(int itemIndex, int childIndex)` — 返回子 item 或嵌套组行的索引。 `itemIndex` 参数指定父组行的索引。 `childIndex` 参数指定目标子 item 或组行在其同级中的 zero-based 顺序。该参数接受 `0` 和 `GetGroupChildrenCount(itemIndex) - 1` 之间的值。
-- `ListViewControl.GetGroupChildrenCount()` — 此不带参数的重载返回根级别的组行数。
-- `ListViewControl.GetGroupChildrenCount(int itemIndex)` — 返回特定组行的直接子级数。父组行由其索引标识。
+### 相关 API {#related-api}
 
-- `ListViewControl.GetGroupIndex` — 按行的字段名称和组值返回组行的索引。
-- `ListViewControl.GetGroupValue` — 按行索引返回组行的值。
-- `ListViewControl.GetParentItemIndex` — 返回嵌套 item 或组行的父组行的索引。
+ListView 提供了用于按索引检索项，以及在项索引、可见项索引和源项索引之间进行转换的 API 成员。下表对此进行了总结：
 
-!!!笔记
+- `ListViewControl.FocusedItemIndex` — 指定获得焦点的项/分组行的索引。此属性可用于将焦点移动到特定项或分组行。
+- `ListViewControl.GetItemIndexBySourceItemIndex` — 根据源项索引返回项的索引。
+- `ListViewControl.GetItemIndexByVisibleItemIndex` — 根据项的可见索引返回项的索引。
+- `ListViewControl.GetSourceItemIndexByItemIndex` — 返回具有指定索引的项的源项索引。
+- `ListViewControl.GetSourceItemIndexByVisibleItemIndex` — 返回具有指定可见索引的项的源项索引。
+- `ListViewControl.GetVisibleItemIndexByItemIndex` — 根据项的索引返回项的可见索引。
+- `ListViewControl.GetVisibleItemIndexBySourceItemIndex` — 根据源项索引返回项的可见索引。
 
-如果项目未分组，则上述方法无效。
+#### 遍历分组行及其子项的方法 {#methods-to-traverse-through-group-rows-and-their-children}
 
-## 项目焦点
 
-当用户使用键盘或鼠标单击导航到特定的 item 或组行时，ListView 将焦点移动到该 item/组行。
+- `ListViewControl.GetGroupChildItemIndex(int childIndex)` — 返回特定根分组行的索引。`childIndex` 参数指定目标根分组行在其同级中从零开始的顺序号，取值范围为 `0` 到 `GetGroupChildrenCount() - 1`。
+- `ListViewControl.GetGroupChildItemIndex(int itemIndex, int childIndex)` — 返回子项或嵌套分组行的索引。`itemIndex` 参数指定父分组行的索引，`childIndex` 参数指定目标子项或分组行在其同级中从零开始的顺序号，取值范围为 `0` 到 `GetGroupChildrenCount(itemIndex) - 1`。
+- `ListViewControl.GetGroupChildrenCount()` — 此不带参数的重载返回根级别的分组行数。
+- `ListViewControl.GetGroupChildrenCount(int itemIndex)` — 返回特定分组行的直接子项数。父分组行由其索引标识。
+
+- `ListViewControl.GetGroupIndex` — 根据分组行的字段名和分组值返回分组行的索引。
+- `ListViewControl.GetGroupValue` — 根据分组行的索引返回其值。
+- `ListViewControl.GetParentItemIndex` — 返回嵌套项或嵌套分组行的父分组行的索引。
+
+!!! note "注意"
+
+    如果项未分组，上述方法不起作用。
+
+## 项焦点 {#item-focus}
+
+当用户使用键盘或鼠标单击导航到特定项或分组行时，ListView 会将焦点移动到该项/分组行。
 
 ![listview-singleselection-focuseditem](../../images/listview-singleselection-focuseditem.png)
 
-您可以使用以下属性来获取/设置代码中聚焦的 item/group 行：
+可以使用以下属性在代码中获取/设置获得焦点的项/分组行：
 
-- `ListViewControl.FocusedItem` — 从 `ListViewControl.ItemsSource` 集合中获取或设置与 ListView 的焦点项相对应的业务对象。要将焦点移至特定 item，您可以将 `ItemsSource` 集合中的对象分配给 `FocusedItem` 属性。
+- `ListViewControl.FocusedItem` — 获取或设置 `ListViewControl.ItemsSource` 集合中与 ListView 获得焦点的项相对应的业务对象。要将焦点移动到特定项，可以将 `ItemsSource` 集合中的对象分配给 `FocusedItem` 属性。
 
-!!!笔记
+    !!! note "注意"
     
-如果组行获得焦点，则 `FocusedItem` 属性将返回 `null`。您不能使用此属性来聚焦组行。
+        如果获得焦点的是分组行，`FocusedItem` 属性返回 `null`。不能使用此属性使分组行获得焦点。
 
-- `ListViewControl.FocusedItemIndex` — 获取或设置焦点 item/组行的 [index](#identify-and-get-items-and-group-rows)。您可以使用 `FocusedItemIndex` 属性将焦点移动到 item 或组行。
+- `ListViewControl.FocusedItemIndex` — 获取或设置获得焦点的项/分组行的[索引](#identify-and-get-items-and-group-rows)。可以使用 `FocusedItemIndex` 属性将焦点移动到项或分组行。
 
-以下代码聚焦 _ShipCountry_ 字段设置为“India”的组行。
+以下代码使 _ShipCountry_ 字段为“India”的分组行获得焦点。
 
 ``` cs
 int groupRowindex = listViewControl1.GetGroupIndex("ShipCountry", "India");
@@ -435,9 +436,9 @@ if(groupRowindex != ListViewControl.InvalidItemIndex)
 ```
 
 
-### 示例 - 响应聚焦某个项目
+### 示例 - 响应项获得焦点 {#example-respond-to-focusing-an-item}
 
-以下示例将 `ListViewControl.FocusedItem` 属性绑定到 _MainWindowViewModel.FocusedItem_ 属性。您可以在 _MainWindowViewModel.FocusedItem_ 属性设置器中响应对焦点 item 的更改。
+以下示例将 `ListViewControl.FocusedItem` 属性绑定到 _MainWindowViewModel.FocusedItem_ 属性。可以在 _MainWindowViewModel.FocusedItem_ 属性的 setter 中响应获得焦点的项的更改。
 
 ``` xml
 xmlns:mxlv="https://schemas.eremexcontrols.net/avalonia/listview"
@@ -473,54 +474,55 @@ public partial class ItemViewModel : ObservableObject
 ```
 
 
-## 多项选择
+## 多项选择 {#multiple-item-selection}
 
-ListView 允许选择多个项目和组行。要启用此选择模式，请将 `ListViewControl.SelectionMode` 属性设置为 `Multiple`。所选项目和组行具有突出显示的背景。
+ListView 允许选择多个项和分组行。要启用此选择模式，请将 `ListViewControl.SelectionMode` 属性设置为 `Multiple`。所选项和分组行的背景会高亮显示。
 
 ![listview-multiple-selection](../../images/listview-multiple-selection.png)
 
-- 单击 item 将选择该 item 并取消选择之前选择的项目。
-- 按住 CTRL 键并单击 item 可切换 item 的选定状态。 
-- 按住 SHIFT 键并单击 item，可以选择 item 范围（之前聚焦的 item 和单击的 item 之间）。
+- 单击某项会选择该项，并取消选择之前选择的项。
+- 按住 CTRL 单击某项会切换该项的选择状态。
+- 按住 SHIFT 单击某项会选择一个项范围（从之前获得焦点的项到所单击的项）。
 
 <!-- TODO
 I cannot select items using the keyboard.
  -->
 
 
-当用户选择 item 时，该 item 也会受到关注（`ListViewControl.FocusedItem` 和 `ListViewControl.FocusedItemIndex` 属性会更新）。 
-随后按住 CTRL 键并单击此 item 将取消选择它，但保留焦点。
+用户选择某项时，该项也会获得焦点（`ListViewControl.FocusedItem` 和 `ListViewControl.FocusedItemIndex` 属性会更新）。
+随后按住 CTRL 单击该项会取消选择该项，但焦点保持不变。
 
 
-使用以下 API 成员获取所选项目和组行：
+使用以下 API 成员获取所选的项和分组行：
 
-- `ListViewControl.SelectedItems` — 来自 `ListViewControl.ItemsSource` 源的与所选 ListView 项目相对应的业务对象的集合。 `SelectedItems` 集合不包含选定的组行，因为组行不对应于 `ListViewControl.ItemsSource` 源中的任何业务对象。
+- `ListViewControl.SelectedItems` — `ListViewControl.ItemsSource` 源中与所选 ListView 项相对应的业务对象集合。`SelectedItems` 集合不包含所选的分组行，因为分组行不对应 `ListViewControl.ItemsSource` 源中的任何业务对象。
 
-- `ListViewControl.GetSelectedIndices` — 此 method 返回当前所选项目和组行的 [indexes](#identify-and-get-items-and-group-rows) 数组。项目的索引是非负的，而组行的索引是负的。有关更多详细信息，请参阅以下部分：[Identify and Get Items and Group Rows](#identify-and-get-items-and-group-rows)。
-
-
-以下属性和方法允许您在代码中选择项目和对行进行分组：
-
-- `ListViewControl.SelectedItems` — 您可以将业务对象集合从 `ListViewControl.ItemsSource` 源分配给 `SelectedItems` 属性，以选择相应的 ListView 项目。
-- `ListViewControl.SelectAll` — 选择所有项目和组行（如果有）。
-- `ListViewControl.SetSelected` — 选择或取消选择特定的 item 或组行。
-- `ListViewControl.ToggleSelected` — 切换 item 或组行的选定状态。
+- `ListViewControl.GetSelectedIndices` — 此方法返回当前所选项和分组行的[索引](#identify-and-get-items-and-group-rows)数组。项的索引为非负数，分组行的索引为负数。有关详细信息，请参阅以下部分：[识别和获取项与分组行](#identify-and-get-items-and-group-rows)。
 
 
-要响应选择的更改，您可以处理 `ListViewControl.SelectionChanged` 事件。
+以下属性和方法可用于在代码中选择项和分组行：
+
+- `ListViewControl.SelectedItems` — 可以将 `ListViewControl.ItemsSource` 源中的业务对象集合分配给 `SelectedItems` 属性，以选择相应的 ListView 项。
+- `ListViewControl.SelectAll` — 选择所有项和分组行（如果有）。
+- `ListViewControl.SetSelected` — 选择或取消选择特定项或分组行。
+- `ListViewControl.ToggleSelected` — 切换项或分组行的选择状态。
+
+
+要响应选择的更改，可以处理 `ListViewControl.SelectionChanged` 事件。
 
 <!-- TODO
 GetSelectedIndices
 
-选定的组行不包含在选择中
+selected group rows are not included in the selection
  -->
 
 
 
-### 相关API
+### 相关 API {#related-api_1}
 
 - `ListViewControl.ClearSelection` — 清除选择。
-- `ListViewControl.GetIsSelected` — 返回是否选择了 item。
+- `ListViewControl.GetIsSelected` — 返回某项是否已选择。
+
 
 <br>
 <br>

@@ -12,11 +12,16 @@ Provides data for the CustomCellTemplateData event.
 public class CustomCellTemplateDataEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CustomCellTemplateDataEventArgs](CustomCellTemplateDataEventArgs/CustomCellTemplateDataEventArgs.md)(…) | Initializes a new instance of the CustomCellTemplateDataEventArgs class with the specified row. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Data](CustomCellTemplateDataEventArgs/Data.md) { get; set; } | Gets or sets the data provided to the cell template. By default, it is the row's value. |
 | [FieldName](CustomCellTemplateDataEventArgs/FieldName.md) { get; } | Gets the name of the property bound to the row. |
 | [PropertyDescriptor](CustomCellTemplateDataEventArgs/PropertyDescriptor.md) { get; } | Gets the descriptor of the property bound to the row. |

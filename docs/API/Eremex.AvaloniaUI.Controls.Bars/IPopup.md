@@ -12,7 +12,7 @@ Defines a popup managed by a toolbar manager.
 public interface IPopup
 ```
 
-## Members
+## Properties
 
 | name | description |
 | --- | --- |
@@ -23,10 +23,11 @@ public interface IPopup
 | [Navigation](IPopup/Navigation.md) { get; } | Gets the keyboard navigation handler for the popup. |
 | [PopupClientPosition](IPopup/PopupClientPosition.md) { get; set; } | Gets or sets the position of the popup's client area. |
 | [ShadowOffset](IPopup/ShadowOffset.md) { get; } | Gets the offset of the popup shadow. |
-| event [Closed](IPopup/Closed.md) | Occurs after the popup closes. |
-| event [Closing](IPopup/Closing.md) | Occurs before the popup closes. Cancel the event to prevent closing. |
-| event [Opened](IPopup/Opened.md) | Occurs after the popup opens. |
-| event [Opening](IPopup/Opening.md) | Occurs before the popup opens. Cancel the event to prevent opening. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [ClosePopup](IPopup/ClosePopup.md)() | Closes the popup. |
 | [FocusContent](IPopup/FocusContent.md)() | Moves keyboard focus to the popup's content. |
 | [ForceApplyStyling](IPopup/ForceApplyStyling.md)() | Applies styles to the popup's content. |
@@ -36,6 +37,15 @@ public interface IPopup
 | [OnOpening](IPopup/OnOpening.md)() | Processes the popup's opening notification. |
 | [OpenPopup](IPopup/OpenPopup.md)() | Opens the popup using its current placement settings. |
 | [OpenPopup](IPopup/OpenPopup.md)(…) | Opens the popup at the specified position relative to the placement target and returns whether it opened. |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [Closed](IPopup/Closed.md) | Occurs after the popup closes. |
+| event [Closing](IPopup/Closing.md) | Occurs before the popup closes. Cancel the event to prevent closing. |
+| event [Opened](IPopup/Opened.md) | Occurs after the popup opens. |
+| event [Opening](IPopup/Opening.md) | Occurs before the popup opens. Cancel the event to prevent opening. |
 
 ## See Also
 

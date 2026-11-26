@@ -1,10 +1,10 @@
 ---
-title: Bands
+title: 带区
 order: 75000
 seealso: []
 ---
 
-# Bands
+# 带区 {#bands}
 
 您可以使用列组（Column Band）在视觉上将多个列组合在一起。DataGrid 控件会将列组显示为位于列标题上方的附加标题。列组标题和列标题都可以包含文本、图像或自定义内容。您还可以创建具有无限嵌套层级的分层列组结构。
 
@@ -19,13 +19,13 @@ seealso: []
 - [基于 DataAnnotation 特性创建列组(适用于自动生成的列)](#generate-bands-based-on-dataannotation-attributes-for-auto-generated-columns)
 
 
-## Create Bands Manually
+## Create Bands Manually {#create-bands-manually}
 
 请按以下步骤手动创建列组:
 
-1. 创建列组对象(`GridBand` 类的实例),并将其添加到 `DataGridControl.Bands` 集合中。
+1. 创建列组对象([`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) 类的实例),并将其添加到 [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) 集合中。
 
-    使用 `GridBand.BandName` 属性为创建的列组指定唯一名称。
+    使用 [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性为创建的列组指定唯一名称。
 
     ``` xml
     <mxdg:DataGridControl.Bands>
@@ -36,8 +36,8 @@ seealso: []
 
     您可以创建分层的列组结构。要创建嵌套列组:
 
-    - 在 code-behind 中:将列组添加到 `GridBand.Bands` 集合。
-    - 在 XAML 中:直接在 `GridBand` 的开始标签和结束标签之间定义嵌套列组。
+    - 在代码隐藏中:将列组添加到 [`GridBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/Bands.md) 集合。
+    - 在 XAML 中:直接在 [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) 的开始标签和结束标签之间定义嵌套列组。
 
     ``` xml
     <mxdg:GridBand BandName="Details" HeaderHorizontalAlignment="Center">
@@ -46,9 +46,9 @@ seealso: []
     </mxdg:GridBand>
     ```
 
-    `GridBand.Header` 属性允许您为列组指定自定义内容(例如自定义文本)。如果未设置此属性,列组标题将显示 `GridBand.BandName` 属性的值。
+    [`GridBand.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) 属性允许您为列组指定自定义内容(例如自定义文本)。如果未设置此属性,列组标题将显示 [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性的值。
 
-2. 通过将每个列的 `GridColumn.BandName` 属性设置为对应的列组名称(`GridBand.BandName`),将列与特定的列组相关联。
+2. 通过将每个列的 [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) 属性设置为对应的列组名称([`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)),将列与特定的列组相关联。
 
     ``` xml
     <mxdg:DataGridControl.Columns>
@@ -59,7 +59,7 @@ seealso: []
     </mxdg:DataGridControl.Columns>
     ```
 
-DataGrid 控件中的列会根据其 `GridColumn.VisibleIndex` 属性进行排列。
+DataGrid 控件中的列会根据其 [`GridColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) 属性进行排列。
 控件不会自动重新排列列,使其按照列组进行分组。
 
 ![datagrid-bands-not-keep-columns-together](../../images/datagrid-bands-not-keep-columns-together.png)
@@ -69,16 +69,16 @@ DataGrid 控件中的列会根据其 `GridColumn.VisibleIndex` 属性进行排�
 
 
 
-### 相关 API
+### 相关 API {#related-api}
 
-- `GridBand` 类 — 封装一个列组。
-- `GridBand.BandName` — 用于标识列组并将其与列关联的唯一名称。
-- `GridColumn.BandName` — 与该列关联的列组名称。此值与 `GridBand.BandName` 属性的值相匹配。
-- `DataGridControl.Bands` — 根列组集合。
-- `GridBand.Bands` — 此列组的子列组集合。
+- [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) 类 — 封装一个列组。
+- [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) — 用于标识列组并将其与列关联的唯一名称。
+- [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) — 与该列关联的列组名称。此值与 [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性的值相匹配。
+- [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) — 根列组集合。
+- [`GridBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/Bands.md) — 此列组的子列组集合。
 
 
-### 示例 - 在 DataGrid 控件中手动创建列组
+### 示例 - 在 DataGrid 控件中手动创建列组 {#example-manually-create-column-bands-in-a-datagrid-control}
 
 以下示例创建列组并将其分配给列,如下图所示:
 
@@ -87,9 +87,9 @@ DataGrid 控件中的列会根据其 `GridColumn.VisibleIndex` 属性进行排�
 - “Customer”、“Address” 和 “Contact” 列组与网格列相关联。
 - “Details” 列组拥有两个嵌套列组(“Address” 和 “Contact”)。此列组本身不直接与任何列关联。
 
-系统会使用 `GridBand.BandName` 属性为每个列组分配一个唯一名称。要将列关联到特定列组,请将该列的 `GridColumn.BandName` 属性设置为目标列组的 `BandName` 值。
+系统会使用 [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性为每个列组分配一个唯一名称。要将列关联到特定列组,请将该列的 [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) 属性设置为目标列组的 `BandName` 值。
 
-`DataGridControl.Bands` 属性定义了列组的结构。要创建嵌套列组,请将它们定义为父列组的子元素。
+[`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) 属性定义了列组的结构。要创建嵌套列组,请将它们定义为父列组的子元素。
 
 ``` xml
 <!-- MainWindow.axaml file -->
@@ -260,27 +260,27 @@ namespace DataGridColumnBands.ViewModels
 // customer.svg file is placed in the project's `Assets` folder, and its `Build Action` property is set to `AvaloniaResource`.
 ```
 
-## Generate Bands from a Band Source
+## Generate Bands from a Band Source {#generate-bands-from-a-band-source}
 
-您可以使用在 View Model 中定义的列组源来填充列组。使用 `DataGridControl.BandsSource` 和 `DataGridControl.BandTemplate` 属性,可以基于一组业务对象生成列组。
+您可以使用在 View Model 中定义的列组源来填充列组。使用 [`DataGridControl.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandsSource.md) 和 [`DataGridControl.BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandTemplate.md) 属性,可以基于一组业务对象生成列组。
 
-除了指定 `BandTemplate` 属性之外,您还可以使用 `Styles` 属性,从业务对象初始化 `GridBand` 对象。相关示例请参见[使用样式初始化列组](#initialize-bands-using-a-style)。
+除了指定 [`BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandTemplate.md) 属性之外,您还可以使用 `Styles` 属性,从业务对象初始化 [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) 对象。相关示例请参见[使用样式初始化列组](#initialize-bands-using-a-style)。
 
-要将列与列组关联,请将每个列的 `GridColumn.BandName` 设置为对应的列组名称(`GridBand.BandName`)。
+要将列与列组关联,请将每个列的 [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) 设置为对应的列组名称([`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md))。
 
-### 相关 API
+### 相关 API {#related-api_1}
 
-- `DataGridControl.BandsSource` — 用于生成根列组的业务对象集合。
-- `DataGridControl.BandTemplate` — 用于根据业务对象创建 `GridBand` 实例的模板。
-- `GridBand.BandsSource` — 用于生成子列组的业务对象集合。
-- `GridBand.BandName` — 用于标识列组并将其与列关联的唯一名称。
-- `GridColumn.BandName` — 与该列关联的列组名称。此值与 `GridBand.BandName` 属性的值相匹配。
+- [`DataGridControl.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandsSource.md) — 用于生成根列组的业务对象集合。
+- [`DataGridControl.BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandTemplate.md) — 用于根据业务对象创建 [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) 实例的模板。
+- [`GridBand.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/BandsSource.md) — 用于生成子列组的业务对象集合。
+- [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) — 用于标识列组并将其与列关联的唯一名称。
+- [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) — 与该列关联的列组名称。此值与 [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性的值相匹配。
 
-### 示例 - 基于列组源生成列组
+### 示例 - 基于列组源生成列组 {#example-generate-bands-from-a-band-source}
 
 以下示例基于 View Model 中定义的 _BandInfo_ 对象集合创建列组。
 
-DataGrid 控件显示一组 _Order_ 业务对象。网格列会根据 _Order_ 类公开的公共属性自动生成。数据网格的 `AutoGeneratingColumn` 事件处理程序会将自动生成的列与相应的列组关联起来。
+DataGrid 控件显示一组 _Order_ 业务对象。网格列会根据 _Order_ 类公开的公共属性自动生成。数据网格的 [`AutoGeneratingColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGeneratingColumn.md) 事件处理程序会将自动生成的列与相应的列组关联起来。
 
 ![grid-bands-source-example](../../images/grid-bands-source-example.png)
 
@@ -473,9 +473,9 @@ public partial class Order : ObservableObject
 }
 ```
 
-### Initialize Bands Using a Style
+### Initialize Bands Using a Style {#initialize-bands-using-a-style}
 
-除了指定 `BandTemplate` 属性之外,您还可以使用 `Styles` 属性,从业务对象初始化 `GridBand` 对象。
+除了指定 [`BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandTemplate.md) 属性之外,您还可以使用 `Styles` 属性,从业务对象初始化 [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) 对象。
 
 ``` xml
 <mxdg:DataGridControl.Styles>
@@ -489,7 +489,7 @@ public partial class Order : ObservableObject
 
 有关如何使用 `BandsSource` 和 `Styles` 属性的示例,请参见 "Column Bands" 演示程序。
 
-## Generate Bands Based on DataAnnotation Attributes (for Auto-Generated Columns)
+## Generate Bands Based on DataAnnotation Attributes (for Auto-Generated Columns) {#generate-bands-based-on-dataannotation-attributes-for-auto-generated-columns}
 
 这种方法允许您使用特性,将[自动生成的列](columns.md#automatic-column-generation)与列组关联起来。
 
@@ -506,11 +506,11 @@ public partial class Order : ObservableObject
 }
 ```
 
-当 DataGrid 控件遇到 `DisplayAttribute.GroupName` 时,会检查是否已存在名称匹配的列组(`GridBand.BandName`)。如果未找到这样的列组,则会创建该列组并按以下方式初始化:
+当 DataGrid 控件遇到 `DisplayAttribute.GroupName` 时,会检查是否已存在名称匹配的列组([`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md))。如果未找到这样的列组,则会创建该列组并按以下方式初始化:
 
-- 控件会自动创建列组,并将其 `GridBand.BandName` 属性设置为 `DisplayAttribute.GroupName` 的值。
-- 该列组会被添加到控件的 `DataGridControl.Bands` 集合中。嵌套列组会被添加到相应的 `GridBand.Bands` 集合中。
-- 创建的列组会通过 `GridColumn.BandName` 属性与自动生成的列关联起来。
+- 控件会自动创建列组,并将其 [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性设置为 `DisplayAttribute.GroupName` 的值。
+- 该列组会被添加到控件的 [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) 集合中。嵌套列组会被添加到相应的 [`GridBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/Bands.md) 集合中。
+- 创建的列组会通过 [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) 属性与自动生成的列关联起来。
 
 `DisplayAttribute.GroupName` 参数支持嵌套列组。使用 '/' 字符分隔父列组和子列组(例如 "ParentBandName/ChildBandName")。如果要将 '/' 作为普通字符使用,请使用双斜杠("//")表示法。
 
@@ -528,17 +528,17 @@ public partial class Order : ObservableObject
 }
 ```
 
-### 相关 API
+### 相关 API {#related-api_2}
 
-- `DataGridControl.AutoGenerateBands`(默认值为 `true`)— 获取或设置是否根据应用于底层业务对象属性的 `DisplayAttribute.GroupName` 特性自动生成列组。生成的这些列组随后会自动链接到对应的自动生成列。
+- [`DataGridControl.AutoGenerateBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateBands.md)(默认值为 `true`)— 获取或设置是否根据应用于底层业务对象属性的 `DisplayAttribute.GroupName` 特性自动生成列组。生成的这些列组随后会自动链接到对应的自动生成列。
 
-    如果 `DataGridControl.AutoGenerateColumns` 为 `false`,则自动列组生成功能(以及将列组链接到自动生成列的功能)会被强制禁用。
+    如果 [`DataGridControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md) 为 `false`,则自动列组生成功能(以及将列组链接到自动生成列的功能)会被强制禁用。
 
-- `DataGridControl.Bands` 和 `GridBand.Bands` — 您可以使用这些集合来访问自动生成的列组。
+- [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) 和 [`GridBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/Bands.md) — 您可以使用这些集合来访问自动生成的列组。
 
-### 示例 - 基于 DisplayAttribute.GroupName 参数生成列组
+### 示例 - 基于 DisplayAttribute.GroupName 参数生成列组 {#example-generate-bands-based-on-the-displayattributegroupname-parameter}
 
-在此示例中,DataGrid 控件显示 _Order_ 对象的列表。`AutoGenerateColumns` 选项会根据 _Order_ 类的公共属性自动生成列。列组则是根据应用于 _Order_ 类属性的 `System.ComponentModel.DataAnnotations.DisplayAttribute` 特性生成的。
+在此示例中,DataGrid 控件显示 _Order_ 对象的列表。[`AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md) 选项会根据 _Order_ 类的公共属性自动生成列。列组则是根据应用于 _Order_ 类属性的 `System.ComponentModel.DataAnnotations.DisplayAttribute` 特性生成的。
 
 ![datagrid-bands-from-attributes-example](../../images/datagrid-bands-from-attributes-example.png)
 
@@ -651,9 +651,9 @@ public partial class Order : ObservableObject
 }
 ```
 
-### Order of Columns and Bands
+### Order of Columns and Bands {#order-of-columns-and-bands}
 
-DataGrid 控件会根据 `GridColumn.VisibleIndex` 属性的值排列各列。
+DataGrid 控件会根据 [`GridColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) 属性的值排列各列。
 
 列组标题的顺序由列的可视顺序决定。
 如果与同一列组关联的列彼此相邻放置,则它们的列组标题会合并显示。
@@ -685,32 +685,32 @@ DataGrid 控件会根据 `GridColumn.VisibleIndex` 属性的值排列各列。
 ![datagrid-bands-not-keep-columns-together](../../images/datagrid-bands-not-keep-columns-together.png)
 
 
-## Drag-and-Drop Operations
+## Drag-and-Drop Operations {#drag-and-drop-operations}
 
-### Column Drag-and-Drop
+### Column Drag-and-Drop {#column-drag-and-drop}
 
-如果 `DataGridControl.AllowColumnMoving` 为 `true`(默认值),用户可以在控件内自由拖放列。如果用户将某一列拖动到不同的列组中,控件会在该列的新位置上方绘制相应的列组标题(`GridColumn.BandHeader`)。参见[列与列组的顺序](#order-of-columns-and-bands)。
+如果 [`DataGridControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnMoving.md) 为 `true`(默认值),用户可以在控件内自由拖放列。如果用户将某一列拖动到不同的列组中,控件会在该列的新位置上方绘制相应的列组标题(`GridColumn.BandHeader`)。参见[列与列组的顺序](#order-of-columns-and-bands)。
 
-#### 相关 API
+#### 相关 API {#related-api_3}
 
-- `DataGridControl.AllowColumnMoving` — 获取或设置是否启用列的拖放操作。
+- [`DataGridControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnMoving.md) — 获取或设置是否启用列的拖放操作。
 
-### Band Drag-and-Drop
+### Band Drag-and-Drop {#band-drag-and-drop}
 
 DataGrid 不支持对列组执行拖放操作。
 
-## Show and Hide the Band Panel
+## Show and Hide the Band Panel {#show-and-hide-the-band-panel}
 
 列组面板用于显示列组标题。当有任意一列关联了现有列组时,该面板即会显示。如有需要,可以使用以下属性强制隐藏列组面板:
 
-- `DataGridControl.ShowBands` — 获取或设置列组面板是否可见。
+- [`DataGridControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBands.md) — 获取或设置列组面板是否可见。
 
-## Specify Band Header Content
+## Specify Band Header Content {#specify-band-header-content}
 
-- `Header` — 获取或设置列组标题的内容。如果未设置此属性,列组将显示 `GridBand.BandName` 属性的值。
-- `HeaderTemplate` — 获取或设置用于呈现 `Header` 对象的模板。该模板允许您显示图像和自定义控件,并以自定义方式呈现文本。
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) — 获取或设置列组标题的内容。如果未设置此属性,列组将显示 [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) 属性的值。
+- [`HeaderTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderTemplate.md) — 获取或设置用于呈现 [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) 对象的模板。该模板允许您显示图像和自定义控件,并以自定义方式呈现文本。
 
-### 示例 - 在列组标题中显示图像
+### 示例 - 在列组标题中显示图像 {#example-display-an-image-in-a-band-header}
 
 以下示例在列组标题中显示一张 SVG 图像,后面跟着一段文本说明。SVG 图像(`customer.svg` 文件)位于项目的 `Assets` 文件夹中,其 `Build Action` 属性被设置为 `AvaloniaResource`。
 
@@ -732,7 +732,7 @@ xmlns:svg="using:Avalonia.Svg.Skia"
 </mxdg:DataGridControl.Bands>
 ```
 
-## Blank Band Header
+## Blank Band Header {#blank-band-header}
 
 未关联现有列组的列会显示在一个空白的列组标题下。
 
@@ -747,15 +747,15 @@ xmlns:svg="using:Avalonia.Svg.Skia"
 ![datagrid-bands-blank-band](../../images/datagrid-bands-blank-band.png)
 
 
-## Band Separators
+## Band Separators {#band-separators}
 
-- `DataGridControl.ShowBandSeparators` — 在相邻列组之间启用粗分隔线。使用此属性可以突出显示列组之间的分界。如果禁用 `ShowBandSeparators`,网格会在列组之间绘制普通的列分隔线(细线)。
+- [`DataGridControl.ShowBandSeparators`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBandSeparators.md) — 在相邻列组之间启用粗分隔线。使用此属性可以突出显示列组之间的分界。如果禁用 [`ShowBandSeparators`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBandSeparators.md),网格会在列组之间绘制普通的列分隔线(细线)。
 
     下图展示了列组分隔线的效果。
 
     ![datagrid-band-separators](../../images/datagrid-band-separators.png)
 
-## Hide Bands
+## Hide Bands {#hide-bands}
 
 列组对象没有 "Visible" 属性。要隐藏某个列组,您应该隐藏与该列组关联的列。
 
@@ -763,9 +763,9 @@ xmlns:svg="using:Avalonia.Svg.Skia"
 
 
 
-## Band Header Tooltips
+## Band Header Tooltips {#band-header-tooltips}
 
-使用 `HeaderToolTip` 属性可以为列组标题指定自定义工具提示。无论列组标题文本是否被截断,鼠标悬停在列组标题上时都会显示自定义工具提示。
+使用 [`HeaderToolTip`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderToolTip.md) 属性可以为列组标题指定自定义工具提示。无论列组标题文本是否被截断,鼠标悬停在列组标题上时都会显示自定义工具提示。
 
 ``` xml
 <mxdg:GridBand BandName="Details" HeaderHorizontalAlignment="Center" HeaderToolTip="Contact and location information">

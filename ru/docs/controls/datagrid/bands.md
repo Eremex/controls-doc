@@ -1,10 +1,10 @@
 ---
-title: Группы
+title: Группы колонок
 order: 75000
 seealso: []
 ---
 
-# Группы
+# Группы колонок
 
 Вы можете использовать группы, чтобы визуально объединять колонки. DataGrid отображает группы в виде дополнительных заголовков над заголовками колонок. Заголовки групп и колонок могут содержать текст, изображения или пользовательское содержимое. Вы также можете создавать иерархическую структуру групп с неограниченным количеством уровней вложенности.
 
@@ -23,9 +23,9 @@ seealso: []
 
 Чтобы вручную создать группы, выполните следующие действия:
 
-1. Создайте объекты групп (экземпляры класса `GridBand`) и добавьте их в коллекцию `DataGridControl.Bands`. 
+1. Создайте объекты групп (экземпляры класса [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md)) и добавьте их в коллекцию [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md). 
 
-    Присвойте созданным группам уникальные имена, используя свойство `GridBand.BandName`.
+    Присвойте созданным группам уникальные имена, используя свойство [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md).
 
     ``` xml
     <mxdg:DataGridControl.Bands>
@@ -36,8 +36,8 @@ seealso: []
 
     Вы можете создать иерархическую структуру групп. Чтобы создать вложенные группы:
         
-    - В code-behind: добавьте группы в коллекцию `GridBand.Bands`.
-    - В XAML: определите вложенные группы непосредственно между открывающим и закрывающим тегами `GridBand`.
+    - В code-behind: добавьте группы в коллекцию [`GridBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/Bands.md).
+    - В XAML: определите вложенные группы непосредственно между открывающим и закрывающим тегами [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md).
 
     ``` xml
     <mxdg:GridBand BandName="Details" HeaderHorizontalAlignment="Center">
@@ -46,9 +46,9 @@ seealso: []
     </mxdg:GridBand>
     ```
 
-    Свойство `GridBand.Header` позволяет задать пользовательское содержимое (например, произвольный текст) для группы. Если это свойство не задано, заголовок группы отображает значение свойства `GridBand.BandName`.
+    Свойство [`GridBand.Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) позволяет задать пользовательское содержимое (например, произвольный текст) для группы. Если это свойство не задано, заголовок группы отображает значение свойства [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md).
 
-2. Свяжите колонки с конкретными группами, установив свойство каждой колонки `GridColumn.BandName` в имя соответствующей группы (`GridBand.BandName`).
+2. Свяжите колонки с конкретными группами, установив свойство каждой колонки [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) в имя соответствующей группы ([`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)).
 
     ``` xml
     <mxdg:DataGridControl.Columns>
@@ -59,7 +59,7 @@ seealso: []
     </mxdg:DataGridControl.Columns>
     ```
 
-Колонки располагаются в DataGrid в соответствии со значениями свойства `GridColumn.VisibleIndex`.
+Колонки располагаются в DataGrid в соответствии со значениями свойства [`GridColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md).
 Контрол не переупорядочивает колонки автоматически, чтобы сгруппировать их по группам.
 
 ![datagrid-bands-not-keep-columns-together](../../images/datagrid-bands-not-keep-columns-together.png)
@@ -71,25 +71,25 @@ seealso: []
 
 ### Связанный API
 
-- `GridBand` — класс, инкапсулирующий группу колонок.
-- `GridBand.BandName` — уникальное имя, используемое для идентификации группы и её связи с колонками.
-- `GridColumn.BandName` — имя группы, связанной с колонкой. Это значение совпадает со значением свойства `GridBand.BandName`.
-- `DataGridControl.Bands` — коллекция корневых групп.
-- `GridBand.Bands` — коллекция дочерних групп для данной группы.
+- [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) — класс, инкапсулирующий группу колонок.
+- [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) — уникальное имя, используемое для идентификации группы и её связи с колонками.
+- [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) — имя группы, связанной с колонкой. Это значение совпадает со значением свойства [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md).
+- [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) — коллекция корневых групп.
+- [`GridBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/Bands.md) — коллекция дочерних групп для данной группы.
 
 
 ### Пример - Ручное создание групп колонок в DataGrid
 
-Следующий пример создаёт группы и связывает их с колонками, как показано на изображении ниже:
+Этот пример создаёт группы и связывает их с колонками, как показано на изображении ниже:
 
 ![datagrid-bands-example](../../images/datagrid-bands-example.png)
 
 - Группы «Customer», «Address» и «Contact» связаны с колонками таблицы. 
 - Группа «Details» содержит две вложенные группы («Address» и «Contact»). Сама эта группа не связана с колонками напрямую.
 
-Каждой группе присваивается уникальное имя с помощью свойства `GridBand.BandName`. Чтобы связать колонки с конкретной группой, установите свойство колонки `GridColumn.BandName` равным значению `BandName` целевой группы.
+Каждой группе присваивается уникальное имя с помощью свойства [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md). Чтобы связать колонки с конкретной группой, установите свойство колонки [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) равным значению `BandName` целевой группы.
 
-Свойство `DataGridControl.Bands` определяет структуру групп. Чтобы создать вложенные группы, определите их как дочерние элементы родительской группы.
+Свойство [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) определяет структуру групп. Чтобы создать вложенные группы, определите их как дочерние элементы родительской группы.
 
 ``` xml
 <!-- MainWindow.axaml file -->
@@ -262,25 +262,25 @@ namespace DataGridColumnBands.ViewModels
 
 ## Создание групп на основе источника групп
 
-Вы можете заполнять группы колонок данными из источника групп, определённого в View Model. Используйте свойства `DataGridControl.BandsSource` и `DataGridControl.BandTemplate`, чтобы создавать группы из коллекции бизнес-объектов. 
+Вы можете заполнять группы колонок данными из источника групп, определённого в View Model. Используйте свойства [`DataGridControl.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandsSource.md) и [`DataGridControl.BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandTemplate.md), чтобы создавать группы из коллекции бизнес-объектов. 
 
-В качестве альтернативы указанию свойства `BandTemplate` вы можете использовать свойство `Styles`, чтобы инициализировать объекты `GridBand` из бизнес-объектов. Смотрите [Инициализация групп с помощью стиля](#инициализация-групп-с-помощью-стиля) для примера.
+В качестве альтернативы указанию свойства [`BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandTemplate.md) вы можете использовать свойство `Styles`, чтобы инициализировать объекты [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) из бизнес-объектов. Смотрите [Инициализация групп с помощью стиля](#инициализация-групп-с-помощью-стиля) для примера.
 
-Чтобы связать колонки с группами, установите свойство каждой колонки `GridColumn.BandName` равным имени соответствующей группы (`GridBand.BandName`).
+Чтобы связать колонки с группами, установите свойство каждой колонки [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) равным имени соответствующей группы ([`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)).
 
 ### Связанный API
 
-- `DataGridControl.BandsSource` — коллекция бизнес-объектов, используемая для создания корневых групп.
-- `DataGridControl.BandTemplate` — шаблон, создающий экземпляры `GridBand` из бизнес-объектов.
-- `GridBand.BandsSource` — коллекция бизнес-объектов, используемая для создания дочерних групп.
-- `GridBand.BandName` — уникальное имя, используемое для идентификации группы и её связи с колонками.
-- `GridColumn.BandName` — имя группы, связанной с колонкой. Это значение совпадает со значением свойства `GridBand.BandName`.
+- [`DataGridControl.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandsSource.md) — коллекция бизнес-объектов, используемая для создания корневых групп.
+- [`DataGridControl.BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandTemplate.md) — шаблон, создающий экземпляры [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) из бизнес-объектов.
+- [`GridBand.BandsSource`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/BandsSource.md) — коллекция бизнес-объектов, используемая для создания дочерних групп.
+- [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) — уникальное имя, используемое для идентификации группы и её связи с колонками.
+- [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md) — имя группы, связанной с колонкой. Это значение совпадает со значением свойства [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md).
 
 ### Пример - Создание групп на основе источника групп
 
-Следующий пример создаёт группы из коллекции объектов _BandInfo_, определённой в View Model.
+Этот пример создаёт группы из коллекции объектов _BandInfo_, определённой в View Model.
 
-DataGrid отображает коллекцию бизнес-объектов _Order_. Колонки таблицы создаются автоматически на основе публичных свойств класса _Order_. Обработчик события `AutoGeneratingColumn` контрола связывает автоматически созданные колонки с соответствующими группами.
+DataGrid отображает коллекцию бизнес-объектов _Order_. Колонки таблицы создаются автоматически на основе публичных свойств класса _Order_. Обработчик события [`AutoGeneratingColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGeneratingColumn.md) контрола связывает автоматически созданные колонки с соответствующими группами.
 
 ![grid-bands-source-example](../../images/grid-bands-source-example.png)
 
@@ -475,7 +475,7 @@ public partial class Order : ObservableObject
 
 ### Инициализация групп с помощью стиля
 
-В качестве альтернативы указанию свойства `BandTemplate` вы можете использовать свойство `Styles`, чтобы инициализировать объекты `GridBand` из бизнес-объектов. 
+В качестве альтернативы указанию свойства [`BandTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/BandTemplate.md) вы можете использовать свойство `Styles`, чтобы инициализировать объекты [`GridBand`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand.md) из бизнес-объектов. 
 
 ``` xml
 <mxdg:DataGridControl.Styles>
@@ -506,11 +506,11 @@ public partial class Order : ObservableObject
 }
 ```
 
-Когда DataGrid встречает `DisplayAttribute.GroupName`, он проверяет наличие существующей группы с совпадающим именем (`GridBand.BandName`). Если такая группа не найдена, она создаётся и инициализируется следующим образом:
+Когда DataGrid встречает `DisplayAttribute.GroupName`, он проверяет наличие существующей группы с совпадающим именем ([`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md)). Если такая группа не найдена, она создаётся и инициализируется следующим образом:
 
-- Контрол автоматически создаёт группу и присваивает её свойству `GridBand.BandName` значение `DisplayAttribute.GroupName`.
-- Группа добавляется в коллекцию `DataGridControl.Bands` контрола. Вложенные группы добавляются в соответствующие коллекции `GridBand.Bands`.
-- Созданная группа связывается с автоматически созданной колонкой с помощью свойства `GridColumn.BandName`.
+- Контрол автоматически создаёт группу и присваивает её свойству [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md) значение `DisplayAttribute.GroupName`.
+- Группа добавляется в коллекцию [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) контрола. Вложенные группы добавляются в соответствующие коллекции [`GridBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/Bands.md).
+- Созданная группа связывается с автоматически созданной колонкой с помощью свойства [`GridColumn.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/BandName.md).
 
 Параметр `DisplayAttribute.GroupName` поддерживает вложенные группы. Используйте символ '/' для разделения родительской и дочерней группы (например, «ParentBandName/ChildBandName»). Чтобы использовать '/' как обычный символ, применяйте двойной слэш ("//").
 
@@ -530,15 +530,15 @@ public partial class Order : ObservableObject
 
 ### Связанный API
 
-- `DataGridControl.AutoGenerateBands` (значение по умолчанию — `true`) — определяет, создаются ли группы автоматически на основе атрибутов `DisplayAttribute.GroupName`, применённых к свойствам исходного бизнес-объекта. Такие группы автоматически связываются с соответствующими автоматически создаваемыми колонками.
+- [`DataGridControl.AutoGenerateBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateBands.md) (значение по умолчанию — `true`) — определяет, создаются ли группы автоматически на основе атрибутов `DisplayAttribute.GroupName`, применённых к свойствам исходного бизнес-объекта. Такие группы автоматически связываются с соответствующими автоматически создаваемыми колонками.
 
-    Автоматическое создание групп (и их связывание с автоматически создаваемыми колонками) принудительно отключается, если `DataGridControl.AutoGenerateColumns` имеет значение `false`.
+    Автоматическое создание групп (и их связывание с автоматически создаваемыми колонками) принудительно отключается, если [`DataGridControl.AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md) имеет значение `false`.
     
-- `DataGridControl.Bands` и `GridBand.Bands` — эти коллекции позволяют получить доступ к автоматически созданным группам.
+- [`DataGridControl.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Bands.md) и [`GridBand.Bands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridBand/Bands.md) — эти коллекции позволяют получить доступ к автоматически созданным группам.
 
 ### Пример - Создание групп на основе параметра DisplayAttribute.GroupName
 
-В этом примере DataGrid отображает список объектов _Order_. Опция `AutoGenerateColumns` включает автоматическое создание колонок на основе публичных свойств класса _Order_. Группы создаются на основе атрибута `System.ComponentModel.DataAnnotations.DisplayAttribute`, применённого к свойствам класса _Order_.
+В этом примере DataGrid отображает список объектов _Order_. Опция [`AutoGenerateColumns`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md) включает автоматическое создание колонок на основе публичных свойств класса _Order_. Группы создаются на основе атрибута `System.ComponentModel.DataAnnotations.DisplayAttribute`, применённого к свойствам класса _Order_.
 
 ![datagrid-bands-from-attributes-example](../../images/datagrid-bands-from-attributes-example.png)
 
@@ -653,7 +653,7 @@ public partial class Order : ObservableObject
 
 ### Порядок колонок и групп
 
-DataGrid располагает колонки в соответствии со значениями свойства `GridColumn.VisibleIndex`.
+DataGrid располагает колонки в соответствии со значениями свойства [`GridColumn.VisibleIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md).
 
 Порядок заголовков групп определяется визуальным порядком колонок. 
 Если колонки, связанные с одной и той же группой, расположены рядом друг с другом, их заголовки групп объединяются.
@@ -689,11 +689,11 @@ DataGrid располагает колонки в соответствии со 
 
 ### Перетаскивание колонок
 
-Пользователи могут свободно перетаскивать колонки в пределах контрола, если свойство `DataGridControl.AllowColumnMoving` имеет значение `true` (по умолчанию). Если пользователь перетаскивает колонку в другую группу, контрол отображает соответствующий заголовок группы (`GridColumn.BandHeader`) над этой колонкой на новой позиции. Смотрите [Порядок колонок и групп](#порядок-колонок-и-групп).
+Пользователи могут свободно перетаскивать колонки в пределах контрола, если свойство [`DataGridControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnMoving.md) имеет значение `true` (по умолчанию). Если пользователь перетаскивает колонку в другую группу, контрол отображает соответствующий заголовок группы (`GridColumn.BandHeader`) над этой колонкой на новой позиции. Смотрите [Порядок колонок и групп](#порядок-колонок-и-групп).
 
 #### Связанный API
 
-- `DataGridControl.AllowColumnMoving` — определяет, разрешены ли операции перетаскивания колонок.
+- [`DataGridControl.AllowColumnMoving`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowColumnMoving.md) — определяет, разрешены ли операции перетаскивания колонок.
 
 ### Перетаскивание групп
 
@@ -703,16 +703,16 @@ DataGrid не поддерживает операции перетаскиван
 
 Панель групп отображает заголовки групп. Панель видима, если хотя бы одна колонка связана с существующей группой. Используйте следующее свойство, чтобы принудительно скрыть панель групп, если это необходимо:
 
-- `DataGridControl.ShowBands` — определяет, видима ли панель групп.
+- [`DataGridControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBands.md) — определяет, видима ли панель групп.
 
 ## Указание содержимого заголовка группы
 
-- `Header` — задаёт содержимое заголовка группы. Если это свойство не задано, группа отображает значение свойства `GridBand.BandName`.
-- `HeaderTemplate` — задаёт шаблон, используемый для отрисовки объекта `Header`. Шаблон позволяет отображать изображения и пользовательские контролы, а также произвольно оформлять текст.
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md) — задаёт содержимое заголовка группы. Если это свойство не задано, группа отображает значение свойства [`GridBand.BandName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBandBase/BandName.md).
+- [`HeaderTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderTemplate.md) — задаёт шаблон, используемый для отрисовки объекта [`Header`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/Header.md). Шаблон позволяет отображать изображения и пользовательские контролы, а также произвольно оформлять текст.
 
 ### Пример - Отображение изображения в заголовке группы
 
-В следующем примере в заголовке группы отображается SVG-изображение, за которым следует текстовая подпись. SVG-изображение (файл `customer.svg`) находится в папке `Assets` проекта, а его свойство `Build Action` установлено в значение `AvaloniaResource`.
+В этом примере в заголовке группы отображается SVG-изображение, за которым следует текстовая подпись. SVG-изображение (файл `customer.svg`) находится в папке `Assets` проекта, а его свойство `Build Action` установлено в значение `AvaloniaResource`.
 
 ![grid-bandheader-ImageAndText](../../images/grid-bandheader-ImageAndText.png)
 
@@ -749,7 +749,7 @@ xmlns:svg="using:Avalonia.Svg.Skia"
 
 ## Разделители групп
 
-- `DataGridControl.ShowBandSeparators` — включает толстые разделители между соседними группами. Используйте это свойство, чтобы визуально выделить границы между группами. Если `ShowBandSeparators` отключено, таблица отображает обычные разделители колонок (тонкие линии) между группами.
+- [`DataGridControl.ShowBandSeparators`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBandSeparators.md) — включает толстые разделители между соседними группами. Используйте это свойство, чтобы визуально выделить границы между группами. Если [`ShowBandSeparators`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBandSeparators.md) отключено, таблица отображает обычные разделители колонок (тонкие линии) между группами.
 
     Следующее изображение демонстрирует разделители групп.
 
@@ -765,7 +765,7 @@ xmlns:svg="using:Avalonia.Svg.Skia"
 
 ## Всплывающие подсказки заголовков групп
 
-Используйте свойство `HeaderToolTip`, чтобы задать пользовательские подсказки для заголовков групп. Пользовательские подсказки отображаются при наведении на заголовок группы независимо от того, обрезан текст заголовка или нет.
+Используйте свойство [`HeaderToolTip`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlColumnBase/HeaderToolTip.md), чтобы задать пользовательские подсказки для заголовков групп. Пользовательские подсказки отображаются при наведении на заголовок группы независимо от того, обрезан текст заголовка или нет.
 
 ``` xml
 <mxdg:GridBand BandName="Details" HeaderHorizontalAlignment="Center" HeaderToolTip="Contact and location information">

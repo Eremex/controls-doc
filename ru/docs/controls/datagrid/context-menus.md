@@ -14,15 +14,15 @@ Data Grid поддерживает встроенные контекстные �
 
 ![datagrid-columnheadermenu1](../../images/datagrid-columnheadermenu1.png)
 
-Свойство `DataGridControl.ColumnMenu` позволяет получить доступ к этому меню и настроить его.
+Свойство [`DataGridControl.ColumnMenu`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnMenu.md) позволяет получить доступ к этому меню и настроить его.
 
-Чтобы заменить меню по умолчанию, назначьте свойству `DataGridControl.ColumnMenu` объект `Eremex.AvaloniaUI.Controls.Bars.PopupMenu`.
+Чтобы заменить меню по умолчанию, назначьте свойству [`DataGridControl.ColumnMenu`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ColumnMenu.md) объект [`Eremex.AvaloniaUI.Controls.Bars.PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md).
 
 Чтобы настроить существующее меню заголовка колонки (добавить новые элементы или удалить элементы по умолчанию), обратитесь к меню после его инициализации (например, в обработчике события `Initialized` вашего DataGrid), а затем измените меню.
 
 ### Data Context
 
-Свойство `DataContext` меню заголовка колонки и его элементов (объектов `ToolbarButtonItem`) указывает на объект `GridColumn`, для которого было вызвано меню.
+Свойство `DataContext` меню заголовка колонки и его элементов (объектов [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)) указывает на объект [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md), для которого было вызвано меню.
 
 ### Пример - Как заменить меню заголовка колонки по умолчанию
 
@@ -30,9 +30,9 @@ Data Grid поддерживает встроенные контекстные �
 
 ![datagrid-contextmenus-columnmenu-replace-example](../../images/datagrid-contextmenus-columnmenu-replace-example.png)
 
-Обратите внимание на инициализацию свойств `Command` и `CommandParameter` для пункта меню в коде ниже. Выражение `CommandParameter="{Binding FieldName}"` задаёт привязку к свойству `FieldName` объекта `DataContext` пункта меню (`GridColumn.FieldName`).
+Обратите внимание на инициализацию свойств [`Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md) и [`CommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/CommandParameter.md) для пункта меню в коде ниже. Выражение `CommandParameter="{Binding FieldName}"` задаёт привязку к свойству [`FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) объекта `DataContext` пункта меню ([`GridColumn.FieldName`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md)).
 
-`DataContext` объекта `GridColumn` совпадает с `DataContext` Data Grid (в этом примере — объект _ViewModel_). Это позволяет получить доступ к View Model и её команде _CopyColumnCommand_ с помощью выражения: `Command="{Binding DataContext.CopyColumnCommand}"`.
+`DataContext` объекта [`GridColumn`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) совпадает с `DataContext` Data Grid (в этом примере — объект _ViewModel_). Это позволяет получить доступ к View Model и её команде _CopyColumnCommand_ с помощью выражения: `Command="{Binding DataContext.CopyColumnCommand}"`.
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -69,7 +69,7 @@ public partial class ViewModel : ObservableObject
 
 ### Пример - Как изменить существующее меню заголовка колонки
 
-Следующий пример добавляет пользовательскую команду в меню заголовка колонки по умолчанию.
+Этот пример добавляет пользовательскую команду в меню заголовка колонки по умолчанию.
 
 Пример обрабатывает событие `DataGridControl.Initialized`, чтобы получить доступ к меню заголовка колонки по умолчанию после его инициализации, и добавляет в меню команду _Refresh Data_.
 
@@ -113,16 +113,16 @@ Data Grid поддерживает встроенное контекстное �
 
 `DataContext` контекстного меню ячеек строки и его элементов содержит объект `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData`, который позволяет получить доступ к контекстно-зависимой информации:
 
-- `CellData.DataControl` — Возвращает контейнерный контрол (`DataGridControl`), для которого вызвано меню.
+- `CellData.DataControl` — Возвращает контейнерный контрол ([`DataGridControl`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md)), для которого вызвано меню.
 - `CellData.Row` — Возвращает базовый объект данных строки, по которой был выполнен клик.
 
 ### Пример - Как отобразить одинаковые команды контекстного меню для всех строк
 
-Следующий пример добавляет команду "_Copy Row_" в контекстное меню ячеек строки (`DataGridControlBase.RowCellMenu`) для всех строк.
+Этот пример добавляет команду "_Copy Row_" в контекстное меню ячеек строки (`DataGridControlBase.RowCellMenu`) для всех строк.
 
 ![datagrid-contextmenus-rowmenu-copyrow-example](../../images/datagrid-contextmenus-rowmenu-copyrow-example.png)
 
-Приведённый ниже код XAML назначает всплывающее меню свойству `DataGridControl.RowCellMenu`. Всплывающее меню содержит один элемент (`ToolbarButtonItem`), привязанный к команде _CopyRowCommand_, определённой в View Model (`DataContext` Data Grid).
+Приведённый ниже код XAML назначает всплывающее меню свойству [`DataGridControl.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowCellMenu.md). Всплывающее меню содержит один элемент ([`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)), привязанный к команде _CopyRowCommand_, определённой в View Model (`DataContext` Data Grid).
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -303,18 +303,18 @@ public enum EmploymentType
 
 ![datagrid-contextmenus-rowcellmenu-fromViewModel-example](../../images/datagrid-contextmenus-rowcellmenu-fromViewModel-example.png)
 
-Контекстное меню ячеек строки (`DataGridControl.RowCellMenu`) заполняется элементами (объектами `ToolbarButtonItem`) из источника элементов, указанного коллекцией `PopupMenu.ItemsSource`. В этом примере свойство `PopupMenu.ItemsSource` привязано к коллекции _MenuItems_, определённой в главной View Model, с помощью следующего выражения привязки:
+Контекстное меню ячеек строки ([`DataGridControl.RowCellMenu`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowCellMenu.md)) заполняется элементами (объектами [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)) из источника элементов, указанного коллекцией [`PopupMenu.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ItemsSource.md). В этом примере свойство [`PopupMenu.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ItemsSource.md) привязано к коллекции _MenuItems_, определённой в главной View Model, с помощью следующего выражения привязки:
 
 ``` xml
 <mxb:PopupMenu ItemsSource="{Binding DataControl.DataContext.MenuItems}">
 ```
 
-Когда `PopupMenu` отображается для ячейки DataGrid, `DataContext` меню содержит объект `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData`. Объект `CellData` предоставляет свойство `DataControl`, которое позволяет получить доступ к контролу, для которого отображается меню.
+Когда [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) отображается для ячейки DataGrid, `DataContext` меню содержит объект `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData`. Объект `CellData` предоставляет свойство `DataControl`, которое позволяет получить доступ к контролу, для которого отображается меню.
 Главная View Model назначена свойству `DataContext` контрола. Таким образом, синтаксис `DataControl.DataContext.MenuItems` ссылается на коллекцию _MenuItems_, определённую в главной View Model.
 
 Объект `CellData` также содержит другие свойства, позволяющие получить доступ к информации, связанной с ячейкой (колонка, объект строки и т. д.).
 
-Элементы меню инициализируются с помощью стилей. `DataContext` элементов меню — это элементы коллекции `PopupMenu.ItemsSource`. В этом примере свойство `PopupMenu.ItemsSource` хранит коллекцию объектов _MenuItemViewModel_. Следующий фрагмент привязывает свойства `ToolbarButtonItem.Header` и `ToolbarButtonItem.Command` к свойствам _MenuItemViewModel.Header_ и _MenuItemViewModel.Command_ соответственно.
+Элементы меню инициализируются с помощью стилей. `DataContext` элементов меню — это элементы коллекции [`PopupMenu.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ItemsSource.md). В этом примере свойство [`PopupMenu.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ItemsSource.md) хранит коллекцию объектов _MenuItemViewModel_. Следующий фрагмент привязывает свойства [`ToolbarButtonItem.Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Header.md) и [`ToolbarButtonItem.Command`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/Command.md) к свойствам _MenuItemViewModel.Header_ и _MenuItemViewModel.Command_ соответственно.
 
 ``` xml
 <mxb:PopupMenu.Styles>
@@ -325,7 +325,7 @@ public enum EmploymentType
 </mxb:PopupMenu.Styles>
 ```
 
-Команде `ToolbarButtonItem` требуется информация о строке, по которой был выполнен правый клик. Чтобы передать команде строку данных, код XAML устанавливает свойство `ToolbarButtonItem.CommandParameter` следующим образом:
+Команде [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md) требуется информация о строке, по которой был выполнен правый клик. Чтобы передать команде строку данных, код XAML устанавливает свойство [`ToolbarButtonItem.CommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarItem/CommandParameter.md) следующим образом:
 
 ``` xml
 xmlns:mxvis="clr-namespace:Eremex.AvaloniaUI.Controls.DataControl.Visuals;
@@ -340,7 +340,7 @@ xmlns:mxvis="clr-namespace:Eremex.AvaloniaUI.Controls.DataControl.Visuals;
 </mxb:PopupMenu.Styles>
 ```
 
-Здесь выражение `$parent[mxvis:CellControl]` проходит по логическому дереву, чтобы найти объект `CellControl` (он является родителем `DataContext` объекта `ToolbarButtonItem`). Объект `CellControl.DataContext` содержит объект `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData`, который позволяет получить доступ к строке данных через свойство `CellData.Row`.
+Здесь выражение `$parent[mxvis:CellControl]` проходит по логическому дереву, чтобы найти объект `CellControl` (он является родителем `DataContext` объекта [`ToolbarButtonItem`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarButtonItem.md)). Объект `CellControl.DataContext` содержит объект `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData`, который позволяет получить доступ к строке данных через свойство `CellData.Row`.
 
 Полный код приведён ниже.
 
@@ -462,11 +462,11 @@ public enum EmploymentType
 
 ## Настройка меню при отображении
 
-Вы можете обрабатывать событие `PopupMenu.Opening`, чтобы динамически настраивать контекстные меню DataGrid. Событие возникает, когда `PopupMenu` собирается отобразиться.
+Вы можете обрабатывать событие [`PopupMenu.Opening`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Opening.md), чтобы динамически настраивать контекстные меню DataGrid. Событие возникает, когда [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) собирается отобразиться.
 
 ## Пример - Как отобразить контекстное меню для первой колонки
 
-Следующий пример назначает пустой `PopupMenu` свойству `DataGridControlBase.RowCellMenu`, а затем обрабатывает событие `PopupMenu.Opening`, чтобы заполнить меню элементами, когда пользователь щёлкает правой кнопкой мыши по ячейкам в первом видимой колонке DataGrid. Меню остаётся пустым (и, следовательно, не отображается), когда пользователь щёлкает правой кнопкой мыши в других колонках.
+Этот пример назначает пустой [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) свойству `DataGridControlBase.RowCellMenu`, а затем обрабатывает событие [`PopupMenu.Opening`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Opening.md), чтобы заполнить меню элементами, когда пользователь щёлкает правой кнопкой мыши по ячейкам в первом видимой колонке DataGrid. Меню остаётся пустым (и, следовательно, не отображается), когда пользователь щёлкает правой кнопкой мыши в других колонках.
 
 Созданное меню содержит флажок "_Show/Hide Group Panel_", который переключает видимость панели группировки DataGrid (свойство `DataGridControlBase.ShowGroupPanel`).
 
@@ -514,11 +514,11 @@ void ShowGroupPanelCommand(DataGridControl dataGrid)
 
 ## Отображение контекстного меню для контролов с помощью присоединённого свойства ToolbarManager
 
-Компонент `Eremex.AvaloniaUI.Controls.Bars.ToolbarManager` предоставляет присоединённое свойство `ContextPopup`, которое позволяет назначить контекстное меню любому контролу, включая DataGrid. Это контекстное меню отображается для областей DataGrid, у которых нет контекстных меню по умолчанию, а также для областей с пустыми меню по умолчанию.
+Компонент [`Eremex.AvaloniaUI.Controls.Bars.ToolbarManager`](../../API/Eremex.AvaloniaUI.Controls.Bars/ToolbarManager.md) предоставляет присоединённое свойство `ContextPopup`, которое позволяет назначить контекстное меню любому контролу, включая DataGrid. Это контекстное меню отображается для областей DataGrid, у которых нет контекстных меню по умолчанию, а также для областей с пустыми меню по умолчанию.
 
 ### Пример - Как назначить контекстное меню с помощью присоединённого свойства _ToolbarManager.ContextPopup_
 
-Следующий код использует присоединённое свойство `ToolbarManager.ContextPopup`, чтобы задать контекстное меню для контрола DataGrid. Меню содержит пункт-флажок _Show Column Header Panel_/_Hide Column Header Panel_, который переключает видимость параметра `DataGridControl.ShowColumnHeaders`.
+Следующий код использует присоединённое свойство `ToolbarManager.ContextPopup`, чтобы задать контекстное меню для контрола DataGrid. Меню содержит пункт-флажок _Show Column Header Panel_/_Hide Column Header Panel_, который переключает видимость параметра [`DataGridControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowColumnHeaders.md).
 
 ![datagrid-contextmenus-toolbarmanager-example](../../images/datagrid-contextmenus-toolbarmanager-example.png)
 

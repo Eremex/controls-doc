@@ -12,11 +12,16 @@ A minimal IServiceProvider implementation with no dependency on any DI container
 public sealed class SimpleServiceProvider : IDisposable, IServiceProvider
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SimpleServiceProvider](SimpleServiceProvider/SimpleServiceProvider.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [AddSingleton](SimpleServiceProvider/AddSingleton.md)(…) | Registers a service factory. The instance is created on first request. The signature is compatible with [`RegisterApplicationServices`](./ApplicationServicesContext/RegisterApplicationServices.md): `ApplicationServicesContext.RegisterApplicationServices(provider.AddSingleton);` |
 | [AddSingleton&lt;TService&gt;](SimpleServiceProvider/AddSingleton.md)(…) | Registers a ready instance under the *TService* type. The type is stated explicitly so a service cannot be accidentally registered under its concrete class instead of its interface. |
 | [Dispose](SimpleServiceProvider/Dispose.md)() | Disposes the created services that implement IDisposable. |

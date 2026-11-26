@@ -10,13 +10,13 @@ seealso: []
 
 Не инициализируйте свойство `ItemSource` элемента управления. В противном случае элемент управления переключится в связанный режим и, соответственно, запретит вам вручную добавлять узлы.
 
-Используйте свойство `TreeListControlBase.Nodes`, чтобы добавлять корневые узлы в элемент управления. Для каждого узла вы можете использовать свойство `TreeListNode.Nodes`, чтобы добавлять дочерние узлы.
+Используйте свойство [`TreeListControlBase.Nodes`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/Nodes.md), чтобы добавлять корневые узлы в элемент управления. Для каждого узла вы можете использовать свойство [`TreeListNode.Nodes`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Nodes.md), чтобы добавлять дочерние узлы.
 
-Узел в элементах управления TreeList и TreeView инкапсулируется объектом `TreeListNode`. Его свойство `TreeListNode.Content` позволяет указать содержимое узла. Вы можете установить свойство `TreeListNode.Content` в бизнес-объект, публичные свойства которого предоставляют данные для колонок элемента управления. Для элемента управления TreeView вы можете установить свойство `TreeListNode.Content` в объект String.
+Узел в элементах управления TreeList и TreeView инкапсулируется объектом [`TreeListNode`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode.md). Его свойство [`TreeListNode.Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) позволяет указать содержимое узла. Вы можете установить свойство [`TreeListNode.Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) в бизнес-объект, публичные свойства которого предоставляют данные для колонок элемента управления. Для элемента управления TreeView вы можете установить свойство [`TreeListNode.Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) в объект String.
 
-Если вы используете элемент управления TreeList, убедитесь, что коллекция `TreeListControl.Columns` элемента управления содержит колонки, связанные с конкретными именами полей.
+Если вы используете элемент управления TreeList, убедитесь, что коллекция [`TreeListControl.Columns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Columns.md) элемента управления содержит колонки, связанные с конкретными именами полей.
 
-Следующий код XAML создаёт иерархическую структуру узлов в коллекции `TreeListControl.Nodes`. Свойство `Content` каждого узла инициализируется объектом _Person_, определённым в code-behind.
+Следующий код XAML создаёт иерархическую структуру узлов в коллекции [`TreeListControl.Nodes`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/Nodes.md). Свойство [`Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) каждого узла инициализируется объектом _Person_, определённым в code-behind.
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -99,7 +99,7 @@ public partial class Person : ObservableObject
 }
 ```
 
-Следующий пример создаёт структуру узлов в code-behind. Он добавляет объект _node1_ на корневой уровень TreeList. Другие узлы добавляются на вложенных уровнях.
+Этот пример создаёт структуру узлов в code-behind. Он добавляет объект _node1_ на корневой уровень TreeList. Другие узлы добавляются на вложенных уровнях.
 
 ``` cs
 TreeListNode node1 = new TreeListNode() 
@@ -126,7 +126,7 @@ node1.Nodes.Add(node12);
 
 ### Особенности TreeView
 
-Вы можете установить свойство `Content` узла TreeView в бизнес-объект или простую строку.
+Вы можете установить свойство [`Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md) узла TreeView в бизнес-объект или простую строку.
 
 Следующий код показывает, как заполнить узлы TreeView простыми строками.
 
@@ -156,7 +156,7 @@ node1.Nodes.Add(node12);
 </mxtl:TreeViewControl>
 ```
 
-Если вы присваиваете бизнес-объект свойству `Content`, установите член `TreeViewControl.DataFieldName` в имя свойства бизнес-объекта, которое предоставляет отображаемые значения для элемента управления, как показано в примере ниже.
+Если вы присваиваете бизнес-объект свойству [`Content`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNode/Content.md), установите член [`TreeViewControl.DataFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) в имя свойства бизнес-объекта, которое предоставляет отображаемые значения для элемента управления, как показано в примере ниже.
 
 ``` cs
 TreeListNode node1 = new TreeListNode() 

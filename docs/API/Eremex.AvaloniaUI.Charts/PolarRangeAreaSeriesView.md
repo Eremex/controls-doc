@@ -12,11 +12,16 @@ Displays the data of a polar series as an area filled between the first and the 
 public class PolarRangeAreaSeriesView : PolarSeriesView, IRangeAreaSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PolarRangeAreaSeriesView](PolarRangeAreaSeriesView/PolarRangeAreaSeriesView.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Color](PolarRangeAreaSeriesView/Color.md) { get; set; } | Gets or sets the color of the filled area. |
 | [Color1](PolarRangeAreaSeriesView/Color1.md) { get; set; } | Gets or sets the color of the line along the first boundary. |
 | [Color2](PolarRangeAreaSeriesView/Color2.md) { get; set; } | Gets or sets the color of the line along the second boundary. |

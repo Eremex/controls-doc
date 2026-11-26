@@ -12,11 +12,16 @@ Serves as the base class for the axis ranges whose bounds can be set and recalcu
 public abstract class AxisRange : AxisRangeBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [AxisRange](AxisRange/AxisRange.md)() | Initializes a new instance of the AxisRange class with default side margins. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AutoCorrectWholeRange](AxisRange/AutoCorrectWholeRange.md) { get; set; } | Gets or sets whether the whole range is recalculated from series data. The default value is true. |
 | [MaxSideMargin](AxisRange/MaxSideMargin.md) { get; set; } | Gets or sets the fraction of the data range length added above its maximum when the range is calculated automatically. |
 | [MinSideMargin](AxisRange/MinSideMargin.md) { get; set; } | Gets or sets the fraction of the data range length added below its minimum when the range is calculated automatically. |

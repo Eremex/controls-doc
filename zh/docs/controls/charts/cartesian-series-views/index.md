@@ -1,26 +1,26 @@
 ---
-title: 笛卡尔级数视图
+title: 笛卡尔系列视图
 order: 990
 seealso: []
 ---
 
-# 笛卡尔级数视图
+# 笛卡尔系列视图 {#cartersian-series-views}
 
-`CartesianChart` control 提供以下视图以不同方式可视化系列数据：
+[`CartesianChart`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) 控件提供以下视图以不同方式可视化系列数据：
 
-- [Line Series View](line-series-vew.md)
-- [Scatter Line Series View](scatter-line-series-view.md)
-- [Point Series View](point-series-view.md)
-- [Area Series View](area-series-view.md)
-- [Range Area Series View](range-area-series-view.md)
-- [Stacked Area Series View](stacked-area-series-view.md)
+- [折线系列视图](line-series-vew.md)
+- [散点线系列视图](scatter-line-series-view.md)
+- [点系列视图](point-series-view.md)
+- [面积系列视图](area-series-view.md)
+- [范围面积系列视图](range-area-series-view.md)
+- [堆积面积系列视图](stacked-area-series-view.md)
 - [Full-Stacked Area Series View (100% Stacked Area)](full-stacked-area-series-view.md)
-- [Side-by-side Bar Series View](side-by-side-bar-series-view.md)
-- [Side-by-side Range Bar Series View](side-by-side-range-bar-series-view.md)
-- [Step Line Series View](step-line-series-view.md)
-- [Step Area Series View](step-area-series-view.md)
-- [Candlestick Series View](candlestick-series-view.md)
-- [Lollipop Series View](lollipop-series-view.md)
+- [并排条形系列视图](side-by-side-bar-series-view.md)
+- [并排范围条形系列视图](side-by-side-range-bar-series-view.md)
+- [阶梯线系列视图](step-line-series-view.md)
+- [阶梯面积系列视图](step-area-series-view.md)
+- [K 线系列视图](candlestick-series-view.md)
+- [棒棒糖系列视图](lollipop-series-view.md)
 
 <br>
 <br>

@@ -12,7 +12,7 @@ Displays several Cartesian series as stacked areas. Each area starts where the p
 public class CartesianStackedAreaSeriesView : CartesianAreaSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

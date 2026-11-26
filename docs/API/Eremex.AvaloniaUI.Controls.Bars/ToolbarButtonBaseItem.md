@@ -12,12 +12,22 @@ Provides the base functionality for toolbar buttons that can display a popup.
 public class ToolbarButtonBaseItem : ToolbarItem, IPopupOwner
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ToolbarButtonBaseItem](ToolbarButtonBaseItem/ToolbarButtonBaseItem.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [DropDownArrowAlignment](ToolbarButtonBaseItem/DropDownArrowAlignment.md) { get; set; } | Gets or sets the position of the drop-down arrow within the item. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [CloseDropDown](ToolbarButtonBaseItem/CloseDropDown.md)() | Closes the item's drop-down popup. |
 | [OpenDropDown](ToolbarButtonBaseItem/OpenDropDown.md)() | Opens the item's drop-down popup. |
 

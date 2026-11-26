@@ -4,7 +4,7 @@ order: 10000
 seealso: []
 ---
 
-# 在 Astra Linux 操作系统中窗口和菜单的阴影显示不正确
+# 在 Astra Linux 操作系统中窗口和菜单的阴影显示不正确 {#shadows-are-not-displayed-correctly-for-windows-and-menus-in-os-astra-linux}
 
 Eremex 的窗口和菜单默认使用透明阴影。如果操作系统中禁用了窗口透明度,窗口和菜单的阴影将无法正确显示。下面展示了菜单渲染不正确的示例:
 

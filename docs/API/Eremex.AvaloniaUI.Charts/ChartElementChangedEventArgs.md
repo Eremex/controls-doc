@@ -12,7 +12,7 @@ Provides data for the [`ChartElementChanged`](./ChartElement/ChartElementChanged
 public abstract class ChartElementChangedEventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

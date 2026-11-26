@@ -11,7 +11,7 @@ seealso: []
 
 ## Свет по умолчанию
 
-`Graphics3DControl` предоставляет свет по умолчанию «из коробки». Свет по умолчанию представляет собой белый точечный свет, связанный с камерой. Его направление всегда синхронизировано с направлением камеры.
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) предоставляет свет по умолчанию «из коробки». Свет по умолчанию представляет собой белый точечный свет, связанный с камерой. Его направление всегда синхронизировано с направлением камеры.
 
 Следующее изображение демонстрирует свет по умолчанию, отражённый от металлической плоскости. 
 
@@ -22,7 +22,7 @@ seealso: []
 
 #### Связанные опции
 
-- `Graphics3DControl.AllowDefaultLight` (значение по умолчанию — `true`) — установите это свойство в `false`, чтобы принудительно отключить свет по умолчанию.
+- [`Graphics3DControl.AllowDefaultLight`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/AllowDefaultLight.md) (значение по умолчанию — `true`) — установите это свойство в `false`, чтобы принудительно отключить свет по умолчанию.
 
     Когда вы создаёте пользовательские источники света, свет по умолчанию автоматически отключается. 
 
@@ -30,17 +30,17 @@ seealso: []
 ## Пользовательские источники света
 
 
-Чтобы добавить пользовательские источники света в 3D-сцену, создайте источники света и добавьте их в коллекцию `Graphics3DControl.Lights`. Вы также можете использовать свойства `Graphics3DControl.LightsSource` и `Graphics3DControl.LightTemplate`, чтобы добавлять пользовательские источники света в соответствии с паттерном MVVM.
+Чтобы добавить пользовательские источники света в 3D-сцену, создайте источники света и добавьте их в коллекцию [`Graphics3DControl.Lights`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Lights.md). Вы также можете использовать свойства [`Graphics3DControl.LightsSource`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/LightsSource.md) и [`Graphics3DControl.LightTemplate`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/LightTemplate.md), чтобы добавлять пользовательские источники света в соответствии с паттерном MVVM.
 
 
-`Graphics3DControl` поддерживает следующие типы источников света:
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) поддерживает следующие типы источников света:
 
-- Точечный свет (`PointLight`)
-- Направленный свет (`DirectionalLight`)
-- Точечный свет, связанный с камерой (`CameraPointLight`)
-- Направленный свет, связанный с камерой (`CameraDirectionalLight`)
+- Точечный свет ([`PointLight`](../../API/Eremex.AvaloniaUI.Controls3D/PointLight.md))
+- Направленный свет ([`DirectionalLight`](../../API/Eremex.AvaloniaUI.Controls3D/DirectionalLight.md))
+- Точечный свет, связанный с камерой ([`CameraPointLight`](../../API/Eremex.AvaloniaUI.Controls3D/CameraPointLight.md))
+- Направленный свет, связанный с камерой ([`CameraDirectionalLight`](../../API/Eremex.AvaloniaUI.Controls3D/CameraDirectionalLight.md))
 
-Все эти источники света имеют одного предка — абстрактный класс `Light`.
+Все эти источники света имеют одного предка — абстрактный класс [`Light`](../../API/Eremex.AvaloniaUI.Controls3D/Light.md).
 
 ### Точечный свет
 
@@ -48,17 +48,17 @@ seealso: []
 
 #### Класс
 
-`PointLight`
+[`PointLight`](../../API/Eremex.AvaloniaUI.Controls3D/PointLight.md)
 
 #### Настройки
     
-- `Color` — цвет света.
-- `Position` — положение излучателя света.
-- `Radius` — радиус излучателя света.
+- [`Color`](../../API/Eremex.AvaloniaUI.Controls3D/Light/Color.md) — цвет света.
+- [`Position`](../../API/Eremex.AvaloniaUI.Controls3D/PointLight/Position.md) — положение излучателя света.
+- [`Radius`](../../API/Eremex.AvaloniaUI.Controls3D/PointLightBase/Radius.md) — радиус излучателя света.
 
 #### Пример
 
-Следующий пример создаёт точечный свет цвета Coral. Изображение ниже демонстрирует этот свет, отражённый от металлической плоскости и сферы.
+Этот пример создаёт точечный свет цвета Coral. Изображение ниже демонстрирует этот свет, отражённый от металлической плоскости и сферы.
 
 ![g3dControl-point-light-coral-example](../../images/g3dControl-point-light-coral-example.png)
 
@@ -82,17 +82,17 @@ g3DControl.Lights.Add(myLight);
 
 #### Класс
 
-`DirectionalLight`
+[`DirectionalLight`](../../API/Eremex.AvaloniaUI.Controls3D/DirectionalLight.md)
 
 #### Настройки
 
-- `Color` — цвет света.
-- `Direction` — вектор, задающий направление лучей света.
+- [`Color`](../../API/Eremex.AvaloniaUI.Controls3D/Light/Color.md) — цвет света.
+- [`Direction`](../../API/Eremex.AvaloniaUI.Controls3D/DirectionalLight/Direction.md) — вектор, задающий направление лучей света.
 
 #### Пример
 
 
-Следующий пример добавляет источник направленного света, направленный в сторону отрицательной оси Y. Изображение ниже демонстрирует этот свет, отражённый от металлической плоскости и сферы.
+Этот пример добавляет источник направленного света, направленный в сторону отрицательной оси Y. Изображение ниже демонстрирует этот свет, отражённый от металлической плоскости и сферы.
 
 ![g3dControl-directional-light-coral-example](../../images/g3dControl-directional-light-coral-example.png)
 
@@ -120,16 +120,16 @@ g3DControl.Lights.Add(myLight);
 
 #### Класс
 
-`CameraPointLight`
+[`CameraPointLight`](../../API/Eremex.AvaloniaUI.Controls3D/CameraPointLight.md)
 
 #### Настройки
 
-- `Color` — цвет света.
-- `Radius` — радиус излучателя света.
+- [`Color`](../../API/Eremex.AvaloniaUI.Controls3D/Light/Color.md) — цвет света.
+- [`Radius`](../../API/Eremex.AvaloniaUI.Controls3D/PointLightBase/Radius.md) — радиус излучателя света.
 
 #### Пример 
 
-Следующий пример создаёт точечный свет, связанный с камерой. Изображение ниже демонстрирует этот свет, отражённый от металлической плоскости и сферы.
+Этот пример создаёт точечный свет, связанный с камерой. Изображение ниже демонстрирует этот свет, отражённый от металлической плоскости и сферы.
 
 ![g3dControl-camera-point-light-coral-example](../../images/g3dControl-camera-point-light-coral-example.png)
 
@@ -154,16 +154,16 @@ g3DControl.Lights.Add(myLight);
 
 #### Класс
 
-`CameraDirectionalLight`
+[`CameraDirectionalLight`](../../API/Eremex.AvaloniaUI.Controls3D/CameraDirectionalLight.md)
 
 #### Настройки
 
-- `Color` — цвет света.
+- [`Color`](../../API/Eremex.AvaloniaUI.Controls3D/Light/Color.md) — цвет света.
 
 
 #### Пример 
 
-Следующий пример создаёт направленный свет, связанный с камерой. Изображение ниже демонстрирует этот свет, отражённый от металлической плоскости и сферы.
+Этот пример создаёт направленный свет, связанный с камерой. Изображение ниже демонстрирует этот свет, отражённый от металлической плоскости и сферы.
 
 ![g3dControl-camera-directional-light-coral-example](../../images/g3dControl-camera-directional-light-coral-example.png)
 
@@ -185,7 +185,7 @@ g3DControl.Lights.Add(myLight);
 
 ### Add Lights Using the MVVM Approach
 
-- `Graphics3DControl.LightsSource` — Supports the MVVM design patters. The `LightsSource` property is a collection of business objects  -->
+- [`Graphics3DControl.LightsSource`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/LightsSource.md) — Supports the MVVM design patters. The [`LightsSource`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/LightsSource.md) property is a collection of business objects  -->
 
 
 <br>

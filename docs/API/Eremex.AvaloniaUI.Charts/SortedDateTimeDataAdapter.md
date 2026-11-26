@@ -12,13 +12,23 @@ Converts date and time arguments and numeric values into series data points. The
 public class SortedDateTimeDataAdapter : ISeriesDataAdapter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SortedDateTimeDataAdapter](SortedDateTimeDataAdapter/SortedDateTimeDataAdapter.md)() | Initializes a new instance of the SortedDateTimeDataAdapter class that contains no data points. |
 | [SortedDateTimeDataAdapter](SortedDateTimeDataAdapter/SortedDateTimeDataAdapter.md)(…) | Initializes a new instance of the SortedDateTimeDataAdapter class with the specified arguments and values. (2 constructors) |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ItemCount](SortedDateTimeDataAdapter/ItemCount.md) { get; } | Gets the number of data points stored in the adapter. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Add](SortedDateTimeDataAdapter/Add.md)(…) | Adds a data point to the end of the adapter. (2 methods) |
 | [AddRange](SortedDateTimeDataAdapter/AddRange.md)(…) | Adds several data points to the end of the adapter. |
 | [Clear](SortedDateTimeDataAdapter/Clear.md)() | Removes all data points from the adapter. |

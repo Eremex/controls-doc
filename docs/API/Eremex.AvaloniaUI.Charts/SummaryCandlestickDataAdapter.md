@@ -12,15 +12,25 @@ Summarizes date and time arguments into candlestick data points. All source valu
 public class SummaryCandlestickDataAdapter : ISeriesDataAdapter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SummaryCandlestickDataAdapter](SummaryCandlestickDataAdapter/SummaryCandlestickDataAdapter.md)() | Initializes a new instance of the SummaryCandlestickDataAdapter class that contains no source values. |
 | [SummaryCandlestickDataAdapter](SummaryCandlestickDataAdapter/SummaryCandlestickDataAdapter.md)(…) | Initializes a new instance of the SummaryCandlestickDataAdapter class with the specified source values. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ItemCount](SummaryCandlestickDataAdapter/ItemCount.md) { get; } | Gets the number of candlesticks summarized by the adapter. |
 | [MeasureUnit](SummaryCandlestickDataAdapter/MeasureUnit.md) { get; set; } | Gets or sets the time unit that groups the source arguments into candlesticks. |
 | [MeasureUnitFactor](SummaryCandlestickDataAdapter/MeasureUnitFactor.md) { get; set; } | Gets or sets the number of measure units combined into a single candlestick. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Add](SummaryCandlestickDataAdapter/Add.md)(…) | Adds a source value and recalculates the resulting candlesticks. |
 | [Clear](SummaryCandlestickDataAdapter/Clear.md)() | Removes all source values from the adapter. |
 | [RemoveFromStart](SummaryCandlestickDataAdapter/RemoveFromStart.md)(…) | Removes the specified number of source values from the start of the data set and recalculates the resulting candlesticks. |

@@ -18,11 +18,16 @@ public sealed class DialogChoice<T>
 | --- | --- |
 | T | The result type. |
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DialogChoice](DialogChoice-T/DialogChoice.md)(…) | Initializes a new instance of the [`DialogChoice`](./DialogChoice-T.md) class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Caption](DialogChoice-T/Caption.md) { get; } | The button caption. |
 | [Dock](DialogChoice-T/Dock.md) { get; set; } | The side the button is docked to. |
 | [Index](DialogChoice-T/Index.md) { get; set; } | The button order within its side. |

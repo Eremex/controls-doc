@@ -12,11 +12,16 @@ Provides data for the CustomSummary event.
 public class TreeListCustomSummaryEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListCustomSummaryEventArgs](TreeListCustomSummaryEventArgs/TreeListCustomSummaryEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Nodes](TreeListCustomSummaryEventArgs/Nodes.md) { get; } | Gets the nodes for which the summary is calculated. |
 | [SummaryItem](TreeListCustomSummaryEventArgs/SummaryItem.md) { get; } | Gets the summary item being calculated. |
 | [SummaryValue](TreeListCustomSummaryEventArgs/SummaryValue.md) { get; set; } | Gets or sets the result of the custom summary calculation. |

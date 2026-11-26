@@ -12,7 +12,7 @@ Converts an axis value into the text shown as an axis label.
 public interface IAxisLabelFormatter
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

@@ -12,11 +12,16 @@ Represents the value axis of a Cartesian chart. It displays the values of series
 public class AxisY : CartesianAxis
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [AxisY](AxisY/AxisY.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Range](AxisY/Range.md) { get; set; } | Gets or sets the range of values displayed by the axis. |
 | [ScaleOptions](AxisY/ScaleOptions.md) { get; set; } | Gets or sets the options that define how value data is scaled and labeled. |
 

@@ -12,11 +12,16 @@ Displays the data of a Cartesian series as an area filled between the first and 
 public class CartesianRangeAreaSeriesView : CartesianSeriesView, IRangeAreaSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CartesianRangeAreaSeriesView](CartesianRangeAreaSeriesView/CartesianRangeAreaSeriesView.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Color](CartesianRangeAreaSeriesView/Color.md) { get; set; } | Gets or sets the color of the filled area. |
 | [Color1](CartesianRangeAreaSeriesView/Color1.md) { get; set; } | Gets or sets the color of the line along the first boundary. |
 | [Color2](CartesianRangeAreaSeriesView/Color2.md) { get; set; } | Gets or sets the color of the line along the second boundary. |

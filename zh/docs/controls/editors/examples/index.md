@@ -4,9 +4,9 @@ order: 500
 seealso: []
 ---
 
-# 编辑器示例
+# 编辑器示例 {#editors-examples}
 
-- [How to create a password text box](How-to-create-a-password-text-box.md)
+- [如何创建密码文本框](How-to-create-a-password-text-box.md)
 
 <br>
 <br>

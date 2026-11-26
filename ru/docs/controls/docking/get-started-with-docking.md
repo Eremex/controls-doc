@@ -13,9 +13,9 @@ seealso: []
 
 Этот пример демонстрирует элементы докинга, составляющие интерфейс докинга:
 
-- Dock-панель (`DockPane`) — панель, которую можно закреплять, делать плавающей, автоскрывать и объединять в группу вкладок (контейнер).
+- Dock-панель ([`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md)) — панель, которую можно закреплять, делать плавающей, автоскрывать и объединять в группу вкладок (контейнер).
 
-- Document-панель (`DocumentPane`) — контейнер для основного содержимого вашего окна. Вы можете использовать Document-панели для реализации MDI с вкладками (Multiple Document Interface).
+- Document-панель ([`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md)) — контейнер для основного содержимого вашего окна. Вы можете использовать Document-панели для реализации MDI с вкладками (Multiple Document Interface).
 
 
 
@@ -23,11 +23,11 @@ seealso: []
 
 Библиотека докинга поддерживает следующие контейнеры:
 
-- `DockGroup` (сплит-контейнер) — отображает элементы докинга (Dock-панели и контейнеры) рядом друг с другом, горизонтально или вертикально. Дочерние элементы разделяются разделителями, которые позволяют изменять размер панелей.
-- `TabbedGroup` (контейнер вкладок) — отображает Dock-панели как вкладки.
-- `DocumentGroup` (контейнер вкладок) — отображает Document-панели как вкладки.
-- `AutoHideGroup` — дочерние Dock-панели этого контейнера обладают функцией автоматического скрытия. Автоскрытая панель появляется, когда пользователь щёлкает по заголовку панели. 
-- `FloatGroup` — отображает элементы докинга в плавающем окне.
+- [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) (сплит-контейнер) — отображает элементы докинга (Dock-панели и контейнеры) рядом друг с другом, горизонтально или вертикально. Дочерние элементы разделяются разделителями, которые позволяют изменять размер панелей.
+- [`TabbedGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup.md) (контейнер вкладок) — отображает Dock-панели как вкладки.
+- [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) (контейнер вкладок) — отображает Document-панели как вкладки.
+- [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md) — дочерние Dock-панели этого контейнера обладают функцией автоматического скрытия. Автоскрытая панель появляется, когда пользователь щёлкает по заголовку панели. 
+- [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md) — отображает элементы докинга в плавающем окне.
 
 ![docking-ui-dockpanes-and-documentpanes-get-started](../../images/docking-ui-dockpanes-and-documentpanes-get-started.png)
 
@@ -35,7 +35,7 @@ seealso: []
 ## 1. Создание компонента DockManager
 
 Создайте [новое приложение Avalonia UI с контролами Eremex](../../get-started/index.md).
-Откройте файл MainWindow.axaml и определите компонент `DockManager` в XAML. 
+Откройте файл MainWindow.axaml и определите компонент [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) в XAML. 
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -44,12 +44,12 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 </mxd:DockManager>
 ```
 
-`DockManager` — это контрол, который управляет созданием элементов докинга (Dock-панелей и Document-панелей), поддерживает операции над элементами докинга во время работы, предоставляет контекстные меню и выполняет сериализацию и десериализацию интерфейса докинга.
+[`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) — это контрол, который управляет созданием элементов докинга (Dock-панелей и Document-панелей), поддерживает операции над элементами докинга во время работы, предоставляет контекстные меню и выполняет сериализацию и десериализацию интерфейса докинга.
 
 
 ## 2. Определение корневой группы
 
-Добавьте объект `DockGroup` как дочерний элемент контрола `DockManager`. Этот объект используется для инициализации корневой группы докинга (свойство `DockManager.Root`, помеченное атрибутом `ContentAttribute`).
+Добавьте объект [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) как дочерний элемент контрола [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md). Этот объект используется для инициализации корневой группы докинга (свойство [`DockManager.Root`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Root.md), помеченное атрибутом `ContentAttribute`).
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -65,7 +65,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 ## 3. Добавление панелей «Properties» и «Debug»
 
-Добавьте объекты `DockPane` «Properties» и «Debug» в корневую группу.
+Добавьте объекты [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) «Properties» и «Debug» в корневую группу.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -78,14 +78,14 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 </mxd:DockManager>
 ```
 
-Контейнер `DockGroup` по умолчанию располагает панели горизонтально. Вы можете изменить направление на вертикальное с помощью свойства `DockGroup.Orientation`.
+Контейнер [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) по умолчанию располагает панели горизонтально. Вы можете изменить направление на вертикальное с помощью свойства [`DockGroup.Orientation`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Orientation.md).
 
 ![docking-get-started-30-properties-debug-in-split-container](../../images/docking-get-started-30-properties-debug-in-split-container.png)
 
 
 ## 4. Объединение панелей в контейнер вкладок
 
-Оберните панели «Properties» и «Debug» в контейнер `TabbedGroup`. Этот контейнер представляет свои дочерние элементы как вкладки.
+Оберните панели «Properties» и «Debug» в контейнер [`TabbedGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup.md). Этот контейнер представляет свои дочерние элементы как вкладки.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -105,7 +105,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 ## 5. Добавление панели «Error List»
 
-Определите панель «Error List» перед объектом `TabbedGroup`. 
+Определите панель «Error List» перед объектом [`TabbedGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup.md). 
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -121,13 +121,13 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 </mxd:DockManager>
 ```
 
-Контейнер `DockGroup` располагает панель «Error List» и `TabbedGroup` в горизонтальном направлении.
+Контейнер [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) располагает панель «Error List» и [`TabbedGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup.md) в горизонтальном направлении.
 
 ![docking-get-started-50-errors-in-split-container](../../images/docking-get-started-50-errors-in-split-container.png)
 
 ## 6. Добавление группы документов над панелью «Error List»
 
-Чтобы отобразить `DocumentGroup` над панелью «Error List», сначала создайте новый контейнер `DockGroup` с вертикальной ориентацией. Затем поместите панель «Error List» и новый объект `DocumentGroup` в этот контейнер.
+Чтобы отобразить [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) над панелью «Error List», сначала создайте новый контейнер [`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md) с вертикальной ориентацией. Затем поместите панель «Error List» и новый объект [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) в этот контейнер.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -150,7 +150,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 ## 7. Добавление панели «Output»
 
-Панель «Output» должна отображаться справа от панели «Error List». В настоящее время панель «Error List» принадлежит контейнеру, который располагает свои дочерние элементы вертикально. Таким образом, нам нужно агрегировать панели «Error List» и «Output» в новый контейнер (`DockGroup`) с горизонтальной ориентацией.
+Панель «Output» должна отображаться справа от панели «Error List». В настоящее время панель «Error List» принадлежит контейнеру, который располагает свои дочерние элементы вертикально. Таким образом, нам нужно агрегировать панели «Error List» и «Output» в новый контейнер ([`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md)) с горизонтальной ориентацией.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -177,7 +177,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 ## 8. Заполнение группы документов вкладками
 
-Добавьте два объекта `DocumentPane` в контейнер `DocumentGroup`. `DocumentGroup` отображает свои дочерние элементы как вкладки, реализуя тем самым MDI с вкладками.
+Добавьте два объекта [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) в контейнер [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md). [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) отображает свои дочерние элементы как вкладки, реализуя тем самым MDI с вкладками.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -209,13 +209,13 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 ## 9. Задание размера закреплённых панелей
 
-Пространство любого сплит-контейнера (`DockGroup`) по умолчанию делится поровну между его дочерними элементами. Вы можете использовать свойства `DockWidth` и `DockHeight`, чтобы задать пользовательский размер дочерних элементов контейнера. Эти свойства имеют тип `Avalonia.Controls.GridLength`, поэтому вы можете установить их в следующие значения:
+Пространство любого сплит-контейнера ([`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md)) по умолчанию делится поровну между его дочерними элементами. Вы можете использовать свойства [`DockWidth`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockWidth.md) и [`DockHeight`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockHeight.md), чтобы задать пользовательский размер дочерних элементов контейнера. Эти свойства имеют тип `Avalonia.Controls.GridLength`, поэтому вы можете установить их в следующие значения:
 
 - Число пикселей (абсолютные значения).
 - Взвешенную долю доступного пространства, используя нотацию «звёздочка (`*`)». Например, `3*`.
 - Значение «Auto» — элемент автоматически изменяет размер, чтобы уместить своё содержимое.
 
-Код ниже использует свойства `DockWidth` и `DockHeight`, чтобы задать пропорциональный размер панелей и контейнеров.
+Код ниже использует свойства [`DockWidth`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockWidth.md) и [`DockHeight`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockHeight.md), чтобы задать пропорциональный размер панелей и контейнеров.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -247,7 +247,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 Автоскрытая панель автоматически сворачивается, когда теряет фокус. Для свёрнутых автоскрытых панелей отображаются только заголовки. 
 
-Чтобы создать автоскрытую панель в XAML, добавьте контейнер `AutoHideGroup` в коллекцию `DockManager.AutoHideGroups`, а затем определите панель `DockPane` в контейнере `AutoHideGroup`.
+Чтобы создать автоскрытую панель в XAML, добавьте контейнер [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md) в коллекцию [`DockManager.AutoHideGroups`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHideGroups.md), а затем определите панель [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) в контейнере [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md).
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -262,7 +262,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 </mxd:DockManager>
 ```
 
-Свойство `AutoHideGroup.Dock` позволяет задать край, у которого отображается контейнер автоскрытия.
+Свойство [`AutoHideGroup.Dock`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup/Dock.md) позволяет задать край, у которого отображается контейнер автоскрытия.
 
 ![docking-get-started-auto-hide-container](../../images/docking-get-started-auto-hide-container.gif)
 
@@ -271,7 +271,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 Пользователь может перетащить панель мышью из её закреплённого состояния, чтобы сделать панель плавающей. 
 
-Вы также можете определить плавающую панель в XAML. Для этого добавьте контейнер `FloatGroup` в коллекцию `DockManager.FloatGroups`, а затем добавьте панель `DockPane` в контейнер `FloatGroup`.
+Вы также можете определить плавающую панель в XAML. Для этого добавьте контейнер [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md) в коллекцию [`DockManager.FloatGroups`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/FloatGroups.md), а затем добавьте панель [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) в контейнер [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md).
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
@@ -288,8 +288,8 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 ![docking-get-started-floating-panel](../../images/docking-get-started-floating-panel.png)
 
-Используйте свойства `FloatWidth` и `FloatHeight`, чтобы задать размер плавающего окна. 
-Вы также можете применить присоединённые свойства `FloatGroup.FloatWidth` и `FloatGroup.FloatHeight` к любой панели, даже в закреплённом состоянии. Эти настройки зададут начальный плавающий размер, когда панель будет сделана плавающей.
+Используйте свойства [`FloatWidth`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatWidth.md) и [`FloatHeight`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatHeight.md), чтобы задать размер плавающего окна. 
+Вы также можете применить присоединённые свойства [`FloatGroup.FloatWidth`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatWidth.md) и [`FloatGroup.FloatHeight`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatHeight.md) к любой панели, даже в закреплённом состоянии. Эти настройки зададут начальный плавающий размер, когда панель будет сделана плавающей.
 
 
 
@@ -316,7 +316,7 @@ xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"
 
 ## 13. Задание содержимого панелей
 
-Используйте свойство `DockPane.Content`, чтобы определить содержимое для Dock-панелей и Document-панелей. В XAML вы можете определить содержимое панели между открывающим и закрывающим тегами __&lt;DockPane&gt;__ и __&lt;DocumentPane&gt;__.
+Используйте свойство [`DockPane.Content`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/Content.md), чтобы определить содержимое для Dock-панелей и Document-панелей. В XAML вы можете определить содержимое панели между открывающим и закрывающим тегами __&lt;DockPane&gt;__ и __&lt;DocumentPane&gt;__.
 
 ``` xml
 xmlns:mxd="https://schemas.eremexcontrols.net/avalonia/docking"

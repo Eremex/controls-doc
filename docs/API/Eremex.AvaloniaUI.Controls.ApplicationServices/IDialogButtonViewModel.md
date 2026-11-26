@@ -12,7 +12,7 @@ Describes a single button in a dialog footer: what it looks like, where it sits,
 public interface IDialogButtonViewModel
 ```
 
-## Members
+## Properties
 
 | name | description |
 | --- | --- |

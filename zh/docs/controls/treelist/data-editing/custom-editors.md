@@ -3,7 +3,7 @@ title: TreeList 和 TreeView 单元中的自定义编辑器
 seealso: []
 ---
 
-# TreeList 和 TreeView 单元中的自定义编辑器
+# TreeList 和 TreeView 单元中的自定义编辑器 {#custom-editors-in-treelist-and-treeview-cells}
 
 默认情况下，TreeList 和 TreeView 控件使用就地 Eremex 编辑器来编辑和格式化单元格值。有关如何分配和访问默认就地编辑器的信息，请参阅 [数据编辑](./index.md)。
 
@@ -19,15 +19,15 @@ seealso: []
 - 通过单元格模板提供的显示文本不用于排序、分组和过滤数据。
     - 单元格模板不会被[导出](../export.md)。
  
-## 直接将自定义编辑器分配给 TreeList 列和 TreeView
+## 直接将自定义编辑器分配给 TreeList 列和 TreeView {#assign-a-custom-editor-to-a-treelist-column-and-treeview-directly}
  
-您可以通过创建 `DataTemplate` 将就地编辑器分配给 TreeList、列或 TreeView。为此目的，请使用 `TreeListColumn.CellTemplate` 和 `TreeViewControl.CellTemplate` 属性，如下所示。
+您可以通过创建 `DataTemplate` 将就地编辑器分配给 TreeList、列或 TreeView。为此目的，请使用 [`TreeListColumn.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) 和 [`TreeViewControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellTemplate.md) 属性，如下所示。
 
 - 使用模板内定义的编辑器创建 `DataTemplate` 对象。 
-- 将 `DataTemplate` 分配给 `CellTemplate` 属性。
+- 将 `DataTemplate` 分配给 [`CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) 属性。
 - 需要时，将编辑器显式绑定到列值。
  
-以下示例显示将 TreeList 列的 `CellTemplate` 属性设置为 `TextBox` 对象的 XAML 代码：
+以下示例显示将 TreeList 列的 [`CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) 属性设置为 `TextBox` 对象的 XAML 代码：
  
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -41,7 +41,7 @@ xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
 </mxtl:TreeListColumn>
 ```
  
-### Eremex 编辑器的隐式数据绑定
+### Eremex 编辑器的隐式数据绑定 {#implicit-data-binding-for-eremex-editors}
  
 如果您在 `DataTemplate` 内使用 Eremex 编辑器，则可以省略编辑器与列值的显式数据绑定。确保 Eremex 编辑器的 `x:Name` 属性设置为 **“PART_Editor”**。在这种情况下，TreeList/TreeView 控件会自动将编辑器的 `EditorValue` 属性绑定到列的单元格值。此外，控件会开始维护就地编辑器的外观设置（活动和非活动状态下的边框可见性和前景色）。
  
@@ -62,7 +62,7 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 </mxtl:TreeListColumn>
 ```
  
-### 显式数据绑定
+### 显式数据绑定 {#explicit-data-binding}
  
 在以下情况下需要显式数据绑定：
 
@@ -70,7 +70,7 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 
 !!!提示
 
-Eremex 编辑器是从 `Eremex.AvaloniaUI.Controls.Editors.BaseEditor` 类派生的控件。
+Eremex 编辑器是从 [`Eremex.AvaloniaUI.Controls.Editors.BaseEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor.md) 类派生的控件。
 
 - 您需要在数据绑定表达式中指定自定义值转换器。
  
@@ -82,13 +82,13 @@ Eremex 编辑器是从 `Eremex.AvaloniaUI.Controls.Editors.BaseEditor` 类派生
 </DataTemplate>
 ```
  
-## 基于 TreeList 列数据类型动态分配编辑器
+## 基于 TreeList 列数据类型动态分配编辑器 {#dynamically-assign-editors-based-on-a-treelist-column-data-type}
  
-TreeList 控件允许您根据列绑定字段的数据类型将 `DataTemplate` 中包含的就地编辑器分配给列单元格。为此目的，请使用 `TreeListControl.CellTemplate` 属性。
+TreeList 控件允许您根据列绑定字段的数据类型将 `DataTemplate` 中包含的就地编辑器分配给列单元格。为此目的，请使用 [`TreeListControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CellTemplate.md) 属性。
 
-### 示例 - 如何将编辑器与单一数据类型关联
+### 示例 - 如何将编辑器与单一数据类型关联 {#example-how-to-associate-an-editor-with-a-single-data-type}
 
-以下示例将用绿色绘制值的 `TextEditor` 与绑定到整数字段的列相关联：
+以下示例将用绿色绘制值的 [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) 与绑定到整数字段的列相关联：
  
 ```xml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -102,13 +102,13 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 </mxtl:TreeListControl.CellTemplate>
 ```
 
-### 示例 - 如何将编辑器与多种数据类型关联
+### 示例 - 如何将编辑器与多种数据类型关联 {#example-how-to-associate-editors-with-multiple-data-types}
 
 假设您有一个列表，其中包含与不同数据类型相关联的 `DataTemplate` 对象，并且想要基于此列表创建列的就地编辑器。
 
 执行以下操作来完成此任务：
  
-- 在后台代码 (code-behind) 中创建自定义类 (_CellTemplateLocator_)，该类返回特定数据类型对应的 `DataTemplate`，并将其与使用该数据类型的控件相关联。
+- 在代码隐藏 (code-behind) 中创建自定义类 (_CellTemplateLocator_)，该类返回特定数据类型对应的 `DataTemplate`，并将其与使用该数据类型的控件相关联。
  
 ```csharp
 using Avalonia.Collections;
@@ -134,7 +134,7 @@ public class CellTemplateLocator : AvaloniaList<IDataTemplate>, IDataTemplate
 }
 ```
  
-- 使用 *CellTemplateLocator* 对象初始化 `TreeListControl.CellTemplate` 属性。
+- 使用 *CellTemplateLocator* 对象初始化 [`TreeListControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CellTemplate.md) 属性。
 - 使用与您的数据类型相关联的 `DataTemplate` 对象填充 *CellTemplateLocator* 对象。
  
 以下示例定义了两个与编辑器相关联的 `DataTemplate` 对象，分别具有 _String_ 和 _Integer_ 数据类型。

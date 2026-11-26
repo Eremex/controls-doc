@@ -12,16 +12,26 @@ Arranges docking items horizontally or vertically within a docking layout.
 public class DockGroup : DockItemBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DockGroup](DockGroup/DockGroup.md)() | Initializes a new instance of the DockGroup class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [IsDocumentHost](DockGroup/IsDocumentHost.md) { get; set; } | Gets or sets whether the group hosts document panes. |
 | [Item](DockGroup/Item.md) { get; } | Gets the child item at the specified index. |
 | [ItemCount](DockGroup/ItemCount.md) { get; } | Gets the number of child items in the group. |
 | [Items](DockGroup/Items.md) { get; } | Gets the collection of child docking items. |
 | [Orientation](DockGroup/Orientation.md) { get; set; } | Gets or sets whether child items are arranged horizontally or vertically. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Add](DockGroup/Add.md)(…) | Adds the specified child item to the group. |
 | [AddRange](DockGroup/AddRange.md)(…) | Adds the specified child items to the group. |
 | [Clear](DockGroup/Clear.md)() | Removes all child items from the group. |

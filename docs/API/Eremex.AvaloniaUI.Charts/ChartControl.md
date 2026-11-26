@@ -12,7 +12,7 @@ Serves as the base class for the chart controls that plot data in a coordinate s
 public abstract class ChartControl : ChartTemplatedControl, IScaleProvider
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

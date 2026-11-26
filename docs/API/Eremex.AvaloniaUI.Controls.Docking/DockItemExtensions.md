@@ -12,7 +12,7 @@ Provides methods for enumerating nested docking items.
 public static class DockItemExtensions
 ```
 
-## Public Members
+## Methods
 
 | name | description |
 | --- | --- |

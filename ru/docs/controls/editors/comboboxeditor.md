@@ -6,7 +6,7 @@ seealso: []
 
 # ComboBoxEditor
 
-Контрол `ComboBoxEditor` — это контрол, отображающий список элементов в своём выпадающем окне. Пользователь может выбирать один или несколько элементов одновременно в соответствии с режимом выбора контрола.
+Контрол [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) — это контрол, отображающий список элементов в своём выпадающем окне. Пользователь может выбирать один или несколько элементов одновременно в соответствии с режимом выбора контрола.
 
 ![comboboxeditor-various](../../images/comboboxeditor-various.png)
 
@@ -21,17 +21,17 @@ seealso: []
 
 ## Источник объектов
 
-Используйте свойство `ComboBoxEditor.ItemsSource`, чтобы задать список элементов для отображения в выпадающем списке. Вы можете привязать редактор к списку строк, списку бизнес-объектов или типу перечисления.
+Используйте свойство [`ComboBoxEditor.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ItemsSource.md), чтобы задать список элементов для отображения в выпадающем списке. Вы можете привязать редактор к списку строк, списку бизнес-объектов или типу перечисления.
 
 ## Привязка к списку строк
 
 Простейший источник элементов — список строк.
 
 Пользователь может выбрать одно или несколько значений в соответствии с текущим режимом выбора (см. ниже).
-Если в поле ввода включено редактирование текста (см. `IsTextEditable`), пользователь может ввести текст, не совпадающий ни с одним элементом в выпадающем списке.
+Если в поле ввода включено редактирование текста (см. [`IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md)), пользователь может ввести текст, не совпадающий ни с одним элементом в выпадающем списке.
 
 ### Пример - как привязать к списку строк
-Следующий пример заполняет `ComboBoxEditor` списком строк.
+Этот пример заполняет [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) списком строк.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -56,19 +56,19 @@ public class MyItemList : List<string>
 
 ## Привязка к списку бизнес-объектов
 
-Вы можете привязать `ComboBoxEditor` к списку бизнес-объектов. В этом случае поведение контрола по умолчанию следующее:
+Вы можете привязать [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) к списку бизнес-объектов. В этом случае поведение контрола по умолчанию следующее:
 
 - Метод `ToString` бизнес-объекта задаёт текстовое представление элементов по умолчанию.
-- Когда вы выбираете элемент, значение редактора (`ComboBoxEditor.EditorValue`) устанавливается в соответствующий бизнес-объект.
+- Когда вы выбираете элемент, значение редактора ([`ComboBoxEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)) устанавливается в соответствующий бизнес-объект.
 
 Типичный бизнес-объект имеет несколько свойств. Вы можете задать, какие свойства бизнес-объекта предоставляют отображаемый текст элемента и значения редактирования. Используйте для этого следующие члены API:
 
-- `ComboBoxEditor.DisplayMember` — возвращает или задаёт имя свойства бизнес-объекта, задающего отображаемый текст элемента. 
-- `ComboBoxEditor.ValueMember` — возвращает или задаёт имя свойства бизнес-объекта, задающего значения элементов. Когда вы выбираете элемент, значение редактора (`ComboBoxEditor.EditorValue`) устанавливается в значение свойства `ValueMember` элемента. 
+- [`ComboBoxEditor.DisplayMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/DisplayMember.md) — возвращает или задаёт имя свойства бизнес-объекта, задающего отображаемый текст элемента. 
+- [`ComboBoxEditor.ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ValueMember.md) — возвращает или задаёт имя свойства бизнес-объекта, задающего значения элементов. Когда вы выбираете элемент, значение редактора ([`ComboBoxEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)) устанавливается в значение свойства [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ValueMember.md) элемента. 
 
 ### Пример - как привязать к списку бизнес-объектов
 
-Следующий пример привязывает `ComboBoxEditor` к списку бизнес-объектов _Product_. Свойство _Product.ProductName_ задаёт отображаемый текст элемента. Свойство _Product.ProductID_ задаёт значения элементов.
+Этот пример привязывает [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) к списку бизнес-объектов _Product_. Свойство _Product.ProductName_ задаёт отображаемый текст элемента. Свойство _Product.ProductID_ задаёт значения элементов.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -121,13 +121,24 @@ public partial class Product :ObservableObject
 
 ComboBoxEditor может отображать значения типа перечисления в выпадающем списке. 
 
-Вспомогательный класс `Eremex.AvaloniaUI.Controls.Common.EnumItemsSource` облегчает привязку к перечислению. Его основные возможности:
+Для привязки к перечислению используйте класс `Eremex.AvaloniaUI.Controls.Common.EnumItemsSource`. `EnumItemsSource` предоставляет следующие возможности:
 
-- Изображения для членов перечисления в выпадающем списке. Примените атрибут `Eremex.AvaloniaUI.Controls.Common.ImageAttribute` к целевым членам перечисления, чтобы задать изображения.
-- Пользовательские отображаемые имена для членов перечисления. Используйте атрибут `System.ComponentModel.DataAnnotations.DisplayAttribute` или пользовательский конвертер, чтобы изменить отображаемый текст элемента по умолчанию.
-- Всплывающие подсказки для элементов выпадающего списка. Всплывающая подсказка содержит описание целевого элемента, которое вы можете предоставить с помощью атрибута `System.ComponentModel.DataAnnotations.DisplayAttribute` или пользовательского конвертера.
+- Отображение собственных изображений для членов перечисления в выпадающем списке. Изображения можно задать одним из двух способов:
 
-Используйте следующие свойства `EnumItemsSource`, чтобы настроить привязку к типу перечисления:
+    - Примените атрибут `Eremex.AvaloniaUI.Controls.Common.ImageAttribute` к целевым членам перечисления.
+    - Реализуйте конвертер `EnumItemsSource.NameToImageConverter`, который выбирает изображения по именам членов перечисления.
+
+- Собственные отображаемые имена для членов перечисления. Имена можно задать одним из двух способов:
+
+    - Примените атрибут `System.ComponentModel.DataAnnotations.DisplayAttribute` к целевым членам перечисления.
+    - Реализуйте конвертер `EnumItemsSource.NameToDisplayTextConverter`.
+
+- Всплывающие подсказки для элементов выпадающего списка. Всплывающая подсказка содержит описание целевого элемента, которое можно задать следующими способами:
+
+    - Примените атрибут `System.ComponentModel.DataAnnotations.DisplayAttribute` к целевым членам перечисления.
+    - Реализуйте конвертер `EnumItemsSource.NameToDescriptionConverter`.
+
+### API привязки данных EnumItemsSource
 
 - `EnumItemsSource.EnumType` — задаёт тип перечисления, значения которого отображаются в ComboBoxEditor.
 - `EnumItemsSource.ShowImages` — задаёт, отображать ли изображения для членов перечисления в выпадающем списке. Вы можете предоставить изображения с помощью атрибута `Eremex.AvaloniaUI.Controls.Common.ImageAttribute`.
@@ -135,10 +146,32 @@ ComboBoxEditor может отображать значения типа пер�
 - `EnumItemsSource.ImageSize` — задаёт размер отображения изображений, назначенных членам перечисления.
 - `EnumItemsSource.NameToDisplayTextConverter` — позволяет назначить конвертер, который получает пользовательский отображаемый текст для членов перечисления.
 - `EnumItemsSource.NameToDescriptionConverter` — позволяет назначить конвертер, который получает описания членов перечисления, отображаемые как всплывающие подсказки при наведении курсора на элементы выпадающего списка.
+- `EnumItemsSource.NameToImageConverter` — позволяет назначить конвертер, который получает изображения, связанные с членами перечисления. См. [пример](#пример---как-отобразить-члены-перечисления-в-контроле-comboboxeditor-и-назначить-изображения-элементам-с-помощью-пользовательского-конвертера).
 
-### Пример - как отобразить значения перечисления и использовать атрибуты для предоставления отображаемого текста и изображений для членов перечисления.
 
-Следующий пример отображает значения перечисления _ProductCategoryEnum_ в ComboBoxEditor. Он использует класс `EnumItemsSource` для привязки данных.
+Когда [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) привязан к `EnumItemsSource`, элементами редактора являются объекты `EnumMemberInfo`. Класс `EnumMemberInfo` — целевой тип при переопределении шаблона элементов комбобокса. Ниже для справки приведено частичное определение класса `EnumMemberInfo`:
+
+``` cs
+public class EnumMemberInfo
+{
+    // An item's display name.
+    public string? Name { get; private set; }
+    // An item's Desctiption, shown as a tooltip, by default.
+    public string? Description { get; private set; }
+    //An item's image
+    public IImage? Image { get { return image.Value; } }
+}
+```
+
+См. [пример переопределения шаблона элементов комбобокса при привязке к типу перечисления](#пример---как-отобразить-члены-перечисления-в-контроле-comboboxeditor-и-назначить-изображения-элементам-с-помощью-пользовательского-конвертера).
+
+
+
+
+
+### Пример - как отобразить члены перечисления в контроле ComboBoxEditor и использовать атрибуты для задания отображаемого текста и изображений элементов
+
+Этот пример отображает значения перечисления _ProductCategoryEnum_ в ComboBoxEditor. Он использует класс `EnumItemsSource` для привязки данных.
 
 Атрибуты `System.ComponentModel.DataAnnotations.DisplayAttribute` и `Eremex.AvaloniaUI.Controls.Common.ImageAttribute` задают пользовательский отображаемый текст, описания (всплывающие подсказки) и изображения для членов перечисления.
 
@@ -181,9 +214,9 @@ public enum ProductCategoryEnum
 }
 ```
 
-### Пример - как отобразить значения перечисления и использовать пользовательские конвертеры для предоставления отображаемого текста для членов перечисления.
+### Пример - как отобразить члены перечисления в контроле ComboBoxEditor и использовать пользовательские конвертеры для задания отображаемого текста элементов
 
-Следующий пример использует класс `EnumItemsSource`, чтобы отобразить значения типа перечисления в ComboBoxEditor. Объекты `EnumItemsSource.NameToDisplayTextConverter` и `EnumItemsSource.NameToDescriptionConverter` предоставляют пользовательский отображаемый текст и описания (всплывающие подсказки) для членов перечисления.
+Этот пример использует класс `EnumItemsSource`, чтобы отобразить значения типа перечисления в ComboBoxEditor. Объекты `EnumItemsSource.NameToDisplayTextConverter` и `EnumItemsSource.NameToDescriptionConverter` предоставляют пользовательский отображаемый текст и описания (всплывающие подсказки) для членов перечисления.
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -279,28 +312,80 @@ public abstract class BaseEnumConverter : MarkupExtension, IValueConverter
 }
 ```
 
+### Пример - как отобразить члены перечисления в контроле ComboBoxEditor и назначить изображения элементам с помощью пользовательского конвертера
+
+В следующем коде контрол [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) отображает значения перечисления `Eremex.AvaloniaUI.Themes.DeltaDesign.Density` с собственными изображениями, которые задаёт конвертер `EnumItemsSource.NameToImageConverter`.
+
+XAML-код переопределяет шаблон элементов комбобокса, чтобы отображать заданные изображения рядом с именами элементов. Изображения и имена берутся через привязку к свойствам `EnumMemberInfo.Image` и `EnumMemberInfo.Name`.
+
+![comboboxeditor-enum-example-custom-images-through-converter](../../images/comboboxeditor-enum-example-custom-images-through-converter.png)
+
+
+```xml
+<mxe:ComboBoxEditor x:Name="densityComboBox"
+                    ItemsSource="{mxc:EnumItemsSource EnumType=ddt:Density, ShowImages=True, NameToImageConverter={views:DensityToIconConverter}}"
+                    EditorValueChanged="DensityComboBoxEditor_EditorValueChanged"
+                    IsTextEditable="False"
+                    Margin="0,0,10,0">
+    <mxe:ComboBoxEditor.ItemTemplate>
+        <DataTemplate x:DataType="mxc:EnumMemberInfo">
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <Image Source="{Binding Image}" Stretch="None" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+    </mxe:ComboBoxEditor.ItemTemplate>
+</mxe:ComboBoxEditor>
+```
+
+```cs
+using Eremex.AvaloniaUI.Icons;
+
+public class DensityToIconConverter : MarkupExtension, IValueConverter
+{
+    public override object ProvideValue(IServiceProvider serviceProvider)
+    {
+        return this;
+    }
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return value switch
+        {
+            Density.Compact => Basic.Density_Compact,
+            Density.Spacious => Basic.Density_Spacious,
+            Density.Standard => Basic.Density_Standard,
+            _ => null,
+        };
+    }
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return BindingOperations.DoNothing;
+    }
+}
+```
+
 ## Режим выбора элемента
 
-Свойство `SelectionMode` позволяет выбирать между режимами одиночного и множественного выбора элементов. 
+Свойство [`SelectionMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectionMode.md) позволяет выбирать между режимами одиночного и множественного выбора элементов. 
 
-Режим одиночного выбора используется по умолчанию. Если редактирование текста включено (см. `IsTextEditable`), можно задать значение редактирования (или текст в поле ввода), не совпадающее ни с одним элементом в выпадающем списке.
+Режим одиночного выбора используется по умолчанию. Если редактирование текста включено (см. [`IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md)), можно задать значение редактирования (или текст в поле ввода), не совпадающее ни с одним элементом в выпадающем списке.
 
-Установите свойство `SelectionMode` в `ItemSelectionMode.Multiple`, чтобы включить множественный выбор элементов. В режиме множественного выбора редактор отображает флажки перед каждым элементом в выпадающем списке. Пользователь может переключать эти флажки, чтобы добавлять элементы в выбор и удалять их из него.
+Установите свойство [`SelectionMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectionMode.md) в [`ItemSelectionMode.Multiple`](../../API/Eremex.AvaloniaUI.Controls.Editors/ItemSelectionMode.md), чтобы включить множественный выбор элементов. В режиме множественного выбора редактор отображает флажки перед каждым элементом в выпадающем списке. Пользователь может переключать эти флажки, чтобы добавлять элементы в выбор и удалять их из него.
 Редактирование текста в поле ввода отключено в режиме множественного выбора.
 
 ### Получение и установка выбранного элемента(ов)
 
-Свойство `SelectedItem` позволяет выбирать и получать выбранный элемент в режиме одиночного выбора. Свойство возвращает значение `null`, если ни один элемент не выбран.
+Свойство [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItem.md) позволяет выбирать и получать выбранный элемент в режиме одиночного выбора. Свойство возвращает значение `null`, если ни один элемент не выбран.
 
-Свойство `SelectedItems` задаёт список (объект `IList`), содержащий выбранные элементы в режиме множественного выбора. Свойство возвращает пустой список, если ни один элемент не выбран.
+Свойство [`SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItems.md) задаёт список (объект `IList`), содержащий выбранные элементы в режиме множественного выбора. Свойство возвращает пустой список, если ни один элемент не выбран.
 
 !!! note
 
-    Свойства `SelectedItem` и `SelectedItems` синхронизированы способом, описанным ниже.
+    Свойства [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItem.md) и [`SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItems.md) синхронизированы способом, описанным ниже.
 
-    В режиме одиночного выбора свойство `SelectedItems` задаёт список, содержащий один элемент — выбранный элемент (значение свойства `SelectedItem`). Свойство возвращает пустой список, если ни один элемент не выбран.
+    В режиме одиночного выбора свойство [`SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItems.md) задаёт список, содержащий один элемент — выбранный элемент (значение свойства [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItem.md)). Свойство возвращает пустой список, если ни один элемент не выбран.
 
-    В режиме множественного выбора свойство `SelectedItem` задаёт первый выбранный элемент (первый элемент списка `SelectedItems`). Свойство возвращает значение `null`, если ни один элемент не выбран.
+    В режиме множественного выбора свойство [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItem.md) задаёт первый выбранный элемент (первый элемент списка [`SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItems.md)). Свойство возвращает значение `null`, если ни один элемент не выбран.
 
 ### Пример - как выбрать элементы
 
@@ -321,41 +406,41 @@ if (itemSource2 != null)
 ```
 
 ### Элемент '(Select All)' в режиме множественного выбора
-В режиме множественного выбора редактор отображает предопределённый флажок _(Select All)_ в верхней части выпадающего списка. Этот флажок позволяет пользователю выбрать/снять выбор со всех элементов. Чтобы скрыть флажок _(Select All)_, установите свойство `ComboBoxEditor.ShowPredefinedSelectItem` в `false`.
+В режиме множественного выбора редактор отображает предопределённый флажок _(Select All)_ в верхней части выпадающего списка. Этот флажок позволяет пользователю выбрать/снять выбор со всех элементов. Чтобы скрыть флажок _(Select All)_, установите свойство [`ComboBoxEditor.ShowPredefinedSelectItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ShowPredefinedSelectItem.md) в `false`.
 
 ![ComboBox - Select All item](../../images/combobox-selectallitem.png)
 
 **Связанный API**
-- `SelectAllItemText` — позволяет задать пользовательский отображаемый текст для элемента '(Select All)'.
+- [`SelectAllItemText`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectAllItemText.md) — позволяет задать пользовательский отображаемый текст для элемента '(Select All)'.
 
 ### Элемент '_(None)_' в режиме одиночного выбора
 
-В режиме одиночного выбора вы можете установить свойство `ComboBoxEditor.ShowPredefinedSelectItem` в `true`, чтобы отобразить предопределённый элемент _(None)_ в выпадающем списке. Элемент _(None)_ устанавливает значение редактора в `null` и тем самым очищает выбор.
+В режиме одиночного выбора вы можете установить свойство [`ComboBoxEditor.ShowPredefinedSelectItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ShowPredefinedSelectItem.md) в `true`, чтобы отобразить предопределённый элемент _(None)_ в выпадающем списке. Элемент _(None)_ устанавливает значение редактора в `null` и тем самым очищает выбор.
 
 ![ComboBox - None item](../../images/combobox-none-selectitem.png)
 
 **Связанный API**
-- `ClearValueItemText` — позволяет задать пользовательский отображаемый текст для элемента '(None)'.
+- [`ClearValueItemText`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ClearValueItemText.md) — позволяет задать пользовательский отображаемый текст для элемента '(None)'.
 
 ## Значение редактора
 
-Когда пользователь вводит текст, выбирает элемент в поле ввода с помощью функции автозавершения или выбирает элемент в выпадающем списке, редактор изменяет своё значение редактирования (значение свойства `EditorValue`). 
+Когда пользователь вводит текст, выбирает элемент в поле ввода с помощью функции автозавершения или выбирает элемент в выпадающем списке, редактор изменяет своё значение редактирования (значение свойства [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md)). 
 
-Обычно значение редактирования совпадает со значением свойства `SelectedItem` (в режиме одиночного выбора) или свойства `SelectedItems` (в режиме множественного выбора), за исключениями, описанными в этом разделе.
+Обычно значение редактирования совпадает со значением свойства [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItem.md) (в режиме одиночного выбора) или свойства [`SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItems.md) (в режиме множественного выбора), за исключениями, описанными в этом разделе.
 
 Значение редактирования зависит от режима выбора элемента. В режиме одиночного выбора значение редактирования — это одно значение, тогда как в режиме множественного выбора значение редактирования — это объект `IList`, задающий список значений.
 
-Свойства `EditorValue` и `SelectedItem/SelectedItems` не синхронизированы в следующих случаях: 
+Свойства [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) и `SelectedItem/SelectedItems` не синхронизированы в следующих случаях: 
 
-- ComboBoxEditor привязан к списку строк, и текст, заданный в поле ввода, не совпадает ни с одним элементом в выпадающем списке. В этом случае свойство `SelectedItem` возвращает `null`, тогда как свойство `EditorValue` задаёт текст, отображаемый в поле ввода.
+- ComboBoxEditor привязан к списку строк, и текст, заданный в поле ввода, не совпадает ни с одним элементом в выпадающем списке. В этом случае свойство [`SelectedItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectedItem.md) возвращает `null`, тогда как свойство [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) задаёт текст, отображаемый в поле ввода.
 
     !!! tip
     
-        Включите опцию `ComboBoxEditor.IsTextEditable`, чтобы позволить пользователю редактировать текст в поле ввода.
+        Включите опцию [`ComboBoxEditor.IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md), чтобы позволить пользователю редактировать текст в поле ввода.
   
     ### Пример - как задать значение редактора, когда ComboBox привязан к списку строк
 
-    Следующий пример задаёт значение редактирования для ComboBoxEditor, привязанного к списку строк.
+    Этот пример задаёт значение редактирования для ComboBoxEditor, привязанного к списку строк.
 
     ``` xml
     xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -387,12 +472,12 @@ if (itemSource2 != null)
     }
     ```
 
-- ComboBoxEditor привязан к списку бизнес-объектов, и задано свойство `ValueMember`. Свойство `ValueMember` задаёт имя свойства бизнес-объекта, предоставляющего значения элементов. Когда вы выбираете элемент(ы), свойство `SelectedItem/SelectedItems` содержит выбранный объект(ы), тогда как свойство `EditorValue` задаёт значение (значения) выбранных объектов.
+- ComboBoxEditor привязан к списку бизнес-объектов, и задано свойство [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ValueMember.md). Свойство [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ValueMember.md) задаёт имя свойства бизнес-объекта, предоставляющего значения элементов. Когда вы выбираете элемент(ы), свойство `SelectedItem/SelectedItems` содержит выбранный объект(ы), тогда как свойство [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) задаёт значение (значения) выбранных объектов.
 
     ### Пример - как выбрать элемент, когда ComboBoxEditor привязан к списку бизнес-объектов
 
-    В следующем примере ComboBoxEditor привязан к списку объектов _Product_ в режиме множественного выбора. Свойство `ValueMember` ссылается на член _Product.ProductID_.
-    Таким образом, идентификаторы продуктов служат значениями элементов. Когда пользователь выбирает элементы, свойство `EditorValue` устанавливается в список, содержащий соответствующие идентификаторы продуктов. Пример использует свойство `EditorValue`, чтобы выбрать элементы в коде.
+    В этом примере ComboBoxEditor привязан к списку объектов _Product_ в режиме множественного выбора. Свойство [`ValueMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ValueMember.md) ссылается на член _Product.ProductID_.
+    Таким образом, идентификаторы продуктов служат значениями элементов. Когда пользователь выбирает элементы, свойство [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) устанавливается в список, содержащий соответствующие идентификаторы продуктов. Пример использует свойство [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md), чтобы выбрать элементы в коде.
 
     ``` xml
     xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -448,7 +533,7 @@ if (itemSource2 != null)
 
 ![combobox-non-immediate-update-of-editor-value](../../images/combobox-non-immediate-update-of-editor-value.gif)
 
-ComboBoxEditor может обновлять своё значение немедленно по мере того, как пользователь отмечает или снимает отметки с элементов в выпадающем списке. Чтобы активировать этот режим, скройте кнопки OK и Cancel, установив свойство `PopupFooterButtons` в `None`.
+ComboBoxEditor может обновлять своё значение немедленно по мере того, как пользователь отмечает или снимает отметки с элементов в выпадающем списке. Чтобы активировать этот режим, скройте кнопки OK и Cancel, установив свойство [`PopupFooterButtons`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupFooterButtons.md) в `None`.
 
 ``` xml
 <mxe:ComboBoxEditor x:Name="MultiSelectComboBox" 
@@ -461,15 +546,15 @@ ComboBoxEditor может обновлять своё значение неме�
 
 ## Шаблоны элементов
 
-ComboBoxEditor по умолчанию отрисовывает каждый элемент в выпадающем списке с помощью отображаемого текста элемента. Отображаемый текст элемента по умолчанию задаётся методом `ToString` элементов. Когда редактор привязан к списку бизнес-объектов, вы можете использовать свойство `DisplayMember`, чтобы задать свойство, предоставляющее отображаемый текст элемента.
+ComboBoxEditor по умолчанию отрисовывает каждый элемент в выпадающем списке с помощью отображаемого текста элемента. Отображаемый текст элемента по умолчанию задаётся методом `ToString` элементов. Когда редактор привязан к списку бизнес-объектов, вы можете использовать свойство [`DisplayMember`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/DisplayMember.md), чтобы задать свойство, предоставляющее отображаемый текст элемента.
 
-Вы можете использовать свойство `ItemTemplate`, чтобы назначить шаблон данных, представляющий элементы в выпадающем списке произвольным образом. Например, шаблон данных помогает отображать изображения для элементов, как показано в примере ниже.
+Вы можете использовать свойство [`ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ItemTemplate.md), чтобы назначить шаблон данных, представляющий элементы в выпадающем списке произвольным образом. Например, шаблон данных помогает отображать изображения для элементов, как показано в примере ниже.
 
-Включите опцию `ComboBoxEditor.ApplyItemTemplateToEditBox`, чтобы применить заданный шаблон элемента (свойство `ItemTemplate`) к полю ввода. Это свойство не действует, если включено редактирование текста (опция `IsTextEditable` установлена в `true`).
+Включите опцию [`ComboBoxEditor.ApplyItemTemplateToEditBox`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ApplyItemTemplateToEditBox.md), чтобы применить заданный шаблон элемента (свойство [`ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ItemTemplate.md)) к полю ввода. Это свойство не действует, если включено редактирование текста (опция [`IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md) установлена в `true`).
 
 ### Пример - как отобразить изображения для элементов ComboBox с помощью DataTemplate
 
-Следующий пример использует свойство `ItemTemplate`, чтобы задать шаблон данных, отображающий изображения для элементов ComboBox в выпадающем списке.
+Этот пример использует свойство [`ItemTemplate`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/ItemTemplate.md), чтобы задать шаблон данных, отображающий изображения для элементов ComboBox в выпадающем списке.
 
 ComboBoxEditor привязан к списку, хранящему объекты _Product_. Объект _Product_ содержит свойство _Category_, задающее категорию продукта (Beverages, Condiments, Seafood или Produce).
 
@@ -582,15 +667,15 @@ public class NameToSvgConverter : MarkupExtension, IValueConverter
 
 ## Добавление пользовательских кнопок
 
-ComboBoxEditor является потомком контрола ButtonEditor. Таким образом, вы можете добавлять пользовательские кнопки в поле ввода рядом со стандартной кнопкой выпадающего списка. Используйте коллекцию `ComboBoxEditor.Buttons`, чтобы добавлять пользовательские кнопки.
+ComboBoxEditor является потомком контрола ButtonEditor. Таким образом, вы можете добавлять пользовательские кнопки в поле ввода рядом со стандартной кнопкой выпадающего списка. Используйте коллекцию [`ComboBoxEditor.Buttons`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/Buttons.md), чтобы добавлять пользовательские кнопки.
 
 ### Пример - как добавить пользовательские кнопки
 
-Следующий пример добавляет обычную кнопку и кнопку-флажок в ComboBoxEditor. Редактор привязан к перечислению _ProductCategoryEnum_ с помощью вспомогательного класса `EnumItemsSource`.
+Этот пример добавляет обычную кнопку и кнопку-флажок в ComboBoxEditor. Редактор привязан к перечислению _ProductCategoryEnum_ с помощью вспомогательного класса `EnumItemsSource`.
 
-Первая кнопка обычная (её свойство `ButtonKind` установлено в `Simple`). Щелчок по этой кнопке вызывает команду _ResetValue_, которая устанавливает значение редактора в значение по умолчанию (первый элемент привязанного типа перечисления).
+Первая кнопка обычная (её свойство [`ButtonKind`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonKind.md) установлено в `Simple`). Щелчок по этой кнопке вызывает команду _ResetValue_, которая устанавливает значение редактора в значение по умолчанию (первый элемент привязанного типа перечисления).
 
-Вторая кнопка — кнопка-флажок (её свойство `ButtonKind` установлено в `Toggle`). Щелчок по этой кнопке переключает значение свойства `IsTextEditable` редактора. Конвертер _LockedStateToSvgNameConverter_ назначает изображение "_locked.svg_" или "_unlocked.svg_" глифу кнопки в соответствии с состоянием нажатия кнопки. Эти изображения хранятся в папке _ComboBoxTestSample/Images_ и помечены флагом "_AvaloniaResource_".
+Вторая кнопка — кнопка-флажок (её свойство [`ButtonKind`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonKind.md) установлено в `Toggle`). Щелчок по этой кнопке переключает значение свойства [`IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md) редактора. Конвертер _LockedStateToSvgNameConverter_ назначает изображение "_locked.svg_" или "_unlocked.svg_" глифу кнопки в соответствии с состоянием нажатия кнопки. Эти изображения хранятся в папке _ComboBoxTestSample/Images_ и помечены флагом "_AvaloniaResource_".
 
 ``` xml
 xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
@@ -692,12 +777,12 @@ public enum ProductCategoryEnum
 
 ## Автозавершение текста 
 
-Установите опцию `AutoComplete` в `true`, чтобы включить автоматическое завершение текста. Эта функция автоматически завершает текст, набранный пользователем, если он совпадает с каким-либо элементом в выпадающем списке.
+Установите опцию [`AutoComplete`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/AutoComplete.md) в `true`, чтобы включить автоматическое завершение текста. Эта функция автоматически завершает текст, набранный пользователем, если он совпадает с каким-либо элементом в выпадающем списке.
 
 ComboBoxEditor не поддерживает автозавершение текста в следующих случаях:
 
-- Редактирование текста отключено (свойство `IsTextEditable` установлено в `false`).
-- Используется режим множественного выбора элементов (свойство `SelectionMode` установлено в `Multiple`).
+- Редактирование текста отключено (свойство [`IsTextEditable`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditor/IsTextEditable.md) установлено в `false`).
+- Используется режим множественного выбора элементов (свойство [`SelectionMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/SelectionMode.md) установлено в `Multiple`).
 
 ## Автофильтр
 
@@ -705,9 +790,9 @@ ComboBoxEditor не поддерживает автозавершение тек
 
 ![combobox-autofilter](../../images/combobox-autofilter.png)
 
-Свойство `FilterCondition` задаёт оператор фильтра (`StartsWith` или `Contains`), используемый для фильтрации элементов.
+Свойство [`FilterCondition`](../../API/Eremex.AvaloniaUI.Controls.Editors/FilterCondition.md) задаёт оператор фильтра (`StartsWith` или `Contains`), используемый для фильтрации элементов.
 
-Следующий пример применяет к редактору фильтр `Contains`.
+Этот пример применяет к редактору фильтр `Contains`.
 
 ![combobox-autofilter-contains](../../images/combobox-autofilter-contains.png)
 
@@ -715,13 +800,13 @@ ComboBoxEditor не поддерживает автозавершение тек
 <mxe:ComboBoxEditor x:Name="comboBox1" FilterCondition="Contains" .../>
 ```
 
-Вы можете обработать событие `FilterItem`, чтобы выполнять пользовательскую фильтрацию элементов во время автоматической фильтрации. Это событие срабатывает многократно, для каждого элемента в выпадающем списке. Аргументы события позволяют идентифицировать элементы combobox и задавать их видимость.
+Вы можете обработать событие [`FilterItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/FilterItem.md), чтобы выполнять пользовательскую фильтрацию элементов во время автоматической фильтрации. Это событие срабатывает многократно, для каждого элемента в выпадающем списке. Аргументы события позволяют идентифицировать элементы combobox и задавать их видимость.
 
 - `e.Item` — объект, представляющий текущий обрабатываемый элемент.
 - `e.SearchText` — текст, набранный пользователем в поле ввода, используемый для автоматической фильтрации элементов.
 - `e.IsVisible` — видимость элемента в выпадающем списке.
 
-Следующий обработчик события `FilterItem` выполняет пользовательскую фильтрацию элементов в контроле `ComboBoxEditor` путём поиска в поле _MyBusinessObject.InvoiceID_ элементов combobox.
+Следующий обработчик события [`FilterItem`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor/FilterItem.md) выполняет пользовательскую фильтрацию элементов в контроле [`ComboBoxEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ComboBoxEditor.md) путём поиска в поле _MyBusinessObject.InvoiceID_ элементов combobox.
 
 ``` cs
 void ComboBox1_FilterItem(object sender, Eremex.AvaloniaUI.Controls.Editors.ComboBoxFilterEventArgs e)
@@ -734,14 +819,14 @@ void ComboBox1_FilterItem(object sender, Eremex.AvaloniaUI.Controls.Editors.Comb
 
 ## Предотвращение всплывающих окон в редакторах только для чтения
 
-В режиме «только для чтения» поведение любого всплывающего редактора по умолчанию — позволять пользователям открывать выпадающий список редактора. Однако они не могут изменять значения ни через поле ввода, ни через выпадающий список. Чтобы отключить всплывающие окна для редакторов только для чтения, установите свойство `ShowPopupIfReadOnly` в `false`.
+В режиме «только для чтения» поведение любого всплывающего редактора по умолчанию — позволять пользователям открывать выпадающий список редактора. Однако они не могут изменять значения ни через поле ввода, ни через выпадающий список. Чтобы отключить всплывающие окна для редакторов только для чтения, установите свойство [`ShowPopupIfReadOnly`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/ShowPopupIfReadOnly.md) в `false`.
 
 ## Предотвращение открытия и закрытия всплывающих окон
 
 Вы можете обработать следующие унаследованные события, чтобы отменить операции открытия и закрытия всплывающего окна:
 
-- `PopupEditor.PopupOpening` — возникает, когда всплывающее окно собирается создаться. 
-- `PopupEditor.PopupClosing` — возникает, когда всплывающее окно собирается закрыться. 
+- [`PopupEditor.PopupOpening`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) — возникает, когда всплывающее окно собирается создаться. 
+- [`PopupEditor.PopupClosing`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupClosing.md) — возникает, когда всплывающее окно собирается закрыться. 
 
 Эти события предоставляют параметр `e.Cancel`. Установите его в `true`, чтобы отменить текущую операцию.
 
@@ -749,15 +834,15 @@ void ComboBox1_FilterItem(object sender, Eremex.AvaloniaUI.Controls.Editors.Comb
 
 Обработайте следующее унаследованное событие, чтобы изменить всплывающее окно или его вложенные контролы:
 
-- `PopupEditor.PopupOpened` — возникает после создания всплывающего окна и непосредственно перед его отображением. Это уведомляющее событие. Оно не позволяет отменить открытие всплывающего окна. Обработайте событие `PopupOpened`, чтобы настроить всплывающее окно или его дочерние контролы.
+- [`PopupEditor.PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) — возникает после создания всплывающего окна и непосредственно перед его отображением. Это уведомляющее событие. Оно не позволяет отменить открытие всплывающего окна. Обработайте событие [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md), чтобы настроить всплывающее окно или его дочерние контролы.
 
-При обработке события `PopupEditor.PopupOpened` используйте свойство `PopupContent` редактора, чтобы безопасно обратиться к контролу внутри всплывающего окна редактора. Событие `PopupOpened` гарантирует, что контрол всплывающего окна существует, когда вы к нему обращаетесь. Для контрола ComboBoxEditor свойство `PopupContent` возвращает экземпляр класса `ComboBoxPopupControl`. 
+При обработке события [`PopupEditor.PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) используйте свойство [`PopupContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupContent.md) редактора, чтобы безопасно обратиться к контролу внутри всплывающего окна редактора. Событие [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) гарантирует, что контрол всплывающего окна существует, когда вы к нему обращаетесь. Для контрола ComboBoxEditor свойство [`PopupContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupContent.md) возвращает экземпляр класса `ComboBoxPopupControl`. 
 
 ## Реакция на закрытие всплывающего окна
 
 Используйте следующее унаследованное событие, чтобы выполнять действия после закрытия всплывающего окна:
 
-- `PopupEditor.PopupClosed` — возникает сразу после закрытия всплывающего окна. Это уведомляющее событие. Оно не позволяет отменить закрытие всплывающего окна.
+- [`PopupEditor.PopupClosed`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupClosed.md) — возникает сразу после закрытия всплывающего окна. Это уведомляющее событие. Оно не позволяет отменить закрытие всплывающего окна.
 
 
 <br>

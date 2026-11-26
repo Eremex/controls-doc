@@ -12,7 +12,7 @@ Serves as the base class for materials that define how a mesh is shaded.
 public abstract class Material : Control, ITexturedPbrMaterial
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

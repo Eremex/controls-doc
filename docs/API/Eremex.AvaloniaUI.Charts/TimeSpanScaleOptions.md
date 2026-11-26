@@ -12,11 +12,16 @@ Defines a scale that measures time spans in a configurable unit.
 public class TimeSpanScaleOptions : ScaleOptions
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TimeSpanScaleOptions](TimeSpanScaleOptions/TimeSpanScaleOptions.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [GridSpacingFactor](TimeSpanScaleOptions/GridSpacingFactor.md) { get; set; } | Gets or sets the number of GridSpacingUnit intervals between major gridlines. |
 | [GridSpacingUnit](TimeSpanScaleOptions/GridSpacingUnit.md) { get; set; } | Gets or sets the time span unit of the major gridlines and of the text shown on their labels. |
 | [MeasureUnit](TimeSpanScaleOptions/MeasureUnit.md) { get; set; } | Gets or sets the time span unit to which data values are rounded. Values that fall into the same unit are plotted at the same position, so a series shows them as one value. For example, values one hour and two hours apart share one position when this property is Day, and occupy different positions when it is Hour. |

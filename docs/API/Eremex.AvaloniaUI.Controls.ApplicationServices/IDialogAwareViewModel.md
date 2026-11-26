@@ -12,7 +12,7 @@ Implemented by view models shown as modal dialogs through [`IDialogService`](./I
 public interface IDialogAwareViewModel : IWindowAwareViewModel
 ```
 
-## Members
+## Properties
 
 | name | description |
 | --- | --- |

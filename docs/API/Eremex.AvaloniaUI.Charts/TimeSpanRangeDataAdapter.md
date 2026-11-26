@@ -12,13 +12,23 @@ Converts time span arguments and pairs of numeric values into series data points
 public class TimeSpanRangeDataAdapter : ISeriesDataAdapter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TimeSpanRangeDataAdapter](TimeSpanRangeDataAdapter/TimeSpanRangeDataAdapter.md)() | Initializes a new instance of the TimeSpanRangeDataAdapter class that contains no data points. |
 | [TimeSpanRangeDataAdapter](TimeSpanRangeDataAdapter/TimeSpanRangeDataAdapter.md)(…) | Initializes a new instance of the TimeSpanRangeDataAdapter class with the specified arguments and values. (2 constructors) |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ItemCount](TimeSpanRangeDataAdapter/ItemCount.md) { get; } | Gets the number of data points stored in the adapter. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Add](TimeSpanRangeDataAdapter/Add.md)(…) | Adds a data point to the end of the adapter. (2 methods) |
 | [AddRange](TimeSpanRangeDataAdapter/AddRange.md)(…) | Adds several data points to the end of the adapter. |
 | [Clear](TimeSpanRangeDataAdapter/Clear.md)() | Removes all data points from the adapter. |

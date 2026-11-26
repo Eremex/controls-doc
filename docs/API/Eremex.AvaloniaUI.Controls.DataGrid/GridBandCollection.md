@@ -12,7 +12,7 @@ Represents a collection of grid bands.
 public class GridBandCollection : DataControlBandCollectionBase<GridBand>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

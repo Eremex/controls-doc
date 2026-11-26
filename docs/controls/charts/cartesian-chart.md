@@ -57,7 +57,11 @@ The following code defines one series in the [`CartesianChart.Series`](../../API
 <mxc:CartesianChart>
     <mxc:CartesianChart.Series>
         <mxc:CartesianSeries DataAdapter="{Binding Series.DataAdapter}">
-            <mxc:CartesianLineSeriesView Color="{Binding Series.Color}" Thickness="2" />
+            <mxc:CartesianLineSeriesView Color="{Binding Series.Color}">
+                <mxc:CartesianLineSeriesView.LineStyle>
+                    <mxc:LineStyle Thickness="2" />
+                </mxc:CartesianLineSeriesView.LineStyle>
+            </mxc:CartesianLineSeriesView>
         </mxc:CartesianSeries>
     </mxc:CartesianChart.Series>
     <!-- ... -->
@@ -200,7 +204,11 @@ To specify a view for a series, define a corresponding **...SeriesView** object 
 The following sample assigns the 'Line Series View' to a series.
 ``` xml
 <mxc:CartesianSeries DataAdapter="{Binding Series.DataAdapter}">
-    <mxc:CartesianLineSeriesView Color="{Binding Series.Color}" Thickness="2" />
+    <mxc:CartesianLineSeriesView Color="{Binding Series.Color}">
+        <mxc:CartesianLineSeriesView.LineStyle>
+            <mxc:LineStyle Thickness="2" />
+        </mxc:CartesianLineSeriesView.LineStyle>
+    </mxc:CartesianLineSeriesView>
 </mxc:CartesianSeries>
 ```
 
@@ -566,6 +574,74 @@ The [`Axis.StripsSource`](../../API/Eremex.AvaloniaUI.Charts/Axis/StripsSource.m
     
         Use a semi-transparent color to allow grid lines to be seen beneath the strip.
 
+
+
+## Customize Line Style
+
+The Chart control allows you to customize the style of graph lines and constant lines. For example, you can specify the stroke thickness and dash patterns for lines.
+
+![cartesianchart-linestyle](../../images/cartesianchart-linestyle.png)
+
+Line customization options are supported for:
+
+- Graph lines in the following Series Views:
+
+	- Line Series Views ([`CartesianLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesView.md), [`CartesianSortedLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianSortedLineSeriesView.md), [`CartesianScatterLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianScatterLineSeriesView.md), and [`CartesianStepLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianStepLineSeriesView.md))
+	- Range Series Views ([`CartesianAreaSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianAreaSeriesView.md), [`CartesianRangeAreaSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView.md), [`CartesianStepAreaSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianStepAreaSeriesView.md), [`CartesianStackedAreaSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianStackedAreaSeriesView.md) and [`CartesianFullStackedAreaSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianFullStackedAreaSeriesView.md))
+	- Lollipop Series View ([`CartesianLollipopSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianLollipopSeriesView.md))
+
+- [Constant Lines](#constant-lines)
+
+These objects expose properties of the [`LineStyle`](../../API/Eremex.AvaloniaUI.Charts/LineStyle.md) class for line customization. The [`LineStyle`](../../API/Eremex.AvaloniaUI.Charts/LineStyle.md) class contain the following members that describes the stroke:
+
+
+- [`Thickness`](../../API/Eremex.AvaloniaUI.Charts/LineStyle/Thickness.md) (`double`, default: `1`) — The width of the stroke, in device-independent units.
+- [`Dashes`](../../API/Eremex.AvaloniaUI.Charts/LineStyle/Dashes.md) (`IReadOnlyList<double>?`, default: `null`) — The lengths of the dashes and the gaps between them. Leave this property unset to draw a solid line.
+
+    The actual width of dashes and gaps is proportional to the line thickness ([`Thickness`](../../API/Eremex.AvaloniaUI.Charts/LineStyle/Thickness.md)). For example, if [`Thickness`](../../API/Eremex.AvaloniaUI.Charts/LineStyle/Thickness.md) is 2 and [`Dashes`](../../API/Eremex.AvaloniaUI.Charts/LineStyle/Dashes.md) is { 4, 2 }, the actual dash pattern will be {8, 4}.
+
+- [`DashOffset`](../../API/Eremex.AvaloniaUI.Charts/LineStyle/DashOffset.md) (`double`, default: `0`) — The distance from the start of the line to the first dash.
+
+    As with the [`Dashes`](../../API/Eremex.AvaloniaUI.Charts/LineStyle/Dashes.md) property, the actual dash offset is proportional to the line thickness ([`Thickness`](../../API/Eremex.AvaloniaUI.Charts/LineStyle/Thickness.md)).
+
+- [`LineCap`](../../API/Eremex.AvaloniaUI.Charts/LineStyle/LineCap.md) (`PenLineCap`, default: `Flat`) — The shape used at the ends of the stroke.
+- [`LineJoin`](../../API/Eremex.AvaloniaUI.Charts/LineStyle/LineJoin.md) (`PenLineJoin`, default: `Miter`) — The shape used at the corners of the stroke.
+- [`MiterLimit`](../../API/Eremex.AvaloniaUI.Charts/LineStyle/MiterLimit.md) (`double`, default: `10`) — The limit beyond which a mitered corner is replaced by a bevel.
+
+
+### Example - Change the Line Thickness
+
+The following example shows how to set a custom line thickness in a [`CartesianLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesView.md).
+
+![cartesianchart-line-thickness](../../images/cartesianchart-line-thickness.png)
+
+
+```xml
+<mxc:CartesianLineSeriesView Color="{Binding Color}" ShowMarkers="False">
+    <mxc:CartesianLineSeriesView.LineStyle>
+        <mxc:LineStyle Thickness="3" />
+    </mxc:CartesianLineSeriesView.LineStyle>
+</mxc:CartesianLineSeriesView>
+```
+
+
+### Example - Change the Line Pattern
+
+The following code applies a long-dash short-dash pattern to the constant line of the primary Y-axis. 
+
+![cartesianchart-line-pattern](../../images/cartesianchart-line-pattern.png)
+
+```xml
+<mxc:AxisY.ConstantLines>
+    <mxc:ConstantLine Title="Overheat 85°C" AxisValue="85" Color="#BD1436" >
+        <mxc:ConstantLine.LineStyle>
+            <mxc:LineStyle Thickness="2" Dashes="10,5,3,5" />
+        </mxc:ConstantLine.LineStyle>
+    </mxc:ConstantLine>
+</mxc:AxisY.ConstantLines>
+```
+
+The [`LineStyle.Dashes`](../../API/Eremex.AvaloniaUI.Charts/LineStyle/Dashes.md) property set to `{ 10, 5, 3, 5 }` creates a repeating pattern of a 10-unit long dash, a 5-unit gap, a 3-unit short dash, and a 5-unit gap. Because the line thickness is `2`, the actual dash pattern will {20, 10, 6, 10}.
 
 
 ## Convert Between Diagram Coordinates and Screen Coordinates

@@ -1,10 +1,10 @@
 ---
-title: Styles
+title: 样式
 order: 1000
 seealso: []
 ---
 
-# 样式
+# 样式 {#styles}
 
 TreeList 和 TreeView 控件支持 Avalonia 样式系统，该系统允许您自定义控件视觉元素的设置。 
 使用 `TreeListControl.Styles` 属性将样式应用于以下视觉元素：
@@ -29,7 +29,7 @@ xmlns:mxtlvis="clr-namespace:Eremex.AvaloniaUI.Controls.TreeList.Visuals;assembl
 </mxtl:TreeListControl.Styles>
 ```
 
-## 将样式应用于特定的控制状态
+## 将样式应用于特定的控制状态 {#apply-styles-to-specific-control-states}
 
 样式选择器支持 Avalonia 中的伪类。伪类是添加到选择器的关键字。它指定应用样式的目标控件的状态。
 
@@ -46,32 +46,32 @@ xmlns:mxtlvis="clr-namespace:Eremex.AvaloniaUI.Controls.TreeList.Visuals;assembl
 </Style>
 ```
 
-## 视觉元素的控件
+## 视觉元素的控件 {#visual-elements-controls}
 
 样式选择器的语法应指定应用样式的目标控件（封装可视元素的 Control 对象）。以下图像显示了 TreeList/TreeView 的视觉元素和相应的目标控件。
 
 ![TreeList - Styling](../../images/treelist-styling.png)
 
-## 设置行样式（节点）
+## 设置行样式（节点） {#style-a-row-node}
 
 行是显示单元格的视觉元素。
 
 使用以下信息自定义行的样式：
 
-### 目标控制类 
+### 目标控制类 {#target-control-class}
 `TreeListRowControl`（在TreeList 控件中）、`TreeViewRowControl`（在TreeView 控件中）
 
-### 数据上下文
+### 数据上下文 {#datacontext}
 一行的数据（业务）对象
 
-### 自定义伪类
+### 自定义伪类 {#custom-pseudo-classes}
 
 - ":selectedState" — 一行已被选中，但未获得焦点。该状态在多行选择模式下有效。
 - ":focusedState" — 一行已获得焦点，但未被选中。该状态在多行选择模式下有效。
 - ":focusedAndSelectedState" — 一行已获得焦点并被选中。该状态在多行和单行选择模式下有效。
 - ":editingState" — 节点具有活动的就地编辑器。
 
-### 示例 - 如何自定义焦点节点的样式
+### 示例 - 如何自定义焦点节点的样式 {#example-how-to-customize-the-focused-nodes-style}
 
 以下代码创建一个自定义 TreeList 焦点节点背景的样式。
 
@@ -89,7 +89,7 @@ xmlns:mxtlvis="clr-namespace:Eremex.AvaloniaUI.Controls.TreeList.Visuals;assembl
 </mxtl:TreeListControl.Styles>
 ```
 
-### 示例 - 如何根据单元格值自定义节点的外观设置
+### 示例 - 如何根据单元格值自定义节点的外观设置 {#example-how-to-customize-a-nodes-appearance-settings-according-to-cell-values}
 
 以下代码根据行值自定义行（节点）的背景颜色和字体设置。
 
@@ -159,27 +159,27 @@ public class RowStatusToBrushConverter : IValueConverter
 }
 ```
 
-## 设置行单元格样式
+## 设置行单元格样式 {#style-a-row-cell}
 
 行（节点）单元格显示列值。在 TreeView 控件中，每一行仅显示一个值。
 
 要自定义行单元格的样式，请使用以下信息：
 
-### 目标控制类
+### 目标控制类 {#target-control-class_1}
 
 `TreeListCellControl`
 
-### 数据上下文
+### 数据上下文 {#datacontext_1}
 
 一个 `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData` 对象。 `CellData` 对象公开的主要属性是：
 
-- `Column` — 显示单元格的列（`ColumnBase` 对象）。当您将样式应用于 TreeView 对象时，`CellData.Column` 属性包含封装 TreeView 值列的 `ColumnBase` 对象。
-- `DataControl` — TreeList/TreeView 控件（`DataControlBase` 对象）。
+- `Column` — 显示单元格的列（[`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md) 对象）。当您将样式应用于 TreeView 对象时，`CellData.Column` 属性包含封装 TreeView 值列的 [`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md) 对象。
+- `DataControl` — TreeList/TreeView 控件（[`DataControlBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase.md) 对象）。
 - `Row` — 行的底层数据（业务）对象。
-- `ValidationInfo` — 包含单元格验证信息的对象。
+- [`ValidationInfo`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationInfo.md) — 包含单元格验证信息的对象。
 - `Value` — 单元格的值。
 
-### 自定义伪类
+### 自定义伪类 {#custom-pseudo-classes_1}
 
 自定义伪类与应用于行对象的伪类相匹配。它们如下所示：
 
@@ -188,7 +188,7 @@ public class RowStatusToBrushConverter : IValueConverter
 - ":focusedAndSelectedState" — 一行已获得焦点并被选中。该状态在多行和单行选择模式下有效。
 - ":editingState" — 单元格的就地编辑器处于活动状态。
 
-### 示例 - 如何根据单元格值自定义单元格样式
+### 示例 - 如何根据单元格值自定义单元格样式 {#example-how-to-customize-a-cells-style-according-to-the-cell-value}
 
 下面代码中的 Style 对象设置 _OnVacation_ 行属性中包含 `true` 值的单元格的背景。
 
@@ -237,21 +237,21 @@ public class OnVacationCellValueToBrushConverter : IMultiValueConverter
 
 
 
-## 设置行缩进区域的样式
+## 设置行缩进区域的样式 {#style-a-rows-indent-region}
 
 缩进区域显示展开按钮和节点图标。缩进区域是显示节点层次结构的单元格的一部分。
 
 要自定义行缩进区域的样式，请使用以下信息：
 
-### 目标控制类
+### 目标控制类 {#target-control-class_2}
 
 `TreeListIndentControl`
 
-### 数据上下文
+### 数据上下文 {#datacontext_2}
 
 一个 `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData` 对象。有关详细信息，请参阅 [设置行单元格样式](#style-a-row-cell) 部分。
 
-### 自定义伪类
+### 自定义伪类 {#custom-pseudo-classes_2}
 
 自定义伪类与应用于行对象的伪类相匹配。它们如下所示：
 
@@ -260,7 +260,7 @@ public class OnVacationCellValueToBrushConverter : IMultiValueConverter
 - ":focusedAndSelectedState" — 一行已获得焦点并被选中。该状态在多行和单行选择模式下有效。
 - ":editingState" — 节点具有活动的就地编辑器。
 
-### 示例 - 如何自定义特定行的缩进区域
+### 示例 - 如何自定义特定行的缩进区域 {#example-how-to-customize-a-specific-rows-indent-region}
 
 以下代码创建一个样式，用于自定义 _HasChildren_ 行值设置为 `true` 的行中的缩进背景。
 
@@ -288,27 +288,27 @@ xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
 </mxtl:TreeListControl.Styles>
 ```
 
-## 设置列标题样式 (TreeList control)
+## 设置列标题样式 (TreeList control) {#style-a-column-header-treelist-control}
 
 列标头显示列的标题和排序指示符。
 
 使用以下信息自定义列标头的样式：
 
-### 目标控制类
+### 目标控制类 {#target-control-class_3}
 
 `ColumnHeaderControl`
 
-### 数据上下文
+### 数据上下文 {#datacontext_3}
 
-`TreeListColumn`
+[`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md)
 
-### 自定义伪类
+### 自定义伪类 {#custom-pseudo-classes_3}
 
 - ":sortascending" — 列按升序排序。
 - ":sortdescending" — 列按降序排序。
 - ":dragging" — 正在拖动列。
 
-### 示例 - 如何自定义特定列标头的外观设置
+### 示例 - 如何自定义特定列标头的外观设置 {#example-how-to-customize-a-specific-column-headers-appearance-settings}
 
 以下代码显示了如何将 _OnVacation_ TreeList 列标头绘制为粗体显示。
 

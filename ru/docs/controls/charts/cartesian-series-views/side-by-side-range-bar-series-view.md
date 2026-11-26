@@ -6,7 +6,7 @@ seealso: []
 
 # Side-by-side Range Bar Series View
 
-Side-by-side Range Bar Series View (`CartesianSideBySideRangeBarSeriesView`) отрисовывает прямоугольные столбцы между двумя значениями Y серии данных.
+Side-by-side Range Bar Series View ([`CartesianSideBySideRangeBarSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideRangeBarSeriesView.md)) отрисовывает прямоугольные столбцы между двумя значениями Y серии данных.
 
 ![chart-views-rangebarseriesview](../../../images/chart-views-rangebarseriesview.png)
 
@@ -16,17 +16,17 @@ Side-by-side Range Bar Series View (`CartesianSideBySideRangeBarSeriesView`) о�
 
 Числовые значения _X_:
 
-- `NumericRangeDataAdapter`
+- [`NumericRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/NumericRangeDataAdapter.md)
 
 Значения даты и времени _X_:
 
-- `DateTimeRangeDataAdapter`
-- `TimeSpanRangeDataAdapter`
+- [`DateTimeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeRangeDataAdapter.md)
+- [`TimeSpanRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/TimeSpanRangeDataAdapter.md)
 
 
 Качественные значения _X_:
 
-- `QualitativeRangeDataAdapter` 
+- [`QualitativeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeRangeDataAdapter.md) 
 
 <br>
 <br>

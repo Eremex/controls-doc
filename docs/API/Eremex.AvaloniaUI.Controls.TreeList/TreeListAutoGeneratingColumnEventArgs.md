@@ -12,11 +12,16 @@ Provides data for the AutoGeneratingColumn event.
 public class TreeListAutoGeneratingColumnEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListAutoGeneratingColumnEventArgs](TreeListAutoGeneratingColumnEventArgs/TreeListAutoGeneratingColumnEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Cancel](TreeListAutoGeneratingColumnEventArgs/Cancel.md) { get; set; } | Gets or sets whether column generation is canceled. |
 | [Column](TreeListAutoGeneratingColumnEventArgs/Column.md) { get; } | Gets the column being generated. |
 

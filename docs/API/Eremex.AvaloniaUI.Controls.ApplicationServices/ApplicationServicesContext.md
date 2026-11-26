@@ -16,11 +16,16 @@ The class knows about no particular DI container: the only integration type is I
 public static class ApplicationServicesContext
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |
 | static [Current](ApplicationServicesContext/Current.md) { get; } | The current service provider, or `null` if it has not been set yet. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | static [GetRequiredService&lt;T&gt;](ApplicationServicesContext/GetRequiredService.md)() | Returns the service, throwing InvalidOperationException when it is missing. |
 | static [GetService&lt;T&gt;](ApplicationServicesContext/GetService.md)() | Returns the service, or `null` if it is not registered or the context has not been initialized yet. |
 | static [RegisterApplicationServices](ApplicationServicesContext/RegisterApplicationServices.md)(…) | Describes the application service composition without knowing anything about a particular DI container. The host receives service type / factory pairs and decides how to register them and with which lifetime. |

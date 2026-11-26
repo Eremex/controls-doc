@@ -12,11 +12,16 @@ Represents a straight line drawn across the drawing area at a fixed value of the
 public class ConstantLine : ChartElement
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ConstantLine](ConstantLine/ConstantLine.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AxisValue](ConstantLine/AxisValue.md) { get; set; } | Gets or sets the axis value at which the line is drawn. |
 | [Color](ConstantLine/Color.md) { get; set; } | Gets or sets the color of the line. |
 | [LineStyle](ConstantLine/LineStyle.md) { get; set; } | Gets or sets the style of the line. If the value is null, a default line style is used. |

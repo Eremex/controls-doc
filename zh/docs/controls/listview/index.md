@@ -4,7 +4,7 @@ order: 59000
 seealso: []
 ---
 
-# ListView
+# ListView {#listview}
 
 `ListViewControl` 是一个项容器,支持多种项排列布局、项排序、分组、筛选和选择功能。您可以使用 `ListViewControl` 创建类似于 Microsoft Windows 资源管理器右侧窗格的界面。
 

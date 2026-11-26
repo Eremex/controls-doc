@@ -12,12 +12,16 @@ Manages a layout of docked, floating, and auto-hidden panes and documents.
 public class DockManager : TemplatedControl
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DockManager](DockManager/DockManager.md)() | Initializes a new instance of the DockManager class. |
-| static [GetDockManager](DockManager/GetDockManager.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ActiveDockItem](DockManager/ActiveDockItem.md) { get; } | Gets the currently active docking item. |
 | [AllowDocumentSwitcher](DockManager/AllowDocumentSwitcher.md) { get; set; } | Gets or sets whether users can open the document switcher. |
 | [AllowFreeDocumentLayout](DockManager/AllowFreeDocumentLayout.md) { get; set; } | Gets or sets whether document groups can be arranged in both horizontal and vertical directions within a document host. |
@@ -36,14 +40,12 @@ public class DockManager : TemplatedControl
 | [OwnsFloatingDocuments](DockManager/OwnsFloatingDocuments.md) { get; set; } | Gets or sets whether floating windows containing documents are owned by the dock manager's window. |
 | [Root](DockManager/Root.md) { get; set; } | Gets or sets the root group of the docked layout. |
 | [SerializationInfo](DockManager/SerializationInfo.md) { get; } | Gets the layout information used during serialization or deserialization. |
-| event [CustomizeDockGuide](DockManager/CustomizeDockGuide.md) | Occurs when docking guides are prepared for a dragged item. Use the event to hide guides or guide items. |
-| event [DockItemActivated](DockManager/DockItemActivated.md) | Occurs when the active docking item changes. |
-| event [DockItemContextMenuOpening](DockManager/DockItemContextMenuOpening.md) | Occurs before a docking item context menu opens. Cancel the event to prevent the menu from opening. |
-| event [DockItemEndFloatDragging](DockManager/DockItemEndFloatDragging.md) | Occurs when dragging a floating docking item ends. |
-| event [DockItemStartFloatDragging](DockManager/DockItemStartFloatDragging.md) | Occurs when dragging a floating docking item starts. |
-| event [DockOperationCompleted](DockManager/DockOperationCompleted.md) | Occurs after a docking operation completes. |
-| event [DockOperationStarting](DockManager/DockOperationStarting.md) | Occurs before a docking operation starts. Cancel the event to prevent the operation. |
-| event [RegisterDockItem](DockManager/RegisterDockItem.md) | Occurs when a docking item is registered with the dock manager. |
+
+## Methods
+
+| name | description |
+| --- | --- |
+| static [GetDockManager](DockManager/GetDockManager.md)(…) |  |
 | [AutoHide](DockManager/AutoHide.md)(…) | Moves the panes in the specified item into an auto-hide group and returns whether the operation succeeded. |
 | [Close](DockManager/Close.md)(…) | Closes the panes in the specified item and returns whether the operation succeeded. |
 | [CollapseAutoHidePanel](DockManager/CollapseAutoHidePanel.md)(…) | Collapses the auto-hide panel for the specified pane and returns whether the operation succeeded. |
@@ -57,6 +59,19 @@ public class DockManager : TemplatedControl
 | static [GetDockItem](DockManager/GetDockItem.md)(…) | Gets the docking item associated with the specified object. |
 | static [SetDockItem](DockManager/SetDockItem.md)(…) | Sets the docking item associated with the specified object. |
 | static [SetDockManager](DockManager/SetDockManager.md)(…) | Sets the dock manager associated with the specified object. |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [CustomizeDockGuide](DockManager/CustomizeDockGuide.md) | Occurs when docking guides are prepared for a dragged item. Use the event to hide guides or guide items. |
+| event [DockItemActivated](DockManager/DockItemActivated.md) | Occurs when the active docking item changes. |
+| event [DockItemContextMenuOpening](DockManager/DockItemContextMenuOpening.md) | Occurs before a docking item context menu opens. Cancel the event to prevent the menu from opening. |
+| event [DockItemEndFloatDragging](DockManager/DockItemEndFloatDragging.md) | Occurs when dragging a floating docking item ends. |
+| event [DockItemStartFloatDragging](DockManager/DockItemStartFloatDragging.md) | Occurs when dragging a floating docking item starts. |
+| event [DockOperationCompleted](DockManager/DockOperationCompleted.md) | Occurs after a docking operation completes. |
+| event [DockOperationStarting](DockManager/DockOperationStarting.md) | Occurs before a docking operation starts. Cancel the event to prevent the operation. |
+| event [RegisterDockItem](DockManager/RegisterDockItem.md) | Occurs when a docking item is registered with the dock manager. |
 
 ## See Also
 

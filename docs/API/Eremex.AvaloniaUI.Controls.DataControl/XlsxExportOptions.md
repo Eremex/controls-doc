@@ -12,18 +12,25 @@ Provides options that define how a data control's data is exported to XLSX forma
 public class XlsxExportOptions : ExportOptions
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [XlsxExportOptions](XlsxExportOptions/XlsxExportOptions.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowFixedColumnHeaderPanel](XlsxExportOptions/AllowFixedColumnHeaderPanel.md) { get; set; } | Gets or sets whether the fixed column header panel is allowed in the exported document. |
 | [AllowGrouping](XlsxExportOptions/AllowGrouping.md) { get; set; } | Gets or sets whether grouping is preserved in the exported document. |
 | [ApplyFormattingToEntireColumn](XlsxExportOptions/ApplyFormattingToEntireColumn.md) { get; set; } | Gets or sets whether the cell formatting is applied to the entire column in the exported document. |
 | [DocumentCulture](XlsxExportOptions/DocumentCulture.md) { get; set; } | Gets or sets the culture used to format values in the exported document. |
 | [ShowBands](XlsxExportOptions/ShowBands.md) { get; set; } | Gets or sets whether band headers are exported. |
 | [ShowHorizontalLines](XlsxExportOptions/ShowHorizontalLines.md) { get; set; } | Gets or sets whether horizontal lines are exported. |
+| [ShowSummaryLabels](XlsxExportOptions/ShowSummaryLabels.md) { get; set; } | Gets or sets whether summary labels are included in exported summary cells; without labels, a cell holds the live value formatted per the source column. |
 | [ShowVerticalLines](XlsxExportOptions/ShowVerticalLines.md) { get; set; } | Gets or sets whether vertical lines are exported. |
+| [SummaryCountBlankCells](XlsxExportOptions/SummaryCountBlankCells.md) { get; set; } | Gets or sets whether Count summary formulas account for blank cells so the exported count matches the grid. |
 | [TextExportMode](XlsxExportOptions/TextExportMode.md) { get; set; } | Gets or sets whether cell values are exported as text or as values. |
 
 ## See Also

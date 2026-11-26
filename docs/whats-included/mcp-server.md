@@ -6,7 +6,7 @@ seealso: []
 
 # MCP Server
 
-Eremex Controls documentation, demo examples, and public support answers are available to AI coding assistants (Cursor, Claude Code, GitHub Copilot, Windsurf, Cline, and other [MCP](https://modelcontextprotocol.io)-compatible tools) through a self-hosted MCP server:
+Eremex Controls documentation, demo examples, and public support answers are available to AI coding assistants (Cursor, Claude Code, OpenCode, GitHub Copilot, Windsurf, Cline, and other [MCP](https://modelcontextprotocol.io)-compatible tools) through a self-hosted MCP server:
 
 ```
 https://mcp.eremexcontrols.net/
@@ -78,6 +78,33 @@ Add to your MCP settings (VS Code `settings.json` under `mcp.servers`, or the ex
   }
 }
 ```
+
+### OpenCode
+
+Run this command in your project folder (add `--global` to make the server available in every project):
+
+```bash
+opencode mcp add eremex-controls --url https://mcp.eremexcontrols.net/mcp
+```
+
+Or add the server to your `opencode.json` / `opencode.jsonc` configuration manually:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "eremex-controls": {
+        "type": "remote",
+        "url": "https://mcp.eremexcontrols.net/mcp",
+        "oauth": false
+      }
+    }
+  }
+}
+```
+
+The server requires no sign-in: `"oauth": false` prevents OpenCode from starting an OAuth flow. If OpenCode asks you to authenticate the server, set this option in the configuration.
 
 ### Other MCP Clients
 

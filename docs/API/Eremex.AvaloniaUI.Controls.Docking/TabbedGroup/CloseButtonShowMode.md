@@ -14,6 +14,7 @@ public TabControlCloseButtonShowMode CloseButtonShowMode { get; set; }
 
 ## See Also
 
+* enum [TabControlCloseButtonShowMode](../../Eremex.AvaloniaUI.Controls/TabControlCloseButtonShowMode.md)
 * class [TabbedGroup](../TabbedGroup.md)
 * namespace [Eremex.AvaloniaUI.Controls.Docking](../index.md)
 

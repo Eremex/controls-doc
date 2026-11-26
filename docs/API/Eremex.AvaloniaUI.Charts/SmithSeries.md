@@ -12,11 +12,16 @@ Represents a series of a Smith chart. The series plots the data supplied by its 
 public class SmithSeries : Series
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SmithSeries](SmithSeries/SmithSeries.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [View](SmithSeries/View.md) { get; set; } | Gets or sets the series view that defines the appearance of the series. |
 
 ## See Also

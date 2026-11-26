@@ -8,7 +8,7 @@ seealso: []
 
 Data Grid позволяет сортировать данные по неограниченному количеству колонок. Пользователь может отсортировать данные колонки, кликнув по заголовку колонки или используя контекстное меню заголовка колонки.
 
-## Действия конечного пользователя
+## Действия пользователя
 
 Во время выполнения пользователь может один раз кликнуть по заголовку колонки, чтобы отсортировать данные по возрастанию. Последующий клик меняет порядок сортировки на обратный. Чтобы очистить сортировку, удерживайте клавишу CTRL и кликните по заголовку колонки.
 
@@ -22,14 +22,14 @@ Data Grid позволяет сортировать данные по неогр
 
 Вы можете запретить пользователям сортировку определённых колонок. Используйте для этого следующие свойства:
 
-- `DataGridControl.AllowSorting` — определяет, может ли пользователь сортировать/группировать данные по любой колонке.
-- `ColumnBase.AllowSorting` — определяет, может ли пользователь сортировать и группировать данные по конкретной колонке.
+- [`DataGridControl.AllowSorting`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowSorting.md) — определяет, может ли пользователь сортировать/группировать данные по любой колонке.
+- [`ColumnBase.AllowSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowSorting.md) — определяет, может ли пользователь сортировать и группировать данные по конкретной колонке.
 
 Эти свойства не мешают вам сортировать данные в коде.
 
 ## Буквенно-цифровая сортировка
 
-Для колонок, отображающих текст, вы можете использовать свойство `DataGridControl.TextSortMode`, чтобы выбрать между алфавитной и буквенно-цифровой сортировкой.
+Для колонок, отображающих текст, вы можете использовать свойство [`DataGridControl.TextSortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/TextSortMode.md), чтобы выбрать между алфавитной и буквенно-цифровой сортировкой.
 
 - Сортировка `Alphabetical` (по умолчанию): в этом режиме строки сравниваются посимвольно. Если текст содержит числа, алгоритм сортировки рассматривает их как отдельные символы, а не как числа. Например:
 
@@ -49,7 +49,7 @@ Data Grid позволяет сортировать данные по неогр
                         />
     ```
 
-Свойство `DataGridControl.TextSortMode` влияет на сортировку всех колонок, отображающих текстовые значения.
+Свойство [`DataGridControl.TextSortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/TextSortMode.md) влияет на сортировку всех колонок, отображающих текстовые значения.
 
 Следующее изображение демонстрирует дополнительные примеры, сравнивающие алфавитный и буквенно-цифровой режимы сортировки:
 
@@ -61,11 +61,11 @@ Data Grid позволяет сортировать данные по неогр
 
 Вы можете использовать следующие свойства, чтобы задать параметры сортировки для колонок:
 
-- `ColumnBase.SortDirection` — задаёт порядок сортировки. Вы можете установить это свойство в значение `Ascending` или `Descending`, чтобы отсортировать колонку. При инициализации этого свойства колонка добавляется во внутреннюю коллекцию отсортированных колонок Data Grid. Установите свойство `SortDirection` в значение `null`, чтобы очистить сортировку для этой колонки и удалить её из коллекции отсортированных колонок.
+- [`ColumnBase.SortDirection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortDirection.md) — задаёт порядок сортировки. Вы можете установить это свойство в значение `Ascending` или `Descending`, чтобы отсортировать колонку. При инициализации этого свойства колонка добавляется во внутреннюю коллекцию отсортированных колонок Data Grid. Установите свойство [`SortDirection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortDirection.md) в значение `null`, чтобы очистить сортировку для этой колонки и удалить её из коллекции отсортированных колонок.
 
-- `ColumnBase.SortIndex` — задаёт отсчитываемый от нуля индекс колонки в коллекции отсортированных колонок. Контрол Data Grid сортирует данные сначала по первой отсортированной колонке, затем по второй, и так далее. Вы можете установить свойство `SortIndex` в неотрицательное значение, чтобы отсортировать эту колонку по возрастанию. Установите `SortIndex` в значение `-1`, чтобы очистить сортировку по этой колонке.
+- [`ColumnBase.SortIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortIndex.md) — задаёт отсчитываемый от нуля индекс колонки в коллекции отсортированных колонок. Контрол Data Grid сортирует данные сначала по первой отсортированной колонке, затем по второй, и так далее. Вы можете установить свойство [`SortIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortIndex.md) в неотрицательное значение, чтобы отсортировать эту колонку по возрастанию. Установите [`SortIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortIndex.md) в значение `-1`, чтобы очистить сортировку по этой колонке.
 
-Вызовите унаследованный метод контрола `DataControlBase.ClearSorting`, чтобы удалить сортировку, применённую ко всем колонкам.
+Вызовите унаследованный метод контрола [`DataControlBase.ClearSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ClearSorting.md), чтобы удалить сортировку, применённую ко всем колонкам.
 
 Следующий код очищает сортировку, а затем сортирует данные по двум колонкам:
 
@@ -75,7 +75,7 @@ gridColumn1.SortDirection = ListSortDirection.Ascending;
 gridColumn3.SortDirection = ListSortDirection.Descending;
 ```
 
-Вы можете обернуть свой код методами `BeginDataUpdate` и `EndDataUpdate`, чтобы предотвратить лишние обновления при изменении нескольких настроек контрола (включая настройки сортировки).
+Вы можете обернуть свой код методами [`BeginDataUpdate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/BeginDataUpdate.md) и [`EndDataUpdate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/EndDataUpdate.md), чтобы предотвратить лишние обновления при изменении нескольких настроек контрола (включая настройки сортировки).
 
 ``` csharp
 dataGrid1.BeginDataUpdate();
@@ -94,26 +94,26 @@ Data Grid может сортировать (и [группировать](group
 - Сортировка/группировка по отображаемому тексту — колонки со встроенным ComboBoxEditor.
 - Без сортировки/группировки — колонки, привязанные к объектам, не реализующим интерфейс `IComparable`. Например, типы данных изображений не реализуют этот интерфейс, поэтому для соответствующих колонок сортировка по умолчанию недоступна. Информацию о том, как принудительно отсортировать такие колонки, смотрите в разделе [Custom Sorting](#custom-sorting) ниже.
 
-Используйте свойство `ColumnBase.SortMode`, чтобы изменить режим сортировки/группировки для колонки. Доступны следующие варианты:
+Используйте свойство [`ColumnBase.SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortMode.md), чтобы изменить режим сортировки/группировки для колонки. Доступны следующие варианты:
 
-- `SortMode.Value` — сортировка/группировка по значениям редактирования ячеек.
-- `SortMode.DisplayText` — сортировка/группировка по отображаемому тексту ячеек.
-- `SortMode.Custom` — включает пользовательскую сортировку и группировку. Установите свойство `SortMode` в значение `Custom`, а затем обработайте событие `DataGridControl.CustomColumnSort` и/или `DataGridControl.CustomColumnGroup`, чтобы реализовать пользовательскую логику сортировки и/или группировки. Дополнительную информацию смотрите по следующим ссылкам:
+- [`SortMode.Value`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) — сортировка/группировка по значениям редактирования ячеек.
+- [`SortMode.DisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) — сортировка/группировка по отображаемому тексту ячеек.
+- [`SortMode.Custom`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) — включает пользовательскую сортировку и группировку. Установите свойство [`SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) в значение `Custom`, а затем обработайте событие [`DataGridControl.CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnSort.md) и/или [`DataGridControl.CustomColumnGroup`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnGroup.md), чтобы реализовать пользовательскую логику сортировки и/или группировки. Дополнительную информацию смотрите по следующим ссылкам:
 
     - [Custom Sorting](#custom-sorting)
     - [Custom Grouping](grouping.md#пользовательская-группировка)
 
 ### Custom Sorting
 
-Событие `CustomColumnSort` позволяет реализовать пользовательскую логику сортировки для конкретной колонки. Установите свойство `ColumnBase.SortMode` в значение `Custom`, чтобы включить это событие.
+Событие [`CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnSort.md) позволяет реализовать пользовательскую логику сортировки для конкретной колонки. Установите свойство [`ColumnBase.SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortMode.md) в значение `Custom`, чтобы включить это событие.
 
 Если привязанный тип данных колонки не реализует интерфейс `IComparable` (например, тип данных изображения), Data Grid по умолчанию запрещает сортировку для этой колонки. Однако вы можете включить сортировку для этой колонки следующим образом:
 
-- Установите свойство колонки `AllowSorting` в значение `true` (значение по умолчанию для этого свойства — `null`).
-- Установите свойство колонки `SortMode` в значение `Custom`.
-- Обработайте событие `CustomColumnSort`, чтобы реализовать пользовательскую сортировку.
+- Установите свойство колонки [`AllowSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowSorting.md) в значение `true` (значение по умолчанию для этого свойства — `null`).
+- Установите свойство колонки [`SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) в значение `Custom`.
+- Обработайте событие [`CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnSort.md), чтобы реализовать пользовательскую сортировку.
 
-При обработке события `CustomColumnSort` вам следует сравнить две строки, указанные в аргументах события. Присвойте результат сравнения параметру события `Result` следующим образом:
+При обработке события [`CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnSort.md) вам следует сравнить две строки, указанные в аргументах события. Присвойте результат сравнения параметру события `Result` следующим образом:
 
 - Установите `Result` в значение `-1`, если первая строка должна отображаться выше второй строки при сортировке данных по возрастанию.
 
@@ -122,7 +122,7 @@ Data Grid может сортировать (и [группировать](group
  - Установите `Result` в значение `0`, если обе строки равны.
 
 
-Следующий пример обрабатывает событие `DataGridControl.CustomColumnSort`, чтобы отсортировать данные колонки "_FileName_" особым образом. Колонка "_FileName_" хранит имена файлов в стандартном формате "_filename.ext_". Пользовательская процедура сортировки сортирует имена файлов по их расширениям.
+Этот пример обрабатывает событие [`DataGridControl.CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnSort.md), чтобы отсортировать данные колонки "_FileName_" особым образом. Колонка "_FileName_" хранит имена файлов в стандартном формате "_filename.ext_". Пользовательская процедура сортировки сортирует имена файлов по их расширениям.
 
 ``` csharp
 <mxdg:DataGridControl Name="dataGrid1" CustomColumnSort="DataGrid_CustomColumnSort">
@@ -158,8 +158,8 @@ string extractFileExtension(string fileName)
 
 Обработайте следующие события, чтобы выполнить пользовательские действия при сортировке данных:
 
-- `DataControlBase.StartSorting` — возникает, когда данные вот-вот будут отсортированы.
-- `DataControlBase.EndSorting` — возникает по завершении сортировки данных.
+- [`DataControlBase.StartSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/StartSorting.md) — возникает, когда данные вот-вот будут отсортированы.
+- [`DataControlBase.EndSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/EndSorting.md) — возникает по завершении сортировки данных.
 
 <br>
 <br>

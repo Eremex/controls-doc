@@ -13,12 +13,17 @@ This topic describes the system requirements to use the Eremex Avalonia UI Contr
 
 | EMX Controls Version | .NET |  Avalonia UI Framework |
 | --- | --- | --- |
+| **v1.5+** | 8.0+ | v12.1.5 (recommended<sup>*</sup>) |
 | **v1.4+** | 8.0+ | v12+ |
 | **v1.2.95+** | 8.0+ | v11.3.8+ |
 | **v1.2.63-1.2.92** | 8.0+ | v11.3.3 |
 | **v1.1** | 6.0+ | v11.2.2+ |
 | **v1.0** | 6.0+ | v11.0.10+ |
     
+!!! Note
+
+    <sup>*</sup> The specified version of Avalonia UI Framework is recommended for use with the Eremex Controls library. Our team has fully verified this version to ensure maximum stability. While we do not restrict you from using newer Avalonia UI versions, please note that subsequent patches may contain changes that have not been tested by our team and may not be fully compatible.
+
 
 ## Development Tools
 

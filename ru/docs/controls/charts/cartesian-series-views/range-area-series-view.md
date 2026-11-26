@@ -6,7 +6,7 @@ seealso: []
 
 # Range Area Series View
 
-Range Area Series View (`CartesianRangeAreaSeriesView`) строит две линии и закрашивает область между этими линиями.
+Range Area Series View ([`CartesianRangeAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView.md)) строит две линии и закрашивает область между этими линиями.
 
 ![chart-views-range-area-series-view](../../../images/chart-views-range-area-series-view.png)
 
@@ -14,11 +14,11 @@ Range Area Series View (`CartesianRangeAreaSeriesView`) строит две ли
 
 ## Создание Range Series View
 
-Чтобы создать Range Series View, добавьте объект `CartesianSeries` в коллекцию `CartesianChart.Series` и инициализируйте `CartesianSeries.View` экземпляром `CartesianRangeAreaSeriesView`.
+Чтобы создать Range Series View, добавьте объект [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) в коллекцию [`CartesianChart.Series`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) и инициализируйте [`CartesianSeries.View`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md) экземпляром [`CartesianRangeAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView.md).
 
-Используйте свойство `CartesianSeries.DataAdapter`, чтобы предоставить данные для серии. Range Area Series View требует два значения Y на каждую точку данных. Вам следует использовать специальные адаптеры данных, чтобы предоставить значения Y для Range Area Series View. Информацию о поддерживаемых адаптерах данных см. по следующей ссылке: [Данные для Range Area Series View](#данные-для-range-area-series-view).
+Используйте свойство [`CartesianSeries.DataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/Series/DataAdapter.md), чтобы предоставить данные для серии. Range Area Series View требует два значения Y на каждую точку данных. Вам следует использовать специальные адаптеры данных, чтобы предоставить значения Y для Range Area Series View. Информацию о поддерживаемых адаптерах данных см. по следующей ссылке: [Данные для Range Area Series View](#данные-для-range-area-series-view).
 
-Объект `CartesianRangeAreaSeriesView` включает свойства `Color1`, `Color2` и `Color`, которые позволяют задать разные цвета для закраски линий и заливки.
+Объект [`CartesianRangeAreaSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView.md) включает свойства [`Color1`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color1.md), [`Color2`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color2.md) и [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color.md), которые позволяют задать разные цвета для закраски линий и заливки.
 
 В следующем коде показано, как создать Range Area Series View в XAML и code-behind.
 
@@ -53,9 +53,9 @@ series.View = new CartesianRangeAreaSeriesView()
 
 ## Пример - Использование Range Area Series View для отображения минимальной и максимальной месячной температуры
 
-Следующий пример использует Range Area Series View для отображения минимальной и максимальной месячной температуры в городе. Адаптер данных (`DateTimeRangeDataAdapter`) предоставляет два значения Y для каждой точки данных (месяца).
+Этот пример использует Range Area Series View для отображения минимальной и максимальной месячной температуры в городе. Адаптер данных ([`DateTimeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeRangeDataAdapter.md)) предоставляет два значения Y для каждой точки данных (месяца).
 
-Обратите внимание на использование свойства `DateTimeScaleOptions.LabelFormatter` для форматирования подписей оси _X_ пользовательским способом.
+Обратите внимание на использование свойства [`DateTimeScaleOptions.LabelFormatter`](../../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) для форматирования подписей оси _X_ пользовательским способом.
 
 ![chart-views-rangeAreaSeriesView-example](../../../images/chart-views-rangeAreaSeriesView-example.png)
 
@@ -148,35 +148,35 @@ public partial class SeriesViewModel : ObservableObject
 
 Числовые значения _X_:
 
-- `NumericRangeDataAdapter`
+- [`NumericRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/NumericRangeDataAdapter.md)
 
 Значения даты и времени _X_:
 
-- `DateTimeRangeDataAdapter`
-- `TimeSpanRangeDataAdapter`
+- [`DateTimeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/DateTimeRangeDataAdapter.md)
+- [`TimeSpanRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/TimeSpanRangeDataAdapter.md)
 
 Качественные значения _X_:
 
-- `QualitativeRangeDataAdapter` 
+- [`QualitativeRangeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeRangeDataAdapter.md) 
 
 ## Параметры Range Area Series View
 
-- `Color` — Задаёт цвет для закраски области между двумя линиями. Используйте параметр `Transparency`, чтобы управлять уровнем прозрачности закрашенной области.
-- `Color1` — Задаёт цвет для закраски первой линии.
-- `Color2` — Задаёт цвет для закраски второй линии.
-- `CrosshairMode` — Задаёт, привязывается ли подпись перекрестия к ближайшей точке данных, или отображает интерполированное значение. См. [Отображение точного или интерполированного значения в подписях перекрестия](../crosshair.md#отображение-точного-или-интерполированного-значения-в-метках-серий-crosshair).
-- `Marker1Image` — Позволяет задать изображение в формате SVG в качестве маркеров точек для первой линии.
-- `Marker1ImageCss` — Задаёт CSS-код, позволяющий настраивать цвета элементов в указанном SVG-изображении (`Marker1Image`).
-- `Marker1Size` — Задаёт размер маркеров точек для первой линии.
-- `Marker2Image` — Позволяет задать изображение в формате SVG в качестве маркеров точек для второй линии.
-- `Marker2ImageCss` — Задаёт CSS-код, позволяющий настраивать цвета элементов в указанном SVG-изображении (`Marker2Image`).
-- `Marker2Size` — Задаёт размер маркеров точек для второй линии.
-- `ShowInCrosshair` — Задаёт видимость подписи перекрестия для текущей серии. См. [Настройка подписей перекрестия](../crosshair.md#скрытие-серии-в-crosshair).
-- `ShowMarkers1` — Включает или отключает маркеры точек для первой линии.
-- `ShowMarkers2` — Включает или отключает маркеры точек для второй линии.
+- [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color.md) — Задаёт цвет для закраски области между двумя линиями. Используйте параметр [`Transparency`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Transparency.md), чтобы управлять уровнем прозрачности закрашенной области.
+- [`Color1`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color1.md) — Задаёт цвет для закраски первой линии.
+- [`Color2`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Color2.md) — Задаёт цвет для закраски второй линии.
+- [`CrosshairMode`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/CrosshairMode.md) — Задаёт, привязывается ли подпись перекрестия к ближайшей точке данных, или отображает интерполированное значение. См. [Отображение точного или интерполированного значения в подписях перекрестия](../crosshair.md#отображение-точного-или-интерполированного-значения-в-метках-серий-crosshair).
+- [`Marker1Image`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker1Image.md) — Позволяет задать изображение в формате SVG в качестве маркеров точек для первой линии.
+- [`Marker1ImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker1ImageCss.md) — Задаёт CSS-код, позволяющий настраивать цвета элементов в указанном SVG-изображении ([`Marker1Image`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker1Image.md)).
+- [`Marker1Size`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker1Size.md) — Задаёт размер маркеров точек для первой линии.
+- [`Marker2Image`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker2Image.md) — Позволяет задать изображение в формате SVG в качестве маркеров точек для второй линии.
+- [`Marker2ImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker2ImageCss.md) — Задаёт CSS-код, позволяющий настраивать цвета элементов в указанном SVG-изображении ([`Marker2Image`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker2Image.md)).
+- [`Marker2Size`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Marker2Size.md) — Задаёт размер маркеров точек для второй линии.
+- [`ShowInCrosshair`](../../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) — Задаёт видимость подписи перекрестия для текущей серии. См. [Настройка подписей перекрестия](../crosshair.md#скрытие-серии-в-crosshair).
+- [`ShowMarkers1`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/ShowMarkers1.md) — Включает или отключает маркеры точек для первой линии.
+- [`ShowMarkers2`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/ShowMarkers2.md) — Включает или отключает маркеры точек для второй линии.
 - `Thickness1` — Задаёт толщину первой линии.
 - `Thickness2` — Задаёт толщину второй линии.
-- `Transparency` — Получает или задаёт уровень прозрачности закрашенной области, выраженный значением от `0` (полностью прозрачная) до `1` (полностью непрозрачная).
+- [`Transparency`](../../../API/Eremex.AvaloniaUI.Charts/CartesianRangeAreaSeriesView/Transparency.md) — Получает или задаёт уровень прозрачности закрашенной области, выраженный значением от `0` (полностью прозрачная) до `1` (полностью непрозрачная).
 
 <br>
 <br>

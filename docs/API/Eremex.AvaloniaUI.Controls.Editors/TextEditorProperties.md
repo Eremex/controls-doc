@@ -12,11 +12,16 @@ Provides settings for the text editor.
 public class TextEditorProperties : BaseEditorProperties
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TextEditorProperties](TextEditorProperties/TextEditorProperties.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AcceptsReturn](TextEditorProperties/AcceptsReturn.md) { get; set; } | Gets or sets whether the user can insert line breaks by pressing Enter. |
 | [Mask](TextEditorProperties/Mask.md) { get; set; } | Gets or sets the mask pattern applied to the editor's input. |
 | [MaskCulture](TextEditorProperties/MaskCulture.md) { get; set; } | Gets or sets the culture used to interpret the mask. |

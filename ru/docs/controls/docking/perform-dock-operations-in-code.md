@@ -10,10 +10,10 @@ seealso: []
 
 ## Создание Dock-панелей
 
-Вы можете создавать объекты `DockPane` и `DocumentPane` с помощью их конструкторов. После создания панели вам обычно нужно отобразить её в определённой позиции относительно другой панели или [контейнера (группы)](dock-panes-and-containers.md). Метод `DockManager.Dock` позволяет закрепить панель у края другой панели, добавить панель в существующий контейнер и объединить панели в интерфейсе с вкладками. Чтобы добавить панель как дочерний элемент существующего контейнера, вы также можете использовать метод контейнера `Add`.
+Вы можете создавать объекты [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) и [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) с помощью их конструкторов. После создания панели вам обычно нужно отобразить её в определённой позиции относительно другой панели или [контейнера (группы)](dock-panes-and-containers.md). Метод [`DockManager.Dock`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Dock.md) позволяет закрепить панель у края другой панели, добавить панель в существующий контейнер и объединить панели в интерфейсе с вкладками. Чтобы добавить панель как дочерний элемент существующего контейнера, вы также можете использовать метод контейнера [`Add`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Add.md).
 
 
-Наиболее часто используемая перегрузка метода `DockManager.Dock` определяется следующим образом:
+Наиболее часто используемая перегрузка метода [`DockManager.Dock`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Dock.md) определяется следующим образом:
 
 ``` cs
 public bool Dock(DockItemBase item, DockItemBase target, DockType dockType)
@@ -23,9 +23,9 @@ public bool Dock(DockItemBase item, DockItemBase target, DockType dockType)
 
 Параметр `dockType` задаёт, как закрепить элемент относительно целевого элемента:
 
-- `DockType.Fill` — исходная и целевая панели объединяются в контейнер вкладок (`TabGroup`). Если целевая панель уже принадлежит контейнеру вкладок, исходная панель добавляется в этот контейнер; дополнительный контейнер вкладок не создаётся.
+- [`DockType.Fill`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) — исходная и целевая панели объединяются в контейнер вкладок (`TabGroup`). Если целевая панель уже принадлежит контейнеру вкладок, исходная панель добавляется в этот контейнер; дополнительный контейнер вкладок не создаётся.
 
-- `DockType.Left`, `DockType.Right`, `DockType.Top`, `DockType.Bottom` — исходный элемент докинга закрепляется у соответствующей стороны целевого элемента докинга. При необходимости методом `DockManager.Dock` создаётся дополнительный горизонтальный или вертикальный сплит-контейнер (`DockGroup`), как описано ниже. 
+- [`DockType.Left`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md), [`DockType.Right`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md), [`DockType.Top`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md), [`DockType.Bottom`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md) — исходный элемент докинга закрепляется у соответствующей стороны целевого элемента докинга. При необходимости методом [`DockManager.Dock`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Dock.md) создаётся дополнительный горизонтальный или вертикальный сплит-контейнер ([`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md)), как описано ниже. 
 
   Предположим, что вы закрепляете исходную панель сверху или снизу от целевой панели, принадлежащей **вертикальному** сплит-контейнеру. 
   
@@ -61,14 +61,14 @@ public bool Dock(DockItemBase item, DockItemBase target, DockType dockType)
 
   ![docking-dock-horizontalcontainer-dock-to-bottom](../../images/docking-dock-horizontalcontainer-dock-to-bottom.png)
   
-  Используйте свойства `DockPane.DockWidth` и `DockPane.DockHeight`, чтобы задать размер панелей, когда они размещены в сплит-контейнере.
+  Используйте свойства [`DockPane.DockWidth`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockWidth.md) и [`DockPane.DockHeight`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockHeight.md), чтобы задать размер панелей, когда они размещены в сплит-контейнере.
 
 
 
 
 ### Пример - создание и отображение панелей рядом друг с другом
 
-Следующий код создаёт объекты `DockPane` и `DocumentPane` и располагает их, как показано на изображении ниже. Объекты `DocumentPane` размещаются в контейнере `DocumentGroup`, чтобы представить их как вкладки.
+Следующий код создаёт объекты [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) и [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) и располагает их, как показано на изображении ниже. Объекты [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) размещаются в контейнере [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md), чтобы представить их как вкладки.
 
 ![docking-code-behind-create-panels](../../images/docking-code-behind-create-panels.png)
 
@@ -110,9 +110,9 @@ paneDebug.DockHeight = new GridLength(150, GridUnitType.Pixel);
 
 ### Доступ к родителю и дочерним элементам элемента докинга
 
-Свойство `DockPane.DockParent` позволяет вернуть непосредственного родителя любого элемента докинга (панели или контейнера). Например, когда панель находится в сплит-контейнере (`DockGroup`), `DockPane.DockParent` возвращает этот сплит-контейнер. Для панелей, объединённых в контейнер вкладок, `DockPane.DockParent` возвращает этот родительский контейнер вкладок (объект `TabbedGroup` или `DocumentGroup`).
+Свойство [`DockPane.DockParent`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockParent.md) позволяет вернуть непосредственного родителя любого элемента докинга (панели или контейнера). Например, когда панель находится в сплит-контейнере ([`DockGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup.md)), [`DockPane.DockParent`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockParent.md) возвращает этот сплит-контейнер. Для панелей, объединённых в контейнер вкладок, [`DockPane.DockParent`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockParent.md) возвращает этот родительский контейнер вкладок (объект [`TabbedGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/TabbedGroup.md) или [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md)).
 
-Чтобы получить непосредственные дочерние элементы контейнера докинга, используйте его свойство `Items`.
+Чтобы получить непосредственные дочерние элементы контейнера докинга, используйте его свойство [`Items`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Items.md).
 
 Смотрите также: [Доступ к dock-панелям и контейнерам](#доступ-к-dock-панелям-и-контейнерам).
 
@@ -138,27 +138,27 @@ paneDebug.DockParent.DockWidth = new GridLength(2, GridUnitType.Star);
 
 ## Закрытие панелей
 
-Метод `DockManager.Close` позволяет временно скрыть панель или контейнер. Этот метод вызывается, когда пользователь закрывает панель щелчком по кнопке «Close» ('x').
+Метод [`DockManager.Close`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Close.md) позволяет временно скрыть панель или контейнер. Этот метод вызывается, когда пользователь закрывает панель щелчком по кнопке «Close» ('x').
 
 ![docking-dockpane-closebutton](../../images/docking-dockpane-closebutton.png)
 
-При вызове для контейнера (группы) метод `Close` скрывает все панели этого контейнера.
+При вызове для контейнера (группы) метод [`Close`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Close.md) скрывает все панели этого контейнера.
 
-Закрытые панели доступны из коллекции `DockManager.ClosedPanes`.
+Закрытые панели доступны из коллекции [`DockManager.ClosedPanes`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ClosedPanes.md).
 
-Используйте свойство `DockPane.AllowClose`, чтобы скрыть кнопку «Close» для панели и тем самым предотвратить закрытие панели этой кнопкой. Эта опция не предотвращает закрытие панели методом `DockManager.Close`.
+Используйте свойство [`DockPane.AllowClose`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/AllowClose.md), чтобы скрыть кнопку «Close» для панели и тем самым предотвратить закрытие панели этой кнопкой. Эта опция не предотвращает закрытие панели методом [`DockManager.Close`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Close.md).
 
-Когда панель закрывается, активируется команда `DockPane.CloseCommand`.
+Когда панель закрывается, активируется команда [`DockPane.CloseCommand`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/CloseCommand.md).
 
 ## Удаление панелей
 
-Вы можете использовать метод `DockManager.Remove`, чтобы удалить панель из `DockManager`. Этот метод не освобождает панель и её содержимое.
+Вы можете использовать метод [`DockManager.Remove`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Remove.md), чтобы удалить панель из [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md). Этот метод не освобождает панель и её содержимое.
 
-`DockManager` не хранит ссылки на удалённые панели.
+[`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) не хранит ссылки на удалённые панели.
 
 ## Объединение панелей в контейнер вкладок
 
-Вы можете объединять панели в контейнер вкладок (`TabGroup`). Для этого используйте следующую перегрузку метода `DockManager.Dock`:
+Вы можете объединять панели в контейнер вкладок (`TabGroup`). Для этого используйте следующую перегрузку метода [`DockManager.Dock`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Dock.md):
 
 ``` cs
 public bool Dock(DockItemBase item, DockItemBase target, DockType dockType)
@@ -166,15 +166,15 @@ public bool Dock(DockItemBase item, DockItemBase target, DockType dockType)
 
 Параметр `target` может быть панелью или существующим контейнером вкладок. 
 
-Параметр `dockType` задаёт, как закрепить панель. Установите этот параметр в `DockType.Fill`, чтобы объединить панели в интерфейсе с вкладками.
+Параметр `dockType` задаёт, как закрепить панель. Установите этот параметр в [`DockType.Fill`](../../API/Eremex.AvaloniaUI.Controls.ApplicationServices/DockType.md), чтобы объединить панели в интерфейсе с вкладками.
 
-Когда вы закрепляете объект `DockPane` в другом объекте `DockPane`, создаётся контейнер `TabGroup`. Контейнер `DocumentGroup` создаётся, когда вы закрепляете `DocumentPane` в другом объекте `DocumentPane`.
+Когда вы закрепляете объект [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md) в другом объекте [`DockPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane.md), создаётся контейнер `TabGroup`. Контейнер [`DocumentGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentGroup.md) создаётся, когда вы закрепляете [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md) в другом объекте [`DocumentPane`](../../API/Eremex.AvaloniaUI.Controls.Docking/DocumentPane.md).
 
-Вы также можете использовать метод `Add` контейнера вкладок, чтобы добавить новый элемент как вкладку.
+Вы также можете использовать метод [`Add`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Add.md) контейнера вкладок, чтобы добавить новый элемент как вкладку.
 
 ### Пример - создание контейнера вкладок
 
-Следующий код использует метод `DockManager.Dock`, чтобы создать контейнер вкладок из двух панелей.
+Следующий код использует метод [`DockManager.Dock`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Dock.md), чтобы создать контейнер вкладок из двух панелей.
 
 ![docking-code-behind-create-tab-container](../../images/docking-code-behind-create-tab-container.png)
 
@@ -192,7 +192,7 @@ dockManager1.Dock(paneOutput, paneDebug, DockType.Fill);
 
 ### Доступ к контейнеру вкладок
 
-Чтобы получить родительский контейнер вкладок для панели, используйте свойство панели `DockParent`.
+Чтобы получить родительский контейнер вкладок для панели, используйте свойство панели [`DockParent`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockParent.md).
 
 Смотрите также: [Доступ к dock-панелям и контейнерам](#доступ-к-dock-панелям-и-контейнерам).
 
@@ -205,19 +205,19 @@ dockManager1.Dock(paneOutput, paneDebug, DockType.Fill);
 
 ### Создание автоскрытой панели
 
-Используйте метод `DockManager.AutoHide`, чтобы включить функцию автоскрытия для панели в code-behind. Этот метод скрывает панель в её текущей или предыдущей позиции докинга.
+Используйте метод [`DockManager.AutoHide`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHide.md), чтобы включить функцию автоскрытия для панели в code-behind. Этот метод скрывает панель в её текущей или предыдущей позиции докинга.
 
 ``` cs
 dockManager1.AutoHide(paneOutput);
 ```
 
-Когда панель становится автоскрытой, создаётся контейнер `AutoHideGroup`, и панель перемещается в этот контейнер.
+Когда панель становится автоскрытой, создаётся контейнер [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md), и панель перемещается в этот контейнер.
 
-Вы можете вызвать метод `DockManager.AutoHide` для контейнера `TabGroup`. В этом случае все панели контейнера вкладок становятся автоскрытыми.
+Вы можете вызвать метод [`DockManager.AutoHide`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHide.md) для контейнера `TabGroup`. В этом случае все панели контейнера вкладок становятся автоскрытыми.
 
 #### Пример - автоскрытие контейнеров вкладок
 
-Следующий код создаёт два контейнера вкладок у правого края `DockManager`, а затем включает функцию автоскрытия для этих контейнеров вкладок. В результате создаются два контейнера `AutoHideGroup`, каждый из которых отображает панели из соответствующего контейнера вкладок.
+Следующий код создаёт два контейнера вкладок у правого края [`DockManager`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md), а затем включает функцию автоскрытия для этих контейнеров вкладок. В результате создаются два контейнера [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md), каждый из которых отображает панели из соответствующего контейнера вкладок.
 
 ![docking-code-behind-autohide-two-tab-containers](../../images/docking-code-behind-autohide-two-tab-containers.png)
 
@@ -245,7 +245,7 @@ dockManager1.AutoHide(paneTasks.DockParent);
 
 ### Восстановление панели из автоскрытого состояния
 
-Используйте перегрузку метода `DockManager.Dock(DockItemBase item)`, чтобы восстановить панель из автоскрытого состояния в её предыдущую позицию докинга.
+Используйте перегрузку метода [`DockManager.Dock(DockItemBase item)`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Dock.md), чтобы восстановить панель из автоскрытого состояния в её предыдущую позицию докинга.
 
 ``` cs
 dockManager1.Dock(paneOutput);
@@ -259,13 +259,13 @@ dockManager1.Dock(paneOutput, paneDebug, DockType.Right););
 
 ### Отображение и сворачивание автоскрытой панели
 
-Методы `DockManager.ExpandAutoHidePanel` и `DockManager.CollapseAutoHidePanel` позволяют отображать и сворачивать автоскрытую панель. Свойство `DockPane.IsActive` позволяет сфокусировать любую панель. Для автоскрытой панели это свойство разворачивает панель (если она свёрнута), а затем фокусирует её.
+Методы [`DockManager.ExpandAutoHidePanel`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ExpandAutoHidePanel.md) и [`DockManager.CollapseAutoHidePanel`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/CollapseAutoHidePanel.md) позволяют отображать и сворачивать автоскрытую панель. Свойство [`DockPane.IsActive`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/IsActive.md) позволяет сфокусировать любую панель. Для автоскрытой панели это свойство разворачивает панель (если она свёрнута), а затем фокусирует её.
 
 ### Доступ к автоскрытым панелям
 
-Вы можете использовать коллекцию `DockManager.AutoHideGroups`, чтобы обратиться ко всем существующим контейнерам `AutoHideGroup`. Свойство `AutoHideGroup.Items` позволяет получить все автоскрытые панели, отображаемые в конкретном контейнере.
+Вы можете использовать коллекцию [`DockManager.AutoHideGroups`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHideGroups.md), чтобы обратиться ко всем существующим контейнерам [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md). Свойство [`AutoHideGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Items.md) позволяет получить все автоскрытые панели, отображаемые в конкретном контейнере.
 
-Чтобы получить родительский контейнер для автоскрытой панели, см. свойство `DockPane.AutoHideGroup`.
+Чтобы получить родительский контейнер для автоскрытой панели, см. свойство [`DockPane.AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/AutoHideGroup.md).
 
 Смотрите также: [Доступ к dock-панелям и контейнерам](#доступ-к-dock-панелям-и-контейнерам).
 
@@ -274,7 +274,7 @@ dockManager1.Dock(paneOutput, paneDebug, DockType.Right););
 
 ### Создание плавающих панелей
 
-Используйте метод `DockManager.Float`, чтобы сделать панель плавающей в code-behind. Когда вы делаете панель плавающей, она перемещается в контейнер `FloatGroup` (плавающее окно). Свойство плавающей панели `DockPane.FloatGroup` позволяет обратиться к родительскому плавающему окну и задать его границы (см. `FloatGroup.FloatLocation`, `FloatGroup.FloatWidth` и `FloatGroup.FloatHeight`).
+Используйте метод [`DockManager.Float`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Float.md), чтобы сделать панель плавающей в code-behind. Когда вы делаете панель плавающей, она перемещается в контейнер [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md) (плавающее окно). Свойство плавающей панели [`DockPane.FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/FloatGroup.md) позволяет обратиться к родительскому плавающему окну и задать его границы (см. [`FloatGroup.FloatLocation`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatLocation.md), [`FloatGroup.FloatWidth`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatWidth.md) и [`FloatGroup.FloatHeight`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/FloatHeight.md)).
 
 
 ![docking-code-behind-create-floating-panel](../../images/docking-code-behind-create-floating-panel.png)
@@ -301,7 +301,7 @@ dockManager1.Dock(paneExplorer, paneTasks, DockType.Right);
 
 ### Доступ к плавающим панелям
 
-Коллекция `DockManager.FloatGroups` позволяет получить существующие плавающие окна (объекты `FloatGroup`). Используйте свойство `FloatGroup.Items`, чтобы получить список панелей, отображаемых в каждом плавающем окне.
+Коллекция [`DockManager.FloatGroups`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/FloatGroups.md) позволяет получить существующие плавающие окна (объекты [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md)). Используйте свойство [`FloatGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Items.md), чтобы получить список панелей, отображаемых в каждом плавающем окне.
 
 Смотрите также: [Доступ к dock-панелям и контейнерам](#доступ-к-dock-панелям-и-контейнерам).
 
@@ -311,14 +311,14 @@ dockManager1.Dock(paneExplorer, paneTasks, DockType.Right);
 
 - Метод расширения `GetItems` для DockManager — возвращает линейный список всех закреплённых, автоскрытых и закрытых панелей и групп.
 - Метод расширения `FindItem` для DockManager — возвращает элемент по имени.
-- `DockGroup.Items` — возвращает список непосредственных дочерних элементов контейнера.
-- `DockPane.DockParent` — возвращает непосредственного родителя элемента докинга.
-- `DockPane.FloatGroup` — возвращает плавающее окно, в котором размещена панель в плавающем состоянии. 
-- `DockPane.AutoHideGroup` — возвращает контейнер `AutoHideGroup`, в котором размещена панель в автоскрытом состоянии. 
-- `DockManager.Root` — возвращает корневую группу (контейнер), отображающую все закреплённые панели и контейнеры.
-- `DockManager.FloatGroups` — возвращает коллекцию существующих объектов `FloatGroup` (плавающих окон).
-- `DockManager.AutoHideGroups` — возвращает коллекцию существующих объектов `AutoHideGroup`.
-- `DockManager.ClosedPanes` — возвращает коллекцию закрытых панелей.
+- [`DockGroup.Items`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockGroup/Items.md) — возвращает список непосредственных дочерних элементов контейнера.
+- [`DockPane.DockParent`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/DockParent.md) — возвращает непосредственного родителя элемента докинга.
+- [`DockPane.FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/FloatGroup.md) — возвращает плавающее окно, в котором размещена панель в плавающем состоянии. 
+- [`DockPane.AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockItemBase/AutoHideGroup.md) — возвращает контейнер [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md), в котором размещена панель в автоскрытом состоянии. 
+- [`DockManager.Root`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Root.md) — возвращает корневую группу (контейнер), отображающую все закреплённые панели и контейнеры.
+- [`DockManager.FloatGroups`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/FloatGroups.md) — возвращает коллекцию существующих объектов [`FloatGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup.md) (плавающих окон).
+- [`DockManager.AutoHideGroups`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHideGroups.md) — возвращает коллекцию существующих объектов [`AutoHideGroup`](../../API/Eremex.AvaloniaUI.Controls.Docking/AutoHideGroup.md).
+- [`DockManager.ClosedPanes`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/ClosedPanes.md) — возвращает коллекцию закрытых панелей.
 
 
 
@@ -326,19 +326,19 @@ dockManager1.Dock(paneExplorer, paneTasks, DockType.Right);
 
 Если вам нужен гибкий контроль над операциями докинга, выполняемыми пользователями, вы можете обработать следующие события:
 
-- `DockManager.DockOperationStarting` — возникает, когда операция докинга вот-вот начнётся.
+- [`DockManager.DockOperationStarting`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockOperationStarting.md) — возникает, когда операция докинга вот-вот начнётся.
 
-- `DockManager.DockOperationCompleted` — возникает после завершения операции докинга.
+- [`DockManager.DockOperationCompleted`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockOperationCompleted.md) — возникает после завершения операции докинга.
 
-- `DockManager.DockItemActivated` — возникает после активации элемента докинга.
+- [`DockManager.DockItemActivated`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockItemActivated.md) — возникает после активации элемента докинга.
 
-- `DockManager.DockItemStartFloatDragging` — возникает, когда панель становится плавающей или начинается перемещение плавающего окна.
+- [`DockManager.DockItemStartFloatDragging`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockItemStartFloatDragging.md) — возникает, когда панель становится плавающей или начинается перемещение плавающего окна.
 
-- `DockManager.DockItemEndFloatDragging` — возникает после завершения перемещения плавающего окна.
+- [`DockManager.DockItemEndFloatDragging`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockItemEndFloatDragging.md) — возникает после завершения перемещения плавающего окна.
 
 ### Пример - предотвращение закрытия панели
 
-Следующий обработчик события `DockManager.DockOperationStarting` не позволяет закрыть панель «Output», когда пользователь щёлкает по кнопке «Close» ('x') панели.
+Следующий обработчик события [`DockManager.DockOperationStarting`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockOperationStarting.md) не позволяет закрыть панель «Output», когда пользователь щёлкает по кнопке «Close» ('x') панели.
 
 ``` cs
 private void DockManager1_DockOperationStarting(object? sender, DockOperationStartingEventArgs e)

@@ -1,6 +1,6 @@
 # DataGridCustomSummaryEventArgs constructor
 
-Initializes a new instance of the DataGridCustomSummaryEventArgs class with the specified summary item and row indexes.
+Initializes a new instance of the DataGridCustomSummaryEventArgs class with the specified summary item, row indexes, and group row index.
 
 **Namespace:** [`Eremex.AvaloniaUI.Controls.DataGrid`](../index.md)  
 **Assembly:** `Eremex.Avalonia.Controls.dll`  
@@ -9,7 +9,8 @@ Initializes a new instance of the DataGridCustomSummaryEventArgs class with the 
 ## Declaration
 
 ```csharp
-public DataGridCustomSummaryEventArgs(SummaryItem summaryItem, IEnumerable<int> rowIndexes)
+public DataGridCustomSummaryEventArgs(SummaryItem summaryItem, IEnumerable<int> rowIndexes, 
+    int? groupRowIndex = null)
 ```
 
 ## See Also

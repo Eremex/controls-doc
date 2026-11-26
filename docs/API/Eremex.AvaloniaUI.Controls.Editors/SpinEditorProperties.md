@@ -12,11 +12,16 @@ Provides settings for the spin editor.
 public class SpinEditorProperties : ButtonEditorProperties
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SpinEditorProperties](SpinEditorProperties/SpinEditorProperties.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowRoundOutOfRangeValue](SpinEditorProperties/AllowRoundOutOfRangeValue.md) { get; set; } | Gets or sets whether out-of-range values are rounded to the minimum or maximum. |
 | [Increment](SpinEditorProperties/Increment.md) { get; set; } | Gets or sets the amount by which the editor's value is incremented or decremented. |
 | [Maximum](SpinEditorProperties/Maximum.md) { get; set; } | Gets or sets the editor's maximum value. |

@@ -12,7 +12,7 @@ Serves as the base class for the axes of a heatmap. It uses a qualitative scale 
 public abstract class HeatmapAxis : LinearAxis, INamedAxis
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

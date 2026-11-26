@@ -10,7 +10,7 @@ seealso: []
 
 TreeList поддерживает сортировку данных по одному или нескольким колонкам. Контрол также позволяет пользователям сортировать данные щелчком мыши по заголовку колонки и с помощью контекстного меню заголовка колонки.
 
-## Действия конечного пользователя (TreeList)
+## Действия пользователя (TreeList)
 
 В контроле TreeList пользователь может щёлкнуть левой кнопкой мыши по заголовку колонки, чтобы отсортировать эту колонку. Последующий щелчок по тому же заголовку колонки меняет направление сортировки на противоположное. Чтобы очистить сортировку, удерживайте клавишу CTRL и щёлкните по заголовку колонки.
 
@@ -20,8 +20,8 @@ TreeList поддерживает сортировку данных по одн�
 
 Используйте следующие свойства, чтобы запретить пользователю сортировать данные:
 
-- Установите `TreeListControl.AllowSorting` в `false`, чтобы запретить пользователю сортировку по любой колонке.
-- Установите `ColumnBase.AllowSorting` в `false`, чтобы запретить пользователю сортировку по конкретной колонке.
+- Установите [`TreeListControl.AllowSorting`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowSorting.md) в `false`, чтобы запретить пользователю сортировку по любой колонке.
+- Установите [`ColumnBase.AllowSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowSorting.md) в `false`, чтобы запретить пользователю сортировку по конкретной колонке.
 
 Эти свойства не препятствуют сортировке данных в коде.
 
@@ -29,7 +29,7 @@ TreeList поддерживает сортировку данных по одн�
 
 ## Алфавитно-цифровая сортировка
 
-Для колонок, отображающих текст в TreeListControl и TreeViewControl, вы можете использовать унаследованное свойство `DataControlBase.TextSortMode`, чтобы выбрать между алфавитной и алфавитно-цифровой сортировкой.
+Для колонок, отображающих текст в TreeListControl и TreeViewControl, вы можете использовать унаследованное свойство [`DataControlBase.TextSortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/TextSortMode.md), чтобы выбрать между алфавитной и алфавитно-цифровой сортировкой.
 
 - Сортировка `Alphabetical` (по умолчанию): Этот режим сравнивает строки посимвольно. Если текст содержит числа, алгоритм сортировки обрабатывает их как отдельные символы, а не как числа. Например:
 
@@ -49,7 +49,7 @@ TreeList поддерживает сортировку данных по одн�
                         />
     ```
 
-Свойство `DataControlBase.TextSortMode` влияет на сортировку всех колонок, отображающих текстовые значения.
+Свойство [`DataControlBase.TextSortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/TextSortMode.md) влияет на сортировку всех колонок, отображающих текстовые значения.
 
 На следующем изображении показаны дополнительные примеры, сравнивающие алфавитный и алфавитно-цифровой режимы сортировки:
 
@@ -63,14 +63,14 @@ TreeList поддерживает сортировку данных по одн�
 
 Используйте следующие свойства, чтобы отсортировать данные по колонке:
 
-- Установите свойство `ColumnBase.SortDirection` в `Ascending` или `Descending`. Это свойство задаёт порядок сортировки данных колонки. 
+- Установите свойство [`ColumnBase.SortDirection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortDirection.md) в `Ascending` или `Descending`. Это свойство задаёт порядок сортировки данных колонки. 
 
-- Установите свойство `ColumnBase.SortIndex` в неотрицательное значение, чтобы отсортировать данные по колонке в порядке возрастания. Свойство `ColumnBase.SortIndex` задаёт позицию колонки среди отсортированных колонок. 
+- Установите свойство [`ColumnBase.SortIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortIndex.md) в неотрицательное значение, чтобы отсортировать данные по колонке в порядке возрастания. Свойство [`ColumnBase.SortIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortIndex.md) задаёт позицию колонки среди отсортированных колонок. 
 
 Выполните одно из следующих действий, чтобы очистить сортировку:
 
-- Установите свойство `SortDirection` колонки в `null`, чтобы очистить сортировку для этой колонки. 
-- Вызовите унаследованный метод `DataControlBase.ClearSorting` контрола, чтобы удалить сортировку, применённую ко всем колонкам.
+- Установите свойство [`SortDirection`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/SortDirection.md) колонки в `null`, чтобы очистить сортировку для этой колонки. 
+- Вызовите унаследованный метод [`DataControlBase.ClearSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ClearSorting.md) контрола, чтобы удалить сортировку, применённую ко всем колонкам.
 
 Следующий код очищает сортировку, а затем сортирует данные по двум колонкам:
 
@@ -83,7 +83,7 @@ treeListColumn1.SortDirection = ListSortDirection.Ascending;
 treeListColumn3.SortDirection = ListSortDirection.Descending;
 ```
 
-Вы можете обернуть свой код методами `BeginDataUpdate` и `EndDataUpdate`, чтобы предотвратить избыточные обновления при изменении нескольких параметров контрола (включая параметры сортировки).
+Вы можете обернуть свой код методами [`BeginDataUpdate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/BeginDataUpdate.md) и [`EndDataUpdate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/EndDataUpdate.md), чтобы предотвратить избыточные обновления при изменении нескольких параметров контрола (включая параметры сортировки).
 
 ``` csharp
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -99,7 +99,7 @@ treeList.EndDataUpdate();
 
 ## Сортировка в коде (TreeView)
 
-Чтобы отсортировать данные в TreeView, используйте свойство `SortDirection` вашего объекта `TreeViewControl`. Установите это свойство в `Ascending` или `Descending`, чтобы отсортировать данные в нужном порядке. 
+Чтобы отсортировать данные в TreeView, используйте свойство `SortDirection` вашего объекта [`TreeViewControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md). Установите это свойство в `Ascending` или `Descending`, чтобы отсортировать данные в нужном порядке. 
 
 ``` csharp
 treeViewControl1.SortDirection = ListSortDirection.Ascending;
@@ -108,7 +108,7 @@ treeViewControl1.SortDirection = ListSortDirection.Ascending;
 Выполните одно из следующих действий, чтобы очистить сортировку:
 
 - Установите свойство `SortDirection` в `null`. 
-- Вызовите унаследованный метод `DataControlBase.ClearSorting` контрола.
+- Вызовите унаследованный метод [`DataControlBase.ClearSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ClearSorting.md) контрола.
 
 
 ## Сортируемые колонки и режим сортировки (TreeList и TreeView)
@@ -119,32 +119,32 @@ treeViewControl1.SortDirection = ListSortDirection.Ascending;
 - Сортировка по отображаемому тексту — Колонки со встроенным ComboBoxEditor.
 - Без сортировки — Колонки, привязанные к объектам, не реализующим интерфейс `IComparable`. Например, типы данных изображений не реализуют этот интерфейс, поэтому для соответствующих колонок по умолчанию сортировка недоступна. См. раздел [Пользовательская сортировка](#пользовательская-сортировка) ниже, чтобы узнать, как принудительно отсортировать такие колонки.
 
-Свойство `ColumnBase.SortMode` (в TreeList) и свойство `TreeViewControl.SortMode` (в TreeView) позволяют изменить режим сортировки по умолчанию. Доступны следующие варианты:
+Свойство [`ColumnBase.SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortMode.md) (в TreeList) и свойство [`TreeViewControl.SortMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/SortMode.md) (в TreeView) позволяют изменить режим сортировки по умолчанию. Доступны следующие варианты:
 
-- `SortMode.Value` — Сортировка по значениям редактирования ячеек.
-- `SortMode.DisplayText` — Сортировка по отображаемому тексту ячеек.
-- `SortMode.Custom` — Пользовательская сортировка. Установите свойство `SortMode` в `Custom`, а затем обработайте событие `TreeListControl.CustomColumnSort`/`TreeViewControl.CustomSort`, чтобы реализовать пользовательскую логику сортировки. См. [Пользовательская сортировка](#пользовательская-сортировка).
+- [`SortMode.Value`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) — Сортировка по значениям редактирования ячеек.
+- [`SortMode.DisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) — Сортировка по отображаемому тексту ячеек.
+- [`SortMode.Custom`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) — Пользовательская сортировка. Установите свойство [`SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) в `Custom`, а затем обработайте событие [`TreeListControl.CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnSort.md)/[`TreeViewControl.CustomSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CustomSort.md), чтобы реализовать пользовательскую логику сортировки. См. [Пользовательская сортировка](#пользовательская-сортировка).
 
 ### Пользовательская сортировка
 
-Событие `CustomColumnSort`/`CustomSort` позволяет реализовать пользовательскую логику сортировки. Установите свойство `ColumnBase.SortMode` (в TreeList) и свойство `TreeViewControl.SortMode` (в TreeView) в `Custom`, чтобы включить это событие.
+Событие [`CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnSort.md)/[`CustomSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CustomSort.md) позволяет реализовать пользовательскую логику сортировки. Установите свойство [`ColumnBase.SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/SortMode.md) (в TreeList) и свойство [`TreeViewControl.SortMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/SortMode.md) (в TreeView) в `Custom`, чтобы включить это событие.
 
 Если тип данных, привязанный к колонке, не реализует интерфейс `IComparable` (например, тип данных изображения), контрол TreeList/TreeView по умолчанию запрещает сортировку для этой колонки. Однако вы можете включить сортировку для этой колонки следующим образом:
 
-- TreeList: Установите свойство колонки `AllowSorting` в `true` (значение по умолчанию для этого свойства — `null`).
-- TreeList и TreeView: Установите свойство `SortMode` в `Custom`.
-- TreeList и TreeView: Обработайте событие `CustomColumnSort`/`CustomSort`, чтобы реализовать пользовательскую сортировку.
+- TreeList: Установите свойство колонки [`AllowSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowSorting.md) в `true` (значение по умолчанию для этого свойства — `null`).
+- TreeList и TreeView: Установите свойство [`SortMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SortMode.md) в `Custom`.
+- TreeList и TreeView: Обработайте событие [`CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnSort.md)/[`CustomSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CustomSort.md), чтобы реализовать пользовательскую сортировку.
 
-При обработке события `CustomColumnSort`/`CustomSort` вам следует сравнить два узла, указанных в параметрах события. Присвойте результат сравнения параметру события `Result` следующим образом:
+При обработке события [`CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnSort.md)/[`CustomSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CustomSort.md) вам следует сравнить два узла, указанных в параметрах события. Присвойте результат сравнения параметру события [`Result`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomSortEventArgs/Result.md) следующим образом:
 
-- Установите `Result` в `-1`, если первый узел должен отображаться выше второго узла при сортировке данных по возрастанию. 
+- Установите [`Result`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomSortEventArgs/Result.md) в `-1`, если первый узел должен отображаться выше второго узла при сортировке данных по возрастанию. 
 
-- Установите `Result` в `1`, если первый узел должен отображаться ниже второго узла при сортировке данных по возрастанию. 
+- Установите [`Result`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomSortEventArgs/Result.md) в `1`, если первый узел должен отображаться ниже второго узла при сортировке данных по возрастанию. 
 
- - Установите `Result` в `0`, если оба узла равны. 
+ - Установите [`Result`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomSortEventArgs/Result.md) в `0`, если оба узла равны. 
  
 
-Следующий пример обрабатывает событие `TreeListControl.CustomColumnSort`, чтобы отсортировать данные в колонке "_FileName_" пользовательским способом. Колонка "_FileName_" хранит имена файлов в стандартном формате "_filename.ext_". Пользовательская процедура сортировки сортирует имена файлов по их расширениям.
+Этот пример обрабатывает событие [`TreeListControl.CustomColumnSort`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnSort.md), чтобы отсортировать данные в колонке "_FileName_" пользовательским способом. Колонка "_FileName_" хранит имена файлов в стандартном формате "_filename.ext_". Пользовательская процедура сортировки сортирует имена файлов по их расширениям.
 
 ``` csharp
 <mxtl:TreeListControl Name="treeList" CustomColumnSort="TreeList_CustomColumnSort">
@@ -180,12 +180,12 @@ string extractFileExtension(string fileName)
 
 Обработайте следующие события, чтобы выполнить пользовательские действия при сортировке данных:
 
-- `DataControlBase.StartSorting` — Возникает, когда данные вот-вот будут отсортированы.
-- `DataControlBase.EndSorting` — Возникает по завершении сортировки данных.
+- [`DataControlBase.StartSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/StartSorting.md) — Возникает, когда данные вот-вот будут отсортированы.
+- [`DataControlBase.EndSorting`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/EndSorting.md) — Возникает по завершении сортировки данных.
 
 ## Дополнительный API
 
-- `TreeListControlBase.AutoScrollOnSorting` — Задаёт, прокручивает ли контрол автоматически видовое окно, чтобы сделать сфокусированный узел видимым, когда данные отсортированы.
+- [`TreeListControlBase.AutoScrollOnSorting`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/AutoScrollOnSorting.md) — Задаёт, прокручивает ли контрол автоматически видовое окно, чтобы сделать сфокусированный узел видимым, когда данные отсортированы.
 
 <br>
 <br>

@@ -12,11 +12,16 @@ Provides data for the RequestNavigation event.
 public class HyperlinkEditorRequestNavigationEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [HyperlinkEditorRequestNavigationEventArgs](HyperlinkEditorRequestNavigationEventArgs/HyperlinkEditorRequestNavigationEventArgs.md)(…) | Initializes a new instance of the HyperlinkEditorRequestNavigationEventArgs class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [NavigationPath](HyperlinkEditorRequestNavigationEventArgs/NavigationPath.md) { get; set; } | Gets or sets the URL the editor navigates to. |
 
 ## See Also

@@ -12,7 +12,7 @@ Represents an axis-aligned bounding box that encloses the vertices of a mesh or 
 public struct BoundingBox
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

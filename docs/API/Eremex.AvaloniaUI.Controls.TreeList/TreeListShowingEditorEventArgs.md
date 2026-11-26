@@ -12,11 +12,16 @@ Provides data for the ShowingEditor event.
 public class TreeListShowingEditorEventArgs : TreeViewShowingEditorEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListShowingEditorEventArgs](TreeListShowingEditorEventArgs/TreeListShowingEditorEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Column](TreeListShowingEditorEventArgs/Column.md) { get; } | Gets the column whose cell is being edited. |
 
 ## See Also

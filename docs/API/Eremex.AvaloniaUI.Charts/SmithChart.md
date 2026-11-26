@@ -12,14 +12,24 @@ Displays series on a Smith chart, the circular impedance diagram widely used in 
 public class SmithChart : ChartControl
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SmithChart](SmithChart/SmithChart.md)() | Initializes a new instance of the [`SmithChart`](./SmithChart.md) class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Series](SmithChart/Series.md) { get; } | Gets the series displayed by the chart. |
 | [SeriesSource](SmithChart/SeriesSource.md) { get; set; } | Gets or sets the collection of series definitions used to generate the items of [`Series`](./SmithChart/Series.md). Each source item is turned into a series by [`SeriesTemplate`](./SmithChart/SeriesTemplate.md). |
 | [SeriesTemplate](SmithChart/SeriesTemplate.md) { get; set; } | Gets or sets the template used to create a series for each item of [`SeriesSource`](./SmithChart/SeriesSource.md). |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [DiagramPointToScreenPoint](SmithChart/DiagramPointToScreenPoint.md)(…) | Converts an argument and a value to the corresponding position in control coordinates. |
 | [ScreenPointToDiagramPoint](SmithChart/ScreenPointToDiagramPoint.md)(…) | Converts a position in control coordinates to the corresponding argument and value. |
 

@@ -4,7 +4,7 @@ order: 3000
 seealso: []
 ---
 
-# Eremex Avalonia UI Controls 入门指南
+# Eremex Avalonia UI Controls 入门指南 {#get-started-with-eremex-avalonia-ui-controls}
 
 本教程演示了如何在 Visual Studio 2022 中使用 Eremex Avalonia 控件创建一个新的 Avalonia UI 应用程序，并展示了渲染控件所需的 Eremex 绘制主题注册代码。
 
@@ -13,7 +13,7 @@ seealso: []
 ![gs-run-app](../images/gs-run-app.png)
 
 
-## 1. 创建新的 Avalonia UI 项目
+## 1. 创建新的 Avalonia UI 项目 {#1-create-a-new-avalonia-ui-project}
 
 本教程使用 **Eremex Avalonia App 模板** 创建新项目。
 该模板会创建一个新项目，将 Eremex Controls 库添加到项目中，并注册渲染控件所需的 Eremex 绘制主题。
@@ -21,7 +21,7 @@ seealso: []
 您也可以使用标准 Avalonia UI 模板来创建项目。有关更多信息，请参见以下主题：[使用标准 Avalonia UI 模板结合 Eremex Controls 创建新项目](create-new-avalonia-project-using-avalonia-templates.md)
 
 
-### 1.1 安装 Eremex Avalonia 模板
+### 1.1 安装 Eremex Avalonia 模板 {#11-install-the-eremex-avalonia-templates}
 
 运行以下命令：
 
@@ -32,7 +32,7 @@ dotnet new install Eremex.Avalonia.Templates
 
 安装的模板包括：
 
-#### eremex.avalonia.app
+#### eremex.avalonia.app {#eremexavaloniaapp}
 
 此应用程序模板会创建一个引用 Eremex Controls 库的空 Avalonia UI 项目。该模板执行以下操作：
 
@@ -40,23 +40,23 @@ dotnet new install Eremex.Avalonia.Templates
 
     - **Eremex.Avalonia.Controls** —— 包含 Eremex 控件和库。
     - **Eremex.Avalonia.Themes.DeltaDesign** —— 包含用于 Eremex 控件的 `DeltaDesign` 绘制主题。
-- 使用 `MxWindow` 类作为项目的主窗口。`MxWindow` 提供对 Eremex 绘制主题的支持。
+- 使用 [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) 类作为项目的主窗口。[`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) 提供对 Eremex 绘制主题的支持。
 - 注册 Eremex `DeltaDesign` 绘制主题。
 
     !!! note
         如果您的应用程序中未注册任何 Eremex 绘制主题，则 Eremex 控件将显示为空白。
 
 
-#### eremex.avalonia.mvvm
+#### eremex.avalonia.mvvm {#eremexavaloniamvvm}
 
 此应用程序模板会创建一个支持 MVVM 的、引用 Eremex Controls 库的 Avalonia UI 项目。该模板将代码分离为 View（_MainWindow_）和 ViewModel（_MainWindowViewModel_）。
 该模板的其余功能与 `eremex.avalonia.app` 模板相同。
 
-#### eremex.avalonia.window
+#### eremex.avalonia.window {#eremexavaloniawindow}
 
-一个用于创建基于 `MxWindow` 的新 Avalonia 窗口的模板。该模板仅创建定义窗口所需的两个文件：_Window.axaml_ 和 _Window.axaml.cs_。
+一个用于创建基于 [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) 的新 Avalonia 窗口的模板。该模板仅创建定义窗口所需的两个文件：_Window.axaml_ 和 _Window.axaml.cs_。
 
-### 1.2 创建新项目
+### 1.2 创建新项目 {#12-create-a-new-project}
 
 切换到需要创建项目的文件夹。使用 <code>dotnet new eremex.avalonia.mvvm</code> 命令创建一个支持 MVVM 的新项目。若要为项目指定名称，请使用 <code>-n _name_</code> 命令选项。
 
@@ -70,7 +70,7 @@ dotnet new eremex.avalonia.mvvm -n AvaloniaApplication1
 在 Visual Studio 中打开创建的项目。
 
 
-### 1.3. 选择浅色或深色绘制主题变体
+### 1.3. 选择浅色或深色绘制主题变体 {#13-choose-the-light-or-dark-paint-theme-variant}
 
 Eremex 应用程序模板会自动将 `DeltaDesign` 绘制主题的注册代码添加到创建的项目中。打开 _App.axaml_ 文件，在 `Application` 对象定义中查找该代码。
 
@@ -98,9 +98,9 @@ Eremex 应用程序模板会自动将 `DeltaDesign` 绘制主题的注册代码�
 
 <br>
 
-在下面的各节中，我们将向 View 添加一个 Eremex `DataGridControl` 控件，并将其绑定到 View Model 中定义的 _Employees_ 集合。
+在下面的各节中，我们将向 View 添加一个 Eremex [`DataGridControl`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md) 控件，并将其绑定到 View Model 中定义的 _Employees_ 集合。
 
-## 2. 为 Data Grid 定义数据
+## 2. 为 Data Grid 定义数据 {#2-define-data-for-a-data-grid}
 
 打开主 View Model（_MainWindowViewModel.cs_），定义将要绑定到 Data Grid 的 _Employees_ 集合。
 
@@ -145,9 +145,9 @@ public partial class EmployeeInfo : ObservableObject
 }
 ```
 
-## 3. 在 XAML 中添加 Eremex Avalonia 控件命名空间
+## 3. 在 XAML 中添加 Eremex Avalonia 控件命名空间 {#3-add-eremex-avalonia-control-namespaces-in-xaml}
 
-在 XAML 中定义 Eremex Avalonia 控件之前，需要先声明包含这些控件的命名空间。若要在主窗口中使用 `DataGridControl`，请将以下命名空间添加到 _MainWindow.axaml_ 文件中：
+在 XAML 中定义 Eremex Avalonia 控件之前，需要先声明包含这些控件的命名空间。若要在主窗口中使用 [`DataGridControl`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md)，请将以下命名空间添加到 _MainWindow.axaml_ 文件中：
 
 ``` xml
 <mx:MxWindow 
@@ -173,9 +173,9 @@ Graphics3DControl | `xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/con
 
 
 
-## 4. 在 XAML 中添加 Data Grid
+## 4. 在 XAML 中添加 Data Grid {#4-add-a-data-grid-in-xaml}
 
-在 _MainWindow.axaml_ 文件中，定义一个 `DataGridControl` 并将其绑定到 _Employees_ 集合。
+在 _MainWindow.axaml_ 文件中，定义一个 [`DataGridControl`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl.md) 并将其绑定到 _Employees_ 集合。
 
 ``` xml
 <mx:MxWindow xmlns="https://github.com/avaloniaui"
@@ -204,11 +204,11 @@ Graphics3DControl | `xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/con
 </mx:MxWindow>
 ```
 
-启用 `DataGridControl.AutoGenerateColumns` 选项后，将根据绑定的项源的公共属性自动生成列。
+启用 [`DataGridControl.AutoGenerateColumns`](../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AutoGenerateColumns.md) 选项后，将根据绑定的项源的公共属性自动生成列。
 
-`DataGridControl.SearchPanelDisplayMode` 属性用于指定搜索框的可见性，该搜索框允许用户根据单元格中包含的值快速定位网格中的行。
+[`DataGridControl.SearchPanelDisplayMode`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchPanelDisplayMode.md) 属性用于指定搜索框的可见性，该搜索框允许用户根据单元格中包含的值快速定位网格中的行。
 
-## 5. 运行应用程序
+## 5. 运行应用程序 {#5-run-the-application}
 
 现在您可以运行应用程序了。应用程序启动后会出现一个包含功能完整的 Data Grid 控件的窗口。该网格默认即可对数据进行排序和分组。若要定位单元格的值，请在搜索面板中输入文本。
 

@@ -12,11 +12,16 @@ Provides data for the SelectionChanged event.
 public class DataGridSelectionChangedEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridSelectionChangedEventArgs](DataGridSelectionChangedEventArgs/DataGridSelectionChangedEventArgs.md)(…) | Initializes a new instance of the DataGridSelectionChangedEventArgs class with the specified row index and change type. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ChangeType](DataGridSelectionChangedEventArgs/ChangeType.md) { get; } | Gets the type of the selection change. |
 | [RowIndex](DataGridSelectionChangedEventArgs/RowIndex.md) { get; } | Gets the index of the row whose selection state changed. |
 

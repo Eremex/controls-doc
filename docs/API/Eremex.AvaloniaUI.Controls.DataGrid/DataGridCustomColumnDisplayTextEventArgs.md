@@ -12,11 +12,16 @@ Provides data for the CustomColumnDisplayText event.
 public class DataGridCustomColumnDisplayTextEventArgs : DataGridCustomColumnDisplayTextEventArgsBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridCustomColumnDisplayTextEventArgs](DataGridCustomColumnDisplayTextEventArgs/DataGridCustomColumnDisplayTextEventArgs.md)(…) | Initializes a new instance of the DataGridCustomColumnDisplayTextEventArgs class with the specified source item index, column, value, and display text. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [SourceItemIndex](DataGridCustomColumnDisplayTextEventArgs/SourceItemIndex.md) { get; } | Gets the index of the data source item that contains the cell. |
 
 ## See Also

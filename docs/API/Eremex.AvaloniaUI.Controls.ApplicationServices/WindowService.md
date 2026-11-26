@@ -12,12 +12,17 @@ The default IWindowService implementation. It hosts the view model in a [`Dialog
 public class WindowService : IWindowService
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [WindowService](WindowService/WindowService.md)() | Legacy bridge for code that creates the service directly, without a container. Requires an initialized [`Current`](./ApplicationServicesContext/Current.md). |
 | [WindowService](WindowService/WindowService.md)(…) | Primary constructor. Dependencies are passed explicitly, so the service can be created by any DI container and substituted in tests. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Show&lt;T&gt;](WindowService/Show.md)(…) |  (2 methods) |
 
 ## See Also

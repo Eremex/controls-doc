@@ -12,7 +12,7 @@ Displays the data of a Cartesian series as a polyline that connects the points i
 public class CartesianScatterLineSeriesView : CartesianLineSeriesViewBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

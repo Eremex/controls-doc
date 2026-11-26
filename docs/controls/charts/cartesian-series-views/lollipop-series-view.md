@@ -26,9 +26,11 @@ xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
     <mxc:CartesianSeries DataAdapter="{Binding DataAdapter}">
         <mxc:CartesianLollipopSeriesView Color="YellowGreen"
                                             LineColor="Green"
-                                            Thickness="2"
                                             MarkerSize="8"
-                                            Orientation="Vertical">
+                                            LineOrientation="Vertical">
+            <mxc:CartesianLollipopSeriesView.LineStyle>
+                <mxc:LineStyle Thickness="2" />
+            </mxc:CartesianLollipopSeriesView.LineStyle>
         </mxc:CartesianLollipopSeriesView>
     </mxc:CartesianSeries>
 </mxc:CartesianChart>
@@ -47,8 +49,8 @@ series.View = new CartesianLollipopSeriesView()
     LineColor = Avalonia.Media.Colors.Green,
     Color = Avalonia.Media.Colors.YellowGreen,
     MarkerSize = 8,
-    Thickness = 2,
-    Orientation = CartesianLollipopOrientation.Horizontal
+    LineStyle = new LineStyle() { Thickness = 2 },
+    LineOrientation = CartesianLollipopOrientation.Horizontal
 };
 ```
 
@@ -138,10 +140,12 @@ Complete code:
                                  >
                 <mxc:CartesianLollipopSeriesView Color="Orange"
                                                  LineColor="Dimgray"
-                                                 LineThickness="3"
                                                  MarkerSize="10"
                                                  MarkerImageCss="circle {{fill:{0};stroke:darkred;}}"
                                                  >
+                    <mxc:CartesianLollipopSeriesView.LineStyle>
+                        <mxc:LineStyle Thickness="3" />
+                    </mxc:CartesianLollipopSeriesView.LineStyle>
                     <SvgImage Source="avares://ChartLollipopSeriesView/Assets/circle.svg" />
                 </mxc:CartesianLollipopSeriesView>
             </mxc:CartesianSeries>

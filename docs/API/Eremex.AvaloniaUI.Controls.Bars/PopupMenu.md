@@ -12,11 +12,16 @@ Displays toolbar items in a popup menu.
 public class PopupMenu : TemplatedControl, ICustomHitTest, INavigatable, IPopup, IToolbarItemsHolder
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PopupMenu](PopupMenu/PopupMenu.md)() | Initializes a new instance of the PopupMenu class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CanOpenPopup](PopupMenu/CanOpenPopup.md) { get; } | Gets whether the popup can be opened. |
 | [ContentRightIndent](PopupMenu/ContentRightIndent.md) { get; set; } | Gets or sets the space reserved to the right of menu item content. |
 | [Header](PopupMenu/Header.md) { get; set; } | Gets or sets the item's header content. |
@@ -37,14 +42,24 @@ public class PopupMenu : TemplatedControl, ICustomHitTest, INavigatable, IPopup,
 | [ShadowOffset](PopupMenu/ShadowOffset.md) { get; set; } | Gets or sets the offset of the popup shadow. |
 | [ShowHeader](PopupMenu/ShowHeader.md) { get; set; } | Gets or sets whether the popup menu displays its header. |
 | [ShowIconStrip](PopupMenu/ShowIconStrip.md) { get; set; } | Gets or sets whether the popup menu displays a strip for item glyphs. |
-| event [Closed](PopupMenu/Closed.md) | Occurs after the popup closes. |
-| event [Closing](PopupMenu/Closing.md) | Occurs before the popup closes. Cancel the event to prevent closing. |
-| event [Opened](PopupMenu/Opened.md) | Occurs after the popup opens. |
-| event [Opening](PopupMenu/Opening.md) | Occurs before the popup opens. Cancel the event to prevent opening. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [ClosePopup](PopupMenu/ClosePopup.md)() | Closes the popup. |
 | [HitTest](PopupMenu/HitTest.md)(…) | Returns whether the specified point lies within the menu. |
 | [OpenPopup](PopupMenu/OpenPopup.md)() | Opens the popup using its current placement settings. |
 | [OpenPopup](PopupMenu/OpenPopup.md)(…) | Opens the popup at the specified position relative to the placement target and returns whether it opened. (4 methods) |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [Closed](PopupMenu/Closed.md) | Occurs after the popup closes. |
+| event [Closing](PopupMenu/Closing.md) | Occurs before the popup closes. Cancel the event to prevent closing. |
+| event [Opened](PopupMenu/Opened.md) | Occurs after the popup opens. |
+| event [Opening](PopupMenu/Opening.md) | Occurs before the popup opens. Cancel the event to prevent opening. |
 
 ## See Also
 

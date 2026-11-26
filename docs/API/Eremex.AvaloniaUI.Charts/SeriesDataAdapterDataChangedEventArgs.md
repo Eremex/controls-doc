@@ -12,11 +12,16 @@ Provides data for the data changed event of a series data adapter.
 public class SeriesDataAdapterDataChangedEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SeriesDataAdapterDataChangedEventArgs](SeriesDataAdapterDataChangedEventArgs/SeriesDataAdapterDataChangedEventArgs.md)(…) | Initializes a new instance of the SeriesDataAdapterDataChangedEventArgs class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ChangedItemsIndices](SeriesDataAdapterDataChangedEventArgs/ChangedItemsIndices.md) { get; } | Gets the indexes of the items affected by the change. The list is empty when the entire data set is reset. |
 | [UpdateType](SeriesDataAdapterDataChangedEventArgs/UpdateType.md) { get; } | Gets the kind of change made to the adapter's data. |
 

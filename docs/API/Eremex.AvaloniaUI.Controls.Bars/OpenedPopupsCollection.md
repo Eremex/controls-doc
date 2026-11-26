@@ -12,11 +12,16 @@ Stores the popups currently tracked by a popup manager.
 public class OpenedPopupsCollection : List<IPopup>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [OpenedPopupsCollection](OpenedPopupsCollection/OpenedPopupsCollection.md)(…) | Initializes a new instance of the OpenedPopupsCollection class for the specified popup manager. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Manager](OpenedPopupsCollection/Manager.md) { get; } | Gets the popup manager associated with this collection. |
 
 ## See Also

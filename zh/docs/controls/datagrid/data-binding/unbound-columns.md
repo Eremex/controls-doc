@@ -1,36 +1,36 @@
 ---
-title: 未绑定的列
+title: 未绑定列
 order: 1000
 seealso: []
 ---
 
-# 未绑定的列
+# 未绑定列 {#unbound-columns}
 
-您可以创建未绑定列以在 DataGrid 控件中显示自定义信息。未绑定的 column 未绑定到 underlying 数据源中的字段。您 should 使用 `DataGridControl.CustomUnboundColumnData` 事件手动填充此 column 数据。
+您可以创建未绑定列，在 DataGrid 控件中显示自定义信息。未绑定列不绑定到基础数据源中的字段。您需要使用 [`DataGridControl.CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) 事件手动为此列填充数据。
 
-要创建未绑定的 column，请执行以下操作：
+要创建未绑定列，请执行以下操作：
 
-- 创建一个 `GridColumn` 对象。
-- 将 column 的 `UnboundDataType` 属性设置为该 column 想要显示的数据类型。 
-- 将 column 的 `FieldName` 属性设置为唯一的字段名称。
-- 使用 `Add` 或 `Insert` 方法将 column 添加到 `DataGridControl.Columns` 集合。您还可以将 position 和 column 与 `GridColumn.VisibleIndex` 属性结合起来。
+- 创建一个 [`GridColumn`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/GridColumn.md) 对象。
+- 将列的 [`UnboundDataType`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/UnboundDataType.md) 属性设置为此列要显示的数据类型。
+- 将列的 [`FieldName`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md) 属性设置为唯一的字段名。
+- 使用 `Add` 或 `Insert` 方法将列添加到 [`DataGridControl.Columns`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/Columns.md) 集合中。还可以使用 [`GridColumn.VisibleIndex`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/VisibleIndex.md) 属性指定列的位置。
 
-请注意，control 不存储或缓存未绑定列的数据。它调用 `CustomUnboundColumnData` 事件，您需要处理该事件来指定未绑定列的数据。
+请注意，控件不会存储或缓存未绑定列的数据。控件会调用 [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) 事件，您需要处理该事件来为未绑定列指定数据。
 
-`CustomUnboundColumnData` 事件在以下情况下触发：
+[`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) 事件在以下情况下触发：
 
-- 当即将显示未绑定 column 中的单元格值时（例如，在 control 初始加载期间或滚动时）。在这种情况下，`IsGettingData` 事件参数返回 `true`。您需要为 `Value` 事件参数分配一个值。
+- 未绑定列中的单元格值即将显示时（例如，在控件初次加载期间或滚动时）。在这种情况下，[`IsGettingData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridUnboundColumnDataEventArgs/IsGettingData.md) 事件参数返回 `true`。您需要为 [`Value`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridUnboundColumnDataEventArgs/Value.md) 事件参数赋值。
 
-- 当用户更改未绑定的 column 单元格中的数据时。在这种情况下，`IsGettingData` 事件参数返回 `false`。读取 `Value` 事件参数并将其手动缓存在您的存储中以供进一步使用。
+- 用户更改未绑定列单元格中的数据时。在这种情况下，[`IsGettingData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridUnboundColumnDataEventArgs/IsGettingData.md) 事件参数返回 `false`。读取 [`Value`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridUnboundColumnDataEventArgs/Value.md) 事件参数，并将其手动缓存到您的存储中以供后续使用。
 
-您可以通过以下方法强制触发`CustomUnboundColumnData`事件：
+可以使用以下方法强制触发 [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) 事件：
 
-- `RefreshRow` - 更新指定行。
-- `RefreshData` - 强制网格重新加载所有数据。
+- [`RefreshRow`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RefreshRow.md) - 更新指定的行。
+- [`RefreshData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RefreshData.md) - 强制网格重新加载所有数据。
 
-## 示例 1
+## 示例 1 {#example-1}
 
-以下示例创建未绑定的只读 _Total_ column，并处理 _CustomUnboundColumnData_ 事件以根据其他字段的值根据表达式 `Total=UnitPrice*Quantity` 计算 column 值。事件处理程序检查 `IsGettingData` 事件参数，并在该参数为 `true` 时检索值。
+以下示例创建一个只读的未绑定列 _Total_，并处理 _CustomUnboundColumnData_ 事件，按照表达式 `Total=UnitPrice*Quantity` 根据其他字段的值计算列值。事件处理程序会检查 [`IsGettingData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridUnboundColumnDataEventArgs/IsGettingData.md) 事件参数，并在该参数为 `true` 时提供值。
 
 ``` xml
 xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
@@ -80,9 +80,9 @@ public partial class PurchaseRecord : ObservableObject
 
 <!--TODO - There is no ListSourceRowIndex in the CustomUnboundColumnData
 
-## 示例2
+## Example 2
 
-以下示例显示如何缓存用户在未绑定列中输入的数据。该示例创建_Data_ column 并处理`CustomUnboundColumnData` 事件，将supply 数据发送到DataGrid 并保存用户键入的数据。
+The following example shows how you can cache data entered by users in unbound columns. The example creates a _Data_ column and handles the [`CustomUnboundColumnData`](../../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomUnboundColumnData.md) event to supply data to the DataGrid and save data typed by users.
 
 ``` cs
 dataGrid1.Columns.Add(new GridColumn() { FieldName = "UserData", UnboundDataType = typeof(string), Header = "Data" });
@@ -109,6 +109,7 @@ private void dataGrid1_CustomUnboundColumnData(object? sender, DataGridUnboundCo
 ```
 
 -->
+
 
 <br>
 <br>

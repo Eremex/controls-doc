@@ -12,11 +12,16 @@ Groups toolbar check items and controls how many items can be checked.
 public class ToolbarCheckItemGroup : ToolbarItemGroup
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ToolbarCheckItemGroup](ToolbarCheckItemGroup/ToolbarCheckItemGroup.md)() | Initializes a new instance of the ToolbarCheckItemGroup class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CheckType](ToolbarCheckItemGroup/CheckType.md) { get; set; } | Gets or sets the selection rule applied to check items in the group. |
 
 ## See Also

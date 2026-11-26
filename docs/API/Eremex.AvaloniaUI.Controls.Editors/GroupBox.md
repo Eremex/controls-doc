@@ -12,11 +12,16 @@ Represents a control that groups content under a header.
 public class GroupBox : HeaderedContentControl
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [GroupBox](GroupBox/GroupBox.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [HeaderHorizontalAlignment](GroupBox/HeaderHorizontalAlignment.md) { get; set; } | Gets or sets the horizontal alignment of the header. |
 | [HeaderHorizontalContentAlignment](GroupBox/HeaderHorizontalContentAlignment.md) { get; set; } | Gets or sets the horizontal alignment of the header's content. |
 | [HeaderVerticalAlignment](GroupBox/HeaderVerticalAlignment.md) { get; set; } | Gets or sets the vertical alignment of the header. |

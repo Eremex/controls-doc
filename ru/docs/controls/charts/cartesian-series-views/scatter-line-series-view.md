@@ -6,7 +6,7 @@ seealso: []
 
 # Scatter Line Series View
 
-Scatter Line Series View (`CartesianScatterLineSeriesView`) соединяет точки линиями. В отличие от [Line Series View](line-series-vew.md), точки для Scatter Line Series View не обязательно должны быть отсортированы по значениям X. Вместо этого точки соединяются в том порядке, в котором они появляются в серии данных.
+Scatter Line Series View ([`CartesianScatterLineSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianScatterLineSeriesView.md)) соединяет точки линиями. В отличие от [Line Series View](line-series-vew.md), точки для Scatter Line Series View не обязательно должны быть отсортированы по значениям X. Вместо этого точки соединяются в том порядке, в котором они появляются в серии данных.
 
 <!-- TODO
 Check whether points for the Line Series View must be sorted by X-values.
@@ -16,7 +16,7 @@ Check whether points for the Line Series View must be sorted by X-values.
 
 ## Создание Scatter Line Series View
 
-Чтобы создать Scatter Line Series View, добавьте объект `CartesianSeries` в коллекцию `CartesianChart.Series` и инициализируйте `CartesianSeries.View` экземпляром `CartesianScatterLineSeriesView`.
+Чтобы создать Scatter Line Series View, добавьте объект [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) в коллекцию [`CartesianChart.Series`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) и инициализируйте [`CartesianSeries.View`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md) экземпляром [`CartesianScatterLineSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianScatterLineSeriesView.md).
 
 В следующем коде показано, как создать Scatter Line Series View в XAML и code-behind.
 
@@ -26,7 +26,11 @@ Check whether points for the Line Series View must be sorted by X-values.
         <mxc:CartesianSeries Name="scatterLineSeries1" DataAdapter="{Binding DataAdapter}" >
             <mxc:CartesianScatterLineSeriesView Color="Red" 
                                                 ShowMarkers="True"
-                                                MarkerSize="4" Thickness="2"/>
+                                                MarkerSize="4">
+                <mxc:CartesianScatterLineSeriesView.LineStyle>
+                    <mxc:LineStyle Thickness="2" />
+                </mxc:CartesianScatterLineSeriesView.LineStyle>
+            </mxc:CartesianScatterLineSeriesView>
         </mxc:CartesianSeries>
     </mxc:CartesianChart.Series>
 </mxc:CartesianChart>
@@ -47,7 +51,7 @@ series.View = new CartesianScatterLineSeriesView()
 
 ## Пример - Использование Scatter Line Series View для соединения точек в серии данных
 
-В этом примере Scatter Line Series View соединяет точки, образующие квадратную спираль. Для предоставления данных для диаграммы используется адаптер `ScatterDataAdapter`. Точки соединяются в том порядке, в котором они появляются в серии данных. 
+В этом примере Scatter Line Series View соединяет точки, образующие квадратную спираль. Для предоставления данных для диаграммы используется адаптер [`ScatterDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/ScatterDataAdapter.md). Точки соединяются в том порядке, в котором они появляются в серии данных. 
 
 ![chart-views-scatterLineSeriesView-example](../../../images/chart-views-scatterLineSeriesView-example.png)
 
@@ -74,7 +78,11 @@ series.View = new CartesianScatterLineSeriesView()
             <mxc:CartesianSeries Name="scatterLineSeries1" DataAdapter="{Binding ScatterLineSeriesVM1.DataAdapter}" >
                 <mxc:CartesianScatterLineSeriesView Color="{Binding ScatterLineSeriesVM1.Color}" 
                                                     ShowMarkers="True"
-                                                    MarkerSize="4" Thickness="2"/>
+                                                    MarkerSize="4">
+                    <mxc:CartesianScatterLineSeriesView.LineStyle>
+                        <mxc:LineStyle Thickness="2" />
+                    </mxc:CartesianScatterLineSeriesView.LineStyle>
+                </mxc:CartesianScatterLineSeriesView>
             </mxc:CartesianSeries>
         </mxc:CartesianChart.Series>
         <mxc:CartesianChart.AxesX>
@@ -152,15 +160,15 @@ public partial class SeriesViewModel : ObservableObject
 
 Вы можете использовать следующий адаптер данных для предоставления данных для Scatter Line Series View:
 
-- `ScatterDataAdapter`
+- [`ScatterDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/ScatterDataAdapter.md)
 
 
 ## Параметры Scatter Line Series View
 
-- `Color` — Задаёт цвет, используемый для закраски серии.
-- `MarkerImage` — Получает или задаёт изображение, используемое в качестве пользовательских маркеров точек. Если изображение не указано, отображаются стандартные маркеры в форме квадрата. Вы можете использовать экземпляр класса `SvgImage`, чтобы задать SVG-изображение.
+- [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) — Задаёт цвет, используемый для закраски серии.
+- [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) — Получает или задаёт изображение, используемое в качестве пользовательских маркеров точек. Если изображение не указано, отображаются стандартные маркеры в форме квадрата. Вы можете использовать экземпляр класса `SvgImage`, чтобы задать SVG-изображение.
 
-    Свойство `MarkerImage` объявлено с атрибутом `[Content]`, что позволяет определить изображение непосредственно между тегами &lt;CartesianScatterLineSeriesView&gt;.
+    Свойство [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) объявлено с атрибутом `[Content]`, что позволяет определить изображение непосредственно между тегами &lt;CartesianScatterLineSeriesView&gt;.
 
     ``` xml
     <mxc:CartesianScatterLineSeriesView>
@@ -171,10 +179,10 @@ public partial class SeriesViewModel : ObservableObject
     SVG-файлы содержат предопределённые цвета для SVG-элементов. Чтобы эти цвета соответствовали цвету вашей серии данных, вы можете:
     
     - Вручную отредактировать исходный SVG-файл заранее
-    - Использовать свойство `MarkerImageCss`, чтобы динамически настраивать [стили](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) для SVG-элементов. Стили применяются при отрисовке маркеров точек.
-- `MarkerImageCss` — Задаёт [CSS-стили](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) для настройки SVG-изображения, заданного свойством `MarkerImage`, во время выполнения. Основной сценарий использования — замена цветов SVG-элементов на цвет серии (`Color`). Включите заполнитель `{0}`, чтобы вставить значение свойства `Color` в CSS-код. 
+    - Использовать свойство [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md), чтобы динамически настраивать [стили](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) для SVG-элементов. Стили применяются при отрисовке маркеров точек.
+- [`MarkerImageCss`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) — Задаёт [CSS-стили](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style) для настройки SVG-изображения, заданного свойством [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md), во время выполнения. Основной сценарий использования — замена цветов SVG-элементов на цвет серии ([`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md)). Включите заполнитель `{0}`, чтобы вставить значение свойства [`Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) в CSS-код. 
 
-    Например, когда свойство `MarkerImage` содержит SVG-изображение с элементом circle, следующий CSS-код стилизует `circle` заливкой Orange (используя цвет серии) и границей Dark Red:
+    Например, когда свойство [`MarkerImage`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImage.md) содержит SVG-изображение с элементом circle, следующий CSS-код стилизует `circle` заливкой Orange (используя цвет серии) и границей Dark Red:
 
     ``` xml
     <mxc:CartesianScatterLineSeriesView Color="orange" MarkerImageCss="circle {{fill:{0};stroke:darkred;}}">
@@ -184,9 +192,9 @@ public partial class SeriesViewModel : ObservableObject
     
     Смотрите также: [Пример - Создание Lollipop Series View и использование пользовательских SVG-маркеров](lollipop-series-view.md#пример---создание-lollipop-series-view-и-использование-пользовательских-svg-маркеров-точек-данных).
 
-- `MarkerSize` — Задаёт размер маркеров точек.
-- `ShowInCrosshair` — Задаёт видимость подписи перекрестия для текущей серии. См. [Настройка подписей перекрестия](../crosshair.md#скрытие-серии-в-crosshair).
-- `ShowMarkers` — Включает или отключает маркеры точек.
+- [`MarkerSize`](../../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerSize.md) — Задаёт размер маркеров точек.
+- [`ShowInCrosshair`](../../../API/Eremex.AvaloniaUI.Charts/CrosshairSeriesViewBase/ShowInCrosshair.md) — Задаёт видимость подписи перекрестия для текущей серии. См. [Настройка подписей перекрестия](../crosshair.md#скрытие-серии-в-crosshair).
+- [`ShowMarkers`](../../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesViewBase/ShowMarkers.md) — Включает или отключает маркеры точек.
 - `Thickness` — Задаёт толщину линии.
 
 <br>

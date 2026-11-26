@@ -12,7 +12,7 @@ Stores toolbar items and associates them with their holder.
 public class ToolbarItemCollection : ObservableCollection<ToolbarItem>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

@@ -12,11 +12,16 @@ Represents the set of keyboard bindings that drive the control's camera and othe
 public class Graphics3DKeyBindings : AvaloniaObject
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [Graphics3DKeyBindings](Graphics3DKeyBindings/Graphics3DKeyBindings.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [MoveDown](Graphics3DKeyBindings/MoveDown.md) { get; set; } | Gets or sets the binding that pans the camera downwards. The default binding combines the platform command modifier with the down arrow key. |
 | [MoveLeft](Graphics3DKeyBindings/MoveLeft.md) { get; set; } | Gets or sets the binding that pans the camera to the left. The default binding combines the platform command modifier with the left arrow key. |
 | [MoveRight](Graphics3DKeyBindings/MoveRight.md) { get; set; } | Gets or sets the binding that pans the camera to the right. The default binding combines the platform command modifier with the right arrow key. |

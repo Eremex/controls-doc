@@ -12,7 +12,7 @@ Provides data for the event raised when dragging a floating docking item ends.
 public class DockItemEndFloatDraggingEventArgs : DockItemEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

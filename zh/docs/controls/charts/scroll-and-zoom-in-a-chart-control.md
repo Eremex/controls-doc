@@ -4,16 +4,16 @@ order: 980
 seealso: []
 ---
 
-# 在图表控件中滚动和缩放
+# 在图表控件中滚动和缩放 {#scroll-and-zoom-in-a-chart-control}
 
-`CartesianChart` control 支持整个视图和各个轴的滚动和缩放操作。用户可以使用鼠标和键盘缩放和滚动图表。在代码中，这些操作可通过 dedicated API 进行。
+[`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) 控件支持整个视图和各个轴的滚动和缩放操作。用户可以使用鼠标和键盘缩放和滚动图表。在代码中，这些操作可通过 dedicated API 进行。
 
-## 允许滚动和缩放操作
+## 允许滚动和缩放操作 {#allow-scroll-and-zoom-operations}
 
 默认情况下启用滚动和缩放操作。以下选项允许您对各个轴禁用这些操作：
 
-- `Axis.EnableZooming`
-- `Axis.EnableScrolling`
+- [`Axis.EnableZooming`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableZooming.md)
+- [`Axis.EnableScrolling`](../../API/Eremex.AvaloniaUI.Charts/Axis/EnableScrolling.md)
 
 ``` xml
 <mxc:CartesianChart.AxesX>
@@ -24,7 +24,7 @@ seealso: []
 chartControl1.AxesX[0].EnableZooming = false;
 ```
 
-图表 control 的最小缩放范围可防止缩小得太远而导致视图太小。总轴范围定义了最小缩放范围。要指定总轴范围，请使用 `AxisX.Range`/`AxisY.Range` 对象的 `WholeMin` 和 `WholeMax` 属性。
+图表控件的最小缩放范围可防止缩小得太远而导致视图太小。总轴范围定义了最小缩放范围。要指定总轴范围，请使用 [`AxisX.Range`](../../API/Eremex.AvaloniaUI.Charts/AxisX/Range.md)/[`AxisY.Range`](../../API/Eremex.AvaloniaUI.Charts/AxisY/Range.md) 对象的 `WholeMin` 和 `WholeMax` 属性。
 
 ``` xml
 <mxc:CartesianChart.AxesY>
@@ -34,11 +34,11 @@ chartControl1.AxesX[0].EnableZooming = false;
 </mxc:CartesianChart.AxesY>
 ```
 
-有关详细信息，请参阅以下主题：[Axis Value Range](cartesian-chart.md#axis-value-range)
+有关详细信息，请参阅以下主题：[坐标轴取值范围](cartesian-chart.md#axis-value-range)
 
-## 用户滚动和缩放
+## 用户滚动和缩放 {#scroll-and-zoom-by-users}
 
-### 同时滚动所有轴
+### 同时滚动所有轴 {#scroll-all-axes-simultaneously}
 
 - 用鼠标拖动图表区域
 
@@ -47,7 +47,7 @@ chartControl1.AxesX[0].EnableZooming = false;
 - 按 Ctrl+箭头键使用键盘滚动。
 
 
-### 同时缩放所有轴
+### 同时缩放所有轴 {#zoom-all-axes-simultaneously}
 
 - 在图表区域上滚动鼠标滚轮
 
@@ -57,30 +57,30 @@ chartControl1.AxesX[0].EnableZooming = false;
 
 ![chart-zoom-and-scroll-all-series.gif](../../images/chart-zoom-and-scroll-all-series.gif)
 
-### 滚动单个轴
+### 滚动单个轴 {#scroll-an-individual-axis}
 - 用鼠标在相应的轴区域内拖动。
 
-### 缩放单个轴
+### 缩放单个轴 {#zoom-an-individual-axis}
 
 - 在相应的轴区域内滚动鼠标滚轮。
 
 ![chart-zoom-and-scroll-individual-series.gif](../../images/chart-zoom-and-scroll-individual-series.gif)
 
-### 放大特定区域
+### 放大特定区域 {#zoom-into-a-specific-region}
 
 - 在图表区域中按住 SHIFT，然后拖动以选择所需的矩形。
 
-### 放大轴上的值范围
+### 放大轴上的值范围 {#zoom-into-a-value-range-on-an-axis}
 
 - 在轴区域按住 SHIFT，然后拖动以选择所需的范围。
 
 ![chart-zoom-into-rectangle](../../images/chart-zoom-into-rectangle.gif)
 
-## 滚动并放大代码
+## 滚动并放大代码 {#scroll-and-zoom-in-code}
 
-### 使特定数据部分可见
+### 使特定数据部分可见 {#make-a-specific-data-portion-visible}
 
-要在 control 视口中查看特定数据部分，请自定义图表 control 轴的可见范围。使用 `AxisX.Range`/`AxisY.Range` 对象的 `VisualMin` 和 `VisualMax` 属性指定视口的值范围。
+要在控件视口中查看特定数据部分，请自定义图表控件轴的可见范围。使用 [`AxisX.Range`](../../API/Eremex.AvaloniaUI.Charts/AxisX/Range.md)/[`AxisY.Range`](../../API/Eremex.AvaloniaUI.Charts/AxisY/Range.md) 对象的 `VisualMin` 和 `VisualMax` 属性指定视口的值范围。
 
 ``` cs
 chartControl1.AxesX[0].Range.VisualMin = 10;
@@ -89,11 +89,11 @@ chartControl1.AxesY[0].Range.VisualMin = -50;
 chartControl1.AxesY[0].Range.VisualMax = 50;
 ```
 
-### 在代码中模拟用户滚动操作
+### 在代码中模拟用户滚动操作 {#imitate-a-user-scroll-operation-in-code}
 
-使用 `CartesianChart.Scroll` method 可沿特定轴或同时滚动所有轴的系列数据。该method模仿用户执行的滚动操作。
+使用 [`CartesianChart.Scroll`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Scroll.md) 方法可沿特定轴或同时滚动所有轴的系列数据。该方法模仿用户执行的滚动操作。
 
-method的签名如下所示：
+方法的签名如下所示：
 
 ``` cs
 public void Scroll(double deltaX, double deltaY, IEnumerable<Axis>? axes = null)
@@ -115,11 +115,11 @@ AxisX axisX = chartControl1.AxesX[0];
 chartControl1.Scroll(10, 0, new[] { axisX });
 ```
 
-### 在代码中模仿用户缩放操作
+### 在代码中模仿用户缩放操作 {#imitate-a-user-zoom-operation-in-code}
 
-使用 `CartesianChart.Zoom` method 可沿特定轴或同时缩放所有轴的系列数据。该method模仿用户执行的缩放操作。
+使用 [`CartesianChart.Zoom`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Zoom.md) 方法可沿特定轴或同时缩放所有轴的系列数据。该方法模仿用户执行的缩放操作。
 
-method的签名如下所示：
+方法的签名如下所示：
 
 ``` cs
 public void Zoom(double delta, IEnumerable<Axis>? axes = null)

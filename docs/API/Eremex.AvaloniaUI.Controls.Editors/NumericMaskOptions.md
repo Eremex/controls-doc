@@ -12,11 +12,16 @@ Provides attached settings for the text editor's numeric mask.
 public class NumericMaskOptions : AvaloniaObject
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [NumericMaskOptions](NumericMaskOptions/NumericMaskOptions.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | static [GetAutoHideDecimalSeparator](NumericMaskOptions/GetAutoHideDecimalSeparator.md)(…) | Returns whether the decimal separator is hidden when the value has no fractional part. |
 | static [GetHideInsignificantZeros](NumericMaskOptions/GetHideInsignificantZeros.md)(…) | Returns whether the editor's numeric mask hides insignificant zeros. |
 | static [SetAutoHideDecimalSeparator](NumericMaskOptions/SetAutoHideDecimalSeparator.md)(…) | Sets whether the decimal separator is hidden when the value has no fractional part. |

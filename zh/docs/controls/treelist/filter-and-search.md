@@ -4,12 +4,12 @@ order: 4000
 seealso: []
 ---
 
-# 过滤和搜索
+# 过滤和搜索 {#filter-and-search}
 
 TreeList 和 TreeView 支持数据过滤和搜索功能,允许您根据节点的值来定位节点。
 
 
-## 列过滤器 (TreeList)
+## 列过滤器 (TreeList) {#column-filters-treelist}
 
 用户可以使用过滤菜单来过滤 TreeList 的列。
 要打开某一列的过滤菜单,请将鼠标悬停在该列的标题上,直到出现过滤按钮,然后点击它。打开的过滤菜单包含该列中所有唯一的值。在过滤菜单中选择一项,即可按该值过滤该列。
@@ -19,7 +19,7 @@ TreeList 和 TreeView 支持数据过滤和搜索功能,允许您根据节点的
 用户可以对多个列同时进行过滤。应用于多个列的过滤条件通过 AND 运算符组合。
 
 
-### 'List' 和 'Checked List' 显示模式
+### 'List' 和 'Checked List' 显示模式 {#list-and-checked-list-display-modes}
 
 过滤菜单可以使用以下两种显示模式之一来呈现项(列值):
 
@@ -35,9 +35,9 @@ TreeList 和 TreeView 支持数据过滤和搜索功能,允许您根据节点的
 
 您可以全局为所有列设置过滤菜单的显示模式,也可以使用以下属性为单个列单独设置:
 
-- `TreeListControl.ColumnFilterPopupMode`(默认值为 `List`)— 指定所有列过滤菜单的默认显示模式。此设置应用于其 `TreeListColumn.FilterPopupMode` 属性设置为 `null` 的列。
+- [`TreeListControl.ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnFilterPopupMode.md)(默认值为 `List`)— 指定所有列过滤菜单的默认显示模式。此设置应用于其 [`TreeListColumn.FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) 属性设置为 `null` 的列。
 
-- `TreeListColumn.FilterPopupMode`(默认值为 `null`)— 指定单个列的过滤菜单显示模式。设置后,此属性会覆盖全局设置(`TreeListControl.ColumnFilterPopupMode`)。
+- [`TreeListColumn.FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md)(默认值为 `null`)— 指定单个列的过滤菜单显示模式。设置后,此属性会覆盖全局设置([`TreeListControl.ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnFilterPopupMode.md))。
 
 以下示例将 `CheckedList` 显示模式应用于所有列,并将 `List` 显示模式应用于 _City_ 列。
 
@@ -46,7 +46,7 @@ treeList.ColumnFilterPopupMode = Eremex.AvaloniaUI.Controls.DataControl.FilterPo
 treeList.Columns["City"].FilterPopupMode = Eremex.AvaloniaUI.Controls.DataControl.FilterPopupMode.List;
 ```
 
-### 过滤面板
+### 过滤面板 {#filter-panel}
 
 应用过滤器后,底部会出现过滤面板。它显示当前应用的过滤条件,并允许您临时禁用和清除过滤器。
 
@@ -55,54 +55,54 @@ treeList.Columns["City"].FilterPopupMode = Eremex.AvaloniaUI.Controls.DataContro
 
 要了解如何以编程方式进行过滤,请参阅以下部分:
 
-- [在代码中过滤](#在代码中过滤-treelist-和-treeview)
+- [在代码中过滤](#filter-in-code-treelist-and-treeview)
 
 
-### 相关 API
+### 相关 API {#related-api}
 
 **TreeList 成员**
 
-- `AllowColumnFiltering` — 获取或设置是否为所有列启用过滤按钮。您可以使用列的 `ColumnBase.AllowColumnFiltering` 属性为单个列覆盖此全局设置。
+- `AllowColumnFiltering` — 获取或设置是否为所有列启用过滤按钮。您可以使用列的 [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) 属性为单个列覆盖此全局设置。
 
-    例如,若要禁用除某一列以外所有列的过滤按钮,请将 `TreeListControl.AllowColumnFiltering` 属性设置为 `false`,并将目标列的 `ColumnBase.AllowColumnFiltering` 属性设置为 `true`。
+    例如,若要禁用除某一列以外所有列的过滤按钮,请将 [`TreeListControl.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnFiltering.md) 属性设置为 `false`,并将目标列的 [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) 属性设置为 `true`。
 
-- `ColumnFilterButtonDisplayMode` — 获取或设置过滤按钮是始终可见,还是仅在用户将鼠标悬停在列标题上时才出现(默认)。
+- [`ColumnFilterButtonDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnFilterButtonDisplayMode.md) — 获取或设置过滤按钮是始终可见,还是仅在用户将鼠标悬停在列标题上时才出现(默认)。
 
-- `ColumnFilterPopupMode` — 获取或设置所有列过滤菜单的默认显示模式(`List` 或 `CheckedList`)。使用列的 `FilterPopupMode` 属性可为单个列覆盖此设置。
+- [`ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnFilterPopupMode.md) — 获取或设置所有列过滤菜单的默认显示模式(`List` 或 `CheckedList`)。使用列的 [`FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/FilterPopupMode.md) 属性可为单个列覆盖此设置。
 
-- `CustomColumnDisplayText` 事件 — 允许您为列值(包括过滤菜单和过滤面板中的值)提供自定义显示文本。当 `CustomColumnDisplayText` 事件针对过滤面板中的值触发时,该事件的 `Node` 参数返回 `null`。
+- [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnDisplayText.md) 事件 — 允许您为列值(包括过滤菜单和过滤面板中的值)提供自定义显示文本。当 [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CustomColumnDisplayText.md) 事件针对过滤面板中的值触发时,该事件的 [`Node`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomCellDisplayTextEventArgs/Node.md) 参数返回 `null`。
 
-- `FilterPanelText` — 获取过滤面板中显示的过滤器的文本表示形式。
+- [`FilterPanelText`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/FilterPanelText.md) — 获取过滤面板中显示的过滤器的文本表示形式。
 
-- `FilterPanelDisplayMode` — 获取或设置过滤面板的可见性模式。可用选项包括:
+- [`FilterPanelDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/FilterPanelDisplayMode.md) — 获取或设置过滤面板的可见性模式。可用选项包括:
 
     - `Auto`(默认)— 当任意列应用了过滤器时,过滤面板会出现。
     - `Never` — 过滤面板始终隐藏。
 
-- `FilterString` — 获取或设置应用于控件的过滤条件。您可以使用此属性[在代码中构建过滤器](#在代码中过滤-treelist-和-treeview)。TreeList 和 TreeView 都支持 `FilterString` 属性。
+- [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) — 获取或设置应用于控件的过滤条件。您可以使用此属性[在代码中构建过滤器](#filter-in-code-treelist-and-treeview)。TreeList 和 TreeView 都支持 [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) 属性。
 
-- `IsFilterEnabled` — 获取或设置过滤器是否处于激活状态。TreeList 和 TreeView 都支持 `IsFilterEnabled` 属性。
+- [`IsFilterEnabled`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsFilterEnabled.md) — 获取或设置过滤器是否处于激活状态。TreeList 和 TreeView 都支持 [`IsFilterEnabled`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsFilterEnabled.md) 属性。
 
-- `IsFilterPanelVisible` — 获取过滤面板当前是否可见。
+- [`IsFilterPanelVisible`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/IsFilterPanelVisible.md) — 获取过滤面板当前是否可见。
 
 
 
 **列成员**
 
- - `ColumnBase.AllowColumnFiltering` — 获取或设置当前列是否允许显示过滤按钮。若要为所有列启用或禁用过滤按钮,请参见 `TreeListControl.AllowColumnFiltering` 设置。`ColumnBase.AllowColumnFiltering` 选项允许您为单个列覆盖 `TreeListControl.AllowColumnFiltering` 设置。
- - `ColumnBase.ColumnFilterMode` — 获取或设置列数据的过滤方式。可用选项包括:
+ - [`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) — 获取或设置当前列是否允许显示过滤按钮。若要为所有列启用或禁用过滤按钮,请参见 [`TreeListControl.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnFiltering.md) 设置。[`ColumnBase.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AllowColumnFiltering.md) 选项允许您为单个列覆盖 [`TreeListControl.AllowColumnFiltering`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/AllowColumnFiltering.md) 设置。
+ - [`ColumnBase.ColumnFilterMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ColumnFilterMode.md) — 获取或设置列数据的过滤方式。可用选项包括:
 
-    - `Value` — 按底层值过滤列数据。
-    - `DisplayText` — 按单元格显示文本过滤列数据。
+    - [`Value`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomCellDisplayTextEventArgs/Value.md) — 按底层值过滤列数据。
+    - [`DisplayText`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewCustomCellDisplayTextEventArgs/DisplayText.md) — 按单元格显示文本过滤列数据。
 
 <!-- TODO 
 Explore this feature. When data is filtered by values and when by display text by default.
 -->
 
-- `ColumnBase.FilterPopupMode` — 获取或设置单个列的过滤菜单显示模式(`List` 或 `CheckedList`)。设置后,此属性会覆盖控件的 `ColumnFilterPopupMode` 属性。
+- [`ColumnBase.FilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FilterPopupMode.md) — 获取或设置单个列的过滤菜单显示模式(`List` 或 `CheckedList`)。设置后,此属性会覆盖控件的 [`ColumnFilterPopupMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ColumnFilterPopupMode.md) 属性。
 
- - `ColumnBase.IsFiltered` — 获取当前列是否已应用过滤器。
- - `ColumnBase.RoundDateTimeForColumnFilter` — 获取或设置在为显示 DateTime 值的列构建过滤器时,是否忽略 DateTime 值中的时间部分。此属性对通过列过滤菜单和[自动筛选行](#自动筛选行-treelist)创建的过滤器生效。
+ - [`ColumnBase.IsFiltered`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/IsFiltered.md) — 获取当前列是否已应用过滤器。
+ - [`ColumnBase.RoundDateTimeForColumnFilter`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/RoundDateTimeForColumnFilter.md) — 获取或设置在为显示 DateTime 值的列构建过滤器时,是否忽略 DateTime 值中的时间部分。此属性对通过列过滤菜单和[自动筛选行](#auto-filter-row-treelist)创建的过滤器生效。
 
 <!-- TODO
 Add screenshots for RoundDateTimeForColumnFilter
@@ -110,7 +110,7 @@ Add screenshots for RoundDateTimeForColumnFilter
 
 
 
-## 搜索面板 (TreeList 和 TreeView)
+## 搜索面板 (TreeList 和 TreeView) {#search-panel-treelist-and-treeview}
 
 搜索面板可帮助用户根据行中所包含的数据快速定位行。当用户在搜索面板中输入文本时,控件会显示包含该文本的行。
 
@@ -120,33 +120,33 @@ Add screenshots for RoundDateTimeForColumnFilter
 - 数据搜索使用**Contains**(包含)比较运算符。
 - 数据搜索在 TreeList 的所有列中进行。
 
-将控件的 `SearchPanelDisplayMode` 属性(继承自 `DataControlBase` 类)设置为以下值之一以启用搜索面板:
+将控件的 [`SearchPanelDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) 属性(继承自 [`DataControlBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase.md) 类)设置为以下值之一以启用搜索面板:
 
-- `SearchPanelDisplayMode.Always` — 控件始终显示搜索面板。
-- `SearchPanelDisplayMode.HotKey` — 当用户按下 CTRL+F 快捷键时,控件显示搜索面板。按 ESC 会清除搜索面板中的内容,再次按 ESC 则关闭该面板。用户还可以通过列标题的上下文菜单激活搜索面板。
+- [`SearchPanelDisplayMode.Always`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) — 控件始终显示搜索面板。
+- [`SearchPanelDisplayMode.HotKey`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) — 当用户按下 CTRL+F 快捷键时,控件显示搜索面板。按 ESC 会清除搜索面板中的内容,再次按 ESC 则关闭该面板。用户还可以通过列标题的上下文菜单激活搜索面板。
 
-`TreeListControlBase.FilterMode` 属性指定在找到匹配项时显示哪些节点。支持以下三种过滤模式:
+[`TreeListControlBase.FilterMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/FilterMode.md) 属性指定在找到匹配项时显示哪些节点。支持以下三种过滤模式:
 
-- `FilterMode.ShowMatches` — 显示与搜索文本匹配的节点。
-- `FilterMode.ShowMatchesWithAncestors` — 显示与搜索文本匹配的节点及其父节点。
-- `FilterMode.ShowBranchesWithMatches` — 如果整个分支中包含匹配过滤条件的节点,则显示整个分支。
+- [`FilterMode.ShowMatches`](../../API/Eremex.AvaloniaUI.Controls.TreeList/FilterMode.md) — 显示与搜索文本匹配的节点。
+- [`FilterMode.ShowMatchesWithAncestors`](../../API/Eremex.AvaloniaUI.Controls.TreeList/FilterMode.md) — 显示与搜索文本匹配的节点及其父节点。
+- [`FilterMode.ShowBranchesWithMatches`](../../API/Eremex.AvaloniaUI.Controls.TreeList/FilterMode.md) — 如果整个分支中包含匹配过滤条件的节点,则显示整个分支。
 
-### 在折叠节点中搜索
+### 在折叠节点中搜索 {#search-in-collapsed-nodes}
 
-在数据搜索/过滤期间,TreeList/TreeView 可以在已折叠的节点内进行搜索。将 `TreeListControlBase.ExpandNodesOnFiltering` 选项设置为 `true`,即可在折叠节点中进行搜索,并在找到匹配项时自动展开这些节点。
+在数据搜索/过滤期间,TreeList/TreeView 可以在已折叠的节点内进行搜索。将 [`TreeListControlBase.ExpandNodesOnFiltering`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ExpandNodesOnFiltering.md) 选项设置为 `true`,即可在折叠节点中进行搜索,并在找到匹配项时自动展开这些节点。
 
-控件仅在当前已加载的节点中进行搜索。对于[层次化数据源](data-binding/index.md#层次化数据源),您可以将 `AllowDynamicDataLoading` 属性设置为 `false`,以禁用动态节点加载,一次性加载所有节点。
+控件仅在当前已加载的节点中进行搜索。对于[层次化数据源](data-binding/index.md#hierarchical-data-source),您可以将 [`AllowDynamicDataLoading`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/AllowDynamicDataLoading.md) 属性设置为 `false`,以禁用动态节点加载,一次性加载所有节点。
 
-### 相关 API
+### 相关 API {#related-api_1}
 
-- `DataControlBase.IsSearchPanelVisible` — 获取搜索面板当前是否可见。
-- `DataControlBase.SearchPanelHighlightResults` — 指定是否在找到的节点中高亮显示搜索文本。该属性的默认值为 `true`。
-- `DataControlBase.SearchText` — 获取或设置搜索文本。您可以为该属性赋值以在代码中过滤控件。即使搜索面板被隐藏或禁用(`SearchPanelDisplayMode` 属性设置为 `SearchPanelDisplayMode.Never`),此过滤功能依然受支持。
-- `DataControlBase.ShowSearchPanelCloseButton` — 允许您隐藏搜索面板内置的关闭按钮。
-- `TreeListControlBase.ExpandNodesOnFiltering` — 指定在数据搜索/过滤期间,当折叠节点的子节点匹配当前过滤/搜索条件时,是否展开该折叠节点。
+- [`DataControlBase.IsSearchPanelVisible`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsSearchPanelVisible.md) — 获取搜索面板当前是否可见。
+- [`DataControlBase.SearchPanelHighlightResults`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchPanelHighlightResults.md) — 指定是否在找到的节点中高亮显示搜索文本。该属性的默认值为 `true`。
+- [`DataControlBase.SearchText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchText.md) — 获取或设置搜索文本。您可以为该属性赋值以在代码中过滤控件。即使搜索面板被隐藏或禁用([`SearchPanelDisplayMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md) 属性设置为 [`SearchPanelDisplayMode.Never`](../../API/Eremex.AvaloniaUI.Controls.DataControl/SearchPanelDisplayMode.md)),此过滤功能依然受支持。
+- [`DataControlBase.ShowSearchPanelCloseButton`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ShowSearchPanelCloseButton.md) — 允许您隐藏搜索面板内置的关闭按钮。
+- [`TreeListControlBase.ExpandNodesOnFiltering`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ExpandNodesOnFiltering.md) — 指定在数据搜索/过滤期间,当折叠节点的子节点匹配当前过滤/搜索条件时,是否展开该折叠节点。
 
-### 示例
-以下代码使搜索面板始终可见,并启用连同其父节点一起显示过滤后节点的功能。`SearchText` 属性用于设置搜索文本。
+### 示例 {#example}
+以下代码使搜索面板始终可见,并启用连同其父节点一起显示过滤后节点的功能。[`SearchText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SearchText.md) 属性用于设置搜索文本。
 
 ``` csharp
 treeList.SearchPanelDisplayMode = SearchPanelDisplayMode.Always;
@@ -154,21 +154,21 @@ treeList.FilterMode = FilterMode.ShowMatchesWithAncestors;
 treeList.SearchText = "department";
 ```
 
-## 自动筛选行 (TreeList)
+## 自动筛选行 (TreeList) {#auto-filter-row-treelist}
 
 自动筛选行是显示在所有 TreeList 节点上方的一个特殊行。它允许用户在其单元格中输入文本,以按相应的列过滤数据。
 
 ![treelist-autofilterrow](../../images/treelist-autofilterrow.png)
 
 - 过滤功能不区分大小写。
-- 若要在折叠节点中搜索并在找到匹配项时展开这些节点,请将 `TreeListControlBase.ExpandNodesOnFiltering` 选项设置为 `true`。另请参阅:[在折叠节点中搜索](#在折叠节点中搜索)。
-- 控件的默认过滤模式是仅显示与指定条件匹配的节点。将 `TreeListControlBase.FilterMode` 属性设置为 `FilterMode.ShowMatchesWithAncestors`,可以连同父节点一起显示目标节点。
+- 若要在折叠节点中搜索并在找到匹配项时展开这些节点,请将 [`TreeListControlBase.ExpandNodesOnFiltering`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ExpandNodesOnFiltering.md) 选项设置为 `true`。另请参阅:[在折叠节点中搜索](#search-in-collapsed-nodes)。
+- 控件的默认过滤模式是仅显示与指定条件匹配的节点。将 [`TreeListControlBase.FilterMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/FilterMode.md) 属性设置为 [`FilterMode.ShowMatchesWithAncestors`](../../API/Eremex.AvaloniaUI.Controls.TreeList/FilterMode.md),可以连同父节点一起显示目标节点。
 
-### 启用自动筛选行
+### 启用自动筛选行 {#enable-auto-filter-row}
 
 将 `TreeList.ShowAutoFilterRow` 属性设置为 `true`。
 
-### 启用运行时过滤运算符选择器
+### 启用运行时过滤运算符选择器 {#enable-runtime-filter-operator-selectors}
 
 您可以允许用户在运行时为自动筛选行的单元格选择过滤逻辑。启用此功能后,每个自动筛选行单元格中都会出现一个过滤运算符图标。用户可以点击此图标打开下拉菜单并选择所需的运算符。
 
@@ -176,15 +176,15 @@ treeList.SearchText = "department";
 
 使用以下属性可启用过滤运算符选择器:
 
-- `TreeListControl.ShowConditionInAutoFilterRow`(默认为 `false`)— 指定所有自动筛选行单元格(列)的过滤运算符选择器的默认可见性。
-- `ColumnBase.ShowConditionInAutoFilterRow` — 为单个列启用或禁用过滤运算符选择器。此属性会覆盖 `TreeListControl.ShowConditionInAutoFilterRow` 设置。
+- [`TreeListControl.ShowConditionInAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowConditionInAutoFilterRow.md)(默认为 `false`)— 指定所有自动筛选行单元格(列)的过滤运算符选择器的默认可见性。
+- [`ColumnBase.ShowConditionInAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/ShowConditionInAutoFilterRow.md) — 为单个列启用或禁用过滤运算符选择器。此属性会覆盖 [`TreeListControl.ShowConditionInAutoFilterRow`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/ShowConditionInAutoFilterRow.md) 设置。
 
 
 
 
-### 在代码中指定过滤运算符
+### 在代码中指定过滤运算符 {#specify-filter-operators-in-code}
 
-使用 `ColumnBase.AutoFilterCondition` 属性以编程方式为单个自动筛选行单元格(列)指定过滤运算符。支持以下过滤运算符:
+使用 [`ColumnBase.AutoFilterCondition`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AutoFilterCondition.md) 属性以编程方式为单个自动筛选行单元格(列)指定过滤运算符。支持以下过滤运算符:
 
 - `Contains`(适用于字符串值)— 行的值必须包含输入的文本。
 - `Default` — 默认模式。
@@ -203,12 +203,12 @@ treeList.SearchText = "department";
 - `StartsWith`(适用于字符串值)— 行的值必须以输入的文本开头。
 
 
-### 指定过滤值
+### 指定过滤值 {#specify-filter-values}
 
-`ColumnBase.AutoFilterValue` 属性允许您在代码中为特定的自动筛选行单元格设置值。即使自动筛选行被隐藏,您也可以使用 `ColumnBase.AutoFilterValue` 属性来过滤 TreeList。
+[`ColumnBase.AutoFilterValue`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AutoFilterValue.md) 属性允许您在代码中为特定的自动筛选行单元格设置值。即使自动筛选行被隐藏,您也可以使用 [`ColumnBase.AutoFilterValue`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/AutoFilterValue.md) 属性来过滤 TreeList。
 
 
-### 示例
+### 示例 {#example_1}
 
 以下代码激活自动筛选行,并显示 'Name' 列中值以 "M" 开头的节点。
 
@@ -219,21 +219,21 @@ colName.AutoFilterCondition = AutoFilterCondition.StartsWith;
 colName.AutoFilterValue = "M";
 ```
 
-## 使用事件动态过滤节点
+## 使用事件动态过滤节点 {#filter-nodes-dynamically-using-an-event}
 
-`CustomNodeFilter` 事件允许您根据自定义条件隐藏特定节点。此事件会在以下情况下针对每个节点触发:
+[`CustomNodeFilter`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/CustomNodeFilter.md) 事件允许您根据自定义条件隐藏特定节点。此事件会在以下情况下针对每个节点触发:
 
 - 控件的项源发生变化。
 - 控件的节点被过滤(例如,使用搜索面板和/或自动筛选行)。
-- 调用了控件的 `RefreshData` 方法。
+- 调用了控件的 [`RefreshData`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RefreshData.md) 方法。
 
-使用 `Node` 事件参数来标识当前正在处理的节点。若要隐藏该节点,请将 `Visible` 事件参数设置为 `false`。
+使用 [`Node`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListNodeEventArgs/Node.md) 事件参数来标识当前正在处理的节点。若要隐藏该节点,请将 [`Visible`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListCustomNodeFilterEventArgs/Visible.md) 事件参数设置为 `false`。
 
-### 示例 - 使用事件过滤行
+### 示例 - 使用事件过滤行 {#example-filter-rows-with-an-event}
 
-在以下示例中,一个 TreeList 控件显示 _ProjectTask_ 对象的列表。处理 `CustomNodeFilter` 事件以实现自定义的节点过滤。节点会根据 _ProjectTask.Status_ 属性的值被隐藏。
+在以下示例中,一个 TreeList 控件显示 _ProjectTask_ 对象的列表。处理 [`CustomNodeFilter`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/CustomNodeFilter.md) 事件以实现自定义的节点过滤。节点会根据 _ProjectTask.Status_ 属性的值被隐藏。
 
-假设该示例包含一个 "Enable Filter" 切换按钮,用于激活和停用自定义过滤。点击该按钮时,`ToggleButton.IsCheckedChanged` 事件处理程序会调用 `RefreshData` 方法来刷新 TreeList 节点,并重新触发 `CustomNodeFilter` 事件。
+假设该示例包含一个 "Enable Filter" 切换按钮,用于激活和停用自定义过滤。点击该按钮时,`ToggleButton.IsCheckedChanged` 事件处理程序会调用 [`RefreshData`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RefreshData.md) 方法来刷新 TreeList 节点,并重新触发 [`CustomNodeFilter`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/CustomNodeFilter.md) 事件。
 
 ``` xml
 <ToggleButton Name="btnEnableFilter" Content="Enable Filter" IsCheckedChanged="BtnEnableFilter_IsCheckedChanged"/>
@@ -260,30 +260,30 @@ private void TreeList_CustomNodeFilter(object sender, TreeListCustomNodeFilterEv
 }
 ```
 
-## 在代码中过滤 (TreeList 和 TreeView)
+## 在代码中过滤 (TreeList 和 TreeView) {#filter-in-code-treelist-and-treeview}
 
-从 1.2 版本开始,您可以使用 `DataControlBase.FilterString` 属性以编程方式过滤 TreeList 和 TreeView 中的数据。
+从 1.2 版本开始,您可以使用 [`DataControlBase.FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) 属性以编程方式过滤 TreeList 和 TreeView 中的数据。
 
 ``` cs
 treeList.FilterString = "[Description] == 'Front-end development' && [Assignee] == 'Tim Robinson'";
 ```
 ![treelist-filterincode-2-filters-combined-result](../../images/treelist-filterincode-2-filters-combined-result.png)
 
-过滤字符串由若干独立的过滤表达式组成,这些表达式通过[逻辑运算符(AND 或 OR)](#逻辑运算符)进行组合。
+过滤字符串由若干独立的过滤表达式组成,这些表达式通过[逻辑运算符(AND 或 OR)](#logical-operators)进行组合。
 
-### 清除和禁用过滤器
+### 清除和禁用过滤器 {#clear-and-disable-the-filter}
 
-- 若要清除过滤器,请将 `FilterString` 属性设置为 `null` 或空字符串。
-- 若要临时禁用过滤器,请使用 `DataControlBase.IsFilterEnabled` 属性。
+- 若要清除过滤器,请将 [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) 属性设置为 `null` 或空字符串。
+- 若要临时禁用过滤器,请使用 [`DataControlBase.IsFilterEnabled`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/IsFilterEnabled.md) 属性。
 
-### 指定列
+### 指定列 {#specify-columns}
 
 在过滤字符串中,列应通过用方括号括起来的字段名来引用。示例:
 
 - `[FirstName]`
 - `[Position]`
 
-### 指定常量
+### 指定常量 {#specify-constants}
 
 - 数值常量必须使用标准的数值格式指定。示例:
 
@@ -313,7 +313,7 @@ treeList.FilterString = "[Description] == 'Front-end development' && [Assignee] 
     - `false`、`False` 或 `FALSE`
 
 
-### 逻辑运算符
+### 逻辑运算符 {#logical-operators}
 
 您可以使用以下逻辑运算符来组合过滤字符串中的各个表达式:
 
@@ -324,7 +324,7 @@ treeList.FilterString = "[Description] == 'Front-end development' && [Assignee] 
 treeList.FilterString = "[Price] < 5 OR [Price] > 15";
 ```
 
-### 运算符和函数
+### 运算符和函数 {#operators-and-functions}
 
 下表列出了用于构建过滤表达式的可用运算符和函数:
 
@@ -348,11 +348,11 @@ treeList.FilterString = "[Price] < 5 OR [Price] > 15";
 
 
 
-### 高级过滤表达式
+### 高级过滤表达式 {#advanced-filter-expressions}
 
 您可以使用 `Eremex.AvaloniaUI.Controls.Data.Filtering.ExprStringBuilder` 类来创建高级过滤条件。这些过滤条件可以包括对操作数的运算、对支持的函数的调用等等。要构建过滤条件,请使用 `ExprStringBuilder` 类的成员。
 
-要获取过滤字符串,请调用生成的 `ExprStringBuilder` 对象的 `ToString` 方法。然后,您可以将此过滤字符串赋值给目标控件的 `DataControlBase.FilterString` 属性。
+要获取过滤字符串,请调用生成的 `ExprStringBuilder` 对象的 `ToString` 方法。然后,您可以将此过滤字符串赋值给目标控件的 [`DataControlBase.FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) 属性。
 
 
 ``` cs
@@ -375,14 +375,14 @@ var filterString = ExprStringBuilder.Property("PropertyA").In(ExprStringBuilder.
 control.FilterString = filterString;
 ```
 
-### 指定枚举值
+### 指定枚举值 {#specify-enumeration-values}
 
 要在过滤字符串中指定枚举值,您应使用 `Eremex.AvaloniaUI.Controls.Data.Filtering.ExprStringBuilder` 类来构建过滤条件。
-`ExprStringBuilder.ToString` 方法允许您获取过滤字符串,您可以将其赋值给目标控件的 `FilterString` 属性。
+`ExprStringBuilder.ToString` 方法允许您获取过滤字符串,您可以将其赋值给目标控件的 [`FilterString`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md) 属性。
 
 在将过滤字符串赋值给目标控件之前,您还需要使用 `EnumProcessingHelper.RegisterEnum` 方法注册该枚举类型。
 
-#### 示例 - 在过滤表达式中使用枚举值
+#### 示例 - 在过滤表达式中使用枚举值 {#examples-use-enumeration-values-in-filter-expressions}
 
 以下两个示例针对 _EmploymentType_ 列创建过滤表达式。该列显示 _EmploymentKind_ 枚举值。
 
@@ -397,7 +397,7 @@ public enum EmploymentKind
 }
 ```
 
-##### 示例 1
+##### 示例 1 {#example-1}
 
 以下表达式使用 `ExprStringBuilder.EqualValue` 函数来选择 _EmploymentType_ 列等于 _EmploymentKind.Contract_ 的行。
 请注意用于注册 _EmploymentKind_ 枚举的 `EnumProcessingHelper.RegisterEnum` 方法。
@@ -414,7 +414,7 @@ control.FilterString = filterString1;
 
 ![grid-filter-enumeration-example-equal](../../images/grid-filter-enumeration-example-equal.png)
 
-##### 示例 2
+##### 示例 2 {#example-2}
 
 以下表达式使用 `ExprStringBuilder.InValues` 函数生成 _In_ 运算符。该表达式检查 _EmploymentType_ 列是否等于 _EmploymentKind.FullTime_ 或 _EmploymentKind.PartTime_。
 

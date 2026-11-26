@@ -12,11 +12,16 @@ Provides a registry of navigation handlers for inplace editors.
 public class EditorNavigationHandlers
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [EditorNavigationHandlers](EditorNavigationHandlers/EditorNavigationHandlers.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | static [RegisterHandler&lt;TControl,THandler&gt;](EditorNavigationHandlers/RegisterHandler.md)() | Registers a navigation handler for the specified control type. |
 
 ## See Also

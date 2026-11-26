@@ -12,11 +12,16 @@ Provides data for the FocusedNodeChanged event.
 public class TreeListFocusedNodeChangedEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListFocusedNodeChangedEventArgs](TreeListFocusedNodeChangedEventArgs/TreeListFocusedNodeChangedEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Node](TreeListFocusedNodeChangedEventArgs/Node.md) { get; } | Gets the focused node. |
 | [OldNode](TreeListFocusedNodeChangedEventArgs/OldNode.md) { get; } | Gets the previously focused node. |
 

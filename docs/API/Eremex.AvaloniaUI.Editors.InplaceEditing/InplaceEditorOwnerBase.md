@@ -12,12 +12,22 @@ Serves as the base class for objects that manage inplace editors in a host contr
 public abstract class InplaceEditorOwnerBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [InplaceEditorOwnerBase](InplaceEditorOwnerBase/InplaceEditorOwnerBase.md)(…) | Initializes a new instance of the InplaceEditorOwnerBase class with the specified owner. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [UpdateContentLocker](InplaceEditorOwnerBase/UpdateContentLocker.md) { get; } | Gets a locker that is used to synchronize editor content updates. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [CloseEditor](InplaceEditorOwnerBase/CloseEditor.md)() | Closes the inplace editor after posting its value. |
 | [HideEditor](InplaceEditorOwnerBase/HideEditor.md)() | Hides the inplace editor. |
 | [PostEditor](InplaceEditorOwnerBase/PostEditor.md)() | Posts the inplace editor's value to the data source. |

@@ -12,11 +12,16 @@ Provides data for the ExportProgress event.
 public class ExportProgressEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ExportProgressEventArgs](ExportProgressEventArgs/ExportProgressEventArgs.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ProgressPercentage](ExportProgressEventArgs/ProgressPercentage.md) { get; } | Gets the export progress as a percentage. |
 
 ## See Also

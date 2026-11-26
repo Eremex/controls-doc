@@ -12,7 +12,7 @@ Serves as the base class for objects that store editor settings.
 public abstract class BaseEditorProperties : Control
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |
@@ -24,6 +24,11 @@ public abstract class BaseEditorProperties : Control
 | [DisplayTextConverter](BaseEditorProperties/DisplayTextConverter.md) { get; set; } | Gets or sets the converter used to obtain the editor's display text. |
 | [HorizontalContentAlignment](BaseEditorProperties/HorizontalContentAlignment.md) { get; set; } | Gets or sets the horizontal alignment of the editor's content. |
 | [VerticalContentAlignment](BaseEditorProperties/VerticalContentAlignment.md) { get; set; } | Gets or sets the vertical alignment of the editor's content. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | virtual [CreateEditor](BaseEditorProperties/CreateEditor.md)() | Creates an editor and applies these settings to it. |
 | virtual [GetDisplayText](BaseEditorProperties/GetDisplayText.md)(…) | Returns the display text for the specified value. |
 

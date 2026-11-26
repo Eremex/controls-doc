@@ -12,16 +12,26 @@ Displays a two-dimensional matrix of values as a grid of colored cells, where th
 public class Heatmap : ChartControl
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [Heatmap](Heatmap/Heatmap.md)() | Initializes a new instance of the [`Heatmap`](./Heatmap.md) class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AxisX](Heatmap/AxisX.md) { get; set; } | Gets or sets the axis that spans the angular sweep of the grid. When left unset, the control creates a default axis. |
 | [AxisY](Heatmap/AxisY.md) { get; set; } | Gets or sets the axis that spans the distance from the origin. When left unset, the control creates a default axis. |
 | [ColorProvider](Heatmap/ColorProvider.md) { get; set; } | Gets or sets the object that maps a value to the color of its cell. |
 | [DataAdapter](Heatmap/DataAdapter.md) { get; set; } | Gets or sets the data adapter that supplies the matrix of values drawn by the grid. |
 | [DiagramMargin](Heatmap/DiagramMargin.md) { get; set; } | Gets or sets the space reserved around the grid of cells, excluding the axes and their labels. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [DiagramPointToScreenPoint](Heatmap/DiagramPointToScreenPoint.md)(…) | Converts a pair of cell coordinates to the corresponding position in control coordinates. |
 | [Export](Heatmap/Export.md)() | Renders the grid of cells into an off-screen bitmap. |
 | [ScreenPointToDiagramPoint](Heatmap/ScreenPointToDiagramPoint.md)(…) | Converts a position in control coordinates to the corresponding cell coordinates. |

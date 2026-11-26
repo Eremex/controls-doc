@@ -12,7 +12,7 @@ Displays the data of a Smith series as a polyline that connects the points in th
 public class SmithScatterLineSeriesView : SmithLineSeriesViewBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

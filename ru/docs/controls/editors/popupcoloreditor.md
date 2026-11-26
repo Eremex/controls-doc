@@ -6,7 +6,7 @@ seealso: []
 
 # PopupColorEditor
 
-Библиотека Eremex Controls включает контрол `PopupColorEditor`, который позволяет отображать цвет в поле ввода и выбирать цвет из связанного всплывающего окна.
+Библиотека Eremex Controls включает контрол [`PopupColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md), который позволяет отображать цвет в поле ввода и выбирать цвет из связанного всплывающего окна.
 
 ![popupcoloreditor](../../images/popupcoloreditor.png)
 
@@ -21,11 +21,11 @@ seealso: []
 
 Пользователь может выбрать цвет с помощью цветовых палитр, отображаемых в выпадающем окне.
 
-В коде вы можете задать цвет или прочитать текущий выбранный цвет с помощью свойства `PopupColorEditor.Color` или `PopupColorEditor.EditorValue`. Эти свойства синхронизированы. Они различаются типом значения: свойство `Color` имеет тип nullable `Color`, тогда как свойство `EditorValue` имеет тип `object`, как во всех редакторах Eremex.
+В коде вы можете задать цвет или прочитать текущий выбранный цвет с помощью свойства [`PopupColorEditor.Color`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/Color.md) или [`PopupColorEditor.EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md). Эти свойства синхронизированы. Они различаются типом значения: свойство [`Color`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/Color.md) имеет тип nullable [`Color`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/Color.md), тогда как свойство [`EditorValue`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/EditorValue.md) имеет тип `object`, как во всех редакторах Eremex.
 
 ## Палитры
 
-`PopupColorEditor` поддерживает три палитры: по умолчанию (default), стандартную (standard) и пользовательскую (custom). Используйте свойство `PopupColorEditor.ColorsShowMode`, чтобы настроить видимость отдельных палитр. Свойство `ColorsShowMode` определено как набор флагов.
+[`PopupColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) поддерживает три палитры: по умолчанию (default), стандартную (standard) и пользовательскую (custom). Используйте свойство [`PopupColorEditor.ColorsShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/ColorsShowMode.md), чтобы настроить видимость отдельных палитр. Свойство [`ColorsShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorsShowMode.md) определено как набор флагов.
 
 ![popupcoloreditor-three-palettes](../../images/popupcoloreditor-three-palettes.png)
 
@@ -69,7 +69,7 @@ popupColorEditor1.ThemePalette = colorPalette;
 
 ## Стандартная цветовая палитра
 
-Включите флаг `StandardColors` в значении свойства `ColorsShowMode`, чтобы отобразить палитру «Standard Colors».
+Включите флаг `StandardColors` в значении свойства [`ColorsShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorsShowMode.md), чтобы отобразить палитру «Standard Colors».
 
 ![popupcoloredit-standardpalette](../../images/popupcoloredit-standardpalette.png)
 
@@ -82,7 +82,7 @@ popupColorEditor1.ThemePalette = colorPalette;
 
 ## Пользовательская цветовая палитра
 
-Включите флаг `CustomColors` в значение свойства `ColorsShowMode`, чтобы отобразить палитру «Custom Colors». 
+Включите флаг [`CustomColors`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/CustomColors.md) в значение свойства [`ColorsShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorsShowMode.md), чтобы отобразить палитру «Custom Colors». 
 
 ![popupcoloredit-custompalette](../../images/popupcoloredit-custompalette.png)
 
@@ -98,7 +98,7 @@ popupColorEditor1.ThemePalette = colorPalette;
 
 ![popupcoloreditor-customcolor-contextmenu](../../images/popupcoloreditor-customcolor-contextmenu.png)
 
-Вы можете заранее заполнить палитру «Custom Colors» в коде с помощью свойства `CustomColors`.
+Вы можете заранее заполнить палитру «Custom Colors» в коде с помощью свойства [`CustomColors`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/CustomColors.md).
 
 ### Пример - как настроить пользовательскую палитру
 
@@ -151,8 +151,8 @@ public partial class MainViewModel
 
 #### Связанный API
 
-- `ShowAlphaChannel` — позволяет скрыть контролы, используемые для задания компонента Alpha цвета.
-- `PopupFooterButtons` — задаёт, отображать ли кнопки Apply и Cancel в диалоге выбора цвета. Если свойство установлено в `OkCancel`, пользователю нужно нажать кнопку Apply, чтобы подтвердить выбор цвета. Щелчок по кнопке Back или Cancel отменяет диалог. 
+- [`ShowAlphaChannel`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor/ShowAlphaChannel.md) — позволяет скрыть контролы, используемые для задания компонента Alpha цвета.
+- [`PopupFooterButtons`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupFooterButtons.md) — задаёт, отображать ли кнопки Apply и Cancel в диалоге выбора цвета. Если свойство установлено в `OkCancel`, пользователю нужно нажать кнопку Apply, чтобы подтвердить выбор цвета. Щелчок по кнопке Back или Cancel отменяет диалог. 
 
 <!-- TODO 
 rename PopupFooterButtons  to ShowConfirmationButtons
@@ -161,14 +161,14 @@ to sync the API with ColorEditor
 
 ## Предотвращение всплывающих окон в редакторах только для чтения
 
-В режиме «только для чтения» поведение любого всплывающего редактора по умолчанию — позволять пользователям открывать выпадающий список редактора. Однако они не могут изменять значения ни через поле ввода, ни через выпадающий список. Чтобы отключить всплывающие окна для редакторов только для чтения, установите свойство `ShowPopupIfReadOnly` в `false`.
+В режиме «только для чтения» поведение любого всплывающего редактора по умолчанию — позволять пользователям открывать выпадающий список редактора. Однако они не могут изменять значения ни через поле ввода, ни через выпадающий список. Чтобы отключить всплывающие окна для редакторов только для чтения, установите свойство [`ShowPopupIfReadOnly`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/ShowPopupIfReadOnly.md) в `false`.
 
 ## Предотвращение открытия и закрытия всплывающих окон
 
 Вы можете обработать следующие унаследованные события, чтобы отменить операции открытия и закрытия всплывающего окна:
 
-- `PopupEditor.PopupOpening` — возникает, когда всплывающее окно собирается создаться. 
-- `PopupEditor.PopupClosing` — возникает, когда всплывающее окно собирается закрыться. 
+- [`PopupEditor.PopupOpening`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpening.md) — возникает, когда всплывающее окно собирается создаться. 
+- [`PopupEditor.PopupClosing`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupClosing.md) — возникает, когда всплывающее окно собирается закрыться. 
 
 Эти события предоставляют параметр `e.Cancel`. Установите его в `true`, чтобы отменить текущую операцию.
 
@@ -176,15 +176,15 @@ to sync the API with ColorEditor
 
 Обработайте следующее унаследованное событие, чтобы изменить всплывающее окно или его вложенные контролы:
 
-- `PopupEditor.PopupOpened` — возникает после создания всплывающего окна и непосредственно перед его отображением. Это уведомляющее событие. Оно не позволяет отменить открытие всплывающего окна. Обработайте событие `PopupOpened`, чтобы настроить всплывающее окно или его дочерние контролы.
+- [`PopupEditor.PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) — возникает после создания всплывающего окна и непосредственно перед его отображением. Это уведомляющее событие. Оно не позволяет отменить открытие всплывающего окна. Обработайте событие [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md), чтобы настроить всплывающее окно или его дочерние контролы.
 
-При обработке события `PopupEditor.PopupOpened` используйте свойство `PopupContent` редактора, чтобы безопасно обратиться к контролу внутри всплывающего окна редактора. Событие `PopupOpened` гарантирует, что контрол всплывающего окна существует, когда вы к нему обращаетесь. Для контрола PopupColorEditor свойство `PopupContent` возвращает экземпляр класса `ColorEditor`.
+При обработке события [`PopupEditor.PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) используйте свойство [`PopupContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupContent.md) редактора, чтобы безопасно обратиться к контролу внутри всплывающего окна редактора. Событие [`PopupOpened`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupOpened.md) гарантирует, что контрол всплывающего окна существует, когда вы к нему обращаетесь. Для контрола PopupColorEditor свойство [`PopupContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupContent.md) возвращает экземпляр класса [`ColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorEditor.md).
 
 ## Реакция на закрытие всплывающего окна
 
 Используйте следующее унаследованное событие, чтобы выполнять действия после закрытия всплывающего окна:
 
-- `PopupEditor.PopupClosed` — возникает сразу после закрытия всплывающего окна. Это уведомляющее событие. Оно не позволяет отменить закрытие всплывающего окна.
+- [`PopupEditor.PopupClosed`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor/PopupClosed.md) — возникает сразу после закрытия всплывающего окна. Это уведомляющее событие. Оно не позволяет отменить закрытие всплывающего окна.
 
 
 <br>

@@ -12,11 +12,16 @@ Provides data for the ValidateCellValue event.
 public class DataGridValidateCellValueEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridValidateCellValueEventArgs](DataGridValidateCellValueEventArgs/DataGridValidateCellValueEventArgs.md)(…) | Initializes a new instance of the DataGridValidateCellValueEventArgs class with the specified row index, column, and value. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Column](DataGridValidateCellValueEventArgs/Column.md) { get; } | Gets the column that contains the validated cell. |
 | [ErrorContent](DataGridValidateCellValueEventArgs/ErrorContent.md) { get; set; } | Gets or sets the error description. Set this property to indicate that validation failed. |
 | [RowIndex](DataGridValidateCellValueEventArgs/RowIndex.md) { get; } | Gets the index of the row that contains the validated cell. |

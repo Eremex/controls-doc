@@ -12,7 +12,7 @@ Represents a custom color palette.
 public class CustomPalette : ColorPalette
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

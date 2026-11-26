@@ -12,7 +12,7 @@ Serves as the base class for chart axes, which map data values to screen positio
 public abstract class Axis : ChartElement
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

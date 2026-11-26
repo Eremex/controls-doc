@@ -12,7 +12,7 @@ Provides data for the CustomUnboundColumnData event.
 public class TreeListUnboundColumnDataEventArgs : TreeListNodeEventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

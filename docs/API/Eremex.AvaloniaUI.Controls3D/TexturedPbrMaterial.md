@@ -12,11 +12,16 @@ Represents a material that is defined by textures, instead of by scalar shading 
 public class TexturedPbrMaterial : Material
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TexturedPbrMaterial](TexturedPbrMaterial/TexturedPbrMaterial.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Albedo](TexturedPbrMaterial/Albedo.md) { get; set; } | Gets or sets the texture that provides the base color of the surface. |
 | [Alpha](TexturedPbrMaterial/Alpha.md) { get; set; } | Gets or sets the texture that provides the opacity of the material. The control reads the first byte of each pixel. |
 | [AmbientOcclusion](TexturedPbrMaterial/AmbientOcclusion.md) { get; set; } | Gets or sets the texture whose blue channel dims the ambient, image-based lighting applied to the surface. |

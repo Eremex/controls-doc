@@ -12,11 +12,16 @@ Provides keyboard navigation for the popup inplace editor.
 public class PopupEditorNavigationHandler : IInplaceEditorNavigationHandler
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PopupEditorNavigationHandler](PopupEditorNavigationHandler/PopupEditorNavigationHandler.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | virtual [NeedsKey](PopupEditorNavigationHandler/NeedsKey.md)(…) | Determines whether the popup editor processes the specified key. |
 
 ## See Also

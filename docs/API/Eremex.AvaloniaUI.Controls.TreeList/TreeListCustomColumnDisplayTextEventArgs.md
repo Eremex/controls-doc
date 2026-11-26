@@ -12,11 +12,16 @@ Provides data for the CustomColumnDisplayText event.
 public class TreeListCustomColumnDisplayTextEventArgs : TreeViewCustomCellDisplayTextEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListCustomColumnDisplayTextEventArgs](TreeListCustomColumnDisplayTextEventArgs/TreeListCustomColumnDisplayTextEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Column](TreeListCustomColumnDisplayTextEventArgs/Column.md) { get; } | Gets the column whose cell display text is required. |
 
 ## See Also

@@ -12,11 +12,16 @@ Provides keyboard navigation for the spin inplace editor.
 public class SpinEditorNavigationHandler : IInplaceEditorNavigationHandler
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SpinEditorNavigationHandler](SpinEditorNavigationHandler/SpinEditorNavigationHandler.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [NeedsKey](SpinEditorNavigationHandler/NeedsKey.md)(…) | Determines whether the spin editor processes the specified key. |
 
 ## See Also

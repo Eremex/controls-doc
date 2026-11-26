@@ -12,11 +12,16 @@ Provides data for the ShowingEditor event.
 public class DataGridShowingEditorEventArgs : DataGridCellEventArgsBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridShowingEditorEventArgs](DataGridShowingEditorEventArgs/DataGridShowingEditorEventArgs.md)(…) | Initializes a new instance of the DataGridShowingEditorEventArgs class with the specified row index and column. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Cancel](DataGridShowingEditorEventArgs/Cancel.md) { get; set; } | Gets or sets whether the editor is prevented from being shown. |
 
 ## See Also

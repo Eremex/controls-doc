@@ -12,11 +12,16 @@ Provides data for the CellValueChanging and CellValueChanged events.
 public class TreeListCellValueChangedEventArgs : TreeViewCellValueChangedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListCellValueChangedEventArgs](TreeListCellValueChangedEventArgs/TreeListCellValueChangedEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Column](TreeListCellValueChangedEventArgs/Column.md) { get; } | Gets the column whose cell value is changed. |
 
 ## See Also

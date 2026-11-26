@@ -12,11 +12,16 @@ Provides data for the PopupClosed event.
 public class ClosePopupEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ClosePopupEventArgs](ClosePopupEventArgs/ClosePopupEventArgs.md)(…) | Initializes a new instance of the ClosePopupEventArgs class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [CloseMode](ClosePopupEventArgs/CloseMode.md) { get; } | Gets the mode in which the popup was closed. |
 | [EditorValue](ClosePopupEventArgs/EditorValue.md) { get; } | Gets the editor's value associated with the event. |
 

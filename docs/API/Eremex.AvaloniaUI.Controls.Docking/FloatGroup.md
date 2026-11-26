@@ -12,11 +12,16 @@ Displays a group of docking items in a floating window.
 public class FloatGroup : DockGroup
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [FloatGroup](FloatGroup/FloatGroup.md)() | Initializes a new instance of the FloatGroup class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [FloatHeight](FloatGroup/FloatHeight.md) { get; set; } | Gets or sets the height of the floating window. |
 | [FloatLocation](FloatGroup/FloatLocation.md) { get; set; } | Gets or sets the screen position of the floating window in pixels. |
 | [FloatWidth](FloatGroup/FloatWidth.md) { get; set; } | Gets or sets the width of the floating window. |
@@ -29,6 +34,11 @@ public class FloatGroup : DockGroup
 | [WindowIcon](FloatGroup/WindowIcon.md) { get; set; } | Gets or sets the icon of the floating window. |
 | [WindowState](FloatGroup/WindowState.md) { get; set; } | Gets or sets the state of the floating window. |
 | [WindowTitle](FloatGroup/WindowTitle.md) { get; set; } | Gets or sets the title of the floating window. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | static [GetFloatHeight](FloatGroup/GetFloatHeight.md)(…) | Gets the floating window height associated with the specified object. |
 | static [GetFloatLocation](FloatGroup/GetFloatLocation.md)(…) | Gets the floating window screen position associated with the specified object, in pixels. |
 | static [GetFloatWidth](FloatGroup/GetFloatWidth.md)(…) | Gets the floating window width associated with the specified object. |

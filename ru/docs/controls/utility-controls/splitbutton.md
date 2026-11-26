@@ -45,7 +45,7 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ![splitbutton-content-text](../../images/splitbutton-content-text.png)
 
-Свойство `Content` позволяет отображать изображение рядом с текстом или настраивать внешний вид основной кнопки произвольным образом. Следующий пример отображает изображение и текст:
+Свойство `Content` позволяет отображать изображение рядом с текстом или настраивать внешний вид основной кнопки произвольным образом. Этот пример отображает изображение и текст:
 
 ``` xml
 xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
@@ -101,11 +101,11 @@ public partial class MainWindowViewModel : ViewModelBase
 
 Вы можете установить свойство `DropDownControl` в следующие объекты:
 
-- `Eremex.AvaloniaUI.Controls.Bars.PopupMenu` — всплывающее меню, которое может содержать различные элементы (кнопки, кнопки-флажки, подменю и так далее). Дополнительную информацию смотрите в следующем разделе: [Всплывающие и контекстные меню](../toolbars-and-menus/popup-and-context-menus.md).
+- [`Eremex.AvaloniaUI.Controls.Bars.PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) — всплывающее меню, которое может содержать различные элементы (кнопки, кнопки-флажки, подменю и так далее). Дополнительную информацию смотрите в следующем разделе: [Всплывающие и контекстные меню](../toolbars-and-menus/popup-and-context-menus.md).
   
-- `Eremex.AvaloniaUI.Controls.Bars.PopupContainer` — всплывающий контрол, который может отображать пользовательское содержимое.
+- [`Eremex.AvaloniaUI.Controls.Bars.PopupContainer`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupContainer.md) — всплывающий контрол, который может отображать пользовательское содержимое.
 
-Следующий пример определяет `PopupMenu` с двумя командами в качестве выпадающего контрола SplitButton:
+Этот пример определяет [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) с двумя командами в качестве выпадающего контрола SplitButton:
 
 ``` xml
 xmlns:mx="https://schemas.eremexcontrols.net/avalonia"

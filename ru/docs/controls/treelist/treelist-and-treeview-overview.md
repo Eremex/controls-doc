@@ -6,9 +6,9 @@ seealso: []
 
 # Обзор контролов TreeList и TreeView
 
-Контролы TreeList (класс `TreeListControl`) и TreeView (класс `TreeViewControl`) позволяют отображать иерархические данные в виде дерева, где узлы (записи) могут иметь другие узлы в качестве дочерних.
+Контролы TreeList (класс [`TreeListControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md)) и TreeView (класс [`TreeViewControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md)) позволяют отображать иерархические данные в виде дерева, где узлы (записи) могут иметь другие узлы в качестве дочерних.
 
-Оба контрола, `TreeListControl` и `TreeViewControl`, являются потомками класса `TreeListControlBase`, и поэтому у них много общих функций.
+Оба контрола, [`TreeListControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md) и [`TreeViewControl`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md), являются потомками класса [`TreeListControlBase`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase.md), и поэтому у них много общих функций.
 Отличие между контролами заключается в том, что TreeList поддерживает несколько колонок данных — каждый узел (строка) отображает одну или несколько ячеек. TreeView может отображать данные только в одной колонке.
 
 ## Привязка данных
@@ -49,7 +49,7 @@ seealso: []
 
 Группы колонок предоставляют способ визуально группировать несколько колонок под общим заголовком. Заголовки групп отображаются в TreeList как дополнительный раздел над колонками. Вы также можете создавать иерархические группы с неограниченным количеством уровней вложенности.
 
-Дополнительную информацию смотрите в следующем разделе: [Группы](bands.md).
+Дополнительную информацию смотрите в следующем разделе: [Группы колонок](bands.md).
 
 ## Стили
 

@@ -12,7 +12,7 @@ Represents a collection of grid columns.
 public class GridColumnCollection : ColumnCollectionBase<GridColumn>
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

@@ -16,9 +16,9 @@ seealso: []
 
 ### Пользовательская высота строки
 
-- Свойство `DataControlBase.RowMinHeight` — получает или задаёт минимальную высоту строки.
+- Свойство [`DataControlBase.RowMinHeight`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/RowMinHeight.md) — получает или задаёт минимальную высоту строки.
 
-  Если функция автоматической высоты строки отключена, все строки имеют одинаковую высоту, заданную свойством `DataControlBase.RowMinHeight`.
+  Если функция автоматической высоты строки отключена, все строки имеют одинаковую высоту, заданную свойством [`DataControlBase.RowMinHeight`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/RowMinHeight.md).
 
 ### Автоматическая высота строки
 
@@ -26,11 +26,11 @@ seealso: []
 
 ![datagrid-rowautoheight](../../images/datagrid-rowautoheight.png)
 
-Чтобы включить перенос текста для ячеек колонки, назначьте объект `TextEditorProperties` (или его потомок, например `ButtonEditorProperties`) свойству `GridColumn.EditorProperties`, и установите параметр `TextEditorProperties.TextWrapping` в значение `Wrap`.
+Чтобы включить перенос текста для ячеек колонки, назначьте объект [`TextEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties.md) (или его потомок, например [`ButtonEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/ButtonEditorProperties.md)) свойству [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md), и установите параметр [`TextEditorProperties.TextWrapping`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties/TextWrapping.md) в значение `Wrap`.
 
 !!! tip
 
-    Объект `TextEditorProperties` используется для настройки встроенного редактора `TextEditor` для колонки. Во время выполнения редактор создаётся с использованием этих настроек. Дополнительную информацию см. в разделе [Редактирование данных](data-editing/index.md).
+    Объект [`TextEditorProperties`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditorProperties.md) используется для настройки встроенного редактора [`TextEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) для колонки. Во время выполнения редактор создаётся с использованием этих настроек. Дополнительную информацию см. в разделе [Редактирование данных](data-editing/index.md).
 
 Следующий код включает перенос текста для колонки сетки.
 
@@ -46,7 +46,7 @@ seealso: []
 
 Горизонтальная [виртуализация](performance-and-data-virtualization.md) DataGrid повышает производительность контрола за счёт сокращения времени загрузки.
 
-При включённой этой функции (по умолчанию) высота строк рассчитывается автоматически на основе содержимого текущих видимых ячеек. Ячейки за пределами области просмотра не влияют на расчёт высоты строки. При прокрутке к ячейкам с другой высотой содержимого высота строки динамически изменяется. Чтобы предотвратить динамическое изменение высоты строк при горизонтальной прокрутке, используйте свойство `DataGridControl.AllowHorizontalVirtualization`, чтобы отключить горизонтальную виртуализацию.
+При включённой этой функции (по умолчанию) высота строк рассчитывается автоматически на основе содержимого текущих видимых ячеек. Ячейки за пределами области просмотра не влияют на расчёт высоты строки. При прокрутке к ячейкам с другой высотой содержимого высота строки динамически изменяется. Чтобы предотвратить динамическое изменение высоты строк при горизонтальной прокрутке, используйте свойство [`DataGridControl.AllowHorizontalVirtualization`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/AllowHorizontalVirtualization.md), чтобы отключить горизонтальную виртуализацию.
 
 ``` xml
 <mxdg:DataGridControl x:Name="dataGrid" AllowHorizontalVirtualization="False">
@@ -78,9 +78,9 @@ seealso: []
 
 DataGrid резервирует следующие предопределённые индексы строк для идентификации специальных строк:
 
-- Константа `DataControlBase.AutoFilterRowIndex` — идентифицирует **строку автофильтра**. Эта строка позволяет пользователю вводить текст в её ячейках для фильтрации данных по соответствующим колонкам. Дополнительную информацию см. в следующем разделе: [Поиск и фильтрация](filter-and-search.md).
+- Константа [`DataControlBase.AutoFilterRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/AutoFilterRowIndex.md) — идентифицирует **строку автофильтра**. Эта строка позволяет пользователю вводить текст в её ячейках для фильтрации данных по соответствующим колонкам. Дополнительную информацию см. в следующем разделе: [Поиск и фильтрация](filter-and-search.md).
 
-  **Пример**: Вы можете присвоить значение константы `DataControlBase.AutoFilterRowIndex` свойству `DataGridControl.FocusedRowIndex`, чтобы установить фокус на **строке автофильтра**.
+  **Пример**: Вы можете присвоить значение константы [`DataControlBase.AutoFilterRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/AutoFilterRowIndex.md) свойству [`DataGridControl.FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md), чтобы установить фокус на **строке автофильтра**.
 
   <!-- TODO
   The following code does not work:
@@ -88,25 +88,25 @@ DataGrid резервирует следующие предопределённ�
   dataGrid.SetCellValue(DataGridControl.AutoFilterRowIndex, "FirstName", "Alex");
    -->
 
-- Константа `DataGridControl.InvalidRowIndex` — идентифицирует строку, не существующую в DataGrid. Эта константа может возвращаться методами DataGrid, используемыми для получения индексов строк.
+- Константа [`DataGridControl.InvalidRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/InvalidRowIndex.md) — идентифицирует строку, не существующую в DataGrid. Эта константа может возвращаться методами DataGrid, используемыми для получения индексов строк.
 
-  **Пример**: метод `GetParentRowIndex` позволяет вернуть родительскую строку группы для строки, когда данные сгруппированы. Этот метод возвращает значение `DataGridControl.InvalidRowIndex` для строки, не имеющей родительской строки группы.
+  **Пример**: метод [`GetParentRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetParentRowIndex.md) позволяет вернуть родительскую строку группы для строки, когда данные сгруппированы. Этот метод возвращает значение [`DataGridControl.InvalidRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/InvalidRowIndex.md) для строки, не имеющей родительской строки группы.
 
 ### Исходные элементы и индексы исходных элементов
 
-Строки данных соответствуют элементам (бизнес-объектам) в привязанном источнике элементов (`DataControlBase.ItemsSource`). Позиция элемента в источнике элементов называется **индексом исходного элемента**.
+Строки данных соответствуют элементам (бизнес-объектам) в привязанном источнике элементов ([`DataControlBase.ItemsSource`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ItemsSource.md)). Позиция элемента в источнике элементов называется **индексом исходного элемента**.
 
 Вы можете использовать следующие методы для получения исходного элемента строки данных и его индекса.
 
-- `GetSourceItemByRowIndex` — возвращает исходный элемент (бизнес-объект) строки, указанной по индексу строки.
-- `GetSourceItemByVisibleRowIndex` — возвращает исходный элемент (бизнес-объект) строки, указанной по видимому индексу.
-- `GetSourceItemIndexByRowIndex` — возвращает индекс исходного элемента (индекс бизнес-объекта в источнике элементов) строки, указанной по индексу строки.
-- `GetSourceItemIndexByVisibleRowIndex` — возвращает индекс исходного элемента (индекс бизнес-объекта в источнике элементов) строки, указанной по видимому индексу.
+- [`GetSourceItemByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByRowIndex.md) — возвращает исходный элемент (бизнес-объект) строки, указанной по индексу строки.
+- [`GetSourceItemByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByVisibleRowIndex.md) — возвращает исходный элемент (бизнес-объект) строки, указанной по видимому индексу.
+- [`GetSourceItemIndexByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemIndexByRowIndex.md) — возвращает индекс исходного элемента (индекс бизнес-объекта в источнике элементов) строки, указанной по индексу строки.
+- [`GetSourceItemIndexByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemIndexByVisibleRowIndex.md) — возвращает индекс исходного элемента (индекс бизнес-объекта в источнике элементов) строки, указанной по видимому индексу.
 
 Для выполнения обратного преобразования индексов см. следующие методы:
 
-- `GetRowIndexBySourceItemIndex` — возвращает индекс строки, указанной по индексу исходного элемента.
-- `GetVisibleRowIndexBySourceItemIndex` — возвращает видимый индекс строки, указанной по индексу исходного элемента (индексу бизнес-объекта в источнике элементов).
+- [`GetRowIndexBySourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetRowIndexBySourceItemIndex.md) — возвращает индекс строки, указанной по индексу исходного элемента.
+- [`GetVisibleRowIndexBySourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetVisibleRowIndexBySourceItemIndex.md) — возвращает видимый индекс строки, указанной по индексу исходного элемента (индексу бизнес-объекта в источнике элементов).
 
 
 Индексы исходных элементов начинаются с нуля. При сортировке, группировке или фильтрации строк индексы исходных элементов строк сетки не изменяются.
@@ -117,16 +117,16 @@ DataGrid резервирует следующие предопределённ�
 
 DataGrid предоставляет члены API для получения строк по индексам и преобразования между индексами строк, видимыми индексами строк и индексами элементов источника данных. Следующий список суммирует эти члены API:
 
-- `FocusedRowIndex` — получает или задаёт индекс сфокусированной строки. Вы можете использовать это свойство для перемещения фокуса на определённую строку.
-- `GetRowIndexBySourceItemIndex` — возвращает индекс строки, указанной по индексу исходного элемента.
-- `GetRowIndexByVisibleRowIndex` — возвращает индекс строки, указанной по видимому индексу.
-- `GetSourceItemByRowIndex` — возвращает исходный элемент (бизнес-объект) строки, указанной по индексу строки.
-- `GetSourceItemByVisibleRowIndex` — возвращает исходный элемент (бизнес-объект) строки, указанной по видимому индексу.
-- `GetSourceItemIndexByRowIndex` — возвращает индекс исходного элемента (индекс бизнес-объекта в источнике элементов) строки, указанной по индексу строки.
-- `GetSourceItemIndexByVisibleRowIndex` — возвращает индекс исходного элемента (индекс бизнес-объекта в источнике элементов) строки, указанной по видимому индексу.
-- `GetVisibleRowIndexByRowIndex` — возвращает видимый индекс строки, указанной по индексу строки.
-- `GetVisibleRowIndexBySourceItemIndex` — возвращает видимый индекс строки, указанной по индексу исходного элемента (индексу бизнес-объекта в источнике элементов).
-- `VisibleRowCount`
+- [`FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md) — получает или задаёт индекс сфокусированной строки. Вы можете использовать это свойство для перемещения фокуса на определённую строку.
+- [`GetRowIndexBySourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetRowIndexBySourceItemIndex.md) — возвращает индекс строки, указанной по индексу исходного элемента.
+- [`GetRowIndexByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetRowIndexByVisibleRowIndex.md) — возвращает индекс строки, указанной по видимому индексу.
+- [`GetSourceItemByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByRowIndex.md) — возвращает исходный элемент (бизнес-объект) строки, указанной по индексу строки.
+- [`GetSourceItemByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByVisibleRowIndex.md) — возвращает исходный элемент (бизнес-объект) строки, указанной по видимому индексу.
+- [`GetSourceItemIndexByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemIndexByRowIndex.md) — возвращает индекс исходного элемента (индекс бизнес-объекта в источнике элементов) строки, указанной по индексу строки.
+- [`GetSourceItemIndexByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemIndexByVisibleRowIndex.md) — возвращает индекс исходного элемента (индекс бизнес-объекта в источнике элементов) строки, указанной по видимому индексу.
+- [`GetVisibleRowIndexByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetVisibleRowIndexByRowIndex.md) — возвращает видимый индекс строки, указанной по индексу строки.
+- [`GetVisibleRowIndexBySourceItemIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetVisibleRowIndexBySourceItemIndex.md) — возвращает видимый индекс строки, указанной по индексу исходного элемента (индексу бизнес-объекта в источнике элементов).
+- [`VisibleRowCount`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/VisibleRowCount.md)
 
 Методы для перебора строк группы и их дочерних элементов:
 
@@ -138,9 +138,9 @@ DataGrid предоставляет члены API для получения с�
 
 ## Сфокусированная строка
 
-Используйте свойство `DataGridControl.FocusedRowIndex` для получения индекса сфокусированной строки. Свойство `DataGridControl.FocusedItem` позволяет получить исходный объект данных сфокусированной строки.
+Используйте свойство [`DataGridControl.FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md) для получения индекса сфокусированной строки. Свойство [`DataGridControl.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) позволяет получить исходный объект данных сфокусированной строки.
 
-Чтобы переместить фокус на определённую строку, вы можете присвоить индекс этой строки свойству `DataGridControl.FocusedRowIndex`.
+Чтобы переместить фокус на определённую строку, вы можете присвоить индекс этой строки свойству [`DataGridControl.FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md).
 
 
 
@@ -150,7 +150,7 @@ DataGrid поддерживает режим множественного выд
 
 ![grid-multipleselection](../../images/grid-multipleselection.png)
 
-Установите свойство `SelectionMode` в значение `Multiple`, чтобы включить режим множественного выделения строк.
+Установите свойство [`SelectionMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectionMode.md) в значение `Multiple`, чтобы включить режим множественного выделения строк.
 
 ### Выделение строк с помощью мыши и клавиатуры
 
@@ -160,23 +160,23 @@ DataGrid поддерживает режим множественного выд
 
 Следующий API позволяет выделять/снимать выделение со строк и определять, выделена ли строка:
 
-- `SelectAll`
-- `SelectRow`
-- `SelectRange`
-- `UnselectRow`
-- `ClearSelection`
-- `IsRowSelected`
+- [`SelectAll`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectAll.md)
+- [`SelectRow`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SelectRow.md)
+- [`SelectRange`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SelectRange.md)
+- [`UnselectRow`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/UnselectRow.md)
+- [`ClearSelection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ClearSelection.md)
+- [`IsRowSelected`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/IsRowSelected.md)
 
 Чтобы получить выделение строк, используйте следующие члены:
 
-- `GetSelectedRowIndexes` — возвращает коллекцию [индексов](#идентификация-и-получение-строк) выделенных на данный момент строк.
-- `SelectedItems` — задаёт коллекцию объектов данных (бизнес-объектов), соответствующих выделенным строкам.
+- [`GetSelectedRowIndexes`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSelectedRowIndexes.md) — возвращает коллекцию [индексов](#идентификация-и-получение-строк) выделенных на данный момент строк.
+- [`SelectedItems`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectedItems.md) — задаёт коллекцию объектов данных (бизнес-объектов), соответствующих выделенным строкам.
 
-Обработайте событие `SelectionChanged`, чтобы реагировать на изменения выделения строк.
+Обработайте событие [`SelectionChanged`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SelectionChanged.md), чтобы реагировать на изменения выделения строк.
 
-Вызов любого метода, изменяющего состояние выделения строки, приводит к обновлению контрола DataGrid и вызывает событие `SelectionChanged`.
+Вызов любого метода, изменяющего состояние выделения строки, приводит к обновлению контрола DataGrid и вызывает событие [`SelectionChanged`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SelectionChanged.md).
 
-Чтобы выполнить пакетное изменение выделения строк и предотвратить лишние обновления, вы можете обернуть код, изменяющий состояние выделения строк, парой методов `BeginSelection` и `EndSelection`. В этом случае контрол перерисовывает выделение, а событие `SelectionChanged` возникает после вызова метода `EndSelection`.
+Чтобы выполнить пакетное изменение выделения строк и предотвратить лишние обновления, вы можете обернуть код, изменяющий состояние выделения строк, парой методов [`BeginSelection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/BeginSelection.md) и [`EndSelection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/EndSelection.md). В этом случае контрол перерисовывает выделение, а событие [`SelectionChanged`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SelectionChanged.md) возникает после вызова метода [`EndSelection`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/EndSelection.md).
 
 ``` csharp
 dataGrid1.SelectionMode = Eremex.AvaloniaUI.Controls.DataControl.RowSelectionMode.Multiple;
@@ -195,7 +195,7 @@ dataGrid1.EndSelection();
 
 #### Сфокусированная строка в режиме одиночного выделения
 
-В режиме одиночного выделения сфокусированная строка автоматически получает состояние выделения. Вы можете использовать свойство `FocusedRowIndex` и метод `GetSelectedRowIndexes`, чтобы получить сфокусированную строку.
+В режиме одиночного выделения сфокусированная строка автоматически получает состояние выделения. Вы можете использовать свойство [`FocusedRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/FocusedRowIndex.md) и метод [`GetSelectedRowIndexes`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSelectedRowIndexes.md), чтобы получить сфокусированную строку.
 
 
 
@@ -216,7 +216,7 @@ dataGrid1.EndSelection();
 
 DataGrid предоставляет следующие методы для получения и установки значений в ячейках строк:
 
-- `DataGridControl.GetCellValue` — возвращает значение конкретной ячейки, адресуемой строкой и колонкой (или именем поля).
+- [`DataGridControl.GetCellValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetCellValue.md) — возвращает значение конкретной ячейки, адресуемой строкой и колонкой (или именем поля).
 
     Следующий код получает значение из сфокусированной строки для колонки, привязанного к полю _FirstName_:
 
@@ -224,17 +224,17 @@ DataGrid предоставляет следующие методы для по�
     string firstName = dataGrid.GetCellValue(dataGrid.FocusedRowIndex, "FirstName") as String;
     ```
 
-- `DataGridControl.SetCellValue` — устанавливает значение конкретной ячейки.
+- [`DataGridControl.SetCellValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/SetCellValue.md) — устанавливает значение конкретной ячейки.
 
-- `DataGridControl.GetCellDisplayText` — возвращает отображаемый текст конкретной ячейки, адресуемой строкой и колонкой (или именем поля). Отображаемый текст формируется в соответствии с параметрами форматирования, применёнными к встроенным редакторам. Вы также можете обработать событие `CustomColumnDisplayText`, чтобы предоставить пользовательский отображаемый текст для ячеек. Чтобы предоставить пользовательский отображаемый текст значений для строк группы, обработайте событие `DataGridControl.CustomGroupValueDisplayText`.
+- [`DataGridControl.GetCellDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetCellDisplayText.md) — возвращает отображаемый текст конкретной ячейки, адресуемой строкой и колонкой (или именем поля). Отображаемый текст формируется в соответствии с параметрами форматирования, применёнными к встроенным редакторам. Вы также можете обработать событие [`CustomColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomColumnDisplayText.md), чтобы предоставить пользовательский отображаемый текст для ячеек. Чтобы предоставить пользовательский отображаемый текст значений для строк группы, обработайте событие [`DataGridControl.CustomGroupValueDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/CustomGroupValueDisplayText.md).
 
 Вы также можете получать исходные элементы и их значения с помощью следующих членов API:
 
-- `DataControlBase.FocusedItem` — позволяет получить объект исходного элемента текущей сфокусированной строки.
-- `GetSourceItem` — возвращает исходный объект по его индексу в источнике данных.
-- `GetSourceItemValue` — возвращает значение конкретного поля в источнике данных по указанному индексу.
-- `DataGridControl.GetSourceItemByRowIndex` — возвращает объект исходного элемента по индексу строки.
-- `DataGridControl.GetSourceItemByVisibleRowIndex` — возвращает объект исходного элемента по видимому индексу строки.
+- [`DataControlBase.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) — позволяет получить объект исходного элемента текущей сфокусированной строки.
+- [`GetSourceItem`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItem.md) — возвращает исходный объект по его индексу в источнике данных.
+- [`GetSourceItemValue`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemValue.md) — возвращает значение конкретного поля в источнике данных по указанному индексу.
+- [`DataGridControl.GetSourceItemByRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByRowIndex.md) — возвращает объект исходного элемента по индексу строки.
+- [`DataGridControl.GetSourceItemByVisibleRowIndex`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/GetSourceItemByVisibleRowIndex.md) — возвращает объект исходного элемента по видимому индексу строки.
 
 Следующий код устанавливает свойство _HiredDate_ для бизнес-объекта сфокусированной строки:
 
@@ -248,13 +248,13 @@ if (employee != null )
 
 ## Обработка щелчков и двойных щелчков по строкам
 
-Событие `DataGridControl.RowClick` позволяет выполнять действия, когда пользователь щёлкает по строке/ячейке один или несколько раз подряд. Параметр события `e.ClickCount` возвращает количество последовательных щелчков мышью.
+Событие [`DataGridControl.RowClick`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowClick.md) позволяет выполнять действия, когда пользователь щёлкает по строке/ячейке один или несколько раз подряд. Параметр события `e.ClickCount` возвращает количество последовательных щелчков мышью.
 
-Обратите внимание, что одиночный щелчок по ячейке по умолчанию активирует редактор ячейки. Последующие щелчки в этой ячейке перехватываются активным редактором ячейки, и событие `DataGridControl.RowClick` для этих щелчков не возникает. См. следующий раздел, чтобы узнать, как обрабатывать этот сценарий: [Пример — обработка двойного щелчка по строке при включённом редактировании ячеек](#пример--обработка-двойного-щелчка-по-строке-при-включённом-редактировании-ячеек)
+Обратите внимание, что одиночный щелчок по ячейке по умолчанию активирует редактор ячейки. Последующие щелчки в этой ячейке перехватываются активным редактором ячейки, и событие [`DataGridControl.RowClick`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowClick.md) для этих щелчков не возникает. См. следующий раздел, чтобы узнать, как обрабатывать этот сценарий: [Пример — обработка двойного щелчка по строке при включённом редактировании ячеек](#пример--обработка-двойного-щелчка-по-строке-при-включённом-редактировании-ячеек)
 
 ### Пример — обработка двойного щелчка по строке при отключённом редактировании ячеек
 
-Следующий пример обрабатывает событие `RowClick`, чтобы определить двойной щелчок по строке, когда операции редактирования ячеек отключены.
+Этот пример обрабатывает событие [`RowClick`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowClick.md), чтобы определить двойной щелчок по строке, когда операции редактирования ячеек отключены.
 
 ``` cs
 dataGrid.AllowEditing = false;
@@ -271,11 +271,11 @@ private void DataGrid_RowClick(object sender, Eremex.AvaloniaUI.Controls.DataGri
 
 ### Пример — обработка двойного щелчка по строке при включённом редактировании ячеек
 
-В примере ниже показано, как обрабатывать двойные щелчки по строке, когда операции редактирования ячеек включены. В этом примере используется комбинация событий `RowClick` и `ShowingEditor` для ручного управления активацией редактора ячейки.
+В примере ниже показано, как обрабатывать двойные щелчки по строке, когда операции редактирования ячеек включены. В этом примере используется комбинация событий [`RowClick`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowClick.md) и [`ShowingEditor`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowingEditor.md) для ручного управления активацией редактора ячейки.
 Реализован следующий сценарий:
 
-- Одиночный щелчок активирует редактор ячейки (после небольшой задержки). Редактор активируется с помощью таймера, запускаемого в обработчике события `RowClick`.
-- Двойной щелчок (и несколько последовательных щелчков) предотвращают активацию редактора ячейки. Выполните пользовательские действия при двойном щелчке по строке/ячейке в обработчике события `RowClick`.
+- Одиночный щелчок активирует редактор ячейки (после небольшой задержки). Редактор активируется с помощью таймера, запускаемого в обработчике события [`RowClick`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowClick.md).
+- Двойной щелчок (и несколько последовательных щелчков) предотвращают активацию редактора ячейки. Выполните пользовательские действия при двойном щелчке по строке/ячейке в обработчике события [`RowClick`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/RowClick.md).
 
 
 ``` xml

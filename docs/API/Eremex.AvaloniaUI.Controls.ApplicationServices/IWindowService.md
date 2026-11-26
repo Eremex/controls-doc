@@ -12,7 +12,7 @@ Shows non-modal application windows from view model code, so that a view model c
 public interface IWindowService
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

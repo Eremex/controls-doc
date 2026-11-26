@@ -36,7 +36,7 @@ seealso: []
 
 ### Graphics3DControl
 
-- Исправлено: если модель содержит две или более сетки типа `Lines` или `Points`, Graphics3DControl не обновляется немедленно при изменении настройки `MeshGeometry3D.PrimitiveSize`.
+- Исправлено: если модель содержит две или более сетки типа `Lines` или `Points`, Graphics3DControl не обновляется немедленно при изменении настройки [`MeshGeometry3D.PrimitiveSize`](../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/PrimitiveSize.md).
 
 ## 1.2.95
 
@@ -48,7 +48,7 @@ seealso: []
 
 - Критическое изменение — обновлены аргументы событий перетаскивания
 
-    Аргументы событий `StartDrag`, `DragOver` и `Drop` были изменены. Причина этого критического изменения — отказ от системного интерфейса `Avalonia.Input.IDataObject`. Аргумент `Data` этих событий теперь имеет тип класса `DragDropData` (в предыдущих версиях он был типа интерфейса `IDataObject`). Класс `DragDropData` предоставляет те же члены, что и устаревший интерфейс.
+    Аргументы событий `StartDrag`, `DragOver` и `Drop` были изменены. Причина этого критического изменения — отказ от системного интерфейса `Avalonia.Input.IDataObject`. Аргумент `Data` этих событий теперь имеет тип класса [`DragDropData`](../API/Eremex.AvaloniaUI.Controls.DataControl/DragDropData.md) (в предыдущих версиях он был типа интерфейса `IDataObject`). Класс [`DragDropData`](../API/Eremex.AvaloniaUI.Controls.DataControl/DragDropData.md) предоставляет те же члены, что и устаревший интерфейс.
 
 - Исправлено: невозможно изменить фон строк грида, применяя стиль к объектам `DataGridRowControl`.
 
@@ -72,7 +72,7 @@ seealso: []
 
 ![treelist-export-to-pdf](../images/treelist-export-to-pdf.png)
 
-API экспорта позволяет настраивать различные параметры экспорта, такие как видимость заголовков колонок и бэндов, параметры бумаги и другое.
+API экспорта позволяет настраивать различные параметры экспорта, такие как видимость заголовков колонок и групп колонок, параметры бумаги и другое.
 
 Связанный раздел:
 
@@ -107,7 +107,7 @@ API экспорта позволяет настраивать различны�
 
 В режиме множественного выбора ComboBoxEditor содержит кнопки OK и Cancel во всплывающем окне, используемые для подтверждения выбора пользователя. Если эти кнопки скрыты, ComboBoxEditor немедленно обновляет своё значение по мере того, как пользователь отмечает или снимает отметки с элементов в выпадающем списке. Если эти кнопки видимы, значение редактора обновляется после нажатия кнопки OK.
 
-Установите свойство редактора `PopupFooterButtons` в `None`, чтобы скрыть кнопки OK и Cancel.
+Установите свойство редактора [`PopupFooterButtons`](../API/Eremex.AvaloniaUI.Controls.Editors/PopupFooterButtons.md) в `None`, чтобы скрыть кнопки OK и Cancel.
 
 ## 1.2.77
 
@@ -123,7 +123,7 @@ API экспорта позволяет настраивать различны�
 
 - Фильтрация по нескольким колонкам — вы можете применять фильтры к нескольким колонкам одновременно.
 - Панель фильтра — когда фильтр применён, в нижней части контрола появляется специальная панель фильтра. Она отображает текущие критерии фильтрации и предоставляет возможность временно отключить или очистить фильтр.
-- Фильтрация в коде — используйте новое свойство `DataControlBase.FilterString`, чтобы [создавать пользовательские критерии фильтрации в коде](../controls/datagrid/filter-and-search.md#фильтрация-в-коде). Это свойство поддерживается для контролов Data Grid, Tree List и Tree View.
+- Фильтрация в коде — используйте новое свойство [`DataControlBase.FilterString`](../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FilterString.md), чтобы [создавать пользовательские критерии фильтрации в коде](../controls/datagrid/filter-and-search.md#фильтрация-в-коде). Это свойство поддерживается для контролов Data Grid, Tree List и Tree View.
 
 Связанные разделы:
 
@@ -154,9 +154,9 @@ Data Grid теперь позволяет экспортировать данн�
 
 ### Интерфейс Докинга
 
-- Новое событие `DockManager.DockItemContextMenuOpening` позволяет настраивать встроенные контекстные меню для Dock-панелей и Document-панелей, а также предотвращать отображение контекстных меню.
+- Новое событие [`DockManager.DockItemContextMenuOpening`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/DockItemContextMenuOpening.md) позволяет настраивать встроенные контекстные меню для Dock-панелей и Document-панелей, а также предотвращать отображение контекстных меню.
 
-- Свойство `DockManager.Commands` предоставляет доступ ко всем встроенным командам (объектам `ICommand`) для Dock-панелей и Document-панелей (например, `AutoHide`, `ToggleAutoHide`, `Maximize`, `Minimize`, `NewHorizontalDocumentGroup` и так далее). Эти команды вызываются из встроенных контекстных меню.
+- Свойство [`DockManager.Commands`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/Commands.md) предоставляет доступ ко всем встроенным командам (объектам `ICommand`) для Dock-панелей и Document-панелей (например, [`AutoHide`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AutoHide.md), `ToggleAutoHide`, `Maximize`, `Minimize`, `NewHorizontalDocumentGroup` и так далее). Эти команды вызываются из встроенных контекстных меню.
 
 ### Ribbon
 
@@ -183,16 +183,16 @@ public static AppBuilder BuildAvaloniaApp()
 
 ### DataGrid и TreeList
 
-#### Бэнды колонок
+#### Группы колонок
 
-Контролы DataGrid и TreeList теперь поддерживают функцию бэндов колонок. Бэнды позволяют визуально группировать колонки вместе и отображать над ними дополнительные заголовки. Контролы поддерживают иерархические бэнды с неограниченным числом уровней вложенности.
+Контролы DataGrid и TreeList теперь поддерживают функцию групп колонок. Группы колонок позволяют визуально группировать колонки вместе и отображать над ними дополнительные заголовки. Контролы поддерживают иерархические группы колонок с неограниченным числом уровней вложенности.
 
 ![datagrid-bands](../images/datagrid-bands.png)
 
 Дополнительную информацию смотрите в следующих разделах:
 
-- [Data Grid — Бэнды](../controls/datagrid/bands.md)
-- [Tree List — Бэнды](../controls/treelist/bands.md)
+- [Data Grid — Группы колонок](../controls/datagrid/bands.md)
+- [Tree List — Группы колонок](../controls/treelist/bands.md)
 
 
 #### Экспорт в формат Excel
@@ -228,14 +228,14 @@ public static AppBuilder BuildAvaloniaApp()
 
 ### TreeView
 
-Новое свойство `TreeViewControl.CellWidth` позволяет управлять шириной ячеек в контроле TreeView. Значение свойства `CellWidth` по умолчанию — `"*"`, что растягивает ячейки, чтобы заполнить ширину контрола. 
+Новое свойство [`TreeViewControl.CellWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) позволяет управлять шириной ячеек в контроле TreeView. Значение свойства [`CellWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) по умолчанию — `"*"`, что растягивает ячейки, чтобы заполнить ширину контрола. 
 Если текст ячейки слишком длинный, он обрезается у правого края, и горизонтальная полоса прокрутки не появляется.
 
-Установите свойство `CellWidth` в `"Auto"`, чтобы автоматически подстраивать ширину колонки данных под содержимое ячеек. Горизонтальная полоса прокрутки появляется, если максимальная ширина содержимого ячеек превышает ширину контрола.
+Установите свойство [`CellWidth`](../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellWidth.md) в `"Auto"`, чтобы автоматически подстраивать ширину колонки данных под содержимое ячеек. Горизонтальная полоса прокрутки появляется, если максимальная ширина содержимого ячеек превышает ширину контрола.
 
 ### Cartesian Chart
 
-Новое представление Lollipop Series View (`CartesianLollipopSeriesView`) позволяет визуализировать данные с помощью тонких линий с маркерами на концах. Маркеры обозначают отдельные точки данных, а линии соединяют маркеры с базовой линией.
+Новое представление Lollipop Series View ([`CartesianLollipopSeriesView`](../API/Eremex.AvaloniaUI.Charts/CartesianLollipopSeriesView.md)) позволяет визуализировать данные с помощью тонких линий с маркерами на концах. Маркеры обозначают отдельные точки данных, а линии соединяют маркеры с базовой линией.
 
 ![chart-views-lollipop-series-view](../images/chart-views-lollipop-series-view.png)
 
@@ -246,9 +246,9 @@ public static AppBuilder BuildAvaloniaApp()
 
 #### Критические изменения
 
-- Point Series Views и потомки — теперь при задании свойства `MarkerImageCss` необходимо использовать синтаксис `{0}` вместо синтаксиса `#{0}`. Это изменение нацелено на повышение удобства использования контрола.
+- Point Series Views и потомки — теперь при задании свойства [`MarkerImageCss`](../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) необходимо использовать синтаксис `{0}` вместо синтаксиса `#{0}`. Это изменение нацелено на повышение удобства использования контрола.
 
-    Свойство `MarkerImageCss` в Point Series Views (и потомках) поддерживает [стилизацию SVG-элементов на основе CSS](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style). Плейсхолдер `{0}` позволяет вставить значение свойства `CartesianLollipopSeriesView.Color` в CSS-код.
+    Свойство [`MarkerImageCss`](../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/MarkerImageCss.md) в Point Series Views (и потомках) поддерживает [стилизацию SVG-элементов на основе CSS](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style). Плейсхолдер `{0}` позволяет вставить значение свойства [`CartesianLollipopSeriesView.Color`](../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) в CSS-код.
 
     В предыдущих версиях требовалось предварять плейсхолдер `{0}` символом `#`:
 
@@ -294,7 +294,7 @@ public static AppBuilder BuildAvaloniaApp()
 
 #### Смешанное размещение документов
 
-Новое свойство `DockManager.AllowFreeDocumentLayout` позволяет закреплять DocumentGroup рядом друг с другом одновременно горизонтально и вертикально. 
+Новое свойство [`DockManager.AllowFreeDocumentLayout`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AllowFreeDocumentLayout.md) позволяет закреплять DocumentGroup рядом друг с другом одновременно горизонтально и вертикально. 
 
 ![dockmanager-allowfreedocumentlayout](../images/dockmanager-allowfreedocumentlayout.png)
 
@@ -305,7 +305,7 @@ public static AppBuilder BuildAvaloniaApp()
 
 #### Задание содержимого заголовков FloatGroup
 
-Новые свойства `FloatGroup.WindowTitle` и `FloatGroup.WindowIcon` позволяют задавать заголовок и значок для плавающих групп (плавающих окон). 
+Новые свойства [`FloatGroup.WindowTitle`](../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/WindowTitle.md) и [`FloatGroup.WindowIcon`](../API/Eremex.AvaloniaUI.Controls.Docking/FloatGroup/WindowIcon.md) позволяют задавать заголовок и значок для плавающих групп (плавающих окон). 
 Подробнее смотрите в следующем разделе: [Задание заголовка и изображения плавающего окна](../controls/docking/dock-panes-and-containers.md#задание-заголовка-и-изображения-плавающего-окна).
 
 
@@ -333,7 +333,7 @@ Describe in the main topic + change? the example
 articles\controls\datagrid\examples\how-to-prevent-opening-popups-for-read-only-popup-editors.md
  -->
 
-- Поля цвета в контролах `ColorEditor` и `PopupColorEditor` теперь отображают дополнительные секции с серыми квадратами, указывающими на наличие альфа-канала (прозрачности) в цвете.
+- Поля цвета в контролах [`ColorEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/ColorEditor.md) и [`PopupColorEditor`](../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) теперь отображают дополнительные секции с серыми квадратами, указывающими на наличие альфа-канала (прозрачности) в цвете.
 
     ![Popupcoloreditor-transparent-value-chessboard](../images/Popupcoloreditor-transparent-value-chessboard.png)
 

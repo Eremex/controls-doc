@@ -1,16 +1,16 @@
 ---
-title: 页眉项目
+title: 页面标题项
 order: 550
 seealso: []
 ---
 
-# 页眉项目
+# 页面标题项 {#page-header-items}
 
-页眉项目为 [ribbon items](ribbon-items.md)，显示在带有页眉的 line 中。这些项目固定在 Ribbon control 的右边缘。
+页面标题项是与页面标题显示在同一行中的 [Ribbon 项](ribbon-items.md)。这些项固定在 Ribbon 控件的右边缘。
 
 ![ribbon-pageheaderitems](../../images/ribbon-pageheaderitems.png)
 
-使用 `RibbonControl.PageHeaderItems` 集合添加、访问和修改页眉项目。
+使用 [`RibbonControl.PageHeaderItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/PageHeaderItems.md) 集合来添加、访问和修改页面标题项。
 
 ``` xml
 <mxr:RibbonControl.PageHeaderItems>
@@ -27,7 +27,8 @@ seealso: []
 </mxr:RibbonControl.PageHeaderItems>
 ```
 
-您还可以使用 `RibbonControl.PageHeaderItemsSource` 属性从存储在视图模型中的业务对象集合创建页眉项。相应的数据模板should定义[ribbon items](ribbon-items.md)。
+您还可以使用 [`RibbonControl.PageHeaderItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/PageHeaderItemsSource.md) 属性，根据 View Model 中存储的业务对象集合创建页面标题项。相应的数据模板应定义 [Ribbon 项](ribbon-items.md)。
+
 
 <br>
 <br>

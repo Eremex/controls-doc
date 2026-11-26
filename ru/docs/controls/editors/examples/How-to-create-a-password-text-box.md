@@ -10,9 +10,9 @@ seealso: []
 
 ![texteditor-passwordchar](../../../images/texteditor-password.gif)
 
-Класс `TextEditor` в настоящее время не содержит свойства `PasswordChar`. Однако вы можете включить режим пароля для внутреннего текстового поля (контрола `TextBox`), которое встроено в контрол `TextEditor` и предоставляет функциональность редактирования текста.
+Класс [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) в настоящее время не содержит свойства `PasswordChar`. Однако вы можете включить режим пароля для внутреннего текстового поля (контрола `TextBox`), которое встроено в контрол [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) и предоставляет функциональность редактирования текста.
 
-Следующий пример создаёт поведение _PasswordBoxBehavior_, которое активирует режим пароля для внутреннего текстового поля редактора (`TextBox`). Класс _PasswordBoxBehavior_ предоставляет свойства `PasswordChar` и `ShowRevealButton`, чтобы задать символ маски пароля и видимость кнопки показа пароля.
+Этот пример создаёт поведение _PasswordBoxBehavior_, которое активирует режим пароля для внутреннего текстового поля редактора (`TextBox`). Класс _PasswordBoxBehavior_ предоставляет свойства `PasswordChar` и `ShowRevealButton`, чтобы задать символ маски пароля и видимость кнопки показа пароля.
 
 Вам нужно добавить NuGet-пакет `Avalonia.Xaml.Behaviors` в ваш проект, чтобы использовать поведения.
 
@@ -50,7 +50,7 @@ public class PasswordBoxBehavior : Avalonia.Xaml.Interactivity.Behavior<TextEdit
 }
 ```
 
-Присоедините поведение _PasswordBoxBehavior_ к контролу `TextEditor` в вашем проекте следующим образом:
+Присоедините поведение _PasswordBoxBehavior_ к контролу [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md) в вашем проекте следующим образом:
 
 ``` xml
 xmlns:view="using:DemoCenter.Views"

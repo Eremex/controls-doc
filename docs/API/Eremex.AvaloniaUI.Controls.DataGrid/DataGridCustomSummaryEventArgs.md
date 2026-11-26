@@ -12,11 +12,18 @@ Provides data for the CustomSummary event.
 public class DataGridCustomSummaryEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
-| [DataGridCustomSummaryEventArgs](DataGridCustomSummaryEventArgs/DataGridCustomSummaryEventArgs.md)(…) | Initializes a new instance of the DataGridCustomSummaryEventArgs class with the specified summary item and row indexes. |
+| [DataGridCustomSummaryEventArgs](DataGridCustomSummaryEventArgs/DataGridCustomSummaryEventArgs.md)(…) | Initializes a new instance of the DataGridCustomSummaryEventArgs class with the specified summary item, row indexes, and group row index. |
+
+## Properties
+
+| name | description |
+| --- | --- |
+| [GroupRowIndex](DataGridCustomSummaryEventArgs/GroupRowIndex.md) { get; } | Gets the index of the group row for which the summary value is calculated. Null if the total summary is calculated. |
+| [IsGroupSummary](DataGridCustomSummaryEventArgs/IsGroupSummary.md) { get; } | Gets whether the summary value is calculated for a group of rows. |
 | [RowIndexes](DataGridCustomSummaryEventArgs/RowIndexes.md) { get; } | Gets the indexes of the rows over which the summary value is calculated. |
 | [SummaryItem](DataGridCustomSummaryEventArgs/SummaryItem.md) { get; } | Gets the summary item whose value is calculated. |
 | [SummaryValue](DataGridCustomSummaryEventArgs/SummaryValue.md) { get; set; } | Gets or sets the calculated summary value. Set this property to implement a custom summary. |

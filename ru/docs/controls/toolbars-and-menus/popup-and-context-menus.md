@@ -6,15 +6,15 @@ seealso: []
 
 # Всплывающие и контекстные меню
 
-Библиотека панелей инструментов и меню содержит компонент `PopupMenu`, который позволяет создавать всплывающие и контекстные меню для контролов.
+Библиотека панелей инструментов и меню содержит компонент [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md), который позволяет создавать всплывающие и контекстные меню для контролов.
 
 ## Контекстные меню
 
-Чтобы задать контекстное меню, установите присоединённое свойство `ToolbarManager.ContextPopup` целевого контрола в объект `PopupMenu`.
+Чтобы задать контекстное меню, установите присоединённое свойство `ToolbarManager.ContextPopup` целевого контрола в объект [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md).
 
 ![toolbars-contextmenu](../../images/toolbars-contextmenu.png)
 
-Вы можете добавлять в контекстное меню все типы [элементов панели инструментов](toolbar-items.md). Определяйте элементы между открывающим и закрывающим тегами `<PopupMenu>` в XAML или добавляйте элементы в коллекцию `PopupMenu.Items` в code-behind.
+Вы можете добавлять в контекстное меню все типы [элементов панели инструментов](toolbar-items.md). Определяйте элементы между открывающим и закрывающим тегами `<PopupMenu>` в XAML или добавляйте элементы в коллекцию [`PopupMenu.Items`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Items.md) в code-behind.
 
 ``` xml
 xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
@@ -42,21 +42,21 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 
 ## Основные свойства и события всплывающего меню
 
-- `ShowIconStrip` — возвращает или задаёт, отображать ли вертикальную полосу значков для элементов меню.
-- `Header` — позволяет задать заголовок меню.
-- `ShowHeader` — возвращает или задаёт, виден ли заголовок меню.
-- `ContentRightIndent` — задаёт ширину пустого пространства справа от текста элементов меню.
+- [`ShowIconStrip`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ShowIconStrip.md) — возвращает или задаёт, отображать ли вертикальную полосу значков для элементов меню.
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Header.md) — позволяет задать заголовок меню.
+- [`ShowHeader`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ShowHeader.md) — возвращает или задаёт, виден ли заголовок меню.
+- [`ContentRightIndent`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ContentRightIndent.md) — задаёт ширину пустого пространства справа от текста элементов меню.
 
 **События**
 
-- `Opening` — возникает, когда меню собирается отобразиться. Это событие позволяет отменить отображение меню.
-- `Opened` — возникает после отображения меню.
-- `Closing` — возникает, когда меню собирается закрыться. Это событие позволяет отменить закрытие меню.
-- `Closed` — возникает после закрытия меню.
+- [`Opening`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Opening.md) — возникает, когда меню собирается отобразиться. Это событие позволяет отменить отображение меню.
+- [`Opened`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Opened.md) — возникает после отображения меню.
+- [`Closing`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Closing.md) — возникает, когда меню собирается закрыться. Это событие позволяет отменить закрытие меню.
+- [`Closed`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Closed.md) — возникает после закрытия меню.
 
 ## Пример - Как назначить контекстные меню контролам определённого типа
 
-Вы можете определить меню в коллекции `Styles`, если вам нужно задать одно контекстное меню для нескольких контролов одного типа. Следующий пример устанавливает присоединённое свойство `ToolbarManager.ContextPopup` для контролов `TextBox`, находящихся внутри UserControl.
+Вы можете определить меню в коллекции `Styles`, если вам нужно задать одно контекстное меню для нескольких контролов одного типа. Этот пример устанавливает присоединённое свойство `ToolbarManager.ContextPopup` для контролов `TextBox`, находящихся внутри UserControl.
 
 ![toolbars-contextmenu-styles](../../images/toolbars-contextmenu-styles.png)
 

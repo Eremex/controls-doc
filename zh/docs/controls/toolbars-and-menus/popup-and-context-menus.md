@@ -4,17 +4,17 @@ order: 70000
 seealso: []
 ---
 
-# 弹出菜单和上下文菜单
+# 弹出菜单和上下文菜单 {#popup-and-context-menus}
 
-Toolbar&Menu 库包含 `PopupMenu` 组件，允许您为控件创建弹出菜单和上下文菜单。
+Toolbar&Menu 库包含 [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) 组件，允许您为控件创建弹出菜单和上下文菜单。
 
-## 上下文菜单
+## 上下文菜单 {#context-menus}
 
-要指定上下文菜单，请将目标控件的 `ToolbarManager.ContextPopup` 附加属性设置为一个 `PopupMenu` 对象。
+要指定上下文菜单，请将目标控件的 `ToolbarManager.ContextPopup` 附加属性设置为一个 [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) 对象。
 
 ![toolbars-contextmenu](../../images/toolbars-contextmenu.png)
 
-您可以将所有类型的[工具栏项](toolbar-items.md)添加到上下文菜单中。在 XAML 中的起始和结束 `<PopupMenu>` 标记之间定义这些项，或在代码隐藏文件中将它们添加到 `PopupMenu.Items` 集合中。
+您可以将所有类型的[工具栏项](toolbar-items.md)添加到上下文菜单中。在 XAML 中的起始和结束 `<PopupMenu>` 标记之间定义这些项，或在代码隐藏文件中将它们添加到 [`PopupMenu.Items`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Items.md) 集合中。
 
 ``` xml
 xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
@@ -40,21 +40,21 @@ xmlns:mxb="https://schemas.eremexcontrols.net/avalonia/bars"
 </TextBox>
 ```
 
-## PopupMenu 的主要设置和事件
+## PopupMenu 的主要设置和事件 {#popupmenus-main-settings-and-events}
 
-- `ShowIconStrip` — 获取或设置是否显示菜单项的垂直图标条。
-- `Header` — 允许您指定菜单的标题。
-- `ShowHeader` — 获取或设置菜单标题是否可见。
-- `ContentRightIndent` — 指定菜单项文本右侧空白区域的宽度。
+- [`ShowIconStrip`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ShowIconStrip.md) — 获取或设置是否显示菜单项的垂直图标条。
+- [`Header`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Header.md) — 允许您指定菜单的标题。
+- [`ShowHeader`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ShowHeader.md) — 获取或设置菜单标题是否可见。
+- [`ContentRightIndent`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/ContentRightIndent.md) — 指定菜单项文本右侧空白区域的宽度。
 
 **事件**
 
-- `Opening` — 当菜单即将显示时触发。该事件允许您取消菜单的显示。
-- `Opened` — 菜单显示后触发。
-- `Closing` — 当菜单即将关闭时触发。该事件允许您取消菜单的关闭。
-- `Closed` — 菜单关闭后触发。
+- [`Opening`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Opening.md) — 当菜单即将显示时触发。该事件允许您取消菜单的显示。
+- [`Opened`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Opened.md) — 菜单显示后触发。
+- [`Closing`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Closing.md) — 当菜单即将关闭时触发。该事件允许您取消菜单的关闭。
+- [`Closed`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu/Closed.md) — 菜单关闭后触发。
 
-## 示例 — 如何将上下文菜单分配给特定类型的控件
+## 示例 — 如何将上下文菜单分配给特定类型的控件 {#example-how-to-assign-context-menus-to-controls-of-a-specific-type}
 
 如果您需要为同一类型的多个控件指定同一个上下文菜单，可以在 `Styles` 集合中定义该菜单。以下示例为位于 UserControl 内的 `TextBox` 控件设置 `ToolbarManager.ContextPopup` 附加属性。
 

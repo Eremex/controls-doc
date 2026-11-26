@@ -9,7 +9,7 @@ seealso: []
 Редакторы Eremex поддерживают следующие подходы к валидации данных, которые обеспечивают корректный ввод данных, проверку значений и отображение ошибок для недопустимых данных:
 
 - [Маски](masks/index.md) — позволяют задать шаблон, ограничивающий ввод данных пользователями в текстовых редакторах. 
-- Валидация данных на уровне редактора с помощью события `BaseEditor.Validate`.
+- Валидация данных на уровне редактора с помощью события [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md).
 - Валидация данных на уровне привязанного объекта с помощью атрибутов `DataAnnotation` и интерфейса `INotifyDataErrorInfo`.
 
 <!-- TODO
@@ -47,20 +47,20 @@ Why ValidateOnInput is true by default?
 
 ### Принудительная валидация данных
 
-В определённых случаях вам может потребоваться принудительно вызвать механизм валидации для редактора. Используйте для этого метод `BaseEditor.DoValidate`.
+В определённых случаях вам может потребоваться принудительно вызвать механизм валидации для редактора. Используйте для этого метод [`BaseEditor.DoValidate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/DoValidate.md).
 
 ## Валидация данных на уровне редактора
 
 ### Событие 'Validate'
 
-Событие `BaseEditor.Validate` позволяет выполнять валидацию данных на уровне редактора в code-behind. Доступны следующие аргументы события:
+Событие [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) позволяет выполнять валидацию данных на уровне редактора в code-behind. Доступны следующие аргументы события:
 
-- `ValidationEventArgs.Value` — возвращает текущее значение.
-- `ValidationEventArgs.ErrorContent` — позволяет задать ошибку, если текущее значение недопустимо. Если вы оставите свойство `ErrorContent` установленным в `null`, текущее значение считается допустимым.
+- [`ValidationEventArgs.Value`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/Value.md) — возвращает текущее значение.
+- [`ValidationEventArgs.ErrorContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/ErrorContent.md) — позволяет задать ошибку, если текущее значение недопустимо. Если вы оставите свойство [`ErrorContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/ErrorContent.md) установленным в `null`, текущее значение считается допустимым.
 
 #### Пример - проверка того, что введённое значение является допустимым адресом электронной почты
 
-Следующий пример обрабатывает событие `BaseEditor.Validate`, чтобы проверить, что строка, введённая в Text Editor, является допустимым адресом электронной почты. Опция `ValidateOnInput`, установленная в `true`, обеспечивает вызов валидации при каждом нажатии символа.
+Этот пример обрабатывает событие [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md), чтобы проверить, что строка, введённая в Text Editor, является допустимым адресом электронной почты. Опция `ValidateOnInput`, установленная в `true`, обеспечивает вызов валидации при каждом нажатии символа.
 
 ![editors-validation-validate-event-example](../../images/editors-validation-validate-event-example.png)
 
@@ -107,7 +107,7 @@ bool IsEmailAddress(string email)
 
 #### Пример - валидация с помощью 'RangeAttribute'
 
-Следующий пример использует атрибут `RangeAttribute`, чтобы обеспечить, что значение свойства находится в диапазоне от 10 до 100. Редактор отображает ошибку, если значение выходит за этот диапазон.
+Этот пример использует атрибут `RangeAttribute`, чтобы обеспечить, что значение свойства находится в диапазоне от 10 до 100. Редактор отображает ошибку, если значение выходит за этот диапазон.
 
 ![texteditor-validation-dataannotation-rangeattribute-example](../../images/texteditor-validation-dataannotation-rangeattribute-example.png)
 
@@ -134,7 +134,7 @@ public partial class MyViewModel : ObservableObject
 
 #### Пример - реализация интерфейса 'INotifyDataErrorInfo'
 
-Следующий пример привязывает Text Editor к свойству _NickName_, определённому в классе _MainViewModel_. Класс _MainViewModel_ реализует интерфейс `INotifyDataErrorInfo`, определяющий три правила валидации для свойства _NickName_. Text Editor отображает ошибку, если метод `INotifyDataErrorInfo.GetErrors` возвращает ошибку (ошибки) для свойства _NickName_.
+Этот пример привязывает Text Editor к свойству _NickName_, определённому в классе _MainViewModel_. Класс _MainViewModel_ реализует интерфейс `INotifyDataErrorInfo`, определяющий три правила валидации для свойства _NickName_. Text Editor отображает ошибку, если метод `INotifyDataErrorInfo.GetErrors` возвращает ошибку (ошибки) для свойства _NickName_.
 
 ![editors-validation-inotifydataerrorinfo-example](../../images/editors-validation-inotifydataerrorinfo-example.png)
 
@@ -212,17 +212,17 @@ public partial class MainViewModel : ObservableObject, INotifyDataErrorInfo
 
 ## Индикация ошибок
 
-Когда во время валидации данных возникает ошибка, редактор индицирует ошибку в соответствии со свойством `BaseEditor.ErrorShowMode`. Поддерживаются два режима отображения ошибок: 
+Когда во время валидации данных возникает ошибка, редактор индицирует ошибку в соответствии со свойством [`BaseEditor.ErrorShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ErrorShowMode.md). Поддерживаются два режима отображения ошибок: 
 
 ### Показ встроенного значка ошибки и всплывающей подсказки
 
-Если свойство `ErrorShowMode` установлено в `Inplace`, редактор отображает значок ошибки внутри поля ввода. Когда пользователь наводит курсор на значок, появляется всплывающая подсказка с описанием ошибки.
+Если свойство [`ErrorShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ErrorShowMode.md) установлено в `Inplace`, редактор отображает значок ошибки внутри поля ввода. Когда пользователь наводит курсор на значок, появляется всплывающая подсказка с описанием ошибки.
 
 ![texteditor-errorshowmode-inplace](../../images/texteditor-errorshowmode-inplace.png)
 
 ### Показ ошибки под редактором
 
-Установите свойство `ErrorShowMode` в `Full`, чтобы отобразить описание ошибки под полем ввода. Встроенный значок ошибки в этом случае скрыт.
+Установите свойство [`ErrorShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ErrorShowMode.md) в `Full`, чтобы отобразить описание ошибки под полем ввода. Встроенный значок ошибки в этом случае скрыт.
 
 ![texteditor-errorshowmode-full](../../images/texteditor-errorshowmode-full.png)
 
@@ -231,11 +231,11 @@ public partial class MainViewModel : ObservableObject, INotifyDataErrorInfo
 
 Чтобы задать текст ошибки, вы можете выполнить одно из следующих действий:
 
-- Обработать событие `BaseEditor.Validate` и установить аргумент события `ErrorContent`. Ошибка не применяется, если вы оставите аргумент события `ErrorContent` установленным в `null`.
+- Обработать событие [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) и установить аргумент события [`ErrorContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/ErrorContent.md). Ошибка не применяется, если вы оставите аргумент события [`ErrorContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/ErrorContent.md) установленным в `null`.
 
-    Чтобы принудительно инициировать событие `BaseEditor.Validate`, вызовите метод `BaseEditor.DoValidate`.
+    Чтобы принудительно инициировать событие [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md), вызовите метод [`BaseEditor.DoValidate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/DoValidate.md).
 
-- Задать ошибку с помощью свойства `BaseEditor.ValidationInfo`.
+- Задать ошибку с помощью свойства [`BaseEditor.ValidationInfo`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ValidationInfo.md).
 
     Следующий код устанавливает ошибку для редактора, если значение редактора равно `null` или `0`.
 
@@ -246,12 +246,12 @@ public partial class MainViewModel : ObservableObject, INotifyDataErrorInfo
 
     ```
 
-    Установите свойство `BaseEditor.ValidationInfo` в `null`, чтобы очистить ошибку.
+    Установите свойство [`BaseEditor.ValidationInfo`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ValidationInfo.md) в `null`, чтобы очистить ошибку.
 
 
 ### Получение текста ошибки
 
-Используйте свойство `BaseEditor.ErrorText`, чтобы получить текст ошибки.
+Используйте свойство [`BaseEditor.ErrorText`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ErrorText.md), чтобы получить текст ошибки.
 
 
 

@@ -12,12 +12,22 @@ Provides methods for creating editors and their settings.
 public class EditorPropertiesProvider
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [EditorPropertiesProvider](EditorPropertiesProvider/EditorPropertiesProvider.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | static [Default](EditorPropertiesProvider/Default.md) { get; } | Gets the default editor properties provider. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [CreateEditor](EditorPropertiesProvider/CreateEditor.md)(…) | Creates an editor for the specified settings type, or returns null if no matching editor is registered. |
 | [CreateEditorProperties](EditorPropertiesProvider/CreateEditorProperties.md)(…) | Creates settings for the specified editor type, or returns null if no matching settings are registered. |
 | [RegisterEditor](EditorPropertiesProvider/RegisterEditor.md)(…) | Registers an editor type with its settings type and factory methods. |

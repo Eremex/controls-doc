@@ -12,7 +12,7 @@ Provides data for the event raised before a docking item context menu opens.
 public class DockItemContextMenuOpeningEventArgs : DockItemEventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

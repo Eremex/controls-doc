@@ -25,6 +25,7 @@ seealso: []
 - Группировку строк
 - Форматирование значений
 - Сортировку данных
+- Общие и групповые итоги
 
 <!-- TODO
  - Data filtering settings 
@@ -37,7 +38,7 @@ seealso: []
 
 !!! note
 
-    Форматирование ячеек, реализованное с помощью шаблонов ячеек (`GridColumn.CellTemplate`), не экспортируется.
+    Форматирование ячеек, реализованное с помощью шаблонов ячеек ([`GridColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md)), не экспортируется.
 
 Используйте следующие методы для экспорта данных контрола в формат XLSX:
 
@@ -45,43 +46,68 @@ seealso: []
 
 - <code>DataGridControl.ExportToXlsx(Stream stream, XlsxExportOptions? options = null)</code> — экспортирует данные в поток.
 
-Необязательный параметр `options` (типа `XlsxExportOptions`) позволяет настроить параметры экспорта. Класс `XlsxExportOptions` предоставляет следующие члены:
+Необязательный параметр `options` (типа [`XlsxExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions.md)) позволяет настроить параметры экспорта. Класс [`XlsxExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions.md) предоставляет следующие члены:
 
-- Событие `ExportProgress` — возникает многократно в процессе экспорта данных. Параметр `ExportProgressEventArgs.ProgressPercentage` этого события указывает прогресс в процентах (от 0 до 100). Вы можете использовать это событие для отображения пользователям хода экспорта в удобном виде.
-- Свойство `AllowFixedColumnHeaderPanel` (по умолчанию `true`) — определяет, остаётся ли панель заголовков колонок закреплённой сверху в экспортированном документе. 
+**Ход экспорта**
 
-- `ApplyFormattingToEntireColumn` — определяет, применяется ли форматирование ячеек ко всей колонке целиком или к отдельным ячейкам в выходном документе.
+- Событие [`ExportProgress`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ExportProgress.md) — возникает многократно в процессе экспорта данных. Параметр [`ExportProgressEventArgs.ProgressPercentage`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportProgressEventArgs/ProgressPercentage.md) этого события указывает прогресс в процентах (от 0 до 100). Вы можете использовать это событие для отображения пользователям хода экспорта в удобном виде.
 
-- Свойство `AllowGrouping` (по умолчанию `true`) — определяет, экспортируются ли строки групп и иерархия группировки. Если `AllowGrouping` имеет значение `false`, экспортируются только строки данных.
 
-- `DocumentCulture` — пользовательский объект `CultureInfo`, определяющий правила форматирования числовых значений и значений даты-времени в выходном документе.
+**Заголовки колонок и групп колонок**
 
-    Если свойство `DocumentCulture` не задано, механизм экспорта использует текущую культуру приложения.
+- Свойство [`AllowFixedColumnHeaderPanel`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowFixedColumnHeaderPanel.md) (по умолчанию `true`) — определяет, остаётся ли панель заголовков колонок закреплённой сверху в экспортированном документе. 
 
-- Свойство `ShowBands` (по умолчанию `null`) — определяет, включаются ли [группы](bands.md) контрола в экспорт. 
+- Свойство [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowBands.md) (по умолчанию `null`) — определяет, включаются ли [группы колонок](bands.md) контрола в экспорт. 
 
-    Если `ShowBands` имеет значение `null`, используется значение свойства `DataGridControl.ShowBands` контрола. 
+    Если [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowBands.md) имеет значение `null`, используется значение свойства [`DataGridControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBands.md) контрола. 
 
-- Свойство `ShowColumnHeaders` (по умолчанию `null`) — определяет, включается ли панель заголовков колонок в экспорт. 
+- Свойство [`ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) (по умолчанию `null`) — определяет, включается ли панель заголовков колонок в экспорт. 
 
-    Если `ShowColumnHeaders` имеет значение `null`, используется значение свойства `DataGridControl.ShowColumnHeaders` контрола. 
+    Если [`ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) имеет значение `null`, используется значение свойства [`DataGridControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowColumnHeaders.md) контрола. 
 
-- `ShowHorizontalLines` — определяет, отображаются ли горизонтальные линии между ячейками в выходном документе.
 
-- `ShowVerticalLines` — определяет, отображаются ли вертикальные линии между ячейками в выходном документе.
+**Группировка данных**
 
-- Свойство `TextExportMode` — режим экспорта значений ячеек **по умолчанию**. 
+- Свойство [`AllowGrouping`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowGrouping.md) (по умолчанию `true`) — определяет, экспортируются ли строки групп и иерархия группировки. Если [`AllowGrouping`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/AllowGrouping.md) имеет значение `false`, экспортируются только строки данных.
+
+
+**Итоги**
+
+- [`ShowGroupSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowGroupSummaries.md) — возвращает или задаёт, экспортируются ли [групповые итоги](summaries.md#групповые-итоги).
+
+- [`ShowTotalSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowTotalSummaries.md) — возвращает или задаёт, экспортируются ли [общие итоги](summaries.md#общие-итоги).
+
+- [`SummaryCountBlankCells`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/SummaryCountBlankCells.md) — возвращает или задаёт, учитывают ли формулы итога Count пустые ячейки.
+
+- [`ShowSummaryLabels`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowSummaryLabels.md) — возвращает или задаёт, включаются ли метки итогов в экспортированные ячейки итогов.
+
+**Линии ячеек**
+
+- [`ShowHorizontalLines`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowHorizontalLines.md) — определяет, отображаются ли горизонтальные линии между ячейками в выходном документе.
+
+- [`ShowVerticalLines`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ShowVerticalLines.md) — определяет, отображаются ли вертикальные линии между ячейками в выходном документе.
+
+
+**Региональные параметры и форматирование ячеек**
+
+- [`ApplyFormattingToEntireColumn`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/ApplyFormattingToEntireColumn.md) — определяет, применяется ли форматирование ячеек ко всей колонке целиком или к отдельным ячейкам в выходном документе.
+
+- [`DocumentCulture`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/DocumentCulture.md) — пользовательский объект `CultureInfo`, определяющий правила форматирования числовых значений и значений даты-времени в выходном документе.
+
+    Если свойство [`DocumentCulture`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/DocumentCulture.md) не задано, механизм экспорта использует текущую культуру приложения.
+
+- Свойство [`TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — режим экспорта значений ячеек **по умолчанию**. 
 
     Доступные варианты: 
 
-    - `TextExportMode.Value` — экспортирует значения ячеек. Если значения ячеек отформатированы в контроле DataGrid, механизм экспорта пытается применить соответствующее форматирование к экспортированным значениям в выходном документе.
-    - `TextExportMode.Text` — экспортирует отображаемый текст ячеек. Если значения ячеек отформатированы в контроле DataGrid, экспортируется отформатированное строковое представление.
+    - [`TextExportMode.Value`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — экспортирует значения ячеек. Если значения ячеек отформатированы в контроле DataGrid, механизм экспорта пытается применить соответствующее форматирование к экспортированным значениям в выходном документе.
+    - [`TextExportMode.Text`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — экспортирует отображаемый текст ячеек. Если значения ячеек отформатированы в контроле DataGrid, экспортируется отформатированное строковое представление.
 
-    Вы можете использовать свойство `GridColumn.TextExportMode`, чтобы переопределить настройку `XlsxExportOptions.TextExportMode` для отдельных колонок.
+    Вы можете использовать свойство [`GridColumn.TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/TextExportMode.md), чтобы переопределить настройку [`XlsxExportOptions.TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/XlsxExportOptions/TextExportMode.md) для отдельных колонок.
 
     !!! note
 
-        Механизм экспорта учитывает только форматирование ячеек, применённое с помощью свойства `GridColumn.EditorProperties`. Например:
+        Механизм экспорта учитывает только форматирование ячеек, применённое с помощью свойства [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md). Например:
 
         ```
         <mxdg:GridColumn Width="*" FieldName="Salary">
@@ -91,7 +117,7 @@ seealso: []
         </mxdg:GridColumn>
         ```
 
-        Форматирование ячеек, применённое другими способами (например, с помощью `GridColumn.CellTemplate`), игнорируется при экспорте данных.
+        Форматирование ячеек, применённое другими способами (например, с помощью [`GridColumn.CellTemplate`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md)), игнорируется при экспорте данных.
 
         
 
@@ -117,40 +143,57 @@ image with data grouping export
 
 - <code>DataGridControl.ExportToPdf(Stream stream, PageExportOptions? options = null)</code> — экспортирует данные в поток.
 
-Необязательный параметр `options` (типа `PageExportOptions`) позволяет настроить параметры экспорта. Класс `PageExportOptions` предоставляет следующие члены:
+Необязательный параметр `options` (типа [`PageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions.md)) позволяет настроить параметры экспорта. Класс [`PageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions.md) предоставляет следующие члены:
 
-- Событие `PageExportOptions.ExportProgress` — возникает многократно в процессе экспорта данных. Параметр `ExportProgressEventArgs.ProgressPercentage` этого события указывает прогресс в процентах (от 0 до 100). Вы можете использовать это событие для отображения пользователям хода экспорта в удобном виде.
+**Ход экспорта**
 
-- `PageExportOptions.FitToPageWidth` (по умолчанию `false`) — определяет, растягиваются ли колонки грида по ширине страницы.
+- Событие [`PageExportOptions.ExportProgress`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ExportProgress.md) — возникает многократно в процессе экспорта данных. Параметр [`ExportProgressEventArgs.ProgressPercentage`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportProgressEventArgs/ProgressPercentage.md) этого события указывает прогресс в процентах (от 0 до 100). Вы можете использовать это событие для отображения пользователям хода экспорта в удобном виде.
 
-- `PageExportOptions.Landscape` (по умолчанию `false`) — определяет ориентацию страницы: горизонтальную (`Landscape`) или вертикальную (`Portrait`).
+**Страница**
 
-- `PageExportOptions.Margins` (по умолчанию `72,72,72,72`) — поля страницы в пунктах. 1 пункт = 1/72 дюйма.
+- [`PageExportOptions.FitToPageWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/FitToPageWidth.md) (по умолчанию `false`) — определяет, растягиваются ли колонки грида по ширине страницы.
 
-- `PageExportOptions.PageRange` — строка, определяющая диапазон экспортируемых страниц. Вы можете использовать следующие обозначения для указания диапазона страниц:
+- [`PageExportOptions.Landscape`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Landscape.md) (по умолчанию `false`) — определяет ориентацию страницы: горизонтальную ([`Landscape`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Landscape.md)) или вертикальную (`Portrait`).
+
+- [`PageExportOptions.Margins`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Margins.md) (по умолчанию `72,72,72,72`) — поля страницы в пунктах. 1 пункт = 1/72 дюйма.
+
+- [`PageExportOptions.PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) — строка, определяющая диапазон экспортируемых страниц. Вы можете использовать следующие обозначения для указания диапазона страниц:
 
     - "1" — экспортирует страницу 1.
     - "1, 4, 8-10" — экспортирует страницы 1, 4 и с 8 по 10.
     <!-- - "7-" — Exports from page 7 to the end. -->
 
-    Значение по умолчанию свойства `PageRange` — пустая строка, при которой экспортируются все страницы.
+    Значение по умолчанию свойства [`PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) — пустая строка, при которой экспортируются все страницы.
 
-- `PageExportOptions.PaperKind` (по умолчанию `A4`) — размер бумаги.
+- [`PageExportOptions.PaperKind`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PaperKind.md) (по умолчанию `A4`) — размер бумаги.
 
-- Свойство `PageExportOptions.ShowBands` (по умолчанию `null`) — определяет, включаются ли [группы](bands.md) контрола в экспорт. 
+**Заголовки колонок и групп колонок**
 
-    Если `ShowBands` имеет значение `null`, используется значение свойства `DataGridControl.ShowBands` контрола. 
+- Свойство [`PageExportOptions.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) (по умолчанию `null`) — определяет, включаются ли [группы колонок](bands.md) контрола в экспорт. 
 
-- Свойство `PageExportOptions.ShowColumnHeaders` (по умолчанию `null`) — определяет, включается ли панель заголовков колонок в экспорт. 
+    Если [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) имеет значение `null`, используется значение свойства [`DataGridControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBands.md) контрола. 
 
-    Если `ShowColumnHeaders` имеет значение `null`, используется значение свойства `DataGridControl.ShowColumnHeaders` контрола.  
+- Свойство [`PageExportOptions.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) (по умолчанию `null`) — определяет, включается ли панель заголовков колонок в экспорт. 
+
+    Если [`ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) имеет значение `null`, используется значение свойства [`DataGridControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowColumnHeaders.md) контрола.  
+
+
+**Итоги**
+
+- [`ShowGroupSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowGroupSummaries.md) — возвращает или задаёт, экспортируются ли [групповые итоги](summaries.md#групповые-итоги).
+
+- [`ShowTotalSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowTotalSummaries.md) — возвращает или задаёт, экспортируются ли [общие итоги](summaries.md#общие-итоги).
+
+**Собственный текст ячеек**
+
+- Событие [`ColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ColumnDisplayText.md) — возникает каждый раз, когда при экспорте формируется отображаемый текст ячейки. Обработайте это событие, чтобы задать собственный отображаемый текст ячеек.
     
 
 ## Экспорт в формат CSV
 
-Контрол DataGrid предоставляет метод `ExportToCsv` для экспорта данных в формат CSV. CSV (comma-separated values, значения, разделённые запятыми) — это текстовый формат данных для хранения табличных данных. Каждая запись экспортируется в виде текстовой строки, в которой значения разделены разделителем (как правило, запятой).
+Контрол DataGrid предоставляет метод [`ExportToCsv`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ExportToCsv.md) для экспорта данных в формат CSV. CSV (comma-separated values, значения, разделённые запятыми) — это текстовый формат данных для хранения табличных данных. Каждая запись экспортируется в виде текстовой строки, в которой значения разделены разделителем (как правило, запятой).
 
-Доступны следующие перегрузки метода `ExportToCsv`:
+Доступны следующие перегрузки метода [`ExportToCsv`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ExportToCsv.md):
 
 - <code>DataGridControl.ExportToCsv(string filePath, TextExportMode textExportNode = TextExportMode.Text, string separator = ",", bool quoteStringsWithSeparators = true)</code> — экспортирует данные в файл.
 
@@ -162,14 +205,14 @@ image with data grouping export
 
     Доступные варианты: 
 
-    - `TextExportMode.Value` — экспортирует значения ячеек. Форматы данных, применённые к значениям ячеек, не экспортируются.
-    - `TextExportMode.Text` — экспортирует отображаемый текст ячеек. Если значения ячеек отформатированы в контроле DataGrid, экспортируется отформатированное строковое представление.
+    - [`TextExportMode.Value`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — экспортирует значения ячеек. Форматы данных, применённые к значениям ячеек, не экспортируются.
+    - [`TextExportMode.Text`](../../API/Eremex.AvaloniaUI.Controls.DataControl/TextExportMode.md) — экспортирует отображаемый текст ячеек. Если значения ячеек отформатированы в контроле DataGrid, экспортируется отформатированное строковое представление.
 
         !!! note
 
-            Механизм экспорта учитывает только форматирование ячеек, применённое с помощью свойства `GridColumn.EditorProperties`.
+            Механизм экспорта учитывает только форматирование ячеек, применённое с помощью свойства [`GridColumn.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/EditorProperties.md).
 
-    Вы можете использовать свойство `GridColumn.TextExportMode`, чтобы переопределить параметр метода `textExportMode` для отдельных колонок. 
+    Вы можете использовать свойство [`GridColumn.TextExportMode`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/TextExportMode.md), чтобы переопределить параметр метода `textExportMode` для отдельных колонок. 
 
 
 - `separator` — строка, определяющая разделитель, используемый для разделения значений ячеек в выходном документе. Разделитель по умолчанию — запятая (",").
@@ -180,11 +223,11 @@ image with data grouping export
 
 ## Экспорт в форматы изображений
 
-Метод `ExportToImages` контрола DataGrid выполняет постраничный экспорт в формат изображения (PNG, JPEG, SVG или WebP). Если содержимое контрола слишком велико, чтобы поместиться на одной странице, метод разбивает данные на страницы и экспортирует каждую страницу в виде отдельного изображения. 
+Метод [`ExportToImages`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToImages.md) контрола DataGrid выполняет постраничный экспорт в формат изображения (PNG, JPEG, SVG или WebP). Если содержимое контрола слишком велико, чтобы поместиться на одной странице, метод разбивает данные на страницы и экспортирует каждую страницу в виде отдельного изображения. 
 
 ![treelist-export-to-images](../../images/treelist-export-to-images.png)
 
-Формат и размер целевой страницы определяются параметром, передаваемым методу. Метод `ExportToImages` использует тот же механизм постраничной разбивки, что и метод `ExportToPdf`.
+Формат и размер целевой страницы определяются параметром, передаваемым методу. Метод [`ExportToImages`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToImages.md) использует тот же механизм постраничной разбивки, что и метод [`ExportToPdf`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToPdf.md).
 
 - <code>DataGridControl.ExportToImages(string directory, string fileNameFormat, ImageExportOptions? options = null)</code>
 
@@ -201,7 +244,7 @@ options.PageRange = "1-2";
 dataGrid.ExportToImages(@"c:\images\", "img{0}.svg", options);
 ```
 
-Используйте параметры метода `ExportToImages` для настройки параметров страницы, формата выходного изображения и шаблона имени файла.
+Используйте параметры метода [`ExportToImages`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ExportToImages.md) для настройки параметров страницы, формата выходного изображения и шаблона имени файла.
 
 - `directory` — определяет каталог, в который сохраняются файлы изображений. Если указанный каталог не существует, возникает исключение.
 
@@ -212,41 +255,58 @@ dataGrid.ExportToImages(@"c:\images\", "img{0}.svg", options);
     - "image{0}.png" — создаёт файлы вида "image1.png", "image2.png" и так далее.
     - "image{0:D3}.svg"  — создаёт файлы вида "image001.svg", "image002.svg" и так далее.
     
-Необязательный параметр `options` (типа `ImageExportOptions`) позволяет настроить параметры экспорта. Класс `ImageExportOptions` предоставляет следующие члены:
+Необязательный параметр `options` (типа [`ImageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions.md)) позволяет настроить параметры экспорта. Класс [`ImageExportOptions`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions.md) предоставляет следующие члены:
 
-- `ImageExportOptions.Format` — выходной формат изображения (PNG, JPEG, SVG или WebP).
+**Формат выходного изображения**
 
-- `ImageExportOptions.PageBorderColor` — цвет рамки, отображаемой вокруг каждой страницы.
-- `ImageExportOptions.PageBorderWidth`  — толщина рамки, отображаемой вокруг каждой страницы.
+- [`ImageExportOptions.Format`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/Format.md) — выходной формат изображения (PNG, JPEG, SVG или WebP).
 
+**Ход экспорта**
 
-- Событие `PageExportOptions.ExportProgress` — возникает многократно в процессе экспорта данных. Параметр `ExportProgressEventArgs.ProgressPercentage` этого события указывает прогресс в процентах (от 0 до 100). Вы можете использовать это событие для отображения пользователям хода экспорта в удобном виде.
+- Событие [`PageExportOptions.ExportProgress`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ExportProgress.md) — возникает многократно в процессе экспорта данных. Параметр [`ExportProgressEventArgs.ProgressPercentage`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportProgressEventArgs/ProgressPercentage.md) этого события указывает прогресс в процентах (от 0 до 100). Вы можете использовать это событие для отображения пользователям хода экспорта в удобном виде.
 
+**Страница**
 
-- Свойство `PageExportOptions.ShowBands` (по умолчанию `null`) — определяет, включаются ли [группы](bands.md) контрола в экспорт. 
+- [`PageExportOptions.FitToPageWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/FitToPageWidth.md) (по умолчанию `false`) — определяет, растягиваются ли колонки грида по ширине страницы.
 
-    Если `ShowBands` имеет значение `null`, используется значение свойства `DataGridControl.ShowBands` контрола. 
+- [`PageExportOptions.Landscape`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Landscape.md) (по умолчанию `false`) — определяет ориентацию страницы: горизонтальную ([`Landscape`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Landscape.md)) или вертикальную (`Portrait`).
 
-- Свойство `PageExportOptions.ShowColumnHeaders` (по умолчанию `null`) — определяет, включается ли панель заголовков колонок в экспорт. 
+- [`PageExportOptions.Margins`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/Margins.md) (по умолчанию `72,72,72,72`) — поля страницы в пунктах. 1 пункт = 1/72 дюйма.
 
-    Если `ShowColumnHeaders` имеет значение `null`, используется значение свойства `DataGridControl.ShowColumnHeaders` контрола.  
+- [`ImageExportOptions.PageBorderColor`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/PageBorderColor.md) — цвет рамки, отображаемой вокруг каждой страницы.
 
-- `PageExportOptions.FitToPageWidth` (по умолчанию `false`) — определяет, растягиваются ли колонки грида по ширине страницы.
+- [`ImageExportOptions.PageBorderWidth`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ImageExportOptions/PageBorderWidth.md)  — толщина рамки, отображаемой вокруг каждой страницы.
 
-- `PageExportOptions.Landscape` (по умолчанию `false`) — определяет ориентацию страницы: горизонтальную (`Landscape`) или вертикальную (`Portrait`).
-
-- `PageExportOptions.Margins` (по умолчанию `72,72,72,72`) — поля страницы в пунктах. 1 пункт = 1/72 дюйма.
-
-
-- `PageExportOptions.PageRange` — строка, определяющая диапазон экспортируемых страниц. Вы можете использовать следующие обозначения для указания диапазона страниц:
+- [`PageExportOptions.PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) — строка, определяющая диапазон экспортируемых страниц. Вы можете использовать следующие обозначения для указания диапазона страниц:
 
     - "1" — экспортирует страницу 1.
     - "1, 4, 8-10" — экспортирует страницы 1, 4 и с 8 по 10.
-    - "7-" — экспортирует страницы начиная с 7-й и до конца.
+    <!-- - "7-" — Exports from page 7 to the end. -->
 
-    Значение по умолчанию свойства `PageRange` — пустая строка, при которой экспортируются все страницы.
+    Значение по умолчанию свойства [`PageRange`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PageRange.md) — пустая строка, при которой экспортируются все страницы.
 
-- `PageExportOptions.PaperKind` (по умолчанию `A4`) — размер бумаги.
+- [`PageExportOptions.PaperKind`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/PaperKind.md) (по умолчанию `A4`) — размер бумаги.
+
+**Заголовки колонок и групп колонок**
+
+- Свойство [`PageExportOptions.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) (по умолчанию `null`) — определяет, включаются ли [группы колонок](bands.md) контрола в экспорт. 
+
+    Если [`ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ShowBands.md) имеет значение `null`, используется значение свойства [`DataGridControl.ShowBands`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowBands.md) контрола. 
+
+- Свойство [`PageExportOptions.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) (по умолчанию `null`) — определяет, включается ли панель заголовков колонок в экспорт. 
+
+    Если [`ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowColumnHeaders.md) имеет значение `null`, используется значение свойства [`DataGridControl.ShowColumnHeaders`](../../API/Eremex.AvaloniaUI.Controls.DataGrid/DataGridControl/ShowColumnHeaders.md) контрола.  
+
+
+**Итоги**
+
+- [`ShowGroupSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowGroupSummaries.md) — возвращает или задаёт, экспортируются ли [групповые итоги](summaries.md#групповые-итоги).
+
+- [`ShowTotalSummaries`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ExportOptions/ShowTotalSummaries.md) — возвращает или задаёт, экспортируются ли [общие итоги](summaries.md#общие-итоги).
+
+**Собственный текст ячеек**
+
+- Событие [`ColumnDisplayText`](../../API/Eremex.AvaloniaUI.Controls.DataControl/PageExportOptions/ColumnDisplayText.md) — возникает каждый раз, когда при экспорте формируется отображаемый текст ячейки. Обработайте это событие, чтобы задать собственный отображаемый текст ячеек.
 
 <br>
 <br>

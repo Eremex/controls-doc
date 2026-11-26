@@ -12,11 +12,16 @@ Provides data for the CellValueChanging and CellValueChanged events.
 public class DataGridCellValueChangedEventArgs : DataGridCellEventArgsBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataGridCellValueChangedEventArgs](DataGridCellValueChangedEventArgs/DataGridCellValueChangedEventArgs.md)(…) | Initializes a new instance of the DataGridCellValueChangedEventArgs class with the specified row index, column, and values. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [OldValue](DataGridCellValueChangedEventArgs/OldValue.md) { get; } | Gets the cell's previous value. |
 | [Value](DataGridCellValueChangedEventArgs/Value.md) { get; } | Gets the cell's new value. |
 

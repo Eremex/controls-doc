@@ -12,11 +12,16 @@ Serves as the base class for editors that display and edit values.
 public class BaseEditor : TemplatedControl, IBaseEditor
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [BaseEditor](BaseEditor/BaseEditor.md)() | Initializes a new instance of the BaseEditor class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ActualErrorShowMode](BaseEditor/ActualErrorShowMode.md) { get; } | Gets the error display mode currently applied to the editor. |
 | [AllowNullInput](BaseEditor/AllowNullInput.md) { get; set; } | Gets or sets whether users can enter a null value into the editor. |
 | [AllowReadOnlyAppearance](BaseEditor/AllowReadOnlyAppearance.md) { get; set; } | Gets or sets whether the read-only appearance is applied when ReadOnly is true. |
@@ -38,13 +43,23 @@ public class BaseEditor : TemplatedControl, IBaseEditor
 | [ShowHoverDecorator](BaseEditor/ShowHoverDecorator.md) { get; set; } | Gets or sets whether the hover effect is shown when the pointer is over the editor. |
 | [ValidationInfo](BaseEditor/ValidationInfo.md) { get; set; } | Gets or sets information about a validation error. |
 | [VerticalContentAlignment](BaseEditor/VerticalContentAlignment.md) { get; set; } | Gets or sets the vertical alignment of the editor's content. |
-| event [EditorValueChanged](BaseEditor/EditorValueChanged.md) | Occurs when the editor's value changes. |
-| event [Validate](BaseEditor/Validate.md) | Occurs when the editor's value is validated. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | virtual [ClearSelection](BaseEditor/ClearSelection.md)() | Clears the text selection in the editor. |
 | [DoValidate](BaseEditor/DoValidate.md)() | Validates the editor's value. |
 | [GetDisplayText](BaseEditor/GetDisplayText.md)(…) | Returns the display text for the specified value. |
 | virtual [ResetInvalidUserInput](BaseEditor/ResetInvalidUserInput.md)() | Discards invalid user input and restores the editor's previous value. |
 | virtual [SelectAll](BaseEditor/SelectAll.md)() | Selects all the editor's text. |
+
+## Events
+
+| name | description |
+| --- | --- |
+| event [EditorValueChanged](BaseEditor/EditorValueChanged.md) | Occurs when the editor's value changes. |
+| event [Validate](BaseEditor/Validate.md) | Occurs when the editor's value is validated. |
 
 ## See Also
 

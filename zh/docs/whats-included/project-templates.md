@@ -4,11 +4,11 @@ order: 900
 seealso: []
 ---
 
-# 项目模板
+# 项目模板和项目项模板 {#project-and-project-item-templates}
 
-**Eremex.Avalonia.Templates** [NuGet 包](https://www.nuget.org/profiles/EremexControls)包含用于使用 Eremex Controls 快速创建新 Avalonia UI 项目的模板。
+**Eremex.Avalonia.Templates** [NuGet 包](https://www.nuget.org/profiles/EremexControls)包含的模板可帮助您快速创建使用 Eremex Controls 库的新 Avalonia UI 项目，并向现有项目中添加基于 Eremex 的窗口。
 
-## 安装 Eremex Avalonia 模板
+## 安装 Eremex Avalonia 模板 {#install-the-eremex-avalonia-templates}
 
 运行以下命令：
 
@@ -16,7 +16,7 @@ seealso: []
 dotnet new install Eremex.Avalonia.Templates
 </code>
 
-## 更新 Eremex Avalonia 模板
+## 更新 Eremex Avalonia 模板 {#update-the-eremex-avalonia-templates}
 
 要更新到最新版本，请运行模板安装命令：
 
@@ -24,44 +24,93 @@ dotnet new install Eremex.Avalonia.Templates
 dotnet new install Eremex.Avalonia.Templates
 </code>
 
-## 包含的模板
+## 包含的项目模板 {#included-project-templates}
 
-### `eremex.avalonia.app`
+下列所有项目模板都会向创建的项目添加所需的 Eremex NuGet 包，使主窗口派生自 [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) 以支持主题，并注册 `DeltaDesign` 绘制主题。
 
-该应用程序模板会创建一个引用 Eremex Controls 库的空 Avalonia UI 项目。此模板执行以下操作：
+### Eremex Avalonia .NET App {#eremex-avalonia-net-app}
 
-- 向项目中添加 Eremex 的 NuGet 包：
-    
-    - **Eremex.Avalonia.Controls**
-    - **Eremex.Avalonia.Themes.DeltaDesign**
+带有 Eremex NuGet 包的空桌面应用程序。
 
-- 使用 `MxWindow` 类作为项目的主窗口。`MxWindow` 窗口提供对 Eremex 外观主题的支持。
-- [注册](../controls/themes/register-an-eremex-paint-theme.md) Eremex 的 `DeltaDesign` 外观主题。
+![project-template-app](../images/project-template-app.png)
 
+**短名称**：`emx.app`
 
-### `eremex.avalonia.mvvm`
-
-该应用程序模板会创建一个支持 MVVM 模式、引用 Eremex Controls 库的 Avalonia UI 项目。该模板将代码分离为 View（_MainWindow_）和 ViewModel（_MainWindowViewModel_）。
-此模板的其余功能与 `eremex.avalonia.app` 模板相同。
-
-### `eremex.avalonia.window`
-
-
-这是一个用于创建基于 `MxWindow` 的新 Avalonia 窗口的模板。此模板仅创建定义窗口的两个文件：_Window.axaml_ 和 _Window.axaml.cs_。
-
-
-## 通过命令行从模板创建新项目
-
-切换到需要创建项目的文件夹。使用 <code>dotnet new _template-name_</code> 命令从指定模板创建新项目。要为项目指定名称，请使用 <code>-n _name_</code> 命令选项。
-
-以下命令基于 `eremex.avalonia.mvvm` 模板创建一个新的 _AvaloniaApplication1_ 项目。
-
-<code>
-dotnet new eremex.avalonia.mvvm -n AvaloniaApplication1 
+**创建项目命令**：<code>
+dotnet new emx.app -n AvaloniaApplication1 
 </code>
 
 
-在 Visual Studio 中打开创建的项目。
+### Eremex Avalonia .NET MVVM App {#eremex-avalonia-net-mvvm-app}
+
+基于 MVVM 的空应用程序，将 UI 和业务逻辑分离到 View 层和 ViewModel 层。 
+
+![project-template-mvvm](../images/project-template-mvvm.png)
+
+**短名称**：`emx.mvvm`
+
+**创建项目命令**：<code>
+dotnet new emx.mvvm -n AvaloniaApplication1 
+</code>
+
+此应用程序模板会创建一个支持 MVVM 并引用 Eremex Controls 库的 Avalonia UI 项目。该模板将代码分离到 View（_MainWindow_）层和 ViewModel（_MainWindowViewModel_）层。
+
+
+### Eremex Avalonia .NET App with Application Services {#eremex-avalonia-net-app-with-application-services}
+
+一个 MVVM 应用程序，ViewModel 通过服务访问对话框、文件选择器和视觉主题管理功能。
+
+![project-template-app-services](../images/project-template-app-services.png)
+
+**短名称**：`emx.services`
+
+**创建项目命令**：<code>
+dotnet new emx.services -n AvaloniaApplication1 
+</code>
+
+此模板会创建一个 MVVM 应用程序，通过注入到 ViewModel 中的 Eremex 服务实现以下功能：
+
+- 调用打开/保存文件对话框
+- 显示自定义对话框
+- 显示消息框
+- 在 Ribbon 界面中提供主题选择器
+
+
+### Eremex Avalonia .NET MDI App {#eremex-avalonia-net-mdi-app}
+
+基于 Docking 库构建、采用选项卡式多文档（MDI）布局的应用程序。
+
+![project-template-mdi-app](../images/project-template-mdi-app.png)
+
+**短名称**：`emx.mdi`
+
+**创建项目命令**：<code>
+dotnet new emx.mdi -n AvaloniaApplication1 
+</code>
+
+此模板会创建一个使用 [`DockManager`](../API/Eremex.AvaloniaUI.Controls.Docking/DockManager.md) 组件的 MVVM 应用程序，用于实现：
+
+- 选项卡式多文档界面（MDI）
+- 从 ViewModel 创建和关闭文档
+
+
+## 包含的项目项模板 {#included-project-item-templates}
+
+
+### Eremex Avalonia Window {#eremex-avalonia-window}
+
+一个空的 [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md)（支持 Eremex 视觉主题的窗口）。
+
+![project-item-template-window](../images/project-item-template-window.png)
+
+**短名称**：`emx.window`
+
+**创建项目项命令**：<code>
+dotnet new emx.window -n Window2 
+</code>
+
+此项目项模板会创建一个基于 [`MxWindow`](../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) 的新 Avalonia 窗口。该模板仅创建定义窗口的两个文件：_Window.axaml_ 和 _Window.axaml.cs_。
+
 
 <br>
 <br>

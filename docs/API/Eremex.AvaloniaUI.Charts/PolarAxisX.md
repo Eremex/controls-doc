@@ -12,11 +12,16 @@ Represents the angular axis of a polar chart. It displays values from zero to 36
 public class PolarAxisX : Axis
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PolarAxisX](PolarAxisX/PolarAxisX.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ScaleOptions](PolarAxisX/ScaleOptions.md) { get; set; } | Gets or sets the options that define how angle values are scaled and labeled. |
 | [StartAngle](PolarAxisX/StartAngle.md) { get; set; } | Gets or sets the angle, in degrees, at which the axis starts. |
 | [SweepDirection](PolarAxisX/SweepDirection.md) { get; set; } | Gets or sets the direction in which the angle grows from the start angle. The default value is clockwise. |

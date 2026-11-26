@@ -2,11 +2,14 @@
 title: Skybox
 order: 80
 seealso: []
+image: /images/g3dControl-skybox-custom-example.png
 ---
 
 # Skybox
 
-`Graphics3DControl` поддерживает скайбокс. Скайбокс — это техника, используемая для создания погружающего фона вокруг 3D-сцены.
+## Что такое скайбокс?
+
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) поддерживает скайбокс. Скайбокс — это техника, используемая для создания погружающего фона вокруг 3D-сцены.
 
 Скайбокс состоит из большого куба, окружающего всю сцену, с шестью текстурированными гранями (передней, задней, левой, правой, верхней и нижней). Эти текстуры отображаются на внутренних сторонах куба, создавая иллюзию далёкого неба, горизонта или другого фона. Текстуры разработаны так, чтобы идеально совпадать на своих краях, обеспечивая бесшовную визуальную непрерывность при просмотре изнутри куба.
 
@@ -14,7 +17,7 @@ seealso: []
 
 ## Включение скайбокса
 
-Чтобы сделать скайбокс видимым, инициализируйте свойство `Graphics3DControl.Skybox` объектом `Skybox` и установите свойство `Skybox.IsVisible` в `true`.
+Чтобы сделать скайбокс видимым, инициализируйте свойство [`Graphics3DControl.Skybox`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Skybox.md) объектом [`Skybox`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox.md) и установите свойство [`Skybox.IsVisible`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/IsVisible.md) в `true`.
 
 ``` xml
 xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/controls3d"
@@ -35,14 +38,14 @@ xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/controls3d"
 - Все текстуры скайбокса должны быть одного размера.
 - Каждая текстура должна иметь квадратное соотношение сторон (1:1), чтобы предотвратить искажения при отображении на грани куба.
 
-Используйте следующие свойства объекта `Skybox`, чтобы предоставить текстуры скайбокса для граней куба:
+Используйте следующие свойства объекта [`Skybox`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox.md), чтобы предоставить текстуры скайбокса для граней куба:
 
- - `Skybox.Top`
- - `Skybox.Bottom`
- - `Skybox.Left`
- - `Skybox.Right`
- - `Skybox.Front`
- - `Skybox.Rear`
+ - [`Skybox.Top`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Top.md)
+ - [`Skybox.Bottom`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Bottom.md)
+ - [`Skybox.Left`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Left.md)
+ - [`Skybox.Right`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Right.md)
+ - [`Skybox.Front`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Front.md)
+ - [`Skybox.Rear`](../../API/Eremex.AvaloniaUI.Controls3D/Skybox/Rear.md)
 
 
 ### Пример
@@ -79,7 +82,7 @@ xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/controls3d"
 
 Когда 3D-модель использует металлический материал, поверхность отражает свет по умолчанию и скайбокс. Чтобы предотвратить эти отражения для металлических материалов, сделайте следующее:
 
-- Отключите свет по умолчанию с помощью свойства `Graphics3DControl.AllowDefaultLight`.
+- Отключите свет по умолчанию с помощью свойства [`Graphics3DControl.AllowDefaultLight`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/AllowDefaultLight.md).
 - Примените белое растровое изображение ко всем граням куба скайбокса.
 
 ![g3dControl-skybox-all-white-example](../../images/g3dControl-skybox-all-white-example.png)

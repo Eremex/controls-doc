@@ -4,13 +4,13 @@ order: 3900
 seealso: []
 ---
 
-# 焦点和导航
+# 焦点和导航 {#focus-and-navigation}
 
 
-## 单元格和行导航模式
+## 单元格和行导航模式 {#cell-and-row-navigation-modes}
 
 TreeList 的默认行为允许用户使用键盘在单元格之间导航,或使用鼠标使单元格获得焦点。
-使用 `TreeListControl.NavigationMode` 属性可以在单元格导航(Cell Navigation)模式和行导航(Row Navigation)模式之间切换。
+使用 [`TreeListControl.NavigationMode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/NavigationMode.md) 属性可以在单元格导航(Cell Navigation)模式和行导航(Row Navigation)模式之间切换。
 
 **单元格导航(Cell Navigation)**(默认)
 
@@ -30,24 +30,24 @@ TreeList 的默认行为允许用户使用键盘在单元格之间导航,或使�
 
 
 
-## 获得焦点的列
+## 获得焦点的列 {#focused-column}
 
-使用 `TreeListControl.FocusedColumn` 属性获取当前获得焦点的列。若要将焦点移动到特定列,请将相应的 `TreeListColumn` 对象赋值给 `FocusedColumn` 属性。
+使用 [`TreeListControl.FocusedColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/FocusedColumn.md) 属性获取当前获得焦点的列。若要将焦点移动到特定列,请将相应的 [`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md) 对象赋值给 [`FocusedColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/FocusedColumn.md) 属性。
 
 !!! note
 
-    只有在[单元格导航模式](#单元格和行导航模式)下,列才能获得焦点。
+    只有在[单元格导航模式](#cell-and-row-navigation-modes)下,列才能获得焦点。
 
-## 获得焦点的节点(行)
+## 获得焦点的节点(行) {#focused-node-row}
 
-使用 `TreeListControlBase.FocusedNode` 属性访问当前获得焦点的节点(即接收键盘事件的节点)。若要获取获得焦点节点的数据(业务)对象,请使用继承的 `DataControlBase.FocusedItem` 属性。
+使用 [`TreeListControlBase.FocusedNode`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/FocusedNode.md) 属性访问当前获得焦点的节点(即接收键盘事件的节点)。若要获取获得焦点节点的数据(业务)对象,请使用继承的 [`DataControlBase.FocusedItem`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) 属性。
 
-`TreeListControlBase.FocusedNodeChanged` 事件允许您响应节点之间焦点的移动。
+[`TreeListControlBase.FocusedNodeChanged`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/FocusedNodeChanged.md) 事件允许您响应节点之间焦点的移动。
 
 
-## 获得焦点的单元格
+## 获得焦点的单元格 {#focused-cell}
 
-获得焦点的单元格由获得焦点的节点与获得焦点的列的交叉位置确定。若要将焦点移动到特定单元格,请使目标[行](#获得焦点的节点行)和[列](#获得焦点的列)获得焦点。
+获得焦点的单元格由获得焦点的节点与获得焦点的列的交叉位置确定。若要将焦点移动到特定单元格,请使目标[行](#focused-node-row)和[列](#focused-column)获得焦点。
 
 <!-- TODO
 Example - focus a specific cell

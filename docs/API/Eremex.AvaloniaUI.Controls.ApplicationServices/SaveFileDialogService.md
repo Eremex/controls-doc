@@ -12,12 +12,17 @@ The default ISaveFileDialogService implementation. It resolves the owner window 
 public class SaveFileDialogService : ISaveFileDialogService
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SaveFileDialogService](SaveFileDialogService/SaveFileDialogService.md)() | Legacy bridge for code that creates the service directly, without a container. Requires an initialized [`Current`](./ApplicationServicesContext/Current.md). |
 | [SaveFileDialogService](SaveFileDialogService/SaveFileDialogService.md)(…) | Primary constructor. Dependencies are passed explicitly, so the service can be created by any DI container and substituted in tests. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Show](SaveFileDialogService/Show.md)(…) |  |
 | [ShowAsync](SaveFileDialogService/ShowAsync.md)(…) |  |
 

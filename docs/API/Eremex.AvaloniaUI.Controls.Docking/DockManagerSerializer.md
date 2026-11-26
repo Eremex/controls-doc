@@ -12,11 +12,16 @@ Provides attached properties that control docking layout restoration.
 public class DockManagerSerializer
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DockManagerSerializer](DockManagerSerializer/DockManagerSerializer.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | static [GetRestoreBehavior](DockManagerSerializer/GetRestoreBehavior.md)(…) | Gets the layout restoration behavior associated with the specified object. |
 | static [SetRestoreBehavior](DockManagerSerializer/SetRestoreBehavior.md)(…) | Sets the layout restoration behavior associated with the specified object. |
 

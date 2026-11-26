@@ -12,11 +12,16 @@ Provides data for the CustomSort event.
 public class TreeViewCustomSortEventArgs : EventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeViewCustomSortEventArgs](TreeViewCustomSortEventArgs/TreeViewCustomSortEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Node1](TreeViewCustomSortEventArgs/Node1.md) { get; } | Gets the first node being compared. |
 | [Node2](TreeViewCustomSortEventArgs/Node2.md) { get; } | Gets the second node being compared. |
 | [Result](TreeViewCustomSortEventArgs/Result.md) { get; set; } | Gets or sets the custom comparison result. |

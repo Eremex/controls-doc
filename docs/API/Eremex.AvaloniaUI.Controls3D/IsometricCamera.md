@@ -12,7 +12,7 @@ Represents a camera that projects the scene orthographically, as if the viewer w
 public sealed class IsometricCamera : Camera
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

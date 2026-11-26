@@ -12,11 +12,16 @@ Displays the data of a Cartesian series as a stepped line that runs horizontally
 public class CartesianStepLineSeriesView : CartesianSortedLineSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CartesianStepLineSeriesView](CartesianStepLineSeriesView/CartesianStepLineSeriesView.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [InvertedStep](CartesianStepLineSeriesView/InvertedStep.md) { get; set; } | Gets or sets whether the step is drawn vertically and then horizontally instead of horizontally and then vertically. |
 
 ## See Also

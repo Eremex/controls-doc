@@ -12,12 +12,17 @@ Represents a material that is defined by a single base color and by scalar shadi
 public class SimplePbrMaterial : Material, ISimplePbrMaterial
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SimplePbrMaterial](SimplePbrMaterial/SimplePbrMaterial.md)() | Initializes a new instance of the SimplePbrMaterial class with the default shading parameters. |
 | [SimplePbrMaterial](SimplePbrMaterial/SimplePbrMaterial.md)(…) | Initializes a new instance of the SimplePbrMaterial class with the specified base color and key. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Albedo](SimplePbrMaterial/Albedo.md) { get; set; } | Gets or sets the base color of the surface. The default value is gray. |
 | [Alpha](SimplePbrMaterial/Alpha.md) { get; set; } | Gets or sets the opacity of the material. The default value is one, which makes the material opaque. A value below one makes the material transparent. |
 | [AmbientOcclusion](SimplePbrMaterial/AmbientOcclusion.md) { get; set; } | Gets or sets the factor that dims the ambient, image-based lighting applied to the surface. The default value is one, which leaves the ambient lighting unchanged. |

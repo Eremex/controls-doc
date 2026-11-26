@@ -4,9 +4,9 @@ order: 1900
 seealso: []
 ---
 
-# PropertyGrid 概述
+# PropertyGrid 概述 {#propertygrid-overview}
 
-`PropertyGridControl` 以垂直列表的形式显示绑定对象的公共属性及其值。每个列表项都渲染为一行，包含两个单元格：“属性名称”和“属性值”。
+[`PropertyGridControl`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl.md) 以垂直列表的形式显示绑定对象的公共属性及其值。每个列表项都渲染为一行，包含两个单元格：“属性名称”和“属性值”。
 
 ![propertygrid1](../../images/propertygrid1.png)
 
@@ -14,7 +14,7 @@ PropertyGrid 可以自动从绑定对象填充行，您也可以在代码中手�
 
 该控件支持分类行，可将若干行组合到可展开的分组中。
 
-## 数据绑定与行自定义
+## 数据绑定与行自定义 {#data-binding-and-row-customization}
 
 当您将控件绑定到对象时，控件会自动为所有公共属性生成行。专用特性允许您自定义行生成选项。
 
@@ -25,7 +25,7 @@ PropertyGrid 可以自动从绑定对象填充行，您也可以在代码中手�
 - [行创建](data-binding.md#row-creation)
 - [行](rows.md)
 
-## 数据编辑
+## 数据编辑 {#data-editing}
 
 如果启用了数据编辑，用户可以编辑行的“值”部分。控件使用默认编辑器来显示和编辑常见数据类型（布尔型、双精度浮点型、整型、枚举等）的行值。您也可以根据需要为特定行指定自定义编辑器。
 
@@ -34,7 +34,7 @@ PropertyGrid 可以自动从绑定对象填充行，您也可以在代码中手�
 - [数据编辑](data-editing.md)
 - [自定义编辑器](custom-editors.md)
 
-## 内置搜索
+## 内置搜索 {#built-in-search}
 
 PropertyGrid 的搜索面板允许用户按名称快速定位行。
 
@@ -42,7 +42,7 @@ PropertyGrid 的搜索面板允许用户按名称快速定位行。
 
 - [数据搜索](data-search.md)
 
-## 常用 API
+## 常用 API {#frequently-used-api}
 
 请参阅以下主题，了解可帮助您完成最常见自定义任务的 API 成员：
 

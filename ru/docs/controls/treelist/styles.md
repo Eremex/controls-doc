@@ -173,10 +173,10 @@ public class RowStatusToBrushConverter : IValueConverter
 
 Объект `Eremex.AvaloniaUI.Controls.DataControl.Visuals.CellData`. Основные свойства, предоставляемые объектом `CellData`:
 
-- `Column` — колонка (объект `ColumnBase`), отображающая ячейку. Когда стиль применяется к объекту TreeView, свойство `CellData.Column` содержит объект `ColumnBase`, инкапсулирующий колонку значений TreeView.
-- `DataControl` — элемент управления TreeList/TreeView (объект `DataControlBase`).
+- `Column` — колонка (объект [`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md)), отображающая ячейку. Когда стиль применяется к объекту TreeView, свойство `CellData.Column` содержит объект [`ColumnBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase.md), инкапсулирующий колонку значений TreeView.
+- `DataControl` — элемент управления TreeList/TreeView (объект [`DataControlBase`](../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase.md)).
 - `Row` — базовый объект данных (бизнес-объект) строки.
-- `ValidationInfo` — объект, содержащий информацию о валидации ячейки.
+- [`ValidationInfo`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationInfo.md) — объект, содержащий информацию о валидации ячейки.
 - `Value` — значение ячейки.
 
 ### Пользовательские псевдоклассы
@@ -299,7 +299,7 @@ xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
 
 ### DataContext
 
-`TreeListColumn`
+[`TreeListColumn`](../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListColumn.md)
 
 ### Пользовательские псевдоклассы
 

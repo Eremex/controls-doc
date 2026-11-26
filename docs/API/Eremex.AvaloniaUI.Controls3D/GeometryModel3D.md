@@ -12,17 +12,27 @@ Represents an object displayed in a scene. The object combines one or more meshe
 public sealed class GeometryModel3D : SelectableElement
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [GeometryModel3D](GeometryModel3D/GeometryModel3D.md)() | Initializes a new instance of the GeometryModel3D class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [BoundingBox](GeometryModel3D/BoundingBox.md) { get; } | Gets the axis-aligned bounding box that encloses the meshes, or null if the model has no vertices. |
 | [Meshes](GeometryModel3D/Meshes.md) { get; } | Gets the meshes that form the model's geometry. |
 | [MeshesSource](GeometryModel3D/MeshesSource.md) { get; set; } | Gets or sets the collection of items used to generate the meshes. Items that are already meshes are added as they are, and the remaining items are converted by the MeshTemplate. |
 | [MeshTemplate](GeometryModel3D/MeshTemplate.md) { get; set; } | Gets or sets the template that converts an item of MeshesSource into a mesh. |
 | [Transform](GeometryModel3D/Transform.md) { get; set; } | Gets or sets the matrix that places the model's geometry in world space. |
 | [Visible](GeometryModel3D/Visible.md) { get; set; } | Gets or sets whether the model is rendered and is taken into account by hit testing. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [TranslateToZero](GeometryModel3D/TranslateToZero.md)() | Moves the model to the origin of the scene by shifting the transform so that the center of the model's bounding box lands at the origin. |
 
 ## See Also

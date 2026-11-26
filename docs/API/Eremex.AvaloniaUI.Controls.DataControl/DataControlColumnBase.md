@@ -12,7 +12,7 @@ Serves as the base class for data control columns and bands.
 public abstract class DataControlColumnBase : StyledElement
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

@@ -12,17 +12,27 @@ Describes the stroke used to draw series lines, axis lines, and other chart outl
 public class LineStyle : ChartElementBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [LineStyle](LineStyle/LineStyle.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Dashes](LineStyle/Dashes.md) { get; set; } | Gets or sets the lengths of the dashes and the gaps between them. Leave this property unset to draw a solid line. |
 | [DashOffset](LineStyle/DashOffset.md) { get; set; } | Gets or sets the distance from the start of the line to the first dash. |
 | [LineCap](LineStyle/LineCap.md) { get; set; } | Gets or sets the shape used at the ends of the stroke. |
 | [LineJoin](LineStyle/LineJoin.md) { get; set; } | Gets or sets the shape used at the corners of the stroke. |
 | [MiterLimit](LineStyle/MiterLimit.md) { get; set; } | Gets or sets the limit beyond which a mitered corner is replaced by a bevel. |
 | [Thickness](LineStyle/Thickness.md) { get; set; } | Gets or sets the width of the stroke, in device-independent units. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [GetPen](LineStyle/GetPen.md)(…) | Creates a pen that matches this style. |
 
 ## See Also

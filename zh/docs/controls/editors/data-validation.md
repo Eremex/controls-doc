@@ -4,12 +4,12 @@ order: 980
 seealso: []
 ---
 
-# 数据验证
+# 数据验证 {#data-validation}
 
 Eremex 编辑器支持以下数据验证方法，可用于保持正确的数据输入、值检查，并显示无效数据的错误：
 
 - [掩码](masks/index.md) — 允许你指定一种模式，用于限制用户在文本编辑器中输入的数据。
-- 在编辑器级别进行数据验证，使用 `BaseEditor.Validate` 事件。
+- 在编辑器级别进行数据验证，使用 [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) 事件。
 - 在绑定对象级别进行数据验证，使用 `DataAnnotation` 属性和 `INotifyDataErrorInfo` 接口。
 
 <!-- TODO
@@ -23,7 +23,7 @@ Eremex 编辑器支持以下数据验证方法，可用于保持正确的数据�
  - [DataGrid - Data Validation](../datagrid/data-validation.md) -->
 - [TreeList - 数据验证](../treelist/data-validation.md)
 
-## 自动验证
+## 自动验证 {#automatic-validation}
 
 Eremex 编辑器支持对用户输入的值进行自动验证。自动验证会根据 [掩码](masks/index.md)（如果有）检查编辑器的值。如果编辑器绑定到某个属性，验证机制还会执行以下操作：
 
@@ -45,22 +45,22 @@ IsModified property is missing?
 Why ValidateOnInput is true by default?
  -->
 
-### 强制数据验证
+### 强制数据验证 {#force-data-validation}
 
-在特定情况下，你可能希望为编辑器强制触发验证机制。为此，请使用 `BaseEditor.DoValidate` 方法。
+在特定情况下，你可能希望为编辑器强制触发验证机制。为此，请使用 [`BaseEditor.DoValidate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/DoValidate.md) 方法。
 
-## 编辑器级别的数据验证
+## 编辑器级别的数据验证 {#data-validation-at-the-editor-level}
 
-### “Validate” 事件
+### “Validate” 事件 {#validate-event}
 
-`BaseEditor.Validate` 事件允许你在代码隐藏文件中于编辑器级别执行数据验证。可用的事件参数如下：
+[`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) 事件允许你在代码隐藏文件中于编辑器级别执行数据验证。可用的事件参数如下：
 
-- `ValidationEventArgs.Value` — 获取当前值。
-- `ValidationEventArgs.ErrorContent` — 允许你在当前值无效时指定错误信息。如果将 `ErrorContent` 属性保持为 `null`，则当前值被视为有效。
+- [`ValidationEventArgs.Value`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/Value.md) — 获取当前值。
+- [`ValidationEventArgs.ErrorContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/ErrorContent.md) — 允许你在当前值无效时指定错误信息。如果将 [`ErrorContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/ErrorContent.md) 属性保持为 `null`，则当前值被视为有效。
 
-#### 示例 - 验证输入的值是否为有效的电子邮件地址
+#### 示例 - 验证输入的值是否为有效的电子邮件地址 {#example-verify-that-the-entered-value-is-a-valid-email-address}
 
-以下示例通过处理 `BaseEditor.Validate` 事件，检查在文本编辑器中输入的字符串是否为有效的电子邮件地址。将 `ValidateOnInput` 选项设置为 `true`，可确保每次按下字符时都会触发验证。
+以下示例通过处理 [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) 事件，检查在文本编辑器中输入的字符串是否为有效的电子邮件地址。将 `ValidateOnInput` 选项设置为 `true`，可确保每次按下字符时都会触发验证。
 
 ![editors-validation-validate-event-example](../../images/editors-validation-validate-event-example.png)
 
@@ -87,10 +87,10 @@ bool IsEmailAddress(string email)
 }
 ```
 
-## 绑定对象级别的数据验证
+## 绑定对象级别的数据验证 {#data-validation-at-the-bound-object-level}
 
 
-### 使用 DataAnnotation 属性进行数据验证
+### 使用 DataAnnotation 属性进行数据验证 {#data-validation-using-dataannotation-attributes}
 
 你可以使用 `DataAnnotations` 验证属性（`System.ComponentModel.DataAnnotations.ValidationAttribute` 的派生类）为业务对象的属性创建验证规则。当绑定到该属性时，Eremex 编辑器会自动检查该属性所指定的数据有效性规则。
 
@@ -105,7 +105,7 @@ bool IsEmailAddress(string email)
 - [`RequiredAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.requiredattribute?view=net-8.0) — 指定数据字段的值为必填项。
 - [`StringLengthAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.stringlengthattribute?view=net-8.0) — 指定数据字段中允许的最小和最大字符长度。
 
-#### 示例 - 使用 “RangeAttribute” 进行验证
+#### 示例 - 使用 “RangeAttribute” 进行验证 {#example-validate-using-rangeattribute}
 
 以下示例使用 `RangeAttribute` 属性，确保某属性的值处于 10 到 100 之间的范围内。如果值超出该范围，编辑器会显示错误。
 
@@ -128,11 +128,11 @@ public partial class MyViewModel : ObservableObject
 
 
 
-### 使用 “INotifyDataErrorInfo” 接口进行数据验证
+### 使用 “INotifyDataErrorInfo” 接口进行数据验证 {#data-validation-using-inotifydataerrorinfo-interface}
 
 `System.ComponentModel.INotifyDataErrorInfo` 接口允许你在业务对象级别实现自定义验证规则。该接口支持同步和异步验证、每个属性多个错误，以及跨属性错误。
 
-#### 示例 - 实现 “INotifyDataErrorInfo” 接口
+#### 示例 - 实现 “INotifyDataErrorInfo” 接口 {#example-implement-inotifydataerrorinfo-interface}
 
 以下示例将一个文本编辑器绑定到 _MainViewModel_ 类中定义的 _NickName_ 属性。_MainViewModel_ 类实现了 `INotifyDataErrorInfo` 接口，该接口为 _NickName_ 属性定义了三条验证规则。如果 `INotifyDataErrorInfo.GetErrors` 方法为 _NickName_ 属性返回了一个或多个错误，文本编辑器就会显示错误。
 
@@ -210,32 +210,32 @@ public partial class MainViewModel : ObservableObject, INotifyDataErrorInfo
 ```
 
 
-## 标示错误
+## 标示错误 {#indicate-errors}
 
-当数据验证过程中发生错误时，编辑器会按照 `BaseEditor.ErrorShowMode` 属性指定的方式标示该错误。支持两种错误显示模式：
+当数据验证过程中发生错误时，编辑器会按照 [`BaseEditor.ErrorShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ErrorShowMode.md) 属性指定的方式标示该错误。支持两种错误显示模式：
 
-### 显示内置错误图标和工具提示
+### 显示内置错误图标和工具提示 {#show-built-in-error-icon-and-tooltip}
 
-如果 `ErrorShowMode` 属性设置为 `Inplace`，编辑器会在编辑框内显示一个错误图标。当用户将鼠标悬停在该图标上时，会出现带有错误描述的工具提示。
+如果 [`ErrorShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ErrorShowMode.md) 属性设置为 `Inplace`，编辑器会在编辑框内显示一个错误图标。当用户将鼠标悬停在该图标上时，会出现带有错误描述的工具提示。
 
 ![texteditor-errorshowmode-inplace](../../images/texteditor-errorshowmode-inplace.png)
 
-### 在编辑器下方显示错误
+### 在编辑器下方显示错误 {#show-error-below-editor}
 
-将 `ErrorShowMode` 属性设置为 `Full`，可在编辑框下方显示错误描述。此时内嵌的错误图标会被隐藏。
+将 [`ErrorShowMode`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ErrorShowMode.md) 属性设置为 `Full`，可在编辑框下方显示错误描述。此时内嵌的错误图标会被隐藏。
 
 ![texteditor-errorshowmode-full](../../images/texteditor-errorshowmode-full.png)
 
 
-### 设置和清除错误文本
+### 设置和清除错误文本 {#set-and-clear-the-error-text}
 
 你可以执行以下操作之一来指定错误文本：
 
-- 处理 `BaseEditor.Validate` 事件并设置 `ErrorContent` 事件参数。如果将 `ErrorContent` 事件参数保持为 `null`，则不会应用任何错误。
+- 处理 [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) 事件并设置 [`ErrorContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/ErrorContent.md) 事件参数。如果将 [`ErrorContent`](../../API/Eremex.AvaloniaUI.Controls.Editors/ValidationEventArgs/ErrorContent.md) 事件参数保持为 `null`，则不会应用任何错误。
 
-    要强制触发 `BaseEditor.Validate` 事件，请调用 `BaseEditor.DoValidate` 方法。
+    要强制触发 [`BaseEditor.Validate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/Validate.md) 事件，请调用 [`BaseEditor.DoValidate`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/DoValidate.md) 方法。
 
-- 使用 `BaseEditor.ValidationInfo` 属性指定错误。
+- 使用 [`BaseEditor.ValidationInfo`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ValidationInfo.md) 属性指定错误。
 
     以下代码在编辑器的值为 `null` 或 `0` 时，为该编辑器设置一个错误。
 
@@ -246,12 +246,12 @@ public partial class MainViewModel : ObservableObject, INotifyDataErrorInfo
 
     ```
 
-    将 `BaseEditor.ValidationInfo` 属性设置为 `null` 以清除错误。
+    将 [`BaseEditor.ValidationInfo`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ValidationInfo.md) 属性设置为 `null` 以清除错误。
 
 
-### 获取错误文本
+### 获取错误文本 {#get-the-error-text}
 
-使用 `BaseEditor.ErrorText` 属性获取错误文本。
+使用 [`BaseEditor.ErrorText`](../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor/ErrorText.md) 属性获取错误文本。
 
 
 

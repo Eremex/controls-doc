@@ -12,7 +12,7 @@ One choice offered by [`IAppearanceService`](./IAppearanceService.md): a light/d
 public interface IAppearanceOption
 ```
 
-## Members
+## Properties
 
 | name | description |
 | --- | --- |

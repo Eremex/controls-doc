@@ -12,17 +12,27 @@ Displays docking items as tabs with a single selected item.
 public class TabbedGroup : DockGroup
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TabbedGroup](TabbedGroup/TabbedGroup.md)() | Initializes a new instance of the TabbedGroup class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [AllowFloat](TabbedGroup/AllowFloat.md) { get; set; } | Gets or sets whether users can move the group into a floating window. |
 | [CloseButtonShowMode](TabbedGroup/CloseButtonShowMode.md) { get; set; } | Gets or sets when tab close buttons are displayed. |
 | [SelectedIndex](TabbedGroup/SelectedIndex.md) { get; set; } | Gets or sets the index of the selected tab. |
 | [SelectTabOnClose](TabbedGroup/SelectTabOnClose.md) { get; set; } | Gets or sets which tab is selected when the selected tab is closed. |
 | [ShowTabStripForSingleChild](TabbedGroup/ShowTabStripForSingleChild.md) { get; set; } | Gets or sets whether the tab strip is displayed when the group contains a single visible item. |
+| [StretchTabsToFill](TabbedGroup/StretchTabsToFill.md) { get; set; } | Gets or sets whether tab headers fill the available space by adding equal lengths to each header, subject to item size constraints. Applies to each line in every layout. |
+| [TabHeaderCollapseThreshold](TabbedGroup/TabHeaderCollapseThreshold.md) { get; set; } | Gets or sets the tab header length at or below which text is replaced by an available glyph, in device-independent pixels. Zero disables replacement. The value must be finite and nonnegative and does not affect tab size. |
 | [TabHeaderOrientation](TabbedGroup/TabHeaderOrientation.md) { get; set; } | Gets or sets the orientation of tab header content. |
+| [TabIconDisplayMode](TabbedGroup/TabIconDisplayMode.md) { get; set; } | Gets or sets when tab header glyphs are displayed. |
+| [TabSize](TabbedGroup/TabSize.md) { get; set; } | Gets or sets the preferred tab header length along the tab strip, in device-independent pixels. The value must be finite and greater than zero. Used in Explicit mode and in Default mode with the Stretch layout. |
+| [TabSizeMode](TabbedGroup/TabSizeMode.md) { get; set; } | Gets or sets how the preferred tab header size is determined. |
 | [TabStripLayoutType](TabbedGroup/TabStripLayoutType.md) { get; set; } | Gets or sets how tab headers are arranged when they do not fit in the tab strip. |
 | [TabStripPlacement](TabbedGroup/TabStripPlacement.md) { get; set; } | Gets or sets the edge of the group where tab headers are displayed. |
 

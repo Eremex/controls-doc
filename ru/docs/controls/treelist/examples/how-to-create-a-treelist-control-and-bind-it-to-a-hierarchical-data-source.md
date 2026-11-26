@@ -1,5 +1,6 @@
 ---
 title: Как создать TreeList и привязать его к иерархическому источнику данных
+order: 10000
 seealso: []
 ---
 
@@ -7,25 +8,25 @@ seealso: []
 
 В этом примере создаются следующие элементы управления:
 
-- Элемент управления `TreeListControl`, отображающий иерархический список объектов _Employee_. Включён множественный выбор узлов, который позволяет выделять (подсвечивать) сразу несколько узлов.
+- Элемент управления [`TreeListControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md), отображающий иерархический список объектов _Employee_. Включён множественный выбор узлов, который позволяет выделять (подсвечивать) сразу несколько узлов.
 - Текстовый редактор, отображающий имя сотрудника, на котором в данный момент установлен фокус в TreeList.
 - Элемент управления "список" (list box), отображающий имена сотрудников, выделенных (подсвеченных) в TreeList.
 
 TreeList привязан к бизнес-объекту _Employee_, который представляет собой [иерархический источник данных](../data-binding/binding-to-hierarchical-data.md). Он содержит коллекцию _Subordinates_, содержимое которой должно отображаться в виде дочерних узлов.
 
-В примере для настройки `TreeListControl` используются следующие основные свойства:
+В примере для настройки [`TreeListControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl.md) используются следующие основные свойства:
 
-- `DataControlBase.ItemsSource` — задаёт источник данных элемента управления.
-- `TreeListControl.Columns` — задаёт коллекцию колонок TreeList, привязанных к свойствам источника данных.
-- `TreeListControlBase.ChildrenFieldName` — задаёт имя поля (свойства), которое хранит дочерние данные в базовом бизнес-объекте.
-- `TreeListControlBase.HasChildrenFieldName` — задаёт имя поля (свойства), которое возвращает `true`, если бизнес-объект имеет дочерние данные, и `false` в противном случае.
-- `TreeListControlBase.SelectionMode` — включает множественный выбор узлов.
+- [`DataControlBase.ItemsSource`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ItemsSource.md) — задаёт источник данных элемента управления.
+- [`TreeListControl.Columns`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/Columns.md) — задаёт коллекцию колонок TreeList, привязанных к свойствам источника данных.
+- [`TreeListControlBase.ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) — задаёт имя поля (свойства), которое хранит дочерние данные в базовом бизнес-объекте.
+- [`TreeListControlBase.HasChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/HasChildrenFieldName.md) — задаёт имя поля (свойства), которое возвращает `true`, если бизнес-объект имеет дочерние данные, и `false` в противном случае.
+- [`TreeListControlBase.SelectionMode`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectionMode.md) — включает множественный выбор узлов.
 
-В режиме множественного выбора узлов пользователь может выделять (подсвечивать) несколько узлов с помощью мыши и клавиатуры. Например, пользователь может удерживать клавишу CTRL и щёлкать по отдельным узлам, чтобы выделить их. TreeList позволяет обращаться к текущим выделенным узлам через коллекцию `DataControlBase.SelectedItems`.
+В режиме множественного выбора узлов пользователь может выделять (подсвечивать) несколько узлов с помощью мыши и клавиатуры. Например, пользователь может удерживать клавишу CTRL и щёлкать по отдельным узлам, чтобы выделить их. TreeList позволяет обращаться к текущим выделенным узлам через коллекцию [`DataControlBase.SelectedItems`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/SelectedItems.md).
 
 Следующие два элемента управления используются для отображения информации о текущем сфокусированном и выделенных узлах TreeList:
 
-- Текстовый редактор отображает имя объекта _Employee_ сфокусированного узла. Элемент управления привязан к свойству `FocusedItem` TreeList.
+- Текстовый редактор отображает имя объекта _Employee_ сфокусированного узла. Элемент управления привязан к свойству [`FocusedItem`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) TreeList.
 - Список отображает имена объектов _Employee_, соответствующих выделенным узлам TreeList.
 
 В примере при запуске приложения по имени находятся два узла TreeList, которые затем выделяются.

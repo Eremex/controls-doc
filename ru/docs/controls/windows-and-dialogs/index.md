@@ -11,11 +11,11 @@ seealso: []
 
 ## MxWindow
 
-`MxWindow` — это окно, которое использует визуальные темы Eremex для отрисовки заголовка и рамок окна.
+[`MxWindow`](../../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) — это окно, которое использует визуальные темы Eremex для отрисовки заголовка и рамок окна.
 
 ![mxwindow](../../images/mxwindow.png)
 
-- `MxWindow` является потомком компонента Window.
+- [`MxWindow`](../../API/Eremex.AvaloniaUI.Controls.Common/MxWindow.md) является потомком компонента Window.
 - Предоставляет параметры для настройки видимости стандартных кнопок в заголовке
 - Предоставляет параметры для задания пользовательских глифов этих кнопок
 

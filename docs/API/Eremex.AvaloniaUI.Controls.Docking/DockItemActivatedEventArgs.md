@@ -12,7 +12,7 @@ Provides data for the event raised when the active docking item changes.
 public class DockItemActivatedEventArgs : EventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

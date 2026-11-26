@@ -12,11 +12,16 @@ Provides data for the ValidateCellValue event.
 public class TreeListValidateCellValueEventArgs : TreeViewValidateCellValueEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [TreeListValidateCellValueEventArgs](TreeListValidateCellValueEventArgs/TreeListValidateCellValueEventArgs.md)(…) |  |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Column](TreeListValidateCellValueEventArgs/Column.md) { get; } | Gets the column whose cell value is validated. |
 
 ## See Also

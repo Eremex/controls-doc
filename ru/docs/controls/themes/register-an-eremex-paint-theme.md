@@ -12,23 +12,23 @@ seealso: []
 
 | Тема&nbsp;оформления | Описание | Пакет |
 | --- | --- | --- |
-| `DeltaDesign` | Содержит визуальные настройки для контролов Eremex (кроме `Graphics3DControl`) и набора стандартных контролов Avalonia UI. | пакет `Eremex.Avalonia.Themes.DeltaDesign` |
-| `Controls3D` | Содержит визуальные настройки для `Graphics3DControl`. | пакет `Eremex.Avalonia.Controls3D` |
+| `DeltaDesign` | Содержит визуальные настройки для контролов Eremex (кроме [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md)) и набора стандартных контролов Avalonia UI. | пакет `Eremex.Avalonia.Themes.DeltaDesign` |
+| `Controls3D` | Содержит визуальные настройки для [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md). | пакет `Eremex.Avalonia.Controls3D` |
 
 
 ## Добавление NuGet-пакета с темой в ваш проект
 
-- Если вы используете любой контрол Eremex (кроме `Graphics3DControl`), добавьте пакет `Eremex.Avalonia.Themes.DeltaDesign` в ваш проект. 
+- Если вы используете любой контрол Eremex (кроме [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md)), добавьте пакет `Eremex.Avalonia.Themes.DeltaDesign` в ваш проект. 
 
-- Если вы используете `Graphics3DControl`, дополнительный пакет с темой не требуется. Тема `Controls3D` реализована в пакете `Eremex.Avalonia.Controls3D`, который содержит сам контрол.
+- Если вы используете [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md), дополнительный пакет с темой не требуется. Тема `Controls3D` реализована в пакете `Eremex.Avalonia.Controls3D`, который содержит сам контрол.
 
 ## Какую тему регистрировать
 
-- Если вы используете любой контрол Eremex, кроме `Graphics3DControl`, вам нужно зарегистрировать только тему `DeltaDesign`. 
+- Если вы используете любой контрол Eremex, кроме [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md), вам нужно зарегистрировать только тему `DeltaDesign`. 
 
-- Если вы используете только `Graphics3DControl`, вам нужно зарегистрировать только тему `Controls3D`.
+- Если вы используете только [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md), вам нужно зарегистрировать только тему `Controls3D`.
 
-- Если вы используете `Graphics3DControl` вместе с другими контролами Eremex, зарегистрируйте обе темы.
+- Если вы используете [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) вместе с другими контролами Eremex, зарегистрируйте обе темы.
 
 - Визуальная тема `DeltaDesign` также включает стили для распространённых стандартных контролов Avalonia. Если вы используете стандартные контролы Avalonia, не поддерживаемые темой `DeltaDesign`, вам также необходимо зарегистрировать тему `Fluent`. См. [Регистрация темы 'FluentTheme' для стандартных контролов Avalonia](#регистрация-темы-fluenttheme-для-стандартных-контролов-avalonia).
 

@@ -12,11 +12,16 @@ Provides settings for the popup editor.
 public class PopupEditorProperties : ButtonEditorProperties
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PopupEditorProperties](PopupEditorProperties/PopupEditorProperties.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [PopupContent](PopupEditorProperties/PopupContent.md) { get; set; } | Gets or sets the content displayed in the popup. |
 | [PopupFooterButtons](PopupEditorProperties/PopupFooterButtons.md) { get; set; } | Gets or sets the buttons displayed in the popup's footer. |
 | [PopupFooterTemplate](PopupEditorProperties/PopupFooterTemplate.md) { get; set; } | Gets or sets the template that defines the popup's footer appearance. |

@@ -12,11 +12,16 @@ Provides settings for the combo box editor.
 public class ComboBoxEditorProperties : PopupEditorProperties
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ComboBoxEditorProperties](ComboBoxEditorProperties/ComboBoxEditorProperties.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ApplyItemTemplateToEditBox](ComboBoxEditorProperties/ApplyItemTemplateToEditBox.md) { get; set; } | Gets or sets whether the item template is applied to the edit box. |
 | [AutoComplete](ComboBoxEditorProperties/AutoComplete.md) { get; set; } | Gets or sets whether the editor automatically completes typed text. |
 | [ClearValueItemText](ComboBoxEditorProperties/ClearValueItemText.md) { get; set; } | Gets or sets the text of the item that clears the editor's value. |

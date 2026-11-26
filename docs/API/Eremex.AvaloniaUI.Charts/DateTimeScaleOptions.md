@@ -12,11 +12,16 @@ Defines a scale that measures date and time values in a configurable unit.
 public class DateTimeScaleOptions : ScaleOptions
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DateTimeScaleOptions](DateTimeScaleOptions/DateTimeScaleOptions.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [GridSpacingFactor](DateTimeScaleOptions/GridSpacingFactor.md) { get; set; } | Gets or sets the number of GridSpacingUnit intervals between major gridlines. |
 | [GridSpacingUnit](DateTimeScaleOptions/GridSpacingUnit.md) { get; set; } | Gets or sets the date and time unit of the major gridlines and of the text shown on their labels. |
 | [MeasureUnit](DateTimeScaleOptions/MeasureUnit.md) { get; set; } | Gets or sets the date and time unit to which data values are rounded. Values that fall into the same unit are plotted at the same position, so a series shows them as one value. For example, 2026-01-01 10:20 and 2026-01-01 13:40 share one position when this property is Day, and occupy different positions when it is Hour. |

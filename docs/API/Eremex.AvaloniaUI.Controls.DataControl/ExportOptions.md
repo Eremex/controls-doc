@@ -12,12 +12,24 @@ Serves as the base class for classes that provide options for exporting a data c
 public class ExportOptions
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ExportOptions](ExportOptions/ExportOptions.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ShowColumnHeaders](ExportOptions/ShowColumnHeaders.md) { get; set; } | Gets or sets whether column headers are exported. |
+| [ShowGroupSummaries](ExportOptions/ShowGroupSummaries.md) { get; set; } | Gets or sets whether group summaries are exported. Not supported in TreeListControl. |
+| [ShowTotalSummaries](ExportOptions/ShowTotalSummaries.md) { get; set; } | Gets or sets whether total summaries are exported. |
+
+## Events
+
+| name | description |
+| --- | --- |
 | event [ExportProgress](ExportOptions/ExportProgress.md) | Occurs periodically during export to report the export progress. |
 
 ## See Also

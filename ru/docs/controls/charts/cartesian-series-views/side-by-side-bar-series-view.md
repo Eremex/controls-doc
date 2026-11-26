@@ -6,15 +6,15 @@ seealso: []
 
 # Side-by-side Bar Series View
 
-Side-by-side Bar Series View (`CartesianSideBySideBarSeriesView`) позволяет визуализировать данные в виде набора прямоугольных столбцов. Если вы предоставляете несколько серий, данные визуализируются в виде столбцов, расположенных бок о бок вдоль горизонтальной оси.
+Side-by-side Bar Series View ([`CartesianSideBySideBarSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md)) позволяет визуализировать данные в виде набора прямоугольных столбцов. Если вы предоставляете несколько серий, данные визуализируются в виде столбцов, расположенных бок о бок вдоль горизонтальной оси.
 
 ![chart-views-barseriesview](../../../images/chart-views-barseriesview.png)
 
 ## Создание Side-by-side Bar Series View
 
-Чтобы создать Side-by-side Bar Series View, добавьте объект `CartesianSeries` в коллекцию `CartesianChart.Series` и инициализируйте свойство `CartesianSeries.View` объектом `CartesianSideBySideBarSeriesView`.
+Чтобы создать Side-by-side Bar Series View, добавьте объект [`CartesianSeries`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) в коллекцию [`CartesianChart.Series`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) и инициализируйте свойство [`CartesianSeries.View`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSeries/View.md) объектом [`CartesianSideBySideBarSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md).
 
-Используйте свойство `CartesianSeries.DataAdapter`, чтобы предоставить данные для серии.
+Используйте свойство [`CartesianSeries.DataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/Series/DataAdapter.md), чтобы предоставить данные для серии.
 
 В следующем коде показано, как создать Bar Series View в XAML и code-behind.
 
@@ -53,13 +53,13 @@ No bars are displayed without axis X
 
 ### Пример - Создание двух Side-by-side Bar Series View
 
-Следующий пример создаёт контрол `CartesianChart` с двумя Side-by-side Bar Series View. Данные для представлений столбцов предоставляются объектами `SortedDateTimeDataAdapter`, инициализированными в главной модели представления. Предполагается, что объект _MainWindowViewModel_ установлен в качестве контекста данных окна.
+Этот пример создаёт контрол [`CartesianChart`](../../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) с двумя Side-by-side Bar Series View. Данные для представлений столбцов предоставляются объектами [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md), инициализированными в главной модели представления. Предполагается, что объект _MainWindowViewModel_ установлен в качестве контекста данных окна.
 
-Пример показывает, как инициализировать цвет, ширину столбцов и расстояние между столбцами для объектов `CartesianSideBySideBarSeriesView`.
+Пример показывает, как инициализировать цвет, ширину столбцов и расстояние между столбцами для объектов [`CartesianSideBySideBarSeriesView`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md).
 
 Оси _X_ и _Y_ создаются в XAML для настройки их параметров (включая заголовок и параметры шкалы). 
 
-Когда вы используете объект `SortedDateTimeDataAdapter`, вам необходимо указать свойство `MeasureUnit`, чтобы определить масштабирование оси. В примере данные используют месячные интервалы, поэтому свойство `MeasureUnit` установлено в `Month`.
+Когда вы используете объект [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md), вам необходимо указать свойство `MeasureUnit`, чтобы определить масштабирование оси. В примере данные используют месячные интервалы, поэтому свойство `MeasureUnit` установлено в `Month`.
 
 ![chart-views-barseriesview-example](../../../images/chart-views-barseriesview-example.png)
 
@@ -155,27 +155,27 @@ public partial class SeriesViewModel : ObservableObject
 
 Числовые значения _X_:
 
-- `SortedNumericDataAdapter`
-- `FormulaDataAdapter`
+- [`SortedNumericDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md)
+- [`FormulaDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/FormulaDataAdapter.md)
 
 Значения даты и времени _X_:
 
-- `SortedDateTimeDataAdapter`
-- `SortedTimeSpanDataAdapter`
+- [`SortedDateTimeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md)
+- [`SortedTimeSpanDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/SortedTimeSpanDataAdapter.md)
 
 Качественные значения _X_:
 
-- `QualitativeDataAdapter`
+- [`QualitativeDataAdapter`](../../../API/Eremex.AvaloniaUI.Charts/QualitativeDataAdapter.md)
 
 
 
 ## Параметры Bar Series View
 
-- `CartesianSideBySideBarSeriesView.BarDistanceFixed` — Ширина пустого пространства справа от столбцов, принадлежащих текущему Bar Series View. Свойство `BarDistanceFixed` позволяет настроить расстояние между столбцами разных серий.
-- `CartesianSideBySideBarSeriesView.BarWidth` — Ширина столбцов текущего Bar Series View.
-- `CartesianSideBySideBarSeriesView.BorderColor` — Цвет границы столбцов.
-- `CartesianSideBySideBarSeriesView.BorderThickness` — Толщина границы столбцов.
-- `CartesianSideBySideBarSeriesView.Color` — Цвет заливки столбцов.
+- [`CartesianSideBySideBarSeriesView.BarDistanceFixed`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BarDistanceFixed.md) — Ширина пустого пространства справа от столбцов, принадлежащих текущему Bar Series View. Свойство [`BarDistanceFixed`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BarDistanceFixed.md) позволяет настроить расстояние между столбцами разных серий.
+- [`CartesianSideBySideBarSeriesView.BarWidth`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BarWidth.md) — Ширина столбцов текущего Bar Series View.
+- [`CartesianSideBySideBarSeriesView.BorderColor`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BorderColor.md) — Цвет границы столбцов.
+- [`CartesianSideBySideBarSeriesView.BorderThickness`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/BorderThickness.md) — Толщина границы столбцов.
+- [`CartesianSideBySideBarSeriesView.Color`](../../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/Color.md) — Цвет заливки столбцов.
 
 <br>
 <br>

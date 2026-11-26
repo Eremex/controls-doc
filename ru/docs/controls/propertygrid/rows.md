@@ -6,23 +6,23 @@ seealso: []
 
 # Строки в контроле PropertyGrid
 
-PropertyGrid может автоматически создавать строки для свойств, предоставляемых привязанным объектом (объектами) (см. `PropertyGridControl.SelectedObject` и `PropertyGridControl.SelectedObjects`). 
+PropertyGrid может автоматически создавать строки для свойств, предоставляемых привязанным объектом (объектами) (см. [`PropertyGridControl.SelectedObject`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/SelectedObject.md) и [`PropertyGridControl.SelectedObjects`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/SelectedObjects.md)). 
 Автоматическая генерация строк включена по умолчанию. 
-Вы можете отключить автоматическую генерацию строк с помощью параметра `PropertyGridControl.AutoGenerateRows`, а затем создавать строки вручную.
+Вы можете отключить автоматическую генерацию строк с помощью параметра [`PropertyGridControl.AutoGenerateRows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/AutoGenerateRows.md), а затем создавать строки вручную.
 
 ![propertygrid-sample](../../images/propertygrid-sample.png)
 
 PropertyGrid поддерживает три типа строк:
 
-- Обычные строки (строки данных) (`PropertyGridRow`) — отображают имена и значения привязанных свойств.
+- Обычные строки (строки данных) ([`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md)) — отображают имена и значения привязанных свойств.
   
   ![data-rows](../../images/data-rows.png)
 
-- Категориальные строки (`PropertyGridCategoryRow`) — используются для группировки других строк в категории. Пользователи могут сворачивать и разворачивать категориальные строки, чтобы скрывать/показывать их дочерние элементы.
+- Категориальные строки ([`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md)) — используются для группировки других строк в категории. Пользователи могут сворачивать и разворачивать категориальные строки, чтобы скрывать/показывать их дочерние элементы.
   
   ![category-rows](../../images/category-rows.png)
 
-- Строки-вкладки (`PropertyGridTabRow`) — используются для организации строк в интерфейс с вкладками. Строки-вкладки не поддерживают функцию сворачивания/разворачивания.
+- Строки-вкладки ([`PropertyGridTabRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridTabRow.md)) — используются для организации строк в интерфейс с вкладками. Строки-вкладки не поддерживают функцию сворачивания/разворачивания.
   
   ![property-grid-tab-rows](../../images/property-grid-tab-rows.png)
 
@@ -33,28 +33,28 @@ PropertyGrid поддерживает три типа строк:
 - Обычные строки создаются для всех публичных свойств.
 - Категориальные строки генерируются из атрибутов `System.ComponentModel.CategoryAttribute`, применённых к базовым публичным свойствам. Соответствующие строки данных группируются внутри этих категорий.
 
-Если какая-либо строка была добавлена в контрол вручную (например, в XAML), автоматическая генерация строк не действует. Установите свойство `PropertyGridControl.AutoGenerateRows` в `false`, чтобы принудительно отключить автоматическую генерацию строк.
+Если какая-либо строка была добавлена в контрол вручную (например, в XAML), автоматическая генерация строк не действует. Установите свойство [`PropertyGridControl.AutoGenerateRows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/AutoGenerateRows.md) в `false`, чтобы принудительно отключить автоматическую генерацию строк.
 
-Используйте метод `PopulateRows`, чтобы сгенерировать строки данных и категориальные строки из привязанного объекта (объектов) в code-behind. Этот метод очищает существующую коллекцию строк перед добавлением новых строк.
+Используйте метод [`RetrieveFields`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/RetrieveFields.md), чтобы сгенерировать строки данных и категориальные строки из привязанного объекта (объектов) в code-behind. Этот метод очищает существующую коллекцию строк перед добавлением новых строк.
 
 Вы можете применять определённые атрибуты Data Annotation к свойствам привязанного объекта, чтобы управлять наличием, отображаемым именем и статусом «только для чтения» генерируемых строк PropertyGrid. Подробнее смотрите в следующем разделе: [Использование атрибутов для настройки свойств строк](#использование-атрибутов-для-настройки-свойств-строк).
 
-Коллекция `PropertyGridControl.Rows` позволяет обращаться к строкам контрола, добавлять и удалять отдельные элементы.
+Коллекция [`PropertyGridControl.Rows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/Rows.md) позволяет обращаться к строкам контрола, добавлять и удалять отдельные элементы.
 
 ### Создание строк данных
 
-Используйте объекты `PropertyGridRow`, чтобы создавать строки данных. Чтобы добавить строки данных на корневом уровне, добавьте объекты `PropertyGridRow` в коллекцию `PropertyGridControl.Rows`.
+Используйте объекты [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md), чтобы создавать строки данных. Чтобы добавить строки данных на корневом уровне, добавьте объекты [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) в коллекцию [`PropertyGridControl.Rows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/Rows.md).
 
-Основные свойства класса `PropertyGridRow`:
+Основные свойства класса [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md):
 
-- `PropertyGridRow.FieldName` — возвращает или задаёт имя публичного свойства, к которому привязана строка.
-- `PropertyGridRow.Caption` — возвращает или задаёт заголовок строки. Для автоматически генерируемых строк свойство `Caption` содержит отображаемое имя свойства.
-- `PropertyGridRow.AllowEditing` — возвращает или задаёт, включены ли операции редактирования значения.
-- `PropertyGridRow.EditorProperties` — позволяет назначить пользовательский встроенный редактор значению строки. См. [Редактирование данных](data-editing.md).
+- [`PropertyGridRow.FieldName`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/FieldName.md) — возвращает или задаёт имя публичного свойства, к которому привязана строка.
+- [`PropertyGridRow.Caption`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRowBase/Caption.md) — возвращает или задаёт заголовок строки. Для автоматически генерируемых строк свойство [`Caption`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRowBase/Caption.md) содержит отображаемое имя свойства.
+- [`PropertyGridRow.AllowEditing`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/AllowEditing.md) — возвращает или задаёт, включены ли операции редактирования значения.
+- [`PropertyGridRow.EditorProperties`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/EditorProperties.md) — позволяет назначить пользовательский встроенный редактор значению строки. См. [Редактирование данных](data-editing.md).
 
 #### Пример
 
-Следующий XAML-код создаёт три строки данных (объекта `PropertyGridRow`) и привязывает их к полям объекта, назначенного контексту данных контрола.
+Следующий XAML-код создаёт три строки данных (объекта [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md)) и привязывает их к полям объекта, назначенного контексту данных контрола.
 
 ``` xml
 xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
@@ -71,7 +71,7 @@ xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
 
 #### Пример
 
-Следующий пример создаёт строки данных в code-behind:
+Этот пример создаёт строки данных в code-behind:
 
 ``` xml
 xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
@@ -92,12 +92,12 @@ pGrid1.Rows.Add(new PropertyGridRow() { FieldName = "InvoiceNo" });
 
 PropertyGrid может генерировать категориальные строки из атрибутов `System.ComponentModel.CategoryAttribute`, применённых к базовым публичным свойствам. Соответствующие строки данных группируются в этих категориальных строках.
 
-Вы можете отключить автоматическую генерацию строк и создать пользовательский набор строк данных и категориальных строк. Используйте объекты `PropertyGridCategoryRow`, чтобы определить категориальные строки. Добавьте объекты `PropertyGridCategoryRow` в коллекцию `PropertyGridControl.Rows`, чтобы отобразить их на корневом уровне.
+Вы можете отключить автоматическую генерацию строк и создать пользовательский набор строк данных и категориальных строк. Используйте объекты [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md), чтобы определить категориальные строки. Добавьте объекты [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md) в коллекцию [`PropertyGridControl.Rows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/Rows.md), чтобы отобразить их на корневом уровне.
 
-Основные свойства класса `PropertyGridCategoryRow`:
+Основные свойства класса [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md):
 
-- `PropertyGridCategoryRow.Rows` — коллекция строк, отображаемых как дочерние элементы категориальной строки. Обычно вы добавляете в эту коллекцию строки данных (объекты `PropertyGridRow`).
-- `PropertyGridCategoryRow.Caption` — возвращает или задаёт отображаемое имя категориальной строки. Для автоматически генерируемых категориальных строк это свойство возвращает значение `CategoryAttribute`.
+- [`PropertyGridCategoryRow.Rows`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow/Rows.md) — коллекция строк, отображаемых как дочерние элементы категориальной строки. Обычно вы добавляете в эту коллекцию строки данных (объекты [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md)).
+- [`PropertyGridCategoryRow.Caption`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRowBase/Caption.md) — возвращает или задаёт отображаемое имя категориальной строки. Для автоматически генерируемых категориальных строк это свойство возвращает значение `CategoryAttribute`.
 
 #### Пример
 
@@ -120,7 +120,7 @@ xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
 ```
 
 #### Пример
-Следующий пример создаёт категориальные строки и размещает строки данных в созданные категории в code-behind.
+Этот пример создаёт категориальные строки и размещает строки данных в созданные категории в code-behind.
 
 ``` xml
 xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
@@ -153,15 +153,15 @@ categoryRowDetails.Rows.Add(new PropertyGridRow() { FieldName = "InvoiceNo" });
 
 ## Создание строк-вкладок
 
-Строка-вкладка (`PropertyGridTabRow`) позволяет группировать строки в интерфейс с вкладками. Она состоит из заголовка, переключателя вкладок и клиентской области. Когда пользователь выбирает вкладку, клиентская область отображает набор свойств, соответствующий выбранной вкладке. Следующее изображение демонстрирует контрол PropertyGrid с двумя строками-вкладками (_Appearance_ и _Layout_):
+Строка-вкладка ([`PropertyGridTabRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridTabRow.md)) позволяет группировать строки в интерфейс с вкладками. Она состоит из заголовка, переключателя вкладок и клиентской области. Когда пользователь выбирает вкладку, клиентская область отображает набор свойств, соответствующий выбранной вкладке. Следующее изображение демонстрирует контрол PropertyGrid с двумя строками-вкладками (_Appearance_ и _Layout_):
 
 ![propertygrid-tabrows](../../images/propertygrid-tabrows.png)
 
-Контрол заполняет коллекцию вкладок из дочерних элементов строки-вкладки (объектов `PropertyGridTabRowItem`). Каждый объект `PropertyGridTabRowItem` определяет коллекцию строк, связанных с этой вкладкой.
+Контрол заполняет коллекцию вкладок из дочерних элементов строки-вкладки (объектов [`PropertyGridTabRowItem`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridTabRowItem.md)). Каждый объект [`PropertyGridTabRowItem`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridTabRowItem.md) определяет коллекцию строк, связанных с этой вкладкой.
 
 ### Пример
 
-Следующий пример создаёт строку-вкладку _Appearance_, состоящую из двух вкладок (_Text_ и _Border_). Каждая вкладка при выборе отображает свой набор свойств.
+Этот пример создаёт строку-вкладку _Appearance_, состоящую из двух вкладок (_Text_ и _Border_). Каждая вкладка при выборе отображает свой набор свойств.
 
 ![propertygrid-tabrow](../../images/propertygrid-tabrow-example.gif)
 
@@ -181,7 +181,6 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 
 <mxpg:PropertyGridControl x:Name="propertyGrid" 
                           SelectedObject="{Binding}" 
-                          UseModernAppearance="True" 
                           ImmediatePostEditor="True" 
                           BorderThickness="1,0" Grid.Column="1"
                           ShowSearchPanel="False"
@@ -280,17 +279,17 @@ public string OrderId {
 
 Вы можете использовать свойство `CellTemplate`, чтобы задать шаблон для отрисовки областей значения строк. Дополнительную информацию смотрите в следующих разделах: [Редактирование данных](data-editing.md) и [Пользовательские редакторы](custom-editors.md)
 
-Используйте свойство `PropertyGridRow.RowTemplate`, чтобы отрисовывать целые строки (области заголовка и значения) произвольным образом. Это свойство задаёт пользовательский шаблон строки.
+Используйте свойство [`PropertyGridRow.RowTemplate`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/RowTemplate.md), чтобы отрисовывать целые строки (области заголовка и значения) произвольным образом. Это свойство задаёт пользовательский шаблон строки.
 
 ### Пример - Пользовательский шаблон строк
 
-Следующий код привязывает PropertyGrid к объекту _MyBusinessObject_, имеющему свойства _BorderSize_ и _Location_ типов `Integer` и `Point` соответственно. Код определяет три объекта `PropertyGridRow`, два из которых используют пользовательские шаблоны. Шаблоны содержат пользовательские контролы для представления и редактирования свойств _BorderSize_ и _Location_.
+Следующий код привязывает PropertyGrid к объекту _MyBusinessObject_, имеющему свойства _BorderSize_ и _Location_ типов `Integer` и `Point` соответственно. Код определяет три объекта [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md), два из которых используют пользовательские шаблоны. Шаблоны содержат пользовательские контролы для представления и редактирования свойств _BorderSize_ и _Location_.
 
 ![propertygrid-rowtemplate-example](../../images/propertygrid-rowtemplate-example.png)
 
-Шаблон строки для свойства _BorderSize_ отображает надпись, слайдер и `SpinEditor`. Слайдер и редактор привязаны к целевому свойству _BorderSize_.
+Шаблон строки для свойства _BorderSize_ отображает надпись, слайдер и [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md). Слайдер и редактор привязаны к целевому свойству _BorderSize_.
 
-Шаблон строки для редактирования свойства _Location_ содержит две надписи и два `SpinEditor`. Соответствующий объект `PropertyGridRow` привязан к свойству _Location_, тогда как `SpinEditor` привязаны к вложенным полям _X_ и _Y_. Альтернативный вариант — использовать пути привязки _Location.X_ и _Location.Y_ для редакторов.
+Шаблон строки для редактирования свойства _Location_ содержит две надписи и два [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md). Соответствующий объект [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) привязан к свойству _Location_, тогда как [`SpinEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/SpinEditor.md) привязаны к вложенным полям _X_ и _Y_. Альтернативный вариант — использовать пути привязки _Location.X_ и _Location.Y_ для редакторов.
 
 ``` xml
 xmlns:mxpg="https://schemas.eremexcontrols.net/avalonia/propertygrid"
@@ -303,7 +302,6 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 <mxpg:PropertyGridControl
             x:Name="propertyGrid1" 
             SelectedObject="{Binding Path=MyBusinessObject}"
-            UseModernAppearance="True"
             Margin="10"
             BorderThickness="1"
             ShowSearchPanel="False"
@@ -392,9 +390,9 @@ PropertyGrid позволяет использовать паттерн прое
 
 Следующие свойства PropertyGrid поддерживают паттерн MVVM:
  
-- `PropertyGridControl.RowsSource` — источник View Model строк, которые будут отрисованы как корневые строки.  
-- `PropertyGridCategoryRow.RowsSource` — источник View Model строк, которые будут отрисованы как дочерние элементы категориальной строки.
-- `PropertyGridControl.RowsDataTemplates` — коллекция шаблонов данных, определяющих объекты `PropertyGridRow` и `PropertyGridCategoryRow`, используемые для отрисовки соответствующих View Model строк из коллекций `RowsSource`.
+- [`PropertyGridControl.RowsSource`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/RowsSource.md) — источник View Model строк, которые будут отрисованы как корневые строки.  
+- [`PropertyGridCategoryRow.RowsSource`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridExpandableRowBase/RowsSource.md) — источник View Model строк, которые будут отрисованы как дочерние элементы категориальной строки.
+- [`PropertyGridControl.RowsDataTemplates`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/RowsDataTemplates.md) — коллекция шаблонов данных, определяющих объекты [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) и [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md), используемые для отрисовки соответствующих View Model строк из коллекций `RowsSource`.
 
 ### Пример 
 
@@ -402,11 +400,11 @@ PropertyGrid позволяет использовать паттерн прое
 
 ![PropertyGrid-RowsDataTemplates-example](../../images/PropertyGrid-RowsDataTemplates-example.png)
 
-Пример создаёт категориальные строки _Common_, _Coordinates_ и _Alignment_ (объекты `PropertyGridCategoryRow`) из объектов _CategoryRowViewModel_. 
+Пример создаёт категориальные строки _Common_, _Coordinates_ и _Alignment_ (объекты [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md)) из объектов _CategoryRowViewModel_. 
 
 Приведённые ниже View Model используются для создания обычных строк внутри категориальных строк:
 
-- _DefaultRowViewModel_ — View Model, соответствующая строке по умолчанию (объект `PropertyGridRow` с настройками по умолчанию). Тип данных значения строки по умолчанию определяет тип встроенного редактора. Объект _DefaultRowViewModel_ используется для создания строк _Display Text_, _Horz Alignment_ и _Vert Alignment_.
+- _DefaultRowViewModel_ — View Model, соответствующая строке по умолчанию (объект [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) с настройками по умолчанию). Тип данных значения строки по умолчанию определяет тип встроенного редактора. Объект _DefaultRowViewModel_ используется для создания строк _Display Text_, _Horz Alignment_ и _Vert Alignment_.
 
 - _NumericSpinEditorRowViewModel_ — View Model, соответствующая строке PropertyGrid со встроенным SpinEditor. Эта View Model используется для создания строки _Value_.
 
@@ -414,7 +412,7 @@ PropertyGrid позволяет использовать паттерн прое
 
 Шаги:
 
-1. Определите целевой бизнес-объект, данные которого нужно отображать/редактировать в PropertyGrid. Привяжите этот объект к контролу с помощью члена `PropertyGridControl.SelectedObject`.
+1. Определите целевой бизнес-объект, данные которого нужно отображать/редактировать в PropertyGrid. Привяжите этот объект к контролу с помощью члена [`PropertyGridControl.SelectedObject`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/SelectedObject.md).
 
     ``` csharp
     public partial class MyBusinessObject : ViewModelBase
@@ -469,7 +467,7 @@ PropertyGrid позволяет использовать паттерн прое
     </mxpg:PropertyGridControl>
     ```
 
-2. Создайте классы View Model строк, содержащие настройки для инициализации строк PropertyGrid (например, настройки для инициализации свойств строки `PropertyGridRow.FieldName` и `PropertyGridRow.Caption`). Каждая View Model строки обычно предоставляет уникальный набор свойств и возможностей. View Model для категориальных строк должна предоставлять объект `IEnumerable`, содержащий View Model дочерних строк.
+2. Создайте классы View Model строк, содержащие настройки для инициализации строк PropertyGrid (например, настройки для инициализации свойств строки [`PropertyGridRow.FieldName`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow/FieldName.md) и [`PropertyGridRow.Caption`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRowBase/Caption.md)). Каждая View Model строки обычно предоставляет уникальный набор свойств и возможностей. View Model для категориальных строк должна предоставлять объект `IEnumerable`, содержащий View Model дочерних строк.
 
     ``` csharp
     // A View Model that corresponds to regular data rows.
@@ -578,7 +576,7 @@ PropertyGrid позволяет использовать паттерн прое
     }
     ```
 
-4. Установите свойство `PropertyGridControl.RowsSource` в созданный объект `IEnumerable`.
+4. Установите свойство [`PropertyGridControl.RowsSource`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/RowsSource.md) в созданный объект `IEnumerable`.
 
     ``` xml
     xmlns:local="using:PropertyGridSample"
@@ -597,9 +595,9 @@ PropertyGrid позволяет использовать паттерн прое
     </mxpg:PropertyGridControl>
     ```
 
-5. Используйте коллекцию `PropertyGridControl.RowsDataTemplates`, чтобы создать шаблоны данных, которые сопоставляют View Model строк со строками PropertyGrid. Каждый шаблон данных должен определять объект `PropertyGridRow` или `PropertyGridCategoryRow` и инициализировать настройки строки, используя информацию, содержащуюся в соответствующей View Model строки.  
+5. Используйте коллекцию [`PropertyGridControl.RowsDataTemplates`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/RowsDataTemplates.md), чтобы создать шаблоны данных, которые сопоставляют View Model строк со строками PropertyGrid. Каждый шаблон данных должен определять объект [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md) или [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md) и инициализировать настройки строки, используя информацию, содержащуюся в соответствующей View Model строки.  
 
-    Когда вы определяете объект `PropertyGridCategoryRow`, установите свойство `PropertyGridCategoryRow.RowsSource` в источник View Model дочерних строк.
+    Когда вы определяете объект [`PropertyGridCategoryRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridCategoryRow.md), установите свойство [`PropertyGridCategoryRow.RowsSource`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridExpandableRowBase/RowsSource.md) в источник View Model дочерних строк.
 
     ``` xml
     <mxpg:PropertyGridControl
@@ -638,9 +636,9 @@ PropertyGrid позволяет использовать паттерн прое
 
     !!! tip
     
-        Avalonia UI поддерживает иерархический поиск целевых `DataTemplate` по логическому дереву. Помимо использования свойства `RowsDataTemplates`, вы можете определять шаблоны в коллекции `DataTemplates` родителя (родителей) контрола, объекта `Window` или `Application`.
+        Avalonia UI поддерживает иерархический поиск целевых `DataTemplate` по логическому дереву. Помимо использования свойства [`RowsDataTemplates`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/RowsDataTemplates.md), вы можете определять шаблоны в коллекции `DataTemplates` родителя (родителей) контрола, объекта `Window` или `Application`.
 
-6. Определите пользовательский шаблон _pointEditorTemplate_ для отрисовки `PropertyGridRow`, соответствующей объекту _PointEditorViewModel_.  
+6. Определите пользовательский шаблон _pointEditorTemplate_ для отрисовки [`PropertyGridRow`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridRow.md), соответствующей объекту _PointEditorViewModel_.  
 
     ``` xml
     <Window.Resources>
@@ -698,7 +696,6 @@ xmlns:local="using:PropertyGridSample"
     Background="FloralWhite" BorderThickness="1"
     SelectedObject="{Binding MyBusinessObject}"
     RowsSource="{Binding MyRowSource}"
-    UseModernAppearance="true"
     Margin="10">
 
     <mxpg:PropertyGridControl.RowsDataTemplates>

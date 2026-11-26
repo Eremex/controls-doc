@@ -12,13 +12,23 @@ Converts numeric arguments and values into series data points. The arguments may
 public class ScatterDataAdapter : ISeriesDataAdapter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ScatterDataAdapter](ScatterDataAdapter/ScatterDataAdapter.md)() | Initializes a new instance of the ScatterDataAdapter class that contains no data points. |
 | [ScatterDataAdapter](ScatterDataAdapter/ScatterDataAdapter.md)(…) | Initializes a new instance of the ScatterDataAdapter class with the specified arguments and values. (2 constructors) |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ItemCount](ScatterDataAdapter/ItemCount.md) { get; } | Gets the number of data points stored in the adapter. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Add](ScatterDataAdapter/Add.md)(…) | Adds a data point to the end of the adapter. (2 methods) |
 | [AddRange](ScatterDataAdapter/AddRange.md)(…) | Adds several data points to the end of the adapter. |
 | [Clear](ScatterDataAdapter/Clear.md)() | Removes all data points from the adapter. |

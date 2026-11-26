@@ -12,11 +12,16 @@ Represents a tab item of a PropertyGridTabRow that contains a set of rows.
 public class PropertyGridTabRowItem : Control
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PropertyGridTabRowItem](PropertyGridTabRowItem/PropertyGridTabRowItem.md)() | Initializes a new instance of the PropertyGridTabRowItem class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Header](PropertyGridTabRowItem/Header.md) { get; set; } | Gets or sets the tab's header content. |
 | [Rows](PropertyGridTabRowItem/Rows.md) { get; } | Gets the collection of rows displayed when the tab item is selected. |
 | [RowsSource](PropertyGridTabRowItem/RowsSource.md) { get; set; } | Gets or sets the collection whose items are used to generate rows. |

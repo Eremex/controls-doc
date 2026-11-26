@@ -12,7 +12,7 @@ Serves as the base class for cameras that define the view of a scene.
 public abstract class Camera : StyledElement
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |
@@ -27,11 +27,16 @@ public abstract class Camera : StyledElement
 | [XAxis](Camera/XAxis.md) { get; } | Gets the rightward direction of the camera's coordinate system. |
 | [YAxis](Camera/YAxis.md) { get; } | Gets the upward direction of the camera's coordinate system. |
 | [ZAxis](Camera/ZAxis.md) { get; } | Gets the camera's Z axis, whose direction is derived from the scene's coordinate system. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [LookAt](Camera/LookAt.md)(…) | Aims the camera at a point. |
 | [MoveForward](Camera/MoveForward.md)(…) | Moves the camera along its viewing direction, leaving the target and the up direction unchanged. |
 | [MoveLeft](Camera/MoveLeft.md)(…) | Pans the camera horizontally, keeping the direction of the view unchanged. |
 | [MoveUp](Camera/MoveUp.md)(…) | Pans the camera vertically, keeping the direction of the view unchanged. |
-| [Rotate](Camera/Rotate.md)(…) | Orbits the camera around its target, keeping the distance to the target unchanged. |
+| [Rotate](Camera/Rotate.md)(…) | Orbits the camera around its target, keeping the distance to the target unchanged. (2 methods) |
 
 ## See Also
 

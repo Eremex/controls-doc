@@ -4,15 +4,15 @@ order: 100
 seealso: []
 ---
 
-# Graphics3DControl 概述
+# Graphics3DControl 概述 {#graphics3dcontrol-overview}
 
-`Graphics3DControl` 控件允许您在 Avalonia 应用程序中嵌入 3D 模型。该控件支持使用鼠标和键盘执行旋转、平移和缩放操作，让用户能够在运行时与模型进行交互。
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 控件允许您在 Avalonia 应用程序中嵌入 3D 模型。该控件支持使用鼠标和键盘执行旋转、平移和缩放操作，让用户能够在运行时与模型进行交互。
 
 ![g3dControl-overview](../../images/g3dControl-overview.png)
 
-任何 3D 模型都是由使用指定材质渲染的网格组成的。`Graphics3DControl` 提供了用于定义网格、材质、摄像机和光照设置的 API。您还可以利用第三方库将 OBJ 和 STL 格式的模型加载到 `Graphics3DControl` 控件中。
+任何 3D 模型都是由使用指定材质渲染的网格组成的。[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 提供了用于定义网格、材质、摄像机和光照设置的 API。您还可以利用第三方库将 OBJ 和 STL 格式的模型加载到 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 控件中。
 
-## 主要功能
+## 主要功能 {#main-features}
 
 - 用于指定 3D 模型的 API
 - 同时显示多个 3D 模型
@@ -24,7 +24,7 @@ seealso: []
 - 支持使用 MVVM 设计模式定义 3D 模型
 - 显示坐标轴和网格线
 
-### 用户交互
+### 用户交互 {#user-interactions}
 
 - 使用鼠标和键盘旋转、平移和缩放模型
 - 提示信息
@@ -32,13 +32,13 @@ seealso: []
 
 请参阅[与 3D 模型的用户交互](user-interactions-with-3d-models.md)
 
-## 快速入门
+## 快速入门 {#get-started}
 
 - [Graphics3DControl 快速入门](get-started-with-graphics3dcontrol.md) — 演示如何从零开始创建一个 3D 模型。
 
-## 演示
+## 演示 {#demos}
 
-请查看 [Eremex Avalonia Controls Demo](https://github.com/Eremex/controls-demo) 应用程序，其中包含演示 `Graphics3DControl` 各种功能的示例：
+请查看 [Eremex Avalonia Controls Demo](https://github.com/Eremex/controls-demo) 应用程序，其中包含演示 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 各种功能的示例：
 
 - 使用第三方库从外部文件加载 Wavefront（Obj）和 Stl 模型，并根据加载的数据创建 3D 模型。
 - 从零开始创建 3D 模型。
@@ -46,33 +46,33 @@ seealso: []
 - 使用 MVVM 设计模式定义 3D 模型，等等。
 
 
-## Graphics3DControl 的绘制主题
+## Graphics3DControl 的绘制主题 {#paint-theme-for-the-graphics3dcontrol}
 
-从 1.3 版本开始，要使用 `Graphics3DControl`，您必须在 _App.xaml_ 文件中注册 `Controls3D` 绘制主题。该主题包含渲染 `Graphics3DControl` 所需的通用外观设置。有关更多信息，请参阅以下主题：
+从 1.3 版本开始，要使用 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md)，您必须在 _App.xaml_ 文件中注册 `Controls3D` 绘制主题。该主题包含渲染 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 所需的通用外观设置。有关更多信息，请参阅以下主题：
 
 - [注册 Graphics3DControl 的绘制主题](get-started-with-graphics3dcontrol.md#prerequisites-register-the-paint-theme-for-the-graphics3dcontrol)
 
 
 !!! note
 
-    如果未注册 `Controls3D` 绘制主题，`Graphics3DControl` 将显示为空白。
+    如果未注册 `Controls3D` 绘制主题，[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 将显示为空白。
 
 
-## 坐标系、坐标轴和网格线
+## 坐标系、坐标轴和网格线 {#coordinate-system-axes-and-grids}
 
-`Graphics3DControl` 支持右手坐标系（默认）和左手坐标系。您可以使用 `Graphics3DControl.CoordinateSystem` 属性来启用所需的选项。
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 支持右手坐标系（默认）和左手坐标系。您可以使用 [`Graphics3DControl.CoordinateSystem`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/CoordinateSystem.md) 属性来启用所需的选项。
 
 ``` xml
 <mx3d:Graphics3DControl Name="g3DControl" ShowAxes="True" CoordinateSystem="LeftHanded" ...>
 ```
 
-### 右手坐标系
+### 右手坐标系 {#right-handed-coordinate-system}
 
 正 X、Y、Z 轴分别指向右侧、上方和面向观察者的方向。
 
 ![g3d-coordinate-system-righthanded](../../images/g3d-coordinate-system-righthanded.png)
 
-### 左手坐标系
+### 左手坐标系 {#left-handed-coordinate-system}
 
 正 X、Y、Z 轴分别指向右侧、上方和远离观察者的方向。
 
@@ -83,9 +83,9 @@ seealso: []
 перепутаны оси
  -->
 
-### 坐标轴
+### 坐标轴 {#axes}
 
-启用 `Graphics3DControl.ShowAxes` 属性可在控件中显示 X、Y、Z 坐标轴。
+启用 [`Graphics3DControl.ShowAxes`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/ShowAxes.md) 属性可在控件中显示 X、Y、Z 坐标轴。
 
 ![g3d-showaxes](../../images/g3d-showaxes.png)
 
@@ -93,20 +93,20 @@ seealso: []
 <mx3d:Graphics3DControl Name="g3DControl" ShowAxes="True"/>
 ```
 
-#### 相关选项
+#### 相关选项 {#related-options}
 
-- `Graphics3DControl.AxisThickness` 属性 — 指定坐标轴的粗细。
-
-
+- [`Graphics3DControl.AxisThickness`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/AxisThickness.md) 属性 — 指定坐标轴的粗细。
 
 
-### Gizmo
 
-`Graphics3DControl` 可以显示 Gizmo。它是一个独立的部件，用于直观地指示 3D 空间中坐标轴的当前朝向。
+
+### Gizmo {#gizmo}
+
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 可以显示 Gizmo。它是一个独立的部件，用于直观地指示 3D 空间中坐标轴的当前朝向。
 
 ![g3d-gizmo](../../images/g3d-gizmo.png)
 
-要启用 Gizmo，请使用 `Eremex.AvaloniaUI.Controls3D.Gizmo` 类的实例初始化 `Graphics3DControl.Gizmo` 属性。
+要启用 Gizmo，请使用 [`Eremex.AvaloniaUI.Controls3D.Gizmo`](../../API/Eremex.AvaloniaUI.Controls3D/Gizmo.md) 类的实例初始化 [`Graphics3DControl.Gizmo`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Gizmo.md) 属性。
 
 ``` xml
 <mx3d:Graphics3DControl Name="g3DControl" >
@@ -117,11 +117,11 @@ seealso: []
 </mx3d:Graphics3DControl>
 ```
 
-您可以以自定义方式绘制 Gizmo。为此，请使用 `Gizmo.Models` 或 `Gizmo.ModelsSource` 属性指定用于渲染 Gizmo 的 3D 模型。填充这些属性的过程与 `Graphics3dControl` 相同，因为这两个类继承自同一个基类。
+您可以以自定义方式绘制 Gizmo。为此，请使用 [`Gizmo.Models`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Models.md) 或 [`Gizmo.ModelsSource`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/ModelsSource.md) 属性指定用于渲染 Gizmo 的 3D 模型。填充这些属性的过程与 `Graphics3dControl` 相同，因为这两个类继承自同一个基类。
 
-### 网格线
+### 网格线 {#grids}
 
-`Graphics3DControl.ShowGrid` 属性允许您在 XY、XZ 和 YZ 平面上显示网格线。
+[`Graphics3DControl.ShowGrid`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/ShowGrid.md) 属性允许您在 XY、XZ 和 YZ 平面上显示网格线。
 
 ![![g3d-grid](../../images/g3d-grid.png)](../../images/g3d-grid.png)
 
@@ -129,26 +129,42 @@ seealso: []
 <mx3d:Graphics3DControl Name="g3DControl" ShowGrid="True"/>
 ```
 
-#### 相关选项
+您可以使用 [`Graphics3DControl.GridPlane`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/GridPlane.md) 属性自定义各个网格平面（XY、XZ 和 YZ）的可见性。该属性的类型为 [`GridPlane`](../../API/Eremex.AvaloniaUI.Controls3D/GridPlane.md)，这是一个标志枚举。您可以排除单个枚举值来隐藏相应的平面。
 
-- `Graphics3DControl.GridThickness` 属性 — 指定网格线的粗细。
+以下代码仅启用 XY 和 XZ 平面。
+
+![g3d-grid-xy-xz-planes](../../images/g3d-grid-xy-xz-planes.png)
+
+``` xml
+<mx3d:Graphics3DControl x:Name="g3DControl1" ModelsSource="{Binding Models}"
+                        GridPlane="XY, XZ" >
+```
+
+```csharp
+g3DControl1.GridPlane = GridPlane.XY | GridPlane.XZ;
+```
+
+
+#### 相关选项 {#related-options_1}
+
+- [`Graphics3DControl.GridThickness`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/GridThickness.md) 属性 — 指定网格线的粗细。
 
 <!-- TODO
 Option for grid spacing ?
  -->
 
 
-## 模型
+## 模型 {#models}
 
-要为 `Graphics3DControl` 定义 3D 模型，请使用 `Graphics3DControl` 的 API 创建表示模型、网格、顶点、材质、摄像机等的对象。
+要为 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 定义 3D 模型，请使用 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 的 API 创建表示模型、网格、顶点、材质、摄像机等的对象。
 
-### 定义 3D 模型
+### 定义 3D 模型 {#define-3d-models}
 
-`GeometryModel3D` 类封装了 `Graphics3DControl` 中的单个 3D 模型。
+[`GeometryModel3D`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D.md) 类封装了 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 中的单个 3D 模型。
 使用以下属性之一将 3D 模型添加到控件中：
 
-- `Graphics3DControl.Models` — 一个 `GeometryModel3D` 对象的集合。
-- `Graphics3DControl.ModelsSource` — 按照 MVVM 设计模式，用于创建 3D 模型（`GeometryModel3D` 对象）的业务对象源。
+- [`Graphics3DControl.Models`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Models.md) — 一个 [`GeometryModel3D`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D.md) 对象的集合。
+- [`Graphics3DControl.ModelsSource`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/ModelsSource.md) — 按照 MVVM 设计模式，用于创建 3D 模型（[`GeometryModel3D`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D.md) 对象）的业务对象源。
 
 ``` xml
 xmlns:mx3d="https://schemas.eremexcontrols.net/avalonia/controls3d"
@@ -164,27 +180,27 @@ g3DControl.Models.Add(model);
 ```
 
 
-### 网格
+### 网格 {#meshes}
 
 一个 3D 模型代表使用特定材质渲染的一组网格。网格定义了 3D 对象的形状和结构。
 
-`MeshGeometry3D` 类表示 `Graphics3DControl` 中的一个网格。以下属性允许您为模型指定网格：
+[`MeshGeometry3D`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D.md) 类表示 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 中的一个网格。以下属性允许您为模型指定网格：
 
-- `GeometryModel3D.Meshes` — 一个 `MeshGeometry3D` 对象的集合。
-- `GeometryModel3D.MeshesSource` — 按照 MVVM 设计模式，用于创建网格（`MeshGeometry3D` 对象）的业务对象源。
+- [`GeometryModel3D.Meshes`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Meshes.md) — 一个 [`MeshGeometry3D`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D.md) 对象的集合。
+- [`GeometryModel3D.MeshesSource`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/MeshesSource.md) — 按照 MVVM 设计模式，用于创建网格（[`MeshGeometry3D`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D.md) 对象）的业务对象源。
 
-该控件支持三种网格类型，您可以通过 `MeshGeometry3D.FillType` 属性进行选择。
+该控件支持三种网格类型，您可以通过 [`MeshGeometry3D.FillType`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/FillType.md) 属性进行选择。
 
 
-- `MeshFillType.Triangles`（默认）— 三角形网格。由三角形面（由三条边围成的平面区域）组成。
+- [`MeshFillType.Triangles`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md)（默认）— 三角形网格。由三角形面（由三条边围成的平面区域）组成。
 
   ![g3d-mesh-triangle](../../images/g3d-mesh-triangle.png)
 
-- `MeshFillType.Lines` — 线网格。顶点通过线连接，形成线框。
+- [`MeshFillType.Lines`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md) — 线网格。顶点通过线连接，形成线框。
 
   ![g3d-mesh-lines](../../images/g3d-mesh-lines.png)
 
-- `MeshFillType.Points` — 点网格（点云）。由未通过线连接的顶点组成。
+- [`MeshFillType.Points`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md) — 点网格（点云）。由未通过线连接的顶点组成。
 
   ![g3d-mesh-points](../../images/g3d-mesh-points.png)
   
@@ -203,15 +219,15 @@ model.Meshes.AddRange(new[] { meshTriangle1, meshSquare, meshPoints });
 
 创建网格时，使用以下属性来定义顶点和面/线：
 
-- `MeshGeometry3D.Vertices` 数组 — 指定组成网格的所有顶点的数组。
-- `MeshGeometry3D.Indices` 数组 — 定义三角形面（对于三角形网格），或线（对于线网格）。
+- [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) 数组 — 指定组成网格的所有顶点的数组。
+- [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) 数组 — 定义三角形面（对于三角形网格），或线（对于线网格）。
 
 
-#### 顶点
+#### 顶点 {#vertices}
 
 顶点是 3D 空间中由其坐标 (x, y, z) 定义的一个点。
 
-`Vertex3D` 类型封装了 `Graphics3DControl` 中的单个顶点。使用 `MeshGeometry3D.Vertices` 数组向网格添加顶点。
+`Vertex3D` 类型封装了 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 中的单个顶点。使用 [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) 数组向网格添加顶点。
 
 `Vertex3D` 类型公开了以下需要初始化的主要属性。
 
@@ -222,15 +238,15 @@ model.Meshes.AddRange(new[] { meshTriangle1, meshSquare, meshPoints });
 
 - `Vertex3D.TextureCoord` — 一个 `Vector2` 值，指定纹理材质中映射到当前顶点的点的 (x, y) 坐标。
 
-#### 定义三角形网格
+#### 定义三角形网格 {#define-a-triangle-mesh}
 
-要创建三角形网格，您需要将一个形状划分为若干三角形。顶点指定这些三角形的角点。`MeshGeometry3D.FillType` 属性需要设置为其默认值（`MeshFillType.Triangles`）。
+要创建三角形网格，您需要将一个形状划分为若干三角形。顶点指定这些三角形的角点。[`MeshGeometry3D.FillType`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/FillType.md) 属性需要设置为其默认值（[`MeshFillType.Triangles`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md)）。
 
 考虑一个网格为四边形的示例。可以通过添加一条对角线将其三角化。
 
 ![g3d-triangle-mesh-quad-coords](../../images/g3d-triangle-mesh-quad-coords.png)
 
-首先，将所有顶点添加到 `MeshGeometry3D.Vertices` 数组中。
+首先，将所有顶点添加到 [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) 数组中。
 
 ``` xml
 <mx3d:Graphics3DControl Name="g3DControl" ShowAxes="True"/>
@@ -261,27 +277,27 @@ meshSquare.Vertices = meshSquareVertices;
 model.Meshes.AddRange(new[] { meshSquare });
 ```
 
-然后使用 `MeshGeometry3D.Indices` 属性来构成三角形面。
+然后使用 [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) 属性来构成三角形面。
 
-对于三角形网格，`MeshGeometry3D.Indices` 属性是 `MeshGeometry3D.Vertices` 数组中定义各个网格三角形的顶点索引数组。此数组包含若干组，每组**三个**索引。数组中的前三个索引指向第一个网格三角形的顶点。接下来的三个索引指向第二个网格三角形的顶点，依此类推。
+对于三角形网格，[`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) 属性是 [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) 数组中定义各个网格三角形的顶点索引数组。此数组包含若干组，每组**三个**索引。数组中的前三个索引指向第一个网格三角形的顶点。接下来的三个索引指向第二个网格三角形的顶点，依此类推。
 每个三角形的索引顺序很重要，因为它决定了表面法线。表面法线又决定了三角形的正面和背面，这对于背面剔除和正面剔除等操作至关重要。
 
-对于上面的四边形网格，`MeshGeometry3D.Indices` 数组应包含六个索引。前三个索引指向第一个三角形的顶点。后三个索引指向第二个三角形的顶点。
+对于上面的四边形网格，[`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) 数组应包含六个索引。前三个索引指向第一个三角形的顶点。后三个索引指向第二个三角形的顶点。
 
 ``` cs
 uint[] meshSquareIndices = new uint[] { 0, 1, 3, 1, 2, 3 };
 meshSquare.Indices = meshSquareIndices;
 ```
 
-#### 定义线网格
+#### 定义线网格 {#define-a-line-mesh}
 
-在线网格中，顶点通过线连接。要定义线网格，请创建一个 `MeshGeometry3D` 对象，并将其 `MeshGeometry3D.FillType` 属性设置为 `MeshFillType.Lines`。然后使用 `MeshGeometry3D.Vertices` 属性指定所有顶点，并使用 `MeshGeometry3D.Indices` 属性将顶点用线连接起来。
+在线网格中，顶点通过线连接。要定义线网格，请创建一个 [`MeshGeometry3D`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D.md) 对象，并将其 [`MeshGeometry3D.FillType`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/FillType.md) 属性设置为 [`MeshFillType.Lines`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md)。然后使用 [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) 属性指定所有顶点，并使用 [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) 属性将顶点用线连接起来。
 
 考虑以下由连接六个点的线组成的 3D 模型。
 
 ![g3d-triangle-mesh-lines-coords](../../images/g3d-triangle-mesh-lines-coords.png)
 
-首先，将所有顶点添加到 `MeshGeometry3D.Vertices` 数组中。
+首先，将所有顶点添加到 [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) 数组中。
 
 ``` xml
 <mx3d:Graphics3DControl Name="g3DControl" ShowAxes="True"/>
@@ -320,29 +336,29 @@ Should I specify vertex Normals in a line and point meshes?
  -->
 
 
-使用 `MeshGeometry3D.Indices` 属性将顶点用线连接起来。对于线网格，`MeshGeometry3D.Indices` 属性是 `MeshGeometry3D.Vertices` 数组中定义各条线的顶点索引数组。
+使用 [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) 属性将顶点用线连接起来。对于线网格，[`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) 属性是 [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) 数组中定义各条线的顶点索引数组。
 此数组包含成对的索引。数组中前两个索引指向第一条线的顶点。接下来两个索引指向第二条线的顶点，依此类推。
 
-对于上面的示例，`MeshGeometry3D.Indices` 数组应包含 10 个索引。第一对索引指向定义第一条线的点。第二对索引指向第二条线的顶点，依此类推。
+对于上面的示例，[`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) 数组应包含 10 个索引。第一对索引指向定义第一条线的点。第二对索引指向第二条线的顶点，依此类推。
 
 ``` cs
 uint[] meshLinesIndices = new uint[] { 0, 1, 1, 2, 2, 3, 3, 4, 4, 5 };
 meshLines.Indices = meshLinesIndices;
 ```
 
-##### 线的粗细
+##### 线的粗细 {#thickness-of-lines}
 
-在线网格中，使用 `PrimitiveSize` 属性来更改线的粗细。
-
-
+在线网格中，使用 [`PrimitiveSize`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/PrimitiveSize.md) 属性来更改线的粗细。
 
 
 
-#### 定义点网格
+
+
+#### 定义点网格 {#define-a-point-mesh}
 
 在点网格中，顶点被渲染为独立的点。
 
-要定义点网格，请创建一个 `MeshGeometry3D` 对象，并将其 `MeshGeometry3D.FillType` 属性设置为 `MeshFillType.Points`。然后使用 `MeshGeometry3D.Vertices` 属性指定所有顶点，并使用 `MeshGeometry3D.Indices` 属性指定要渲染哪些顶点。
+要定义点网格，请创建一个 [`MeshGeometry3D`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D.md) 对象，并将其 [`MeshGeometry3D.FillType`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/FillType.md) 属性设置为 [`MeshFillType.Points`](../../API/Eremex.AvaloniaUI.Controls3D/MeshFillType.md)。然后使用 [`MeshGeometry3D.Vertices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Vertices.md) 属性指定所有顶点，并使用 [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) 属性指定要渲染哪些顶点。
 
 让我们创建一个形成螺旋线的点网格，其中的点排列在 XY 平面上。
 
@@ -398,21 +414,21 @@ Then colorlize the spiral
 
 ![g3d-point-mesh-color-gradient-example](../../images/g3d-point-mesh-color-gradient-example.png)
 
-1. 将纹理材质（`TexturedPbrMaterial`）添加到 `Graphics3DControl.Materials` 集合中。纹理材质表示一组位图，用于指定以下纹理设置：
-    - `Albedo` — 基础颜色
-    - `Alpha` — 透明度
-    - `Emission` — 表面发光的强度
-    - `AmbientOcclusion` — 由阻挡环境光的对象所造成的阴影级别
-    - `Roughness` — 表面的光滑程度
-    - `Metallic` — 表面的反射率设置
+1. 将纹理材质（[`TexturedPbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial.md)）添加到 [`Graphics3DControl.Materials`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Materials.md) 集合中。纹理材质表示一组位图，用于指定以下纹理设置：
+    - [`Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Albedo.md) — 基础颜色
+    - [`Alpha`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Alpha.md) — 透明度
+    - [`Emission`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Emission.md) — 表面发光的强度
+    - [`AmbientOcclusion`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/AmbientOcclusion.md) — 由阻挡环境光的对象所造成的阴影级别
+    - [`Roughness`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Roughness.md) — 表面的光滑程度
+    - [`Metallic`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Metallic.md) — 表面的反射率设置
 
     顶点随后会被映射到这些纹理位图内的特定位置。
 
     为确保顶点显示出目标颜色渐变中的真实颜色，请按如下方式配置纹理位图：
     
-    - 将 `TexturedPbrMaterial.Emission` 设置为决定顶点真实颜色的渐变位图。
-    - 将 `TexturedPbrMaterial.Albedo` 设置为填充为黑色的位图。
-    - 将 `TexturedPbrMaterial.Roughness` 和 `TexturedPbrMaterial.AmbientOcclusion` 设置为填充为白色的位图。
+    - 将 [`TexturedPbrMaterial.Emission`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Emission.md) 设置为决定顶点真实颜色的渐变位图。
+    - 将 [`TexturedPbrMaterial.Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Albedo.md) 设置为填充为黑色的位图。
+    - 将 [`TexturedPbrMaterial.Roughness`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Roughness.md) 和 [`TexturedPbrMaterial.AmbientOcclusion`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/AmbientOcclusion.md) 设置为填充为白色的位图。
 
     ``` cs
     using DynamicData;
@@ -465,9 +481,9 @@ Then colorlize the spiral
     }
     ```
 
-    材质的 `TexturedPbrMaterial.Key` 属性被设置为一个唯一的键（字符串）。唯一键用于在 `Graphics3DControl.Materials` 集合中识别材质。
+    材质的 [`TexturedPbrMaterial.Key`](../../API/Eremex.AvaloniaUI.Controls3D/Material/Key.md) 属性被设置为一个唯一的键（字符串）。唯一键用于在 [`Graphics3DControl.Materials`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Materials.md) 集合中识别材质。
 
-2. 使用 `MeshGeometry3D.MaterialKey` 属性将创建的材质分配给网格。`MeshGeometry3D.MaterialKey` 属性应与 `TexturedPbrMaterial.Key` 设置的值相匹配。
+2. 使用 [`MeshGeometry3D.MaterialKey`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/MaterialKey.md) 属性将创建的材质分配给网格。[`MeshGeometry3D.MaterialKey`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/MaterialKey.md) 属性应与 [`TexturedPbrMaterial.Key`](../../API/Eremex.AvaloniaUI.Controls3D/Material/Key.md) 设置的值相匹配。
 
     ``` cs
     meshPoints.MaterialKey = "pointsMaterial";
@@ -497,15 +513,15 @@ Then colorlize the spiral
     and 1 corresponds to the right or _____bottom_____
     -->
 
-##### 点的粗细
+##### 点的粗细 {#thickness-of-points}
 
-在点网格中，使用 `PrimitiveSize` 属性来更改点的粗细。
+在点网格中，使用 [`PrimitiveSize`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/PrimitiveSize.md) 属性来更改点的粗细。
 
 
 
-### 模型可见性
+### 模型可见性 {#model-visibility}
 
-使用 `GeometryModel3D.Visible` 属性来临时隐藏，然后再恢复某个模型。
+使用 [`GeometryModel3D.Visible`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Visible.md) 属性来临时隐藏，然后再恢复某个模型。
 
 ``` cs
 GeometryModel3D model = new GeometryModel3D();
@@ -514,11 +530,11 @@ g3DControl.Models.Add(model);
 model.Visible = !model.Visible;
 ```
 
-### 模型变换
+### 模型变换 {#model-transformations}
 
-`Graphics3DControl` 允许您对模型执行变换。为此，请构造一个用于旋转、缩放和/或平移模型的变换矩阵。创建完成后，将该矩阵赋值给 `GeometryModel3D.Transform` 属性。
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 允许您对模型执行变换。为此，请构造一个用于旋转、缩放和/或平移模型的变换矩阵。创建完成后，将该矩阵赋值给 [`GeometryModel3D.Transform`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Transform.md) 属性。
 
-要清除当前的变换，请将 `GeometryModel3D.Transform` 属性设置为 `Matrix4x4.Identity` 对象。
+要清除当前的变换，请将 [`GeometryModel3D.Transform`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Transform.md) 属性设置为 `Matrix4x4.Identity` 对象。
 
 `Matrix4x4` 类提供了用于生成各种类型变换矩阵的方法。其中一些方法包括：
 
@@ -531,10 +547,10 @@ model.Visible = !model.Visible;
 
 要同时应用多个变换，您可以将执行各个变换的矩阵相乘。
 
-#### 示例 - 旋转模型
+#### 示例 - 旋转模型 {#example-rotate-a-model}
 
 以下示例创建了一个旋转 3D 模型（一个由点组成的螺旋线）的动画。调用 `Matrix4x4.CreateRotationZ` 方法来生成一个使模型绕 Z 轴旋转指定角度的变换矩阵。
-要应用该变换，需将此矩阵赋值给 `GeometryModel3D.Transform` 属性。
+要应用该变换，需将此矩阵赋值给 [`GeometryModel3D.Transform`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Transform.md) 属性。
 
 ![g3dControl-rotateZ-animation](../../images/g3dControl-rotateZ-animation.gif)
 
@@ -559,11 +575,11 @@ private void BtnRotate_Click(object? sender, Avalonia.Interactivity.RoutedEventA
 }
 ```
 
-#### 示例 - 执行多个变换
+#### 示例 - 执行多个变换 {#example-perform-multiple-transformations}
 
 以下示例创建了一个渲染三角形的 3D 模型，并展示了如何对该模型执行多个变换。
 
-该示例将缩放、旋转和平移操作组合成一个变换矩阵，然后将此矩阵赋值给 `GeometryModel3D.Transform` 属性以应用这些变换。
+该示例将缩放、旋转和平移操作组合成一个变换矩阵，然后将此矩阵赋值给 [`GeometryModel3D.Transform`](../../API/Eremex.AvaloniaUI.Controls3D/GeometryModel3D/Transform.md) 属性以应用这些变换。
 
 该示例对变换矩阵应用小幅度的渐进变化，从而创建出平滑的动画效果。
 
@@ -648,19 +664,19 @@ private void BtnRotate_Click(object? sender, Avalonia.Interactivity.RoutedEventA
 
 
 
-### 多重采样（抗锯齿）
+### 多重采样（抗锯齿） {#multisampling-anti-aliasing}
 
-- `Graphics3DControl.MultisamplingMode` — 启用或禁用多重采样抗锯齿（MSAA）。
+- [`Graphics3DControl.MultisamplingMode`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/MultisamplingMode.md) — 启用或禁用多重采样抗锯齿（MSAA）。
 
 抗锯齿功能用于减少渲染图形中的视觉伪影（例如锯齿边缘），从而产生更平滑、更精细的效果。
 
 ![g3dcontrol-multisampling](../../images/g3dcontrol-multisampling.png)
 
-`MultisamplingMode` 属性可以设置为以下值：`None`、`X2`、`X4`、`X8`、`X16`、`X32`、`X64`。`X2`……`X64` 的值决定了每个像素用于计算最终颜色的采样点数量。采样点越多，效果越好，但计算成本也越高。
+[`MultisamplingMode`](../../API/Eremex.AvaloniaUI.Controls3D/MultisamplingMode.md) 属性可以设置为以下值：`None`、`X2`、`X4`、`X8`、`X16`、`X32`、`X64`。`X2`……`X64` 的值决定了每个像素用于计算最终颜色的采样点数量。采样点越多，效果越好，但计算成本也越高。
 
-- `MultisamplingMode` 属性的默认值是 `X8`。
-- 并非所有 MSAA 模式都受您的 GPU 支持。如果选择了不受支持的 MSAA 模式，系统会回退到较低的可用模式。您可以使用 `Graphics3DControl.AvailableMultisamplingModes` 属性来返回您的显卡驱动程序所支持的 MSAA 模式列表。
-- 对于较大的 3D 模型，多重采样会增加内存占用和计算成本。为了在这种情况下提高应用程序性能，请考虑将 `MultisamplingMode` 设置为较低的值，或禁用 MSAA。
+- [`MultisamplingMode`](../../API/Eremex.AvaloniaUI.Controls3D/MultisamplingMode.md) 属性的默认值是 `X8`。
+- 并非所有 MSAA 模式都受您的 GPU 支持。如果选择了不受支持的 MSAA 模式，系统会回退到较低的可用模式。您可以使用 [`Graphics3DControl.AvailableMultisamplingModes`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/AvailableMultisamplingModes.md) 属性来返回您的显卡驱动程序所支持的 MSAA 模式列表。
+- 对于较大的 3D 模型，多重采样会增加内存占用和计算成本。为了在这种情况下提高应用程序性能，请考虑将 [`MultisamplingMode`](../../API/Eremex.AvaloniaUI.Controls3D/MultisamplingMode.md) 设置为较低的值，或禁用 MSAA。
 
 
 
@@ -677,26 +693,26 @@ private void BtnRotate_Click(object? sender, Avalonia.Interactivity.RoutedEventA
 
 
 
-## 材质
+## 材质 {#materials}
 
-`Graphics3DControl` 控件中的每个网格都可以使用自己的材质进行绘制。材质指定了表面与光线的交互方式，从而赋予对象其视觉外观。
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 控件中的每个网格都可以使用自己的材质进行绘制。材质指定了表面与光线的交互方式，从而赋予对象其视觉外观。
 
-`Graphics3DControl` 控件支持两种材质类型：
+[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 控件支持两种材质类型：
 
-- `SimplePbrMaterial` — 一种使用数值（例如颜色，如基础色和自发光，以及光交互设置，如金属度和粗糙度）来定义表面视觉属性的材质。有关更多信息，请参阅[简单材质（SimplePbrMaterial）](#simple-materials-simplepbrmaterial)
+- [`SimplePbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial.md) — 一种使用数值（例如颜色，如基础色和自发光，以及光交互设置，如金属度和粗糙度）来定义表面视觉属性的材质。有关更多信息，请参阅[简单材质（SimplePbrMaterial）](#simple-materials-simplepbrmaterial)
 
-- `TexturedPbrMaterial` — 一种 PBR 格式的纹理材质。此材质使用纹理（位图）来指定表面的视觉属性。有关更多信息，请参阅[纹理材质（TexturedPbrMaterial）](#textured-materials-texturedpbrmaterial)
+- [`TexturedPbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial.md) — 一种 PBR 格式的纹理材质。此材质使用纹理（位图）来指定表面的视觉属性。有关更多信息，请参阅[纹理材质（TexturedPbrMaterial）](#textured-materials-texturedpbrmaterial)
 
 要将材质应用于网格，请执行以下操作：
 
 1. 创建并初始化材质。
-1. 将材质的 `Key` 属性设置为唯一字符串。这些键用于在将材质分配给网格时进行材质识别。
-1. 将材质添加到 `Graphics3DControl.Materials` 集合中。
-1. 使用 `MeshGeometry3D.MaterialKey` 属性将网格与特定材质关联起来。为此，将 `MeshGeometry3D.MaterialKey` 属性设置为目标材质的 `Key` 属性值。
+1. 将材质的 [`Key`](../../API/Eremex.AvaloniaUI.Controls3D/Material/Key.md) 属性设置为唯一字符串。这些键用于在将材质分配给网格时进行材质识别。
+1. 将材质添加到 [`Graphics3DControl.Materials`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Materials.md) 集合中。
+1. 使用 [`MeshGeometry3D.MaterialKey`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/MaterialKey.md) 属性将网格与特定材质关联起来。为此，将 [`MeshGeometry3D.MaterialKey`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/MaterialKey.md) 属性设置为目标材质的 [`Key`](../../API/Eremex.AvaloniaUI.Controls3D/Material/Key.md) 属性值。
 
-### 示例 - 将材质分配给网格
+### 示例 - 将材质分配给网格 {#example-assign-a-material-to-a-mesh}
 
-以下示例创建了三种材质（`SimplePbrMaterial` 对象），并将其中一种材质应用于某个网格。所创建的材质通过唯一的字符串键（“BrownColor”、“TomatoColor” 和 “VioletColor”）进行标识。
+以下示例创建了三种材质（[`SimplePbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial.md) 对象），并将其中一种材质应用于某个网格。所创建的材质通过唯一的字符串键（“BrownColor”、“TomatoColor” 和 “VioletColor”）进行标识。
 
 ``` cs
 using DynamicData;
@@ -714,44 +730,44 @@ g3DControl.Materials.AddRange(
 mesh1.MaterialKey = "VioletColor";
 ```
 
-### 简单材质（`SimplePbrMaterial`）
+### 简单材质（`SimplePbrMaterial`） {#simple-materials-simplepbrmaterial}
 
-`SimplePbrMaterial` 是一种以数值形式描述表面视觉属性的材质。它提供以下成员用于指定视觉设置：
+[`SimplePbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial.md) 是一种以数值形式描述表面视觉属性的材质。它提供以下成员用于指定视觉设置：
 
-- `Albedo` — 基础颜色。
+- [`Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Albedo.md) — 基础颜色。
 
-    该属性的值是一个 Vector3 对象，其 X、Y、Z 成员分别指定红、绿、蓝三个颜色分量的归一化值。归一化值的范围是 [0;1]。要将标准颜色分量（0–255）转换为归一化值，请将其除以 255。您也可以使用 `SimplePbrMaterial` 构造函数，从指定的 `Color` 对象初始化 `Albedo` 和 `Alpha` 属性。此构造函数会自动对颜色分量进行归一化。
+    该属性的值是一个 Vector3 对象，其 X、Y、Z 成员分别指定红、绿、蓝三个颜色分量的归一化值。归一化值的范围是 [0;1]。要将标准颜色分量（0–255）转换为归一化值，请将其除以 255。您也可以使用 [`SimplePbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial.md) 构造函数，从指定的 `Color` 对象初始化 [`Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Albedo.md) 和 [`Alpha`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Alpha.md) 属性。此构造函数会自动对颜色分量进行归一化。
 
-- `Alpha` — 透明度级别。
+- [`Alpha`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Alpha.md) — 透明度级别。
 
     该属性的值应在 [0;1] 范围内，其中 `0` 表示完全透明，`1` 表示完全不透明。
 
-- `Emission` — 表面发光的强度。
+- [`Emission`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Emission.md) — 表面发光的强度。
 
     该属性的值是一个 Vector3 对象，其 X、Y、Z 成员分别指定红、绿、蓝三个颜色分量的归一化值。归一化值的范围是 [0;1]。要将标准颜色分量（0–255）转换为归一化值，请将其除以 255。
 
-- `AmbientOcclusion` — 由阻挡环境光的对象所造成的阴影级别。
+- [`AmbientOcclusion`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/AmbientOcclusion.md) — 由阻挡环境光的对象所造成的阴影级别。
 
     该属性的值应在 [0;1] 范围内，其中 `0` 表示应用最大程度的环境光遮蔽效果，`1` 表示不应用环境光遮蔽。
 
-- `Roughness` — 表面的光滑程度。
+- [`Roughness`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Roughness.md) — 表面的光滑程度。
 
     该属性的值应在 [0;1] 范围内，其中 `0` 表示完全光滑有光泽的表面，`1` 表示完全粗糙、无光泽的表面。
 
-- `Metallic` — 表面的反射率。
+- [`Metallic`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Metallic.md) — 表面的反射率。
 
     该属性的值应在 [0;1] 范围内，其中 `0` 表示非金属表面，`1` 表示完全金属材质。
 
-#### 演示
+#### 演示 {#demo}
 
 [演示应用程序](../../index.md#demo-application)中的 `Simple Materials` 示例展示了使用简单材质绘制的 3D 模型。该演示允许您实时调整材质的设置，并即时查看更改效果。
 
 ![g3d-simplematerials-demo](../../images/g3d-simplematerials-demo.png)
 
-#### 示例 - 将简单材质应用于模型
+#### 示例 - 将简单材质应用于模型 {#example-apply-a-simple-material-to-a-model}
 
-以下代码创建了一个简单材质（`SimplePbrMaterial` 对象），并将其应用于某个 3D 模型的第一个网格。
-`SimplePbrMaterial.Albedo` 属性使用归一化颜色坐标被设置为基础颜色（Teal，蓝绿色）。
+以下代码创建了一个简单材质（[`SimplePbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial.md) 对象），并将其应用于某个 3D 模型的第一个网格。
+[`SimplePbrMaterial.Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/SimplePbrMaterial/Albedo.md) 属性使用归一化颜色坐标被设置为基础颜色（Teal，蓝绿色）。
 
 ``` cs
 SimplePbrMaterial material = new SimplePbrMaterial();
@@ -778,31 +794,31 @@ public static Vector3 ToNormalizedVector3(Color color)
 ![g3d-simplematerial-example](../../images/g3d-simplematerial-example.png)
 
 
-### 纹理材质（`TexturedPbrMaterial`）
+### 纹理材质（`TexturedPbrMaterial`） {#textured-materials-texturedpbrmaterial}
 
-`TexturedPbrMaterial` 是一种使用 PBR 纹理（位图）来定义表面视觉属性的材质。`TexturedPbrMaterial` 类提供以下成员用于配置材质的设置：
+[`TexturedPbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial.md) 是一种使用 PBR 纹理（位图）来定义表面视觉属性的材质。[`TexturedPbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial.md) 类提供以下成员用于配置材质的设置：
 
-- `Albedo` — 指定材质基础颜色的位图。
+- [`Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Albedo.md) — 指定材质基础颜色的位图。
 
-- `Alpha` — 指定透明度级别的位图。
+- [`Alpha`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Alpha.md) — 指定透明度级别的位图。
 
-- `Emission` — 指定表面发光强度的位图。
+- [`Emission`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Emission.md) — 指定表面发光强度的位图。
 
-- `AmbientOcclusion` — 指定由阻挡环境光的对象所造成阴影级别的位图。
+- [`AmbientOcclusion`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/AmbientOcclusion.md) — 指定由阻挡环境光的对象所造成阴影级别的位图。
 
-- `Roughness` — 指定表面光滑程度的位图。
+- [`Roughness`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Roughness.md) — 指定表面光滑程度的位图。
 
-- `Metallic` — 指定表面反射率的位图。
+- [`Metallic`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Metallic.md) — 指定表面反射率的位图。
 
-- `Normal` — 指定法线贴图（Normal Map）的位图。
+- [`Normal`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Normal.md) — 指定法线贴图（Normal Map）的位图。
 
-#### 演示
+#### 演示 {#demo_1}
 
 [演示应用程序](../../index.md#demo-application)中的 `Textured Materials` 示例展示了使用 PBR 纹理渲染的 3D 模型。这些纹理从存储在应用程序资源中的图形文件加载而来。
 
 ![g3d-texturedmaterials-demo](../../images/g3d-texturedmaterials-demo.png)
 
-以下来自 `Textured Materials` 演示的代码片段，用材质（`TexturedPbrMaterial` 对象）填充了视图模型的 `Materials` 集合。这些材质是根据存储在应用程序资源中 `DemoCenter.Resources.Graphics3D.Materials` 文件夹下、以 ZIP 文件形式存放的所有纹理创建的。对于每个材质，如果包含纹理的 ZIP 文件中包含 `Albedo`、`AmbientOcclusion`、`Metallic`、`Roughness`、`Normal` 和 `Emission` 设置所需的位图，这些位图就会被加载并应用到该材质上。
+以下来自 `Textured Materials` 演示的代码片段，用材质（[`TexturedPbrMaterial`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial.md) 对象）填充了视图模型的 [`Materials`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControlBase/Materials.md) 集合。这些材质是根据存储在应用程序资源中 `DemoCenter.Resources.Graphics3D.Materials` 文件夹下、以 ZIP 文件形式存放的所有纹理创建的。对于每个材质，如果包含纹理的 ZIP 文件中包含 [`Albedo`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Albedo.md)、[`AmbientOcclusion`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/AmbientOcclusion.md)、[`Metallic`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Metallic.md)、[`Roughness`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Roughness.md)、[`Normal`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Normal.md) 和 [`Emission`](../../API/Eremex.AvaloniaUI.Controls3D/TexturedPbrMaterial/Emission.md) 设置所需的位图，这些位图就会被加载并应用到该材质上。
 
 ``` cs
 public partial class Graphics3DControlTexturedMaterialsViewModel : Graphics3DControlViewModel
@@ -850,7 +866,7 @@ public partial class Graphics3DControlTexturedMaterialsViewModel : Graphics3DCon
 }
 ```
 
-以下来自 `Textured Materials` 演示的 XAML 代码，将 `Graphics3DControl` 控件绑定到视图模型中的材质集合（`Graphics3DControlTexturedMaterialsViewModel.Materials`）。当前应用的材质由 `Graphics3DControlTexturedMaterialsViewModel.SelectedMaterial` 属性指定。
+以下来自 `Textured Materials` 演示的 XAML 代码，将 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 控件绑定到视图模型中的材质集合（`Graphics3DControlTexturedMaterialsViewModel.Materials`）。当前应用的材质由 `Graphics3DControlTexturedMaterialsViewModel.SelectedMaterial` 属性指定。
 
 ``` xml
 <mx3d:Graphics3DControl x:Name="DemoControl" MaterialsSource="{Binding Materials}">
@@ -860,7 +876,7 @@ public partial class Graphics3DControlTexturedMaterialsViewModel : Graphics3DCon
 </mx3d:Graphics3DControl>
 ```
 
-#### 纹理坐标
+#### 纹理坐标 {#texture-coordinates}
 
 使用纹理材质时，您需要将纹理映射到某个表面。为此，请初始化网格中顶点的 `Vertex3D.TextureCoord` 属性。此属性指定纹理坐标（通常称为 UV 坐标）。
 
@@ -876,7 +892,7 @@ Check what's the meaning for 'y=1' and 'y=0'?
 
 例如，坐标 `(x, y)` 为 `(0.5, 0.5)` 将采样纹理中心的像素。
 
-##### 示例
+##### 示例 {#examples}
 
 演示 `Vertex3D.TextureCoord` 属性用法的示例：
 
@@ -885,19 +901,19 @@ Check what's the meaning for 'y=1' and 'y=0'?
 - 本文档中[定义点网格](#define-a-point-mesh)一节中的示例。
 
 
-## 背面剔除和正面剔除
+## 背面剔除和正面剔除 {#back-face-and-front-face-culling}
 
-`Graphics3DControl.CullMode` 属性允许您为[三角形网格](#meshes)启用背面剔除和正面剔除。剔除模式决定了 3D 模型的哪些面应被绘制，哪些应被丢弃。您可以将 `Graphics3DControl.CullMode` 属性设置为以下值：
+[`Graphics3DControl.CullMode`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/CullMode.md) 属性允许您为[三角形网格](#meshes)启用背面剔除和正面剔除。剔除模式决定了 3D 模型的哪些面应被绘制，哪些应被丢弃。您可以将 [`Graphics3DControl.CullMode`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/CullMode.md) 属性设置为以下值：
 
-- `CullMode.Back` — 启用背面剔除，即不绘制三角形的背面。
+- [`CullMode.Back`](../../API/Eremex.AvaloniaUI.Controls3D/CullMode.md) — 启用背面剔除，即不绘制三角形的背面。
 
-- `CullMode.Front` — 启用正面剔除，即不绘制三角形的正面。
+- [`CullMode.Front`](../../API/Eremex.AvaloniaUI.Controls3D/CullMode.md) — 启用正面剔除，即不绘制三角形的正面。
 
-- `CullMode.None` — 正面和背面都会被绘制。
+- [`CullMode.None`](../../API/Eremex.AvaloniaUI.Controls3D/CullMode.md) — 正面和背面都会被绘制。
 
-### 识别面的正面和背面
+### 识别面的正面和背面 {#identify-back-and-front-of-faces}
 
-当您为网格[定义三角形面](#define-a-triangle-mesh)时，使用 `MeshGeometry3D.Indices` 属性来指定构成每个三角形的顶点索引。
+当您为网格[定义三角形面](#define-a-triangle-mesh)时，使用 [`MeshGeometry3D.Indices`](../../API/Eremex.AvaloniaUI.Controls3D/MeshGeometry3D/Indices.md) 属性来指定构成每个三角形的顶点索引。
 
 每个网格三角形的索引顺序很重要，因为它决定了表面法线的方向，从而决定了三角形的正面和背面：
 
@@ -907,7 +923,7 @@ Check what's the meaning for 'y=1' and 'y=0'?
 
 ![g3d-surface-normals](../../images/g3d-surface-normals.png) 
 
-### 示例
+### 示例 {#example}
 
 本示例演示了面剔除功能。
 在此示例中，创建了一个由两个三角形组成的模型。显示时，观察者看到的是第一个（左侧）三角形的正面和第二个（右侧）三角形的背面。
@@ -955,18 +971,18 @@ g3DControl.Materials.Add(new SimplePbrMaterial(Colors.SeaGreen, "myMaterial"));
 mesh1.MaterialKey = "myMaterial";
 ```
 
-当您将 `Graphics3DControl.CullMode` 属性设置为 `CullMode.Back` 时，背面不会被绘制。第二个（右侧）三角形背对摄像机，因此不会被绘制。
+当您将 [`Graphics3DControl.CullMode`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/CullMode.md) 属性设置为 [`CullMode.Back`](../../API/Eremex.AvaloniaUI.Controls3D/CullMode.md) 时，背面不会被绘制。第二个（右侧）三角形背对摄像机，因此不会被绘制。
 
 ![g3d-cullmode-example-cull-back](../../images/g3d-cullmode-example-cull-back.png)
 
-当 `Graphics3DControl.CullMode` 等于 `CullMode.Front` 时，正面不会被绘制。第一个（左侧）三角形面向摄像机，因此被隐藏：
+当 [`Graphics3DControl.CullMode`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/CullMode.md) 等于 [`CullMode.Front`](../../API/Eremex.AvaloniaUI.Controls3D/CullMode.md) 时，正面不会被绘制。第一个（左侧）三角形面向摄像机，因此被隐藏：
 
 ![g3d-cullmode-example-cull-front](../../images/g3d-cullmode-example-cull-front.png)
 
-## 伽马校正和曝光校正
+## 伽马校正和曝光校正 {#gamma-and-exposure-corrections}
 
-- `Graphics3DControl.Exposure` — 控制曝光校正级别，用于调整渲染图像的亮度。默认值为 4.5。该属性可以设置为非负值。
-- `Graphics3DControl.Gamma` — 控制伽马校正。默认值为 2.2，这是大多数显示器的标准伽马值。该属性可以设置为非负值。
+- [`Graphics3DControl.Exposure`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Exposure.md) — 控制曝光校正级别，用于调整渲染图像的亮度。默认值为 4.5。该属性可以设置为非负值。
+- [`Graphics3DControl.Gamma`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl/Gamma.md) — 控制伽马校正。默认值为 2.2，这是大多数显示器的标准伽马值。该属性可以设置为非负值。
 
 
 <br>

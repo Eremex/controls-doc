@@ -12,13 +12,23 @@ Converts date and time arguments and open, high, low, and close values into seri
 public class CandlestickDataAdapter : ISeriesDataAdapter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CandlestickDataAdapter](CandlestickDataAdapter/CandlestickDataAdapter.md)() | Initializes a new instance of the CandlestickDataAdapter class that contains no candlesticks. |
 | [CandlestickDataAdapter](CandlestickDataAdapter/CandlestickDataAdapter.md)(…) | Initializes a new instance of the CandlestickDataAdapter class with the specified candlesticks. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ItemCount](CandlestickDataAdapter/ItemCount.md) { get; } | Gets the number of data points stored in the adapter. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Add](CandlestickDataAdapter/Add.md)(…) | Adds a candlestick to the end of the adapter. |
 | [Clear](CandlestickDataAdapter/Clear.md)() | Removes all candlesticks from the adapter. |
 | [RemoveFromStart](CandlestickDataAdapter/RemoveFromStart.md)(…) | Removes the specified number of candlesticks from the start of the adapter. |

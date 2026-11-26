@@ -12,13 +12,28 @@ Represents the data object that stores the items dragged from a data control.
 public class DataControlDragDropDataObject : ISerializable
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DataControlDragDropDataObject](DataControlDragDropDataObject/DataControlDragDropDataObject.md)(…) | Initializes a new instance of the DataControlDragDropDataObject class with the specified items. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Items](DataControlDragDropDataObject/Items.md) { get; } | Gets the dragged items. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [GetObjectData](DataControlDragDropDataObject/GetObjectData.md)(…) | Populates a SerializationInfo object with the data needed to serialize the data object. |
+
+## Fields
+
+| name | description |
+| --- | --- |
 | static readonly [DragDropDataObjectFormat](DataControlDragDropDataObject/DragDropDataObjectFormat.md) | Identifies the data format in which dragged items are transferred. |
 
 ## See Also

@@ -12,13 +12,23 @@ Converts time span arguments and numeric values into series data points. The arg
 public class SortedTimeSpanDataAdapter : ISeriesDataAdapter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [SortedTimeSpanDataAdapter](SortedTimeSpanDataAdapter/SortedTimeSpanDataAdapter.md)() | Initializes a new instance of the SortedTimeSpanDataAdapter class that contains no data points. |
 | [SortedTimeSpanDataAdapter](SortedTimeSpanDataAdapter/SortedTimeSpanDataAdapter.md)(…) | Initializes a new instance of the SortedTimeSpanDataAdapter class with the specified arguments and values. (2 constructors) |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ItemCount](SortedTimeSpanDataAdapter/ItemCount.md) { get; } | Gets the number of data points stored in the adapter. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Add](SortedTimeSpanDataAdapter/Add.md)(…) | Adds a data point to the end of the adapter. (2 methods) |
 | [AddRange](SortedTimeSpanDataAdapter/AddRange.md)(…) | Adds several data points to the end of the adapter. |
 | [Clear](SortedTimeSpanDataAdapter/Clear.md)() | Removes all data points from the adapter. |

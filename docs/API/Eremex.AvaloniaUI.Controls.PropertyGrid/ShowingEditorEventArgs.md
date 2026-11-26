@@ -12,11 +12,16 @@ Provides data for the ShowingEditor event.
 public class ShowingEditorEventArgs : CancelEventArgs
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ShowingEditorEventArgs](ShowingEditorEventArgs/ShowingEditorEventArgs.md)(…) | Initializes a new instance of the ShowingEditorEventArgs class with the specified row. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Row](ShowingEditorEventArgs/Row.md) { get; } | Gets the row for which an editor is about to be shown. |
 
 ## See Also

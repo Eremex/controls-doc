@@ -4,7 +4,7 @@ order: 100000
 seealso: []
 ---
 
-# 绑定到层级数据
+# 绑定到层级数据 {#binding-to-hierarchical-data}
 
 在典型的层级数据源中,业务对象具有一个属性,用于存储子数据对象的集合。有两种方法可以在层级绑定模式下为 TreeList 和 TreeView 控件提供子数据:
 
@@ -18,26 +18,26 @@ seealso: []
 
 
 
-## 动态数据加载
+## 动态数据加载 {#dynamic-data-load}
 
 绑定到层级数据源时,TreeList 和 TreeView 控件默认按需加载节点:展开父节点时会动态加载子节点。
 
-将 `AllowDynamicDataLoading` 属性设置为 `false`,可以在控件绑定到数据源后同时加载所有节点。
+将 [`AllowDynamicDataLoading`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/AllowDynamicDataLoading.md) 属性设置为 `false`,可以在控件绑定到数据源后同时加载所有节点。
 
 如果使用动态节点加载,TreeList 和 TreeView 控件将无法访问尚未加载的节点(及其底层数据)。这会对节点选中及筛选/搜索功能施加以下限制:
 
-- 在递归模式下选中父节点时(参见 `AllowRecursiveNodeChecking`),控件会将该节点与当前已加载的子节点一起选中。控件不会选中尚未加载的子节点。
+- 在递归模式下选中父节点时(参见 [`AllowRecursiveNodeChecking`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/AllowRecursiveNodeChecking.md)),控件会将该节点与当前已加载的子节点一起选中。控件不会选中尚未加载的子节点。
 
 - 在内置搜索框中搜索数据,或使用自动筛选行筛选数据时,控件仅在当前已加载的节点中进行搜索。
 
-## 指定子数据的路径
+## 指定子数据的路径 {#specify-path-to-child-data}
 
-为 TreeList/TreeView 控件提供子数据的一种方法是指定业务对象中存储子数据的属性名称。为此,请使用 `ChildrenFieldName` 属性。例如,如果业务对象将子数据存储在 `Items` 集合中,请将 `ChildrenFieldName` 属性设置为“_Items_”。
+为 TreeList/TreeView 控件提供子数据的一种方法是指定业务对象中存储子数据的属性名称。为此,请使用 [`ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) 属性。例如,如果业务对象将子数据存储在 `Items` 集合中,请将 [`ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) 属性设置为“_Items_”。
 
-您还需要将 `HasChildrenFieldName` 属性设置为一个属性的名称,该属性在业务对象具有子数据时返回 `true`,否则返回 `false`。此信息用于显示或隐藏节点展开按钮。
-如果不指定 `HasChildrenFieldName` 属性,控件将为没有子节点的节点显示展开按钮,直到用户尝试展开这些节点为止。
+您还需要将 [`HasChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/HasChildrenFieldName.md) 属性设置为一个属性的名称,该属性在业务对象具有子数据时返回 `true`,否则返回 `false`。此信息用于显示或隐藏节点展开按钮。
+如果不指定 [`HasChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/HasChildrenFieldName.md) 属性,控件将为没有子节点的节点显示展开按钮,直到用户尝试展开这些节点为止。
 
-以下示例演示了如何将 TreeList 控件绑定到数据。示例中的 _Employee_ 对象具有包含子项的 _Subordinates_ 集合。`ChildrenFieldName` 属性指定了存储子数据的属性名称(字符串“_Subordinates_”)。
+以下示例演示了如何将 TreeList 控件绑定到数据。示例中的 _Employee_ 对象具有包含子项的 _Subordinates_ 集合。[`ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) 属性指定了存储子数据的属性名称(字符串“_Subordinates_”)。
 
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -83,18 +83,18 @@ public partial class Employee : ObservableObject
 }
 ```
 
-## 指定子项选择器
+## 指定子项选择器 {#specify-a-children-selector}
 
 在层级绑定模式下提供子数据的另一种方法是实现一个 _子项选择器_(children selector)。该选择器指定业务对象中是否存在子数据,并按需返回这些子数据。TreeList/TreeView 控件使用选择器提供的信息来创建子节点并绘制节点展开按钮。
 
 子项选择器在以下场景中很有用:
 
 - 当父业务对象和子业务对象[类型不同](#use-a-children-selector-when-parent-and-child-business-objects-are-different)时
-- 在所有其他无法通过 `ChildrenFieldName` 属性指定子项路径的情况下。
+- 在所有其他无法通过 [`ChildrenFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenFieldName.md) 属性指定子项路径的情况下。
 
 
 
-使用 `TreeListControlBase.ChildrenSelector` 属性可以为 TreeList/TreeView 控件分配选择器。选择器是实现 `ITreeListChildrenSelector` 接口的对象:
+使用 [`TreeListControlBase.ChildrenSelector`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenSelector.md) 属性可以为 TreeList/TreeView 控件分配选择器。选择器是实现 [`ITreeListChildrenSelector`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/ITreeListChildrenSelector.md) 接口的对象:
 
 ``` cs
 public interface ITreeListChildrenSelector
@@ -109,7 +109,7 @@ public interface ITreeListChildrenSelector
 
 
 
-### 示例 — 实现一个简单的子项选择器
+### 示例 — 实现一个简单的子项选择器 {#example-implement-a-simple-children-selector}
 
 以下示例创建了一个选择器(_MyTreeListChildrenSelector_),为 TreeList 控件提供子项信息。
 
@@ -168,22 +168,22 @@ public partial class Employee : ObservableObject
 ```
 
 
-### 当父业务对象和子业务对象不同时使用子项选择器
+### 当父业务对象和子业务对象不同时使用子项选择器 {#use-a-children-selector-when-parent-and-child-business-objects-are-different}
 
 当父业务对象和子业务对象类型不同时,适用以下注意事项。
 
-- TreeList 显示 TreeList 列所绑定字段中的值(参见 `TreeListColumn.FieldName`)。父业务对象和子业务对象必须公开这些字段。
+- TreeList 显示 TreeList 列所绑定字段中的值(参见 [`TreeListColumn.FieldName`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/FieldName.md))。父业务对象和子业务对象必须公开这些字段。
 
 - TreeView 控件显示业务对象中由 `DataFieldName` 属性指定名称的字段中的值。请确保父数据对象和子数据对象都具有该字段。
 
-### 示例 — 在业务对象不同的情况下实现子项选择器
+### 示例 — 在业务对象不同的情况下实现子项选择器 {#example-implement-a-children-selector-in-case-of-different-business-objects}
 
 假设一个 TreeView 控件绑定到 _City_ 对象的集合。每个 _City_ 对象拥有一个 _Street_ 对象的集合,而每个 _Street_ 对象又拥有 _Building_ 对象的集合。TreeView 应在根级别显示城市,在第二级显示街道,在第三级显示建筑物编号。
 
 ![treeview-hierarchical-different-bus-objects-example](../../../images/treeview-hierarchical-different-bus-objects-example.png)
 
 下面的代码展示了 _City_、_Street_ 和 _Building_ 业务对象的定义。
-请注意,这些对象都具有 _Name_ 属性。该属性的名称将在 XAML 中赋值给 `TreeViewControl.DataFieldName` 属性。
+请注意,这些对象都具有 _Name_ 属性。该属性的名称将在 XAML 中赋值给 [`TreeViewControl.DataFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) 属性。
 
 ``` cs
 public class City
@@ -213,7 +213,7 @@ public class Building
 }
 ```
 
-TreeView 控件绑定到视图模型中定义的 _Cities_ 集合。`TreeViewControl.DataFieldName` 属性设置为 “Name”。该属性标识了业务对象中应在 TreeView 控件中显示其值的字段。
+TreeView 控件绑定到视图模型中定义的 _Cities_ 集合。[`TreeViewControl.DataFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) 属性设置为 “Name”。该属性标识了业务对象中应在 TreeView 控件中显示其值的字段。
 
 ``` cs
 public partial class MainWindowViewModel : ViewModelBase
@@ -256,7 +256,7 @@ public class MyTreeListChildrenSelector : ITreeListChildrenSelector
 }
 ```
 
-要将 _MyTreeListChildrenSelector_ 选择器分配给 TreeView 控件,请使用 `TreeListControlBase.ChildrenSelector` 属性。
+要将 _MyTreeListChildrenSelector_ 选择器分配给 TreeView 控件,请使用 [`TreeListControlBase.ChildrenSelector`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ChildrenSelector.md) 属性。
 
 ``` xml
 xmlns:local="clr-namespace:EremexAvaloniaApplication10.Views"
@@ -270,7 +270,7 @@ xmlns:local="clr-namespace:EremexAvaloniaApplication10.Views"
 />
 ```
 
-#### 完整代码
+#### 完整代码 {#complete-code}
 
 本示例的完整代码如下所示。
 
@@ -411,7 +411,7 @@ namespace EremexAvaloniaApplication10.ViewModels
 }
 ```
 
-# 另请参阅
+# 另请参阅 {#see-also}
 - [数据绑定](./index.md)
 - [绑定到自引用数据源](binding-to-self-referential-data-source.md)
 - [列](../columns.md)

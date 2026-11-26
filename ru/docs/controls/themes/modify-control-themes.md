@@ -12,7 +12,7 @@ seealso: []
 
 ## Тема по умолчанию
 
-Тема _Eremex.Avalonia.Themes.DeltaDesign_ в настоящее время используется по умолчанию для контролов Eremex. Чтобы использовать библиотеку Eremex Controls, вам необходимо включить эту тему в ваш проект и [зарегистрировать](register-an-eremex-paint-theme.md) её в файле _App.axaml_. В противном случае контролы Eremex будут отображаться пустыми.
+Тема `Eremex.Avalonia.Themes.DeltaDesign` в настоящее время используется по умолчанию для контролов Eremex. Чтобы использовать библиотеку Eremex Controls, вам необходимо включить эту тему в ваш проект и [зарегистрировать](register-an-eremex-paint-theme.md) её в файле _App.axaml_. В противном случае контролы Eremex будут отображаться пустыми.
 
 Чтобы изменить конкретные настройки темы (например, цвета или шаблоны элементов контролов), обратитесь к исходному коду темы. Вы можете найти и загрузить его на GitHub: [Eremex Controls Themes](https://github.com/Eremex/controlthemes).
 
@@ -27,7 +27,7 @@ seealso: []
 
 Вы можете изучить исходный код темы, чтобы определить настройки темы, которые вы хотите изменить.
 
-Изображение ниже демонстрирует структуру исходного кода темы _DeltaDesign_:
+Изображение ниже демонстрирует структуру исходного кода темы `DeltaDesign`:
 
 ![deltadesigntheme-structure](../../images/deltadesigntheme-structure.png)
 
@@ -98,7 +98,7 @@ seealso: []
 
 ### Стилизация с помощью классов стилей
 
-Тема _DeltaDesign_ включает [темы элементов управления](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes) и селекторы стилей, нацеленные на конкретные [классы стилей](https://docs.avaloniaui.net/docs/basics/user-interface/styling/style-classes) для контролов Eremex и стандартных контролов Avalonia.
+Тема `DeltaDesign` включает [темы элементов управления](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes) и селекторы стилей, нацеленные на конкретные [классы стилей](https://docs.avaloniaui.net/docs/basics/user-interface/styling/style-classes) для контролов Eremex и стандартных контролов Avalonia.
 Когда вы назначаете конкретный _класс стиля_ контролу (используя свойство `Classes` контрола), тема применяет соответствующий селектор (селекторы) стиля.
  
 Например, чтобы выделить CheckBox отличающимся цветом рамки, примените _класс стиля_ `warning`:
@@ -109,7 +109,7 @@ seealso: []
 
 ![themes-checkbox-styleclass-warning](../../images/themes-checkbox-styleclass-warning.png)
 
-В теме _DeltaDesign_ селектор стиля для CheckBox с _классом стиля_ `warning` определён следующим образом:
+В теме `DeltaDesign` селектор стиля для CheckBox с _классом стиля_ `warning` определён следующим образом:
 
 ``` xml
 <!-- Eremex.Avalonia.Themes.DeltaDesign\Controls\StandardControls\CheckBox.axaml -->
@@ -123,7 +123,7 @@ seealso: []
 </ControlTheme>
 ```
 
-Ниже приведены основные _классы стилей_, настраиваемые темой _DeltaDesign_:
+Ниже приведены основные _классы стилей_, настраиваемые темой `DeltaDesign`:
 
 - `accent` — акцентированные настройки внешнего вида. 
 
@@ -280,9 +280,9 @@ Update the declaration of style selectors above when DataGrid moves to ControlTh
 
 ### Пример — изменение цвета отдельной кнопки Button в нажатом и сфокусированном состояниях
 
-Тема _DeltaDesign_ включает [темы элементов управления](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes) и селекторы стилей, которые подстраивают цвета стандартных контролов Avalonia UI под внешний вид контролов Eremex при размещении на одном окне.
+Тема `DeltaDesign` включает [темы элементов управления](https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes) и селекторы стилей, которые подстраивают цвета стандартных контролов Avalonia UI под внешний вид контролов Eremex при размещении на одном окне.
 
-Следующее изображение показывает внешний вид по умолчанию стандартного контрола Button в нажатом состоянии, отрисованного темой _DeltaDesign_:
+Следующее изображение показывает внешний вид по умолчанию стандартного контрола Button в нажатом состоянии, отрисованного темой `DeltaDesign`:
 
 ![theme-button-default-appearance](../../images/theme-button-default-appearance.png)
 
@@ -331,7 +331,7 @@ Update the declaration of style selectors above when DataGrid moves to ControlTh
 
 ### Пример — изменение акцентированных кнопок внутри окна для вариантов темы Light и Dark
 
-Тема _DeltaDesign_ содержит специальные селекторы стилей, применяемые, когда вы задаёте классы стилей `accent` и/или `warning` для стандартного контрола Avalonia Button. Этот пример показывает, как переопределить настройки внешнего вида акцентированных кнопок в окне для вариантов темы Light и Dark.
+Тема `DeltaDesign` содержит специальные селекторы стилей, применяемые, когда вы задаёте классы стилей `accent` и/или `warning` для стандартного контрола Avalonia Button. Этот пример показывает, как переопределить настройки внешнего вида акцентированных кнопок в окне для вариантов темы Light и Dark.
 
 Вы можете применить классы стилей `accent` и `warning`, чтобы выделить кнопку:
 
@@ -397,7 +397,7 @@ Update the declaration of style selectors above when DataGrid moves to ControlTh
 
 ## Изменение стилей контролов, определённых в визуальной теме Eremex
 
-Когда вы изучаете исходный код визуальной темы _DeltaDesign_, вы найдёте селекторы стилей, которые изменяют не только цвета и кисти, но и другие настройки внешнего вида контролов. К ним относятся размер внутренних элементов и шаблоны контролов, определяющие компоновку и содержимое.
+Когда вы изучаете исходный код визуальной темы `DeltaDesign`, вы найдёте селекторы стилей, которые изменяют не только цвета и кисти, но и другие настройки внешнего вида контролов. К ним относятся размер внутренних элементов и шаблоны контролов, определяющие компоновку и содержимое.
 
 Вы можете переопределить эти селекторы стилей в вашем приложении с помощью следующих свойств:
 
@@ -409,11 +409,11 @@ Update the declaration of style selectors above when DataGrid moves to ControlTh
 
 ### Пример — изменение стиля кнопки-переключателя цвета в контроле ColorEditor на уровне приложения
 
-Этот пример показывает, как изменить внешний вид и шаблон кнопок-переключателей цвета в контролах `ColorEditor` и [PopupColorEditor](../editors/popupcoloreditor.md). Новые стили применяются ко всем контролам `ColorEditor` и `PopupColorEditor` в приложении.
+Этот пример показывает, как изменить внешний вид и шаблон кнопок-переключателей цвета в контролах [`ColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorEditor.md) и [PopupColorEditor](../editors/popupcoloreditor.md). Новые стили применяются ко всем контролам [`ColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/ColorEditor.md) и [`PopupColorEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupColorEditor.md) в приложении.
 
 ![theme-coloreditor-colorcheckbutton](../../images/theme-coloreditor-colorcheckbutton.png)
 
-Сначала найдите стиль по умолчанию для кнопок-переключателей цвета в исходном коде темы _DeltaDesign_. 
+Сначала найдите стиль по умолчанию для кнопок-переключателей цвета в исходном коде темы `DeltaDesign`. 
 
 ``` xml
 <!-- Eremex.Avalonia.Themes.DeltaDesign\Controls\Editors\ColorEditor.axaml -->

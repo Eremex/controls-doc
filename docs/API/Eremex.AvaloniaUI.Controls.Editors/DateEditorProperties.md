@@ -12,11 +12,16 @@ Provides settings for the date editor.
 public class DateEditorProperties : PopupEditorProperties
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DateEditorProperties](DateEditorProperties/DateEditorProperties.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [FirstDayOfWeek](DateEditorProperties/FirstDayOfWeek.md) { get; set; } | Gets or sets the first day of the week in the calendar. |
 | [MaxValue](DateEditorProperties/MaxValue.md) { get; set; } | Gets or sets the maximum allowed date. |
 | [MinValue](DateEditorProperties/MinValue.md) { get; set; } | Gets or sets the minimum allowed date. |

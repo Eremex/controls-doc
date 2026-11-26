@@ -12,7 +12,7 @@ Defines a numeric scale for the angular axis of a polar chart. It picks automati
 public class PolarNumericScaleOptions : LinearNumericScaleOptions
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

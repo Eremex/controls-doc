@@ -12,11 +12,16 @@ Displays gallery items and optional menu commands in a resizable popup.
 public class RibbonPopupGallery : PopupMenu, IGalleryItemsOwner, IResizeablePopupOwner
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [RibbonPopupGallery](RibbonPopupGallery/RibbonPopupGallery.md)() | Initializes a new instance of the RibbonPopupGallery class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ActualGalleryItemsSource](RibbonPopupGallery/ActualGalleryItemsSource.md) { get; } | Gets the collection currently used to populate the popup gallery. |
 | [ActualGalleryItemTemplate](RibbonPopupGallery/ActualGalleryItemTemplate.md) { get; } | Gets the template currently used to display gallery items. |
 | [ActualMaxColumnCount](RibbonPopupGallery/ActualMaxColumnCount.md) { get; set; } | Gets or sets the effective maximum number of gallery columns in the popup. |

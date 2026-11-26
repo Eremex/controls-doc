@@ -12,7 +12,7 @@ Provides the color of a heatmap cell for a given data value.
 public interface IHeatmapColorProvider : INotifyPropertyChanged
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

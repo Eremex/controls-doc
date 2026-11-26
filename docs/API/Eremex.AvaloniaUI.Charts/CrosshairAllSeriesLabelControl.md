@@ -12,7 +12,7 @@ Displays the values of all series at the position of the crosshair.
 public class CrosshairAllSeriesLabelControl : TemplatedControl, IDrawingAreaElementControl
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

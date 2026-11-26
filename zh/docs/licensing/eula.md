@@ -5,7 +5,7 @@ seealso: []
 ---
 
 
-# END-USER LICENSE AGREEMENT
+# END-USER LICENSE AGREEMENT {#end-user-license-agreement}
 
 EREMEX JSC
 
@@ -25,7 +25,7 @@ In case of existence between the Copyright holder and you any other license agre
 
 The Copyright holder without any special notification can amend the EULA (including its any part). A new edition of the EULA comes into force after being posted on the Copyright holder's website, unless otherwise stipulated by the new EULA edition.
 
-## DEFINITIONS
+## DEFINITIONS {#definitions}
 
 PC — personal computer or any other hardware, which is used for the Software installation. 
 
@@ -43,7 +43,7 @@ Documentation — accompanying electronic and/or printed materials necessary to 
 
 Copyright holder's websites — webpages, located in domains accessible at the URLs: https://www.eremex.ru/, https://www.eremexcontrols.ru, https://www.eremexcontrols.com, https://www.eremexcontrols.net.
 
-## 1.	GENERAL TERMS
+## 1.	GENERAL TERMS {#1-general-terms}
 
 1.1. The Software "EMX Controls 1.X" is protected in accordance with the Part 4 of Civil Code of the Russian Federation (hereinafter referred to as "CC RF") and the Copyright holder have an exclusive right to the Software, unless otherwise stipulated by the notice of rights.
 
@@ -57,7 +57,7 @@ Copyright holder's websites — webpages, located in domains accessible at the U
 
 1.6. On the Copyright holder request, the User is obliged to grant a full information confirming the legitimate usage of the Software in accordance with terms of the EULA.
 
-## 2.	LICENSE GRANT
+## 2.	LICENSE GRANT {#2-license-grant}
 
 2.1. In accordance with the terms of the EULA the User receives a simple (non-exclusive) license to:
 
@@ -80,7 +80,7 @@ Copyright holder's websites — webpages, located in domains accessible at the U
 
 2.2.4. The Software's trial version has the same legal regulations as the full version.
 
-## 3.	THE SOFTWARE USAGE RESTRICTIONS
+## 3.	THE SOFTWARE USAGE RESTRICTIONS {#3-the-software-usage-restrictions}
 
 3.1. The User has the right to use the Software strictly in the allowed ways and considering the restrictions explicitly imposed by the EULA.
 
@@ -102,7 +102,7 @@ Copyright holder's websites — webpages, located in domains accessible at the U
 
 3.10. Any action stated in this section is explicitly prohibited and terminates the Software license. The User shall bear civil, administrative or criminal liability according to the Russian law in case of intellectual rights infringement.
 
-## 4.	THE SOURCE CODE
+## 4.	THE SOURCE CODE {#4-the-source-code}
 
 4.1. The Software source code usage restrictions. 
 
@@ -124,11 +124,11 @@ The User shall explicitly identify any modifications in the beginning of each so
 
 4.5. The source code is provided to the User "as is", without any warranty, express or implied. The User bears the risk of the Software conforming to his/her own wishes and needs, as well as the risk of the conditions and scope of the rights granted under the EULA not conforming to his/her wishes and needs.
 
-## 5.	THE UPDATES
+## 5.	THE UPDATES {#5-the-updates}
 
 5.1. The EULA applies to the Software updates, which may be downloaded by the User from the Copyright holder or third parties authorized by the Copyright holder.
 
-## 6.	THE OPEN SOURCE LIBRARIES
+## 6.	THE OPEN SOURCE LIBRARIES {#6-the-open-source-libraries}
 
 6.1. The Software includes the Open source libraries from third-party developers.
 
@@ -202,13 +202,13 @@ The User shall explicitly identify any modifications in the beginning of each so
     
     Copyright (c) 2017-2018 Microsoft Corporation.
 
-## 7.	THE COPYRIGHT HOLDER'S LIABILITY LIMITATIONS
+## 7.	THE COPYRIGHT HOLDER'S LIABILITY LIMITATIONS {#7-the-copyright-holders-liability-limitations}
 
 7.1. The Software is provided "as is". The Copyright holder and its partners provide no warranties of compliance of the Software with the User's expectations and (or) the Software suitability for the User's specific purposes, not covered by the EULA and the User manual. The User accepts that he/she bears the responsibility for choosing the Software to achieve desired results, for installing and using the Software, and also for the results obtained using the Software.
 
 7.2. To the maximum extent permitted by the Russian law, the Copyright holder and its partners bear no responsibility for any damages (including damages connected with a loss of commercial profit, business interruption, loss of information, or other property damage), arisen from the usage or the impossibility of using the Software. In any case the responsibility of the Copyright holder and its partners under any EULA provision is limited by the price paid by the User for a copy of the Software.
 
-## 8.	THE RIGHT TO AUDIT
+## 8.	THE RIGHT TO AUDIT {#8-the-right-to-audit}
 
 8.1. The Copyright holder is entitled to conduct an audit of the User's compliance with the terms of the EULA at any time.
 
@@ -218,19 +218,19 @@ The User shall explicitly identify any modifications in the beginning of each so
 
 8.4. If the audit results find that the User infringes the terms of the EULA he/she is obliged to eliminate such non-compliance by acquiring and purchasing additional licenses or in any other way without without damage to any other rights and legal remedies of the Copyright holder, to compensate the Copyright holder's losses incurred in its entirety. 
 
-## 9.	THE INTELLECTIAL PROPERTY RIGHTS
+## 9.	THE INTELLECTIAL PROPERTY RIGHTS {#9-the-intellectial-property-rights}
  
 9.1. The User accepts that the Software, the User manual, other legally protected copyright objects and the trademarks contained in the Software are the Copyright holder's intellectual property.
 
 9.2. The EULA grants no additional rights to use the intellectual property, including the Copyright holder's trademarks and service marks, except for the rights explicitly granted by the EULA to the User.
 
-## 10.	APPLICABLE LAW
+## 10.	APPLICABLE LAW {#10-applicable-law}
 
 10.1. The EULA is regulated by the Russian law.
 
 10.2. If any EULA provision is held to be cancelled, invalid, void or illegal the other EULA provisions shall remain in full force and effect. In case of contradiction of the EULA provisions and the terms of any other license agreement signed between the User and the Copyright holder or the User and the Copyright holder's partner the EULA provisions shall prevail. 
 
-## 11.	THE FINAL TERMS
+## 11.	THE FINAL TERMS {#11-the-final-terms}
 
 11.1. The EULA shall be interpreted and determined in accordance with the Russian law. The EULA, the terms of its conclusion and execution, and also the aspects not regulated by the EULA, shall be governed in accordance with the applicable Russian law.
 
@@ -240,7 +240,7 @@ The User shall explicitly identify any modifications in the beginning of each so
 
 
 
-## Copyright holder's contact information
+## Copyright holder's contact information {#copyright-holders-contact-information}
 
 Joint Stock Company EREMEX
 

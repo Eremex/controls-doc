@@ -4,7 +4,7 @@ order: 200
 seealso: []
 ---
 
-# 注册 Eremex 视觉主题
+# 注册 Eremex 视觉主题 {#register-an-eremex-paint-theme}
 
 您需要将 Eremex 视觉主题添加到项目中并注册它们，以确保 Eremex 控件正确渲染。如果未找到 Eremex 视觉主题，相应的 Eremex 控件将显示为空白。
 
@@ -12,28 +12,28 @@ Eremex Controls 库包含以下视觉主题：
 
 | 主题 | 描述 | 包 |
 | --- | --- | --- |
-| `DeltaDesign` | 包含 Eremex 控件（`Graphics3DControl` 除外）以及一组标准 Avalonia UI 控件的视觉设置。 | `Eremex.Avalonia.Themes.DeltaDesign` 包 |
-| `Controls3D` | 包含 `Graphics3DControl` 的视觉设置。 | `Eremex.Avalonia.Controls3D` 包 |
+| `DeltaDesign` | 包含 Eremex 控件（[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 除外）以及一组标准 Avalonia UI 控件的视觉设置。 | `Eremex.Avalonia.Themes.DeltaDesign` 包 |
+| `Controls3D` | 包含 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 的视觉设置。 | `Eremex.Avalonia.Controls3D` 包 |
 
 
-## 向项目中添加包含主题的 NuGet 包
+## 向项目中添加包含主题的 NuGet 包 {#add-a-nuget-package-with-a-theme-to-your-project}
 
-- 如果您使用任何 Eremex 控件（`Graphics3DControl` 除外），请将 `Eremex.Avalonia.Themes.DeltaDesign` 包添加到项目中。
+- 如果您使用任何 Eremex 控件（[`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 除外），请将 `Eremex.Avalonia.Themes.DeltaDesign` 包添加到项目中。
 
-- 如果您使用 `Graphics3DControl`，则不需要额外的主题包。`Controls3D` 主题已在 `Eremex.Avalonia.Controls3D` 包中实现，该包也包含控件本身。
+- 如果您使用 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md)，则不需要额外的主题包。`Controls3D` 主题已在 `Eremex.Avalonia.Controls3D` 包中实现，该包也包含控件本身。
 
-## 应注册哪个主题
+## 应注册哪个主题 {#which-theme-to-register}
 
-- 如果您使用除 `Graphics3DControl` 之外的任何 Eremex 控件，只需要注册 `DeltaDesign` 主题。
+- 如果您使用除 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 之外的任何 Eremex 控件，只需要注册 `DeltaDesign` 主题。
 
-- 如果您只使用 `Graphics3DControl`，只需要注册 `Controls3D` 主题。
+- 如果您只使用 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md)，只需要注册 `Controls3D` 主题。
 
-- 如果您将 `Graphics3DControl` 与其他 Eremex 控件一起使用，则需要注册这两个主题。
+- 如果您将 [`Graphics3DControl`](../../API/Eremex.AvaloniaUI.Controls3D/Graphics3DControl.md) 与其他 Eremex 控件一起使用，则需要注册这两个主题。
 
 - `DeltaDesign` 视觉主题还包含常见标准 Avalonia 控件的样式。如果您使用的标准 Avalonia 控件不受 `DeltaDesign` 主题支持，还必须注册 `Fluent` 主题。请参阅[为标准 Avalonia 控件注册 'FluentTheme' 主题](#register-the-fluenttheme-theme-for-standard-avalonia-controls)。
 
 
-## 注册 Eremex 视觉主题
+## 注册 Eremex 视觉主题 {#register-eremex-paint-themes}
 
 
 - 打开项目中的 _App.axaml_ 文件。
@@ -73,7 +73,7 @@ Eremex Controls 库包含以下视觉主题：
     </Application>
     ```
 
-## 为标准 Avalonia 控件注册 'FluentTheme' 主题
+## 为标准 Avalonia 控件注册 'FluentTheme' 主题 {#register-the-fluenttheme-theme-for-standard-avalonia-controls}
 
 `Eremex.Avalonia.Themes.DeltaDesign` 视觉主题为常见标准 Avalonia 控件定义了样式，确保它们与 `DeltaDesign` 视觉主题的渲染效果保持一致。`DeltaDesign` 主题支持的标准 Avalonia 控件包括但不限于：
 Button、
@@ -108,7 +108,7 @@ WindowNotificationManager。
 </Application.Styles>
 ```
 
-## 选择浅色或深色主题变体
+## 选择浅色或深色主题变体 {#choose-the-light-or-dark-theme-variant}
 
 Eremex 视觉主题支持两种颜色变体：浅色和深色。
 

@@ -4,7 +4,7 @@ order: 40
 seealso: []
 ---
 
-# 技术支持服务
+# 技术支持服务 {#technical-support-services}
 
 [EMX Support Center](https://sc.eremexcontrols.net) 是提交和管理与 EMX Controls 库相关的技术支持请求的中心枢纽。
 
@@ -14,7 +14,7 @@ seealso: []
 
 支持服务以英语和俄语提供。
 
-## 提交工单之前
+## 提交工单之前 {#before-you-submit-a-ticket}
 
 为节省时间，我们建议您先查阅其他技术资源。许多常见问题已经得到解答。
 
@@ -22,7 +22,7 @@ seealso: []
 - [文档](https://eremexcontrols.net)
 - [演示应用程序](https://github.com/Eremex/controls-demo)
 
-## 提交工单
+## 提交工单 {#submit-a-ticket}
 
 您必须登录才能创建新的支持工单。授权后，请遵循以下准则：
 
@@ -38,7 +38,7 @@ seealso: []
 
 - 您可以将任何工单标记为私有。私有工单仅您本人和我们的支持工程师可见。
 
-## 重要限制
+## 重要限制 {#important-limitations}
 
 - 我们保留在滥用情况下限制访问支持中心的权利。
 
@@ -49,11 +49,11 @@ seealso: []
 - 对于包含辱骂性或冒犯性语言的工单，我们将不予回复。
 
 
-## 联系我们
+## 联系我们 {#contact-us}
 
 如有一般性、非技术性的咨询（如价格、许可或销售），请使用以下渠道。所有技术支持请通过[支持中心](https://sc.eremexcontrols.net)。
 
-### 网站
+### 网站 {#website}
 
 访问我们的官方网站，了解价格详情和产品信息：
 
@@ -64,7 +64,7 @@ seealso: []
 
 - [controls@eremex.com](mailto:controls@eremex.com)
 
-### Telegram
+### Telegram {#telegram}
 
 如需一般性问题咨询和社区讨论，请加入我们的 Telegram 频道：
 

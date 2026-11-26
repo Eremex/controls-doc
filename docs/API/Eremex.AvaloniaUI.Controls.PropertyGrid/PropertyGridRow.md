@@ -13,11 +13,16 @@ public class PropertyGridRow : PropertyGridExpandableRowBase, IPropertyGridEdita
     IPropertyGridRowsOwner
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PropertyGridRow](PropertyGridRow/PropertyGridRow.md)() | Initializes a new instance of the PropertyGridRow class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | override [ActualCaption](PropertyGridRow/ActualCaption.md) { get; } |  |
 | [ActualEditorProperties](PropertyGridRow/ActualEditorProperties.md) { get; } | Gets the editor settings applied to the row's value. |
 | [AllowEditing](PropertyGridRow/AllowEditing.md) { get; set; } | Gets or sets whether users can edit the row's value. A null value inherits the owner grid's setting. |

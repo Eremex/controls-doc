@@ -12,7 +12,7 @@ Provides data for the StartDrag event.
 public class DataGridStartDragEventArgs : RoutedEventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

@@ -12,11 +12,16 @@ Displays several Cartesian series as bars that are placed side by side at the sa
 public class CartesianSideBySideBarSeriesView : CartesianSeriesView
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [CartesianSideBySideBarSeriesView](CartesianSideBySideBarSeriesView/CartesianSideBySideBarSeriesView.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [BarDistanceFixed](CartesianSideBySideBarSeriesView/BarDistanceFixed.md) { get; set; } | Gets or sets the gap between the bars of adjacent series, in device-independent pixels. |
 | [BarWidth](CartesianSideBySideBarSeriesView/BarWidth.md) { get; set; } | Gets or sets the total width that the bars of all series occupy at a single X axis value. |
 | [BorderColor](CartesianSideBySideBarSeriesView/BorderColor.md) { get; set; } | Gets or sets the color of the bar outline. A null value hides the outline. |

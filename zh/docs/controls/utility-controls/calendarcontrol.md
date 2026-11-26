@@ -4,20 +4,20 @@ order: 2000
 seealso: []
 ---
 
-# CalendarControl
+# CalendarControl {#calendarcontrol}
 
-`CalendarControl` 显示允许用户选择日期的日历。 control 的导航标题显示用于浏览月份和年份的按钮。
+[`CalendarControl`](../../API/Eremex.AvaloniaUI.Controls.Editors/CalendarControl.md) 显示允许用户选择日期的日历。控件的导航标题显示用于浏览月份和年份的按钮。
 
 ![calendarcontrol](../../images/calendarcontrol.png)
 
-control的主要特点包括：
+控件的主要特点包括：
 
 - 使用鼠标和键盘在日历中选择日期。
-- 导航 bar 允许浏览月份和年份。
+- 导航栏允许浏览月份和年份。
 - 三种日历视图：月视图、年视图和年份范围视图。
-- option 用于限制可用日期范围。
+- 选项用于限制可用日期范围。
 
-## 选择日期
+## 选择日期 {#select-a-date}
 
 用户可以使用鼠标和键盘箭头键在日历中选择日期。
 
@@ -29,7 +29,7 @@ control的主要特点包括：
 
 使用 `CalendarControl.SelectedDate` 属性选择日期或读取当前选择的日期。
 
-## 自定义日历
+## 自定义日历 {#customize-the-calendar}
 
 使用以下属性来设置日历：
 

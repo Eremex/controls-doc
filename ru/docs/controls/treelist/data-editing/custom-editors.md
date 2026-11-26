@@ -21,13 +21,13 @@ seealso: []
  
 ## Назначение пользовательского редактора напрямую колонке TreeList и TreeView
  
-Вы можете назначить встроенный редактор колонке TreeList или TreeView, создав `DataTemplate`. Для этого используйте свойства `TreeListColumn.CellTemplate` и `TreeViewControl.CellTemplate`, как показано ниже.
+Вы можете назначить встроенный редактор колонке TreeList или TreeView, создав `DataTemplate`. Для этого используйте свойства [`TreeListColumn.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) и [`TreeViewControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/CellTemplate.md), как показано ниже.
 
 - Создайте объект `DataTemplate` с редактором, определённым внутри шаблона.
-- Назначьте `DataTemplate` свойству `CellTemplate`.
+- Назначьте `DataTemplate` свойству [`CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md).
 - При необходимости явно привяжите редактор к значению колонки.
  
-В следующем примере показан код XAML, устанавливающий свойство `CellTemplate` колонки TreeList в объект `TextBox`:
+В этом примере показан код XAML, устанавливающий свойство [`CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/ColumnBase/CellTemplate.md) колонки TreeList в объект `TextBox`:
  
 ``` xml
 xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
@@ -70,7 +70,7 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
 
 !!! tip
 
-    Редакторы Eremex — это элементы управления, производные от класса `Eremex.AvaloniaUI.Controls.Editors.BaseEditor`.
+    Редакторы Eremex — это элементы управления, производные от класса [`Eremex.AvaloniaUI.Controls.Editors.BaseEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/BaseEditor.md).
 
 - Вам необходимо указать пользовательский конвертер значений в выражении привязки данных.
  
@@ -84,11 +84,11 @@ xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
  
 ## Динамическое назначение редакторов на основе типа данных колонки TreeList
  
-Элемент управления TreeList позволяет назначать ячейкам колонок встроенные редакторы, обёрнутые в `DataTemplate`, на основе типа данных привязанного поля колонки. Для этого используйте свойство `TreeListControl.CellTemplate`.
+Элемент управления TreeList позволяет назначать ячейкам колонок встроенные редакторы, обёрнутые в `DataTemplate`, на основе типа данных привязанного поля колонки. Для этого используйте свойство [`TreeListControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CellTemplate.md).
 
 ### Пример — как связать редактор с одним типом данных
 
-В следующем примере `TextEditor`, отображающий значения зелёным цветом, связывается с колонками, привязанными к полям типа Integer:
+В этом примере [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md), отображающий значения зелёным цветом, связывается с колонками, привязанными к полям типа Integer:
  
 ```xml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -134,10 +134,10 @@ public class CellTemplateLocator : AvaloniaList<IDataTemplate>, IDataTemplate
 }
 ```
  
-- Инициализируйте свойство `TreeListControl.CellTemplate` объектом *CellTemplateLocator*.
+- Инициализируйте свойство [`TreeListControl.CellTemplate`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControl/CellTemplate.md) объектом *CellTemplateLocator*.
 - Заполните объект *CellTemplateLocator* объектами `DataTemplate`, связанными с вашими типами данных.
  
-В следующем примере определяются два объекта `DataTemplate` с редакторами, связанными соответственно с типами данных _String_ и _Integer_.
+В этом примере определяются два объекта `DataTemplate` с редакторами, связанными соответственно с типами данных _String_ и _Integer_.
 
 ```xml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"

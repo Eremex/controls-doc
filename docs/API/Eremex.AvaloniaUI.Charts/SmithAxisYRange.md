@@ -12,7 +12,7 @@ Represents the range of SmithAxisY, which covers the full distance from the cent
 public class SmithAxisYRange : PredefinedRange
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

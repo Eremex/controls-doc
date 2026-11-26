@@ -12,11 +12,16 @@ Serves as the base class for property grid rows that can be expanded to show chi
 public abstract class PropertyGridExpandableRowBase : PropertyGridRowBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PropertyGridExpandableRowBase](PropertyGridExpandableRowBase/PropertyGridExpandableRowBase.md)() | Initializes a new instance of the PropertyGridExpandableRowBase class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [IsExpanded](PropertyGridExpandableRowBase/IsExpanded.md) { get; set; } | Gets or sets whether the row is expanded. |
 | [RowsSource](PropertyGridExpandableRowBase/RowsSource.md) { get; set; } | Gets or sets the collection whose items are used to generate child rows. |
 

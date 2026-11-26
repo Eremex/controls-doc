@@ -12,11 +12,16 @@ Represents a single stop of the color scale of a heatmap. A stop pairs a value w
 public class HeatmapRangeStop : AvaloniaObject
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [HeatmapRangeStop](HeatmapRangeStop/HeatmapRangeStop.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [Color](HeatmapRangeStop/Color.md) { get; set; } | Gets or sets the color that is applied to the value. |
 | [Value](HeatmapRangeStop/Value.md) { get; set; } | Gets or sets the data value that the color is applied to. |
 

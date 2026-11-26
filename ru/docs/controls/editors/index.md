@@ -88,7 +88,7 @@ seealso: []
     
 <br/>
 
-- `PopupEditor` — базовый класс для редакторов, имеющих выпадающие окна.
+- [`PopupEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor.md) — базовый класс для редакторов, имеющих выпадающие окна.
 
 <!--TODO Describe PopupEditor
  -->

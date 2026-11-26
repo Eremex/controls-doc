@@ -12,11 +12,16 @@ Groups toolbar items within a toolbar, menu, or ribbon.
 public class ToolbarItemGroup : ToolbarItem, IToolbarItemsHolder
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ToolbarItemGroup](ToolbarItemGroup/ToolbarItemGroup.md)() | Initializes a new instance of the ToolbarItemGroup class. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ItemCount](ToolbarItemGroup/ItemCount.md) { get; } | Gets the number of item containers. |
 | [Items](ToolbarItemGroup/Items.md) { get; } | Gets the collection of toolbar items. |
 | [ItemsSource](ToolbarItemGroup/ItemsSource.md) { get; set; } | Gets or sets the collection whose items are used to generate toolbar items. |

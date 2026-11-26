@@ -1,24 +1,25 @@
 ---
 title: Как создать TreeView и привязать его к Self-Referential источнику данных
+order: 9900
 seealso: []
 ---
 
 # Как создать TreeView и привязать его к Self-Referential источнику данных
 
-В этом примере создаётся элемент управления `TreeViewControl`, отображающий иерархическую коллекцию объектов _Employee_. Имя сотрудника, на котором в данный момент установлен фокус в TreeView, отображается в текстовом редакторе.
+В этом примере создаётся элемент управления [`TreeViewControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md), отображающий иерархическую коллекцию объектов _Employee_. Имя сотрудника, на котором в данный момент установлен фокус в TreeView, отображается в текстовом редакторе.
 
 Класс _Employee_ представляет собой [Self-Referential источник данных](../data-binding/binding-to-self-referential-data-source.md). Он хранит информацию об отношениях "родитель-потомок" в двух служебных свойствах (_ID_ и _ParentID_).
 
-В примере для настройки `TreeViewControl` используются следующие основные свойства:
+В примере для настройки [`TreeViewControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md) используются следующие основные свойства:
 
-- `DataControlBase.ItemsSource` — задаёт источник данных элемента управления.
-- `TreeListControlBase.KeyFieldName` — задаёт имя поля _Key field_ (свойства), хранящего уникальные идентификаторы записей.
-- `TreeListControlBase.ParentFieldName` — задаёт имя поля _Key field_ (свойства) родительской записи.
-- `TreeListControlBase.RootValue` — определяет корневые записи в привязанной коллекции. Свойство `RootValue` задаёт значение, которое корневые записи имеют в поле _Parent key field_ (свойстве).
-- `TreeViewControl.DataFieldName` — задаёт имя поля (свойства), данные которого отображаются в `TreeViewControl`.
+- [`DataControlBase.ItemsSource`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/ItemsSource.md) — задаёт источник данных элемента управления.
+- [`TreeListControlBase.KeyFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/KeyFieldName.md) — задаёт имя поля _Key field_ (свойства), хранящего уникальные идентификаторы записей.
+- [`TreeListControlBase.ParentFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/ParentFieldName.md) — задаёт имя поля _Key field_ (свойства) родительской записи.
+- [`TreeListControlBase.RootValue`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RootValue.md) — определяет корневые записи в привязанной коллекции. Свойство [`RootValue`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeListControlBase/RootValue.md) задаёт значение, которое корневые записи имеют в поле _Parent key field_ (свойстве).
+- [`TreeViewControl.DataFieldName`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl/DataFieldName.md) — задаёт имя поля (свойства), данные которого отображаются в [`TreeViewControl`](../../../API/Eremex.AvaloniaUI.Controls.TreeList/TreeViewControl.md).
 
-Когда пользователь устанавливает фокус на узле, вы можете использовать унаследованное свойство `DataControlBase.FocusedItem` элемента TreeView, чтобы получить базовый объект данных сфокусированного узла.
-В примере свойство `DataControlBase.FocusedItem` возвращает объект _Employee_. Значение _Name_ сфокусированного объекта _Employee_ отображается в `TextEditor`.
+Когда пользователь устанавливает фокус на узле, вы можете использовать унаследованное свойство [`DataControlBase.FocusedItem`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) элемента TreeView, чтобы получить базовый объект данных сфокусированного узла.
+В примере свойство [`DataControlBase.FocusedItem`](../../../API/Eremex.AvaloniaUI.Controls.DataControl/DataControlBase/FocusedItem.md) возвращает объект _Employee_. Значение _Name_ сфокусированного объекта _Employee_ отображается в [`TextEditor`](../../../API/Eremex.AvaloniaUI.Controls.Editors/TextEditor.md).
 
 ``` xml
 <Window xmlns="https://github.com/avaloniaui"

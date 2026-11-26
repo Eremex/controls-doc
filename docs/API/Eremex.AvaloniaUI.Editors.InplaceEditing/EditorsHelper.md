@@ -12,11 +12,16 @@ Provides methods for activating and closing inplace editors.
 public class EditorsHelper : AvaloniaObject
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [EditorsHelper](EditorsHelper/EditorsHelper.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | static [GetActualEditorProperties](EditorsHelper/GetActualEditorProperties.md)(…) | Returns editor settings that match the specified property type and type converter. |
 | static [GetStandardValuesCache](EditorsHelper/GetStandardValuesCache.md)(…) | Gets the standard values cache for the specified editor properties. |
 | static [InplaceEditorNeedsKey](EditorsHelper/InplaceEditorNeedsKey.md)(…) | Determines whether the inplace editor processes the specified key. |

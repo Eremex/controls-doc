@@ -14,9 +14,9 @@ seealso: []
 
 Application Button может отображать изображение и содержимое (текст). 
 
-- `RibbonControl.ApplicationButtonContent` — задаёт подпись Application Button.
-- `RibbonControl.ApplicationButtonContentTemplate` — шаблон данных для отрисовки подписи Application Button произвольным образом.
-- `RibbonControl.ApplicationButtonGlyph` — задаёт изображение, отображаемое перед подписью.
+- [`RibbonControl.ApplicationButtonContent`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/ApplicationButtonContent.md) — задаёт подпись Application Button.
+- [`RibbonControl.ApplicationButtonContentTemplate`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/ApplicationButtonContentTemplate.md) — шаблон данных для отрисовки подписи Application Button произвольным образом.
+- [`RibbonControl.ApplicationButtonGlyph`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/ApplicationButtonGlyph.md) — задаёт изображение, отображаемое перед подписью.
 
 Следующий код назначает Application Button пользовательскую подпись и изображение:
 
@@ -35,7 +35,7 @@ xmlns:icons="https://schemas.eremexcontrols.net/avalonia/icons"
 
 Application Button расположена у левого края, перед заголовками страниц Ribbon. 
 
-Когда Application Button и меню не нужны, вы можете использовать свойство `RibbonControl.IsApplicationButtonVisible`, чтобы скрыть Application Button.
+Когда Application Button и меню не нужны, вы можете использовать свойство [`RibbonControl.IsApplicationButtonVisible`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/IsApplicationButtonVisible.md), чтобы скрыть Application Button.
 
 ## Щелчок по Application Button
 
@@ -43,24 +43,24 @@ Application Button расположена у левого края, перед �
 
 Вы также можете обрабатывать щелчок по Application Button с помощью следующих членов API:
 
-- `RibbonControl.ApplicationButtonCommand` — команда, возникающая при щелчке правой кнопкой мыши по Application Button. Используйте свойство `RibbonControl.ApplicationButtonCommandParameter`, чтобы задать параметр команды.
-- `RibbonControl.ApplicationButtonClick` — событие, возникающее при щелчке правой кнопкой мыши по Application Button.
-- `RibbonControl.ApplicationButtonPress` — событие, возникающее при нажатии любой кнопки мыши над Application Button.
+- [`RibbonControl.ApplicationButtonCommand`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/ApplicationButtonCommand.md) — команда, возникающая при щелчке правой кнопкой мыши по Application Button. Используйте свойство [`RibbonControl.ApplicationButtonCommandParameter`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/ApplicationButtonCommandParameter.md), чтобы задать параметр команды.
+- [`RibbonControl.ApplicationButtonClick`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/ApplicationButtonClick.md) — событие, возникающее при щелчке правой кнопкой мыши по Application Button.
+- [`RibbonControl.ApplicationButtonPress`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/ApplicationButtonPress.md) — событие, возникающее при нажатии любой кнопки мыши над Application Button.
 
 
 ## Меню приложения
 
-Используйте свойство `RibbonControl.ApplicationButtonDropDownControl`, чтобы задать всплывающее меню/выпадающий контрол, вызываемый при щелчке по кнопке приложения. Вы можете установить свойство `ApplicationButtonDropDownControl` в следующие объекты:
+Используйте свойство [`RibbonControl.ApplicationButtonDropDownControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/ApplicationButtonDropDownControl.md), чтобы задать всплывающее меню/выпадающий контрол, вызываемый при щелчке по кнопке приложения. Вы можете установить свойство [`ApplicationButtonDropDownControl`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/ApplicationButtonDropDownControl.md) в следующие объекты:
 
-- `PopupMenu` — всплывающее меню, которое может отображать различные элементы (кнопки, кнопки-флажки, подменю и так далее). Подробнее смотрите [Всплывающие и контекстные меню](../toolbars-and-menus/popup-and-context-menus.md).
+- [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) — всплывающее меню, которое может отображать различные элементы (кнопки, кнопки-флажки, подменю и так далее). Подробнее смотрите [Всплывающие и контекстные меню](../toolbars-and-menus/popup-and-context-menus.md).
   
   ![popupmenu](../../images/popupmenu.png)
 
-- `PopupContainer` — всплывающий контрол, который может отображать пользовательское содержимое.
+- [`PopupContainer`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupContainer.md) — всплывающий контрол, который может отображать пользовательское содержимое.
 
 
 
-Следующий пример задаёт компонент `PopupMenu` в качестве меню приложения для контрола Ribbon.
+Этот пример задаёт компонент [`PopupMenu`](../../API/Eremex.AvaloniaUI.Controls.Bars/PopupMenu.md) в качестве меню приложения для контрола Ribbon.
 
 ![ribbon-application-menu-example](../../images/ribbon-application-menu-example.png)
 

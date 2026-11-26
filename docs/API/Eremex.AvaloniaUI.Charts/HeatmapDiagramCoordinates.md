@@ -12,7 +12,7 @@ Represents a cell of a [`Heatmap`](./Heatmap.md) identified by its column and ro
 public sealed class HeatmapDiagramCoordinates
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |

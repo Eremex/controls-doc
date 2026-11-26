@@ -12,12 +12,17 @@ The standard IDialogButtonViewModel implementation. Use the `Create*` factory me
 public class DialogButtonViewModel : ViewModelBase, IDialogButtonViewModel
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [DialogButtonViewModel](DialogButtonViewModel/DialogButtonViewModel.md)() | Initializes an empty button. Every property has to be assigned afterwards; prefer the `Create*` factory methods for the standard buttons. |
 | [DialogButtonViewModel](DialogButtonViewModel/DialogButtonViewModel.md)(…) | Initializes a fully configured button. The `Create*` factory methods call this constructor with the settings of each standard button. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ButtonType](DialogButtonViewModel/ButtonType.md) { get; } |  |
 | [Caption](DialogButtonViewModel/Caption.md) { get; set; } |  |
 | [Classes](DialogButtonViewModel/Classes.md) { get; set; } |  |
@@ -27,6 +32,11 @@ public class DialogButtonViewModel : ViewModelBase, IDialogButtonViewModel
 | [Index](DialogButtonViewModel/Index.md) { get; } |  |
 | [IsCancel](DialogButtonViewModel/IsCancel.md) { get; set; } |  |
 | [IsDefault](DialogButtonViewModel/IsDefault.md) { get; set; } |  |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | static [CreateApply](DialogButtonViewModel/CreateApply.md)(…) | Creates the Apply button, captioned in the current UI language. It applies the changes without closing the dialog, so it is neither the default nor the cancel button. |
 | static [CreateCancel](DialogButtonViewModel/CreateCancel.md)(…) | Creates the Cancel button, captioned in the current UI language and activated by Escape. |
 | static [CreateClose](DialogButtonViewModel/CreateClose.md)(…) | Creates the Close button, captioned in the current UI language and activated by Escape. Use it instead of Cancel in dialogs that only display information and have nothing to cancel. |

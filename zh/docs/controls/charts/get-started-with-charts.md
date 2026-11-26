@@ -4,9 +4,9 @@ order: 10000
 seealso: []
 ---
 
-# 开始使用图表
+# 开始使用图表 {#get-started-with-charts}
 
-本教程介绍如何使用条形图和折线图系列视图在 `CartesianChart` 控件中显示三个数据系列。
+本教程介绍如何使用条形图和折线图系列视图在 [`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) 控件中显示三个数据系列。
 
 ![charts-get-started](../../images/charts-get-started.png)
 
@@ -14,7 +14,7 @@ seealso: []
 
 接下来，我们将定义和自定义默认轴，并展示如何添加额外的 _X_ 轴，并将其与特定系列关联。
 
-## 为系列定义视图模型
+## 为系列定义视图模型 {#define-a-view-model-for-a-series}
 
 首先为单个系列创建视图模型。
 
@@ -33,14 +33,14 @@ _SeriesViewModel_ 类公开两个属性，用于指定系列的颜色和数据�
 系列图表的数据是使用_Data Adapter_ 对象提供的。 
 Eremex 图表支持用于各种数据类型（数字、日期时间和定性）的多个数据适配器。在本教程中，我们将使用两个数据适配器：
 
-- `SortedNumericDataAdapter` — 供应按 _X_ 值排序的（数字 _X_、数字 _Y_）对。
-- `SortedDateTimeDataAdapter` — 提供按 _X_ 值排序的（日期时间 _X_、数字 _Y_）对。
+- [`SortedNumericDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md) — 供应按 _X_ 值排序的（数字 _X_、数字 _Y_）对。
+- [`SortedDateTimeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) — 提供按 _X_ 值排序的（日期时间 _X_、数字 _Y_）对。
 
 这些数据适配器在主视图模型中初始化。
 
-有关其他数据适配器的信息，请参阅 [Cartesian Chart](cartesian-chart.md)。
+有关其他数据适配器的信息，请参阅 [笛卡尔图表](cartesian-chart.md)。
 
-## 定义主视图模型
+## 定义主视图模型 {#define-the-main-view-model}
 
 创建 _MainWindowViewModel_ 类，封装窗口的主视图模型。 _MainWindowViewModel_ 实例将设置为窗口（和图表控件）的 `DataContext`。
 
@@ -98,12 +98,12 @@ public partial class MainWindowViewModel : ViewModelBase
 
 数据适配器填充随机数据：
 
-- `SortedDateTimeDataAdapter` 对象填充了 12 个点，对应于一年中的 12 个月。 `SortedDateTimeDataAdapter` 对象的 _X_ 值是 `DateTime` 值。
+- [`SortedDateTimeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) 对象填充了 12 个点，对应于一年中的 12 个月。 [`SortedDateTimeDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedDateTimeDataAdapter.md) 对象的 _X_ 值是 `DateTime` 值。
 
-- `SortedNumericDataAdapter` 对象填充了与一年中的日期相对应的 365 个点。 `SortedNumericDataAdapter` 对象的 _X_ 值是数值。
+- [`SortedNumericDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md) 对象填充了与一年中的日期相对应的 365 个点。 [`SortedNumericDataAdapter`](../../API/Eremex.AvaloniaUI.Charts/SortedNumericDataAdapter.md) 对象的 _X_ 值是数值。
 
 
-## 创建Cartesian Chart控件
+## 创建Cartesian Chart控件 {#create-a-cartesian-chart-control}
 
 确保窗口和图表控件的 DataContext 设置为 _MainWindowViewModel_ 对象。
 
@@ -124,13 +124,13 @@ xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
 </mxc:CartesianChart>
 ```
 
-此代码将两个系列（`CartesianSeries` 对象）添加到 `CartesianChart.Series` 集合中，并将它们绑定到主视图模型中相应的数据适配器。
+此代码将两个系列（[`CartesianSeries`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) 对象）添加到 [`CartesianChart.Series`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) 集合中，并将它们绑定到主视图模型中相应的数据适配器。
 
-### 指定系列视图
+### 指定系列视图 {#specify-a-series-view}
 
-**系列视图**决定系列的视觉外观和设置。 Cartesian Chart 支持多种系列视图：线、散点线、范围区域、条形图、范围条形图等。有关详细信息，请参阅以下主题：[Cartesian Chart](cartesian-chart.md)。
+**系列视图**决定系列的视觉外观和设置。 Cartesian Chart 支持多种系列视图：线、散点线、范围区域、条形图、范围条形图等。有关详细信息，请参阅以下主题：[笛卡尔图表](cartesian-chart.md)。
 
-让我们将 Bar 系列视图应用于该系列。为此，将 `CartesianSideBySideBarSeriesView` 对象定义为 `CartesianSeries` 对象的内容。
+让我们将 Bar 系列视图应用于该系列。为此，将 [`CartesianSideBySideBarSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md) 对象定义为 [`CartesianSeries`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) 对象的内容。
 
 ``` xml
 <mxc:CartesianChart>
@@ -145,18 +145,18 @@ xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/charts"
 </mxc:CartesianChart>
 ```
 
-`CartesianSideBySideBarSeriesView` 将点渲染为矩形条：
+[`CartesianSideBySideBarSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView.md) 将点渲染为矩形条：
 
 ![chart-CartesianSideBySideBarSeriesView-oneseries](../../images/chart-CartesianSideBySideBarSeriesView-oneseries.png)
 
-系列视图的 `Color` 设置允许您指定渲染相关系列所使用的颜色。
+系列视图的 [`Color`](../../API/Eremex.AvaloniaUI.Charts/CartesianSideBySideBarSeriesView/Color.md) 设置允许您指定渲染相关系列所使用的颜色。
 
 
-## 创建和自定义默认轴
+## 创建和自定义默认轴 {#create-and-customize-default-axes}
 
 Cartesian Chart 可以自动为底层数据创建轴。如果您想要自定义轴设置（例如，指定标题和比例选项），您可能需要手动定义 _X_ 和 _Y_ 轴。
 
-要定义轴，请将 `AxisX` 和/或 `AxisY` 对象添加到 `CartesianChart.AxesX`/`CartesianChart.AxesY` 集合：
+要定义轴，请将 [`AxisX`](../../API/Eremex.AvaloniaUI.Charts/AxisX.md) 和/或 [`AxisY`](../../API/Eremex.AvaloniaUI.Charts/AxisY.md) 对象添加到 [`CartesianChart.AxesX`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesX.md)/[`CartesianChart.AxesY`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesY.md) 集合：
 
 ``` xml
 <mxc:CartesianChart>
@@ -177,20 +177,20 @@ Cartesian Chart 可以自动为底层数据创建轴。如果您想要自定义�
 
 上面的代码创建 _X_ 和 _Y_ 轴，并为其指定标题。
 
-由于底层数据点表示各个月份的值，因此 `Month` 时间单位应用于水平日期时间轴（使用 `AxisX.ScaleOptions` 属性）。
+由于底层数据点表示各个月份的值，因此 `Month` 时间单位应用于水平日期时间轴（使用 [`AxisX.ScaleOptions`](../../API/Eremex.AvaloniaUI.Charts/AxisX/ScaleOptions.md) 属性）。
 
 如果您现在运行该应用程序，您将看到以下结果：
 
 ![charts-get-started-two-series](../../images/charts-get-started-two-series.png)
 
 
-## 添加附加系列和 _X_ 轴
+## 添加附加系列和 _X_ 轴 {#add-an-additional-series-and-x-axis}
 
 您可以根据需要向图表控件添加任意数量的系列。这些系列可以使用默认轴或它们自己的轴。
 
 让我们向图表中添加一个线系列及其轴。
 
-首先，在 `CartesianChart.Series` 集合中创建一个新的 `CartesianSeries` 对象，并将其绑定到视图模型中定义的 _LineSeries.DataAdapter_ 对象。
+首先，在 [`CartesianChart.Series`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/Series.md) 集合中创建一个新的 [`CartesianSeries`](../../API/Eremex.AvaloniaUI.Charts/CartesianSeries.md) 对象，并将其绑定到视图模型中定义的 _LineSeries.DataAdapter_ 对象。
 
 ``` xml
 <mxc:CartesianChart>
@@ -202,9 +202,9 @@ Cartesian Chart 可以自动为底层数据创建轴。如果您想要自定义�
 </mxc:CartesianChart>
 ```
 
-### 指定线系列视图
+### 指定线系列视图 {#specify-a-line-series-view}
 
-要将线系列视图应用于该系列，请将 `CartesianLineSeriesView` 对象定义为该系列的内容：
+要将线系列视图应用于该系列，请将 [`CartesianLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesView.md) 对象定义为该系列的内容：
 
 ``` xml
 <mxc:CartesianSeries Name="lineSeries" DataAdapter="{Binding LineSeries.DataAdapter}" >
@@ -212,17 +212,17 @@ Cartesian Chart 可以自动为底层数据创建轴。如果您想要自定义�
 </mxc:CartesianSeries> 
 ```
 
-`CartesianLineSeriesView` 是点与线连接的系列视图：
+[`CartesianLineSeriesView`](../../API/Eremex.AvaloniaUI.Charts/CartesianLineSeriesView.md) 是点与线连接的系列视图：
 
 ![chart-CartesianLineSeriesView-one-series](../../images/chart-CartesianLineSeriesView-one-series.png)
 
-与任何系列视图一样，您可以使用 `CartesianLineSeriesView.Color` 属性来指定用于绘制系列的颜色。
+与任何系列视图一样，您可以使用 [`CartesianLineSeriesView.Color`](../../API/Eremex.AvaloniaUI.Charts/CartesianPointSeriesView/Color.md) 属性来指定用于绘制系列的颜色。
 
-### 为线系列指定自己的轴
+### 为线系列指定自己的轴 {#specify-its-own-axis-for-the-line-series}
 
 Line系列的_X_值是数字类型，而现有横轴显示的是`DateTime`值。因此，Line 系列需要一个额外的数字轴。
 
-在 `CartesianChart.AxesX` 集合中定义一个新的数字 _X_ 轴。
+在 [`CartesianChart.AxesX`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart/AxesX.md) 集合中定义一个新的数字 _X_ 轴。
 
 ``` xml
 <mxc:CartesianChart.AxesX>
@@ -238,7 +238,7 @@ Line系列的_X_值是数字类型，而现有横轴显示的是`DateTime`值。
 
 轴的 `Position` 属性设置为 `Far` 以在与默认位置相对的边缘处显示轴。对于水平轴，`Far` 选项对应于图表的顶部边缘。对于垂直轴，`Far` 选项将轴放置在图表的右边缘。
 
-现在我们需要将 Line 系列与其轴关联。这是通过指定轴 ID（唯一的字符串值）来完成的。将轴的 `Key` 属性和系列的 `CartesianSeries.AxisXKey`/`CartesianSeries.AxisYKey` 属性设置为相同的 ID。
+现在我们需要将 Line 系列与其轴关联。这是通过指定轴 ID（唯一的字符串值）来完成的。将轴的 `Key` 属性和系列的 [`CartesianSeries.AxisXKey`](../../API/Eremex.AvaloniaUI.Charts/Series/AxisXKey.md)/[`CartesianSeries.AxisYKey`](../../API/Eremex.AvaloniaUI.Charts/Series/AxisYKey.md) 属性设置为相同的 ID。
 
 在本教程中，指定系列和轴的 _“lineSeriesAxis”_ ID，如下所示：
 
@@ -265,15 +265,15 @@ Line系列的_X_值是数字类型，而现有横轴显示的是`DateTime`值。
 
 
 
-## 创建自定义标签格式化程序
+## 创建自定义标签格式化程序 {#create-a-custom-label-formatter}
 
-`CartesianChart` 根据轴缩放选项设置主要刻度线标签的格式。以下图像显示 `Month` 时间单位应用于 _X_ 轴时的标签格式：
+[`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) 根据轴缩放选项设置主要刻度线标签的格式。以下图像显示 `Month` 时间单位应用于 _X_ 轴时的标签格式：
 
 ![chart-get-started-label-formatting-month-default](../../images/chart-get-started-label-formatting-month-default.png)
 
-轴的 `ScaleOptions.LabelFormatter` 属性允许您更改标签的显示格式。您可以使用 `Eremex.AvaloniaUI.Charts.FuncLabelFormatter` 类作为标签格式化程序，或者通过实现 `IAxisLabelFormatter` 接口来创建自定义标签格式化程序。
+轴的 [`ScaleOptions.LabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) 属性允许您更改标签的显示格式。您可以使用 [`Eremex.AvaloniaUI.Charts.FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md) 类作为标签格式化程序，或者通过实现 [`IAxisLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/IAxisLabelFormatter.md) 接口来创建自定义标签格式化程序。
 
-我们将使用 `FuncLabelFormatter` 类为 _X_ 轴的日期时间值创建短标签。在主视图模型中，实现 `FuncLabelFormatter` 类型的属性，以特定方式格式化标签。在 XAML 中，将轴的 `ScaleOptions.LabelFormatter` 选项绑定到此格式化程序。
+我们将使用 [`FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md) 类为 _X_ 轴的日期时间值创建短标签。在主视图模型中，实现 [`FuncLabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/FuncLabelFormatter.md) 类型的属性，以特定方式格式化标签。在 XAML 中，将轴的 [`ScaleOptions.LabelFormatter`](../../API/Eremex.AvaloniaUI.Charts/ScaleOptions/LabelFormatter.md) 选项绑定到此格式化程序。
 
 ![chart-get-started-label-formatting-month-custom](../../images/chart-get-started-label-formatting-month-custom.png)
 
@@ -293,15 +293,15 @@ public partial class MainWindowViewModel : ViewModelBase
 }
 ```
 
-## 结果
+## 结果 {#result}
 
-现在您可以运行该应用程序来查看本教程的结果。 `CartesianChart` 控件使用条形图和折线图系列视图显示三个数据系列。线系列与其自己的 _X_ 轴相关联，该轴显示在图表顶部。
+现在您可以运行该应用程序来查看本教程的结果。 [`CartesianChart`](../../API/Eremex.AvaloniaUI.Charts/CartesianChart.md) 控件使用条形图和折线图系列视图显示三个数据系列。线系列与其自己的 _X_ 轴相关联，该轴显示在图表顶部。
 
 ![charts-get-started](../../images/charts-get-started.png)
 
 
 
-## 完整代码
+## 完整代码 {#complete-code}
 
 ``` xml
 <mx:MxWindow xmlns="https://github.com/avaloniaui"

@@ -14,7 +14,7 @@ seealso: []
 
 Когда пользователь вводит текст в поле поиска, контрол PropertyGrid фильтрует строки, чтобы отображать только те, что соответствуют искомому тексту.
 
-Используйте свойство `ShowSearchPanel`, чтобы управлять видимостью поля поиска.
+Используйте свойство [`ShowSearchPanel`](../../API/Eremex.AvaloniaUI.Controls.PropertyGrid/PropertyGridControl/ShowSearchPanel.md), чтобы управлять видимостью поля поиска.
 
 
 <br>

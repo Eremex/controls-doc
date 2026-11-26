@@ -12,11 +12,16 @@ Provides data for customizing the docking guides displayed while an item is drag
 public class CustomizeDockGuideEventArgs : DockItemEventArgs
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |
 | [TargetItem](CustomizeDockGuideEventArgs/TargetItem.md) { get; } | Gets the docking item targeted by the dragged item. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [HideGuide](CustomizeDockGuideEventArgs/HideGuide.md)(…) | Hides the specified docking guide for the current drag target. |
 | [HideItem](CustomizeDockGuideEventArgs/HideItem.md)(…) | Hides the specified docking guide item for the current drag target. |
 

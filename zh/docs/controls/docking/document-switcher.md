@@ -4,7 +4,7 @@ order: 58000
 seealso: []
 ---
 
-# 文档切换器
+# 文档切换器 {#document-switcher}
 
 文档切换器提供了一种经典的解决方案，可通过键盘切换到特定的文档或面板。要打开文档切换器，请使用以下快捷键：
 
@@ -31,17 +31,17 @@ seealso: []
 
 要关闭文档切换器并激活所选的面板或文档，请释放 CTRL 键或用鼠标单击该面板/文档。
 
-## 禁用文档切换器
+## 禁用文档切换器 {#disable-the-document-switcher}
 
-将 `DockManager.AllowDocumentSwitcher` 属性设置为 `false` 可禁用文档切换器。此设置还会禁用用于在 Docking 项之间导航的 CTRL+TAB 和 CTRL+SHIFT+TAB 快捷键。
+将 [`DockManager.AllowDocumentSwitcher`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockManager/AllowDocumentSwitcher.md) 属性设置为 `false` 可禁用文档切换器。此设置还会禁用用于在 Docking 项之间导航的 CTRL+TAB 和 CTRL+SHIFT+TAB 快捷键。
 
-## 在文档切换器中显示面板
+## 在文档切换器中显示面板 {#show-panes-in-the-document-switcher}
 
-要阻止某个面板显示在文档切换器中，请禁用 `DockPane.ShowInDocumentSwitcher` 选项。
+要阻止某个面板显示在文档切换器中，请禁用 [`DockPane.ShowInDocumentSwitcher`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/ShowInDocumentSwitcher.md) 选项。
 
 已关闭的面板无法在文档切换器中访问。
 
-## 在文档切换器中显示面板描述
+## 在文档切换器中显示面板描述 {#display-pane-descriptions-in-the-document-switcher}
 
 文档切换器支持两个区域，用于显示所选面板的描述。
 
@@ -49,8 +49,8 @@ seealso: []
 
 使用以下属性来指定要在文档切换器中显示的面板描述：
 
-- `DockPane.DocumentSwitcherDescription` — 指定要在文档切换器顶部显示的面板描述。
-- `DockPane.DocumentSwitcherFooterDescription` — 指定要在文档切换器底部显示的面板描述。
+- [`DockPane.DocumentSwitcherDescription`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/DocumentSwitcherDescription.md) — 指定要在文档切换器顶部显示的面板描述。
+- [`DockPane.DocumentSwitcherFooterDescription`](../../API/Eremex.AvaloniaUI.Controls.Docking/DockPane/DocumentSwitcherFooterDescription.md) — 指定要在文档切换器底部显示的面板描述。
 
 <br>
 <br>

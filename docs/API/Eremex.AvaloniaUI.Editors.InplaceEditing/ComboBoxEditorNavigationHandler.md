@@ -12,11 +12,16 @@ Provides keyboard navigation for the combo box inplace editor.
 public class ComboBoxEditorNavigationHandler : PopupEditorNavigationHandler
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [ComboBoxEditorNavigationHandler](ComboBoxEditorNavigationHandler/ComboBoxEditorNavigationHandler.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | override [NeedsKey](ComboBoxEditorNavigationHandler/NeedsKey.md)(…) | Determines whether the combo box editor processes the specified key. |
 
 ## See Also

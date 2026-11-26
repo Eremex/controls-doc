@@ -28,11 +28,11 @@ seealso: []
 
 ### Отключение настройки панели быстрого доступа
 
-Установите свойство `RibbonControl.AllowQuickAccessToolbarCustomizationMenu` в `false`, чтобы скрыть команды **Add to Quick Access Toolbar** и **Remove from Quick Access Toolbar**, тем самым запрещая пользователям настраивать панель быстрого доступа.
+Установите свойство [`RibbonControl.AllowQuickAccessToolbarCustomizationMenu`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/AllowQuickAccessToolbarCustomizationMenu.md) в `false`, чтобы скрыть команды **Add to Quick Access Toolbar** и **Remove from Quick Access Toolbar**, тем самым запрещая пользователям настраивать панель быстрого доступа.
 
 ### Добавление элементов на панель быстрого доступа в коде
 
-Чтобы заполнить панель быстрого доступа элементами в коде, используйте коллекцию `RibbonControl.QuickAccessToolbarItems`. Вы также можете использовать эту коллекцию, чтобы обращаться к элементам панели быстрого доступа и затем изменять их в code-behind.
+Чтобы заполнить панель быстрого доступа элементами в коде, используйте коллекцию [`RibbonControl.QuickAccessToolbarItems`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/QuickAccessToolbarItems.md). Вы также можете использовать эту коллекцию, чтобы обращаться к элементам панели быстрого доступа и затем изменять их в code-behind.
 
 ``` xml
 <mxr:RibbonControl.QuickAccessToolbarItems>
@@ -45,7 +45,7 @@ seealso: []
 </mxr:RibbonControl.QuickAccessToolbarItems>
 ```
 
-Используйте свойство `RibbonControl.QuickAccessToolbarItemsSource`, чтобы заполнить панель быстрого доступа элементами из коллекции бизнес-объектов, хранящихся во View Model. Соответствующие шаблоны данных должны определять элементы Ribbon и инициализировать их настройки из базовых бизнес-объектов.
+Используйте свойство [`RibbonControl.QuickAccessToolbarItemsSource`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/QuickAccessToolbarItemsSource.md), чтобы заполнить панель быстрого доступа элементами из коллекции бизнес-объектов, хранящихся во View Model. Соответствующие шаблоны данных должны определять элементы Ribbon и инициализировать их настройки из базовых бизнес-объектов.
 
 
 ## Изменение положения и видимости
@@ -58,12 +58,12 @@ seealso: []
 
 ![ribbon-qat-below-change-position-menu](../../images/ribbon-qat-below-change-position-menu.png)
 
-Вы можете скрыть кнопку выпадающего списка на панели быстрого доступа с помощью свойства `RibbonControl.IsQuickAccessToolbarCustomizationButtonVisible`.
+Вы можете скрыть кнопку выпадающего списка на панели быстрого доступа с помощью свойства [`RibbonControl.IsQuickAccessToolbarCustomizationButtonVisible`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/IsQuickAccessToolbarCustomizationButtonVisible.md).
 
 Следующие свойства позволяют управлять положением и видимостью панели быстрого доступа в коде:
 
-- `RibbonControl.QuickAccessToolbarLocation` — позволяет выбирать между положениями `Top` и `Bottom` для панели быстрого доступа.
-- `RibbonControl.IsQuickAccessToolbarVisible` — позволяет скрыть панель быстрого доступа.
+- [`RibbonControl.QuickAccessToolbarLocation`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/QuickAccessToolbarLocation.md) — позволяет выбирать между положениями `Top` и `Bottom` для панели быстрого доступа.
+- [`RibbonControl.IsQuickAccessToolbarVisible`](../../API/Eremex.AvaloniaUI.Controls.Ribbon/RibbonControl/IsQuickAccessToolbarVisible.md) — позволяет скрыть панель быстрого доступа.
 
 ## Смотрите также
 

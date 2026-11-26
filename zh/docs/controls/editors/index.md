@@ -1,10 +1,10 @@
 ---
-title: Editors
+title: 编辑器
 order: 50000
 seealso: []
 ---
 
-# 编辑器
+# 编辑器 {#editors}
 
 Eremex Controls 库包含多种编辑器，提供高级数据编辑功能。这些编辑器允许您显示和编辑不同数据类型（数值、布尔值、日期时间、枚举等）的数据。它们支持数据验证机制，用于在数据输入过程中向用户提示错误。 
 
@@ -88,7 +88,7 @@ Eremex Controls 库包含多种编辑器，提供高级数据编辑功能。这�
     
 <br/>
 
-- `PopupEditor` — 具有下拉窗口的编辑器的基类。
+- [`PopupEditor`](../../API/Eremex.AvaloniaUI.Controls.Editors/PopupEditor.md) — 具有下拉窗口的编辑器的基类。
 
 <!--TODO Describe PopupEditor
  -->
@@ -128,7 +128,7 @@ Eremex Controls 库包含多种编辑器，提供高级数据编辑功能。这�
 
 
 
-## 通用功能
+## 通用功能 {#common-features}
 
 - [掩码](masks/index.md)
     - 文本编辑器支持掩码输入，可防止用户输入无效值。

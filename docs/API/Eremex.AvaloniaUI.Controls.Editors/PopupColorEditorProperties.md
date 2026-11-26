@@ -12,11 +12,16 @@ Provides settings for the popup color editor.
 public class PopupColorEditorProperties : PopupEditorProperties
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [PopupColorEditorProperties](PopupColorEditorProperties/PopupColorEditorProperties.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [ColorsShowMode](PopupColorEditorProperties/ColorsShowMode.md) { get; set; } | Gets or sets which color sets are displayed in the dropdown. |
 | [ShowAlphaChannel](PopupColorEditorProperties/ShowAlphaChannel.md) { get; set; } | Gets or sets whether users can edit the alpha channel. |
 | [ThemePalette](PopupColorEditorProperties/ThemePalette.md) { get; set; } | Gets or sets the color palette displayed in the editor's dropdown. |

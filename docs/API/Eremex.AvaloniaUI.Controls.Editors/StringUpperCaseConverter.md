@@ -12,11 +12,16 @@ Represents a converter that converts a string to upper case.
 public class StringUpperCaseConverter : MarkupExtension, IValueConverter
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [StringUpperCaseConverter](StringUpperCaseConverter/StringUpperCaseConverter.md)() | The default constructor. |
+
+## Methods
+
+| name | description |
+| --- | --- |
 | [Convert](StringUpperCaseConverter/Convert.md)(…) |  |
 | [ConvertBack](StringUpperCaseConverter/ConvertBack.md)(…) |  |
 | override [ProvideValue](StringUpperCaseConverter/ProvideValue.md)(…) |  |

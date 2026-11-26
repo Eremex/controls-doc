@@ -12,7 +12,7 @@ Shows the platform save file dialog from view model code that must not reference
 public interface ISaveFileDialogService
 ```
 
-## Members
+## Methods
 
 | name | description |
 | --- | --- |

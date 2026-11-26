@@ -12,11 +12,16 @@ Represents a memo editor that edits multi-line text in a popup.
 public class MemoEditor : PopupEditor
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |
 | [MemoEditor](MemoEditor/MemoEditor.md)() | The default constructor. |
+
+## Properties
+
+| name | description |
+| --- | --- |
 | [MemoAcceptsReturn](MemoEditor/MemoAcceptsReturn.md) { get; set; } | Gets or sets whether users can enter new lines in the editor. |
 | [MemoAcceptsTab](MemoEditor/MemoAcceptsTab.md) { get; set; } | Gets or sets whether users can enter tab characters in the editor. |
 | [MemoHorizontalScrollBarVisibility](MemoEditor/MemoHorizontalScrollBarVisibility.md) { get; set; } | Gets or sets the visibility of the horizontal scroll bar. |

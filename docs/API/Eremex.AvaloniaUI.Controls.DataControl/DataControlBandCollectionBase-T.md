@@ -13,7 +13,7 @@ public abstract class DataControlBandCollectionBase<T> : LockableObservableColle
     where T : DataControlBandBase
 ```
 
-## Public Members
+## Constructors
 
 | name | description |
 | --- | --- |

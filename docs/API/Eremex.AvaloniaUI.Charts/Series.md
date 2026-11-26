@@ -12,7 +12,7 @@ Serves as the base class for chart series. A series owns the data that is displa
 public abstract class Series : ChartElement, IIndexedChartElement
 ```
 
-## Public Members
+## Properties
 
 | name | description |
 | --- | --- |
